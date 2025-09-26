@@ -2,6 +2,7 @@
 
 🎓 Student at **Lycée Guillaume Kroll (Luxembourg)**  
 📚 Currently enrolled in the **BTS Cloud Computing (2025–2027)
+
 ☁️ Learning about cloud infrastructure, virtualization, networking, security, automation, and DevOps as part of my studies.  
 🚀 Also building **Cylro** – a modular AI-powered CMS & website builder.  
 
