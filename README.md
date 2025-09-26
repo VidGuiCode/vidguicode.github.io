@@ -1,16 +1,20 @@
-## Hi there 👋
+# 👋 Hi, I'm Guilherme
 
-<!--
-**VidGuiCode/VidGuiCode** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🎓 Student at **Lycée Guillaume Kroll (Luxembourg)**  
+📚 Currently enrolled in the **BTS Cloud Computing (2025–2027)**:contentReference[oaicite:3]{index=3}:contentReference[oaicite:4]{index=4}  
+☁️ Learning about cloud infrastructure, virtualization, networking, security, automation, and DevOps as part of my studies.  
+🚀 Also building **Cylro** – a modular AI-powered CMS & website builder.  
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 🌱 Focus Areas
+- Cloud computing fundamentals  
+- Linux & Windows system administration  
+- Networking (CCNA)  
+- Virtualization & containerization  
+- Task automation & Infrastructure as Code  
+- Cloud security & compliance  
+
+---
+
+✨ Always learning. Always building.  
