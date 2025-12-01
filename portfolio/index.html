@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Videira Marques | Cloud Engineer</title>
+    <meta name="description" content="Portfolio of Guilherme Videira Marques - Cloud Computing Student & Aspiring Cloud Engineer">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <nav class="navbar">
+        <div class="nav-brand">VIDGUICODE</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+        </div>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+            <i data-lucide="sun" class="sun-icon"></i>
+            <i data-lucide="moon" class="moon-icon"></i>
+        </button>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero-grid">
+            <div class="card hero-text">
+                <div class="badge">AVAILABLE FOR OPPORTUNITIES</div>
+                <h1>Guilherme<br>Videira Marques</h1>
+                <h2 class="subtitle">Cloud Computing Student & <br>Future Infrastructure Architect.</h2>
+                <p>Building reliable infrastructure, automating workflows, and turning ideas into polished web experiences. 19 years old, based in Luxembourg.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn primary">Get in Touch</a>
+                    <a href="#projects" class="btn secondary">View Work</a>
+                </div>
+            </div>
+            
+            <div class="card hero-image">
+                <img src="assets/img/hero-profile.jpg" alt="Guilherme Videira Marques" class="profile-img">
+            </div>
+
+            <div class="card stat-box">
+                <i data-lucide="server" class="accent-icon"></i>
+                <h3>Homelab</h3>
+                <p>Hybrid Infrastructure</p>
+            </div>
+
+            <div class="card stat-box">
+                <i data-lucide="cpu" class="accent-icon"></i>
+                <h3>DevOps</h3>
+                <p>Docker & CI/CD</p>
+            </div>
+
+            <div class="card stat-box">
+                <i data-lucide="globe" class="accent-icon"></i>
+                <h3>Network</h3>
+                <p>CCNA & Routing</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-grid">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="line"></div>
+            </div>
+            <div class="card about-content">
+                <p>I'm a cloud-computing enthusiast from <strong>Differdange, Luxembourg</strong>. Currently studying for my <strong>BTS Cloud Computing (2025–2027)</strong> at Lycée Guillaume Kroll, building on a solid foundation as a Computer Technician.</p>
+                <p>I don't just learn concepts; I build them. From hosting my own media infrastructure to developing AI-powered tools like <strong>Cylro</strong>, I'm obsessed with how systems work together.</p>
+                <p>Fluent in <strong>Portuguese, Luxembourgish, German, French, and English</strong>, I thrive in multicultural environments and love tackling complex problems.</p>
+            </div>
+            <div class="card about-image">
+                <img src="assets/img/formal-profile.jpg" alt="Guilherme Formal" class="profile-img-small">
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-grid">
+            <div class="section-header">
+                <h2>Technical Arsenal</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="card skill-category">
+                <div class="skill-header">
+                    <i data-lucide="cloud"></i>
+                    <h3>Cloud & DevOps</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>Docker / Docker Compose</li>
+                    <li>Virtualization (VirtualBox)</li>
+                    <li>Git & Version Control</li>
+                    <li>Caddy Reverse Proxy</li>
+                    <li>Oracle Cloud Gateway</li>
+                </ul>
+            </div>
+
+            <div class="card skill-category">
+                <div class="skill-header">
+                    <i data-lucide="network"></i>
+                    <h3>Networking</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>CCNA Fundamentals</li>
+                    <li>VLANs & Routing</li>
+                    <li>WireGuard / VPNs</li>
+                    <li>DNS Management (Cloudflare)</li>
+                    <li>Tailscale</li>
+                </ul>
+            </div>
+
+            <div class="card skill-category">
+                <div class="skill-header">
+                    <i data-lucide="terminal"></i>
+                    <h3>Programming</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>PowerShell / Bash</li>
+                    <li>JavaScript / Node.js</li>
+                    <li>HTML5 / CSS3</li>
+                    <li>PHP</li>
+                    <li>SQL (MySQL / PostgreSQL)</li>
+                </ul>
+            </div>
+
+            <div class="card skill-category">
+                <div class="skill-header">
+                    <i data-lucide="wrench"></i>
+                    <h3>Systems</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>Linux (Ubuntu/Debian)</li>
+                    <li>Windows Server</li>
+                    <li>Hardware Diagnostics</li>
+                    <li>IoT Integration</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-grid">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="card project-card">
+                <div class="project-icon">
+                    <i data-lucide="server-cog"></i>
+                </div>
+                <h3>Home Lab Personal Cloud</h3>
+                <p class="project-desc">A hybrid homelab infrastructure combining Raspberry Pi and VPS. Powers media streaming, dashboards, and AI utilities via secure tunnels.</p>
+                <div class="tags">
+                    <span>Docker</span>
+                    <span>WireGuard</span>
+                    <span>Caddy</span>
+                    <span>Raspberry Pi</span>
+                </div>
+            </div>
+
+            <div class="card project-card">
+                <div class="project-icon">
+                    <i data-lucide="sprout"></i>
+                </div>
+                <h3>Smart Plant IoT System</h3>
+                <p class="project-desc">Automated watering and lighting system with real-time sensor telemetry, a responsive web dashboard, and remote administration.</p>
+                <div class="tags">
+                    <span>IoT</span>
+                    <span>Web Dashboard</span>
+                    <span>Tailscale</span>
+                    <span>Sensors</span>
+                </div>
+            </div>
+
+            <div class="card project-card">
+                <div class="project-icon">
+                    <i data-lucide="layout"></i>
+                </div>
+                <h3>Cylro (In Development)</h3>
+                <p class="project-desc">A modular, AI-powered CMS and website builder designed to streamline content creation and site management.</p>
+                <div class="tags">
+                    <span>AI</span>
+                    <span>CMS</span>
+                    <span>Web Dev</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section-grid">
+            <div class="section-header">
+                <h2>Experience & Education</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="card experience-card">
+                <div class="exp-date">2025 — Present</div>
+                <h3>BTS Cloud Computing</h3>
+                <h4>Lycée Guillaume Kroll</h4>
+                <p>Higher Technical Diploma focused on advanced cloud infrastructure, virtualization, and network administration.</p>
+            </div>
+
+            <div class="card experience-card">
+                <div class="exp-date">Feb-Mar '23 & Sep-Oct '24</div>
+                <h3>IT Intern</h3>
+                <h4>PC Phone Service</h4>
+                <p>Diagnosed hardware/software issues, deployed OS images, and provided technical support in a fast-paced environment.</p>
+            </div>
+
+            <div class="card experience-card">
+                <div class="exp-date">2021 — 2025</div>
+                <h3>Computer Technician Diploma</h3>
+                <h4>Lycée Guillaume Kroll</h4>
+                <p>Graduated with "Very Good" mention. Final Project score: 59/60.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-grid">
+            <div class="section-header">
+                <h2>Let's Connect</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="card contact-card">
+                <p>Always open to discussing cloud technologies, infrastructure projects, or new opportunities.</p>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/guilherme-videira-marques/" target="_blank" class="contact-item">
+                        <i data-lucide="linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/VidGuiCode" target="_blank" class="contact-item">
+                        <i data-lucide="github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:Vidgu017@gmail.com" class="contact-item">
+                        <i data-lucide="mail"></i>
+                        <span>Vidgu017@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Guilherme Videira Marques.</p>
+        </footer>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-nav">
+            <a href="#home" aria-label="Home"><i data-lucide="home"></i></a>
+            <a href="#about" aria-label="About"><i data-lucide="user"></i></a>
+            <a href="#projects" aria-label="Projects"><i data-lucide="layers"></i></a>
+            <a href="#contact" aria-label="Contact"><i data-lucide="mail"></i></a>
+        </nav>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
