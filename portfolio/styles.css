@@ -248,6 +248,76 @@ a {
 [data-theme="dark"] .sun-icon { display: block; }
 [data-theme="dark"] .moon-icon { display: none; }
 
+/* Nav Controls Container */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Language Switcher */
+.lang-switcher {
+    position: relative;
+}
+
+#lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.75rem;
+}
+
+#lang-toggle .current-lang {
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 200;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.lang-switcher:hover .lang-dropdown,
+.lang-switcher:focus-within .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-dropdown button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.lang-dropdown button:hover {
+    background: var(--bg-secondary);
+}
+
+.lang-dropdown button[data-lang].active {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
 /* Cards (Squared Design) */
 .card {
     background: var(--card-bg);
@@ -706,10 +776,20 @@ h1 {
         display: none; /* Hide desktop links */
     }
     
-    #theme-toggle {
+    .nav-controls {
         position: absolute;
         right: 1rem;
         top: 1rem;
+        gap: 0.5rem;
+    }
+    
+    #lang-toggle .current-lang {
+        font-size: 0.65rem;
+    }
+    
+    .lang-dropdown {
+        right: 0;
+        min-width: 140px;
     }
     
     /* MOBILE BOTTOM NAV BAR */

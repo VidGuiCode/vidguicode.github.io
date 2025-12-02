@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const iconSun = document.querySelector('.sun-icon');
     const iconMoon = document.querySelector('.moon-icon');
 
+    // ==========================================
+    // THEME MANAGEMENT
+    // ==========================================
+    
     // Check for saved theme preference or system preference
     const savedTheme = localStorage.getItem('theme');
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -30,6 +34,87 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
     });
 
+    // ==========================================
+    // LANGUAGE / i18n MANAGEMENT
+    // ==========================================
+    
+    const langButtons = document.querySelectorAll('.lang-dropdown button[data-lang]');
+    const currentLangDisplay = document.querySelector('.current-lang');
+    const defaultLang = 'en';
+    
+    // Get saved language or default
+    const savedLang = localStorage.getItem('lang') || defaultLang;
+    
+    // Apply language on page load
+    setLanguage(savedLang);
+    
+    // Language button click handlers
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            setLanguage(lang);
+            localStorage.setItem('lang', lang);
+        });
+    });
+    
+    /**
+     * Set the page language and update all translatable elements
+     * @param {string} lang - Language code (en, pt, lu, de, fr)
+     */
+    function setLanguage(lang) {
+        // Update HTML lang attribute
+        htmlElement.setAttribute('lang', lang);
+        htmlElement.setAttribute('data-lang', lang);
+        
+        // Update current language display
+        if (currentLangDisplay) {
+            currentLangDisplay.textContent = lang.toUpperCase();
+        }
+        
+        // Update active state on dropdown buttons
+        langButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        
+        // Translate all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            const translation = getTranslation(key, lang);
+            
+            if (translation) {
+                // Check if element should use innerHTML (for elements with <strong> tags)
+                if (element.hasAttribute('data-i18n-html')) {
+                    element.innerHTML = translation;
+                } else {
+                    element.textContent = translation;
+                }
+            }
+        });
+    }
+    
+    /**
+     * Get translation for a key in the specified language
+     * @param {string} key - Translation key (e.g., "nav.about")
+     * @param {string} lang - Language code
+     * @returns {string|null} - Translated string or null if not found
+     */
+    function getTranslation(key, lang) {
+        // Check if translations object exists (loaded from translations.js)
+        if (typeof translations === 'undefined') {
+            console.warn('Translations not loaded');
+            return null;
+        }
+        
+        const entry = translations[key];
+        if (!entry) {
+            console.warn(`Translation key not found: ${key}`);
+            return null;
+        }
+        
+        // Return translation for language, fallback to English
+        return entry[lang] || entry['en'] || null;
+    }
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -55,25 +140,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Intersection Observer for "Power On" animations
     const observerOptions = {
-        threshold: 0.15, // Trigger when 15% visible
-        rootMargin: "0px 0px -50px 0px" // Offset a bit so it doesn't trigger too early at bottom
+        threshold: 0.1,
+        rootMargin: "0px"
     };
 
     const powerOnObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add the power-on class to trigger CSS animation
                 entry.target.classList.add('powered-on');
-                
-                // Optional: Stop observing once powered on (like a real boot sequence, it happens once)
                 powerOnObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Target all "rack units" (cards)
-    document.querySelectorAll('.card').forEach((card, index) => {
-        // We don't set opacity/transform here anymore, CSS handles the initial state
-        powerOnObserver.observe(card);
+    // Target all cards and node-cards
+    document.querySelectorAll('.card, .node-card').forEach((card) => {
+        // Immediately power-on elements already visible in viewport on load
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            card.classList.add('powered-on');
+        } else {
+            powerOnObserver.observe(card);
+        }
     });
 });

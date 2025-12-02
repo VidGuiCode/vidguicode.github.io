@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +16,7 @@
     
     <!-- Note: assets live under /portfolio/ in this repo -->
     <link rel="stylesheet" href="portfolio/styles.css">
+    <script src="portfolio/translations.js"></script>
 </head>
 <body>
     <div class="grid-background"></div>
@@ -23,28 +24,44 @@
     <nav class="navbar">
         <div class="nav-brand">VIDGUICODE</div>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
+
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#skills" data-i18n="nav.skills">Skills</a>
+            <a href="#projects" data-i18n="nav.projects">Projects</a>
+            <a href="#experience" data-i18n="nav.experience">Experience</a>
         </div>
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
-            <i data-lucide="sun" class="sun-icon"></i>
-            <i data-lucide="moon" class="moon-icon"></i>
-        </button>
+        <div class="nav-controls">
+            <div class="lang-switcher">
+                <button id="lang-toggle" class="icon-btn" aria-label="Change language">
+                    <i data-lucide="globe"></i>
+                    <span class="current-lang">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button data-lang="en">🇬🇧 English</button>
+                    <button data-lang="pt">🇵🇹 Português</button>
+                    <button data-lang="lu">🇱🇺 Lëtzebuergesch</button>
+                    <button data-lang="de">🇩🇪 Deutsch</button>
+                    <button data-lang="fr">🇫🇷 Français</button>
+                </div>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                <i data-lucide="sun" class="sun-icon"></i>
+                <i data-lucide="moon" class="moon-icon"></i>
+            </button>
+        </div>
     </nav>
 
     <main class="container">
         <!-- Hero Section -->
         <section id="home" class="hero-grid">
             <div class="card hero-text">
-                <div class="badge">AVAILABLE FOR OPPORTUNITIES</div>
+                <div class="badge" data-i18n="hero.badge">AVAILABLE FOR OPPORTUNITIES</div>
                 <h1>Guilherme<br>Videira Marques</h1>
-                <h2 class="subtitle">Cloud Computing Student & <br>Future Infrastructure Architect.</h2>
-                <p>Building reliable infrastructure, automating workflows, and turning ideas into polished web experiences. 19 years old, based in Luxembourg.</p>
+                <h2 class="subtitle" data-i18n="hero.subtitle">Cloud Computing Student & Future Infrastructure Architect.</h2>
+                <p data-i18n="hero.description">Building reliable infrastructure, automating workflows, and turning ideas into polished web experiences. 19 years old, based in Luxembourg.</p>
                 <div class="hero-actions">
-                    <a href="#contact" class="btn primary">Get in Touch</a>
-                    <a href="#projects" class="btn secondary">View Work</a>
+                    <a href="#contact" class="btn primary" data-i18n="hero.cta.contact">Get in Touch</a>
+                    <a href="#projects" class="btn secondary" data-i18n="hero.cta.work">View Work</a>
                 </div>
             </div>
             
@@ -54,56 +71,56 @@
 
             <div class="card stat-box">
                 <i data-lucide="server" class="accent-icon"></i>
-                <h3>Homelab</h3>
-                <p>Hybrid Infrastructure</p>
+                <h3 data-i18n="stat.homelab">Homelab</h3>
+                <p data-i18n="stat.homelab.desc">Hybrid Infrastructure</p>
             </div>
 
             <div class="card stat-box">
                 <i data-lucide="cpu" class="accent-icon"></i>
-                <h3>DevOps</h3>
-                <p>Docker & CI/CD</p>
+                <h3 data-i18n="stat.devops">DevOps</h3>
+                <p data-i18n="stat.devops.desc">Docker & CI/CD</p>
             </div>
 
             <div class="card stat-box">
                 <i data-lucide="globe" class="accent-icon"></i>
-                <h3>Network</h3>
-                <p>CCNA & Routing</p>
+                <h3 data-i18n="stat.network">Network</h3>
+                <p data-i18n="stat.network.desc">CCNA & Routing</p>
             </div>
 
             <div class="card stat-box">
                 <i data-lucide="code-2" class="accent-icon"></i>
-                <h3>Development</h3>
-                <p>Full Stack & AI</p>
+                <h3 data-i18n="stat.development">Development</h3>
+                <p data-i18n="stat.development.desc">Full Stack & AI</p>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="section-grid">
             <div class="section-header">
-                <h2>About Me</h2>
+                <h2 data-i18n="about.title">About Me</h2>
                 <div class="line"></div>
             </div>
             <div class="card about-content">
                 <div class="about-item">
                     <i data-lucide="map-pin"></i>
-                    <p>I'm a cloud-computing enthusiast from <strong>Differdange, Luxembourg</strong>. Currently studying for my <strong>BTS Cloud Computing (2025–2027)</strong> at Lycée Guillaume Kroll, building on a solid foundation as a Computer Technician.</p>
+                    <p data-i18n="about.p1" data-i18n-html>I'm a cloud-computing enthusiast from <strong>Differdange, Luxembourg</strong>. Currently studying for my <strong>BTS Cloud Computing (2025–2027)</strong> at Lycée Guillaume Kroll, building on a solid foundation as a Computer Technician.</p>
                 </div>
                 
                 <div class="about-item">
                     <i data-lucide="zap"></i>
-                    <p>I don't just learn concepts; I build them. From hosting my own media infrastructure to developing AI-powered tools like <strong>Cylro</strong>, I'm obsessed with how systems work together.</p>
+                    <p data-i18n="about.p2" data-i18n-html>I don't just learn concepts; I build them. From hosting my own media infrastructure to developing AI-powered tools like <strong>Cylro</strong>, I'm obsessed with how systems work together.</p>
                 </div>
                 
                 <div class="about-item">
                     <i data-lucide="languages"></i>
                     <div>
-                        <p style="margin-bottom: 0.75rem">Fluent in 5 languages, thriving in multicultural environments:</p>
+                        <p style="margin-bottom: 0.75rem" data-i18n="about.languages.intro">Fluent in 5 languages, thriving in multicultural environments:</p>
                         <div class="tags" style="margin: 0;">
-                            <span>Portuguese</span>
-                            <span>Luxembourgish</span>
-                            <span>German</span>
-                            <span>French</span>
-                            <span>English</span>
+                            <span data-i18n="about.languages.portuguese">Portuguese</span>
+                            <span data-i18n="about.languages.luxembourgish">Luxembourgish</span>
+                            <span data-i18n="about.languages.german">German</span>
+                            <span data-i18n="about.languages.french">French</span>
+                            <span data-i18n="about.languages.english">English</span>
                         </div>
                     </div>
                 </div>
@@ -116,62 +133,62 @@
         <!-- Skills Section -->
         <section id="skills" class="section-grid">
             <div class="section-header">
-                <h2>Technical Arsenal</h2>
+                <h2 data-i18n="skills.title">Technical Arsenal</h2>
                 <div class="line"></div>
             </div>
             
             <div class="card skill-category">
                 <div class="skill-header">
                     <i data-lucide="cloud"></i>
-                    <h3>Cloud & DevOps</h3>
+                    <h3 data-i18n="skills.cloud">Cloud & DevOps</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>Docker / Docker Compose</li>
-                    <li>Virtualization (VirtualBox)</li>
-                    <li>Git & Version Control</li>
-                    <li>Caddy Reverse Proxy</li>
-                    <li>Oracle Cloud Gateway</li>
+                    <li data-i18n="skills.cloud.1">Docker / Docker Compose</li>
+                    <li data-i18n="skills.cloud.2">Virtualization (VirtualBox)</li>
+                    <li data-i18n="skills.cloud.3">Git & Version Control</li>
+                    <li data-i18n="skills.cloud.4">Caddy Reverse Proxy</li>
+                    <li data-i18n="skills.cloud.5">Oracle Cloud Gateway</li>
                 </ul>
             </div>
 
             <div class="card skill-category">
                 <div class="skill-header">
                     <i data-lucide="network"></i>
-                    <h3>Networking</h3>
+                    <h3 data-i18n="skills.networking">Networking</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>CCNA Fundamentals</li>
-                    <li>VLANs & Routing</li>
-                    <li>WireGuard / VPNs</li>
-                    <li>DNS Management (Cloudflare)</li>
-                    <li>Tailscale</li>
+                    <li data-i18n="skills.networking.1">CCNA Fundamentals</li>
+                    <li data-i18n="skills.networking.2">VLANs & Routing</li>
+                    <li data-i18n="skills.networking.3">WireGuard / VPNs</li>
+                    <li data-i18n="skills.networking.4">DNS Management (Cloudflare)</li>
+                    <li data-i18n="skills.networking.5">Tailscale</li>
                 </ul>
             </div>
 
             <div class="card skill-category">
                 <div class="skill-header">
                     <i data-lucide="terminal"></i>
-                    <h3>Programming</h3>
+                    <h3 data-i18n="skills.programming">Programming</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>PowerShell / Bash</li>
-                    <li>JavaScript / Node.js</li>
-                    <li>HTML5 / CSS3</li>
-                    <li>PHP</li>
-                    <li>SQL (MySQL / PostgreSQL)</li>
+                    <li data-i18n="skills.programming.1">PowerShell / Bash</li>
+                    <li data-i18n="skills.programming.2">JavaScript / Node.js</li>
+                    <li data-i18n="skills.programming.3">HTML5 / CSS3</li>
+                    <li data-i18n="skills.programming.4">PHP</li>
+                    <li data-i18n="skills.programming.5">SQL (MySQL / PostgreSQL)</li>
                 </ul>
             </div>
 
             <div class="card skill-category">
                 <div class="skill-header">
                     <i data-lucide="wrench"></i>
-                    <h3>Systems</h3>
+                    <h3 data-i18n="skills.systems">Systems</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>Linux (Ubuntu/Debian)</li>
-                    <li>Windows Server</li>
-                    <li>Hardware Diagnostics</li>
-                    <li>IoT Integration</li>
+                    <li data-i18n="skills.systems.1">Linux (Ubuntu/Debian)</li>
+                    <li data-i18n="skills.systems.2">Windows Server</li>
+                    <li data-i18n="skills.systems.3">Hardware Diagnostics</li>
+                    <li data-i18n="skills.systems.4">IoT Integration</li>
                 </ul>
             </div>
         </section>
@@ -179,7 +196,7 @@
         <!-- Projects Section -->
         <section id="projects" class="section-grid">
             <div class="section-header">
-                <h2>Featured Projects</h2>
+                <h2 data-i18n="projects.title">Featured Projects</h2>
                 <div class="line"></div>
             </div>
 
@@ -188,8 +205,8 @@
                 <div class="project-icon">
                     <i data-lucide="server-cog"></i>
                 </div>
-                <h3>Home Lab Personal Cloud</h3>
-                <p class="project-desc">A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers media streaming, tools, and secure remote access.</p>
+                <h3 data-i18n="projects.homelab.title">Home Lab Personal Cloud</h3>
+                <p class="project-desc" data-i18n="projects.homelab.desc">A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers media streaming, tools, and secure remote access.</p>
                 <div class="tags">
                     <span>K3s</span>
                     <span>Docker</span>
@@ -197,7 +214,7 @@
                     <span>Tailscale</span>
                     <span>Cloudflare</span>
                 </div>
-                <a href="portfolio/project-homelab.html" class="btn-text" style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-primary); text-decoration: none; font-weight: 500;">
+                <a href="portfolio/project-homelab.html" class="btn-text" style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-primary); text-decoration: none; font-weight: 500;" data-i18n="projects.homelab.cta">
                     View Case Study <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
                 </a>
             </div>
@@ -206,8 +223,8 @@
                 <div class="project-icon">
                     <i data-lucide="sprout"></i>
                 </div>
-                <h3>Smart Plant Monitoring (PIF) <span style="font-size: 0.7rem; background: #22c55e; color: #fff; padding: 2px 8px; border-radius: 4px; margin-left: 0.5rem; vertical-align: middle;">59/60</span></h3>
-                <p class="project-desc">Final project: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.</p>
+                <h3><span data-i18n="projects.plant.title">Smart Plant Monitoring (PIF)</span> <span style="font-size: 0.7rem; background: #22c55e; color: #fff; padding: 2px 8px; border-radius: 4px; margin-left: 0.5rem; vertical-align: middle;">59/60</span></h3>
+                <p class="project-desc" data-i18n="projects.plant.desc">Final project: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.</p>
                 <div class="tags">
                     <span>IoT</span>
                     <span>ESP8266</span>
@@ -215,7 +232,7 @@
                     <span>MariaDB</span>
                     <span>Networking</span>
                 </div>
-                <a href="portfolio/project-pif.html" class="btn-text" style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-primary); text-decoration: none; font-weight: 500;">
+                <a href="portfolio/project-pif.html" class="btn-text" style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-primary); text-decoration: none; font-weight: 500;" data-i18n="projects.homelab.cta">
                     View Case Study <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
                 </a>
             </div>
@@ -224,8 +241,8 @@
                 <div class="project-icon">
                     <i data-lucide="layout"></i>
                 </div>
-                <h3>Cylro (In Development)</h3>
-                <p class="project-desc">A modular, AI-powered CMS and website builder designed to streamline content creation and site management.</p>
+                <h3 data-i18n="projects.cylro.title">Cylro (In Development)</h3>
+                <p class="project-desc" data-i18n="projects.cylro.desc">A modular, AI-powered CMS and website builder designed to streamline content creation and site management.</p>
                 <div class="tags">
                     <span>AI</span>
                     <span>CMS</span>
@@ -237,36 +254,36 @@
         <!-- Experience Section -->
         <section id="experience" class="section-grid">
             <div class="section-header">
-                <h2>Experience & Education</h2>
+                <h2 data-i18n="experience.title">Experience & Education</h2>
                 <div class="line"></div>
             </div>
 
             <div class="card experience-card">
-                <div class="exp-date">2025 — Present</div>
-                <h3>BTS Cloud Computing</h3>
-                <h4>Lycée Guillaume Kroll</h4>
-                <p>Higher Technical Diploma focused on advanced cloud infrastructure, virtualization, and network administration.</p>
+                <div class="exp-date" data-i18n="experience.bts.date">2025 — Present</div>
+                <h3 data-i18n="experience.bts.title">BTS Cloud Computing</h3>
+                <h4 data-i18n="experience.bts.company">Lycée Guillaume Kroll</h4>
+                <p data-i18n="experience.bts.desc">Higher Technical Diploma focused on advanced cloud infrastructure, virtualization, and network administration.</p>
             </div>
 
             <div class="card experience-card">
-                <div class="exp-date">Feb-Mar '23 & Sep-Oct '24</div>
-                <h3>IT Intern</h3>
-                <h4>PC Phone Service</h4>
-                <p>Diagnosed hardware/software issues, deployed OS images, and provided technical support in a fast-paced environment.</p>
+                <div class="exp-date" data-i18n="experience.intern.date">Feb-Mar '23 & Sep-Oct '24</div>
+                <h3 data-i18n="experience.intern.title">IT Intern</h3>
+                <h4 data-i18n="experience.intern.company">PC Phone Service</h4>
+                <p data-i18n="experience.intern.desc">Diagnosed hardware/software issues, deployed OS images, and provided technical support in a fast-paced environment.</p>
             </div>
 
             <div class="card experience-card">
-                <div class="exp-date">2021 — 2025</div>
-                <h3>Computer Technician Diploma</h3>
-                <h4>Lycée Guillaume Kroll</h4>
-                <p>Graduated with "Very Good" mention. Final Project score: 59/60.</p>
+                <div class="exp-date" data-i18n="experience.diploma.date">2021 — 2025</div>
+                <h3 data-i18n="experience.diploma.title">Computer Technician Diploma</h3>
+                <h4 data-i18n="experience.diploma.company">Lycée Guillaume Kroll</h4>
+                <p data-i18n="experience.diploma.desc">Graduated with "Very Good" mention. Final Project score: 59/60.</p>
             </div>
         </section>
 
         <!-- Certifications Section -->
         <section id="certifications" class="section-grid">
             <div class="section-header">
-                <h2>Certifications & Training</h2>
+                <h2 data-i18n="certifications.title">Certifications & Training</h2>
                 <div class="line"></div>
             </div>
 
@@ -275,8 +292,8 @@
                     <i data-lucide="award"></i>
                 </div>
                 <div class="cert-info">
-                    <h3>Microsoft AZ-900</h3>
-                    <p class="cert-status">Azure Fundamentals — In Progress</p>
+                    <h3 data-i18n="cert.az900.title">Microsoft AZ-900</h3>
+                    <p class="cert-status" data-i18n="cert.az900.status">Azure Fundamentals — In Progress</p>
                 </div>
             </div>
 
@@ -285,8 +302,8 @@
                     <i data-lucide="network"></i>
                 </div>
                 <div class="cert-info">
-                    <h3>CCNA Modules</h3>
-                    <p class="cert-status">Networking Fundamentals — Completed in School</p>
+                    <h3 data-i18n="cert.ccna.title">CCNA Modules</h3>
+                    <p class="cert-status" data-i18n="cert.ccna.status">Networking Fundamentals — Completed in School</p>
                 </div>
             </div>
 
@@ -295,8 +312,8 @@
                     <i data-lucide="file-text"></i>
                 </div>
                 <div class="cert-info">
-                    <h3>MOS Word Associate</h3>
-                    <p class="cert-status">Microsoft 365 Apps — Nov 2025</p>
+                    <h3 data-i18n="cert.word.title">MOS Word Associate</h3>
+                    <p class="cert-status" data-i18n="cert.word.status">Microsoft 365 Apps — Nov 2025</p>
                 </div>
             </div>
 
@@ -305,8 +322,8 @@
                     <i data-lucide="presentation"></i>
                 </div>
                 <div class="cert-info">
-                    <h3>MOS PowerPoint Associate</h3>
-                    <p class="cert-status">Microsoft 365 Apps — Oct 2025</p>
+                    <h3 data-i18n="cert.ppt.title">MOS PowerPoint Associate</h3>
+                    <p class="cert-status" data-i18n="cert.ppt.status">Microsoft 365 Apps — Oct 2025</p>
                 </div>
             </div>
         </section>
@@ -314,12 +331,12 @@
         <!-- Contact Section -->
         <section id="contact" class="section-grid">
             <div class="section-header">
-                <h2>Let's Connect</h2>
+                <h2 data-i18n="contact.title">Let's Connect</h2>
                 <div class="line"></div>
             </div>
             
             <div class="card contact-card">
-                <p>Always open to discussing cloud technologies, infrastructure projects, or new opportunities.</p>
+                <p data-i18n="contact.description">Always open to discussing cloud technologies, infrastructure projects, or new opportunities.</p>
                 <div class="contact-links">
                     <a href="https://www.linkedin.com/in/guilherme-videira-marques/" target="_blank" class="contact-item">
                         <i data-lucide="linkedin"></i>
@@ -334,7 +351,7 @@
         </section>
 
         <footer>
-            <p>&copy; 2025 Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
         </footer>
 
         <!-- Mobile Bottom Navigation -->

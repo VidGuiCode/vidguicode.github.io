@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <link rel="stylesheet" href="styles.css">
+    <script src="translations.js"></script>
     <style>
         /* Project Page Specific Styles */
         .project-hero {
@@ -118,23 +119,42 @@
         <div class="nav-brand">VIDGUICODE</div>
         <div class="nav-links">
         </div>
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
-            <i data-lucide="sun" class="sun-icon"></i>
-            <i data-lucide="moon" class="moon-icon"></i>
-        </button>
+        <div class="nav-controls">
+            <div class="lang-switcher">
+                <button id="lang-toggle" class="icon-btn" aria-label="Change language">
+                    <i data-lucide="globe"></i>
+                    <span class="current-lang">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button data-lang="en">🇬🇧 English</button>
+                    <button data-lang="pt">🇵🇹 Português</button>
+                    <button data-lang="lu">🇱🇺 Lëtzebuergesch</button>
+                    <button data-lang="de">🇩🇪 Deutsch</button>
+                    <button data-lang="fr">🇫🇷 Français</button>
+                </div>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                <i data-lucide="sun" class="sun-icon"></i>
+                <i data-lucide="moon" class="moon-icon"></i>
+            </button>
+        </div>
     </nav>
 
     <main class="container" style="padding-top: 100px;">
         
         <a href="../index.html#projects" class="back-link">
-            <i data-lucide="arrow-left"></i> Back to Portfolio
+            <i data-lucide="arrow-left"></i>
+            <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
         </a>
 
         <section class="project-hero">
             <div class="project-title-group">
-                <div class="badge">FINAL PROJECT</div>
-                <h1>Smart Plant Monitoring <span class="score-badge">59/60</span></h1>
-                <p class="subtitle">A complete IoT system for automated plant care — from hardware to web dashboard.</p>
+                <div class="badge" data-i18n="project.pif.badge">FINAL PROJECT</div>
+                <h1>
+                    <span data-i18n="projects.plant.title">Smart Plant Monitoring (PIF)</span>
+                    <span class="score-badge">59/60</span>
+                </h1>
+                <p class="subtitle" data-i18n="projects.plant.desc">Final project: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.</p>
             </div>
         </section>
 
@@ -258,7 +278,7 @@
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <h3>Tech Stack</h3>
+                    <h3 data-i18n="project.sidebar.techStack">Tech Stack</h3>
                     <div class="line"></div>
                     <ul class="tech-stack-list">
                         <li><i data-lucide="cpu"></i> ESP8266 (Wemos D1 Mini)</li>
@@ -271,7 +291,7 @@
                         <li><i data-lucide="terminal"></i> Bash Automation</li>
                     </ul>
 
-                    <h3 style="margin-top: 2rem;">Sensors & Actuators</h3>
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.sensors">Sensors & Actuators</h3>
                     <div class="line"></div>
                     <ul class="skill-list" style="margin-top: 1rem;">
                         <li>DHT22 (Temp/Humidity)</li>
@@ -283,7 +303,7 @@
                         <li>RGB Status LED</li>
                     </ul>
 
-                    <h3 style="margin-top: 2rem;">Key Features</h3>
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
                     <div class="line"></div>
                     <ul class="skill-list" style="margin-top: 1rem;">
                         <li>Real-time Dashboard</li>
@@ -297,7 +317,7 @@
         </div>
 
         <footer style="margin-top: 4rem;">
-            <p>&copy; 2025 Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
         </footer>
     </main>
 
