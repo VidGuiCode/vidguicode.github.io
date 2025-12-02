@@ -296,6 +296,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
     /* Removed grayscale filter */
     transition: transform 0.3s;
 }
@@ -536,6 +537,43 @@ h1 {
     color: var(--text-secondary);
 }
 
+/* Certifications */
+.cert-card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.cert-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.cert-icon i {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-primary, var(--led-blue));
+}
+
+.cert-info h3 {
+    margin-bottom: 0.25rem;
+}
+
+.cert-status {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
 /* Contact */
 .contact-card {
     grid-column: span 4;
@@ -619,6 +657,11 @@ h1 {
     .experience-card .exp-date {
         margin-bottom: 0.25rem;
         color: var(--led-blue); /* Highlight date on mobile for better scanning */
+    }
+
+    /* Fix Cert Cards on Mobile */
+    .cert-card {
+        grid-column: span 4;
     }
 
     /* Mobile Top Nav - Simplified */

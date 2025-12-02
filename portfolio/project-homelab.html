@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Lab Personal Cloud | VidGuiCode</title>
+    <meta name="description" content="Deep dive into my Hybrid Homelab Infrastructure - Raspberry Pi, VPS, Docker, and WireGuard.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Project Page Specific Styles */
+        .project-hero {
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        .project-title-group h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .project-meta-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .project-meta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .project-sidebar .card {
+            position: sticky;
+            top: 100px;
+        }
+        .tech-stack-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+        .tech-stack-list li i {
+            color: var(--accent-primary);
+            width: 18px;
+            height: 18px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-secondary);
+        }
+        article h2 {
+            margin-top: 1.5rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--accent-primary);
+        }
+        article h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 1rem;
+        }
+        article p, article li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <nav class="navbar">
+        <div class="nav-brand">VIDGUICODE</div>
+        <div class="nav-links">
+        </div>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+            <i data-lucide="sun" class="sun-icon"></i>
+            <i data-lucide="moon" class="moon-icon"></i>
+        </button>
+    </nav>
+
+    <main class="container" style="padding-top: 100px;">
+        
+        <a href="../index.html#projects" class="back-link">
+            <i data-lucide="arrow-left"></i> Back to Portfolio
+        </a>
+
+        <section class="project-hero">
+            <div class="project-title-group">
+                <div class="badge">INFRASTRUCTURE</div>
+                <h1>Home Lab Personal Cloud</h1>
+                <p class="subtitle">A hybrid infrastructure combining local power with cloud scalability.</p>
+            </div>
+        </section>
+
+        <div class="project-meta-grid">
+            <!-- Main Content -->
+            <article>
+                <div class="card">
+                    <i data-lucide="server" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <h2>The "Small but Mighty" Setup</h2>
+                    <p>This isn't a noisy server rack in a basement—it's a silent, efficient cluster sitting right on my desk. A hybrid of 3 nodes that started as a way to learn Docker but grew into a capable personal cloud.</p>
+                    
+                    <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
+                        
+                        <!-- Pi Node: DeskPi Design Style (Dark, Vented, Red Accent) -->
+                        <div class="node-card pi-style" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <!-- Vent texture simulation -->
+                            <div style="height: 12px; width: 100%; background: repeating-linear-gradient(90deg, #111, #111 4px, #222 4px, #222 8px);"></div>
+                            
+                            <div style="padding: 1.5rem; position: relative;">
+                                <div style="position: absolute; top: 0; right: 1.5rem; width: 40px; height: 4px; background: #ef4444; border-radius: 0 0 4px 4px;"></div>
+                                
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;">Primary Node</h3>
+                                        <div style="font-family: monospace; color: #ef4444; margin-bottom: 0.75rem;">arm64 / raspberry-pi-5</div>
+                                    </div>
+                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #888;">
+                                        <div>4 cores</div>
+                                        <div style="font-weight: 600; color: #ef4444;">8GB RAM</div>
+                                    </div>
+                                </div>
+                                <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                    The heart of the cluster. Efficient, silent, and always on. Handles orchestration and lightweight services.
+                                </p>
+                            </div>
+                            <div style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; font-size: 0.75rem; color: #555; font-family: monospace;">
+                                <span>[MASTER]</span> <span>[ARM64]</span> <span>[LOW-POWER]</span>
+                            </div>
+                        </div>
+
+                        <!-- Laptop Node: Darker Silver Metallic -->
+                        <div class="node-card laptop-style" style="background: linear-gradient(135deg, #9ca3af 0%, #d1d5db 100%); border-radius: 12px; overflow: hidden; border: 1px solid #6b7280; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); color: #1f2937;">
+                            <!-- Metallic Hinge/Header -->
+                            <div style="height: 20px; background: linear-gradient(to bottom, #6b7280, #9ca3af); border-bottom: 1px solid #4b5563;"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #111827; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;">Worker Node</h3>
+                                        <div style="font-family: monospace; color: #374151; margin-bottom: 0.75rem;">amd64 / ryzen-5-5600u</div>
+                                    </div>
+                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #374151;">
+                                        <div>6 cores</div>
+                                        <div style="font-weight: 600;">16GB RAM</div>
+                                    </div>
+                                </div>
+                                <p style="color: #374151; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                    The heavy lifter. Repurposed x86 laptop acting as the muscle for demanding containers. Built-in battery serves as a dedicated UPS.
+                                </p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.08); padding: 0.75rem 1.5rem; border-top: 1px solid #6b7280; display: flex; gap: 1rem; font-size: 0.75rem; color: #374151; font-family: monospace;">
+                                <span>[WORKER]</span> <span>[X86_64]</span> <span>[BATTERY-UPS]</span>
+                            </div>
+                        </div>
+
+                        <!-- Oracle Cloud VPS: Cloud/Gradient Style -->
+                        <div class="node-card cloud-style" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); border-radius: 12px; overflow: hidden; border: 1px solid #3b82f6; position: relative; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
+                            <!-- Cloud header with glow -->
+                            <div style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6); background-size: 200% 100%; animation: shimmer 3s linear infinite;"></div>
+                            <style>@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }</style>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;">Cloud Gateway</h3>
+                                        <div style="font-family: monospace; color: #60a5fa; margin-bottom: 0.75rem;">arm64 / oracle-ampere</div>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="font-family: monospace; font-size: 0.8rem; color: #94a3b8;">
+                                            <div>4 cores</div>
+                                            <div style="font-weight: 600; color: #60a5fa;">24GB RAM</div>
+                                        </div>
+                                        <div style="margin-top: 0.5rem; font-size: 0.7rem; background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 2px 8px; border-radius: 10px; display: inline-block;">FREE TIER</div>
+                                    </div>
+                                </div>
+                                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                    The public face. Handles ingress, reverse proxy, and secure tunneling. Connects the home cluster to the world.
+                                </p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; font-size: 0.75rem; color: #64748b; font-family: monospace;">
+                                <span>[GATEWAY]</span> <span>[CADDY]</span> <span>[WIREGUARD]</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <h2>What It Does</h2>
+                    <p>The system powers a variety of critical services:</p>
+                    <ul class="feature-list">
+                        <li><strong>Media Streaming</strong>: Self-hosted solution for movies, shows, and music with a user-friendly interface (starting with Jellyfin).</li>
+                        <li><strong>Secure Access</strong>: Uses Tailscale and WireGuard for encrypted, reliable connections without exposing ports.</li>
+                        <li><strong>AI Utilities & Tools</strong>: Experimental scripts, automation, web tools, and apps—all built and hosted on this infrastructure.</li>
+                    </ul>
+
+                    <h2>Why I Built It</h2>
+                    <p>I needed a sandbox to break things safely. This was my <strong>first real personal project</strong> that pushed me beyond tutorials and into actual problem-solving. It’s where I truly learned how Docker containers communicate, how to secure a network with Tailscale, and how to manage resources on constrained hardware.</p>
+                    <p>It’s small, but it’s cool. It taught me that you don't need enterprise gear to build enterprise-grade skills.</p>
+
+                    <h2>Lessons Learned</h2>
+                    <ul class="feature-list">
+                        <li><strong>ARM has quirks</strong> — Not all Docker images support ARM64. Finding compatible alternatives and tweaking configs taught me to read docs carefully.</li>
+                        <li><strong>DNS is powerful</strong> — Managing records in Cloudflare and understanding how traffic flows made the whole system click.</li>
+                        <li><strong>Start small, iterate fast</strong> — This setup grew organically. Each problem solved unlocked the next improvement.</li>
+                        <li><strong>Cost-conscious infrastructure</strong> — Running on low-power devices and free-tier cloud taught me to optimize before scaling.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="project-sidebar">
+                <div class="card">
+                    <h3>Tech Stack</h3>
+                    <div class="line"></div>
+                    <ul class="tech-stack-list">
+                        <li><i data-lucide="server"></i> K3s Cluster (Pi + Laptop)</li>
+                        <li><i data-lucide="cloud"></i> VPS (Oracle Cloud)</li>
+                        <li><i data-lucide="box"></i> Docker & Compose</li>
+                        <li><i data-lucide="shield"></i> Tailscale & WireGuard</li>
+                        <li><i data-lucide="globe"></i> Caddy Reverse Proxy</li>
+                        <li><i data-lucide="cloud-cog"></i> Cloudflare DNS</li>
+                        <li><i data-lucide="terminal"></i> Bash Automation</li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;">Key Features</h3>
+                    <div class="line"></div>
+                    <ul class="skill-list" style="margin-top: 1rem;">
+                        <li>Hybrid Architecture</li>
+                        <li>Secure Tunneling</li>
+                        <li>Scalable Design</li>
+                        <li>Self-Hosted Media</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <footer style="margin-top: 4rem;">
+            <p>&copy; 2025 Guilherme Videira Marques.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
