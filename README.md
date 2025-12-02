@@ -27,6 +27,5 @@ I build reliable infrastructure, automate workflows, and turn ideas into polishe
 ### 📫 Connect with me
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/guilherme-videira-marques/)
-- 📧 [Vidgu017@gmail.com](mailto:Vidgu017@gmail.com)
 
 _Always learning. Always building._
