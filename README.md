@@ -1,21 +1,32 @@
-# 👋 Hi, I'm Guilherme
+# Hi, I'm Guilherme 👋
 
-🎓 Student at **Lycée Guillaume Kroll (Luxembourg)**  
-📚 Currently enrolled in the **BTS Cloud Computing (2025–2027)
+**Cloud Computing Student & Future Infrastructure Architect**  
+Based in Luxembourg 🇱🇺
 
-☁️ Learning about cloud infrastructure, virtualization, networking, security, automation, and DevOps as part of my studies.  
-🚀 Also building **Cylro** – a modular AI-powered CMS & website builder.  
-
----
-
-### 🌱 Focus Areas
-- Cloud computing fundamentals  
-- Linux & Windows system administration  
-- Networking (CCNA)  
-- Virtualization & containerization  
-- Task automation & Infrastructure as Code  
-- Cloud security & compliance  
+🌐 **[Visit my Portfolio Website](https://vidguicode.github.io/VidGuiCode/)**
 
 ---
 
-✨ Always learning. Always building.  
+I build reliable infrastructure, automate workflows, and turn ideas into polished web experiences. Currently studying **BTS Cloud Computing (2025–2027)** at Lycée Guillaume Kroll.
+
+### 🛠️ Technical Arsenal
+
+- **Cloud & DevOps**: Docker, VirtualBox, Git, Caddy, Oracle Cloud
+- **Networking**: CCNA, WireGuard/VPNs, DNS, Tailscale
+- **Programming**: JS/Node.js, PowerShell/Bash, PHP, SQL
+- **Systems**: Linux (Ubuntu/Debian), Windows Server, IoT
+
+### 🚀 Featured Projects
+
+- **Home Lab Cloud**: Hybrid infrastructure with Raspberry Pi & VPS.
+- **Smart Plant IoT**: Automated monitoring with real-time telemetry.
+- **Cylro**: Modular, AI-powered CMS (In Development).
+
+---
+
+### 📫 Connect with me
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/guilherme-videira-marques/)
+- 📧 [Vidgu017@gmail.com](mailto:Vidgu017@gmail.com)
+
+_Always learning. Always building._

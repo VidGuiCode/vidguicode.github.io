@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Plant Monitoring (PIF) | VidGuiCode</title>
+    <meta name="description" content="Deep dive into my PIF Final Project - IoT plant monitoring system with ESP8266, Raspberry Pi, and full-stack web development.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <script src="translations.js"></script>
+    <style>
+        /* Project Page Specific Styles */
+        .project-hero {
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        .project-title-group h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .project-meta-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .project-meta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .project-sidebar .card {
+            position: sticky;
+            top: 100px;
+        }
+        .tech-stack-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+        .tech-stack-list li i {
+            color: var(--accent-primary);
+            width: 18px;
+            height: 18px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-secondary);
+        }
+        article h2 {
+            margin-top: 1.5rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--accent-primary);
+        }
+        article h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 1rem;
+        }
+        article p, article li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+        }
+        .score-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <nav class="navbar">
+        <div class="nav-brand">VIDGUICODE</div>
+        <div class="nav-links">
+        </div>
+        <div class="nav-controls">
+            <div class="lang-switcher">
+                <button id="lang-toggle" class="icon-btn" aria-label="Change language">
+                    <i data-lucide="globe"></i>
+                    <span class="current-lang">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button data-lang="en">🇬🇧 English</button>
+                    <button data-lang="pt">🇵🇹 Português</button>
+                    <button data-lang="lu">🇱🇺 Lëtzebuergesch</button>
+                    <button data-lang="de">🇩🇪 Deutsch</button>
+                    <button data-lang="fr">🇫🇷 Français</button>
+                </div>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                <i data-lucide="sun" class="sun-icon"></i>
+                <i data-lucide="moon" class="moon-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 100px;">
+        
+        <a href="../index.html#projects" class="back-link">
+            <i data-lucide="arrow-left"></i>
+            <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
+        </a>
+
+        <section class="project-hero">
+            <div class="project-title-group">
+                <div class="badge" data-i18n="project.pif.badge">FINAL PROJECT</div>
+                <h1>
+                    <span data-i18n="projects.plant.title">Smart Plant Monitoring (PIF)</span>
+                    <span class="score-badge">59/60</span>
+                </h1>
+                <p class="subtitle" data-i18n="projects.plant.desc">Final project: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.</p>
+            </div>
+        </section>
+
+        <div class="project-meta-grid">
+            <!-- Main Content -->
+            <article>
+                <div class="card">
+                    <i data-lucide="sprout" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <h2>The "Plantimeter" System</h2>
+                    <p>This was my <strong>PIF (Projet Intégré Final)</strong> — the capstone project for my Computer Technician diploma. I built a complete IoT plant monitoring and automation system from scratch: hardware nodes, firmware, backend server, web dashboard, and enterprise networking.</p>
+                    
+                    <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
+                        
+                        <!-- Node Card: ESP8266 -->
+                        <div class="node-card" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #22c55e, #16a34a);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Sensor Node</h3>
+                                        <div style="font-family: monospace; color: #22c55e; margin-bottom: 0.75rem;">ESP8266 / Wemos D1 Mini</div>
+                                    </div>
+                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #888;">
+                                        <div>Custom PCB</div>
+                                        <div style="font-weight: 600; color: #22c55e;">Wi-Fi + SQL</div>
+                                    </div>
+                                </div>
+                                <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                    Measures soil moisture, temperature, humidity, and light. Controls water pump and grow LED. Authenticates via MAC address and syncs with the hub.
+                                </p>
+                            </div>
+                            <div style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; font-size: 0.75rem; color: #555; font-family: monospace;">
+                                <span>[DHT22]</span> <span>[BH1750]</span> <span>[SEN0193]</span> <span>[ULN2803]</span>
+                            </div>
+                        </div>
+
+                        <!-- Hub Card: Raspberry Pi -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); border-radius: 12px; overflow: hidden; border: 1px solid #3b82f6; position: relative; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Hub Server</h3>
+                                        <div style="font-family: monospace; color: #60a5fa; margin-bottom: 0.75rem;">Raspberry Pi 4 / FullpageOS</div>
+                                    </div>
+                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #94a3b8;">
+                                        <div>Touchscreen</div>
+                                        <div style="font-weight: 600; color: #60a5fa;">LAMP Stack</div>
+                                    </div>
+                                </div>
+                                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                    Runs Apache, PHP, MariaDB. Hosts admin dashboard, touch UI for kiosk mode, and log API. Handles task scheduling and node management.
+                                </p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; font-size: 0.75rem; color: #64748b; font-family: monospace;">
+                                <span>[APACHE]</span> <span>[MARIADB]</span> <span>[PHP]</span> <span>[SSL]</span>
+                            </div>
+                        </div>
+
+                        <!-- Backup Server Card -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #9ca3af 0%, #d1d5db 100%); border-radius: 12px; overflow: hidden; border: 1px solid #6b7280; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); color: #1f2937;">
+                            <div style="height: 4px; background: linear-gradient(90deg, #6b7280, #9ca3af);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #111827; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Backup Server</h3>
+                                        <div style="font-family: monospace; color: #374151; margin-bottom: 0.75rem;">Ubuntu Server VM / RAID1</div>
+                                    </div>
+                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #374151;">
+                                        <div>2× 30GB</div>
+                                        <div style="font-weight: 600;">Mirrored</div>
+                                    </div>
+                                </div>
+                                <p style="color: #374151; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                    Receives daily backups via rsync over SSH. Stores database dumps, logs, and web content with 30-day rotation.
+                                </p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.08); padding: 0.75rem 1.5rem; border-top: 1px solid #6b7280; display: flex; gap: 1rem; font-size: 0.75rem; color: #374151; font-family: monospace;">
+                                <span>[RAID1]</span> <span>[RSYNC]</span> <span>[CRON]</span> <span>[UFW]</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <h2>What It Does</h2>
+                    <p>The system automates plant care and provides real-time monitoring:</p>
+                    <ul class="feature-list">
+                        <li><strong>Environmental Sensing</strong>: Measures soil moisture, air temperature, humidity, and ambient light using calibrated sensors.</li>
+                        <li><strong>Automated Watering</strong>: Triggers the water pump based on soil moisture thresholds or scheduled tasks.</li>
+                        <li><strong>Grow Light Control</strong>: Activates 1W LED when light levels drop below optimal range.</li>
+                        <li><strong>Web Dashboard</strong>: Admin panel with real-time charts (ApexCharts), task scheduling, user management, and log viewer.</li>
+                        <li><strong>Touch Kiosk UI</strong>: Simplified interface for the Raspberry Pi touchscreen display.</li>
+                    </ul>
+
+                    <h2>The Network</h2>
+                    <p>I designed and configured a complete enterprise-style network in Cisco Packet Tracer:</p>
+                    <ul class="feature-list">
+                        <li><strong>Firmennetzwerk</strong>: VLANs (10/20), DHCP server, ISR4331 router with NAT/PAT and ACLs.</li>
+                        <li><strong>Heimnetzwerk</strong>: Separate WLAN for nodes (PlantimeterAP) with WPA2-PSK, routed to the firm network.</li>
+                        <li><strong>ISP Simulation</strong>: Dedicated router simulating internet provider with DNS (Google 8.8.8.8) and fiber link.</li>
+                        <li><strong>Security</strong>: Port-based ACLs, NAT for web/FTP access, proper routing tables.</li>
+                    </ul>
+
+                    <h2>Why I Built It</h2>
+                    <p>This was my <strong>final exam project</strong> for the Computer Technician diploma. It had to demonstrate skills across hardware, software, networking, and documentation. I chose to go beyond the requirements — implementing "Should" and "Could" features, plus my own innovations like fuzzy search and a 80°C safety cutoff.</p>
+                    <p>The project was developed in sprints (A1–A7 for hardware/firmware, L1–L7 for server/network), each with clear goals, tests, and documented difficulties. The final documentation was over 100 pages.</p>
+
+                    <h2>Lessons Learned</h2>
+                    <ul class="feature-list">
+                        <li><strong>Hardware debugging is humbling</strong> — Swapped resistors, wrong pin soldering, and sensor calibration taught me patience and attention to detail.</li>
+                        <li><strong>Full-stack means full responsibility</strong> — From PCB to PHP, every layer had to work together. One bug anywhere breaks everything.</li>
+                        <li><strong>Documentation is a skill</strong> — Writing 100+ pages of structured documentation with user stories, diagrams, and test results was as challenging as the code.</li>
+                        <li><strong>Security matters from day one</strong> — Fail2Ban, SSL, UFW, prepared statements — I learned to think about security at every layer.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="project-sidebar">
+                <div class="card">
+                    <h3 data-i18n="project.sidebar.techStack">Tech Stack</h3>
+                    <div class="line"></div>
+                    <ul class="tech-stack-list">
+                        <li><i data-lucide="cpu"></i> ESP8266 (Wemos D1 Mini)</li>
+                        <li><i data-lucide="server"></i> Raspberry Pi 4</li>
+                        <li><i data-lucide="database"></i> MariaDB + phpMyAdmin</li>
+                        <li><i data-lucide="globe"></i> Apache + PHP</li>
+                        <li><i data-lucide="shield"></i> SSL, Fail2Ban, UFW</li>
+                        <li><i data-lucide="network"></i> Cisco Networking (VLANs, NAT)</li>
+                        <li><i data-lucide="hard-drive"></i> RAID1 Backup Server</li>
+                        <li><i data-lucide="terminal"></i> Bash Automation</li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.sensors">Sensors & Actuators</h3>
+                    <div class="line"></div>
+                    <ul class="skill-list" style="margin-top: 1rem;">
+                        <li>DHT22 (Temp/Humidity)</li>
+                        <li>BH1750 (Light)</li>
+                        <li>SEN0193 (Soil Moisture)</li>
+                        <li>ULN2803 Driver</li>
+                        <li>Water Pump</li>
+                        <li>1W Grow LED</li>
+                        <li>RGB Status LED</li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
+                    <div class="line"></div>
+                    <ul class="skill-list" style="margin-top: 1rem;">
+                        <li>Real-time Dashboard</li>
+                        <li>Task Scheduling</li>
+                        <li>Automated Backups</li>
+                        <li>Fuzzy Search</li>
+                        <li>80°C Safety Cutoff</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <footer style="margin-top: 4rem;">
+            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
