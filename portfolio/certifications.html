@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications & Badges | VidGuiCode</title>
+    <meta name="description" content="Professional certifications and badges earned by Guilherme Videira Marques - Microsoft Azure, Office Specialist, and more.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Flags -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="translations.js"></script>
+    <script src="certifications-data.js"></script>
+    
+    <style>
+        /* Certifications Page - Following Portfolio Design Language */
+        
+        .certifications-hero {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .certifications-hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+        }
+
+        .certifications-hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Stats Row - Card Style */
+        .stats-row {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            min-width: 200px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-2px);
+            border-color: var(--text-primary);
+        }
+
+        .stat-box i {
+            width: 32px;
+            height: 32px;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .stat-box h3 {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-box p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Filter Controls - Simple Buttons */
+        .filter-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover {
+            background: var(--bg-secondary);
+        }
+
+        .filter-btn.active {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            border-color: var(--text-primary);
+        }
+
+        /* Certifications List - Compact Table Structure */
+        .certifications-list {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Certification Row */
+        .cert-row {
+            display: grid;
+            grid-template-columns: 80px 1fr auto auto;
+            gap: 1.5rem;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+
+        .cert-row:last-child {
+            border-bottom: none;
+        }
+
+        .cert-row:hover {
+            background: var(--bg-secondary);
+            border-color: var(--text-primary);
+        }
+
+        /* Badge Thumbnail */
+        .cert-badge-thumb {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        /* Certification Info */
+        .cert-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 0;
+        }
+
+        .cert-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .cert-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .cert-provider {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .cert-provider i {
+            width: 14px;
+            height: 14px;
+        }
+
+        .cert-category {
+            padding: 0.2rem 0.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            font-size: 0.75rem;
+        }
+
+        /* Level Badge - Using Certification Level Colors */
+        .cert-level {
+            padding: 0.4rem 0.75rem;
+            border: 1px solid;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cert-level i {
+            width: 16px;
+            height: 16px;
+        }
+
+        .level-advanced {
+            color: #dc2626;
+            border-color: #dc2626;
+            background: rgba(220, 38, 38, 0.1);
+        }
+
+        .level-intermediate {
+            color: #2563eb;
+            border-color: #2563eb;
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .level-beginner {
+            color: #059669;
+            border-color: #059669;
+            background: rgba(5, 150, 105, 0.1);
+        }
+
+        /* Status Badges */
+        .status-badge {
+            padding: 0.2rem 0.5rem;
+            border: 1px solid;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .status-in-progress {
+            color: #f59e0b;
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        .status-in-progress i {
+            width: 12px;
+            height: 12px;
+        }
+
+        /* Actions Column */
+        .cert-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .cert-action-icon {
+            padding: 0.5rem;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .cert-action-icon:hover {
+            background: var(--bg-secondary);
+            border-color: var(--text-primary);
+        }
+
+        .cert-action-icon i {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .cert-row {
+                grid-template-columns: 60px 1fr;
+                gap: 1rem;
+            }
+
+            .cert-level {
+                grid-column: 2;
+                justify-self: start;
+            }
+
+            .cert-actions {
+                grid-column: 2;
+                justify-self: start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cert-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cert-badge-thumb {
+                margin: 0 auto;
+            }
+
+            .cert-info {
+                align-items: center;
+            }
+
+            .cert-meta {
+                justify-content: center;
+            }
+
+            .cert-level,
+            .cert-actions {
+                grid-column: 1;
+                justify-self: center;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: var(--bg-secondary);
+        }
+
+        .modal-header {
+            margin-bottom: 1.5rem;
+            padding-right: 2rem;
+        }
+
+        .modal-header h2 {
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        .modal-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.35rem 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            font-size: 0.85rem;
+        }
+
+        .project-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-list li {
+            margin-bottom: 0.75rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .project-list li:hover {
+            border-color: var(--text-primary);
+        }
+
+        .project-list a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-list a i {
+            width: 20px;
+            height: 20px;
+        }
+
+        .no-projects {
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 2rem;
+            font-style: italic;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .certifications-hero h1 {
+                font-size: 2rem;
+            }
+
+            .stat-box {
+                min-width: 150px;
+            }
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state i {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <nav class="navbar">
+        <a href="../index.html#home" class="nav-brand">VIDGUICODE</a>
+        <div class="nav-links">
+        </div>
+        <div class="nav-controls">
+            <div class="lang-switcher">
+                <button id="lang-toggle" class="icon-btn" aria-label="Change language">
+                    <i data-lucide="globe"></i>
+                    <span class="current-lang">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button data-lang="en"><span class="fi fi-gb" aria-hidden="true"></span>English</button>
+                    <button data-lang="pt"><span class="fi fi-pt" aria-hidden="true"></span>Português</button>
+                    <button data-lang="lu"><span class="fi fi-lu" aria-hidden="true"></span>Lëtzebuergesch</button>
+                    <button data-lang="de"><span class="fi fi-de" aria-hidden="true"></span>Deutsch</button>
+                    <button data-lang="fr"><span class="fi fi-fr" aria-hidden="true"></span>Français</button>
+                </div>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                <i data-lucide="sun" class="sun-icon"></i>
+                <i data-lucide="moon" class="moon-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 100px;">
+        <a href="../index.html#home" class="back-link">
+            <i data-lucide="arrow-left"></i>
+            <span data-i18n="certifications.back">Back to Portfolio</span>
+        </a>
+
+        <section class="certifications-hero">
+            <div class="badge" data-i18n="certifications.badge">PROFESSIONAL CREDENTIALS</div>
+            <h1 data-i18n="certifications.heading">Certifications & Badges</h1>
+            <p class="subtitle" data-i18n="certifications.subtitle">Industry-recognized certifications demonstrating expertise in cloud computing, productivity tools, and technical skills. Sorted by certification level — highest rank first.</p>
+            
+            <div class="stats-row">
+                <div class="stat-box">
+                    <i data-lucide="award"></i>
+                    <h3 id="total-certs">0</h3>
+                    <p data-i18n="certifications.stats.total">Total Certifications</p>
+                </div>
+                <div class="stat-box">
+                    <i data-lucide="shield-check"></i>
+                    <h3 id="highest-level">—</h3>
+                    <p data-i18n="certifications.stats.highest">Highest Level</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all" data-i18n="certifications.filter.all">All Certifications</button>
+            <button class="filter-btn" data-filter="Cloud Computing" data-i18n="certifications.filter.cloud">Cloud Computing</button>
+            <button class="filter-btn" data-filter="Productivity" data-i18n="certifications.filter.productivity">Productivity</button>
+        </div>
+
+        <div id="certifications-container" class="certifications-list">
+            <!-- Certifications will be dynamically inserted here -->
+        </div>
+
+        <!-- Modal for Certification Details -->
+        <div id="cert-modal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close modal">
+                    <i data-lucide="x"></i>
+                </button>
+                <div class="modal-header">
+                    <h2 id="modal-cert-name"></h2>
+                    <div class="cert-provider" id="modal-cert-provider"></div>
+                </div>
+                <p id="modal-cert-description" class="modal-description"></p>
+                <div id="modal-cert-skills" class="modal-skills"></div>
+                <h3 data-i18n="certifications.modal.projects">Related Projects</h3>
+                <ul id="modal-projects-list" class="project-list">
+                    <!-- Projects will be inserted here -->
+                </ul>
+            </div>
+        </div>
+
+        <footer style="margin-top: 4rem;">
+            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Get current language from localStorage or default to 'en'
+        let currentLang = localStorage.getItem('lang') || document.documentElement.getAttribute('data-lang') || 'en';
+
+        // Simple translation helper for dynamic strings
+        function t(key, fallback) {
+            if (typeof translations === 'undefined') return fallback;
+            const entry = translations[key];
+            if (!entry) return fallback;
+            return entry[currentLang] || entry['en'] || fallback;
+        }
+
+        // Listen for language changes
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update currentLang when language buttons are clicked
+            document.querySelectorAll('.lang-dropdown button[data-lang]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentLang = btn.getAttribute('data-lang');
+                    // Re-render certifications with new language
+                    renderCertifications(document.querySelector('.filter-btn.active').dataset.filter);
+                });
+            });
+        });
+
+        // Render certifications
+        function renderCertifications(filter = 'all') {
+            const container = document.getElementById('certifications-container');
+            container.innerHTML = '';
+
+            // Get certifications sorted by rank (highest first)
+            let certs = getCertificationsSortedByRank();
+            
+            // Apply filter
+            if (filter !== 'all') {
+                certs = certs.filter(cert => cert.category === filter);
+            }
+
+            if (certs.length === 0) {
+                const emptyText = t('certifications.empty', 'No certifications found for this category.');
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i data-lucide="award"></i>
+                        <p>${emptyText}</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            // Update stats
+            document.getElementById('total-certs').textContent = CERTIFICATIONS.length;
+            const highestCert = getCertificationsSortedByRank()[0];
+
+            // Prefer explicit i18n keys on the level definition
+            const highestLevelNameKey = highestCert.level.nameKey
+                ? highestCert.level.nameKey
+                : `certifications.level.${highestCert.level.label.toLowerCase()}`;
+            document.getElementById('highest-level').textContent = t(highestLevelNameKey, highestCert.level.label);
+
+            certs.forEach(cert => {
+                const row = createCertificationRow(cert);
+                container.appendChild(row);
+            });
+
+            // Re-initialize Lucide icons
+            lucide.createIcons();
+        }
+
+        function createCertificationRow(cert) {
+            const row = document.createElement('div');
+            row.className = 'cert-row';
+            row.dataset.certId = cert.id;
+
+            const levelClass = `level-${cert.level.label.toLowerCase()}`;
+
+            // Localized name & level label
+            const certName = cert.nameKey ? t(cert.nameKey, cert.name) : cert.name;
+            const levelNameKey = cert.level.nameKey
+                ? cert.level.nameKey
+                : `certifications.level.${cert.level.label.toLowerCase()}`;
+            const levelLabel = t(levelNameKey, cert.level.label);
+
+            // Localized level description for tooltip
+            const levelDescKey = cert.level.descriptionKey || null;
+            const levelDesc = levelDescKey ? t(levelDescKey, cert.level.description || '') : '';
+            const levelTitleAttr = levelDesc
+                ? ` title="${levelDesc.replace(/"/g, '&quot;')}"`
+                : '';
+            
+            // Status badge
+            const statusText = t('certifications.status.inProgress', 'IN PROGRESS');
+            const statusBadge = cert.status === 'in-progress' 
+                ? `<span class="status-badge status-in-progress"><i data-lucide="clock"></i>${statusText}</span>` 
+                : '';
+
+            row.innerHTML = `
+                <img src="${cert.image}" alt="${certName}" class="cert-badge-thumb" loading="lazy">
+                
+                <div class="cert-info">
+                    <div class="cert-name">${certName}</div>
+                    <div class="cert-meta">
+                        <span class="cert-provider">
+                            <i data-lucide="award"></i>
+                            ${cert.provider}
+                        </span>
+                        <span class="cert-category">${cert.category}</span>
+                        ${statusBadge}
+                    </div>
+                </div>
+
+                <div class="cert-level ${levelClass}"${levelTitleAttr}>
+                    <i data-lucide="shield-check"></i>
+                    ${levelLabel}
+                </div>
+
+                <div class="cert-actions">
+                    ${cert.externalUrl ? `
+                        <a href="${cert.externalUrl}" target="_blank" rel="noopener noreferrer" 
+                           class="cert-action-icon" title="View Official Certification"
+                           onclick="event.stopPropagation()">
+                            <i data-lucide="external-link"></i>
+                        </a>
+                    ` : ''}
+                    ${cert.credlyUrl ? `
+                        <a href="${cert.credlyUrl}" target="_blank" rel="noopener noreferrer" 
+                           class="cert-action-icon" title="View Credly Badge"
+                           onclick="event.stopPropagation()">
+                            <i data-lucide="award"></i>
+                        </a>
+                    ` : ''}
+                    <button class="cert-action-icon" title="View Details & Projects" 
+                            onclick="showCertModal('${cert.id}'); event.stopPropagation();">
+                        <i data-lucide="info"></i>
+                    </button>
+                </div>
+            `;
+
+            // Make row clickable to open modal
+            row.addEventListener('click', () => showCertModal(cert.id));
+
+            return row;
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderCertifications(btn.dataset.filter);
+            });
+        });
+
+        // Modal functionality
+        function showCertModal(certId) {
+            const cert = getCertificationById(certId);
+            if (!cert) return;
+
+            const modal = document.getElementById('cert-modal');
+            const modalName = document.getElementById('modal-cert-name');
+            const modalProvider = document.getElementById('modal-cert-provider');
+            const modalDescription = document.getElementById('modal-cert-description');
+            const modalSkills = document.getElementById('modal-cert-skills');
+            const modalProjectsList = document.getElementById('modal-projects-list');
+
+            // Localized name & description (name can vary per language visually)
+            const certName = cert.nameKey ? t(cert.nameKey, cert.name) : cert.name;
+            const certDescription = cert.descriptionKey
+                ? t(cert.descriptionKey, cert.description)
+                : cert.description;
+
+            modalName.textContent = certName;
+            modalProvider.innerHTML = `<i data-lucide="award"></i> ${cert.provider}`;
+            modalDescription.textContent = certDescription;
+            
+            // Render skills
+            modalSkills.innerHTML = cert.skills.map((skill, index) => {
+                const skillKey = cert.skillsKeys && cert.skillsKeys[index] ? cert.skillsKeys[index] : null;
+                const skillText = skillKey ? t(skillKey, skill) : skill;
+                return `<span class="skill-tag">${skillText}</span>`;
+            }).join('');
+
+            // Render projects
+            if (cert.relatedProjects.length === 0) {
+                const noProjectsText = t('certifications.modal.noProjects', 'No projects using this certification yet.');
+                modalProjectsList.innerHTML = `<div class="no-projects">${noProjectsText}</div>`;
+            } else {
+                const projectMap = {
+                    'homelab': { name: 'SyntraLab Personal Cloud', url: 'project-homelab.html' },
+                    'gradingdino': { name: 'GradingDino', url: 'project-gradingdino.html' },
+                    'pif': { name: 'PIF - Personal Information Form', url: 'project-pif.html' },
+                };
+                
+                modalProjectsList.innerHTML = cert.relatedProjects.map(projectSlug => {
+                    const projectInfo = PROJECT_NAMES[projectSlug] || { key: null, fallback: projectSlug };
+                    const projectName = projectInfo.key ? t(projectInfo.key, projectInfo.fallback) : projectInfo.fallback;
+                    const project = projectMap[projectSlug] || { name: projectName, url: '#' };
+                    return `
+                        <li>
+                            <a href="${project.url}">
+                                <i data-lucide="folder-open"></i>
+                                ${projectName}
+                            </a>
+                        </li>
+                    `;
+                }).join('');
+            }
+
+            modal.classList.add('active');
+            lucide.createIcons();
+        }
+
+        // Close modal
+        document.querySelector('.modal-close').addEventListener('click', () => {
+            document.getElementById('cert-modal').classList.remove('active');
+        });
+
+        // Close modal on background click
+        document.getElementById('cert-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'cert-modal') {
+                e.target.classList.remove('active');
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.getElementById('cert-modal').classList.remove('active');
+            }
+        });
+
+        // Initial render
+        renderCertifications();
+        lucide.createIcons();
+    </script>
+</body>
+</html>

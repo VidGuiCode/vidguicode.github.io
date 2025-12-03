@@ -14,8 +14,13 @@
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
+    <!-- Flags -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+
     <link rel="stylesheet" href="styles.css">
     <script src="translations.js"></script>
+    <script src="certifications-data.js"></script>
+    <script src="certifications-techstack.js"></script>
     <style>
         /* Project Page Specific Styles */
         .project-hero {
@@ -104,7 +109,7 @@
     <div class="grid-background"></div>
     
     <nav class="navbar">
-        <div class="nav-brand">VIDGUICODE</div>
+        <a href="../index.html#home" class="nav-brand">VIDGUICODE</a>
         <div class="nav-links">
         </div>
         <div class="nav-controls">
@@ -114,11 +119,11 @@
                     <span class="current-lang">EN</span>
                 </button>
                 <div class="lang-dropdown">
-                    <button data-lang="en">🇬🇧 English</button>
-                    <button data-lang="pt">🇵🇹 Português</button>
-                    <button data-lang="lu">🇱🇺 Lëtzebuergesch</button>
-                    <button data-lang="de">🇩🇪 Deutsch</button>
-                    <button data-lang="fr">🇫🇷 Français</button>
+                    <button data-lang="en"><span class="fi fi-gb" aria-hidden="true"></span>English</button>
+                    <button data-lang="pt"><span class="fi fi-pt" aria-hidden="true"></span>Português</button>
+                    <button data-lang="lu"><span class="fi fi-lu" aria-hidden="true"></span>Lëtzebuergesch</button>
+                    <button data-lang="de"><span class="fi fi-de" aria-hidden="true"></span>Deutsch</button>
+                    <button data-lang="fr"><span class="fi fi-fr" aria-hidden="true"></span>Français</button>
                 </div>
             </div>
             <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
@@ -271,6 +276,8 @@
                         <li><i data-lucide="globe"></i> Caddy Reverse Proxy</li>
                         <li><i data-lucide="cloud-cog"></i> Cloudflare DNS</li>
                         <li><i data-lucide="terminal"></i> Bash Automation</li>
+                        <li><i data-lucide="zap"></i> FastAPI Backend</li>
+                        <li><i data-lucide="lock"></i> Argon2 Hashing</li>
                     </ul>
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>

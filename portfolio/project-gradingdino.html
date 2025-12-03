@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradingDino | VidGuiCode</title>
+    <meta name="description" content="GradingDino - A grade management system built with Django, PostgreSQL, and Docker. A team project focused on project management and collaboration.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Flags -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="translations.js"></script>
+    <script src="certifications-data.js"></script>
+    <script src="certifications-techstack.js"></script>
+    <style>
+        /* Project Page Specific Styles */
+        .project-hero {
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        .project-title-group h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .project-meta-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .project-meta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .project-sidebar .card {
+            position: sticky;
+            top: 100px;
+        }
+        .tech-stack-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+        .tech-stack-list li i {
+            color: var(--accent-primary);
+            width: 18px;
+            height: 18px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-secondary);
+        }
+        article h2 {
+            margin-top: 1.5rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--accent-primary);
+        }
+        article h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 1rem;
+        }
+        article p, article li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+        }
+        .mvp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <nav class="navbar">
+        <a href="../index.html#home" class="nav-brand">VIDGUICODE</a>
+        <div class="nav-links">
+        </div>
+        <div class="nav-controls">
+            <div class="lang-switcher">
+                <button id="lang-toggle" class="icon-btn" aria-label="Change language">
+                    <i data-lucide="globe"></i>
+                    <span class="current-lang">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button data-lang="en"><span class="fi fi-gb" aria-hidden="true"></span>English</button>
+                    <button data-lang="pt"><span class="fi fi-pt" aria-hidden="true"></span>Português</button>
+                    <button data-lang="lu"><span class="fi fi-lu" aria-hidden="true"></span>Lëtzebuergesch</button>
+                    <button data-lang="de"><span class="fi fi-de" aria-hidden="true"></span>Deutsch</button>
+                    <button data-lang="fr"><span class="fi fi-fr" aria-hidden="true"></span>Français</button>
+                </div>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                <i data-lucide="sun" class="sun-icon"></i>
+                <i data-lucide="moon" class="moon-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 100px;">
+        
+        <a href="../index.html#projects" class="back-link">
+            <i data-lucide="arrow-left"></i>
+            <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
+        </a>
+
+        <section class="project-hero">
+            <div class="project-title-group">
+                <div class="badge" data-i18n="project.gradingdino.badge">SCHOOL PROJECT</div>
+                <h1>
+                    GradingDino
+                    <span class="mvp-badge">MVP</span>
+                </h1>
+                <p class="subtitle" data-i18n="project.gradingdino.subtitle">A grade management system built with Django. Teachers create classrooms and manage student grades, while students track their progress. Group project MVP — learned valuable lessons about framework selection.</p>
+            </div>
+        </section>
+
+        <div class="project-meta-grid">
+            <!-- Main Content -->
+            <article>
+                <div class="card">
+                    <i data-lucide="graduation-cap" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <h2 data-i18n="project.gradingdino.theProject">The Project</h2>
+                    <p data-i18n="project.gradingdino.intro1" data-i18n-html="true">GradingDino was a <strong>BTS Cloud Computing group project</strong> focused on project management methodology. A team of four worked together to build a grade management web application where teachers can create classrooms, add students, and manage grades — while students can log in to view their progress and leave personal notes.</p>
+                    <p data-i18n="project.gradingdino.intro2" data-i18n-html="true">The project wasn't just about coding — it was about <strong>planning, research, and teamwork</strong>. We had to create personas, write user stories with acceptance criteria, prioritize features using MoSCoW, and manage tasks in MS Planner before writing a single line of code.</p>
+                    <p data-i18n="project.gradingdino.intro3" data-i18n-html="true">A key requirement: <strong>the entire system must start with a single command</strong>: <code>docker compose up</code>. Everything runs in Docker — PostgreSQL database, Django application, automatic migrations, and even admin user creation.</p>
+                    
+                    <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
+                        
+                        <!-- Docker Card -->
+                        <div class="node-card" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #2496ed; position: relative; box-shadow: 0 10px 30px rgba(36,150,237,0.2);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #2496ed, #0db7ed);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Containerized</h3>
+                                        <div style="font-family: monospace; color: #0db7ed; margin-bottom: 0.75rem;">Docker & Docker Compose</div>
+                                    </div>
+                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #888;">
+                                        <div>One Command</div>
+                                        <div style="font-weight: 600; color: #0db7ed;">docker compose up</div>
+                                    </div>
+                                </div>
+                                <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                    Everything runs in containers. PostgreSQL + Django orchestrated with health checks, auto-migrations, persistent volumes, and live code reloading for development.
+                                </p>
+                            </div>
+                            <div style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; font-size: 0.75rem; color: #555; font-family: monospace;">
+                                <span>[COMPOSE]</span> <span>[VOLUMES]</span> <span>[HEALTH-CHECKS]</span>
+                            </div>
+                        </div>
+
+                        <!-- Django Stack Card -->
+                        <div class="node-card" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #092e20, #44b78b);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Backend</h3>
+                                        <div style="font-family: monospace; color: #44b78b; margin-bottom: 0.75rem;">Django 5.0 / Python 3.11-slim</div>
+                                    </div>
+                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #888;">
+                                        <div>Server-Side</div>
+                                        <div style="font-weight: 600; color: #44b78b;">Batteries Included</div>
+                                    </div>
+                                </div>
+                                <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                    Django's "batteries included" philosophy gave us built-in admin panel, authentication, forms, and ORM. Custom Dockerfile with layer optimization for fast rebuilds.
+                                </p>
+                            </div>
+                            <div style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; font-size: 0.75rem; color: #555; font-family: monospace;">
+                                <span>[DJANGO-ORM]</span> <span>[ADMIN-PANEL]</span> <span>[CSRF]</span>
+                            </div>
+                        </div>
+
+                        <!-- PostgreSQL Card -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); border-radius: 12px; overflow: hidden; border: 1px solid #336791; position: relative; box-shadow: 0 10px 30px rgba(51, 103, 145, 0.2);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #336791, #60a5fa);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Database</h3>
+                                        <div style="font-family: monospace; color: #60a5fa; margin-bottom: 0.75rem;">PostgreSQL 16</div>
+                                    </div>
+                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #94a3b8;">
+                                        <div>Relational</div>
+                                        <div style="font-weight: 600; color: #60a5fa;">ACID Compliant</div>
+                                    </div>
+                                </div>
+                                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                    Docker-native integration, concurrent write support for multiple professors grading simultaneously, and production-ready deployment path.
+                                </p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; font-size: 0.75rem; color: #64748b; font-family: monospace;">
+                                <span>[DOCKER]</span> <span>[CONCURRENT]</span> <span>[PRODUCTION-READY]</span>
+                            </div>
+                        </div>
+
+                        <!-- Security Card -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); border-radius: 12px; overflow: hidden; border: 1px solid #8b5cf6; position: relative; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #8b5cf6, #c084fc);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Security</h3>
+                                        <div style="font-family: monospace; color: #c084fc; margin-bottom: 0.75rem;">Argon2 Password Hashing</div>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="margin-top: 0.5rem; font-size: 0.7rem; background: rgba(255,255,255,0.2); color: #fff; padding: 2px 8px; border-radius: 10px; display: inline-block;">Made in Luxembourg 🇱🇺</div>
+                                    </div>
+                                </div>
+                                <p style="color: #e9d5ff; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                    Winner of the Password Hashing Competition (2015), developed at the <strong>University of Luxembourg</strong>. Memory-hard algorithm resistant to GPU/ASIC attacks. A proud local tech choice!
+                                </p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #7c3aed; display: flex; gap: 1rem; font-size: 0.75rem; color: #a78bfa; font-family: monospace;">
+                                <span>[ARGON2]</span> <span>[CSRF-PROTECTION]</span> <span>[SESSION-AUTH]</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <h2 data-i18n="project.gradingdino.teamTitle">Team Structure & My Role</h2>
+                    <p data-i18n="project.gradingdino.teamIntro">We worked as a team of four with clearly divided responsibilities:</p>
+                    <ul class="feature-list">
+                        <li data-i18n="project.gradingdino.myRole" data-i18n-html="true"><strong>My Role (Lead Developer)</strong>: I handled most of the coding — Django models, views, templates, and Docker configuration. I also collaborated on database design and helped structure the documentation.</li>
+                        <li data-i18n="project.gradingdino.colleagueDB" data-i18n-html="true"><strong>Colleague (Database & Docs)</strong>: Worked with me on database schema design and took ownership of technical documentation.</li>
+                        <li data-i18n="project.gradingdino.colleaguesPlanning" data-i18n-html="true"><strong>Two Colleagues (Planning)</strong>: Created personas, wrote all 12+ user stories with acceptance criteria, performed MoSCoW prioritization, and managed the MS Planner board.</li>
+                    </ul>
+
+                    <h2 data-i18n="project.gradingdino.whatWeBuilt">What We Built</h2>
+                    <p data-i18n="project.gradingdino.builtIntro">The system provides role-based access for different users:</p>
+                    <ul class="feature-list">
+                        <li data-i18n="project.gradingdino.studentPortal" data-i18n-html="true"><strong>Student Portal</strong>: Students log in to view their grades across subjects, track progress by semester, and write personal notes.</li>
+                        <li data-i18n="project.gradingdino.teacherDashboard" data-i18n-html="true"><strong>Teacher Dashboard</strong>: Teachers create classrooms, enroll students, assign grades with comments, and write private observations.</li>
+                        <li data-i18n="project.gradingdino.adminPanel" data-i18n-html="true"><strong>Admin Panel</strong>: Django's built-in admin for managing users, subjects, grading scales (20-point, 60-point, letter grades).</li>
+                        <li data-i18n="project.gradingdino.dockerDeployment" data-i18n-html="true"><strong>Docker Deployment</strong>: Single <code>docker compose up</code> command starts the entire system — PostgreSQL + Django.</li>
+                    </ul>
+
+                    <h2 data-i18n="project.gradingdino.whyDjango">Why Django (And What We Learned)</h2>
+                    <p data-i18n="project.gradingdino.djangoIntro1" data-i18n-html="true">We researched Django, Flask, and FastAPI before choosing. Django won because of its <strong>"batteries included"</strong> approach — built-in admin panel, authentication, forms, and ORM meant we could focus on features instead of boilerplate.</p>
+                    <p data-i18n="project.gradingdino.djangoIntro2">However, "batteries included" doesn't mean "no learning required." Django has a steep learning curve with its own conventions, project structure, and way of doing things. With our tight deadline, we didn't have enough time to properly understand the framework — we were building while learning, which slowed us down.</p>
+                    <p data-i18n="project.gradingdino.djangoIntro3" data-i18n-html="true"><strong>The honest truth:</strong> The project was an MVP that worked but wasn't finished. It taught us that choosing a framework you don't know adds hidden time costs — the "batteries" are only useful if you know how to use them.</p>
+
+                    <h2 data-i18n="project.gradingdino.lessonsTitle">Lessons Learned</h2>
+                    <ul class="feature-list">
+                        <li data-i18n="project.gradingdino.lesson1" data-i18n-html="true"><strong>Communication is everything</strong> — We divided work to move faster, but this created silos. Misunderstandings cost us time we could have spent on features. In the future, we'll treat communication with the same priority as coding.</li>
+                        <li data-i18n="project.gradingdino.lesson2" data-i18n-html="true"><strong>Framework selection matters</strong> — Django was great for rapid prototyping, but its conventions felt limiting when we needed flexibility. Research upfront saves pain later.</li>
+                        <li data-i18n="project.gradingdino.lesson3" data-i18n-html="true"><strong>Planning isn't optional</strong> — Writing personas and user stories before coding felt slow, but it gave us clarity. We knew exactly what to build and could prioritize effectively.</li>
+                        <li data-i18n="project.gradingdino.lesson4" data-i18n-html="true"><strong>Learn the tool before the deadline</strong> — Django's "batteries included" only help if you understand how to use them. We spent time fighting the framework instead of building features.</li>
+                        <li data-i18n="project.gradingdino.lesson5" data-i18n-html="true"><strong>MVP is okay</strong> — The project wasn't perfect, but it worked. Shipping something functional taught us more than endless planning ever could.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="project-sidebar">
+                <div class="card">
+                    <h3 data-i18n="project.sidebar.techStack">Tech Stack</h3>
+                    <div class="line"></div>
+                    <ul class="tech-stack-list">
+                        <li><i data-lucide="code-2"></i> Django 5.0</li>
+                        <li><i data-lucide="database"></i> PostgreSQL 16</li>
+                        <li><i data-lucide="lock"></i> Argon2 (Luxembourg!)</li>
+                        <li><i data-lucide="box"></i> Docker & Compose</li>
+                        <li><i data-lucide="palette"></i> Pico.css</li>
+                        <li><i data-lucide="server"></i> Server-Side Rendering</li>
+                        <li><i data-lucide="terminal"></i> Python 3.11</li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.gradingdino.sidebar.projectManagement">Project Management</h3>
+                    <div class="line"></div>
+                    <ul class="skill-list" style="margin-top: 1rem;">
+                        <li>MS Planner Board</li>
+                        <li>User Stories (12+)</li>
+                        <li>MoSCoW Prioritization</li>
+                        <li>Personas</li>
+                        <li>ER Diagrams</li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
+                    <div class="line"></div>
+                    <ul class="skill-list" style="margin-top: 1rem;">
+                        <li>Role-Based Access</li>
+                        <li>Grade History by Year</li>
+                        <li>Multiple Grading Scales</li>
+                        <li>Personal Notes</li>
+                        <li>Teacher Observations</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <footer style="margin-top: 4rem;">
+            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
