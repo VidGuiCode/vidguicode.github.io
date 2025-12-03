@@ -74,7 +74,7 @@ const CERTIFICATIONS = [
         category: 'Productivity',
         level: CERT_LEVELS.INTERMEDIATE,
         image: 'assets/img/certifications/badge-microsoft-powerpoint-associate.webp',
-        externalUrl: 'https://learn.microsoft.com/en-us/credentials/certifications/mos-powerpoint-associate/',
+        externalUrl: 'https://learn.microsoft.com/en-us/credentials/certifications/mos-powerpoint-associate-m365-apps/',
         credlyUrl: 'https://www.credly.com/badges/855f023f-6d1b-450a-bc31-996cb29c9470/public_url',
         description: 'Demonstrates competency in creating, managing, and delivering effective presentations using Microsoft PowerPoint.',
         descriptionKey: 'cert.powerpoint.associate.description', // Translation key
@@ -97,7 +97,7 @@ const CERTIFICATIONS = [
         category: 'Productivity',
         level: CERT_LEVELS.INTERMEDIATE,
         image: 'assets/img/certifications/badge-microsoft-word-associate.webp',
-        externalUrl: 'https://learn.microsoft.com/en-us/credentials/certifications/mos-word-associate/',
+        externalUrl: 'https://learn.microsoft.com/en-us/credentials/certifications/mos-word-associate-m365-apps/',
         credlyUrl: 'https://www.credly.com/badges/8d584202-b65d-4bde-a815-75de44ffe648/public_url',
         description: 'Demonstrates competency in creating and managing professional documents using Microsoft Word.',
         descriptionKey: 'cert.word.associate.description', // Translation key
