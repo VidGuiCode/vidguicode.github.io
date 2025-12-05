@@ -12,10 +12,48 @@
     'use strict';
 
     /**
+     * Get translation helper - accesses translations object if available
+     * @param {string} key - Translation key
+     * @param {string} fallback - Fallback text
+     * @returns {string} Translated text or fallback
+     */
+    function getTranslation(key, fallback) {
+        if (typeof translations === 'undefined') return fallback;
+        const entry = translations[key];
+        if (!entry) return fallback;
+        // Get current language from HTML element or default to 'en'
+        const currentLang = document.documentElement.getAttribute('data-lang') || 
+                           localStorage.getItem('lang') || 
+                           'en';
+        return entry[currentLang] || entry['en'] || fallback;
+    }
+
+    /**
      * Initialize badge injection on DOM load
      */
     function initBadgeInjection() {
-        // Find all tech stack list items
+        // Handle project certifications section
+        const projectCertSections = document.querySelectorAll('.project-certifications');
+        
+        projectCertSections.forEach(section => {
+            const placeholders = section.querySelectorAll('.cert-badge-placeholder');
+            
+            placeholders.forEach(placeholder => {
+                const text = placeholder.textContent.trim();
+                
+                if (text.startsWith('badge-')) {
+                    const cert = getCertificationByShortCode(text);
+                    
+                    if (cert) {
+                        // Replace placeholder with badge element
+                        const badgeElement = createProjectCertBadge(cert);
+                        placeholder.replaceWith(badgeElement);
+                    }
+                }
+            });
+        });
+
+        // Legacy: Handle tech stack list items (for backwards compatibility)
         const techStackItems = document.querySelectorAll('.tech-stack-list li');
         
         techStackItems.forEach(item => {
@@ -26,16 +64,49 @@
                 const cert = getCertificationByShortCode(text);
                 
                 if (cert) {
-                    // Replace the list item content with badge markup
-                    item.innerHTML = createBadgeElement(cert);
-                    item.classList.add('cert-badge-item');
+                    // Remove badge from tech stack (should not be there anymore)
+                    item.remove();
                 }
             }
         });
     }
 
     /**
-     * Create badge HTML element
+     * Create badge HTML element for project certifications section (small badge style)
+     * @param {object} cert - Certification object
+     * @returns {HTMLElement} Badge element
+     */
+    function createProjectCertBadge(cert) {
+        const badge = document.createElement('a');
+        badge.href = `certifications.html#${cert.id}`;
+        badge.className = 'project-cert-badge';
+        badge.title = cert.name;
+        badge.setAttribute('data-cert-id', cert.id);
+        
+        const img = document.createElement('img');
+        img.src = cert.image;
+        img.alt = cert.name;
+        img.loading = 'lazy';
+        
+        // Use indexTitleKey for short name if available, otherwise fallback to name
+        let shortName = cert.name;
+        if (cert.indexTitleKey) {
+            // Get short name from translations using indexTitleKey
+            shortName = getTranslation(cert.indexTitleKey, cert.name);
+        }
+        
+        const name = document.createElement('span');
+        name.className = 'project-cert-name';
+        name.textContent = shortName;
+        
+        badge.appendChild(img);
+        badge.appendChild(name);
+        
+        return badge;
+    }
+
+    /**
+     * Create badge HTML element (legacy - for tech stack)
      * @param {object} cert - Certification object
      * @returns {string} HTML string
      */
@@ -113,13 +184,18 @@
     }
 
     // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            injectBadgeStyles();
-            initBadgeInjection();
-        });
-    } else {
+    function initialize() {
         injectBadgeStyles();
         initBadgeInjection();
+        // Re-initialize Lucide icons after badge injection
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+        initialize();
     }
 })();

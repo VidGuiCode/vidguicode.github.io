@@ -4,27 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guilherme Videira Marques | Cloud Engineer</title>
-    <meta name="description" content="Portfolio of Guilherme Videira Marques - Cloud Computing Student & Aspiring Cloud Engineer">
+    <meta name="description" content="Portfolio of Guilherme Videira Marques - Cloud Computing Student & Aspiring Cloud Engineer based in Luxembourg. Building reliable infrastructure, automating workflows, and turning ideas into polished web experiences.">
+    <meta name="keywords" content="Cloud Computing, DevOps, Infrastructure, Docker, Kubernetes, Luxembourg, BTS Cloud Computing">
+    <meta name="author" content="Guilherme Videira Marques">
+    <link rel="canonical" href="https://vidguicode.github.io/VidGuiCode/">
     
-    <!-- Fonts -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vidguicode.github.io/VidGuiCode/">
+    <meta property="og:title" content="Guilherme Videira Marques | Cloud Engineer">
+    <meta property="og:description" content="Cloud Computing Student & Future Infrastructure Architect. Building reliable infrastructure, automating workflows, and turning ideas into polished web experiences.">
+    <meta property="og:image" content="https://vidguicode.github.io/VidGuiCode/portfolio/assets/img/hero-profile.webp">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="pt_PT">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:locale:alternate" content="fr_FR">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/VidGuiCode/">
+    <meta name="twitter:title" content="Guilherme Videira Marques | Cloud Engineer">
+    <meta name="twitter:description" content="Cloud Computing Student & Future Infrastructure Architect based in Luxembourg.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/VidGuiCode/portfolio/assets/img/hero-profile.webp">
+    
+    <!-- Fonts - Preload critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Preload critical assets -->
+    <link rel="preload" href="portfolio/assets/img/hero-profile.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="portfolio/styles.css" as="style">
+    <link rel="preload" href="portfolio/translations.js" as="script">
     
-    <!-- Flags -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+    <!-- Icons - Load locally (version 0.555.0) -->
+    <script src="portfolio/assets/js/lucide.min.js"></script>
     
-    <!-- Note: assets live under /portfolio/ in this repo -->
+    <!-- Flags - Load locally -->
+    <link rel="stylesheet" href="portfolio/assets/css/flag-icons.min.css">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="portfolio/styles.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Guilherme Videira Marques",
+        "jobTitle": "Cloud Computing Student",
+        "url": "https://vidguicode.github.io/VidGuiCode/",
+        "sameAs": [
+            "https://www.linkedin.com/in/guilherme-videira-marques/",
+            "https://github.com/VidGuiCode"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Differdange",
+            "addressCountry": "LU"
+        },
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Lycée Guillaume Kroll"
+        },
+        "knowsLanguage": ["Portuguese", "Luxembourgish", "German", "French", "English"]
+    }
+    </script>
+    
+    <!-- Translations - Load early (needed by inline scripts) -->
     <script src="portfolio/translations.js"></script>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#home" class="skip-link">Skip to main content</a>
+    
     <div class="grid-background"></div>
     
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <a href="#home" class="nav-brand">VIDGUICODE</a>
         <div class="nav-links">
             <a href="#about" data-i18n="nav.about">About</a>
@@ -69,7 +125,7 @@
             </div>
             
             <div class="card hero-image">
-                <img src="portfolio/assets/img/hero-profile.webp" alt="Guilherme Videira Marques" class="profile-img">
+                <img src="portfolio/assets/img/hero-profile.webp" alt="Guilherme Videira Marques" class="profile-img" fetchpriority="high" width="600" height="800">
             </div>
 
             <div class="card stat-box">
@@ -129,7 +185,7 @@
                 </div>
             </div>
             <div class="card about-image">
-                <img src="portfolio/assets/img/formal-profile.webp" alt="Guilherme Formal" class="profile-img-small">
+                <img src="portfolio/assets/img/formal-profile.webp" alt="Guilherme Formal" class="profile-img-small" loading="lazy" width="300" height="400">
             </div>
         </section>
 
@@ -281,7 +337,7 @@
 
             <div class="card experience-card">
                 <div class="exp-date">
-                    <img src="portfolio/assets/img/logos/lgk-logo.webp" alt="LGK">
+                    <img src="portfolio/assets/img/logos/lgk-logo.webp" alt="LGK Logo" loading="lazy" width="120" height="auto">
                     <span data-i18n="experience.bts.date">2025 — Present</span>
                 </div>
                 <h3 data-i18n="experience.bts.title">BTS Cloud Computing</h3>
@@ -291,7 +347,7 @@
 
             <div class="card experience-card">
                 <div class="exp-date">
-                    <img src="portfolio/assets/img/logos/pcphoneservices-logo.webp" alt="PC Phone Service">
+                    <img src="portfolio/assets/img/logos/pcphoneservices-logo.webp" alt="PC Phone Service Logo" loading="lazy" width="120" height="auto">
                     <span data-i18n="experience.intern.date">Feb-Mar '23 & Sep-Oct '24</span>
                 </div>
                 <h3 data-i18n="experience.intern.title">IT Intern</h3>
@@ -301,7 +357,7 @@
 
             <div class="card experience-card">
                 <div class="exp-date">
-                    <img src="portfolio/assets/img/logos/lgk-logo.webp" alt="LGK">
+                    <img src="portfolio/assets/img/logos/lgk-logo.webp" alt="LGK Logo" loading="lazy" width="120" height="auto">
                     <span data-i18n="experience.diploma.date">2021 — 2025</span>
                 </div>
                 <h3 data-i18n="experience.diploma.title">Computer Technician Diploma</h3>
@@ -334,12 +390,12 @@
             <div class="card contact-card">
                 <p data-i18n="contact.description">Always open to discussing cloud technologies, infrastructure projects, or new opportunities.</p>
                 <div class="contact-links">
-                    <a href="https://www.linkedin.com/in/guilherme-videira-marques/" target="_blank" class="contact-item">
-                        <i data-lucide="linkedin"></i>
+                    <a href="https://www.linkedin.com/in/guilherme-videira-marques/" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="LinkedIn Profile">
+                        <i data-lucide="linkedin" aria-hidden="true"></i>
                         <span>LinkedIn</span>
                     </a>
-                    <a href="https://github.com/VidGuiCode" target="_blank" class="contact-item">
-                        <i data-lucide="github"></i>
+                    <a href="https://github.com/VidGuiCode" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="GitHub Profile">
+                        <i data-lucide="github" aria-hidden="true"></i>
                         <span>GitHub</span>
                     </a>
                 </div>
@@ -351,17 +407,32 @@
         </footer>
 
         <!-- Mobile Bottom Navigation -->
-        <nav class="mobile-nav">
-            <a href="#home" aria-label="Home"><i data-lucide="home"></i></a>
-            <a href="#about" aria-label="About"><i data-lucide="user"></i></a>
-            <a href="#projects" aria-label="Projects"><i data-lucide="layers"></i></a>
-            <a href="#contact" aria-label="Contact"><i data-lucide="mail"></i></a>
+        <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+            <a href="#home" aria-label="Home"><i data-lucide="home" aria-hidden="true"></i></a>
+            <a href="#about" aria-label="About"><i data-lucide="user" aria-hidden="true"></i></a>
+            <a href="#projects" aria-label="Projects"><i data-lucide="layers" aria-hidden="true"></i></a>
+            <a href="#contact" aria-label="Contact"><i data-lucide="mail" aria-hidden="true"></i></a>
         </nav>
     </main>
 
-    <script src="portfolio/certifications-data.js"></script>
-    <script src="portfolio/script.js"></script>
+    <script src="portfolio/certifications-data.js" defer></script>
+    <script src="portfolio/script.js" defer></script>
     <script>
+        // Initialize Lucide icons immediately when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                // Fallback: wait for script to load
+                window.addEventListener('load', () => {
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                });
+            }
+        });
+        
+        // Get current language
         // Get current language
         let currentLang = localStorage.getItem('lang') || document.documentElement.getAttribute('data-lang') || 'en';
 
@@ -373,60 +444,135 @@
             return entry[currentLang] || entry['en'] || fallback;
         }
 
-        // Render certifications on index page (all from data)
+        // Cache DOM elements and sorted data for performance
+        let cachedSection = null;
+        let cachedViewMoreBtn = null;
+        let cachedSortedData = null;
+        let cachedLang = null;
+
+        // Render certifications on index page (optimized)
         function renderIndexCertifications() {
             try {
-                const section = document.getElementById('certifications');
-                const viewMoreBtn = document.getElementById('cert-view-more');
-                if (!section || !viewMoreBtn) {
-                    console.error('certifications section or button not found');
-                    return;
+                // Cache DOM elements (only query once)
+                if (!cachedSection) cachedSection = document.getElementById('certifications');
+                if (!cachedViewMoreBtn) cachedViewMoreBtn = document.getElementById('cert-view-more');
+                
+                if (!cachedSection || !cachedViewMoreBtn) {
+                    return; // Silently fail if elements don't exist yet
                 }
 
-                // Remove existing cert cards
-                section.querySelectorAll('.cert-card').forEach(card => card.remove());
-
-                if (typeof getCertificationsSortedByRank !== 'function') {
-                    console.error('getCertificationsSortedByRank not defined');
-                    return;
+                // Check if data functions are available
+                if (typeof getCertificationsSortedByRank !== 'function' || typeof getAllFormations !== 'function') {
+                    return; // Data not loaded yet
                 }
 
-                const certs = getCertificationsSortedByRank();
-                console.log('Rendering certs:', certs.length);
+                // Cache sorted data (only recompute if language changed or data changed)
+                const langChanged = currentLang !== cachedLang;
+                if (!cachedSortedData || langChanged) {
+                    const certs = getCertificationsSortedByRank();
+                    const formations = getAllFormations();
+                    
+                    // Pre-compute sort orders (avoid repeated Date parsing)
+                    const certItems = certs.map(cert => ({
+                        ...cert,
+                        type: 'certification',
+                        sortOrder: cert.level.rank,
+                        _cached: true
+                    }));
+                    
+                    const formItems = formations.map(form => ({
+                        ...form,
+                        type: 'formation',
+                        sortOrder: form.dateCompleted ? new Date(form.dateCompleted).getTime() : 0,
+                        _cached: true
+                    }));
+                    
+                    // Optimize: Only sort what we need (top 4 of each type, then combine)
+                    const topCerts = certItems.slice(0, 4);
+                    const topForms = formItems.sort((a, b) => b.sortOrder - a.sortOrder).slice(0, 4);
+                    
+                    // Combine and final sort (smaller array = faster sort)
+                    cachedSortedData = [...topCerts, ...topForms].sort((a, b) => {
+                        if (a.type === 'certification' && b.type === 'formation') return -1;
+                        if (a.type === 'formation' && b.type === 'certification') return 1;
+                        return b.sortOrder - a.sortOrder;
+                    }).slice(0, 4);
+                    
+                    cachedLang = currentLang;
+                }
 
-                certs.forEach(cert => {
-                    // Compact title + status from translation keys
-                    const titleKey = cert.indexTitleKey || cert.nameKey;
-                    const title = titleKey ? tIndex(titleKey, cert.name) : cert.name;
-                    const statusLine = cert.statusKey ? tIndex(cert.statusKey, '') : '';
+                // Remove existing cert cards (batch DOM operation)
+                const existingCards = cachedSection.querySelectorAll('.cert-card');
+                if (existingCards.length > 0) {
+                    existingCards.forEach(card => card.remove());
+                }
 
-                    const card = document.createElement('div');
-                    card.className = 'card cert-card powered-on';
+                // Use DocumentFragment for batch DOM insertion (faster)
+                const fragment = document.createDocumentFragment();
 
-                    // For index, show the actual badge image
-                    const imagePath = `portfolio/${cert.image}`;
+                cachedSortedData.forEach(item => {
+                    let card;
+                    
+                    if (item.type === 'certification') {
+                        const titleKey = item.indexTitleKey || item.nameKey;
+                        const title = titleKey ? tIndex(titleKey, item.name) : item.name;
+                        const statusLine = item.statusKey ? tIndex(item.statusKey, '') : '';
 
-                    card.innerHTML = `
-                        <div class="cert-icon">
-                            <img src="${imagePath}" alt="${title} badge" class="cert-badge-img" loading="lazy">
-                        </div>
-                        <div class="cert-info">
-                            <h3>${title}</h3>
-                            ${statusLine ? `<p class="cert-status">${statusLine}</p>` : ''}
-                        </div>
-                    `;
+                        card = document.createElement('div');
+                        card.className = 'card cert-card powered-on';
+                        card.innerHTML = `
+                            <div class="cert-icon">
+                                <img src="portfolio/${item.image}" alt="${title} badge" class="cert-badge-img" loading="lazy" width="48" height="48">
+                            </div>
+                            <div class="cert-info">
+                                <h3>${title}</h3>
+                                ${statusLine ? `<p class="cert-status">${statusLine}</p>` : ''}
+                            </div>
+                        `;
+                    } else if (item.type === 'formation') {
+                        const titleKey = item.nameKey;
+                        const title = titleKey ? tIndex(titleKey, item.name) : item.name;
+                        const dateStr = item.dateCompleted 
+                            ? new Date(item.dateCompleted).toLocaleDateString(currentLang, { year: 'numeric', month: 'short' })
+                            : '';
 
-                    // Insert before the View More button
-                    section.insertBefore(card, viewMoreBtn);
+                        card = document.createElement('div');
+                        card.className = 'card cert-card powered-on';
+                        card.innerHTML = `
+                            <div class="cert-icon" style="background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3);">
+                                <i data-lucide="book-open" style="width: 32px; height: 32px; color: #8b5cf6;"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3>${title}</h3>
+                                ${dateStr ? `<p class="cert-status">${dateStr}</p>` : ''}
+                            </div>
+                        `;
+                    }
+
+                    if (card) {
+                        fragment.appendChild(card);
+                    }
                 });
 
-                // Re-initialize Lucide icons
+                // Single DOM insertion (much faster)
+                cachedSection.insertBefore(fragment, cachedViewMoreBtn);
+
+                // Re-initialize Lucide icons (only if available)
                 if (typeof lucide !== 'undefined') {
                     lucide.createIcons();
                 }
             } catch (e) {
-                console.error('Error rendering certifications:', e);
+                // Silently handle errors in production
+                if (typeof console !== 'undefined' && console.error) {
+                    console.error('Error rendering certifications:', e);
+                }
             }
+        }
+        
+        // Clear cache when language changes (for re-rendering)
+        function clearCertificationCache() {
+            cachedSortedData = null;
+            cachedLang = null;
         }
 
         // Listen for language changes and render on load
@@ -434,12 +580,69 @@
             document.querySelectorAll('.lang-dropdown button[data-lang]').forEach(btn => {
                 btn.addEventListener('click', () => {
                     currentLang = btn.getAttribute('data-lang');
+                    clearCertificationCache(); // Clear cache on language change
                     renderIndexCertifications();
                 });
             });
 
-            // Initial render
-            renderIndexCertifications();
+            // Initial render - wait for certifications-data.js to load
+            if (typeof getCertificationsSortedByRank !== 'undefined') {
+                renderIndexCertifications();
+            } else {
+                // Wait for certifications-data.js to load
+                window.addEventListener('load', () => {
+                    setTimeout(renderIndexCertifications, 100);
+                });
+            }
+        });
+    </script>
+    
+    <!-- Structured Data for Certifications -->
+    <script type="application/ld+json" id="certifications-structured-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Professional Certifications",
+        "itemListElement": []
+    }
+    </script>
+    <script defer>
+        // Populate certifications structured data after certifications-data.js loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const populateStructuredData = () => {
+                if (typeof getCertificationsSortedByRank !== 'undefined') {
+                    const certs = getCertificationsSortedByRank();
+                    const structuredData = {
+                        "@context": "https://schema.org",
+                        "@type": "ItemList",
+                        "name": "Professional Certifications",
+                        "itemListElement": certs.map((cert, index) => ({
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@type": "EducationalOccupationalCredential",
+                                "name": cert.name,
+                                "credentialCategory": cert.category,
+                                "recognizedBy": {
+                                    "@type": "Organization",
+                                    "name": cert.provider
+                                },
+                                "url": cert.externalUrl || cert.credlyUrl || ""
+                            }
+                        }))
+                    };
+                    
+                    const scriptTag = document.getElementById('certifications-structured-data');
+                    if (scriptTag) {
+                        scriptTag.textContent = JSON.stringify(structuredData);
+                    }
+                } else {
+                    // Retry if not loaded yet
+                    setTimeout(populateStructuredData, 100);
+                }
+            };
+            
+            populateStructuredData();
         });
     </script>
 </body>

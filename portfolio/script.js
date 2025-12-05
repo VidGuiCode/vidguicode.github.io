@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const htmlElement = document.documentElement;
     const iconSun = document.querySelector('.sun-icon');
     const iconMoon = document.querySelector('.moon-icon');
+    
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // ==========================================
     // THEME MANAGEMENT
@@ -139,28 +142,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Intersection Observer for "Power On" animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px"
-    };
+    // Skip animations if user prefers reduced motion
+    if (!prefersReducedMotion) {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px"
+        };
 
-    const powerOnObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('powered-on');
-                powerOnObserver.unobserve(entry.target);
+        const powerOnObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('powered-on');
+                    powerOnObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Target all cards and node-cards
+        document.querySelectorAll('.card, .node-card').forEach((card) => {
+            // Immediately power-on elements already visible in viewport on load
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                card.classList.add('powered-on');
+            } else {
+                powerOnObserver.observe(card);
             }
         });
-    }, observerOptions);
-
-    // Target all cards and node-cards
-    document.querySelectorAll('.card, .node-card').forEach((card) => {
-        // Immediately power-on elements already visible in viewport on load
-        const rect = card.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            } else {
+        // If reduced motion, immediately show all cards
+        document.querySelectorAll('.card, .node-card').forEach((card) => {
             card.classList.add('powered-on');
-        } else {
-            powerOnObserver.observe(card);
-        }
-    });
+        });
+    }
+    
+    // Initialize Lucide icons after DOM is ready
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    } else {
+        // Wait for Lucide to load
+        window.addEventListener('load', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    }
 });

@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications & Badges | VidGuiCode</title>
-    <meta name="description" content="Professional certifications and badges earned by Guilherme Videira Marques - Microsoft Azure, Office Specialist, and more.">
+    <title>Certifications & Training | VidGuiCode</title>
+    <meta name="description" content="Professional certifications and training sessions completed by Guilherme Videira Marques - Microsoft Azure, Office Specialist, Power Platform, and more.">
+    <meta name="keywords" content="Certifications, Training, Microsoft Azure, Office Specialist, Power Platform, Cloud Computing, Professional Credentials, Formations">
+    <link rel="canonical" href="https://vidguicode.github.io/VidGuiCode/portfolio/certifications.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vidguicode.github.io/VidGuiCode/portfolio/certifications.html">
+    <meta property="og:title" content="Certifications & Training | VidGuiCode">
+    <meta property="og:description" content="Professional certifications and training sessions completed by Guilherme Videira Marques.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Icons - Load locally (version 0.555.0) -->
+    <script src="assets/js/lucide.min.js"></script>
     
-    <!-- Flags -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+    <!-- Flags - Load locally -->
+    <link rel="stylesheet" href="assets/css/flag-icons.min.css">
 
     <link rel="stylesheet" href="styles.css">
     <script src="translations.js"></script>
@@ -300,14 +308,34 @@
             .cert-row {
                 grid-template-columns: 1fr;
                 text-align: center;
+                justify-items: center;
+            }
+
+            .cert-row > img {
+                justify-self: center;
+                margin: 0 auto;
             }
 
             .cert-badge-thumb {
+                margin: 0 auto;
+                display: block;
+            }
+
+            .cert-row > div:first-child {
+                justify-self: center;
+                margin: 0 auto;
+            }
+
+            .formation-row > div:first-child {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 margin: 0 auto;
             }
 
             .cert-info {
                 align-items: center;
+                text-align: center;
             }
 
             .cert-meta {
@@ -349,6 +377,35 @@
             max-height: 85vh;
             overflow-y: auto;
             position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 1.5rem;
+                max-height: 90vh;
+                margin: 0.5rem;
+            }
+
+            .modal-header {
+                padding-right: 2.5rem;
+            }
+
+            .modal-header h2 {
+                font-size: 1.25rem;
+            }
+
+            .modal-description {
+                font-size: 0.95rem;
+            }
+
+            .modal-skills {
+                gap: 0.4rem;
+            }
+
+            .skill-tag {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
         }
 
         .modal-close {
@@ -450,13 +507,81 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
+            .certifications-hero {
+                padding: 2rem 0 1rem;
+            }
+            
             .certifications-hero h1 {
                 font-size: 2rem;
             }
 
+            .stats-row {
+                gap: 1rem;
+            }
+
             .stat-box {
-                min-width: 150px;
+                min-width: 140px;
+                padding: 1rem;
+            }
+
+            .stat-box h3 {
+                font-size: 1.5rem;
+            }
+
+            .filter-controls {
+                gap: 0.75rem;
+                margin: 1.5rem 0;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .certifications-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .certifications-hero .subtitle {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .stats-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            .stat-box {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .filter-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .certifications-list {
+                margin: 1rem 0;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+                max-height: 90vh;
+            }
+
+            .modal-header {
+                padding-right: 2.5rem;
             }
         }
 
@@ -471,6 +596,22 @@
             width: 64px;
             height: 64px;
             margin-bottom: 1rem;
+        }
+
+        /* Formation Row Styling */
+        .level-training {
+            color: #8b5cf6 !important;
+            border-color: #8b5cf6 !important;
+            background: rgba(139, 92, 246, 0.1) !important;
+        }
+
+        /* Mobile container adjustments */
+        @media (max-width: 768px) {
+            main.container {
+                padding-top: 80px !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
         }
     </style>
 </head>
@@ -510,8 +651,8 @@
 
         <section class="certifications-hero">
             <div class="badge" data-i18n="certifications.badge">PROFESSIONAL CREDENTIALS</div>
-            <h1 data-i18n="certifications.heading">Certifications & Badges</h1>
-            <p class="subtitle" data-i18n="certifications.subtitle">Industry-recognized certifications demonstrating expertise in cloud computing, productivity tools, and technical skills. Sorted by certification level — highest rank first.</p>
+            <h1 data-i18n="certifications.heading">Certifications & Training</h1>
+            <p class="subtitle" data-i18n="certifications.subtitle">Industry-recognized certifications and training sessions demonstrating expertise in cloud computing, productivity tools, and technical skills. Certifications sorted by level — highest rank first. Trainings shown separately.</p>
             
             <div class="stats-row">
                 <div class="stat-box">
@@ -528,13 +669,15 @@
         </section>
 
         <div class="filter-controls">
-            <button class="filter-btn active" data-filter="all" data-i18n="certifications.filter.all">All Certifications</button>
+            <button class="filter-btn active" data-filter="all" data-i18n="certifications.filter.all">All</button>
+            <button class="filter-btn" data-filter="certifications" data-i18n="certifications.filter.certifications">Certifications</button>
+            <button class="filter-btn" data-filter="formations" data-i18n="certifications.filter.formations">Training</button>
             <button class="filter-btn" data-filter="Cloud Computing" data-i18n="certifications.filter.cloud">Cloud Computing</button>
             <button class="filter-btn" data-filter="Productivity" data-i18n="certifications.filter.productivity">Productivity</button>
         </div>
 
         <div id="certifications-container" class="certifications-list">
-            <!-- Certifications will be dynamically inserted here -->
+            <!-- Certifications and Formations will be dynamically inserted here -->
         </div>
 
         <!-- Modal for Certification Details -->
@@ -549,6 +692,23 @@
                 </div>
                 <p id="modal-cert-description" class="modal-description"></p>
                 <div id="modal-cert-skills" class="modal-skills"></div>
+                
+                <!-- Related Formations Section (for certifications) -->
+                <div id="modal-formations-section" style="display: none;">
+                    <h3 data-i18n="certifications.modal.relatedFormations">Related Training</h3>
+                    <ul id="modal-formations-list" class="project-list">
+                        <!-- Formations will be inserted here -->
+                    </ul>
+                </div>
+                
+                <!-- Related Certifications Section (for formations) -->
+                <div id="modal-certifications-section" style="display: none;">
+                    <h3 data-i18n="certifications.modal.relatedCertifications">Related Certifications</h3>
+                    <ul id="modal-certifications-list" class="project-list">
+                        <!-- Certifications will be inserted here -->
+                    </ul>
+                </div>
+                
                 <h3 data-i18n="certifications.modal.projects">Related Projects</h3>
                 <ul id="modal-projects-list" class="project-list">
                     <!-- Projects will be inserted here -->
@@ -586,21 +746,38 @@
             });
         });
 
-        // Render certifications
+        // Render certifications and formations
         function renderCertifications(filter = 'all') {
             const container = document.getElementById('certifications-container');
             container.innerHTML = '';
 
-            // Get certifications sorted by rank (highest first)
-            let certs = getCertificationsSortedByRank();
+            let items = [];
             
             // Apply filter
-            if (filter !== 'all') {
-                certs = certs.filter(cert => cert.category === filter);
+            if (filter === 'certifications') {
+                // Show only certifications
+                items = getCertificationsSortedByRank().map(cert => ({ ...cert, type: 'certification' }));
+            } else if (filter === 'formations') {
+                // Show only formations
+                items = getAllFormations().map(form => ({ ...form, type: 'formation' }));
+            } else if (filter === 'all') {
+                // Show both certifications and formations
+                const certs = getCertificationsSortedByRank().map(cert => ({ ...cert, type: 'certification' }));
+                const forms = getAllFormations().map(form => ({ ...form, type: 'formation' }));
+                items = [...certs, ...forms];
+            } else {
+                // Filter by category (applies to both certifications and formations)
+                const certs = getCertificationsSortedByRank()
+                    .filter(cert => cert.category === filter)
+                    .map(cert => ({ ...cert, type: 'certification' }));
+                const forms = getAllFormations()
+                    .filter(form => form.category === filter)
+                    .map(form => ({ ...form, type: 'formation' }));
+                items = [...certs, ...forms];
             }
 
-            if (certs.length === 0) {
-                const emptyText = t('certifications.empty', 'No certifications found for this category.');
+            if (items.length === 0) {
+                const emptyText = t('certifications.empty', 'No items found for this filter.');
                 container.innerHTML = `
                     <div class="empty-state">
                         <i data-lucide="award"></i>
@@ -611,19 +788,28 @@
                 return;
             }
 
-            // Update stats
-            document.getElementById('total-certs').textContent = CERTIFICATIONS.length;
-            const highestCert = getCertificationsSortedByRank()[0];
+            // Update stats (only count certifications)
+            const certsOnly = getCertificationsSortedByRank();
+            document.getElementById('total-certs').textContent = certsOnly.length;
+            if (certsOnly.length > 0) {
+                const highestCert = certsOnly[0];
+                const highestLevelNameKey = highestCert.level.nameKey
+                    ? highestCert.level.nameKey
+                    : `certifications.level.${highestCert.level.label.toLowerCase()}`;
+                document.getElementById('highest-level').textContent = t(highestLevelNameKey, highestCert.level.label);
+            } else {
+                document.getElementById('highest-level').textContent = '—';
+            }
 
-            // Prefer explicit i18n keys on the level definition
-            const highestLevelNameKey = highestCert.level.nameKey
-                ? highestCert.level.nameKey
-                : `certifications.level.${highestCert.level.label.toLowerCase()}`;
-            document.getElementById('highest-level').textContent = t(highestLevelNameKey, highestCert.level.label);
-
-            certs.forEach(cert => {
-                const row = createCertificationRow(cert);
-                container.appendChild(row);
+            // Render items
+            items.forEach(item => {
+                if (item.type === 'certification') {
+                    const row = createCertificationRow(item);
+                    container.appendChild(row);
+                } else if (item.type === 'formation') {
+                    const row = createFormationRow(item);
+                    container.appendChild(row);
+                }
             });
 
             // Re-initialize Lucide icons
@@ -656,6 +842,11 @@
             const statusBadge = cert.status === 'in-progress' 
                 ? `<span class="status-badge status-in-progress"><i data-lucide="clock"></i>${statusText}</span>` 
                 : '';
+            
+            // Date earned (for completed certifications)
+            const dateEarnedStr = cert.dateEarned 
+                ? new Date(cert.dateEarned).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' })
+                : '';
 
             row.innerHTML = `
                 <img src="${cert.image}" alt="${certName}" class="cert-badge-thumb" loading="lazy">
@@ -668,6 +859,7 @@
                             ${cert.provider}
                         </span>
                         <span class="cert-category">${cert.category}</span>
+                        ${dateEarnedStr ? `<span class="cert-category">${dateEarnedStr}</span>` : ''}
                         ${statusBadge}
                     </div>
                 </div>
@@ -701,6 +893,58 @@
 
             // Make row clickable to open modal
             row.addEventListener('click', () => showCertModal(cert.id));
+
+            return row;
+        }
+
+        function createFormationRow(formation) {
+            const row = document.createElement('div');
+            row.className = 'cert-row formation-row';
+            row.dataset.formationId = formation.id;
+
+            // Localized name
+            const formationName = formation.nameKey ? t(formation.nameKey, formation.name) : formation.name;
+            
+            // Format date
+            const dateStr = formation.dateCompleted 
+                ? new Date(formation.dateCompleted).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' })
+                : '';
+
+            row.innerHTML = `
+                <div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+                    <i data-lucide="book-open" style="width: 32px; height: 32px; color: var(--text-secondary);"></i>
+                </div>
+                
+                <div class="cert-info">
+                    <div class="cert-name">${formationName}</div>
+                    <div class="cert-meta">
+                        <span class="cert-provider">
+                            <i data-lucide="users"></i>
+                            ${formation.provider}
+                        </span>
+                        <span class="cert-category">${formation.category}</span>
+                        ${formation.location ? `<span class="cert-category">${formation.location}</span>` : ''}
+                        ${formation.duration ? `<span class="cert-category">${formation.duration}</span>` : ''}
+                        ${formation.format ? `<span class="cert-category">${formation.format}</span>` : ''}
+                        ${dateStr ? `<span class="cert-category">${dateStr}</span>` : ''}
+                    </div>
+                </div>
+
+                <div class="cert-level level-training" style="color: #8b5cf6; border-color: #8b5cf6; background: rgba(139, 92, 246, 0.1);">
+                    <i data-lucide="book-open"></i>
+                    ${t('certifications.type.training', 'Training')}
+                </div>
+
+                <div class="cert-actions">
+                    <button class="cert-action-icon" title="View Details" 
+                            onclick="showFormationModal('${formation.id}'); event.stopPropagation();">
+                        <i data-lucide="info"></i>
+                    </button>
+                </div>
+            `;
+
+            // Make row clickable to open modal
+            row.addEventListener('click', () => showFormationModal(formation.id));
 
             return row;
         }
@@ -743,6 +987,28 @@
                 return `<span class="skill-tag">${skillText}</span>`;
             }).join('');
 
+            // Render related formations
+            const relatedFormations = getFormationsByCertification(certId);
+            const formationsSection = document.getElementById('modal-formations-section');
+            const formationsList = document.getElementById('modal-formations-list');
+            
+            if (relatedFormations.length > 0) {
+                formationsSection.style.display = 'block';
+                formationsList.innerHTML = relatedFormations.map(formation => {
+                    const formationName = formation.nameKey ? t(formation.nameKey, formation.name) : formation.name;
+                    return `
+                        <li>
+                            <a href="#" onclick="showFormationModal('${formation.id}'); event.preventDefault(); return false;">
+                                <i data-lucide="book-open"></i>
+                                ${formationName}
+                            </a>
+                        </li>
+                    `;
+                }).join('');
+            } else {
+                formationsSection.style.display = 'none';
+            }
+
             // Render projects
             if (cert.relatedProjects.length === 0) {
                 const noProjectsText = t('certifications.modal.noProjects', 'No projects using this certification yet.');
@@ -773,6 +1039,73 @@
             lucide.createIcons();
         }
 
+        // Formation modal functionality
+        function showFormationModal(formationId) {
+            const formation = getFormationById(formationId);
+            if (!formation) return;
+
+            const modal = document.getElementById('cert-modal');
+            const modalName = document.getElementById('modal-cert-name');
+            const modalProvider = document.getElementById('modal-cert-provider');
+            const modalDescription = document.getElementById('modal-cert-description');
+            const modalSkills = document.getElementById('modal-cert-skills');
+            const modalProjectsList = document.getElementById('modal-projects-list');
+            const formationsSection = document.getElementById('modal-formations-section');
+            const certificationsSection = document.getElementById('modal-certifications-section');
+            const certificationsList = document.getElementById('modal-certifications-list');
+
+            // Localized name & description
+            const formationName = formation.nameKey ? t(formation.nameKey, formation.name) : formation.name;
+            const formationDescription = formation.descriptionKey
+                ? t(formation.descriptionKey, formation.description)
+                : formation.description;
+
+            modalName.textContent = formationName;
+            modalProvider.innerHTML = `<i data-lucide="users"></i> ${formation.provider}`;
+            modalDescription.textContent = formationDescription;
+            
+            // Add notes if available
+            if (formation.notes || formation.notesKey) {
+                const notes = formation.notesKey ? t(formation.notesKey, formation.notes) : formation.notes;
+                modalDescription.textContent += `\n\n${t('certifications.modal.notes', 'Notes')}: ${notes}`;
+            }
+            
+            // Render skills
+            modalSkills.innerHTML = formation.skills.map((skill, index) => {
+                const skillKey = formation.skillsKeys && formation.skillsKeys[index] ? formation.skillsKeys[index] : null;
+                const skillText = skillKey ? t(skillKey, skill) : skill;
+                return `<span class="skill-tag">${skillText}</span>`;
+            }).join('');
+
+            // Hide formations section (not needed for formation modal)
+            formationsSection.style.display = 'none';
+
+            // Render related certifications
+            const relatedCerts = getCertificationsByFormation(formationId);
+            if (relatedCerts.length > 0) {
+                certificationsSection.style.display = 'block';
+                certificationsList.innerHTML = relatedCerts.map(cert => {
+                    const certName = cert.nameKey ? t(cert.nameKey, cert.name) : cert.name;
+                    return `
+                        <li>
+                            <a href="#" onclick="showCertModal('${cert.id}'); event.preventDefault(); return false;">
+                                <i data-lucide="award"></i>
+                                ${certName}
+                            </a>
+                        </li>
+                    `;
+                }).join('');
+            } else {
+                certificationsSection.style.display = 'none';
+            }
+
+            // No projects for formations (or add if needed)
+            modalProjectsList.innerHTML = `<div class="no-projects">${t('certifications.modal.noProjects', 'No related projects.')}</div>`;
+
+            modal.classList.add('active');
+            lucide.createIcons();
+        }
+
         // Close modal
         document.querySelector('.modal-close').addEventListener('click', () => {
             document.getElementById('cert-modal').classList.remove('active');
@@ -792,9 +1125,31 @@
             }
         });
 
-        // Initial render
-        renderCertifications();
-        lucide.createIcons();
+        // Wait for certifications-data.js to load before initial render
+        function waitForCertificationsData() {
+            if (typeof getCertificationsSortedByRank !== 'undefined' && typeof CERTIFICATIONS !== 'undefined') {
+                // Data is loaded, render certifications
+                renderCertifications();
+                
+                // Initialize Lucide icons
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                } else {
+                    // Wait for Lucide to load
+                    window.addEventListener('load', () => {
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+                    });
+                }
+            } else {
+                // Data not loaded yet, wait a bit and retry
+                setTimeout(waitForCertificationsData, 50);
+            }
+        }
+        
+        // Start waiting for data
+        waitForCertificationsData();
     </script>
 </body>
 </html>

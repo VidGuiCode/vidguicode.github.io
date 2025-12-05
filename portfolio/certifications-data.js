@@ -58,6 +58,7 @@ const CERTIFICATIONS = [
         skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
         skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'], // Translation keys
         relatedProjects: [], // No direct project linkage
+        relatedFormations: ['azure-fundamentals-training'], // IDs of related formations/trainings
         dateEarned: null, // Not completed yet
         expiryDate: null,
         isFree: false, // Not free
@@ -80,7 +81,8 @@ const CERTIFICATIONS = [
         descriptionKey: 'cert.powerpoint.associate.description', // Translation key
         skills: ['Presentation Design', 'Slide Management', 'Graphics & Media', 'Transitions & Animations'],
         skillsKeys: ['cert.powerpoint.associate.skills.design', 'cert.powerpoint.associate.skills.management', 'cert.powerpoint.associate.skills.graphics', 'cert.powerpoint.associate.skills.transitions'], // Translation keys
-        relatedProjects: [], // Add project slugs as needed
+        relatedProjects: ['pif', 'gradingdino'], // Used in PIF and GradingDino projects for documentation
+        relatedFormations: [], // IDs of related formations/trainings
         dateEarned: '2025-10-20', // October 20, 2025
         expiryDate: null,
         isFree: false,
@@ -103,12 +105,58 @@ const CERTIFICATIONS = [
         descriptionKey: 'cert.word.associate.description', // Translation key
         skills: ['Document Management', 'Formatting', 'Tables & Lists', 'References & Collaboration'],
         skillsKeys: ['cert.word.associate.skills.management', 'cert.word.associate.skills.formatting', 'cert.word.associate.skills.tables', 'cert.word.associate.skills.references'], // Translation keys
-        relatedProjects: [],
+        relatedProjects: ['pif', 'gradingdino'], // Used in PIF and GradingDino projects for documentation
+        relatedFormations: [], // IDs of related formations/trainings
         dateEarned: '2025-11-17', // November 17, 2025
         expiryDate: null,
         isFree: false,
         status: 'completed', // Status: 'completed' or 'in-progress'
     },
+];
+
+/**
+ * Formations/Trainings Data
+ * These are training sessions, courses, or workshops that may or may not lead to certifications.
+ * Formations can exist independently or be linked to certifications.
+ */
+const FORMATIONS = [
+    {
+        id: 'azure-fundamentals-training',
+        name: 'Azure Fundamentals (AZ-900) Training',
+        nameKey: 'formation.azure.az900.name',
+        provider: 'Microsoft',
+        category: 'Cloud Computing',
+        description: 'Training course covering Azure Fundamentals concepts as preparation for the AZ-900 certification exam.',
+        descriptionKey: 'formation.azure.az900.description',
+        dateCompleted: '2025-11-27', // Date when training was completed
+        duration: '1 day', // Duration of training
+        format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
+        location: 'Lycée Guillaume Kroll (LGK)', // Location/context
+        relatedCertifications: ['azure-az900'], // Linked to AZ-900 certification
+        skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
+        skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'],
+        notes: 'Attended this training as part of my BTS Cloud Computing program at LGK. Preparing for AZ-900 certification.',
+        notesKey: 'formation.azure.az900.notes',
+    },
+    {
+        id: 'pl-900-training',
+        name: 'Power Platform Fundamentals (PL-900) Training',
+        nameKey: 'formation.pl900.name',
+        provider: 'Microsoft',
+        category: 'Cloud Computing',
+        description: 'Full-day training course at Lycée Guillaume Kroll (LGK) as part of BTS Cloud Computing program. Course runs from 9h to 17h where a trainer explains PL-900 concepts and Power Platform fundamentals.',
+        descriptionKey: 'formation.pl900.description',
+        dateCompleted: '2025-12-05', // Date when training was completed
+        duration: '1 day (9h-17h)', // Duration of training
+        format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
+        location: 'Lycée Guillaume Kroll (LGK)', // Location/context
+        relatedCertifications: [], // IDs of related certifications (empty - certification not yet decided)
+        skills: ['Power Platform', 'Power Apps', 'Power Automate', 'Power BI'],
+        skillsKeys: ['formation.pl900.skills.platform', 'formation.pl900.skills.apps', 'formation.pl900.skills.automate', 'formation.pl900.skills.bi'],
+        notes: 'Attended this training as part of my BTS Cloud Computing program at LGK. Learned PL-900 content through instructor-led sessions.',
+        notesKey: 'formation.pl900.notes',
+    },
+    // Add more formations as needed
 ];
 
 // Project name translations for modal display
@@ -192,11 +240,80 @@ function getCertificationsByProject(projectSlug) {
 
 /**
  * Get all certifications sorted by rank (highest first)
+ * Cached for performance - only recomputes if CERTIFICATIONS array changes
  * @returns {array} Array of certification objects sorted by level rank
  */
+let _cachedSortedCerts = null;
+let _cachedCertsLength = 0;
+
 function getCertificationsSortedByRank() {
-    return [...CERTIFICATIONS].sort((a, b) => {
-        // Sort by level rank (descending - highest first)
-        return b.level.rank - a.level.rank;
+    // Cache sorted results (only recompute if array length changed)
+    if (!_cachedSortedCerts || CERTIFICATIONS.length !== _cachedCertsLength) {
+        _cachedSortedCerts = [...CERTIFICATIONS].sort((a, b) => {
+            // Sort by level rank (descending - highest first)
+            return b.level.rank - a.level.rank;
+        });
+        _cachedCertsLength = CERTIFICATIONS.length;
+    }
+    return _cachedSortedCerts;
+}
+
+/**
+ * Get formation by ID
+ * @param {string} id - Formation ID
+ * @returns {object|null} Formation object or null if not found
+ */
+function getFormationById(id) {
+    return FORMATIONS.find(formation => formation.id === id) || null;
+}
+
+/**
+ * Get all formations
+ * @returns {array} Array of all formation objects
+ */
+function getAllFormations() {
+    return FORMATIONS;
+}
+
+/**
+ * Get formations related to a certification
+ * @param {string} certId - Certification ID
+ * @returns {array} Array of formation objects
+ */
+function getFormationsByCertification(certId) {
+    return FORMATIONS.filter(formation => 
+        formation.relatedCertifications && formation.relatedCertifications.includes(certId)
+    );
+}
+
+/**
+ * Get certifications related to a formation
+ * @param {string} formationId - Formation ID
+ * @returns {array} Array of certification objects
+ */
+function getCertificationsByFormation(formationId) {
+    const formation = getFormationById(formationId);
+    if (!formation || !formation.relatedCertifications) return [];
+    return formation.relatedCertifications
+        .map(certId => getCertificationById(certId))
+        .filter(cert => cert !== null);
+}
+
+/**
+ * Get all items (certifications + formations) sorted appropriately
+ * @returns {array} Combined array with type indicator
+ */
+function getAllItemsSorted() {
+    const certs = CERTIFICATIONS.map(cert => ({ ...cert, type: 'certification' }));
+    const forms = FORMATIONS.map(form => ({ ...form, type: 'formation' }));
+    
+    // Sort certifications by rank, formations by date (newest first)
+    const sortedCerts = certs.sort((a, b) => b.level.rank - a.level.rank);
+    const sortedForms = forms.sort((a, b) => {
+        if (!a.dateCompleted || !b.dateCompleted) return 0;
+        return new Date(b.dateCompleted) - new Date(a.dateCompleted);
     });
+    
+    // Certifications first, then formations
+    return [...sortedCerts, ...sortedForms];
 }

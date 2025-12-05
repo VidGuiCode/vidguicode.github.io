@@ -11,11 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Icons - Load locally (version 0.555.0) -->
+    <script src="assets/js/lucide.min.js"></script>
     
-    <!-- Flags -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+    <!-- Flags - Load locally -->
+    <link rel="stylesheet" href="assets/css/flag-icons.min.css">
 
     <link rel="stylesheet" href="styles.css">
     <script src="translations.js"></script>
@@ -114,6 +114,60 @@
             font-weight: 600;
             font-size: 0.9rem;
             margin-left: 1rem;
+        }
+
+        /* Project Certifications Section - Small Badges */
+        .project-certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-cert-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.6rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.8rem;
+        }
+
+        .project-cert-badge:hover {
+            border-color: var(--accent-primary);
+            background: var(--surface-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-cert-badge img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+        }
+
+        .project-cert-name {
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .project-cert-badge img {
+                width: 28px;
+                height: 28px;
+            }
+
+            .project-cert-name {
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -339,6 +393,14 @@
                         <li>Personal Notes</li>
                         <li>Teacher Observations</li>
                     </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.certifications">Certifications Used</h3>
+                    <div class="line"></div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0.75rem;" data-i18n="project.sidebar.certificationsDesc">These certifications helped enhance this project:</p>
+                    <div class="project-certifications" data-project="gradingdino">
+                        <div class="cert-badge-placeholder">badge-Microsoft-PowerPoint-Associate</div>
+                        <div class="cert-badge-placeholder">badge-Microsoft-Word-Associate</div>
+                    </div>
                 </div>
             </aside>
         </div>

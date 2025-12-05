@@ -497,6 +497,20 @@ const translations = {
         de: "Wichtige Funktionen",
         fr: "Fonctionnalités clés"
     },
+    "project.sidebar.certifications": {
+        en: "Certifications Used",
+        pt: "Certificações Utilizadas",
+        lu: "Benotzt Zertifikater",
+        de: "Verwendete Zertifizierungen",
+        fr: "Certifications Utilisées"
+    },
+    "project.sidebar.certificationsDesc": {
+        en: "These certifications helped enhance this project:",
+        pt: "Estas certificações ajudaram a melhorar este projeto:",
+        lu: "Dës Zertifikater hunn dëst Projet verbessert:",
+        de: "Diese Zertifizierungen haben dieses Projekt verbessert:",
+        fr: "Ces certifications ont aidé à améliorer ce projet:"
+    },
     "project.sidebar.sensors": {
         en: "Sensors & Actuators",
         pt: "Sensores e atuadores",
@@ -879,7 +893,7 @@ const translations = {
 
     // Certifications Page
     "certifications.subtitle": {
-        en: "Industry-recognized certifications demonstrating expertise in cloud computing, productivity tools, and technical skills. Sorted by certification level — highest rank first.",
+        en: "Industry-recognized certifications and training sessions demonstrating expertise in cloud computing, productivity tools, and technical skills. Certifications sorted by level — highest rank first. Trainings shown separately.",
         pt: "Certificações reconhecidas pela indústria demonstrando expertise em computação em nuvem, ferramentas de produtividade e habilidades técnicas. Ordenadas por nível de certificação — maior classificação primeiro.",
         lu: "Industrie-unerkannte Zertifikater déi Expertise an Cloud Computing, Produktivitéitstools an technesche Fäegkeeten weisen. Sortéiert no Zertifikatsniveau — héchste Rang als éischt.",
         de: "Branchenweit anerkannte Zertifizierungen, die Expertise in Cloud Computing, Produktivitätstools und technischen Fähigkeiten nachweisen. Sortiert nach Zertifizierungsstufe — höchster Rang zuerst.",
@@ -939,11 +953,11 @@ const translations = {
         fr: "CREDENTIALS PROFESSIONNELS"
     },
     "certifications.heading": {
-        en: "Certifications & Badges",
-        pt: "Certificações & Distintivos",
-        lu: "Zertifikater & Badges",
-        de: "Zertifizierungen & Abzeichen",
-        fr: "Certifications & Badges"
+        en: "Certifications & Training",
+        pt: "Certificações & Formação",
+        lu: "Zertifikatiounen & Training",
+        de: "Zertifizierungen & Schulungen",
+        fr: "Certifications & Formation"
     },
     "certifications.back": {
         en: "Back to Portfolio",
@@ -967,11 +981,25 @@ const translations = {
         fr: "Niveau le Plus Élevé"
     },
     "certifications.filter.all": {
-        en: "All Certifications",
-        pt: "Todas as Certificações",
-        lu: "All Zertifikater",
-        de: "Alle Zertifizierungen",
-        fr: "Toutes les Certifications"
+        en: "All",
+        pt: "Tudo",
+        lu: "All",
+        de: "Alle",
+        fr: "Tout"
+    },
+    "certifications.filter.certifications": {
+        en: "Certifications",
+        pt: "Certificações",
+        lu: "Zertifikater",
+        de: "Zertifizierungen",
+        fr: "Certifications"
+    },
+    "certifications.filter.formations": {
+        en: "Training",
+        pt: "Formação",
+        lu: "Training",
+        de: "Schulungen",
+        fr: "Formation"
     },
     "certifications.filter.cloud": {
         en: "Cloud Computing",
@@ -986,6 +1014,34 @@ const translations = {
         lu: "Produktivtéit",
         de: "Produktivität",
         fr: "Productivité"
+    },
+    "certifications.type.training": {
+        en: "Training",
+        pt: "Formação",
+        lu: "Training",
+        de: "Schulung",
+        fr: "Formation"
+    },
+    "certifications.modal.relatedFormations": {
+        en: "Related Training",
+        pt: "Formação Relacionada",
+        lu: "Relatéiert Training",
+        de: "Verwandte Schulungen",
+        fr: "Formation Associée"
+    },
+    "certifications.modal.relatedCertifications": {
+        en: "Related Certifications",
+        pt: "Certificações Relacionadas",
+        lu: "Relatéiert Zertifikater",
+        de: "Verwandte Zertifizierungen",
+        fr: "Certifications Associées"
+    },
+    "certifications.modal.notes": {
+        en: "Notes",
+        pt: "Notas",
+        lu: "Notizen",
+        de: "Notizen",
+        fr: "Notes"
     },
     "certifications.viewMore": {
         en: "View All Certifications",
@@ -1153,6 +1209,57 @@ const translations = {
         lu: "Referenzen & Zesummenaarbecht",
         de: "Verweise & Zusammenarbeit",
         fr: "Références & Collaboration"
+    },
+
+    // Formations/Training Translations
+    "formation.pl900.name": {
+        en: "Power Platform Fundamentals (PL-900) Training",
+        pt: "Formação Power Platform Fundamentals (PL-900)",
+        lu: "Power Platform Fundamentals (PL-900) Training",
+        de: "Power Platform Fundamentals (PL-900) Schulung",
+        fr: "Formation Power Platform Fundamentals (PL-900)"
+    },
+    "formation.pl900.description": {
+        en: "Full-day training course at Lycée Guillaume Kroll (LGK) as part of BTS Cloud Computing program. Course runs from 9h to 17h where a trainer explains PL-900 concepts and Power Platform fundamentals.",
+        pt: "Curso de formação de dia inteiro no Lycée Guillaume Kroll (LGK) como parte do programa BTS Cloud Computing. O curso decorre das 9h às 17h onde um formador explica os conceitos PL-900 e fundamentos do Power Platform.",
+        lu: "Ganzen Dag Training am Lycée Guillaume Kroll (LGK) als Deel vum BTS Cloud Computing Programm. De Cours geet vun 9h bis 17h wou en Trainer PL-900 Konzepter a Power Platform Grondlagen erkläert.",
+        de: "Eintägiger Schulungskurs am Lycée Guillaume Kroll (LGK) im Rahmen des BTS Cloud Computing Programms. Der Kurs läuft von 9h bis 17h, wo ein Trainer PL-900 Konzepte und Power Platform Grundlagen erklärt.",
+        fr: "Cours de formation d'une journée complète au Lycée Guillaume Kroll (LGK) dans le cadre du programme BTS Cloud Computing. Le cours se déroule de 9h à 17h où un formateur explique les concepts PL-900 et les fondamentaux de Power Platform."
+    },
+    "formation.pl900.notes": {
+        en: "Attended this training as part of my BTS Cloud Computing program at LGK. Learned PL-900 content through instructor-led sessions.",
+        pt: "Frequentei esta formação como parte do meu programa BTS Cloud Computing no LGK. Aprendi o conteúdo PL-900 através de sessões orientadas por formador.",
+        lu: "Besicht dëst Training als Deel vu mengem BTS Cloud Computing Programm am LGK. Geléiert PL-900 Inhalt duerch Instruktuer-geféiert Sessiounen.",
+        de: "Besuchte diese Schulung im Rahmen meines BTS Cloud Computing Programms am LGK. Lernte PL-900 Inhalte durch trainer-geführte Sitzungen.",
+        fr: "Suivi cette formation dans le cadre de mon programme BTS Cloud Computing au LGK. Appris le contenu PL-900 à travers des sessions dirigées par un formateur."
+    },
+    "formation.pl900.skills.platform": {
+        en: "Power Platform",
+        pt: "Power Platform",
+        lu: "Power Platform",
+        de: "Power Platform",
+        fr: "Power Platform"
+    },
+    "formation.pl900.skills.apps": {
+        en: "Power Apps",
+        pt: "Power Apps",
+        lu: "Power Apps",
+        de: "Power Apps",
+        fr: "Power Apps"
+    },
+    "formation.pl900.skills.automate": {
+        en: "Power Automate",
+        pt: "Power Automate",
+        lu: "Power Automate",
+        de: "Power Automate",
+        fr: "Power Automate"
+    },
+    "formation.pl900.skills.bi": {
+        en: "Power BI",
+        pt: "Power BI",
+        lu: "Power BI",
+        de: "Power BI",
+        fr: "Power BI"
     },
 
     // Project Names (for modal display)
