@@ -847,6 +847,41 @@ const translations = {
         de: "ABSCHLUSSPROJEKT",
         fr: "PROJET FINAL"
     },
+    "project.pif.title": {
+        en: "Smart Plant Monitoring (PIF)",
+        pt: "Monitorização Inteligente de Plantas (PIF)",
+        lu: "Smart Plant Monitoring (PIF)",
+        de: "Smart Plant Monitoring (PIF)",
+        fr: "Smart Plant Monitoring (PIF)"
+    },
+    "project.pif.score": {
+        en: "59/60",
+        pt: "59/60",
+        lu: "59/60",
+        de: "59/60",
+        fr: "59/60"
+    },
+    "project.pif.subtitle": {
+        en: "Final project: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.",
+        pt: "Projeto final: Sistema IoT completo com nós ESP8266, hub Raspberry Pi, dashboard web, rede empresarial e backups automatizados.",
+        lu: "Final Projet: Vollstännegt IoT System mat ESP8266 Noden, Raspberry Pi Hub, Web Dashboard, Enterprise Netzwierk, an automatesche Backups.",
+        de: "Abschlussprojekt: Vollständiges IoT-System mit ESP8266-Nodes, Raspberry Pi Hub, Web-Dashboard, Enterprise-Netzwerk und automatisierten Backups.",
+        fr: "Projet final : Système IoT complet avec nœuds ESP8266, hub Raspberry Pi, tableau de bord web, réseau d’entreprise et sauvegardes automatisées."
+    },
+    "project.pif.section.system.title": {
+        en: "The \"Plantimeter\" System",
+        pt: "O Sistema \"Plantimeter\"",
+        lu: "De \"Plantimeter\" System",
+        de: "Das \"Plantimeter\"-System",
+        fr: "Le système \"Plantimeter\""
+    },
+    "project.pif.section.system.body": {
+        en: "This was my <strong>PIF (Projet Intégré Final)</strong> — the capstone project for my Computer Technician diploma. I built a complete IoT plant monitoring and automation system from scratch: hardware nodes, firmware, backend server, web dashboard, and enterprise networking.",
+        pt: "Este foi o meu <strong>PIF (Projet Intégré Final)</strong> — o projeto de final de curso do diploma de Técnico de Informática. Construí um sistema IoT completo de monitorização e automação de plantas do zero: nós de hardware, firmware, servidor backend, dashboard web e rede empresarial.",
+        lu: "Dëst war mäin <strong>PIF (Projet Intégré Final)</strong> — de Capstone Projet fir mäin Computer Technician Diplom. Ech hunn e komplette IoT Planz-Monitoring an Automatisatiouns-System vu Null un gebaut: Hardware Noden, Firmware, Backend Server, Web Dashboard, an Enterprise Netzwierk.",
+        de: "Dies war mein <strong>PIF (Projet Intégré Final)</strong> — das Abschlussprojekt für mein Computer-Techniker-Diplom. Ich habe ein komplettes IoT-System zur Pflanzenüberwachung und -automatisierung von Grund auf gebaut: Hardware-Nodes, Firmware, Backend-Server, Web-Dashboard und Enterprise-Netzwerk.",
+        fr: "C’était mon <strong>PIF (Projet Intégré Final)</strong> — le projet de fin d’études pour mon diplôme de Technicien en informatique. J’ai construit un système IoT complet de monitoring et d’automatisation des plantes de A à Z : nœuds matériels, firmware, serveur backend, tableau de bord web et réseau d’entreprise."
+    },
     "project.pif.nodes.sensor.title": {
         en: "Sensor Node",
         pt: "Nó Sensor",
