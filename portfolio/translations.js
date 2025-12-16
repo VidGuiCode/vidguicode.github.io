@@ -1183,6 +1183,146 @@ const translations = {
         de: "<strong>Sicherheit zählt von Tag eins an</strong> — Fail2Ban, SSL, UFW, Prepared Statements — ich habe gelernt, Sicherheit in jeder Schicht mitzudenken.",
         fr: "<strong>La sécurité compte dès le premier jour</strong> — Fail2Ban, SSL, UFW, requêtes préparées — j’ai appris à penser la sécurité à chaque couche."
     },
+    "project.pif.sidebar.tech.esp": {
+        en: "ESP8266 (Wemos D1 Mini)",
+        pt: "ESP8266 (Wemos D1 Mini)",
+        lu: "ESP8266 (Wemos D1 Mini)",
+        de: "ESP8266 (Wemos D1 Mini)",
+        fr: "ESP8266 (Wemos D1 Mini)"
+    },
+    "project.pif.sidebar.tech.rpi": {
+        en: "Raspberry Pi 4",
+        pt: "Raspberry Pi 4",
+        lu: "Raspberry Pi 4",
+        de: "Raspberry Pi 4",
+        fr: "Raspberry Pi 4"
+    },
+    "project.pif.sidebar.tech.mariadb": {
+        en: "MariaDB + phpMyAdmin",
+        pt: "MariaDB + phpMyAdmin",
+        lu: "MariaDB + phpMyAdmin",
+        de: "MariaDB + phpMyAdmin",
+        fr: "MariaDB + phpMyAdmin"
+    },
+    "project.pif.sidebar.tech.apache": {
+        en: "Apache + PHP",
+        pt: "Apache + PHP",
+        lu: "Apache + PHP",
+        de: "Apache + PHP",
+        fr: "Apache + PHP"
+    },
+    "project.pif.sidebar.tech.security": {
+        en: "SSL, Fail2Ban, UFW",
+        pt: "SSL, Fail2Ban, UFW",
+        lu: "SSL, Fail2Ban, UFW",
+        de: "SSL, Fail2Ban, UFW",
+        fr: "SSL, Fail2Ban, UFW"
+    },
+    "project.pif.sidebar.tech.cisco": {
+        en: "Cisco Networking (VLANs, NAT)",
+        pt: "Redes Cisco (VLANs, NAT)",
+        lu: "Cisco Networking (VLANen, NAT)",
+        de: "Cisco Networking (VLANs, NAT)",
+        fr: "Réseau Cisco (VLAN, NAT)"
+    },
+    "project.pif.sidebar.tech.raid": {
+        en: "RAID1 Backup Server",
+        pt: "Servidor de Backup RAID1",
+        lu: "RAID1 Backup Server",
+        de: "RAID1 Backup-Server",
+        fr: "Serveur de sauvegarde RAID1"
+    },
+    "project.pif.sidebar.tech.bash": {
+        en: "Bash Automation",
+        pt: "Automação Bash",
+        lu: "Bash Automatisatioun",
+        de: "Bash-Automatisierung",
+        fr: "Automatisation Bash"
+    },
+    "project.pif.sidebar.sensors.dht22": {
+        en: "DHT22 (Temp/Humidity)",
+        pt: "DHT22 (Temp/Humidade)",
+        lu: "DHT22 (Temp/Fiichtegkeet)",
+        de: "DHT22 (Temp/Feuchtigkeit)",
+        fr: "DHT22 (Temp/Humidité)"
+    },
+    "project.pif.sidebar.sensors.bh1750": {
+        en: "BH1750 (Light)",
+        pt: "BH1750 (Luz)",
+        lu: "BH1750 (Liicht)",
+        de: "BH1750 (Licht)",
+        fr: "BH1750 (Lumière)"
+    },
+    "project.pif.sidebar.sensors.sen0193": {
+        en: "SEN0193 (Soil Moisture)",
+        pt: "SEN0193 (Humidade do Solo)",
+        lu: "SEN0193 (Buedemfiichtegkeet)",
+        de: "SEN0193 (Bodenfeuchte)",
+        fr: "SEN0193 (Humidité du sol)"
+    },
+    "project.pif.sidebar.sensors.uln2803": {
+        en: "ULN2803 Driver",
+        pt: "Driver ULN2803",
+        lu: "ULN2803 Treiber",
+        de: "ULN2803 Treiber",
+        fr: "Pilote ULN2803"
+    },
+    "project.pif.sidebar.sensors.pump": {
+        en: "Water Pump",
+        pt: "Bomba de Água",
+        lu: "Waasserpompel",
+        de: "Wasserpumpe",
+        fr: "Pompe à eau"
+    },
+    "project.pif.sidebar.sensors.growled": {
+        en: "1W Grow LED",
+        pt: "LED de Crescimento 1W",
+        lu: "1W Grow LED",
+        de: "1W Grow-LED",
+        fr: "LED de croissance 1W"
+    },
+    "project.pif.sidebar.sensors.rgb": {
+        en: "RGB Status LED",
+        pt: "LED RGB de Estado",
+        lu: "RGB Status LED",
+        de: "RGB-Status-LED",
+        fr: "LED de statut RGB"
+    },
+    "project.pif.sidebar.features.dashboard": {
+        en: "Real-time Dashboard",
+        pt: "Dashboard em tempo real",
+        lu: "Echtzäit Dashboard",
+        de: "Echtzeit-Dashboard",
+        fr: "Tableau de bord en temps réel"
+    },
+    "project.pif.sidebar.features.scheduling": {
+        en: "Task Scheduling",
+        pt: "Agendamento de Tarefas",
+        lu: "Aufgabenplanung",
+        de: "Aufgabenplanung",
+        fr: "Planification des tâches"
+    },
+    "project.pif.sidebar.features.backups": {
+        en: "Automated Backups",
+        pt: "Backups automatizados",
+        lu: "Automatiséiert Backups",
+        de: "Automatisierte Backups",
+        fr: "Sauvegardes automatisées"
+    },
+    "project.pif.sidebar.features.search": {
+        en: "Fuzzy Search",
+        pt: "Pesquisa Fuzzy",
+        lu: "Fuzzy Search",
+        de: "Fuzzy Search",
+        fr: "Recherche floue"
+    },
+    "project.pif.sidebar.features.cutoff": {
+        en: "80°C Safety Cutoff",
+        pt: "Corte de segurança a 80°C",
+        lu: "80°C Sécherheets-Cutoff",
+        de: "80°C Sicherheitsabschaltung",
+        fr: "Arrêt de sécurité à 80°C"
+    },
     "project.sidebar.techStack": {
         en: "Tech Stack",
         pt: "Pilha tecnológica",
