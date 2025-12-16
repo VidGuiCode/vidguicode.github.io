@@ -405,11 +405,11 @@ const translations = {
         fr: "Cloud Personnel Home Lab"
     },
     "projects.homelab.desc": {
-        en: "A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers media streaming, tools, and secure remote access.",
-        pt: "Cluster híbrido de 3 nós com Raspberry Pi, portátil e Oracle Cloud VPS. Suporta streaming multimédia, ferramentas e acesso remoto seguro.",
-        lu: "En hybrid 3-Node Cluster deen Raspberry Pi, Laptop, an Oracle Cloud VPS kombinéiert. Bedreiwe Medien-Streaming, Tools, a sécheren Fernzougang.",
-        de: "Ein hybrider 3-Knoten-Cluster, der Raspberry Pi, Laptop und Oracle Cloud VPS kombiniert. Betreibt Medien-Streaming, Tools und sicheren Fernzugriff.",
-        fr: "Un cluster hybride à 3 nœuds combinant Raspberry Pi, laptop et Oracle Cloud VPS. Alimente le streaming média, les outils et l'accès distant sécurisé."
+        en: "A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers custom web apps with SSO, media automation, and a K3s cluster.",
+        pt: "Cluster híbrido de 3 nós com Raspberry Pi, portátil e Oracle Cloud VPS. Suporta aplicações web personalizadas com SSO, automação multimédia e um cluster K3s.",
+        lu: "En hybrid 3-Node Cluster deen Raspberry Pi, Laptop, an Oracle Cloud VPS kombinéiert. Bedreiwe personaliséiert Web Apps mat SSO, Medien-Automatiséierung, an e K3s Cluster.",
+        de: "Ein hybrider 3-Knoten-Cluster, der Raspberry Pi, Laptop und Oracle Cloud VPS kombiniert. Betreibt benutzerdefinierte Web-Apps mit SSO, Medien-Automatisierung und einen K3s-Cluster.",
+        fr: "Un cluster hybride à 3 nœuds combinant Raspberry Pi, laptop et Oracle Cloud VPS. Alimente des applications web personnalisées avec SSO, automatisation média et un cluster K3s."
     },
     "projects.homelab.cta": {
         en: "View Case Study",
@@ -475,6 +475,370 @@ const translations = {
         lu: "Infrastruktur",
         de: "INFRASTRUKTUR",
         fr: "INFRASTRUCTURE"
+    },
+    "project.homelab.section.setup.title": {
+        en: "The \"Small but Mighty\" Setup",
+        pt: "A configuração \"pequena mas poderosa\"",
+        lu: "D'\"kleng mee staark\" Opstellung",
+        de: "Das \"kleine aber starke\" Setup",
+        fr: "La configuration « petite mais puissante »"
+    },
+    "project.homelab.section.setup.body": {
+        en: "This isn't a noisy server rack in a basement—it's a silent, efficient cluster sitting right on my desk. A hybrid of 3 nodes that started as a way to learn Docker but grew into a capable personal cloud hosting custom web applications with SSO, a full media automation stack, and a K3s cluster for containerized services.",
+        pt: "Isto não é um rack barulhento na cave — é um cluster silencioso e eficiente em cima da minha secretária. Um híbrido de 3 nós que começou para aprender Docker mas cresceu para uma nuvem pessoal capaz, hospedando aplicações web personalizadas com SSO, uma stack completa de automação multimédia e um cluster K3s para serviços conteinerizados.",
+        lu: "Dat ass kee lëftege Rack am Keller – et ass e rouegt, effiziënt Cluster op mengem Schreifdësch. En Hybrid mat 3 Noden, ugefaangen fir Docker ze léieren, an elo eng perséinlech Cloud mat personalisierten Web Apps mat SSO, enger kompletter Medien-Automatiséierungsstack an engem K3s Cluster fir Container Servicer.",
+        de: "Das ist kein lauter Serverrack im Keller – es ist ein leiser, effizienter Cluster auf meinem Schreibtisch. Ein hybrides 3-Knoten-Setup, gestartet zum Docker-Lernen, jetzt eine leistungsfähige persönliche Cloud mit maßgeschneiderten Web-Apps und SSO, einem vollständigen Media-Automation-Stack und einem K3s-Cluster für containerisierte Dienste.",
+        fr: "Ce n’est pas une baie bruyante au sous-sol — c’est un cluster silencieux et efficace posé sur mon bureau. Un hybride de 3 nœuds né pour apprendre Docker et devenu un cloud personnel capable d’héberger des applications web sur mesure avec SSO, une stack complète d’automatisation média et un cluster K3s pour les services conteneurisés."
+    },
+    "project.homelab.section.what.title": {
+        en: "What It Does",
+        pt: "O que faz",
+        lu: "Wat et mécht",
+        de: "Was es tut",
+        fr: "Ce que ça fait"
+    },
+    "project.homelab.section.what.body": {
+        en: "The system powers a variety of critical services across two orchestration layers:",
+        pt: "O sistema suporta vários serviços críticos em duas camadas de orquestração:",
+        lu: "De System bedreiwt vill wichteg Servicer iwwer zwou Orchestratiounsschichten:",
+        de: "Das System betreibt verschiedene kritische Dienste über zwei Orchestrierungsebenen:",
+        fr: "Le système alimente plusieurs services critiques sur deux couches d’orchestration :"
+    },
+    "project.homelab.section.what.compose.title": {
+        en: "Docker Compose Stack",
+        pt: "Stack Docker Compose",
+        lu: "Docker Compose Stack",
+        de: "Docker-Compose-Stack",
+        fr: "Stack Docker Compose"
+    },
+    "project.homelab.section.what.compose.media": {
+        en: "Media Automation: Full *arr stack (Radarr, Sonarr, Bazarr) for automatic media organization, with Jellyfin as the streaming frontend and integrated virus scanning.",
+        pt: "Automação multimédia: Stack completa *arr (Radarr, Sonarr, Bazarr) para organização automática de media, com Jellyfin como frontend de streaming e antivírus integrado.",
+        lu: "Medien-Automatiséierung: Voll *arr Stack (Radarr, Sonarr, Bazarr) fir automatesch Medien-Organisatioun, mat Jellyfin als Streaming-Frontend a Virenscan.",
+        de: "Media-Automatisierung: Vollständiger *arr-Stack (Radarr, Sonarr, Bazarr) für automatische Medienorganisation, mit Jellyfin als Streaming-Frontend und integriertem Virenscan.",
+        fr: "Automatisation média : Stack *arr complet (Radarr, Sonarr, Bazarr) pour organiser les médias automatiquement, avec Jellyfin en frontend de streaming et antivirus intégré."
+    },
+    "project.homelab.section.what.compose.platform": {
+        en: "Custom Web Platform: Self-built apps including an AI-powered content digest tool, QR code generator, and centralized app launcher—all sharing a unified authentication system.",
+        pt: "Plataforma web personalizada: Apps próprias incluindo ferramenta de resumos com IA, gerador de códigos QR e lançador centralizado — todos com um sistema de autenticação unificado.",
+        lu: "Personaliséiert Web Plattform: Selwer gebaut Apps inklusiv AI-gestäerkte Digest-Tool, QR Code Generator, an zentrale App Launcher — all mat engem eenheetleche Auth System.",
+        de: "Individuelle Web-Plattform: Eigenentwickelte Apps wie ein KI-gestütztes Digest-Tool, QR-Code-Generator und zentraler App-Launcher – alle teilen sich ein einheitliches Auth-System.",
+        fr: "Plateforme web personnalisée : Applications maison dont un outil de digest IA, un générateur de QR codes et un lanceur centralisé — tous avec une authentification unifiée."
+    },
+    "project.homelab.section.what.compose.sso": {
+        en: "Single Sign-On: JWT-based SSO across all subdomains with token blacklisting, audit logging, and role-based access control.",
+        pt: "Single Sign-On: SSO baseado em JWT em todos os subdomínios com blacklist de tokens, auditoria e controlo de acesso por papéis.",
+        lu: "Single Sign-On: JWT-baséiert SSO iwwer all Subdomaine mat Token Blacklisting, Audit Logging a Rollen-baséierten Zougang.",
+        de: "Single Sign-On: JWT-basiertes SSO über alle Subdomains mit Token-Blacklisting, Audit-Logs und rollenbasiertem Zugriff.",
+        fr: "Single Sign-On : SSO basé sur JWT pour tous les sous-domaines, avec blacklist de tokens, journalisation d’audit et contrôle d’accès par rôles."
+    },
+    "project.homelab.section.what.k3s.title": {
+        en: "K3s Cluster",
+        pt: "Cluster K3s",
+        lu: "K3s Cluster",
+        de: "K3s-Cluster",
+        fr: "Cluster K3s"
+    },
+    "project.homelab.section.what.k3s.orchestration": {
+        en: "Lightweight Orchestration: Kubernetes-based cluster with Traefik ingress for routing and Portainer for management.",
+        pt: "Orquestração leve: Cluster baseado em Kubernetes com Traefik ingress para encaminhamento e Portainer para gestão.",
+        lu: "Liicht Orchestratioun: Kubernetes-baséierte Cluster mat Traefik Ingress fir Routing a Portainer fir Gestioun.",
+        de: "Leichtgewicht-Orchestrierung: Kubernetes-basierter Cluster mit Traefik Ingress fürs Routing und Portainer für das Management.",
+        fr: "Orchestration légère : Cluster basé sur Kubernetes avec Traefik Ingress pour le routage et Portainer pour la gestion."
+    },
+    "project.homelab.section.what.k3s.apps": {
+        en: "Containerized Apps: Services like the QR generator run as Kubernetes deployments with proper ingress rules.",
+        pt: "Apps conteinerizadas: Serviços como o gerador de QR correm em deployments Kubernetes com regras de ingress adequadas.",
+        lu: "Containeriséiert Apps: Servicer wéi de QR Generator lafen als Kubernetes Deployments mat passende Ingress Reegelen.",
+        de: "Containerisierte Apps: Dienste wie der QR-Generator laufen als Kubernetes-Deployments mit passenden Ingress-Regeln.",
+        fr: "Applications conteneurisées : Des services comme le générateur de QR tournent en déploiements Kubernetes avec les bonnes règles d’ingress."
+    },
+    "project.homelab.section.what.gateway.title": {
+        en: "Cloud Gateway",
+        pt: "Gateway na cloud",
+        lu: "Cloud Gateway",
+        de: "Cloud-Gateway",
+        fr: "Passerelle cloud"
+    },
+    "project.homelab.section.what.gateway.tunnel": {
+        en: "Secure Tunnel: WireGuard VPN connects the home cluster to a cloud VPS, enabling public access without exposing home ports.",
+        pt: "Túnel seguro: WireGuard VPN liga o cluster doméstico a um VPS na cloud, permitindo acesso público sem expor portas de casa.",
+        lu: "Sécheren Tunnel: WireGuard VPN verbënnt den Heem-Cluster mat engem Cloud VPS, ouni Heem-Porten opzemaachen.",
+        de: "Sicherer Tunnel: WireGuard VPN verbindet den Heim-Cluster mit einem Cloud-VPS und ermöglicht öffentlichen Zugriff ohne Ports daheim zu öffnen.",
+        fr: "Tunnel sécurisé : WireGuard VPN relie le cluster maison à un VPS cloud, offrant un accès public sans exposer les ports domestiques."
+    },
+    "project.homelab.section.what.gateway.proxy": {
+        en: "Reverse Proxy: Caddy handles SSL termination and routes traffic through the encrypted tunnel to home services.",
+        pt: "Reverse Proxy: Caddy faz a terminação SSL e encaminha o tráfego pelo túnel encriptado para os serviços em casa.",
+        lu: "Reverse Proxy: Caddy këmmert sech ëm SSL Terminatioun a rout de Traffic duerch den encryptéierten Tunnel op Heem Servicer.",
+        de: "Reverse Proxy: Caddy terminiert SSL und leitet den Traffic durch den verschlüsselten Tunnel zu den Heimdiensten.",
+        fr: "Reverse proxy : Caddy gère la terminaison SSL et route le trafic via le tunnel chiffré vers les services maison."
+    },
+    "project.homelab.section.what.gateway.monitoring": {
+        en: "Uptime Monitoring: Status page tracks all services with alerting capabilities.",
+        pt: "Monitorização: Página de estado acompanha todos os serviços com alertas.",
+        lu: "Uptime Iwwerwaachung: Status Säit iwwerwaacht all Servicer mat Alarmer.",
+        de: "Uptime-Monitoring: Statusseite überwacht alle Dienste mit Alarmierungen.",
+        fr: "Supervision : Une page de statut suit tous les services avec alertes."
+    },
+    "project.homelab.nodes.primary.title": {
+        en: "Primary Node",
+        pt: "Nó Primário",
+        lu: "Primären Node",
+        de: "Primärknoten",
+        fr: "Nœud primaire"
+    },
+    "project.homelab.nodes.primary.spec": {
+        en: "arm64 / raspberry-pi-5",
+        pt: "arm64 / raspberry-pi-5",
+        lu: "arm64 / raspberry-pi-5",
+        de: "arm64 / raspberry-pi-5",
+        fr: "arm64 / raspberry-pi-5"
+    },
+    "project.homelab.nodes.primary.cores": {
+        en: "4 cores",
+        pt: "4 núcleos",
+        lu: "4 Kären",
+        de: "4 Kerne",
+        fr: "4 cœurs"
+    },
+    "project.homelab.nodes.primary.ram": {
+        en: "8GB RAM",
+        pt: "8GB RAM",
+        lu: "8GB RAM",
+        de: "8GB RAM",
+        fr: "8GB RAM"
+    },
+    "project.homelab.nodes.primary.body": {
+        en: "The heart of the cluster. Efficient, silent, and always on. Handles orchestration and lightweight services.",
+        pt: "O coração do cluster. Eficiente, silencioso e sempre ligado. Gere a orquestração e serviços leves.",
+        lu: "D’Häerz vum Cluster. Effizient, roueg a stänneg un. Hëlt d’Orchestratioun a liicht Servicer iwwer.",
+        de: "Das Herz des Clusters. Effizient, leise und immer an. Übernimmt Orchestrierung und leichte Services.",
+        fr: "Le cœur du cluster. Efficace, silencieux et toujours actif. Gère l’orchestration et les services légers."
+    },
+    "project.homelab.nodes.primary.tag.master": {
+        en: "[MASTER]",
+        pt: "[MASTER]",
+        lu: "[MASTER]",
+        de: "[MASTER]",
+        fr: "[MASTER]"
+    },
+    "project.homelab.nodes.primary.tag.arm64": {
+        en: "[ARM64]",
+        pt: "[ARM64]",
+        lu: "[ARM64]",
+        de: "[ARM64]",
+        fr: "[ARM64]"
+    },
+    "project.homelab.nodes.primary.tag.lowpower": {
+        en: "[LOW-POWER]",
+        pt: "[BAIXO CONSUMO]",
+        lu: "[NIDDER STRoum]",
+        de: "[NIEDRIGER VERBRAUCH]",
+        fr: "[BASSE CONSOMMATION]"
+    },
+    "project.homelab.nodes.worker.title": {
+        en: "Worker Node",
+        pt: "Nó Worker",
+        lu: "Worker Node",
+        de: "Worker-Knoten",
+        fr: "Nœud worker"
+    },
+    "project.homelab.nodes.worker.spec": {
+        en: "amd64 / ryzen-5-5600u",
+        pt: "amd64 / ryzen-5-5600u",
+        lu: "amd64 / ryzen-5-5600u",
+        de: "amd64 / ryzen-5-5600u",
+        fr: "amd64 / ryzen-5-5600u"
+    },
+    "project.homelab.nodes.worker.cores": {
+        en: "6 cores",
+        pt: "6 núcleos",
+        lu: "6 Kären",
+        de: "6 Kerne",
+        fr: "6 cœurs"
+    },
+    "project.homelab.nodes.worker.ram": {
+        en: "16GB RAM",
+        pt: "16GB RAM",
+        lu: "16GB RAM",
+        de: "16GB RAM",
+        fr: "16GB RAM"
+    },
+    "project.homelab.nodes.worker.body": {
+        en: "The heavy lifter. Repurposed x86 laptop acting as the muscle for demanding containers. Built-in battery serves as a dedicated UPS.",
+        pt: "O peso pesado. Portátil x86 reaproveitado como músculo para contentores exigentes. A bateria integrada serve como UPS dedicada.",
+        lu: "De Schwéieraarbechter. Ëmgenotzte x86 Laptop als Muskel fir ufuerderend Container. D’Batterie déngt als dedizéierten UPS.",
+        de: "Der Lastenträger. Umgenutztes x86-Laptop als Kraft für anspruchsvolle Container. Eingebaute Batterie dient als dedizierte USV.",
+        fr: "Le gros bras. Laptop x86 réutilisé pour les conteneurs exigeants. Batterie intégrée servant d’onduleur dédié."
+    },
+    "project.homelab.nodes.worker.tag.worker": {
+        en: "[WORKER]",
+        pt: "[WORKER]",
+        lu: "[WORKER]",
+        de: "[WORKER]",
+        fr: "[WORKER]"
+    },
+    "project.homelab.nodes.worker.tag.x86": {
+        en: "[X86_64]",
+        pt: "[X86_64]",
+        lu: "[X86_64]",
+        de: "[X86_64]",
+        fr: "[X86_64]"
+    },
+    "project.homelab.nodes.worker.tag.ups": {
+        en: "[BATTERY-UPS]",
+        pt: "[BATERIA-UPS]",
+        lu: "[BATTERIE-UPS]",
+        de: "[BATTERIE-USV]",
+        fr: "[BATTERIE-UPS]"
+    },
+    "project.homelab.nodes.gateway.title": {
+        en: "Cloud Gateway",
+        pt: "Gateway na Cloud",
+        lu: "Cloud Gateway",
+        de: "Cloud-Gateway",
+        fr: "Passerelle cloud"
+    },
+    "project.homelab.nodes.gateway.spec": {
+        en: "arm64 / oracle-ampere",
+        pt: "arm64 / oracle-ampere",
+        lu: "arm64 / oracle-ampere",
+        de: "arm64 / oracle-ampere",
+        fr: "arm64 / oracle-ampere"
+    },
+    "project.homelab.nodes.gateway.cores": {
+        en: "4 cores",
+        pt: "4 núcleos",
+        lu: "4 Kären",
+        de: "4 Kerne",
+        fr: "4 cœurs"
+    },
+    "project.homelab.nodes.gateway.ram": {
+        en: "24GB RAM",
+        pt: "24GB RAM",
+        lu: "24GB RAM",
+        de: "24GB RAM",
+        fr: "24GB RAM"
+    },
+    "project.homelab.nodes.gateway.badge": {
+        en: "FREE TIER",
+        pt: "NÍVEL GRATUITO",
+        lu: "GRATIS TIER",
+        de: "KOSTENLOS",
+        fr: "OFFRE GRATUITE"
+    },
+    "project.homelab.nodes.gateway.body": {
+        en: "The public face. Handles ingress, reverse proxy, and secure tunneling. Connects the home cluster to the world.",
+        pt: "A face pública. Trata ingressos, reverse proxy e túnel seguro. Liga o cluster doméstico ao mundo.",
+        lu: "Déi ëffentlech Säit. Këmmert sech ëm Ingress, Reverse Proxy, a séchert Tunneling. Verbannt den Heem-Cluster mat der Welt.",
+        de: "Die öffentliche Schnittstelle. Übernimmt Ingress, Reverse Proxy und sicheres Tunneling. Verbindet den Heim-Cluster mit der Welt.",
+        fr: "La face publique. Gère l’ingress, le reverse proxy et le tunneling sécurisé. Relie le cluster maison au monde."
+    },
+    "project.homelab.nodes.gateway.tag.gateway": {
+        en: "[GATEWAY]",
+        pt: "[GATEWAY]",
+        lu: "[GATEWAY]",
+        de: "[GATEWAY]",
+        fr: "[GATEWAY]"
+    },
+    "project.homelab.nodes.gateway.tag.caddy": {
+        en: "[CADDY]",
+        pt: "[CADDY]",
+        lu: "[CADDY]",
+        de: "[CADDY]",
+        fr: "[CADDY]"
+    },
+    "project.homelab.nodes.gateway.tag.wireguard": {
+        en: "[WIREGUARD]",
+        pt: "[WIREGUARD]",
+        lu: "[WIREGUARD]",
+        de: "[WIREGUARD]",
+        fr: "[WIREGUARD]"
+    },
+    "project.homelab.section.why.title": {
+        en: "Why I Built It",
+        pt: "Porque o construí",
+        lu: "Firwat ech et gebaut hunn",
+        de: "Warum ich es gebaut habe",
+        fr: "Pourquoi je l’ai construit"
+    },
+    "project.homelab.section.why.body1": {
+        en: "I needed a sandbox to break things safely. This was my first real personal project that pushed me beyond tutorials and into actual problem-solving. What started with Jellyfin for media streaming grew into a full platform after I built a custom secure tunnel to replace third-party services.",
+        pt: "Precisava de um sandbox para partir coisas em segurança. Este foi o meu primeiro projeto pessoal real que me levou para lá dos tutoriais e para a resolução prática de problemas. O que começou com Jellyfin para streaming evoluiu para uma plataforma completa depois de criar um túnel seguro personalizado para substituir serviços de terceiros.",
+        lu: "Ech brauchten e Sandbox fir sécher Saachen ze briechen. Dat war mäin éischte richtege perséinleche Projet dee mech iwwer Tutorials eraus gedréckt huet. Wat mat Jellyfin ugefaangen huet, ass zu enger kompletter Plattform gewuess nodeems ech en eegene sécheren Tunnel gebaut hunn.",
+        de: "Ich brauchte eine Sandbox, um Dinge sicher kaputtzumachen. Das war mein erstes richtiges persönliches Projekt, das mich über Tutorials hinaus zu echter Problemlösung gebracht hat. Was mit Jellyfin als Streaming begann, wurde zur Plattform, nachdem ich einen eigenen sicheren Tunnel gebaut habe.",
+        fr: "J’avais besoin d’un bac à sable pour casser les choses en sécurité. C’était mon premier vrai projet personnel, qui m’a poussé au-delà des tutos vers la résolution concrète de problèmes. Parti de Jellyfin pour le streaming, c’est devenu une plateforme complète après la création d’un tunnel sécurisé maison."
+    },
+    "project.homelab.section.why.body2": {
+        en: "Along the way I learned: how Docker containers communicate, how to build and deploy FastAPI backends, how JWT authentication flows work, and how to manage a hybrid architecture spanning ARM and x86 nodes. It's small, but it taught me that you don't need enterprise gear to build enterprise-grade skills.",
+        pt: "Pelo caminho aprendi: como os contêineres Docker comunicam, como construir e colocar em produção backends FastAPI, como funcionam os fluxos de autenticação JWT e como gerir uma arquitetura híbrida entre nós ARM e x86. É pequeno, mas ensinou-me que não é preciso hardware empresarial para ganhar competências de nível empresarial.",
+        lu: "Ënnerwee hunn ech geléiert: wéi Docker Container kommunizéieren, wéi een FastAPI Backends baut a deployéiert, wéi JWT Authentifikatioun leeft, an wéi een eng Hybrid Architektur mat ARM an x86 Noden verwalt. Et ass kleng, mee huet mir gewisen datt een keng Enterprise Hardware brauch fir Enterprise Fäegkeeten.",
+        de: "Unterwegs habe ich gelernt: wie Docker-Container kommunizieren, wie man FastAPI-Backends baut und deployt, wie JWT-Authentifizierungsflüsse funktionieren und wie man eine hybride ARM-/x86-Architektur betreibt. Es ist klein, aber es zeigte mir, dass man keine Enterprise-Hardware braucht, um Enterprise-Skills aufzubauen.",
+        fr: "En chemin j’ai appris : comment les conteneurs Docker communiquent, comment construire et déployer des backends FastAPI, comment fonctionnent les flux d’authentification JWT, et comment gérer une architecture hybride ARM/x86. C’est petit, mais ça m’a montré qu’on n’a pas besoin de matériel d’entreprise pour acquérir des compétences d’entreprise."
+    },
+    "project.homelab.section.lessons.title": {
+        en: "Lessons Learned",
+        pt: "Lições aprendidas",
+        lu: "Geléiert Léieren",
+        de: "Gelerntes",
+        fr: "Leçons retenues"
+    },
+    "project.homelab.section.lessons.arm": {
+        en: "ARM has quirks — Not all Docker images support ARM64. Finding compatible alternatives and tweaking configs taught me to read docs carefully.",
+        pt: "ARM tem quirks — Nem todas as imagens Docker suportam ARM64. Encontrar alternativas compatíveis e ajustar configs ensinou-me a ler a documentação com atenção.",
+        lu: "ARM huet seng Launen — Net all Docker Images ënnerstëtzen ARM64. Kompatibel Alternativen fannen an Configs upassen huet mech geléiert d'Dokumentatioun genee ze liesen.",
+        de: "ARM hat Eigenheiten — Nicht alle Docker-Images unterstützen ARM64. Kompatible Alternativen zu finden und Configs anzupassen, hat mich gelehrt, Dokus genau zu lesen.",
+        fr: "ARM a ses bizarreries — Toutes les images Docker ne gèrent pas ARM64. Chercher des alternatives compatibles et ajuster les configs m’a appris à lire la doc attentivement."
+    },
+    "project.homelab.section.lessons.dns": {
+        en: "DNS is powerful — Managing records in Cloudflare and understanding how traffic flows made the whole system click.",
+        pt: "DNS é poderoso — Gerir registos no Cloudflare e entender o fluxo de tráfego fez o sistema ganhar sentido.",
+        lu: "DNS ass staark — DNS Records managen a Verkéiersflëss verstoen huet de System klick maachen gelooss.",
+        de: "DNS ist mächtig — DNS-Einträge in Cloudflare zu managen und den Traffic-Flow zu verstehen, ließ alles zusammenpassen.",
+        fr: "Le DNS est puissant — Gérer les enregistrements dans Cloudflare et comprendre les flux a fait déclic."
+    },
+    "project.homelab.section.lessons.iterate": {
+        en: "Start small, iterate fast — This setup grew organically. Each problem solved unlocked the next improvement.",
+        pt: "Começa pequeno, itera rápido — Esta configuração cresceu organicamente. Cada problema resolvido desbloqueou a melhoria seguinte.",
+        lu: "Kleng ufänken, séier iteréieren — Dës Opstellung ass organesch gewuess. All geléiste Problem huet déi nächst Verbesserung opgemaach.",
+        de: "Klein starten, schnell iterieren — Dieses Setup ist organisch gewachsen. Jedes gelöste Problem öffnete die nächste Verbesserung.",
+        fr: "Commencer petit, itérer vite — Cette configuration a grandi organiquement. Chaque problème résolu a débloqué la suite."
+    },
+    "project.homelab.section.lessons.cost": {
+        en: "Cost-conscious infrastructure — Running on low-power devices and free-tier cloud taught me to optimize before scaling.",
+        pt: "Infra consciente de custos — Correr em dispositivos de baixo consumo e cloud gratuita ensinou-me a optimizar antes de escalar.",
+        lu: "Käschtebewosst Infra — Op niddereg-Stroum Geräter a Free-Tier Cloud lafen huet mech geléiert ze optimiséieren éier ech skalaéieren.",
+        de: "Kostenbewusste Infrastruktur — Auf stromsparenden Geräten und Free-Tier-Cloud zu laufen, lehrte mich zu optimieren, bevor ich skaliere.",
+        fr: "Infra soucieuse des coûts — Tourner sur du matériel basse conso et du cloud gratuit m’a appris à optimiser avant de scaler."
+    },
+    "project.homelab.section.lessons.security": {
+        en: "Security is a journey — Implementing SSO, token blacklisting, and audit logging taught me that authentication is more than just passwords.",
+        pt: "Segurança é uma jornada — Implementar SSO, blacklist de tokens e auditoria mostrou-me que autenticação é mais do que senhas.",
+        lu: "Sécherheet ass eng Rees — SSO, Token Blacklisting an Audit Logging ëmsetzen huet gewisen datt Authentifikatioun méi wéi Passwierder ass.",
+        de: "Sicherheit ist eine Reise — SSO, Token-Blacklisting und Audit-Logs zu bauen zeigte mir, dass Auth mehr ist als Passwörter.",
+        fr: "La sécurité est un parcours — Mettre en place SSO, blacklist de tokens et journaux d’audit m’a montré que l’authentification, ce n’est pas que des mots de passe."
+    },
+    "project.homelab.section.lessons.hybrid": {
+        en: "Hybrid architecture complexity — Coordinating Docker Compose and K3s on the same node, plus a remote VPS gateway, required careful port planning and network design.",
+        pt: "Complexidade da arquitetura híbrida — Coordenar Docker Compose e K3s no mesmo nó, mais um gateway VPS remoto, exigiu planeamento cuidadoso de portas e desenho de rede.",
+        lu: "Komplexitéit vun der Hybrid Architektur — Docker Compose a K3s um selwechte Node koordinéieren, plus e VPS Gateway, huet genee Port a Netzwierk Planung verlaangt.",
+        de: "Komplexität der Hybrid-Architektur — Docker Compose und K3s auf demselben Node plus ein Remote-VPS-Gateway erforderten sorgfältige Port- und Netzplanung.",
+        fr: "Complexité de l’architecture hybride — Coordonner Docker Compose et K3s sur le même nœud, plus une passerelle VPS distante, a demandé un vrai travail sur les ports et le réseau."
+    },
+    "project.homelab.section.next.title": {
+        en: "What's Next",
+        pt: "O que vem a seguir",
+        lu: "Wat kënnt als nächst",
+        de: "Wie geht es weiter",
+        fr: "Et après"
+    },
+    "project.homelab.section.next.body": {
+        en: "The platform continues to evolve with planned improvements to the application suite, expanded automation workflows, and additional self-hosted tools. The modular architecture makes it easy to add new services as needs arise.",
+        pt: "A plataforma continua a evoluir com melhorias planeadas no conjunto de aplicações, workflows de automação alargados e mais ferramentas self-hosted. A arquitetura modular facilita adicionar novos serviços conforme necessário.",
+        lu: "D'Plattform entwéckelt sech weider mat geplangte Verbesserungen un den Apps, méi Automatiséierungs-Workflows an zousätzlech self-hosted Tools. D'modular Architektur mécht et einfach nei Servicer derbäizefügen.",
+        de: "Die Plattform entwickelt sich weiter: geplante Verbesserungen an der App-Suite, mehr Automatisierungs-Workflows und zusätzliche Self-Hosted-Tools. Die modulare Architektur erleichtert das Hinzufügen neuer Services.",
+        fr: "La plateforme continue d’évoluer : améliorations prévues de la suite d’apps, workflows d’automatisation étendus et nouveaux outils self-hosted. L’architecture modulaire facilite l’ajout de services."
     },
     "project.pif.badge": {
         en: "FINAL PROJECT",
@@ -1264,11 +1628,11 @@ const translations = {
 
     // Project Names (for modal display)
     "project.homelab.name": {
-        en: "SyntraLab Personal Cloud",
-        pt: "SyntraLab Cloud Pessoal",
-        lu: "SyntraLab Personal Cloud",
-        de: "SyntraLab Personal Cloud",
-        fr: "SyntraLab Cloud Personnel"
+        en: "Home Lab Personal Cloud",
+        pt: "Home Lab Cloud Pessoal",
+        lu: "Home Lab Personal Cloud",
+        de: "Home Lab Personal Cloud",
+        fr: "Home Lab Cloud Personnel"
     },
     "project.gradingdino.name": {
         en: "GradingDino",

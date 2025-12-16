@@ -839,10 +839,16 @@ h1 {
         display: none; /* Hide mounting holes on mobile */
     }
 
-    .hero-grid, .section-grid {
+    .section-grid {
         display: flex;
         flex-direction: column;
         gap: 1.25rem; /* Consistent spacing */
+    }
+
+    .hero-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .card {
@@ -855,11 +861,78 @@ h1 {
         word-break: break-word;
     }
     
-    /* Optimize Hero Image for Mobile */
+    /* Optimize Hero Section for Mobile */
+    .hero-grid {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Hero Image - First on mobile */
     .hero-image {
-        height: 350px; 
-        order: -1; /* Image first */
-        border-left-width: 4px; /* Keep rack handle consistency */
+        height: 300px;
+        order: 1;
+        border-left-width: 4px;
+    }
+
+    .hero-image .profile-img {
+        object-position: center top;
+    }
+
+    /* Hero Text - Second on mobile */
+    .hero-text {
+        padding: 2rem 1.5rem;
+        order: 2;
+    }
+
+    .hero-text .badge {
+        margin-bottom: 1rem;
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-text .subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.875rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    /* Stat boxes - Keep natural order (appear after text in HTML) */
+    .stat-box {
+        padding: 1rem;
+        min-height: auto;
+    }
+
+    .stat-box i {
+        width: 32px;
+        height: 32px;
+    }
+
+    .stat-box h3 {
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
+    }
+
+    .stat-box p {
+        font-size: 0.8rem;
     }
 
     /* Stack everything like 1U units */

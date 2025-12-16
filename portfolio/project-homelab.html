@@ -144,7 +144,7 @@
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.homelab.badge">INFRASTRUCTURE</div>
                 <h1 data-i18n="projects.homelab.title">Home Lab Personal Cloud</h1>
-                <p class="subtitle" data-i18n="projects.homelab.desc">A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers media streaming, tools, and secure remote access.</p>
+                <p class="subtitle" data-i18n="projects.homelab.desc">A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers custom web apps with SSO, media automation, and a K3s cluster.</p>
             </div>
         </section>
 
@@ -153,8 +153,8 @@
             <article>
                 <div class="card">
                     <i data-lucide="server" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
-                    <h2>The "Small but Mighty" Setup</h2>
-                    <p>This isn't a noisy server rack in a basement—it's a silent, efficient cluster sitting right on my desk. A hybrid of 3 nodes that started as a way to learn Docker but grew into a capable personal cloud.</p>
+                    <h2 data-i18n="project.homelab.section.setup.title">The "Small but Mighty" Setup</h2>
+                    <p data-i18n="project.homelab.section.setup.body">This isn't a noisy server rack in a basement—it's a silent, efficient cluster sitting right on my desk. A hybrid of 3 nodes that started as a way to learn Docker but grew into a capable personal cloud hosting <strong>custom web applications with SSO</strong>, a full <strong>media automation stack</strong>, and a <strong>K3s cluster</strong> for containerized services.</p>
                     
                     <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
                         
@@ -168,20 +168,20 @@
                                 
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
-                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;">Primary Node</h3>
-                                        <div style="font-family: monospace; color: #ef4444; margin-bottom: 0.75rem;">arm64 / raspberry-pi-5</div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.primary.title">Primary Node</h3>
+                                        <div style="font-family: monospace; color: #ef4444; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.primary.spec">arm64 / raspberry-pi-5</div>
                                     </div>
                                     <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #888;">
-                                        <div>4 cores</div>
-                                        <div style="font-weight: 600; color: #ef4444;">8GB RAM</div>
+                                        <div data-i18n="project.homelab.nodes.primary.cores">4 cores</div>
+                                        <div style="font-weight: 600; color: #ef4444;" data-i18n="project.homelab.nodes.primary.ram">8GB RAM</div>
                                     </div>
                                 </div>
-                                <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.homelab.nodes.primary.body">
                                     The heart of the cluster. Efficient, silent, and always on. Handles orchestration and lightweight services.
                                 </p>
                             </div>
                             <div style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; font-size: 0.75rem; color: #555; font-family: monospace;">
-                                <span>[MASTER]</span> <span>[ARM64]</span> <span>[LOW-POWER]</span>
+                                <span data-i18n="project.homelab.nodes.primary.tag.master">[MASTER]</span> <span data-i18n="project.homelab.nodes.primary.tag.arm64">[ARM64]</span> <span data-i18n="project.homelab.nodes.primary.tag.lowpower">[LOW-POWER]</span>
                             </div>
                         </div>
 
@@ -193,20 +193,20 @@
                             <div style="padding: 1.5rem;">
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
-                                        <h3 style="color: #111827; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;">Worker Node</h3>
-                                        <div style="font-family: monospace; color: #374151; margin-bottom: 0.75rem;">amd64 / ryzen-5-5600u</div>
+                                        <h3 style="color: #111827; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.worker.title">Worker Node</h3>
+                                        <div style="font-family: monospace; color: #374151; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.worker.spec">amd64 / ryzen-5-5600u</div>
                                     </div>
                                     <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #374151;">
-                                        <div>6 cores</div>
-                                        <div style="font-weight: 600;">16GB RAM</div>
+                                        <div data-i18n="project.homelab.nodes.worker.cores">6 cores</div>
+                                        <div style="font-weight: 600;" data-i18n="project.homelab.nodes.worker.ram">16GB RAM</div>
                                     </div>
                                 </div>
-                                <p style="color: #374151; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                <p style="color: #374151; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.homelab.nodes.worker.body">
                                     The heavy lifter. Repurposed x86 laptop acting as the muscle for demanding containers. Built-in battery serves as a dedicated UPS.
                                 </p>
                             </div>
                             <div style="background: rgba(0,0,0,0.08); padding: 0.75rem 1.5rem; border-top: 1px solid #6b7280; display: flex; gap: 1rem; font-size: 0.75rem; color: #374151; font-family: monospace;">
-                                <span>[WORKER]</span> <span>[X86_64]</span> <span>[BATTERY-UPS]</span>
+                                <span data-i18n="project.homelab.nodes.worker.tag.worker">[WORKER]</span> <span data-i18n="project.homelab.nodes.worker.tag.x86">[X86_64]</span> <span data-i18n="project.homelab.nodes.worker.tag.ups">[BATTERY-UPS]</span>
                             </div>
                         </div>
 
@@ -219,47 +219,85 @@
                             <div style="padding: 1.5rem;">
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
-                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;">Cloud Gateway</h3>
-                                        <div style="font-family: monospace; color: #60a5fa; margin-bottom: 0.75rem;">arm64 / oracle-ampere</div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.gateway.title">Cloud Gateway</h3>
+                                        <div style="font-family: monospace; color: #60a5fa; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.gateway.spec">arm64 / oracle-ampere</div>
                                     </div>
                                     <div style="text-align: right;">
                                         <div style="font-family: monospace; font-size: 0.8rem; color: #94a3b8;">
-                                            <div>4 cores</div>
-                                            <div style="font-weight: 600; color: #60a5fa;">24GB RAM</div>
+                                            <div data-i18n="project.homelab.nodes.gateway.cores">4 cores</div>
+                                            <div style="font-weight: 600; color: #60a5fa;" data-i18n="project.homelab.nodes.gateway.ram">24GB RAM</div>
                                         </div>
-                                        <div style="margin-top: 0.5rem; font-size: 0.7rem; background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 2px 8px; border-radius: 10px; display: inline-block;">FREE TIER</div>
+                                        <div style="margin-top: 0.5rem; font-size: 0.7rem; background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 2px 8px; border-radius: 10px; display: inline-block;" data-i18n="project.homelab.nodes.gateway.badge">FREE TIER</div>
                                     </div>
                                 </div>
-                                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.homelab.nodes.gateway.body">
                                     The public face. Handles ingress, reverse proxy, and secure tunneling. Connects the home cluster to the world.
                                 </p>
                             </div>
                             <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; font-size: 0.75rem; color: #64748b; font-family: monospace;">
-                                <span>[GATEWAY]</span> <span>[CADDY]</span> <span>[WIREGUARD]</span>
+                                <span data-i18n="project.homelab.nodes.gateway.tag.gateway">[GATEWAY]</span> <span data-i18n="project.homelab.nodes.gateway.tag.caddy">[CADDY]</span> <span data-i18n="project.homelab.nodes.gateway.tag.wireguard">[WIREGUARD]</span>
                             </div>
                         </div>
                         
                     </div>
 
-                    <h2>What It Does</h2>
-                    <p>The system powers a variety of critical services:</p>
+                    <h2 data-i18n="project.homelab.section.what.title">What It Does</h2>
+                    <p data-i18n="project.homelab.section.what.body">The system powers a variety of critical services across two orchestration layers:</p>
+                    
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.compose.title">Docker Compose Stack</h3>
                     <ul class="feature-list">
-                        <li><strong>Media Streaming</strong>: Self-hosted solution for movies, shows, and music with a user-friendly interface (starting with Jellyfin).</li>
-                        <li><strong>Secure Access</strong>: Uses Tailscale and WireGuard for encrypted, reliable connections without exposing ports.</li>
-                        <li><strong>AI Utilities & Tools</strong>: Experimental scripts, automation, web tools, and apps—all built and hosted on this infrastructure.</li>
+                        <li data-i18n="project.homelab.section.what.compose.media"><strong>Media Automation</strong>: Full *arr stack (Radarr, Sonarr, Bazarr) for automatic media organization, with Jellyfin as the streaming frontend and integrated virus scanning.</li>
+                        <li data-i18n="project.homelab.section.what.compose.platform"><strong>Custom Web Platform</strong>: Self-built apps including an AI-powered content digest tool, QR code generator, and centralized app launcher—all sharing a unified authentication system.</li>
+                        <li data-i18n="project.homelab.section.what.compose.sso"><strong>Single Sign-On</strong>: JWT-based SSO across all subdomains with token blacklisting, audit logging, and role-based access control.</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.k3s.title">K3s Cluster</h3>
+                    <ul class="feature-list">
+                        <li data-i18n="project.homelab.section.what.k3s.orchestration"><strong>Lightweight Orchestration</strong>: Kubernetes-based cluster with Traefik ingress for routing and Portainer for management.</li>
+                        <li data-i18n="project.homelab.section.what.k3s.apps"><strong>Containerized Apps</strong>: Services like the QR generator run as Kubernetes deployments with proper ingress rules.</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.gateway.title">Cloud Gateway</h3>
+                    <ul class="feature-list">
+                        <li data-i18n="project.homelab.section.what.gateway.tunnel"><strong>Secure Tunnel</strong>: WireGuard VPN connects the home cluster to a cloud VPS, enabling public access without exposing home ports.</li>
+                        <li data-i18n="project.homelab.section.what.gateway.proxy"><strong>Reverse Proxy</strong>: Caddy handles SSL termination and routes traffic through the encrypted tunnel to home services.</li>
+                        <li data-i18n="project.homelab.section.what.gateway.monitoring"><strong>Uptime Monitoring</strong>: Status page tracks all services with alerting capabilities.</li>
                     </ul>
 
-                    <h2>Why I Built It</h2>
-                    <p>I needed a sandbox to break things safely. This was my <strong>first real personal project</strong> that pushed me beyond tutorials and into actual problem-solving. It’s where I truly learned how Docker containers communicate, how to secure a network with Tailscale, and how to manage resources on constrained hardware.</p>
-                    <p>It’s small, but it’s cool. It taught me that you don't need enterprise gear to build enterprise-grade skills.</p>
+                    <h2 data-i18n="project.homelab.section.why.title">Why I Built It</h2>
+                    <p data-i18n="project.homelab.section.why.body1">I needed a sandbox to break things safely. This was my <strong>first real personal project</strong> that pushed me beyond tutorials and into actual problem-solving. What started with Jellyfin for media streaming grew into a full platform after I built a custom secure tunnel to replace third-party services.</p>
+                    <p data-i18n="project.homelab.section.why.body2">Along the way I learned: how Docker containers communicate, how to build and deploy FastAPI backends, how JWT authentication flows work, and how to manage a hybrid architecture spanning ARM and x86 nodes. It's small, but it taught me that you don't need enterprise gear to build enterprise-grade skills.</p>
 
-                    <h2>Lessons Learned</h2>
+                    <h2 data-i18n="project.homelab.section.lessons.title">Lessons Learned</h2>
                     <ul class="feature-list">
-                        <li><strong>ARM has quirks</strong> — Not all Docker images support ARM64. Finding compatible alternatives and tweaking configs taught me to read docs carefully.</li>
-                        <li><strong>DNS is powerful</strong> — Managing records in Cloudflare and understanding how traffic flows made the whole system click.</li>
-                        <li><strong>Start small, iterate fast</strong> — This setup grew organically. Each problem solved unlocked the next improvement.</li>
-                        <li><strong>Cost-conscious infrastructure</strong> — Running on low-power devices and free-tier cloud taught me to optimize before scaling.</li>
+                        <li>
+                            <strong data-i18n="project.homelab.section.lessons.arm.title">ARM has quirks</strong> —
+                            <span data-i18n="project.homelab.section.lessons.arm.body">Not all Docker images support ARM64. Finding compatible alternatives and tweaking configs taught me to read docs carefully.</span>
+                        </li>
+                        <li>
+                            <strong data-i18n="project.homelab.section.lessons.dns.title">DNS is powerful</strong> —
+                            <span data-i18n="project.homelab.section.lessons.dns.body">Managing records in Cloudflare and understanding how traffic flows made the whole system click.</span>
+                        </li>
+                        <li>
+                            <strong data-i18n="project.homelab.section.lessons.iterate.title">Start small, iterate fast</strong> —
+                            <span data-i18n="project.homelab.section.lessons.iterate.body">This setup grew organically. Each problem solved unlocked the next improvement.</span>
+                        </li>
+                        <li>
+                            <strong data-i18n="project.homelab.section.lessons.cost.title">Cost-conscious infrastructure</strong> —
+                            <span data-i18n="project.homelab.section.lessons.cost.body">Running on low-power devices and free-tier cloud taught me to optimize before scaling.</span>
+                        </li>
+                        <li>
+                            <strong data-i18n="project.homelab.section.lessons.security.title">Security is a journey</strong> —
+                            <span data-i18n="project.homelab.section.lessons.security.body">Implementing SSO, token blacklisting, and audit logging taught me that authentication is more than just passwords.</span>
+                        </li>
+                        <li>
+                            <strong data-i18n="project.homelab.section.lessons.hybrid.title">Hybrid architecture complexity</strong> —
+                            <span data-i18n="project.homelab.section.lessons.hybrid.body">Coordinating Docker Compose and K3s on the same node, plus a remote VPS gateway, required careful port planning and network design.</span>
+                        </li>
                     </ul>
+                    
+                    <h2 data-i18n="project.homelab.section.next.title">What's Next</h2>
+                    <p data-i18n="project.homelab.section.next.body">The platform continues to evolve with planned improvements to the application suite, expanded automation workflows, and additional self-hosted tools. The modular architecture makes it easy to add new services as needs arise.</p>
                 </div>
             </article>
 
@@ -269,24 +307,28 @@
                     <h3 data-i18n="project.sidebar.techStack">Tech Stack</h3>
                     <div class="line"></div>
                     <ul class="tech-stack-list">
-                        <li><i data-lucide="server"></i> K3s Cluster (Pi + Laptop)</li>
-                        <li><i data-lucide="cloud"></i> VPS (Oracle Cloud)</li>
-                        <li><i data-lucide="box"></i> Docker & Compose</li>
-                        <li><i data-lucide="shield"></i> Tailscale & WireGuard</li>
-                        <li><i data-lucide="globe"></i> Caddy Reverse Proxy</li>
-                        <li><i data-lucide="cloud-cog"></i> Cloudflare DNS</li>
-                        <li><i data-lucide="terminal"></i> Bash Automation</li>
-                        <li><i data-lucide="zap"></i> FastAPI Backend</li>
-                        <li><i data-lucide="lock"></i> Argon2 Hashing</li>
+                        <li data-i18n="project.homelab.sidebar.tech.k3s"><i data-lucide="server"></i> K3s Cluster</li>
+                        <li data-i18n="project.homelab.sidebar.tech.vps"><i data-lucide="cloud"></i> Oracle Cloud VPS</li>
+                        <li data-i18n="project.homelab.sidebar.tech.compose"><i data-lucide="box"></i> Docker Compose</li>
+                        <li data-i18n="project.homelab.sidebar.tech.wireguard"><i data-lucide="shield"></i> WireGuard VPN</li>
+                        <li data-i18n="project.homelab.sidebar.tech.caddy"><i data-lucide="globe"></i> Caddy Reverse Proxy</li>
+                        <li data-i18n="project.homelab.sidebar.tech.cloudflare"><i data-lucide="cloud-cog"></i> Cloudflare DNS</li>
+                        <li data-i18n="project.homelab.sidebar.tech.fastapi"><i data-lucide="zap"></i> FastAPI + SQLite</li>
+                        <li data-i18n="project.homelab.sidebar.tech.jwt"><i data-lucide="key"></i> JWT SSO</li>
+                        <li data-i18n="project.homelab.sidebar.tech.argon2"><i data-lucide="lock"></i> Argon2 Hashing</li>
+                        <li data-i18n="project.homelab.sidebar.tech.sveltekit"><i data-lucide="code"></i> SvelteKit Apps</li>
+                        <li data-i18n="project.homelab.sidebar.tech.alembic"><i data-lucide="database"></i> Alembic Migrations</li>
                     </ul>
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
                     <div class="line"></div>
                     <ul class="skill-list" style="margin-top: 1rem;">
-                        <li>Hybrid Architecture</li>
-                        <li>Secure Tunneling</li>
-                        <li>Scalable Design</li>
-                        <li>Self-Hosted Media</li>
+                        <li data-i18n="project.homelab.sidebar.features.hybrid">Hybrid ARM/x86 Architecture</li>
+                        <li data-i18n="project.homelab.sidebar.features.wireguard">WireGuard Secure Tunnel</li>
+                        <li data-i18n="project.homelab.sidebar.features.sso">Single Sign-On (SSO)</li>
+                        <li data-i18n="project.homelab.sidebar.features.media">Media Automation (*arr stack)</li>
+                        <li data-i18n="project.homelab.sidebar.features.apps">Custom Web Applications</li>
+                        <li data-i18n="project.homelab.sidebar.features.dual">K3s + Docker Compose</li>
                     </ul>
                 </div>
             </aside>
