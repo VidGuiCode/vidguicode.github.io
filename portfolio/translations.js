@@ -847,6 +847,342 @@ const translations = {
         de: "ABSCHLUSSPROJEKT",
         fr: "PROJET FINAL"
     },
+    "project.pif.nodes.sensor.title": {
+        en: "Sensor Node",
+        pt: "Nó Sensor",
+        lu: "Sensor Node",
+        de: "Sensor-Knoten",
+        fr: "Nœud capteur"
+    },
+    "project.pif.nodes.sensor.spec": {
+        en: "ESP8266 / Wemos D1 Mini",
+        pt: "ESP8266 / Wemos D1 Mini",
+        lu: "ESP8266 / Wemos D1 Mini",
+        de: "ESP8266 / Wemos D1 Mini",
+        fr: "ESP8266 / Wemos D1 Mini"
+    },
+    "project.pif.nodes.sensor.detail1": {
+        en: "Custom PCB",
+        pt: "PCB Personalizada",
+        lu: "Benotzerdefinéiert PCB",
+        de: "Individuelle PCB",
+        fr: "PCB personnalisé"
+    },
+    "project.pif.nodes.sensor.detail2": {
+        en: "Wi-Fi + SQL",
+        pt: "Wi‑Fi + SQL",
+        lu: "Wi‑Fi + SQL",
+        de: "Wi‑Fi + SQL",
+        fr: "Wi‑Fi + SQL"
+    },
+    "project.pif.nodes.sensor.body": {
+        en: "Measures soil moisture, temperature, humidity, and light. Controls water pump and grow LED. Authenticates via MAC address and syncs with the hub.",
+        pt: "Mede humidade do solo, temperatura, humidade e luz. Controla a bomba de água e o LED de crescimento. Autentica via endereço MAC e sincroniza com o hub.",
+        lu: "Miess Buedemfiichtegkeet, Temperatur, Fiichtegkeet a Liicht. Kontrolléiert Waasserpompel a Grow LED. Authentifikatioun iwwer MAC Adress a Sync mam Hub.",
+        de: "Misst Bodenfeuchte, Temperatur, Luftfeuchte und Licht. Steuert Wasserpumpe und Grow-LED. Authentifiziert über MAC-Adresse und synchronisiert mit dem Hub.",
+        fr: "Mesure l’humidité du sol, la température, l’humidité et la lumière. Contrôle la pompe à eau et la LED de croissance. Authentifie via l’adresse MAC et se synchronise avec le hub."
+    },
+    "project.pif.nodes.sensor.tag.dht22": {
+        en: "[DHT22]",
+        pt: "[DHT22]",
+        lu: "[DHT22]",
+        de: "[DHT22]",
+        fr: "[DHT22]"
+    },
+    "project.pif.nodes.sensor.tag.bh1750": {
+        en: "[BH1750]",
+        pt: "[BH1750]",
+        lu: "[BH1750]",
+        de: "[BH1750]",
+        fr: "[BH1750]"
+    },
+    "project.pif.nodes.sensor.tag.sen0193": {
+        en: "[SEN0193]",
+        pt: "[SEN0193]",
+        lu: "[SEN0193]",
+        de: "[SEN0193]",
+        fr: "[SEN0193]"
+    },
+    "project.pif.nodes.sensor.tag.uln2803": {
+        en: "[ULN2803]",
+        pt: "[ULN2803]",
+        lu: "[ULN2803]",
+        de: "[ULN2803]",
+        fr: "[ULN2803]"
+    },
+    "project.pif.nodes.hub.title": {
+        en: "Hub Server",
+        pt: "Servidor Hub",
+        lu: "Hub Server",
+        de: "Hub-Server",
+        fr: "Serveur hub"
+    },
+    "project.pif.nodes.hub.spec": {
+        en: "Raspberry Pi 4 / FullpageOS",
+        pt: "Raspberry Pi 4 / FullpageOS",
+        lu: "Raspberry Pi 4 / FullpageOS",
+        de: "Raspberry Pi 4 / FullpageOS",
+        fr: "Raspberry Pi 4 / FullpageOS"
+    },
+    "project.pif.nodes.hub.detail1": {
+        en: "Touchscreen",
+        pt: "Ecrã tátil",
+        lu: "Touchscreen",
+        de: "Touchscreen",
+        fr: "Écran tactile"
+    },
+    "project.pif.nodes.hub.detail2": {
+        en: "LAMP Stack",
+        pt: "Pilha LAMP",
+        lu: "LAMP Stack",
+        de: "LAMP-Stack",
+        fr: "Stack LAMP"
+    },
+    "project.pif.nodes.hub.body": {
+        en: "Runs Apache, PHP, MariaDB. Hosts admin dashboard, touch UI for kiosk mode, and log API. Handles task scheduling and node management.",
+        pt: "Corre Apache, PHP, MariaDB. Aloja o painel de admin, UI tátil para modo quiosque e API de logs. Gere agendamento de tarefas e gestão de nós.",
+        lu: "Laféiert Apache, PHP, MariaDB. Host den Admin Dashboard, Touch UI fir Kiosk Modus, an Log API. Gestioun vu Aufgaben an Noden.",
+        de: "Betreibt Apache, PHP, MariaDB. Hostet Admin-Dashboard, Touch-UI für Kiosk-Modus und Log-API. Übernimmt Aufgabenplanung und Node-Verwaltung.",
+        fr: "Fait tourner Apache, PHP, MariaDB. Héberge le tableau de bord admin, l’interface tactile en mode kiosque et l’API de logs. Gère la planification des tâches et les nœuds."
+    },
+    "project.pif.nodes.hub.tag.apache": {
+        en: "[APACHE]",
+        pt: "[APACHE]",
+        lu: "[APACHE]",
+        de: "[APACHE]",
+        fr: "[APACHE]"
+    },
+    "project.pif.nodes.hub.tag.mariadb": {
+        en: "[MARIADB]",
+        pt: "[MARIADB]",
+        lu: "[MARIADB]",
+        de: "[MARIADB]",
+        fr: "[MARIADB]"
+    },
+    "project.pif.nodes.hub.tag.php": {
+        en: "[PHP]",
+        pt: "[PHP]",
+        lu: "[PHP]",
+        de: "[PHP]",
+        fr: "[PHP]"
+    },
+    "project.pif.nodes.hub.tag.ssl": {
+        en: "[SSL]",
+        pt: "[SSL]",
+        lu: "[SSL]",
+        de: "[SSL]",
+        fr: "[SSL]"
+    },
+    "project.pif.nodes.backup.title": {
+        en: "Backup Server",
+        pt: "Servidor de Backups",
+        lu: "Backup Server",
+        de: "Backup-Server",
+        fr: "Serveur de sauvegarde"
+    },
+    "project.pif.nodes.backup.spec": {
+        en: "Ubuntu Server VM / RAID1",
+        pt: "VM Ubuntu Server / RAID1",
+        lu: "Ubuntu Server VM / RAID1",
+        de: "Ubuntu Server VM / RAID1",
+        fr: "VM Ubuntu Server / RAID1"
+    },
+    "project.pif.nodes.backup.detail1": {
+        en: "2× 30GB",
+        pt: "2× 30GB",
+        lu: "2× 30GB",
+        de: "2× 30GB",
+        fr: "2× 30Go"
+    },
+    "project.pif.nodes.backup.detail2": {
+        en: "Mirrored",
+        pt: "Espelhado",
+        lu: "Gespigelt",
+        de: "Gespiegelt",
+        fr: "En miroir"
+    },
+    "project.pif.nodes.backup.body": {
+        en: "Receives daily backups via rsync over SSH. Stores database dumps, logs, and web content with 30-day rotation.",
+        pt: "Recebe backups diários via rsync sobre SSH. Guarda dumps de base de dados, logs e conteúdo web com rotação de 30 dias.",
+        lu: "Kritt deeglech Backups via rsync iwwer SSH. Späichert DB Dumps, Logs, a Web Inhalt mat 30-Deeg Rotatioun.",
+        de: "Erhält tägliche Backups per rsync über SSH. Speichert Datenbank-Dumps, Logs und Web-Inhalte mit 30-tägiger Rotation.",
+        fr: "Reçoit des sauvegardes quotidiennes via rsync sur SSH. Stocke dumps DB, logs et contenu web avec rotation de 30 jours."
+    },
+    "project.pif.nodes.backup.tag.raid1": {
+        en: "[RAID1]",
+        pt: "[RAID1]",
+        lu: "[RAID1]",
+        de: "[RAID1]",
+        fr: "[RAID1]"
+    },
+    "project.pif.nodes.backup.tag.rsync": {
+        en: "[RSYNC]",
+        pt: "[RSYNC]",
+        lu: "[RSYNC]",
+        de: "[RSYNC]",
+        fr: "[RSYNC]"
+    },
+    "project.pif.nodes.backup.tag.cron": {
+        en: "[CRON]",
+        pt: "[CRON]",
+        lu: "[CRON]",
+        de: "[CRON]",
+        fr: "[CRON]"
+    },
+    "project.pif.nodes.backup.tag.ufw": {
+        en: "[UFW]",
+        pt: "[UFW]",
+        lu: "[UFW]",
+        de: "[UFW]",
+        fr: "[UFW]"
+    },
+    "project.pif.section.what.title": {
+        en: "What It Does",
+        pt: "O que faz",
+        lu: "Wat et mécht",
+        de: "Was es tut",
+        fr: "Ce que ça fait"
+    },
+    "project.pif.section.what.body": {
+        en: "The system automates plant care and provides real-time monitoring:",
+        pt: "O sistema automatiza o cuidado das plantas e fornece monitorização em tempo real:",
+        lu: "De System automatiséiert Planzepfleeg a bitt Echtzäit Iwwerwaachung:",
+        de: "Das System automatisiert die Pflanzenpflege und bietet Echtzeitüberwachung:",
+        fr: "Le système automatise l’entretien des plantes et offre une surveillance en temps réel :"
+    },
+    "project.pif.section.what.env": {
+        en: "Environmental Sensing: Measures soil moisture, air temperature, humidity, and ambient light using calibrated sensors.",
+        pt: "Sensores ambientais: Mede humidade do solo, temperatura do ar, humidade e luz ambiente com sensores calibrados.",
+        lu: "Ëmweltmessung: Miess Buedemfiichtegkeet, Lofttemperatur, Fiichtegkeet a Liicht mat kalibréierte Sensoren.",
+        de: "Umweltmessung: Misst Bodenfeuchte, Lufttemperatur, Luftfeuchte und Umgebungslicht mit kalibrierten Sensoren.",
+        fr: "Mesure environnementale : Mesure humidité du sol, température de l’air, humidité et lumière ambiante avec capteurs calibrés."
+    },
+    "project.pif.section.what.watering": {
+        en: "Automated Watering: Triggers the water pump based on soil moisture thresholds or scheduled tasks.",
+        pt: "Rega automatizada: Aciona a bomba de água com base em limites de humidade do solo ou tarefas agendadas.",
+        lu: "Automatiséiert Bewässerung: Aktivéiert d’Waasserpompel op Basis vu Buedemfiichtegkeet-Thresholds oder geplangte Aufgaben.",
+        de: "Automatisierte Bewässerung: Aktiviert die Wasserpumpe basierend auf Bodenfeuchte-Grenzwerten oder geplanten Aufgaben.",
+        fr: "Arrosage automatisé : Déclenche la pompe à eau selon des seuils d’humidité du sol ou des tâches planifiées."
+    },
+    "project.pif.section.what.light": {
+        en: "Grow Light Control: Activates 1W LED when light levels drop below optimal range.",
+        pt: "Controlo da luz de crescimento: Ativa LED de 1W quando a luminosidade fica abaixo do ideal.",
+        lu: "Grow Light Kontroll: Aktivéiert 1W LED wann d’Liichtniveauen ënner den optimalen Beräich falen.",
+        de: "Grow-Light-Steuerung: Aktiviert 1W-LED, wenn die Lichtwerte unter den optimalen Bereich fallen.",
+        fr: "Contrôle de la lumière de croissance : Active la LED 1W quand la lumière passe sous la plage optimale."
+    },
+    "project.pif.section.what.dashboard": {
+        en: "Web Dashboard: Admin panel with real-time charts (ApexCharts), task scheduling, user management, and log viewer.",
+        pt: "Painel web: Painel de admin com gráficos em tempo real (ApexCharts), agendamento de tarefas, gestão de utilizadores e visualização de logs.",
+        lu: "Web Dashboard: Admin Panel mat Echtzäit Charts (ApexCharts), Aufgab-Planning, Benotzerverwaltung, an Log Viewer.",
+        de: "Web-Dashboard: Admin-Panel mit Echtzeit-Charts (ApexCharts), Aufgabenplanung, Benutzerverwaltung und Log-Viewer.",
+        fr: "Tableau de bord web : Panneau admin avec graphiques temps réel (ApexCharts), planification des tâches, gestion des utilisateurs et visionneuse de logs."
+    },
+    "project.pif.section.what.kiosk": {
+        en: "Touch Kiosk UI: Simplified interface for the Raspberry Pi touchscreen display.",
+        pt: "UI tátil de quiosque: Interface simplificada para o ecrã tátil do Raspberry Pi.",
+        lu: "Touch Kiosk UI: Vereinfachte Interface fir den Raspberry Pi Touchscreen.",
+        de: "Touch-Kiosk-UI: Vereinfachte Oberfläche für das Raspberry Pi Touchscreen-Display.",
+        fr: "UI kiosque tactile : Interface simplifiée pour l’écran tactile Raspberry Pi."
+    },
+    "project.pif.section.network.title": {
+        en: "The Network",
+        pt: "A Rede",
+        lu: "D'Netzwierk",
+        de: "Das Netzwerk",
+        fr: "Le réseau"
+    },
+    "project.pif.section.network.body": {
+        en: "I designed and configured a complete enterprise-style network in Cisco Packet Tracer:",
+        pt: "Desenhei e configurei uma rede empresarial completa no Cisco Packet Tracer:",
+        lu: "Ech hunn en Enterprise-Netzwierk am Cisco Packet Tracer designt a konfiguréiert:",
+        de: "Ich habe ein vollständiges Enterprise-Netzwerk in Cisco Packet Tracer entworfen und konfiguriert:",
+        fr: "J’ai conçu et configuré un réseau de style entreprise dans Cisco Packet Tracer :"
+    },
+    "project.pif.section.network.firm": {
+        en: "Firmennetzwerk: VLANs (10/20), DHCP server, ISR4331 router with NAT/PAT and ACLs.",
+        pt: "Firmennetzwerk: VLANs (10/20), servidor DHCP, router ISR4331 com NAT/PAT e ACLs.",
+        lu: "Firmennetzwerk: VLANs (10/20), DHCP Server, ISR4331 Router mat NAT/PAT an ACLen.",
+        de: "Firmennetzwerk: VLANs (10/20), DHCP-Server, ISR4331-Router mit NAT/PAT und ACLs.",
+        fr: "Firmennetzwerk : VLANs (10/20), serveur DHCP, routeur ISR4331 avec NAT/PAT et ACLs."
+    },
+    "project.pif.section.network.home": {
+        en: "Heimnetzwerk: Separate WLAN for nodes (PlantimeterAP) with WPA2-PSK, routed to the firm network.",
+        pt: "Heimnetzwerk: WLAN separado para os nós (PlantimeterAP) com WPA2-PSK, encaminhado para a rede da firma.",
+        lu: "Heimnetzwerk: Separat WLAN fir Noden (PlantimeterAP) mat WPA2-PSK, geriicht op d'Firmennetz.",
+        de: "Heimnetzwerk: Separates WLAN für Nodes (PlantimeterAP) mit WPA2-PSK, ins Firmennetz geroutet.",
+        fr: "Heimnetzwerk : WLAN séparé pour les nœuds (PlantimeterAP) avec WPA2-PSK, routé vers le réseau de l’entreprise."
+    },
+    "project.pif.section.network.isp": {
+        en: "ISP Simulation: Dedicated router simulating internet provider with DNS (Google 8.8.8.8) and fiber link.",
+        pt: "Simulação de ISP: Router dedicado simulando o provedor de internet com DNS (Google 8.8.8.8) e ligação de fibra.",
+        lu: "ISP Simulatioun: Dedizéierte Router simuléiert den Internet Provider mat DNS (Google 8.8.8.8) an Fiber Link.",
+        de: "ISP-Simulation: Dedizierter Router simuliert den Internetanbieter mit DNS (Google 8.8.8.8) und Glasfaserverbindung.",
+        fr: "Simulation ISP : Routeur dédié simulant le fournisseur internet avec DNS (Google 8.8.8.8) et liaison fibre."
+    },
+    "project.pif.section.network.security": {
+        en: "Security: Port-based ACLs, NAT for web/FTP access, proper routing tables.",
+        pt: "Segurança: ACLs baseadas em portas, NAT para acesso web/FTP, tabelas de routing adequadas.",
+        lu: "Sécherheet: Port-baséiert ACLen, NAT fir Web/FTP Zougang, richteg Routing Dëscher.",
+        de: "Sicherheit: Port-basierte ACLs, NAT für Web/FTP-Zugriff, korrekte Routing-Tabellen.",
+        fr: "Sécurité : ACLs basées sur les ports, NAT pour l’accès web/FTP, tables de routage correctes."
+    },
+    "project.pif.section.why.title": {
+        en: "Why I Built It",
+        pt: "Porque o Construí",
+        lu: "Firwat ech et gebaut hunn",
+        de: "Warum ich es gebaut habe",
+        fr: "Pourquoi je l’ai construit"
+    },
+    "project.pif.section.why.body1": {
+        en: "This was my <strong>final exam project</strong> for the Computer Technician diploma. It had to demonstrate skills across hardware, software, networking, and documentation. I chose to go beyond the requirements — implementing \"Should\" and \"Could\" features, plus my own innovations like fuzzy search and a 80°C safety cutoff.",
+        pt: "Este foi o meu <strong>projeto final de exame</strong> para o diploma de Técnico de Informática. Tinha de demonstrar competências em hardware, software, redes e documentação. Decidi ir além dos requisitos — implementando funcionalidades \"Should\" e \"Could\", além de inovações próprias como fuzzy search e um cutoff de segurança a 80°C.",
+        lu: "Dëst war mäin <strong>finalen Examen Projet</strong> fir den Computer Technician Diplom. Ech misst Fäegkeeten an Hardware, Software, Netzwierker an Dokumentatioun weisen. Ech sinn iwwer d'Ufuerderunge gaangen — hunn \"Should\" an \"Could\" Features ëmgesat plus meng eege Innovatiounen wéi Fuzzy Search an en 80°C Sécherheets-Cutoff.",
+        de: "Dies war mein <strong>Abschlussprojekt</strong> für das Computer-Techniker-Diplom. Es musste Fähigkeiten in Hardware, Software, Netzwerk und Dokumentation zeigen. Ich bin über die Anforderungen hinausgegangen — habe \"Should\"- und \"Could\"-Features implementiert sowie eigene Innovationen wie Fuzzy Search und einen 80°C Sicherheits-Cutoff.",
+        fr: "C’était mon <strong>projet de fin d’études</strong> pour le diplôme de Technicien en informatique. Il devait démontrer des compétences en matériel, logiciel, réseau et documentation. J’ai choisi d’aller au-delà des exigences — en implémentant des fonctionnalités \"Should\" et \"Could\", ainsi que mes propres innovations comme la recherche floue et une coupure de sécurité à 80°C."
+    },
+    "project.pif.section.why.body2": {
+        en: "The project was developed in sprints (A1–A7 for hardware/firmware, L1–L7 for server/network), each with clear goals, tests, and documented difficulties. The final documentation was over 100 pages.",
+        pt: "O projeto foi desenvolvido em sprints (A1–A7 para hardware/firmware, L1–L7 para servidor/rede), cada um com objetivos claros, testes e dificuldades documentadas. A documentação final tinha mais de 100 páginas.",
+        lu: "De Projet gouf an Sprints entwéckelt (A1–A7 fir Hardware/Firmware, L1–L7 fir Server/Netzwierk), all mat kloere Ziler, Tester, an dokumentéierte Schwieregkeeten. D'final Dokumentatioun hat iwwer 100 Säiten.",
+        de: "Das Projekt wurde in Sprints entwickelt (A1–A7 für Hardware/Firmware, L1–L7 für Server/Netzwerk), jeweils mit klaren Zielen, Tests und dokumentierten Schwierigkeiten. Die Abschlussdokumentation umfasste über 100 Seiten.",
+        fr: "Le projet a été développé en sprints (A1–A7 pour le matériel/firmware, L1–L7 pour le serveur/réseau), chacun avec des objectifs clairs, des tests et des difficultés documentées. La documentation finale dépassait les 100 pages."
+    },
+    "project.pif.section.lessons.title": {
+        en: "Lessons Learned",
+        pt: "Lições Aprendidas",
+        lu: "Geléiert Lektiounen",
+        de: "Gelernte Lektionen",
+        fr: "Leçons apprises"
+    },
+    "project.pif.section.lessons.hardware": {
+        en: "<strong>Hardware debugging is humbling</strong> — Swapped resistors, wrong pin soldering, and sensor calibration taught me patience and attention to detail.",
+        pt: "<strong>Debug de hardware é humilde</strong> — Resistores trocados, soldadura no pino errado e calibração de sensores ensinaram-me paciência e atenção ao detalhe.",
+        lu: "<strong>Hardware Debugging ass bescheiden</strong> — Verwiesselt Resistore, falsch Pin Lötung, an Sensor Kalibratioun hunn mech Gedold a Detailpräzisioun geléiert.",
+        de: "<strong>Hardware-Debugging ist demütigend</strong> — Vertauschte Widerstände, falsches Pin-Löten und Sensorkalibrierung lehrten mich Geduld und Liebe zum Detail.",
+        fr: "<strong>Le débogage matériel est humble</strong> — Résistances échangées, soudure de mauvais pin et calibration des capteurs m’ont appris la patience et le sens du détail."
+    },
+    "project.pif.section.lessons.fullstack": {
+        en: "<strong>Full-stack means full responsibility</strong> — From PCB to PHP, every layer had to work together. One bug anywhere breaks everything.",
+        pt: "<strong>Full-stack significa responsabilidade total</strong> — Do PCB ao PHP, cada camada tinha de funcionar em conjunto. Um bug em qualquer ponto quebra tudo.",
+        lu: "<strong>Full-stack heescht voll Responsabilitéit</strong> — Vum PCB bis PHP, all Schicht misst zesummeschaffen. Een Bug iergendwou brécht alles.",
+        de: "<strong>Full-Stack heißt volle Verantwortung</strong> — Vom PCB bis PHP musste jede Schicht zusammenarbeiten. Ein Bug irgendwo bricht alles.",
+        fr: "<strong>Full-stack signifie pleine responsabilité</strong> — Du PCB au PHP, chaque couche devait fonctionner ensemble. Un bug n’importe où casse tout."
+    },
+    "project.pif.section.lessons.docs": {
+        en: "<strong>Documentation is a skill</strong> — Writing 100+ pages of structured documentation with user stories, diagrams, and test results was as challenging as the code.",
+        pt: "<strong>Documentar é uma competência</strong> — Escrever 100+ páginas de documentação estruturada com user stories, diagramas e resultados de testes foi tão desafiante quanto o código.",
+        lu: "<strong>Dokumentatioun ass eng Fäegkeet</strong> — 100+ Säiten strukturéiert Dokumentatioun mat User Stories, Diagrammer, an Testresultater schreiwen war esou usprochsvoll wéi de Code.",
+        de: "<strong>Dokumentation ist eine Fähigkeit</strong> — Über 100 Seiten strukturierte Dokumentation mit User Stories, Diagrammen und Testergebnissen zu schreiben war so herausfordernd wie der Code.",
+        fr: "<strong>La documentation est une compétence</strong> — Rédiger plus de 100 pages de documentation structurée avec user stories, diagrammes et résultats de tests était aussi difficile que le code."
+    },
+    "project.pif.section.lessons.security": {
+        en: "<strong>Security matters from day one</strong> — Fail2Ban, SSL, UFW, prepared statements — I learned to think about security at every layer.",
+        pt: "<strong>A segurança importa desde o primeiro dia</strong> — Fail2Ban, SSL, UFW, prepared statements — aprendi a pensar em segurança em todas as camadas.",
+        lu: "<strong>Sécherheet zielt vum éischten Dag un</strong> — Fail2Ban, SSL, UFW, prepared Statements — ech hunn geléiert Sécherheet op all Schicht ze bedenken.",
+        de: "<strong>Sicherheit zählt von Tag eins an</strong> — Fail2Ban, SSL, UFW, Prepared Statements — ich habe gelernt, Sicherheit in jeder Schicht mitzudenken.",
+        fr: "<strong>La sécurité compte dès le premier jour</strong> — Fail2Ban, SSL, UFW, requêtes préparées — j’ai appris à penser la sécurité à chaque couche."
+    },
     "project.sidebar.techStack": {
         en: "Tech Stack",
         pt: "Pilha tecnológica",
@@ -890,6 +1226,349 @@ const translations = {
         lu: "SCHOULPROJET",
         de: "SCHULPROJEKT",
         fr: "PROJET SCOLAIRE"
+    },
+    "project.gradingdino.cards.docker.title": {
+        en: "Containerized",
+        pt: "Containerizado",
+        lu: "Containerized",
+        de: "Containerisiert",
+        fr: "Conteneurisé"
+    },
+    "project.gradingdino.cards.docker.spec": {
+        en: "Docker & Docker Compose",
+        pt: "Docker & Docker Compose",
+        lu: "Docker & Docker Compose",
+        de: "Docker & Docker Compose",
+        fr: "Docker & Docker Compose"
+    },
+    "project.gradingdino.cards.docker.detail1": {
+        en: "One Command",
+        pt: "Um Comando",
+        lu: "Ee Kommando",
+        de: "Ein Befehl",
+        fr: "Une commande"
+    },
+    "project.gradingdino.cards.docker.detail2": {
+        en: "docker compose up",
+        pt: "docker compose up",
+        lu: "docker compose up",
+        de: "docker compose up",
+        fr: "docker compose up"
+    },
+    "project.gradingdino.cards.docker.body": {
+        en: "Everything runs in containers. PostgreSQL + Django orchestrated with health checks, auto-migrations, persistent volumes, and live code reloading for development.",
+        pt: "Tudo corre em contentores. PostgreSQL + Django orquestrados com health checks, migrações automáticas, volumes persistentes e live reload em desenvolvimento.",
+        lu: "Alles leeft a Containere. PostgreSQL + Django mat Health Checks, automatesche Migratiounen, persistente Volumen, a Live Reload am Développement.",
+        de: "Alles läuft in Containern. PostgreSQL + Django orchestriert mit Health-Checks, automatischen Migrationen, persistenten Volumes und Live-Code-Reload im Development.",
+        fr: "Tout tourne dans des conteneurs. PostgreSQL + Django orchestrés avec health checks, migrations automatiques, volumes persistants et rechargement live en développement."
+    },
+    "project.gradingdino.cards.docker.tag.compose": {
+        en: "[COMPOSE]",
+        pt: "[COMPOSE]",
+        lu: "[COMPOSE]",
+        de: "[COMPOSE]",
+        fr: "[COMPOSE]"
+    },
+    "project.gradingdino.cards.docker.tag.volumes": {
+        en: "[VOLUMES]",
+        pt: "[VOLUMES]",
+        lu: "[VOLUMES]",
+        de: "[VOLUMES]",
+        fr: "[VOLUMES]"
+    },
+    "project.gradingdino.cards.docker.tag.health": {
+        en: "[HEALTH-CHECKS]",
+        pt: "[HEALTH-CHECKS]",
+        lu: "[HEALTH-CHECKS]",
+        de: "[HEALTH-CHECKS]",
+        fr: "[HEALTH-CHECKS]"
+    },
+    "project.gradingdino.cards.django.title": {
+        en: "Backend",
+        pt: "Backend",
+        lu: "Backend",
+        de: "Backend",
+        fr: "Backend"
+    },
+    "project.gradingdino.cards.django.spec": {
+        en: "Django 5.0 / Python 3.11-slim",
+        pt: "Django 5.0 / Python 3.11-slim",
+        lu: "Django 5.0 / Python 3.11-slim",
+        de: "Django 5.0 / Python 3.11-slim",
+        fr: "Django 5.0 / Python 3.11-slim"
+    },
+    "project.gradingdino.cards.django.detail1": {
+        en: "Server-Side",
+        pt: "Server-Side",
+        lu: "Server-Side",
+        de: "Server-Side",
+        fr: "Côté serveur"
+    },
+    "project.gradingdino.cards.django.detail2": {
+        en: "Batteries Included",
+        pt: "Baterias Incluídas",
+        lu: "Batteries Included",
+        de: "Batteries Included",
+        fr: "Batteries incluses"
+    },
+    "project.gradingdino.cards.django.body": {
+        en: "Django's \"batteries included\" philosophy gave us built-in admin panel, authentication, forms, and ORM. Custom Dockerfile with layer optimization for fast rebuilds.",
+        pt: "A filosofia \"baterias incluídas\" do Django deu-nos painel de admin incorporado, autenticação, formulários e ORM. Dockerfile customizado com otimização de camadas para rebuilds rápidos.",
+        lu: "Django seng \"batteries included\" Philosophie huet eis integréierten Admin, Auth, Forme, an ORM ginn. Custom Dockerfile mat Layer Optimiséierung fir séier Rebuilds.",
+        de: "Djangos \"batteries included\"-Philosophie gab uns eingebautes Admin-Panel, Authentifizierung, Forms und ORM. Custom Dockerfile mit Layer-Optimierung für schnelle Rebuilds.",
+        fr: "La philosophie \"batteries incluses\" de Django nous a offert admin intégré, authentification, formulaires et ORM. Dockerfile custom avec optimisation des couches pour des rebuilds rapides."
+    },
+    "project.gradingdino.cards.django.tag.orm": {
+        en: "[DJANGO-ORM]",
+        pt: "[DJANGO-ORM]",
+        lu: "[DJANGO-ORM]",
+        de: "[DJANGO-ORM]",
+        fr: "[DJANGO-ORM]"
+    },
+    "project.gradingdino.cards.django.tag.admin": {
+        en: "[ADMIN-PANEL]",
+        pt: "[ADMIN-PANEL]",
+        lu: "[ADMIN-PANEL]",
+        de: "[ADMIN-PANEL]",
+        fr: "[ADMIN-PANEL]"
+    },
+    "project.gradingdino.cards.django.tag.csrf": {
+        en: "[CSRF]",
+        pt: "[CSRF]",
+        lu: "[CSRF]",
+        de: "[CSRF]",
+        fr: "[CSRF]"
+    },
+    "project.gradingdino.cards.postgres.title": {
+        en: "Database",
+        pt: "Base de Dados",
+        lu: "Datebank",
+        de: "Datenbank",
+        fr: "Base de données"
+    },
+    "project.gradingdino.cards.postgres.spec": {
+        en: "PostgreSQL 16",
+        pt: "PostgreSQL 16",
+        lu: "PostgreSQL 16",
+        de: "PostgreSQL 16",
+        fr: "PostgreSQL 16"
+    },
+    "project.gradingdino.cards.postgres.detail1": {
+        en: "Relational",
+        pt: "Relacional",
+        lu: "Relational",
+        de: "Relational",
+        fr: "Relationnel"
+    },
+    "project.gradingdino.cards.postgres.detail2": {
+        en: "ACID Compliant",
+        pt: "Compatível com ACID",
+        lu: "ACID konform",
+        de: "ACID-konform",
+        fr: "Compatible ACID"
+    },
+    "project.gradingdino.cards.postgres.body": {
+        en: "Docker-native integration, concurrent write support for multiple professors grading simultaneously, and production-ready deployment path.",
+        pt: "Integração nativa com Docker, suporte a escritas concorrentes para vários professores a classificar em simultâneo e caminho de deploy pronto para produção.",
+        lu: "Docker-nativ Integratioun, parallel Schreif-Support fir verschidde Proffen gläichzäiteg ze notéieren, a Produktions-bereete Deploy Wee.",
+        de: "Docker-native Integration, parallele Schreibunterstützung für mehrere Professoren gleichzeitig und produktionsreifer Deployment-Pfad.",
+        fr: "Intégration native Docker, support d’écritures concurrentes pour plusieurs profs corrigeant en simultané, et chemin de déploiement prêt pour la production."
+    },
+    "project.gradingdino.cards.postgres.tag.docker": {
+        en: "[DOCKER]",
+        pt: "[DOCKER]",
+        lu: "[DOCKER]",
+        de: "[DOCKER]",
+        fr: "[DOCKER]"
+    },
+    "project.gradingdino.cards.postgres.tag.concurrent": {
+        en: "[CONCURRENT]",
+        pt: "[CONCURRENT]",
+        lu: "[CONCURRENT]",
+        de: "[CONCURRENT]",
+        fr: "[CONCURRENT]"
+    },
+    "project.gradingdino.cards.postgres.tag.prod": {
+        en: "[PRODUCTION-READY]",
+        pt: "[PRODUCTION-READY]",
+        lu: "[PRODUCTION-READY]",
+        de: "[PRODUCTION-READY]",
+        fr: "[PRODUCTION-READY]"
+    },
+    "project.gradingdino.cards.security.title": {
+        en: "Security",
+        pt: "Segurança",
+        lu: "Sécherheet",
+        de: "Sicherheit",
+        fr: "Sécurité"
+    },
+    "project.gradingdino.cards.security.spec": {
+        en: "Argon2 Password Hashing",
+        pt: "Hashing de Passwords com Argon2",
+        lu: "Argon2 Passwuert Hashing",
+        de: "Argon2 Passwort-Hashing",
+        fr: "Hachage de mots de passe Argon2"
+    },
+    "project.gradingdino.cards.security.badge": {
+        en: "Made in Luxembourg 🇱🇺",
+        pt: "Feito no Luxemburgo 🇱🇺",
+        lu: "Made in Luxembourg 🇱🇺",
+        de: "Made in Luxembourg 🇱🇺",
+        fr: "Fabriqué au Luxembourg 🇱🇺"
+    },
+    "project.gradingdino.cards.security.body": {
+        en: "Winner of the Password Hashing Competition (2015), developed at the <strong>University of Luxembourg</strong>. Memory-hard algorithm resistant to GPU/ASIC attacks. A proud local tech choice!",
+        pt: "Vencedor da Password Hashing Competition (2015), desenvolvido na <strong>Universidade do Luxemburgo</strong>. Algoritmo memory-hard resistente a ataques GPU/ASIC. Um orgulho tech local!",
+        lu: "Gewënner vun der Password Hashing Competition (2015), entwéckelt op der <strong>Universitéit Lëtzebuerg</strong>. Memory-hard Algorithmus resistent géint GPU/ASIC Attacken. Eng lokal Tech-Prouf!",
+        de: "Gewinner der Password Hashing Competition (2015), entwickelt an der <strong>Universität Luxemburg</strong>. Memory-hard Algorithmus, resistent gegen GPU/ASIC-Angriffe. Eine stolze lokale Tech-Wahl!",
+        fr: "Gagnant de la Password Hashing Competition (2015), développé à l’<strong>Université du Luxembourg</strong>. Algorithme memory-hard résistant aux attaques GPU/ASIC. Une fierté tech locale !"
+    },
+    "project.gradingdino.cards.security.tag.argon2": {
+        en: "[ARGON2]",
+        pt: "[ARGON2]",
+        lu: "[ARGON2]",
+        de: "[ARGON2]",
+        fr: "[ARGON2]"
+    },
+    "project.gradingdino.cards.security.tag.csrf": {
+        en: "[CSRF-PROTECTION]",
+        pt: "[CSRF-PROTECTION]",
+        lu: "[CSRF-PROTECTION]",
+        de: "[CSRF-PROTECTION]",
+        fr: "[CSRF-PROTECTION]"
+    },
+    "project.gradingdino.cards.security.tag.session": {
+        en: "[SESSION-AUTH]",
+        pt: "[SESSION-AUTH]",
+        lu: "[SESSION-AUTH]",
+        de: "[SESSION-AUTH]",
+        fr: "[SESSION-AUTH]"
+    },
+    "project.gradingdino.sidebar.tech.django": {
+        en: "Django 5.0",
+        pt: "Django 5.0",
+        lu: "Django 5.0",
+        de: "Django 5.0",
+        fr: "Django 5.0"
+    },
+    "project.gradingdino.sidebar.tech.postgres": {
+        en: "PostgreSQL 16",
+        pt: "PostgreSQL 16",
+        lu: "PostgreSQL 16",
+        de: "PostgreSQL 16",
+        fr: "PostgreSQL 16"
+    },
+    "project.gradingdino.sidebar.tech.argon2": {
+        en: "Argon2 (Luxembourg!)",
+        pt: "Argon2 (Luxemburgo!)",
+        lu: "Argon2 (Lëtzebuerg!)",
+        de: "Argon2 (Luxemburg!)",
+        fr: "Argon2 (Luxembourg !)"
+    },
+    "project.gradingdino.sidebar.tech.docker": {
+        en: "Docker & Compose",
+        pt: "Docker & Compose",
+        lu: "Docker & Compose",
+        de: "Docker & Compose",
+        fr: "Docker & Compose"
+    },
+    "project.gradingdino.sidebar.tech.pico": {
+        en: "Pico.css",
+        pt: "Pico.css",
+        lu: "Pico.css",
+        de: "Pico.css",
+        fr: "Pico.css"
+    },
+    "project.gradingdino.sidebar.tech.ssr": {
+        en: "Server-Side Rendering",
+        pt: "Renderização no Servidor",
+        lu: "Server-Side Rendering",
+        de: "Server-Side Rendering",
+        fr: "Rendu côté serveur"
+    },
+    "project.gradingdino.sidebar.tech.python": {
+        en: "Python 3.11",
+        pt: "Python 3.11",
+        lu: "Python 3.11",
+        de: "Python 3.11",
+        fr: "Python 3.11"
+    },
+    "project.gradingdino.sidebar.projectManagement": {
+        en: "Project Management",
+        pt: "Gestão de Projeto",
+        lu: "Projet Management",
+        de: "Projektmanagement",
+        fr: "Gestion de projet"
+    },
+    "project.gradingdino.sidebar.pm.planner": {
+        en: "MS Planner Board",
+        pt: "Quadro MS Planner",
+        lu: "MS Planner Board",
+        de: "MS Planner Board",
+        fr: "Tableau MS Planner"
+    },
+    "project.gradingdino.sidebar.pm.stories": {
+        en: "User Stories (12+)",
+        pt: "User Stories (12+)",
+        lu: "User Stories (12+)",
+        de: "User Stories (12+)",
+        fr: "User Stories (12+)"
+    },
+    "project.gradingdino.sidebar.pm.moscow": {
+        en: "MoSCoW Prioritization",
+        pt: "Priorização MoSCoW",
+        lu: "MoSCoW Prioritization",
+        de: "MoSCoW-Priorisierung",
+        fr: "Priorisation MoSCoW"
+    },
+    "project.gradingdino.sidebar.pm.personas": {
+        en: "Personas",
+        pt: "Personas",
+        lu: "Personas",
+        de: "Personas",
+        fr: "Personas"
+    },
+    "project.gradingdino.sidebar.pm.er": {
+        en: "ER Diagrams",
+        pt: "Diagramas ER",
+        lu: "ER Diagrammer",
+        de: "ER-Diagramme",
+        fr: "Diagrammes ER"
+    },
+    "project.gradingdino.sidebar.features.rbac": {
+        en: "Role-Based Access",
+        pt: "Acesso baseado em papéis",
+        lu: "Role-Based Access",
+        de: "Rollenbasierter Zugriff",
+        fr: "Accès basé sur les rôles"
+    },
+    "project.gradingdino.sidebar.features.history": {
+        en: "Grade History by Year",
+        pt: "Histórico de notas por ano",
+        lu: "Notenhistorie pro Joer",
+        de: "Noten-Historie nach Jahr",
+        fr: "Historique des notes par année"
+    },
+    "project.gradingdino.sidebar.features.scales": {
+        en: "Multiple Grading Scales",
+        pt: "Várias escalas de avaliação",
+        lu: "Multiple Grading Scales",
+        de: "Mehrere Notenskalen",
+        fr: "Plusieurs barèmes de notation"
+    },
+    "project.gradingdino.sidebar.features.notes": {
+        en: "Personal Notes",
+        pt: "Notas pessoais",
+        lu: "Perséinlech Notizen",
+        de: "Persönliche Notizen",
+        fr: "Notes personnelles"
+    },
+    "project.gradingdino.sidebar.features.observations": {
+        en: "Teacher Observations",
+        pt: "Observações do professor",
+        lu: "Observatiounen vum Enseignant",
+        de: "Beobachtungen des Lehrers",
+        fr: "Observations des enseignants"
     },
     "project.gradingdino.subtitle": {
         en: "A grade management system built with Django. Teachers create classrooms and manage student grades, while students track their progress. Group project MVP — learned valuable lessons about framework selection.",
