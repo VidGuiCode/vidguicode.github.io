@@ -1227,6 +1227,20 @@ const translations = {
         de: "SCHULPROJEKT",
         fr: "PROJET SCOLAIRE"
     },
+    "project.gradingdino.title": {
+        en: "GradingDino",
+        pt: "GradingDino",
+        lu: "GradingDino",
+        de: "GradingDino",
+        fr: "GradingDino"
+    },
+    "project.gradingdino.mvp": {
+        en: "MVP",
+        pt: "MVP",
+        lu: "MVP",
+        de: "MVP",
+        fr: "MVP"
+    },
     "project.gradingdino.cards.docker.title": {
         en: "Containerized",
         pt: "Containerizado",
