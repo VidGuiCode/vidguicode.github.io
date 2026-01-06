@@ -1092,7 +1092,7 @@ h1 {
     }
     
     .experience-card .exp-date span {
-        color: var(--led-blue); /* Highlight date text on mobile for better scanning */
+        color: var(--text-secondary); /* Use normal text color */
     }
 
     /* Fix Cert Cards on Mobile */
