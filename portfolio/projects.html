@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | VidGuiCode</title>
+    <meta name="description" content="Portfolio projects by Guilherme Videira Marques - Infrastructure, Web Development, IoT, and School Projects showcasing technical skills and real-world applications.">
+    <meta name="keywords" content="Projects, Portfolio, Infrastructure, Web Development, IoT, Cloud Computing, Homelab, Projects Showcase">
+    <link rel="canonical" href="https://vidguicode.github.io/VidGuiCode/portfolio/projects.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vidguicode.github.io/VidGuiCode/portfolio/projects.html">
+    <meta property="og:title" content="Projects | VidGuiCode">
+    <meta property="og:description" content="Portfolio projects showcasing technical skills and real-world applications.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons - Load locally (version 0.555.0) -->
+    <script src="assets/js/lucide.min.js"></script>
+    
+    <!-- Flags - Load locally -->
+    <link rel="stylesheet" href="assets/css/flag-icons.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="translations.js"></script>
+    <script src="projects-data.js"></script>
+    
+    <style>
+        /* Projects Page - Following Portfolio Design Language */
+        
+        .projects-hero {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .projects-hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+        }
+
+        .projects-hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Stats Row - Card Style */
+        .stats-row {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            min-width: 200px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-2px);
+            border-color: var(--text-primary);
+        }
+
+        .stat-box i {
+            width: 32px;
+            height: 32px;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .stat-box h3 {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-box p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Filter Controls - Two Buttons */
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin: 2rem 0;
+        }
+
+        .filter-button {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            border-radius: 0;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .filter-button:hover {
+            background: var(--surface-secondary);
+            border-color: var(--accent-primary);
+        }
+        
+        .filter-button.active {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            border-color: var(--text-primary);
+        }
+
+        /* Category Filter Modal */
+        .category-filter-modal {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
+        }
+
+        .category-filter-modal.active {
+            opacity: 1;
+            visibility: visible;
+            background: rgba(0, 0, 0, 0.95);
+        }
+        
+        .category-filter-modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            cursor: default;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .category-filter-modal.active .category-filter-modal-content {
+            transform: scale(1);
+        }
+        
+        .category-filter-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .category-filter-option:hover {
+            background: var(--surface-secondary);
+            border-color: var(--accent-primary);
+        }
+        
+        .category-filter-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--accent-primary);
+        }
+        
+        .category-filter-option label {
+            flex: 1;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+        
+        .filter-apply-btn {
+            flex: 1;
+            padding: 0.75rem;
+            background: #fff;
+            color: #000;
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-apply-btn:hover {
+            background: #f0f0f0;
+        }
+        
+        .filter-cancel-btn {
+            flex: 1;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-cancel-btn:hover {
+            background: var(--surface-secondary);
+        }
+
+        /* Projects List - Compact Table Structure */
+        .projects-list {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Project Row */
+        .project-row {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+
+        .project-row:last-child {
+            border-bottom: none;
+        }
+
+        .project-row:hover {
+            background: var(--bg-secondary);
+            border-color: var(--text-primary);
+        }
+
+        /* Project Icon */
+        .project-icon-thumb {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .project-icon-thumb i {
+            width: 32px;
+            height: 32px;
+            color: var(--text-primary);
+        }
+
+        /* Project Info */
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 0;
+        }
+
+        .project-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .project-category {
+            padding: 0.2rem 0.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            font-size: 0.75rem;
+        }
+
+        /* In Development Badge - shown in date area */
+        .project-status-badge {
+            padding: 0.2rem 0.5rem;
+            border: 1px solid;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            white-space: nowrap;
+        }
+
+        .project-status-badge i {
+            width: 12px;
+            height: 12px;
+        }
+
+        .project-status-badge.status-in-development {
+            color: #f59e0b;
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+
+        /* Actions Column */
+        .project-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            justify-self: end;
+        }
+
+        .project-action-icon {
+            padding: 0.5rem;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .project-action-icon:hover {
+            background: var(--bg-secondary);
+            border-color: var(--text-primary);
+        }
+
+        .project-action-icon i {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .project-row {
+                grid-template-columns: 60px 1fr;
+                gap: 1rem;
+            }
+
+            .project-actions {
+                grid-column: 2;
+                justify-self: start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .project-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+                justify-items: center;
+            }
+
+            .project-icon-thumb {
+                justify-self: center;
+                margin: 0 auto;
+            }
+
+            .project-info {
+                align-items: center;
+                text-align: center;
+            }
+
+            .project-meta {
+                justify-content: center;
+            }
+
+            .project-actions {
+                grid-column: 1;
+                justify-self: center;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 1.5rem;
+                max-height: 90vh;
+                margin: 0.5rem;
+            }
+
+            .modal-header {
+                padding-right: 2.5rem;
+            }
+
+            .modal-header h2 {
+                font-size: 1.25rem;
+            }
+
+            .modal-description {
+                font-size: 0.95rem;
+            }
+
+            .modal-skills {
+                gap: 0.4rem;
+            }
+
+            .skill-tag {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: var(--bg-secondary);
+        }
+
+        .modal-header {
+            margin-bottom: 1.5rem;
+            padding-right: 2rem;
+        }
+
+        .modal-header h2 {
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        .modal-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.35rem 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            font-size: 0.85rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .projects-hero {
+                padding: 2rem 0 1rem;
+            }
+            
+            .projects-hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-row {
+                gap: 1rem;
+            }
+
+            .stat-box {
+                min-width: 140px;
+                padding: 1rem;
+            }
+
+            .stat-box h3 {
+                font-size: 1.5rem;
+            }
+
+            .filter-controls {
+                gap: 0.75rem;
+                margin: 1.5rem 0;
+            }
+
+            .filter-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+                border-radius: 4px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .projects-hero .subtitle {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .stats-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            .stat-box {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .filter-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .projects-list {
+                margin: 1rem 0;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+                max-height: 90vh;
+            }
+
+            .modal-header {
+                padding-right: 2.5rem;
+            }
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state i {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile container adjustments */
+        @media (max-width: 768px) {
+            main.container {
+                padding-top: 80px !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <nav class="navbar">
+        <a href="../index.html#home" class="nav-brand">VIDGUICODE</a>
+        <div class="nav-links">
+        </div>
+        <div class="nav-controls">
+            <div class="lang-switcher">
+                <button id="lang-toggle" class="icon-btn" aria-label="Change language">
+                    <i data-lucide="globe"></i>
+                    <span class="current-lang">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button data-lang="en"><span class="fi fi-gb" aria-hidden="true"></span>English</button>
+                    <button data-lang="pt"><span class="fi fi-pt" aria-hidden="true"></span>Português</button>
+                    <button data-lang="lu"><span class="fi fi-lu" aria-hidden="true"></span>Lëtzebuergesch</button>
+                    <button data-lang="de"><span class="fi fi-de" aria-hidden="true"></span>Deutsch</button>
+                    <button data-lang="fr"><span class="fi fi-fr" aria-hidden="true"></span>Français</button>
+                </div>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                <i data-lucide="sun" class="sun-icon"></i>
+                <i data-lucide="moon" class="moon-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 100px;">
+        <a href="../index.html#home" class="back-link">
+            <i data-lucide="arrow-left"></i>
+            <span data-i18n="projects.back">Back to Portfolio</span>
+        </a>
+
+        <section class="projects-hero">
+            <div class="badge" data-i18n="projects.badge">PORTFOLIO PROJECTS</div>
+            <h1 data-i18n="projects.heading">Projects</h1>
+            <p class="subtitle" data-i18n="projects.subtitle">A collection of projects showcasing technical skills, from infrastructure and homelab setups to web development and IoT systems. Filter by category to explore specific areas.</p>
+            
+            <div class="stats-row">
+                <div class="stat-box">
+                    <i data-lucide="folder-open"></i>
+                    <h3 id="total-projects">0</h3>
+                    <p data-i18n="projects.stats.total">Total Projects</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="filter-controls" id="filter-controls">
+            <button class="filter-button" id="category-all-btn">
+                <span>All</span>
+            </button>
+            <button class="filter-button" id="category-filter-btn">
+                <i data-lucide="filter" style="width: 16px; height: 16px;"></i>
+                <span>Filter</span>
+            </button>
+        </div>
+
+        <div id="projects-container" class="projects-list">
+            <!-- Projects will be dynamically inserted here -->
+        </div>
+
+        <!-- Category Filter Modal -->
+        <div id="category-filter-modal" class="category-filter-modal" onclick="closeCategoryFilterModal(event)">
+            <div class="category-filter-modal-content" onclick="event.stopPropagation()">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h3 style="margin: 0; color: var(--text-primary);">Filter Categories</h3>
+                    <button class="modal-close" onclick="closeCategoryFilterModal()" aria-label="Close filter">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+                <div id="category-filter-options" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 60vh; overflow-y: auto; flex: 1; margin-bottom: 1.5rem;"></div>
+                <div style="display: flex; gap: 0.75rem; margin-top: auto;">
+                    <button onclick="applyCategoryFilter()" class="filter-apply-btn">Apply</button>
+                    <button onclick="closeCategoryFilterModal()" class="filter-cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Project Details -->
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close modal">
+                    <i data-lucide="x"></i>
+                </button>
+                <div class="modal-header">
+                    <h2 id="modal-project-name"></h2>
+                    <div id="modal-project-category"></div>
+                </div>
+                <p id="modal-project-description" class="modal-description"></p>
+                <div id="modal-project-tags" class="modal-skills"></div>
+                <div id="modal-project-link" style="margin-top: 1.5rem;"></div>
+            </div>
+        </div>
+
+        <footer style="margin-top: 4rem;">
+            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Get current language from localStorage or default to 'en'
+        let currentLang = localStorage.getItem('lang') || document.documentElement.getAttribute('data-lang') || 'en';
+
+        // Simple translation helper for dynamic strings
+        function t(key, fallback) {
+            if (typeof translations === 'undefined') return fallback;
+            const entry = translations[key];
+            if (!entry) return fallback;
+            return entry[currentLang] || entry['en'] || fallback;
+        }
+
+        // Listen for language changes
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update currentLang when language buttons are clicked
+            document.querySelectorAll('.lang-dropdown button[data-lang]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentLang = btn.getAttribute('data-lang');
+                    // Re-render projects with new language
+                    // Get filter from URL or default to 'all'
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const categoryParam = urlParams.get('category');
+                    if (categoryParam) {
+                        const categories = getCategories();
+                        const matchingCategory = categories.find(cat => 
+                            cat.toLowerCase().replace(/\s+/g, '') === categoryParam.toLowerCase()
+                        );
+                        if (matchingCategory) {
+                            selectedCategories = [matchingCategory];
+                            updateFilterButtonState();
+                            renderProjects(matchingCategory);
+                        } else {
+                            renderProjects('all');
+                        }
+                    } else {
+                        renderProjects('all');
+                    }
+                });
+            });
+        });
+
+        // Render projects
+        function renderProjects(filter = 'all') {
+            const container = document.getElementById('projects-container');
+            container.innerHTML = '';
+
+            if (typeof getAllProjects === 'undefined' || typeof getProjectsByCategory === 'undefined') {
+                container.innerHTML = '<div class="empty-state"><i data-lucide="loader"></i><p>Loading projects...</p></div>';
+                lucide.createIcons();
+                setTimeout(() => renderProjects(filter), 100);
+                return;
+            }
+
+            let projects = [];
+            
+            // Apply filter
+            if (filter === 'all') {
+                projects = getAllProjects();
+            } else {
+                projects = getProjectsByCategory(filter);
+            }
+
+            if (projects.length === 0) {
+                const emptyText = t('projects.empty', 'No projects found for this category.');
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i data-lucide="folder-x"></i>
+                        <p>${emptyText}</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            // Update stats
+            const allProjects = getAllProjects();
+            document.getElementById('total-projects').textContent = allProjects.length;
+
+            // Render projects
+            projects.forEach(project => {
+                const row = createProjectRow(project);
+                container.appendChild(row);
+            });
+
+            // Re-initialize Lucide icons
+            lucide.createIcons();
+        }
+
+        function createProjectRow(project) {
+            const row = document.createElement('div');
+            row.className = 'project-row';
+            row.dataset.projectId = project.id;
+
+            // Localized name & description
+            const projectName = project.nameKey ? t(project.nameKey, project.name) : project.name;
+            
+            // Handle multiple categories
+            let categoryHTML = '';
+            if (project.categories && project.categories.length > 0) {
+                const categoryKeys = project.categoryKeys || [];
+                categoryHTML = project.categories.map((category, index) => {
+                    const categoryKey = categoryKeys[index];
+                    const categoryName = categoryKey ? t(categoryKey, category) : category;
+                    return `<span class="project-category">${categoryName}</span>`;
+                }).join(' ');
+            } else {
+                const categoryName = project.categoryKey ? t(project.categoryKey, project.category) : project.category;
+                categoryHTML = `<span class="project-category">${categoryName}</span>`;
+            }
+            
+            // Date or In Development badge
+            let dateOrStatusBadge = '';
+            if (project.status === 'in-development') {
+                const statusText = project.statusKey ? t(project.statusKey, 'In Development') : 'In Development';
+                dateOrStatusBadge = `<span class="project-status-badge status-in-development">
+                    <i data-lucide="clock"></i>
+                    ${statusText}
+                </span>`;
+            } else {
+                // Handle year-only dates, year-month, or full dates
+                let dateStr = '';
+                if (project.dateCompleted) {
+                    // If it's just a year (4 digits), use it directly
+                    if (/^\d{4}$/.test(project.dateCompleted)) {
+                        dateStr = project.dateCompleted;
+                    } else if (/^\d{4}-\d{2}$/.test(project.dateCompleted)) {
+                        // Format: YYYY-MM (e.g., "2025-03")
+                        const [year, month] = project.dateCompleted.split('-');
+                        const dateObj = new Date(parseInt(year), parseInt(month) - 1);
+                        dateStr = dateObj.toLocaleDateString(currentLang, { year: 'numeric', month: 'long' });
+                    } else {
+                        // Otherwise parse as full date
+                        dateStr = new Date(project.dateCompleted).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' });
+                    }
+                } else if (project.dateStarted) {
+                    if (/^\d{4}$/.test(project.dateStarted)) {
+                        dateStr = project.dateStarted;
+                    } else if (/^\d{4}-\d{2}$/.test(project.dateStarted)) {
+                        // Format: YYYY-MM
+                        const [year, month] = project.dateStarted.split('-');
+                        const dateObj = new Date(parseInt(year), parseInt(month) - 1);
+                        dateStr = dateObj.toLocaleDateString(currentLang, { year: 'numeric', month: 'long' });
+                    } else {
+                        dateStr = new Date(project.dateStarted).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' });
+                    }
+                }
+                if (dateStr) {
+                    dateOrStatusBadge = `<span class="project-category">${dateStr}</span>`;
+                }
+            }
+
+            row.innerHTML = `
+                <div class="project-icon-thumb">
+                    <i data-lucide="${project.icon}"></i>
+                </div>
+                
+                <div class="project-info">
+                    <div class="project-name">${projectName}${project.score ? ` <span style="font-size: 0.7rem; background: #22c55e; color: #fff; padding: 2px 8px; border-radius: 4px; margin-left: 0.5rem; vertical-align: middle;">${project.score}</span>` : ''}</div>
+                    <div class="project-meta">
+                        ${categoryHTML}
+                        ${dateOrStatusBadge}
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    ${project.link ? `
+                        <a href="${project.link}" class="project-action-icon" title="View Project"
+                           target="_blank" rel="noopener noreferrer"
+                           onclick="event.stopPropagation()">
+                            <i data-lucide="external-link"></i>
+                        </a>
+                    ` : ''}
+                    <button class="project-action-icon" title="View Details" 
+                            onclick="showProjectModal('${project.id}'); event.stopPropagation();">
+                        <i data-lucide="info"></i>
+                    </button>
+                </div>
+            `;
+
+            // Make row clickable to open modal
+            row.addEventListener('click', () => showProjectModal(project.id));
+
+            return row;
+        }
+
+        // Filter functionality
+        function setupFilters() {
+            if (typeof getCategories === 'undefined') {
+                setTimeout(setupFilters, 100);
+                return;
+            }
+
+            // Setup filter button
+            setupCategoryFilterButton();
+            setupCategoryFilterModal();
+        }
+        
+        // Category filter state
+        let selectedCategories = [];
+        let allCategories = [];
+        
+        function setupCategoryFilterButton() {
+            const filterBtn = document.getElementById('category-filter-btn');
+            const allBtn = document.getElementById('category-all-btn');
+            
+            if (filterBtn) {
+                filterBtn.onclick = function() {
+                    openCategoryFilterModal();
+                };
+            }
+            
+            if (allBtn) {
+                allBtn.onclick = function() {
+                    // Clear all filters (empty array = show all)
+                    selectedCategories = [];
+                    updateFilterButtonState();
+                    renderProjects('all');
+                    
+                    // Update modal checkboxes if modal is open
+                    const checkboxes = document.querySelectorAll('#category-filter-options input[type="checkbox"]');
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                };
+            }
+            
+            updateFilterButtonState();
+        }
+        
+        function setupCategoryFilterModal() {
+            const categories = getCategories();
+            allCategories = categories;
+            
+            // Initialize: no categories selected (show all by default)
+            if (selectedCategories.length === 0) {
+                selectedCategories = [];
+            }
+            
+            const modal = document.getElementById('category-filter-modal');
+            const optionsContainer = document.getElementById('category-filter-options');
+            
+            if (!modal || !optionsContainer) return;
+            
+            // Clear and populate options
+            optionsContainer.innerHTML = '';
+            
+            // Add category options
+            categories.forEach((category, index) => {
+                const option = document.createElement('div');
+                option.className = 'category-filter-option';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `category-${index}`;
+                checkbox.value = category;
+                checkbox.checked = selectedCategories.length > 0 && selectedCategories.includes(category);
+                
+                const label = document.createElement('label');
+                label.htmlFor = `category-${index}`;
+                
+                const categoryKey = `projects.category.${category.toLowerCase().replace(/\s+/g, '')}`;
+                label.textContent = t(categoryKey, category);
+                
+                // Get project count
+                const projectsInCategory = typeof getProjectsByCategory !== 'undefined' 
+                    ? getProjectsByCategory(category)
+                    : [];
+                if (projectsInCategory.length > 0) {
+                    const count = document.createElement('span');
+                    count.style.cssText = 'color: var(--text-secondary); font-size: 0.8rem; margin-left: auto;';
+                    count.textContent = `(${projectsInCategory.length})`;
+                    label.appendChild(count);
+                }
+                
+                option.appendChild(checkbox);
+                option.appendChild(label);
+                optionsContainer.appendChild(option);
+            });
+        }
+        
+        function openCategoryFilterModal() {
+            const modal = document.getElementById('category-filter-modal');
+            if (modal) {
+                // Update checkboxes to match current selection
+                setupCategoryFilterModal();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeCategoryFilterModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            const modal = document.getElementById('category-filter-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        function applyCategoryFilter() {
+            const checkboxes = document.querySelectorAll('#category-filter-options input[type="checkbox"]');
+            selectedCategories = [];
+            
+            // Get selected categories
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedCategories.push(checkbox.value);
+                }
+            });
+            
+            // Filter and render projects
+            if (selectedCategories.length === 0) {
+                // No filters = show all
+                renderProjects('all');
+            } else if (selectedCategories.length === 1) {
+                renderProjects(selectedCategories[0]);
+            } else {
+                // Multiple categories selected - show projects that match any selected category
+                renderProjectsByMultipleCategories(selectedCategories);
+            }
+            
+            updateFilterButtonState();
+            closeCategoryFilterModal();
+        }
+        
+        function renderProjectsByMultipleCategories(categories) {
+            const container = document.getElementById('projects-container');
+            if (!container) return;
+            
+            const allProjects = getAllProjects();
+            const filteredProjects = allProjects.filter(project => {
+                const projectCategories = project.categories || [project.category];
+                return categories.some(cat => projectCategories.includes(cat));
+            });
+            
+            container.innerHTML = '';
+            
+            if (filteredProjects.length === 0) {
+                container.innerHTML = `<p style="text-align: center; color: var(--text-secondary); padding: 2rem;">${t('projects.empty', 'No projects found.')}</p>`;
+                return;
+            }
+            
+            filteredProjects.forEach(project => {
+                const row = createProjectRow(project);
+                container.appendChild(row);
+            });
+            
+            lucide.createIcons();
+        }
+        
+        function updateFilterButtonState() {
+            const allBtn = document.getElementById('category-all-btn');
+            const filterBtn = document.getElementById('category-filter-btn');
+            
+            // Update "All" button active state (active when no filters applied)
+            if (allBtn) {
+                if (selectedCategories.length === 0) {
+                    allBtn.classList.add('active');
+                } else {
+                    allBtn.classList.remove('active');
+                }
+            }
+            
+            // Update filter button to show count if filtered
+            if (filterBtn) {
+                const filterText = filterBtn.querySelector('span:last-child');
+                if (filterText) {
+                    if (selectedCategories.length === 0) {
+                        filterText.textContent = 'Filter';
+                    } else {
+                        filterText.textContent = `Filter (${selectedCategories.length})`;
+                    }
+                }
+            }
+        }
+
+        // Modal functionality
+        function showProjectModal(projectId) {
+            const project = getProjectById(projectId);
+            if (!project) return;
+
+            const modal = document.getElementById('project-modal');
+            if (!modal) return;
+            
+            document.body.style.overflow = 'hidden';
+            
+            const modalName = document.getElementById('modal-project-name');
+            const modalCategory = document.getElementById('modal-project-category');
+            const modalDescription = document.getElementById('modal-project-description');
+            const modalTags = document.getElementById('modal-project-tags');
+            const modalLink = document.getElementById('modal-project-link');
+
+            // Localized name & description
+            const projectName = project.nameKey ? t(project.nameKey, project.name) : project.name;
+            const projectDescription = project.descriptionKey
+                ? t(project.descriptionKey, project.description)
+                : project.description;
+            
+            // Handle multiple categories in modal
+            let modalCategoryHTML = '';
+            if (project.categories && project.categories.length > 0) {
+                const categoryKeys = project.categoryKeys || [];
+                modalCategoryHTML = project.categories.map((category, index) => {
+                    const categoryKey = categoryKeys[index];
+                    const categoryName = categoryKey ? t(categoryKey, category) : category;
+                    return `<span class="project-category">${categoryName}</span>`;
+                }).join(' ');
+            } else {
+                const categoryName = project.categoryKey ? t(project.categoryKey, project.category) : project.category;
+                modalCategoryHTML = `<span class="project-category">${categoryName}</span>`;
+            }
+
+            modalName.textContent = projectName;
+            modalCategory.innerHTML = modalCategoryHTML;
+            modalDescription.textContent = projectDescription;
+            
+            // Render tags
+            modalTags.innerHTML = project.tags.map(tag => 
+                `<span class="skill-tag">${tag}</span>`
+            ).join('');
+
+            // Render link if available
+            if (project.link) {
+                modalLink.innerHTML = `
+                    <a href="${project.link}" class="btn primary" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span data-i18n="projects.modal.viewProject">View Project</span>
+                        <i data-lucide="external-link"></i>
+                    </a>
+                `;
+            } else {
+                modalLink.innerHTML = '';
+            }
+
+            modal.classList.add('active');
+            lucide.createIcons();
+        }
+
+        // Close modal using event delegation
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.modal-close')) {
+                e.preventDefault();
+                e.stopPropagation();
+                const modal = document.getElementById('project-modal');
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+
+        // Close modal on background click
+        const projectModal = document.getElementById('project-modal');
+        if (projectModal) {
+            projectModal.addEventListener('click', (e) => {
+                if (e.target.id === 'project-modal' || e.target === projectModal) {
+                    projectModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('project-modal');
+                if (modal && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+
+        // Wait for projects-data.js to load before initial render
+        function waitForProjectsData() {
+            if (typeof getAllProjects !== 'undefined' && typeof PROJECTS !== 'undefined') {
+                // Data is loaded, setup filters and render projects
+                setupFilters();
+                
+                // Check for category parameter in URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const categoryParam = urlParams.get('category');
+                if (categoryParam) {
+                    // Find matching category (case-insensitive)
+                    const categories = getCategories();
+                    const matchingCategory = categories.find(cat => 
+                        cat.toLowerCase().replace(/\s+/g, '') === categoryParam.toLowerCase()
+                    );
+                    if (matchingCategory) {
+                        // Update selected categories to match URL parameter
+                        selectedCategories = [matchingCategory];
+                        updateFilterButtonState();
+                        renderProjects(matchingCategory);
+                    } else {
+                        renderProjects('all');
+                    }
+                } else {
+                    renderProjects('all');
+                }
+                
+                // Initialize Lucide icons
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                } else {
+                    // Wait for Lucide to load
+                    window.addEventListener('load', () => {
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+                    });
+                }
+            } else {
+                // Data not loaded yet, wait a bit and retry
+                setTimeout(waitForProjectsData, 50);
+            }
+        }
+        
+        // Start waiting for data
+        waitForProjectsData();
+    </script>
+</body>
+</html>
+

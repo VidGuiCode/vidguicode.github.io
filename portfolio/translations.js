@@ -235,32 +235,46 @@ const translations = {
         fr: "Docker / Docker Compose"
     },
     "skills.cloud.2": {
+        en: "Git",
+        pt: "Git",
+        lu: "Git",
+        de: "Git",
+        fr: "Git"
+    },
+    "skills.cloud.3": {
         en: "Virtualization (VirtualBox)",
         pt: "Virtualização (VirtualBox)",
         lu: "Virtualiséierung (VirtualBox)",
         de: "Virtualisierung (VirtualBox)",
         fr: "Virtualisation (VirtualBox)"
     },
-    "skills.cloud.3": {
-        en: "Git & Version Control",
-        pt: "Git & Controlo de Versões",
-        lu: "Git & Versiounskontroll",
-        de: "Git & Versionskontrolle",
-        fr: "Git & Contrôle de Version"
-    },
     "skills.cloud.4": {
-        en: "Caddy Reverse Proxy",
-        pt: "Caddy Reverse Proxy",
-        lu: "Caddy Reverse Proxy",
-        de: "Caddy Reverse Proxy",
-        fr: "Caddy Reverse Proxy"
+        en: "Kubernetes (K3s cluster)",
+        pt: "Kubernetes (cluster K3s)",
+        lu: "Kubernetes (K3s Cluster)",
+        de: "Kubernetes (K3s-Cluster)",
+        fr: "Kubernetes (cluster K3s)"
     },
     "skills.cloud.5": {
-        en: "Oracle Cloud Gateway",
-        pt: "Oracle Cloud Gateway",
-        lu: "Oracle Cloud Gateway",
-        de: "Oracle Cloud Gateway",
-        fr: "Oracle Cloud Gateway"
+        en: "Web Hosting (IONOS, Hetzner)",
+        pt: "Alojamento Web (IONOS, Hetzner)",
+        lu: "Web Hosting (IONOS, Hetzner)",
+        de: "Web-Hosting (IONOS, Hetzner)",
+        fr: "Hébergement Web (IONOS, Hetzner)"
+    },
+    "skills.cloud.6": {
+        en: "Cloud Platforms (Oracle Cloud, Hetzner Cloud)",
+        pt: "Plataformas Cloud (Oracle Cloud, Hetzner Cloud)",
+        lu: "Cloud Plattformen (Oracle Cloud, Hetzner Cloud)",
+        de: "Cloud-Plattformen (Oracle Cloud, Hetzner Cloud)",
+        fr: "Plateformes Cloud (Oracle Cloud, Hetzner Cloud)"
+    },
+    "skills.cloud.7": {
+        en: "Infrastructure management & cost optimization",
+        pt: "Gestão de infraestrutura & otimização de custos",
+        lu: "Infrastruktur Gestioun & Käschte Optimiséierung",
+        de: "Infrastrukturverwaltung & Kostenoptimierung",
+        fr: "Gestion d'infrastructure & optimisation des coûts"
     },
     "skills.networking": {
         en: "Networking",
@@ -270,39 +284,32 @@ const translations = {
         fr: "Réseaux"
     },
     "skills.networking.1": {
-        en: "CCNA Fundamentals",
+        en: "CCNA fundamentals",
         pt: "Fundamentos CCNA",
         lu: "CCNA Grondlagen",
         de: "CCNA Grundlagen",
         fr: "Fondamentaux CCNA"
     },
     "skills.networking.2": {
-        en: "VLANs & Routing",
-        pt: "VLANs & Encaminhamento",
-        lu: "VLANs & Routing",
-        de: "VLANs & Routing",
-        fr: "VLANs & Routage"
+        en: "WireGuard (VPN & tunneling)",
+        pt: "WireGuard (VPN & túnel)",
+        lu: "WireGuard (VPN & Tunneling)",
+        de: "WireGuard (VPN & Tunneling)",
+        fr: "WireGuard (VPN & tunneling)"
     },
     "skills.networking.3": {
-        en: "WireGuard / VPNs",
-        pt: "WireGuard / VPNs",
-        lu: "WireGuard / VPNs",
-        de: "WireGuard / VPNs",
-        fr: "WireGuard / VPNs"
+        en: "DNS management",
+        pt: "Gestão DNS",
+        lu: "DNS Gestioun",
+        de: "DNS-Verwaltung",
+        fr: "Gestion DNS"
     },
     "skills.networking.4": {
-        en: "DNS Management (Cloudflare)",
-        pt: "Gestão DNS (Cloudflare)",
-        lu: "DNS Gestioun (Cloudflare)",
-        de: "DNS-Verwaltung (Cloudflare)",
-        fr: "Gestion DNS (Cloudflare)"
-    },
-    "skills.networking.5": {
-        en: "Tailscale",
-        pt: "Tailscale",
-        lu: "Tailscale",
-        de: "Tailscale",
-        fr: "Tailscale"
+        en: "Caddy (reverse proxy & TLS automation)",
+        pt: "Caddy (proxy reverso & automação TLS)",
+        lu: "Caddy (Reverse Proxy & TLS Automatiséierung)",
+        de: "Caddy (Reverse Proxy & TLS-Automatisierung)",
+        fr: "Caddy (proxy inverse & automatisation TLS)"
     },
     "skills.programming": {
         en: "Programming",
@@ -319,25 +326,25 @@ const translations = {
         fr: "PowerShell / Bash"
     },
     "skills.programming.2": {
-        en: "JavaScript / Node.js",
-        pt: "JavaScript / Node.js",
-        lu: "JavaScript / Node.js",
-        de: "JavaScript / Node.js",
-        fr: "JavaScript / Node.js"
+        en: "JavaScript / jQuery / Node.js",
+        pt: "JavaScript / jQuery / Node.js",
+        lu: "JavaScript / jQuery / Node.js",
+        de: "JavaScript / jQuery / Node.js",
+        fr: "JavaScript / jQuery / Node.js"
     },
     "skills.programming.3": {
-        en: "HTML5 / CSS3",
-        pt: "HTML5 / CSS3",
-        lu: "HTML5 / CSS3",
-        de: "HTML5 / CSS3",
-        fr: "HTML5 / CSS3"
-    },
-    "skills.programming.4": {
         en: "PHP",
         pt: "PHP",
         lu: "PHP",
         de: "PHP",
         fr: "PHP"
+    },
+    "skills.programming.4": {
+        en: "HTML / CSS",
+        pt: "HTML / CSS",
+        lu: "HTML / CSS",
+        de: "HTML / CSS",
+        fr: "HTML / CSS"
     },
     "skills.programming.5": {
         en: "SQL (MySQL / PostgreSQL)",
@@ -347,6 +354,13 @@ const translations = {
         fr: "SQL (MySQL / PostgreSQL)"
     },
     "skills.programming.6": {
+        en: "Database design (MCD/MLD)",
+        pt: "Design de base de dados (MCD/MLD)",
+        lu: "Datenbank Design (MCD/MLD)",
+        de: "Datenbankdesign (MCD/MLD)",
+        fr: "Conception de base de données (MCD/MLD)"
+    },
+    "skills.programming.7": {
         en: "Python / FastAPI",
         pt: "Python / FastAPI",
         lu: "Python / FastAPI",
@@ -361,18 +375,18 @@ const translations = {
         fr: "Systèmes"
     },
     "skills.systems.1": {
-        en: "Linux (Ubuntu/Debian)",
-        pt: "Linux (Ubuntu/Debian)",
-        lu: "Linux (Ubuntu/Debian)",
-        de: "Linux (Ubuntu/Debian)",
-        fr: "Linux (Ubuntu/Debian)"
-    },
-    "skills.systems.2": {
         en: "Windows Server",
         pt: "Windows Server",
         lu: "Windows Server",
         de: "Windows Server",
         fr: "Windows Server"
+    },
+    "skills.systems.2": {
+        en: "Linux Server",
+        pt: "Linux Server",
+        lu: "Linux Server",
+        de: "Linux Server",
+        fr: "Linux Server"
     },
     "skills.systems.3": {
         en: "Hardware Diagnostics",
@@ -405,11 +419,11 @@ const translations = {
         fr: "Cloud Personnel Home Lab"
     },
     "projects.homelab.desc": {
-        en: "A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers custom web apps with SSO, media automation, and a K3s cluster.",
-        pt: "Cluster híbrido de 3 nós com Raspberry Pi, portátil e Oracle Cloud VPS. Suporta aplicações web personalizadas com SSO, automação multimédia e um cluster K3s.",
-        lu: "En hybrid 3-Node Cluster deen Raspberry Pi, Laptop, an Oracle Cloud VPS kombinéiert. Bedreiwe personaliséiert Web Apps mat SSO, Medien-Automatiséierung, an e K3s Cluster.",
-        de: "Ein hybrider 3-Knoten-Cluster, der Raspberry Pi, Laptop und Oracle Cloud VPS kombiniert. Betreibt benutzerdefinierte Web-Apps mit SSO, Medien-Automatisierung und einen K3s-Cluster.",
-        fr: "Un cluster hybride à 3 nœuds combinant Raspberry Pi, laptop et Oracle Cloud VPS. Alimente des applications web personnalisées avec SSO, automatisation média et un cluster K3s."
+        en: "From March 2025 to present: A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers custom web apps with SSO, media automation, and a K3s cluster. Continuously maintained and expanded.",
+        pt: "De março de 2025 até ao presente: Cluster híbrido de 3 nós com Raspberry Pi, portátil e Oracle Cloud VPS. Suporta aplicações web personalizadas com SSO, automação multimédia e um cluster K3s. Continuamente mantido e expandido.",
+        lu: "Vum Mäerz 2025 bis haut: En hybrid 3-Node Cluster deen Raspberry Pi, Laptop, an Oracle Cloud VPS kombinéiert. Bedreiwe personaliséiert Web Apps mat SSO, Medien-Automatiséierung, an e K3s Cluster. Kontinuéierlech ënnerhalen an erweidert.",
+        de: "Von März 2025 bis heute: Ein hybrider 3-Knoten-Cluster, der Raspberry Pi, Laptop und Oracle Cloud VPS kombiniert. Betreibt benutzerdefinierte Web-Apps mit SSO, Medien-Automatisierung und einen K3s-Cluster. Kontinuierlich gewartet und erweitert.",
+        fr: "De mars 2025 à aujourd'hui : Un cluster hybride à 3 nœuds combinant Raspberry Pi, laptop et Oracle Cloud VPS. Alimente des applications web personnalisées avec SSO, automatisation média et un cluster K3s. Maintenu et développé en continu."
     },
     "projects.homelab.cta": {
         en: "View Case Study",
@@ -419,18 +433,18 @@ const translations = {
         fr: "Voir l'Étude de Cas"
     },
     "projects.plant.title": {
-        en: "Smart Plant Monitoring (PIF)",
-        pt: "Monitorização Inteligente de Plantas (PIF)",
-        lu: "Smart Planz Iwwerwaachung (PIF)",
-        de: "Smart Plant Monitoring (PIF)",
-        fr: "Surveillance Intelligente des Plantes (PIF)"
+        en: "Smart Plant Monitoring - Final Project",
+        pt: "Monitorização Inteligente de Plantas - Projeto Final",
+        lu: "Smart Planz Iwwerwaachung - Final Projet",
+        de: "Smart Plant Monitoring - Abschlussprojekt",
+        fr: "Surveillance Intelligente des Plantes - Projet Final"
     },
     "projects.plant.desc": {
-        en: "Final project: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.",
-        pt: "Projeto final de curso: sistema IoT completo com nós ESP8266, hub Raspberry Pi, painel web, rede empresarial e cópias de segurança automatizadas.",
-        lu: "Finale Projet: Komplett IoT System mat ESP8266 Noden, Raspberry Pi Hub, Web Dashboard, Enterprise Networking, an automatiséierte Backups.",
-        de: "Abschlussprojekt: Vollständiges IoT-System mit ESP8266-Knoten, Raspberry Pi Hub, Web-Dashboard, Enterprise-Networking und automatisierten Backups.",
-        fr: "Projet final: Système IoT complet avec nœuds ESP8266, hub Raspberry Pi, tableau de bord web, réseau d'entreprise et sauvegardes automatisées."
+        en: "Final project from September 2024 to June 2025: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups. Presented the completed product as part of the Computer Technician diploma.",
+        pt: "Projeto final de setembro de 2024 a junho de 2025: sistema IoT completo com nós ESP8266, hub Raspberry Pi, painel web, rede empresarial e cópias de segurança automatizadas. Apresentei o produto concluído como parte do diploma de Técnico de Informática.",
+        lu: "Finale Projet vum September 2024 bis Juni 2025: Komplett IoT System mat ESP8266 Noden, Raspberry Pi Hub, Web Dashboard, Enterprise Networking, an automatiséierte Backups. Hunn de komplett Produit presentéiert als Deel vum Computer Technician Diplom.",
+        de: "Abschlussprojekt von September 2024 bis Juni 2025: Vollständiges IoT-System mit ESP8266-Knoten, Raspberry Pi Hub, Web-Dashboard, Enterprise-Networking und automatisierten Backups. Präsentierte das fertige Produkt als Teil des Computer-Techniker-Diploms.",
+        fr: "Projet final de septembre 2024 à juin 2025 : Système IoT complet avec nœuds ESP8266, hub Raspberry Pi, tableau de bord web, réseau d'entreprise et sauvegardes automatisées. Présenté le produit terminé dans le cadre du diplôme de Technicien en informatique."
     },
     "projects.cylro.title": {
         en: "Cylro (In Development)",
@@ -440,11 +454,11 @@ const translations = {
         fr: "Cylro (En Développement)"
     },
     "projects.cylro.desc": {
-        en: "A modular, AI-powered CMS and website builder designed to streamline content creation and site management.",
-        pt: "Um CMS modular com IA e construtor de sites concebido para simplificar a criação de conteúdos e a gestão de websites.",
-        lu: "E modulare, KI-bedriwwene CMS a Websäit Builder entwéckelt fir d'Inhaltskreatioun an d'Säiteverwaltung ze vereinfachen.",
-        de: "Ein modulares, KI-gestütztes CMS und Website-Builder, entwickelt um Content-Erstellung und Site-Management zu optimieren.",
-        fr: "Un CMS modulaire alimenté par l'IA et constructeur de sites conçu pour simplifier la création de contenu et la gestion de sites."
+        en: "From June 2025, in development: A modular, AI-powered CMS and website builder designed to streamline content creation and site management. Built in partnership with a collaborator.",
+        pt: "Desde junho de 2025, em desenvolvimento: Um CMS modular com IA e construtor de sites concebido para simplificar a criação de conteúdos e a gestão de websites. Construído em parceria com um colaborador.",
+        lu: "Vum Juni 2025, an Entwécklung: E modulare, KI-bedriwwene CMS a Websäit Builder entwéckelt fir d'Inhaltskreatioun an d'Säiteverwaltung ze vereinfachen. Gebaut a Partnerschaft mat engem Kollaborateur.",
+        de: "Seit Juni 2025, in Entwicklung: Ein modulares, KI-gestütztes CMS und Website-Builder, entwickelt um Content-Erstellung und Site-Management zu optimieren. In Partnerschaft mit einem Mitarbeiter entwickelt.",
+        fr: "Depuis juin 2025, en développement : Un CMS modulaire alimenté par l'IA et constructeur de sites conçu pour simplifier la création de contenu et la gestion de sites. Construit en partenariat avec un collaborateur."
     },
     "projects.gradingdino.title": {
         en: "GradingDino (School Project)",
@@ -454,11 +468,181 @@ const translations = {
         fr: "GradingDino (Projet Scolaire)"
     },
     "projects.gradingdino.desc": {
-        en: "A grade management system built with Django. Teachers create classrooms and manage student grades, while students track their progress. Group project MVP — learned valuable lessons about framework selection.",
-        pt: "Um sistema de gestão de notas construído com Django. Os professores criam turmas e gerem as notas dos alunos, enquanto os alunos acompanham o seu progresso. MVP de projeto de grupo — lições valiosas sobre a escolha de frameworks.",
-        lu: "E Noteverwaltungssystem mat Django gebaut. D'Enseignanten kreéieren Klassen a verwalten d'Noten, an d'Schüler suivéieren hire Fortschrëtt. Grupp-Projet MVP — wäertvoll Lektiounen iwwer Framework-Auswiel.",
-        de: "Ein Notenverwaltungssystem mit Django. Lehrer erstellen Klassen und verwalten Noten, Schüler verfolgen ihren Fortschritt. Gruppenprojekt MVP — wertvolle Lektionen über Framework-Auswahl.",
-        fr: "Un système de gestion des notes construit avec Django. Les enseignants créent des classes et gèrent les notes, les étudiants suivent leur progression. MVP de projet de groupe — leçons précieuses sur le choix des frameworks."
+        en: "From October 2025 to November 2025: A grade management system built with Django. Teachers create classrooms and manage student grades, while students track their progress. Group project MVP — learned valuable lessons about framework selection.",
+        pt: "De outubro de 2025 a novembro de 2025: Um sistema de gestão de notas construído com Django. Os professores criam turmas e gerem as notas dos alunos, enquanto os alunos acompanham o seu progresso. MVP de projeto de grupo — lições valiosas sobre a escolha de frameworks.",
+        lu: "Vum Oktober 2025 bis November 2025: E Noteverwaltungssystem mat Django gebaut. D'Enseignanten kreéieren Klassen a verwalten d'Noten, an d'Schüler suivéieren hire Fortschrëtt. Grupp-Projet MVP — wäertvoll Lektiounen iwwer Framework-Auswiel.",
+        de: "Von Oktober 2025 bis November 2025: Ein Notenverwaltungssystem mit Django. Lehrer erstellen Klassen und verwalten Noten, Schüler verfolgen ihren Fortschritt. Gruppenprojekt MVP — wertvolle Lektionen über Framework-Auswahl.",
+        fr: "D'octobre 2025 à novembre 2025 : Un système de gestion des notes construit avec Django. Les enseignants créent des classes et gèrent les notes, les étudiants suivent leur progression. MVP de projet de groupe — leçons précieuses sur le choix des frameworks."
+    },
+
+    // Projects Page
+    "projects.badge": {
+        en: "PORTFOLIO PROJECTS",
+        pt: "PROJETOS DO PORTFÓLIO",
+        lu: "PORTFOLIO PROJETEN",
+        de: "PORTFOLIO-PROJEKTE",
+        fr: "PROJETS PORTFOLIO"
+    },
+    "projects.heading": {
+        en: "Projects",
+        pt: "Projetos",
+        lu: "Projeten",
+        de: "Projekte",
+        fr: "Projets"
+    },
+    "projects.subtitle": {
+        en: "A collection of projects showcasing technical skills, from infrastructure and homelab setups to web development and IoT systems. Filter by category to explore specific areas.",
+        pt: "Uma coleção de projetos que demonstram competências técnicas, desde infraestrutura e configurações de homelab até desenvolvimento web e sistemas IoT. Filtre por categoria para explorar áreas específicas.",
+        lu: "Eng Sammlung vu Projeten déi technesch Fäegkeeten weisen, vun Infrastruktur a Homelab Setupen bis zu Web-Entwécklung an IoT Systemer. Filtert no Kategorie fir spezifesch Beräicher ze entdecken.",
+        de: "Eine Sammlung von Projekten, die technische Fähigkeiten zeigen, von Infrastruktur- und Homelab-Einrichtungen bis hin zu Webentwicklung und IoT-Systemen. Nach Kategorie filtern, um spezifische Bereiche zu erkunden.",
+        fr: "Une collection de projets mettant en valeur les compétences techniques, des configurations d'infrastructure et de homelab au développement web et aux systèmes IoT. Filtrez par catégorie pour explorer des domaines spécifiques."
+    },
+    "projects.back": {
+        en: "Back to Portfolio",
+        pt: "Voltar ao Portfólio",
+        lu: "Zréck op de Portfolio",
+        de: "Zurück zum Portfolio",
+        fr: "Retour au Portfolio"
+    },
+    "projects.stats.total": {
+        en: "Total Projects",
+        pt: "Total de Projetos",
+        lu: "Total Projeten",
+        de: "Gesamtprojekte",
+        fr: "Total des Projets"
+    },
+    "projects.stats.completed": {
+        en: "Completed",
+        pt: "Concluídos",
+        lu: "Ofgeschloss",
+        de: "Abgeschlossen",
+        fr: "Terminés"
+    },
+    "projects.filter.all": {
+        en: "All",
+        pt: "Todos",
+        lu: "All",
+        de: "Alle",
+        fr: "Tous"
+    },
+    "projects.category.infrastructure": {
+        en: "Infrastructure",
+        pt: "Infraestrutura",
+        lu: "Infrastruktur",
+        de: "Infrastruktur",
+        fr: "Infrastructure"
+    },
+    "projects.category.iot": {
+        en: "IoT",
+        pt: "IoT",
+        lu: "IoT",
+        de: "IoT",
+        fr: "IoT"
+    },
+    "projects.category.webdev": {
+        en: "Web Development",
+        pt: "Desenvolvimento Web",
+        lu: "Web Entwécklung",
+        de: "Webentwicklung",
+        fr: "Développement Web"
+    },
+    "projects.category.school": {
+        en: "School Projects",
+        pt: "Projetos Escolares",
+        lu: "Schoulprojeten",
+        de: "Schulprojekte",
+        fr: "Projets Scolaires"
+    },
+    "projects.category.cloud": {
+        en: "Cloud Computing",
+        pt: "Computação em Nuvem",
+        lu: "Cloud Computing",
+        de: "Cloud Computing",
+        fr: "Informatique en nuage"
+    },
+    "projects.category.devops": {
+        en: "DevOps",
+        pt: "DevOps",
+        lu: "DevOps",
+        de: "DevOps",
+        fr: "DevOps"
+    },
+    "projects.category.networking": {
+        en: "Networking",
+        pt: "Redes",
+        lu: "Netzwierker",
+        de: "Netzwerke",
+        fr: "Réseaux"
+    },
+    "projects.category.fullstack": {
+        en: "Full-Stack",
+        pt: "Full-Stack",
+        lu: "Full-Stack",
+        de: "Full-Stack",
+        fr: "Full-Stack"
+    },
+    "projects.category.database": {
+        en: "Database",
+        pt: "Base de Dados",
+        lu: "Datenbank",
+        de: "Datenbank",
+        fr: "Base de données"
+    },
+    "projects.category.security": {
+        en: "Security",
+        pt: "Segurança",
+        lu: "Sécherheet",
+        de: "Sicherheit",
+        fr: "Sécurité"
+    },
+    "projects.status.completed": {
+        en: "Completed",
+        pt: "Concluído",
+        lu: "Ofgeschloss",
+        de: "Abgeschlossen",
+        fr: "Terminé"
+    },
+    "projects.status.inDevelopment": {
+        en: "In Development",
+        pt: "Em Desenvolvimento",
+        lu: "An Entwécklung",
+        de: "In Entwicklung",
+        fr: "En Développement"
+    },
+    "projects.empty": {
+        en: "No projects found for this category.",
+        pt: "Nenhum projeto encontrado para esta categoria.",
+        lu: "Keng Projeten fir dës Kategorie fonnt.",
+        de: "Keine Projekte für diese Kategorie gefunden.",
+        fr: "Aucun projet trouvé pour cette catégorie."
+    },
+    "projects.modal.viewProject": {
+        en: "View Project",
+        pt: "Ver Projeto",
+        lu: "Projet kucken",
+        de: "Projekt ansehen",
+        fr: "Voir le Projet"
+    },
+    "projects.portfolio.title": {
+        en: "Portfolio Website",
+        pt: "Site do Portfólio",
+        lu: "Portfolio Websäit",
+        de: "Portfolio-Website",
+        fr: "Site Portfolio"
+    },
+    "projects.portfolio.desc": {
+        en: "From November 2025 to present: A fully custom portfolio website built from scratch with vanilla HTML, CSS, and JavaScript. Features a unique server rack aesthetic, dynamic content system with centralized data files, multi-language support (EN, PT, LU, DE, FR), comprehensive SEO optimization, accessibility features, and performance enhancements. Includes dedicated pages for projects and certifications with filtering, modals, and responsive design. Continuously maintained and expanded with new features.",
+        pt: "De novembro de 2025 até ao presente: Um site de portfólio totalmente personalizado construído do zero com HTML, CSS e JavaScript vanilla. Características incluem estética única de rack de servidor, sistema de conteúdo dinâmico com ficheiros de dados centralizados, suporte multi-idioma (EN, PT, LU, DE, FR), otimização SEO abrangente, funcionalidades de acessibilidade e melhorias de desempenho. Inclui páginas dedicadas para projetos e certificações com filtros, modais e design responsivo. Continuamente mantido e expandido com novas funcionalidades.",
+        lu: "Vum November 2025 bis haut: Eng komplett personaliséiert Portfolio Websäit vun Null opgebaut mat vanilla HTML, CSS, a JavaScript. Features inkludéieren eng eenzegaarteg Server Rack Ästhetik, dynamescht Content System mat zentraliséierten Daten Fichieren, Multi-Sprooch Ënnerstëtzung (EN, PT, LU, DE, FR), ëmfaassend SEO Optimiséierung, Zougang Features, a Leeschtungsverbesserungen. Inklusiv dedizéiert Säiten fir Projeten a Zertifizéierungen mat Filteren, Modalen, a responsivem Design. Kontinuéierlech ënnerhalen an erweidert mat neie Features.",
+        de: "Von November 2025 bis heute: Eine vollständig angepasste Portfolio-Website von Grund auf mit vanilla HTML, CSS und JavaScript gebaut. Features umfassen ein einzigartiges Server-Rack-Design, dynamisches Content-System mit zentralisierten Datendateien, mehrsprachige Unterstützung (EN, PT, LU, DE, FR), umfassende SEO-Optimierung, Barrierefreiheits-Features und Leistungsverbesserungen. Enthält dedizierte Seiten für Projekte und Zertifizierungen mit Filtern, Modals und responsivem Design. Kontinuierlich gewartet und mit neuen Features erweitert.",
+        fr: "De novembre 2025 à aujourd'hui : Un site portfolio entièrement personnalisé construit à partir de zéro avec HTML, CSS et JavaScript vanilla. Caractéristiques incluent une esthétique unique de rack serveur, système de contenu dynamique avec fichiers de données centralisés, support multilingue (EN, PT, LU, DE, FR), optimisation SEO complète, fonctionnalités d'accessibilité et améliorations de performance. Inclut des pages dédiées pour projets et certifications avec filtres, modales et design responsive. Maintenu et étendu en continu avec de nouvelles fonctionnalités."
+    },
+    "projects.viewMore": {
+        en: "View All Projects",
+        pt: "Ver Todos os Projetos",
+        lu: "All Projeten kucken",
+        de: "Alle Projekte ansehen",
+        fr: "Voir Tous les Projets"
     },
 
     // Project Detail Pages (shared)
@@ -848,11 +1032,11 @@ const translations = {
         fr: "PROJET FINAL"
     },
     "project.pif.title": {
-        en: "Smart Plant Monitoring (PIF)",
-        pt: "Monitorização Inteligente de Plantas (PIF)",
-        lu: "Smart Plant Monitoring (PIF)",
-        de: "Smart Plant Monitoring (PIF)",
-        fr: "Smart Plant Monitoring (PIF)"
+        en: "Smart Plant Monitoring - Final Project",
+        pt: "Monitorização Inteligente de Plantas - Projeto Final",
+        lu: "Smart Planz Iwwerwaachung - Final Projet",
+        de: "Smart Plant Monitoring - Abschlussprojekt",
+        fr: "Surveillance Intelligente des Plantes - Projet Final"
     },
     "project.pif.score": {
         en: "59/60",
@@ -862,11 +1046,11 @@ const translations = {
         fr: "59/60"
     },
     "project.pif.subtitle": {
-        en: "Final project: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.",
-        pt: "Projeto final: Sistema IoT completo com nós ESP8266, hub Raspberry Pi, dashboard web, rede empresarial e backups automatizados.",
-        lu: "Final Projet: Vollstännegt IoT System mat ESP8266 Noden, Raspberry Pi Hub, Web Dashboard, Enterprise Netzwierk, an automatesche Backups.",
-        de: "Abschlussprojekt: Vollständiges IoT-System mit ESP8266-Nodes, Raspberry Pi Hub, Web-Dashboard, Enterprise-Netzwerk und automatisierten Backups.",
-        fr: "Projet final : Système IoT complet avec nœuds ESP8266, hub Raspberry Pi, tableau de bord web, réseau d’entreprise et sauvegardes automatisées."
+        en: "Final project from September 2024 to June 2025: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups. Presented the completed product as part of the Computer Technician diploma.",
+        pt: "Projeto final de setembro de 2024 a junho de 2025: Sistema IoT completo com nós ESP8266, hub Raspberry Pi, dashboard web, rede empresarial e backups automatizados. Apresentei o produto concluído como parte do diploma de Técnico de Informática.",
+        lu: "Finale Projet vum September 2024 bis Juni 2025: Vollstännegt IoT System mat ESP8266 Noden, Raspberry Pi Hub, Web Dashboard, Enterprise Netzwierk, an automatesche Backups. Hunn de komplett Produit presentéiert als Deel vum Computer Technician Diplom.",
+        de: "Abschlussprojekt von September 2024 bis Juni 2025: Vollständiges IoT-System mit ESP8266-Nodes, Raspberry Pi Hub, Web-Dashboard, Enterprise-Netzwerk und automatisierten Backups. Präsentierte das fertige Produkt als Teil des Computer-Techniker-Diploms.",
+        fr: "Projet final de septembre 2024 à juin 2025 : Système IoT complet avec nœuds ESP8266, hub Raspberry Pi, tableau de bord web, réseau d'entreprise et sauvegardes automatisées. Présenté le produit terminé dans le cadre du diplôme de Technicien en informatique."
     },
     "project.pif.section.system.title": {
         en: "The \"Plantimeter\" System",
@@ -1107,18 +1291,32 @@ const translations = {
         fr: "Contrôle de la lumière de croissance : Active la LED 1W quand la lumière passe sous la plage optimale."
     },
     "project.pif.section.what.dashboard": {
-        en: "Web Dashboard: Admin panel with real-time charts (ApexCharts), task scheduling, user management, and log viewer.",
-        pt: "Painel web: Painel de admin com gráficos em tempo real (ApexCharts), agendamento de tarefas, gestão de utilizadores e visualização de logs.",
-        lu: "Web Dashboard: Admin Panel mat Echtzäit Charts (ApexCharts), Aufgab-Planning, Benotzerverwaltung, an Log Viewer.",
-        de: "Web-Dashboard: Admin-Panel mit Echtzeit-Charts (ApexCharts), Aufgabenplanung, Benutzerverwaltung und Log-Viewer.",
-        fr: "Tableau de bord web : Panneau admin avec graphiques temps réel (ApexCharts), planification des tâches, gestion des utilisateurs et visionneuse de logs."
+        en: "Web Dashboard: Admin panel with real-time charts (ApexCharts), task scheduling, user management, and plant variations.",
+        pt: "Painel Web: Painel de administração com gráficos em tempo real (ApexCharts), agendamento de tarefas, gestão de utilizadores e variações de plantas.",
+        lu: "Web Dashboard: Admin Panel mat Echtzäit Charts (ApexCharts), Aufgab Plangung, Benotzer Gestioun, a Planzen Variatiounen.",
+        de: "Web-Dashboard: Admin-Panel mit Echtzeitdiagrammen (ApexCharts), Aufgabenplanung, Benutzerverwaltung und Pflanzenvariationen.",
+        fr: "Tableau de bord Web : Panneau d'administration avec graphiques en temps réel (ApexCharts), planification des tâches, gestion des utilisateurs et variations de plantes."
+    },
+    "project.pif.section.what.backend": {
+        en: "Dynamic Backend: PHP API-driven architecture for real-time updates, log history viewer, and seamless data management.",
+        pt: "Backend Dinâmico: Arquitetura PHP orientada a API para atualizações em tempo real, visualizador de histórico de logs e gestão de dados sem interrupções.",
+        lu: "Dynameschen Backend: PHP API-gedriwwen Architektur fir Echtzäit Updates, Log Geschicht Viewer, a seamless Daten Gestioun.",
+        de: "Dynamisches Backend: PHP-API-gesteuerte Architektur für Echtzeit-Updates, Log-Verlauf-Viewer und nahtloses Datenmanagement.",
+        fr: "Backend dynamique : Architecture PHP pilotée par API pour mises à jour en temps réel, visualiseur d'historique des journaux et gestion de données transparente."
+    },
+    "project.pif.section.what.ux": {
+        en: "User Experience: Login security, separated user/admin views, fuzzy search throughout, and modals for improved workflow.",
+        pt: "Experiência do Utilizador: Segurança de login, vistas separadas utilizador/admin, pesquisa fuzzy em todo o lado, e modais para melhor fluxo de trabalho.",
+        lu: "Benotzer Erfarung: Login Sécherheet, getrennt Benotzer/Admin Vueën, Fuzzy Search iwwerall, a Modalen fir verbessert Workflow.",
+        de: "Benutzererfahrung: Login-Sicherheit, getrennte Benutzer/Admin-Ansichten, Fuzzy-Suche überall und Modals für verbesserte Arbeitsabläufe.",
+        fr: "Expérience utilisateur : Sécurité de connexion, vues séparées utilisateur/admin, recherche floue partout et modales pour un flux de travail amélioré."
     },
     "project.pif.section.what.kiosk": {
-        en: "Touch Kiosk UI: Simplified interface for the Raspberry Pi touchscreen display.",
-        pt: "UI tátil de quiosque: Interface simplificada para o ecrã tátil do Raspberry Pi.",
-        lu: "Touch Kiosk UI: Vereinfachte Interface fir den Raspberry Pi Touchscreen.",
-        de: "Touch-Kiosk-UI: Vereinfachte Oberfläche für das Raspberry Pi Touchscreen-Display.",
-        fr: "UI kiosque tactile : Interface simplifiée pour l’écran tactile Raspberry Pi."
+        en: "Touch Kiosk UI: Optimized interface for the Raspberry Pi touchscreen display, designed for better usability despite the small screen size.",
+        pt: "UI tátil de quiosque: Interface otimizada para o ecrã tátil do Raspberry Pi, desenhada para melhor usabilidade apesar do tamanho reduzido do ecrã.",
+        lu: "Touch Kiosk UI: Optiméiert Interface fir den Raspberry Pi Touchscreen, designt fir besser Benotzbarkeet trotz dem klengen Ecran.",
+        de: "Touch-Kiosk-UI: Optimierte Oberfläche für das Raspberry Pi Touchscreen-Display, für bessere Benutzerfreundlichkeit trotz kleiner Bildschirmgröße entwickelt.",
+        fr: "UI kiosque tactile : Interface optimisée pour l'écran tactile Raspberry Pi, conçue pour une meilleure utilisabilité malgré la petite taille de l'écran."
     },
     "project.pif.section.network.title": {
         en: "The Network",
@@ -1135,18 +1333,18 @@ const translations = {
         fr: "J’ai conçu et configuré un réseau de style entreprise dans Cisco Packet Tracer :"
     },
     "project.pif.section.network.firm": {
-        en: "Firmennetzwerk: VLANs (10/20), DHCP server, ISR4331 router with NAT/PAT and ACLs.",
-        pt: "Firmennetzwerk: VLANs (10/20), servidor DHCP, router ISR4331 com NAT/PAT e ACLs.",
-        lu: "Firmennetzwerk: VLANs (10/20), DHCP Server, ISR4331 Router mat NAT/PAT an ACLen.",
+        en: "Company Network: VLANs (10/20), DHCP server, ISR4331 router with NAT/PAT and ACLs.",
+        pt: "Rede da Empresa: VLANs (10/20), servidor DHCP, router ISR4331 com NAT/PAT e ACLs.",
+        lu: "Firmennetz: VLANs (10/20), DHCP Server, ISR4331 Router mat NAT/PAT an ACLen.",
         de: "Firmennetzwerk: VLANs (10/20), DHCP-Server, ISR4331-Router mit NAT/PAT und ACLs.",
-        fr: "Firmennetzwerk : VLANs (10/20), serveur DHCP, routeur ISR4331 avec NAT/PAT et ACLs."
+        fr: "Réseau d'entreprise : VLANs (10/20), serveur DHCP, routeur ISR4331 avec NAT/PAT et ACLs."
     },
     "project.pif.section.network.home": {
-        en: "Heimnetzwerk: Separate WLAN for nodes (PlantimeterAP) with WPA2-PSK, routed to the firm network.",
-        pt: "Heimnetzwerk: WLAN separado para os nós (PlantimeterAP) com WPA2-PSK, encaminhado para a rede da firma.",
-        lu: "Heimnetzwerk: Separat WLAN fir Noden (PlantimeterAP) mat WPA2-PSK, geriicht op d'Firmennetz.",
+        en: "Home Network: Separate WLAN for nodes (PlantimeterAP) with WPA2-PSK, routed to the company network.",
+        pt: "Rede Doméstica: WLAN separado para os nós (PlantimeterAP) com WPA2-PSK, encaminhado para a rede da empresa.",
+        lu: "Heemnetz: Separat WLAN fir Noden (PlantimeterAP) mat WPA2-PSK, geriicht op d'Firmennetz.",
         de: "Heimnetzwerk: Separates WLAN für Nodes (PlantimeterAP) mit WPA2-PSK, ins Firmennetz geroutet.",
-        fr: "Heimnetzwerk : WLAN séparé pour les nœuds (PlantimeterAP) avec WPA2-PSK, routé vers le réseau de l’entreprise."
+        fr: "Réseau domestique : WLAN séparé pour les nœuds (PlantimeterAP) avec WPA2-PSK, routé vers le réseau de l'entreprise."
     },
     "project.pif.section.network.isp": {
         en: "ISP Simulation: Dedicated router simulating internet provider with DNS (Google 8.8.8.8) and fiber link.",
@@ -1160,7 +1358,42 @@ const translations = {
         pt: "Segurança: ACLs baseadas em portas, NAT para acesso web/FTP, tabelas de routing adequadas.",
         lu: "Sécherheet: Port-baséiert ACLen, NAT fir Web/FTP Zougang, richteg Routing Dëscher.",
         de: "Sicherheit: Port-basierte ACLs, NAT für Web/FTP-Zugriff, korrekte Routing-Tabellen.",
-        fr: "Sécurité : ACLs basées sur les ports, NAT pour l’accès web/FTP, tables de routage correctes."
+        fr: "Sécurité : ACLs basées sur les ports, NAT pour l'accès web/FTP, tables de routage correctes."
+    },
+    "project.pif.section.network.gigabit": {
+        en: "Gigabit Architecture: Full Gigabit speeds throughout. Implemented copper-to-fiber converter bridge where router interfaces couldn't connect directly, maintaining performance.",
+        pt: "Arquitetura Gigabit: Velocidades Gigabit completas em toda a rede. Implementei ponte conversor cobre-fibra onde interfaces do router não podiam conectar diretamente, mantendo desempenho.",
+        lu: "Gigabit Architektur: Vollstänneg Gigabit Vitessen duerch d'ganzt Netzwierk. Kupfer-zu-Faser Converter Bréck ëmgesat wou Router Interfaces net direkt verbonne konnten, Vitess behal.",
+        de: "Gigabit-Architektur: Volle Gigabit-Geschwindigkeiten durchgehend. Kupfer-zu-Faser-Konverter-Brücke implementiert, wo Router-Schnittstellen nicht direkt verbunden werden konnten, Leistung beibehalten.",
+        fr: "Architecture Gigabit : Vitesses Gigabit complètes dans tout le réseau. Pont convertisseur cuivre-fibre implémenté où les interfaces du routeur ne pouvaient pas se connecter directement, performance maintenue."
+    },
+    "project.pif.images.sensor": {
+        en: "ESP8266 Sensor Node: Wemos D1 Mini with DHT22, BH1750, SEN0193 sensors and LED grow light",
+        pt: "Nó Sensor ESP8266: Wemos D1 Mini com sensores DHT22, BH1750, SEN0193 e LED de crescimento",
+        lu: "ESP8266 Sensor Node: Wemos D1 Mini mat DHT22, BH1750, SEN0193 Sensoren an LED Grow Liicht",
+        de: "ESP8266 Sensor-Node: Wemos D1 Mini mit DHT22, BH1750, SEN0193 Sensoren und LED-Wachstumslicht",
+        fr: "Nœud capteur ESP8266 : Wemos D1 Mini avec capteurs DHT22, BH1750, SEN0193 et LED de croissance"
+    },
+    "project.pif.images.display": {
+        en: "Raspberry Pi 4 Hub Server with touchscreen display running the kiosk mode interface",
+        pt: "Servidor Hub Raspberry Pi 4 com ecrã tátil executando a interface em modo quiosque",
+        lu: "Raspberry Pi 4 Hub Server mat Touchscreen Display deen de Kiosk Modus Interface bedreiwen",
+        de: "Raspberry Pi 4 Hub-Server mit Touchscreen-Display, der die Kiosk-Modus-Oberfläche ausführt",
+        fr: "Serveur hub Raspberry Pi 4 avec écran tactile exécutant l'interface en mode kiosque"
+    },
+    "project.pif.images.water": {
+        en: "Automated watering system: Water pump mechanism controlled by soil moisture sensors",
+        pt: "Sistema de rega automatizado: Mecanismo de bomba de água controlado por sensores de humidade do solo",
+        lu: "Automatesche Bewässerungssystem: Waasserpompel Mechanismus kontrolléiert vun Buedemfiichtegkeet Sensoren",
+        de: "Automatisches Bewässerungssystem: Wasserpumpen-Mechanismus gesteuert von Bodenfeuchtesensoren",
+        fr: "Système d'arrosage automatisé : Mécanisme de pompe à eau contrôlé par des capteurs d'humidité du sol"
+    },
+    "project.pif.images.network": {
+        en: "Network topology in Cisco Packet Tracer: Home office network (IoT nodes, PlantimeterAP) connected to company office (servers, VLANs) via ISR4331 router, with DNS routing to Google Public DNS.",
+        pt: "Topologia de rede no Cisco Packet Tracer: Rede de escritório doméstico (nós IoT, PlantimeterAP) conectada ao escritório da empresa (servidores, VLANs) via router ISR4331, com roteamento DNS para Google Public DNS.",
+        lu: "Netzwierk Topologie am Cisco Packet Tracer: Home Office Netzwierk (IoT Node, PlantimeterAP) verbonnen mat Firmen Büro (Server, VLANen) iwwer ISR4331 Router, mat DNS Routing zu Google Public DNS.",
+        de: "Netzwerktopologie in Cisco Packet Tracer: Home-Office-Netzwerk (IoT-Knoten, PlantimeterAP) verbunden mit Firmenbüro (Server, VLANs) über ISR4331-Router, mit DNS-Routing zu Google Public DNS.",
+        fr: "Topologie réseau dans Cisco Packet Tracer : Réseau de bureau à domicile (nœuds IoT, PlantimeterAP) connecté au bureau de l'entreprise (serveurs, VLANs) via routeur ISR4331, avec routage DNS vers Google Public DNS."
     },
     "project.pif.section.why.title": {
         en: "Why I Built It",
@@ -1357,6 +1590,13 @@ const translations = {
         lu: "80°C Sécherheets-Cutoff",
         de: "80°C Sicherheitsabschaltung",
         fr: "Arrêt de sécurité à 80°C"
+    },
+    "project.sidebar.category": {
+        en: "Category",
+        pt: "Categoria",
+        lu: "Kategorie",
+        de: "Kategorie",
+        fr: "Catégorie"
     },
     "project.sidebar.techStack": {
         en: "Tech Stack",

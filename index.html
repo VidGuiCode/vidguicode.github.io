@@ -33,7 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="portfolio/assets/img/hero-profile.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="portfolio/assets/img/formal-profile.webp" as="image" fetchpriority="high">
     <link rel="preload" href="portfolio/styles.css" as="style">
     <link rel="preload" href="portfolio/translations.js" as="script">
     
@@ -125,7 +125,7 @@
             </div>
             
             <div class="card hero-image">
-                <img src="portfolio/assets/img/hero-profile.webp" alt="Guilherme Videira Marques" class="profile-img" fetchpriority="high" width="600" height="800">
+                <img src="portfolio/assets/img/formal-profile.webp" alt="Guilherme Videira Marques" class="profile-img" fetchpriority="high" width="400" height="500">
             </div>
 
             <div class="card stat-box">
@@ -184,9 +184,6 @@
                     </div>
                 </div>
             </div>
-            <div class="card about-image">
-                <img src="portfolio/assets/img/formal-profile.webp" alt="Guilherme Formal" class="profile-img-small" loading="lazy" width="300" height="400">
-            </div>
         </section>
 
         <!-- Skills Section -->
@@ -203,10 +200,12 @@
                 </div>
                 <ul class="skill-list">
                     <li data-i18n="skills.cloud.1">Docker / Docker Compose</li>
-                    <li data-i18n="skills.cloud.2">Virtualization (VirtualBox)</li>
-                    <li data-i18n="skills.cloud.3">Git & Version Control</li>
-                    <li data-i18n="skills.cloud.4">Caddy Reverse Proxy</li>
-                    <li data-i18n="skills.cloud.5">Oracle Cloud Gateway</li>
+                    <li data-i18n="skills.cloud.2">Git</li>
+                    <li data-i18n="skills.cloud.3">Virtualization (VirtualBox)</li>
+                    <li data-i18n="skills.cloud.4">Kubernetes (K3s cluster)</li>
+                    <li data-i18n="skills.cloud.5">Web Hosting (IONOS, Hetzner)</li>
+                    <li data-i18n="skills.cloud.6">Cloud Platforms (Oracle Cloud, Hetzner Cloud)</li>
+                    <li data-i18n="skills.cloud.7">Infrastructure management & cost optimization</li>
                 </ul>
             </div>
 
@@ -216,11 +215,10 @@
                     <h3 data-i18n="skills.networking">Networking</h3>
                 </div>
                 <ul class="skill-list">
-                    <li data-i18n="skills.networking.1">CCNA Fundamentals</li>
-                    <li data-i18n="skills.networking.2">VLANs & Routing</li>
-                    <li data-i18n="skills.networking.3">WireGuard / VPNs</li>
-                    <li data-i18n="skills.networking.4">DNS Management (Cloudflare)</li>
-                    <li data-i18n="skills.networking.5">Tailscale</li>
+                    <li data-i18n="skills.networking.1">CCNA fundamentals</li>
+                    <li data-i18n="skills.networking.2">WireGuard (VPN & tunneling)</li>
+                    <li data-i18n="skills.networking.3">DNS management</li>
+                    <li data-i18n="skills.networking.4">Caddy (reverse proxy & TLS automation)</li>
                 </ul>
             </div>
 
@@ -231,11 +229,12 @@
                 </div>
                 <ul class="skill-list">
                     <li data-i18n="skills.programming.1">PowerShell / Bash</li>
-                    <li data-i18n="skills.programming.2">JavaScript / Node.js</li>
-                    <li data-i18n="skills.programming.3">HTML5 / CSS3</li>
-                    <li data-i18n="skills.programming.4">PHP</li>
+                    <li data-i18n="skills.programming.2">JavaScript / jQuery / Node.js</li>
+                    <li data-i18n="skills.programming.3">PHP</li>
+                    <li data-i18n="skills.programming.4">HTML / CSS</li>
                     <li data-i18n="skills.programming.5">SQL (MySQL / PostgreSQL)</li>
-                    <li data-i18n="skills.programming.6">Python / FastAPI</li>
+                    <li data-i18n="skills.programming.6">Database design (MCD/MLD)</li>
+                    <li data-i18n="skills.programming.7">Python / FastAPI</li>
                 </ul>
             </div>
 
@@ -245,8 +244,8 @@
                     <h3 data-i18n="skills.systems">Systems</h3>
                 </div>
                 <ul class="skill-list">
-                    <li data-i18n="skills.systems.1">Linux (Ubuntu/Debian)</li>
-                    <li data-i18n="skills.systems.2">Windows Server</li>
+                    <li data-i18n="skills.systems.1">Windows Server</li>
+                    <li data-i18n="skills.systems.2">Linux Server</li>
                     <li data-i18n="skills.systems.3">Hardware Diagnostics</li>
                     <li data-i18n="skills.systems.4">IoT Integration</li>
                 </ul>
@@ -261,7 +260,7 @@
             </div>
 
             <!-- Home Lab Project -->
-            <div class="card project-card">
+            <a href="portfolio/project-homelab.html" class="card project-card project-card-link">
                 <div class="project-icon">
                     <i data-lucide="server-cog"></i>
                 </div>
@@ -274,12 +273,13 @@
                     <span>Tailscale</span>
                     <span>Cloudflare</span>
                 </div>
-                <a href="portfolio/project-homelab.html" class="btn-text" style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-primary); text-decoration: none; font-weight: 500;" data-i18n="projects.homelab.cta">
-                    View Case Study <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
-                </a>
-            </div>
+                <div class="project-cta">
+                    <span data-i18n="projects.homelab.cta">View Case Study</span>
+                    <i data-lucide="arrow-right"></i>
+                </div>
+            </a>
 
-            <div class="card project-card">
+            <a href="portfolio/project-pif.html" class="card project-card project-card-link">
                 <div class="project-icon">
                     <i data-lucide="sprout"></i>
                 </div>
@@ -292,10 +292,11 @@
                     <span>MariaDB</span>
                     <span>Networking</span>
                 </div>
-                <a href="portfolio/project-pif.html" class="btn-text" style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-primary); text-decoration: none; font-weight: 500;" data-i18n="projects.homelab.cta">
-                    View Case Study <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
-                </a>
-            </div>
+                <div class="project-cta">
+                    <span data-i18n="projects.homelab.cta">View Case Study</span>
+                    <i data-lucide="arrow-right"></i>
+                </div>
+            </a>
 
             <div class="card project-card">
                 <div class="project-icon">
@@ -310,7 +311,7 @@
                 </div>
             </div>
 
-            <div class="card project-card">
+            <a href="portfolio/project-gradingdino.html" class="card project-card project-card-link">
                 <div class="project-icon">
                     <i data-lucide="graduation-cap"></i>
                 </div>
@@ -322,10 +323,15 @@
                     <span>Docker</span>
                     <span>Team Project</span>
                 </div>
-                <a href="portfolio/project-gradingdino.html" class="btn-text" style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-primary); text-decoration: none; font-weight: 500;" data-i18n="projects.homelab.cta">
-                    View Case Study <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
-                </a>
-            </div>
+                <div class="project-cta">
+                    <span data-i18n="projects.homelab.cta">View Case Study</span>
+                    <i data-lucide="arrow-right"></i>
+                </div>
+            </a>
+
+            <a id="projects-view-more" href="portfolio/projects.html" class="btn primary" style="grid-column: 1 / -1; justify-self: center; margin-top: 1rem;" data-i18n="projects.viewMore">
+                View All Projects <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            </a>
         </section>
 
         <!-- Experience Section -->

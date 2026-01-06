@@ -28,10 +28,17 @@
             margin-bottom: 2rem;
         }
         .project-title-group h1 {
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
             color: var(--text-primary);
+        }
+        
+        .project-title-group .subtitle {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
         }
         .project-meta-grid {
             display: grid;
@@ -98,7 +105,7 @@
             padding-left: 1rem;
         }
         article p, article li {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             line-height: 1.7;
             color: var(--text-secondary);
             margin-bottom: 1.2rem;
@@ -122,6 +129,31 @@
             flex-wrap: wrap;
             gap: 0.75rem;
             margin-top: 0.5rem;
+        }
+        
+        /* Mobile: Compact category display */
+        @media (max-width: 768px) {
+            .project-certifications {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            
+            .project-cert-badge {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.5rem;
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+            
+            .project-cert-name {
+                font-size: 0.7rem;
+            }
+            
+            .category-filter-button {
+                font-size: 0.9rem !important;
+                padding: 0.65rem !important;
+            }
         }
 
         .project-cert-badge {
@@ -148,6 +180,427 @@
             width: 32px;
             height: 32px;
             object-fit: contain;
+        }
+
+        /* Project Images */
+        .project-image-container {
+            margin: 2rem 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .project-image-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            max-width: 100%;
+        }
+
+        .project-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .project-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @media (min-width: 769px) {
+            .project-image-wrapper:hover::after,
+            .project-image-wrapper:hover::before {
+                opacity: 1;
+            }
+        }
+
+
+        .project-image {
+            width: auto;
+            max-width: 260px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 6px;
+            border: none;
+            margin: 0 auto;
+            display: inline-block;
+            box-shadow: none;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            opacity: 0.75;
+            cursor: pointer;
+        }
+
+        @media (min-width: 769px) {
+            .project-image-wrapper:hover .project-image {
+                transform: scale(1.02);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                filter: brightness(0.95);
+            }
+        }
+
+        /* Node image - adjust crop to show the light better, make it slightly wider */
+        .project-image.node-image {
+            max-width: 320px;
+            aspect-ratio: 4 / 3;
+            object-position: center 25%;
+        }
+
+        /* Display image - keep square */
+        .project-image.display-image {
+            max-width: 280px;
+            aspect-ratio: 1 / 1;
+        }
+        
+        /* Image section container - seamlessly integrated */
+        .hardware-image-section {
+            padding: 1.5rem;
+            border-top: none;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .hardware-image-section .section-label {
+            display: none;
+        }
+        
+        .hardware-image-section .project-image-wrapper {
+            position: relative;
+            display: block;
+            flex-shrink: 0;
+            text-align: center;
+        }
+        
+        
+        .hardware-image-section .project-image-wrapper:hover .project-image {
+            opacity: 0.95;
+            transform: scale(1.02);
+        }
+        
+        .hardware-image-caption {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.5;
+            font-style: italic;
+            text-align: left;
+            flex: 1;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hardware-image-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hardware-image-caption {
+                text-align: center;
+            }
+        }
+
+        /* Water image - keep square */
+        .project-image.water-image {
+            max-width: 300px;
+        }
+
+        /* Packet tracer - keep full width, not square */
+        .project-image.network-image {
+            max-width: 100%;
+            width: 100%;
+            aspect-ratio: auto;
+            height: auto;
+            object-fit: contain;
+            background: #fff;
+        }
+        
+        /* Network image section - full width, left aligned */
+        .hardware-image-section:has(.network-image) {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1.5rem;
+        }
+        
+        .hardware-image-section:has(.network-image) .project-image-wrapper {
+            width: 100%;
+            text-align: left;
+        }
+        
+        .hardware-image-section:has(.network-image) .hardware-image-caption {
+            text-align: left;
+            margin-top: 0.75rem;
+        }
+
+
+        .project-image-caption {
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.4;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .project-image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .project-image-grid .project-image {
+            margin: 0;
+        }
+
+        /* Image Modal/Lightbox */
+        .image-modal {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
+        }
+
+        .image-modal.active {
+            opacity: 1;
+            visibility: visible;
+            background: rgba(0, 0, 0, 0.95);
+        }
+        
+        /* Category Filter Modal */
+        .category-filter-modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            cursor: default;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        #category-filter-modal.active .category-filter-modal-content {
+            transform: scale(1);
+        }
+        
+        .category-filter-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .category-filter-option:hover {
+            background: var(--surface-secondary);
+            border-color: var(--accent-primary);
+        }
+        
+        .category-filter-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--accent-primary);
+        }
+        
+        .category-filter-option label {
+            flex: 1;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+        
+        .category-filter-button:hover {
+            background: var(--surface-secondary);
+            border-color: var(--accent-primary);
+        }
+
+        .image-modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0);
+            cursor: default;
+            display: block;
+            transform: scale(0.9);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-modal.active .image-modal-content {
+            transform: scale(1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 32px;
+            line-height: 1;
+            z-index: 2001;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .image-modal.active .image-modal-close {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .image-modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1) rotate(90deg);
+        }
+
+        @media (max-width: 768px) {
+            .project-image {
+                max-width: 100%;
+            }
+            .project-image-wrapper {
+                cursor: pointer;
+                -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+            }
+            .project-image-wrapper::after,
+            .project-image-wrapper::before {
+                display: none;
+            }
+            
+            /* Make images more tappable on mobile */
+            .project-image-wrapper {
+                touch-action: manipulation;
+            }
+
+            /* Hardware showcase - stack on mobile */
+            .hardware-showcase {
+                display: flex !important;
+                flex-direction: column;
+                gap: 1rem !important;
+            }
+
+            /* Node cards - adjust padding and layout */
+            .node-card {
+                width: 100%;
+            }
+
+            .node-card > div:first-of-type {
+                padding: 1rem !important;
+            }
+
+            .node-card h3 {
+                font-size: 1.25rem !important;
+            }
+
+            .node-card > div:first-of-type > div:first-of-type {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+
+            .node-card > div:first-of-type > div:first-of-type > div:last-of-type {
+                text-align: left !important;
+                margin-top: 0.5rem;
+            }
+
+            .node-card p {
+                font-size: 0.85rem !important;
+                margin-top: 0.75rem !important;
+            }
+
+            /* Image containers in cards */
+            .node-card > div:last-of-type {
+                padding: 1rem !important;
+                padding-top: 0.75rem !important;
+            }
+
+            .node-card .project-image {
+                max-width: 100% !important;
+            }
+
+            /* Tag sections */
+            .node-card > div:nth-of-type(2) {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.7rem !important;
+                flex-wrap: wrap;
+            }
+
+            /* Image modal on mobile */
+            .image-modal {
+                padding: 1rem;
+            }
+
+            .image-modal-content {
+                max-width: 100%;
+                max-height: 90vh;
+            }
+
+            .image-modal-content img {
+                max-width: 100%;
+                max-height: 90vh;
+                object-fit: contain;
+            }
+
+            /* Ensure project content doesn't overflow */
+            article {
+                overflow-x: hidden;
+            }
+
+            /* Adjust project meta grid spacing */
+            .project-meta-grid {
+                gap: 2rem !important;
+            }
+        }
             flex-shrink: 0;
             margin-right: 0.5rem;
         }
@@ -249,6 +702,15 @@
                             <div style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; font-size: 0.75rem; color: #555; font-family: monospace;">
                                 <span data-i18n="project.pif.nodes.sensor.tag.dht22">[DHT22]</span> <span data-i18n="project.pif.nodes.sensor.tag.bh1750">[BH1750]</span> <span data-i18n="project.pif.nodes.sensor.tag.sen0193">[SEN0193]</span> <span data-i18n="project.pif.nodes.sensor.tag.uln2803">[ULN2803]</span>
                             </div>
+                            
+                            <!-- Hardware Image Section -->
+                            <div class="hardware-image-section" style="background: #1a1a1a;">
+                                <div class="section-label">Hardware Photo</div>
+                                <div class="project-image-wrapper" onclick="openImageModal('assets/img/projects/pif/sensor-wemos-lightstandbulb.jpg', 'ESP8266 Sensor Node with Wemos D1 Mini, sensors, and LED light stand')" style="cursor: pointer;">
+                                    <img src="assets/img/projects/pif/sensor-wemos-lightstandbulb.jpg" alt="ESP8266 Sensor Node with Wemos D1 Mini, sensors, and LED light stand" class="project-image node-image" loading="lazy">
+                                </div>
+                                <p class="hardware-image-caption" data-i18n="project.pif.images.sensor">ESP8266 Sensor Node: Wemos D1 Mini with DHT22, BH1750, SEN0193 sensors and LED grow light</p>
+                            </div>
                         </div>
 
                         <!-- Hub Card: Raspberry Pi -->
@@ -272,6 +734,15 @@
                             </div>
                             <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; font-size: 0.75rem; color: #64748b; font-family: monospace;">
                                 <span data-i18n="project.pif.nodes.hub.tag.apache">[APACHE]</span> <span data-i18n="project.pif.nodes.hub.tag.mariadb">[MARIADB]</span> <span data-i18n="project.pif.nodes.hub.tag.php">[PHP]</span> <span data-i18n="project.pif.nodes.hub.tag.ssl">[SSL]</span>
+                            </div>
+                            
+                            <!-- Hardware Image Section -->
+                            <div class="hardware-image-section" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);">
+                                <div class="section-label">Hardware Photo</div>
+                                <div class="project-image-wrapper" onclick="openImageModal('assets/img/projects/pif/display-pi4.jpg', 'Raspberry Pi 4 with touchscreen display showing the Plantimeter dashboard')" style="cursor: pointer;">
+                                    <img src="assets/img/projects/pif/display-pi4.jpg" alt="Raspberry Pi 4 with touchscreen display showing the Plantimeter dashboard" class="project-image display-image" loading="lazy">
+                                </div>
+                                <p class="hardware-image-caption" data-i18n="project.pif.images.display">Raspberry Pi 4 Hub Server with touchscreen display running the kiosk mode interface</p>
                             </div>
                         </div>
 
@@ -306,18 +777,39 @@
                     <ul class="feature-list">
                         <li data-i18n="project.pif.section.what.env">Environmental Sensing: Measures soil moisture, air temperature, humidity, and ambient light using calibrated sensors.</li>
                         <li data-i18n="project.pif.section.what.watering">Automated Watering: Triggers the water pump based on soil moisture thresholds or scheduled tasks.</li>
+                    </ul>
+
+                    <div class="hardware-image-section" style="background: var(--card-bg); border-top: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+                        <div class="project-image-wrapper" onclick="openImageModal('assets/img/projects/pif/water-dropping-mechanism.jpg', 'Automated water dropping mechanism for plant irrigation')" style="cursor: pointer;">
+                            <img src="assets/img/projects/pif/water-dropping-mechanism.jpg" alt="Automated water dropping mechanism for plant irrigation" class="project-image water-image" loading="lazy">
+                        </div>
+                        <p class="hardware-image-caption" data-i18n="project.pif.images.water">Automated watering system: Water pump mechanism controlled by soil moisture sensors</p>
+                    </div>
+
+                    <ul class="feature-list">
                         <li data-i18n="project.pif.section.what.light">Grow Light Control: Activates 1W LED when light levels drop below optimal range.</li>
-                        <li data-i18n="project.pif.section.what.dashboard">Web Dashboard: Admin panel with real-time charts (ApexCharts), task scheduling, user management, and log viewer.</li>
-                        <li data-i18n="project.pif.section.what.kiosk">Touch Kiosk UI: Simplified interface for the Raspberry Pi touchscreen display.</li>
+                        <li data-i18n="project.pif.section.what.dashboard">Web Dashboard: Admin panel with real-time charts (ApexCharts), task scheduling, user management, and plant variations.</li>
+                        <li data-i18n="project.pif.section.what.backend">Dynamic Backend: PHP API-driven architecture for real-time updates, log history viewer, and seamless data management.</li>
+                        <li data-i18n="project.pif.section.what.ux">User Experience: Login security, separated user/admin views, fuzzy search throughout, and modals for improved workflow.</li>
+                        <li data-i18n="project.pif.section.what.kiosk">Touch Kiosk UI: Optimized interface for the Raspberry Pi touchscreen display, designed for better usability despite the small screen size.</li>
                     </ul>
 
                     <h2 data-i18n="project.pif.section.network.title">The Network</h2>
                     <p data-i18n="project.pif.section.network.body">I designed and configured a complete enterprise-style network in Cisco Packet Tracer:</p>
+                    
+                    <div class="hardware-image-section" style="background: var(--card-bg); border-top: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+                        <div class="project-image-wrapper" onclick="openImageModal('assets/img/projects/pif/packet-tracer-example.png', 'Cisco Packet Tracer network topology showing VLANs, routers, and network architecture')" style="cursor: pointer;">
+                            <img src="assets/img/projects/pif/packet-tracer-example.png" alt="Cisco Packet Tracer network topology showing VLANs, routers, and network architecture" class="project-image network-image" loading="lazy">
+                        </div>
+                        <p class="hardware-image-caption" data-i18n="project.pif.images.network">Network topology in Cisco Packet Tracer: Enterprise network with VLANs, routers, and security configurations</p>
+                    </div>
+
                     <ul class="feature-list">
                         <li data-i18n="project.pif.section.network.firm">Firmennetzwerk: VLANs (10/20), DHCP server, ISR4331 router with NAT/PAT and ACLs.</li>
                         <li data-i18n="project.pif.section.network.home">Heimnetzwerk: Separate WLAN for nodes (PlantimeterAP) with WPA2-PSK, routed to the firm network.</li>
                         <li data-i18n="project.pif.section.network.isp">ISP Simulation: Dedicated router simulating internet provider with DNS (Google 8.8.8.8) and fiber link.</li>
                         <li data-i18n="project.pif.section.network.security">Security: Port-based ACLs, NAT for web/FTP access, proper routing tables.</li>
+                        <li data-i18n="project.pif.section.network.gigabit">Gigabit Architecture: Designed the entire network for Gigabit speeds. When a required router couldn't connect directly to the correct interface, I implemented a copper-to-fiber converter bridge to maintain full Gigabit throughput, demonstrating problem-solving and understanding of network speed requirements.</li>
                     </ul>
 
                     <h2 data-i18n="project.pif.section.why.title">Why I Built It</h2>
@@ -337,7 +829,15 @@
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <h3 data-i18n="project.sidebar.techStack">Tech Stack</h3>
+                    <h3 data-i18n="project.sidebar.category">Category</h3>
+                    <div class="line"></div>
+                    <button id="category-filter-btn" class="category-filter-button" style="margin-top: 0.75rem; width: 100%; padding: 0.5rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-primary); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.2s ease;">
+                        <span id="category-filter-text">All Categories</span>
+                        <i data-lucide="filter" style="width: 16px; height: 16px;"></i>
+                    </button>
+                    <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.techStack">Tech Stack</h3>
                     <div class="line"></div>
                     <ul class="tech-stack-list">
                         <li data-i18n="project.pif.sidebar.tech.esp"><i data-lucide="cpu"></i> ESP8266 (Wemos D1 Mini)</li>
@@ -388,9 +888,276 @@
         </footer>
     </main>
 
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal" onclick="closeImageModal()">
+        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">×</button>
+        <img id="modal-image" class="image-modal-content" src="" alt="">
+    </div>
+
+    <!-- Category Filter Modal -->
+    <div id="category-filter-modal" class="image-modal" onclick="closeCategoryFilterModal(event)">
+        <div class="category-filter-modal-content" onclick="event.stopPropagation()">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h3 style="margin: 0; color: var(--text-primary);">Filter Categories</h3>
+                <button class="image-modal-close" onclick="closeCategoryFilterModal()" aria-label="Close filter">×</button>
+            </div>
+            <div id="category-filter-options" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 60vh; overflow-y: auto;"></div>
+            <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+                <button onclick="applyCategoryFilter()" style="flex: 1; padding: 0.75rem; background: var(--accent-primary); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Apply</button>
+                <button onclick="closeCategoryFilterModal()" style="flex: 1; padding: 0.75rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px; cursor: pointer;">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="projects-data.js"></script>
     <script>
         lucide.createIcons();
+        
+        // Category filter state
+        let selectedCategories = [];
+        let allProjectCategories = [];
+        let allProjectCategoryKeys = [];
+        
+        // Display project categories from projects-data.js
+        function displayProjectCategories() {
+            if (typeof getProjectById !== 'undefined') {
+                const project = getProjectById('pif');
+                if (project) {
+                    // Store all categories
+                    allProjectCategories = project.categories || [project.category];
+                    allProjectCategoryKeys = project.categoryKeys || (project.categoryKey ? [project.categoryKey] : []);
+                    
+                    // Initialize: show all categories
+                    selectedCategories = [...allProjectCategories];
+                    
+                    // Setup filter button
+                    setupCategoryFilterButton();
+                    
+                    // Setup filter modal
+                    setupCategoryFilterModal();
+                    
+                    // Render categories
+                    renderSelectedCategories();
+                }
+            }
+        }
+        
+        function setupCategoryFilterButton() {
+            const filterBtn = document.getElementById('category-filter-btn');
+            if (filterBtn) {
+                filterBtn.onclick = function() {
+                    openCategoryFilterModal();
+                };
+                updateFilterButtonText();
+            }
+        }
+        
+        function setupCategoryFilterModal() {
+            const modal = document.getElementById('category-filter-modal');
+            const optionsContainer = document.getElementById('category-filter-options');
+            
+            if (!modal || !optionsContainer) return;
+            
+            // Clear and populate options
+            optionsContainer.innerHTML = '';
+            
+            allProjectCategories.forEach((category, index) => {
+                const option = document.createElement('div');
+                option.className = 'category-filter-option';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `category-${index}`;
+                checkbox.value = category;
+                checkbox.checked = selectedCategories.includes(category);
+                
+                const label = document.createElement('label');
+                label.htmlFor = `category-${index}`;
+                
+                const categoryKey = allProjectCategoryKeys[index];
+                if (categoryKey && typeof getTranslation !== 'undefined') {
+                    const lang = document.documentElement.getAttribute('data-lang') || 'en';
+                    label.textContent = getTranslation(categoryKey, lang);
+                } else if (category) {
+                    label.textContent = category;
+                }
+                
+                // Get project count
+                const projectsInCategory = typeof getProjectsByCategory !== 'undefined' 
+                    ? getProjectsByCategory(category)
+                    : [];
+                if (projectsInCategory.length > 0) {
+                    const count = document.createElement('span');
+                    count.style.cssText = 'color: var(--text-secondary); font-size: 0.8rem; margin-left: auto;';
+                    count.textContent = `(${projectsInCategory.length})`;
+                    label.appendChild(count);
+                }
+                
+                option.appendChild(checkbox);
+                option.appendChild(label);
+                optionsContainer.appendChild(option);
+            });
+        }
+        
+        function openCategoryFilterModal() {
+            const modal = document.getElementById('category-filter-modal');
+            if (modal) {
+                // Update checkboxes to match current selection
+                setupCategoryFilterModal();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeCategoryFilterModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            const modal = document.getElementById('category-filter-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        function applyCategoryFilter() {
+            const checkboxes = document.querySelectorAll('#category-filter-options input[type="checkbox"]');
+            selectedCategories = [];
+            
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedCategories.push(checkbox.value);
+                }
+            });
+            
+            // If none selected, show all
+            if (selectedCategories.length === 0) {
+                selectedCategories = [...allProjectCategories];
+            }
+            
+            renderSelectedCategories();
+            updateFilterButtonText();
+            closeCategoryFilterModal();
+        }
+        
+        function renderSelectedCategories() {
+            const categoriesContainer = document.getElementById('project-categories');
+            if (!categoriesContainer) return;
+            
+            categoriesContainer.innerHTML = '';
+            
+            selectedCategories.forEach((category) => {
+                const index = allProjectCategories.indexOf(category);
+                if (index === -1) return;
+                
+                // Get all projects in this category
+                const projectsInCategory = typeof getProjectsByCategory !== 'undefined' 
+                    ? getProjectsByCategory(category)
+                    : [];
+                
+                // Create category badge similar to certification badges
+                const categoryBadge = document.createElement('a');
+                const categorySlug = category.toLowerCase().replace(/\s+/g, '');
+                categoryBadge.href = 'projects.html?category=' + encodeURIComponent(categorySlug);
+                categoryBadge.className = 'project-cert-badge';
+                categoryBadge.style.cssText = 'text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-right: 0.75rem; margin-bottom: 0.5rem;';
+                
+                // Create badge text
+                const badgeText = document.createElement('span');
+                badgeText.className = 'project-cert-name';
+                
+                const categoryKey = allProjectCategoryKeys[index];
+                if (categoryKey && typeof getTranslation !== 'undefined') {
+                    const lang = document.documentElement.getAttribute('data-lang') || 'en';
+                    badgeText.textContent = getTranslation(categoryKey, lang);
+                } else if (category) {
+                    badgeText.textContent = category;
+                }
+                
+                categoryBadge.appendChild(badgeText);
+                
+                // Add project count if more than 1
+                if (projectsInCategory.length > 1) {
+                    const count = document.createElement('span');
+                    count.style.cssText = 'color: var(--text-secondary); font-size: 0.75rem; margin-left: 0.25rem;';
+                    count.textContent = `(${projectsInCategory.length})`;
+                    categoryBadge.appendChild(count);
+                }
+                
+                categoriesContainer.appendChild(categoryBadge);
+            });
+        }
+        
+        function updateFilterButtonText() {
+            const filterText = document.getElementById('category-filter-text');
+            if (filterText) {
+                if (selectedCategories.length === allProjectCategories.length) {
+                    filterText.textContent = 'All Categories';
+                } else {
+                    filterText.textContent = `${selectedCategories.length} Selected`;
+                }
+            }
+        }
+        
+        // Wait for translations and projects data to load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(displayProjectCategories, 100);
+            });
+        } else {
+            setTimeout(displayProjectCategories, 100);
+        }
+
+        // Image Modal Functions
+        function openImageModal(imageSrc, imageAlt) {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            if (modal && modalImage) {
+                // Set image source and alt
+                modalImage.src = imageSrc;
+                modalImage.alt = imageAlt || '';
+                
+                // Show modal
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                
+                // Handle image load error
+                modalImage.onerror = function() {
+                    console.error('Failed to load image:', imageSrc);
+                    modalImage.alt = 'Image failed to load';
+                };
+            }
+        }
+
+        function closeImageModal(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            const modal = document.getElementById('image-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('image-modal');
+                if (modal && modal.classList.contains('active')) {
+                    closeImageModal();
+                }
+            }
+        });
+
+        // Prevent modal from closing when clicking on the image itself
+        document.addEventListener('DOMContentLoaded', function() {
+            const modalImage = document.getElementById('modal-image');
+            if (modalImage) {
+                modalImage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+        });
     </script>
 </body>
 </html>

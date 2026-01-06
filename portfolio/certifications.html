@@ -208,7 +208,10 @@
             white-space: nowrap;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
+            justify-self: end;
+            min-width: 140px; /* Ensure all badges are the same width */
         }
 
         .cert-level i {
@@ -261,6 +264,7 @@
             display: flex;
             gap: 0.5rem;
             align-items: center;
+            justify-self: end;
         }
 
         .cert-action-icon {
@@ -864,11 +868,6 @@
                     </div>
                 </div>
 
-                <div class="cert-level ${levelClass}"${levelTitleAttr}>
-                    <i data-lucide="shield-check"></i>
-                    ${levelLabel}
-                </div>
-
                 <div class="cert-actions">
                     ${cert.externalUrl ? `
                         <a href="${cert.externalUrl}" target="_blank" rel="noopener noreferrer" 
@@ -888,6 +887,11 @@
                             onclick="showCertModal('${cert.id}'); event.stopPropagation();">
                         <i data-lucide="info"></i>
                     </button>
+                </div>
+
+                <div class="cert-level ${levelClass}"${levelTitleAttr}>
+                    <i data-lucide="shield-check"></i>
+                    ${levelLabel}
                 </div>
             `;
 
@@ -923,16 +927,8 @@
                             ${formation.provider}
                         </span>
                         <span class="cert-category">${formation.category}</span>
-                        ${formation.location ? `<span class="cert-category">${formation.location}</span>` : ''}
-                        ${formation.duration ? `<span class="cert-category">${formation.duration}</span>` : ''}
-                        ${formation.format ? `<span class="cert-category">${formation.format}</span>` : ''}
                         ${dateStr ? `<span class="cert-category">${dateStr}</span>` : ''}
                     </div>
-                </div>
-
-                <div class="cert-level level-training" style="color: #8b5cf6; border-color: #8b5cf6; background: rgba(139, 92, 246, 0.1);">
-                    <i data-lucide="book-open"></i>
-                    ${t('certifications.type.training', 'Training')}
                 </div>
 
                 <div class="cert-actions">
@@ -940,6 +936,11 @@
                             onclick="showFormationModal('${formation.id}'); event.stopPropagation();">
                         <i data-lucide="info"></i>
                     </button>
+                </div>
+
+                <div class="cert-level level-training" style="color: #8b5cf6; border-color: #8b5cf6; background: rgba(139, 92, 246, 0.1);">
+                    <i data-lucide="book-open"></i>
+                    ${t('certifications.type.training', 'Training')}
                 </div>
             `;
 
