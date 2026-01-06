@@ -87,7 +87,6 @@
             <a href="#skills" data-i18n="nav.skills">Skills</a>
             <a href="#projects" data-i18n="nav.projects">Projects</a>
             <a href="#experience" data-i18n="nav.experience">Experience</a>
-            <a href="#certifications" data-i18n="nav.certifications">Certifications</a>
         </div>
         <div class="nav-controls">
             <div class="lang-switcher">
@@ -370,11 +369,9 @@
                 <h4 data-i18n="experience.diploma.company">Lycée Guillaume Kroll</h4>
                 <p data-i18n="experience.diploma.desc">Graduated with "Very Good" mention. Final Project score: 59/60.</p>
             </div>
-        </section>
 
-        <!-- Certifications Section -->
-        <section id="certifications" class="section-grid">
-            <div class="section-header">
+            <!-- Certifications subsection -->
+            <div class="section-header" style="grid-column: 1 / -1; margin-top: 1.5rem;">
                 <h2 data-i18n="certifications.title">Certifications & Training</h2>
                 <div class="line"></div>
             </div>
@@ -460,7 +457,7 @@
         function renderIndexCertifications() {
             try {
                 // Cache DOM elements (only query once)
-                if (!cachedSection) cachedSection = document.getElementById('certifications');
+                if (!cachedSection) cachedSection = document.getElementById('experience');
                 if (!cachedViewMoreBtn) cachedViewMoreBtn = document.getElementById('cert-view-more');
                 
                 if (!cachedSection || !cachedViewMoreBtn) {
