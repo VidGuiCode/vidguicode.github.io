@@ -23,85 +23,11 @@
     <script src="certifications-techstack.js"></script>
     <style>
         /* Project Page Specific Styles */
-        .project-hero {
-            padding: 4rem 0;
-            margin-bottom: 2rem;
-        }
         .project-title-group h1 {
             font-size: 3rem;
             line-height: 1.1;
             margin-bottom: 1rem;
             color: var(--text-primary);
-        }
-        .project-meta-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        @media (max-width: 768px) {
-            .project-meta-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .project-sidebar .card {
-            position: sticky;
-            top: 100px;
-        }
-        .tech-stack-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-        }
-        .tech-stack-list li i {
-            color: var(--accent-primary);
-            width: 18px;
-            height: 18px;
-        }
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        .feature-list li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        .feature-list li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-secondary);
-        }
-        article h2 {
-            margin-top: 1.5rem;
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-bottom: 2rem;
-            transition: color 0.3s ease;
-        }
-        .back-link:hover {
-            color: var(--accent-primary);
-        }
-        article h2 {
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            border-left: 4px solid var(--accent-primary);
-            padding-left: 1rem;
-        }
-        article p, article li {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            margin-bottom: 1.2rem;
         }
         .mvp-badge {
             display: inline-flex;
@@ -116,59 +42,6 @@
             margin-left: 1rem;
         }
 
-        /* Project Certifications Section - Small Badges */
-        .project-certifications {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .project-cert-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.4rem 0.6rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-size: 0.8rem;
-        }
-
-        .project-cert-badge:hover {
-            border-color: var(--accent-primary);
-            background: var(--surface-secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-cert-badge img {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
-            flex-shrink: 0;
-            margin-right: 0.5rem;
-        }
-
-        .project-cert-name {
-            font-weight: 500;
-            font-size: 0.8rem;
-            color: var(--text-primary);
-            white-space: nowrap;
-        }
-
-        @media (max-width: 768px) {
-            .project-cert-badge img {
-                width: 28px;
-                height: 28px;
-            }
-
-            .project-cert-name {
-                font-size: 0.75rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -362,16 +235,23 @@
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
+                    <div id="category-section" style="display: none;">
+                        <h3 data-i18n="project.sidebar.category">Category</h3>
+                        <div class="line"></div>
+                        <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
+                    </div>
+
                     <h3 data-i18n="project.sidebar.techStack">Tech Stack</h3>
                     <div class="line"></div>
                     <ul class="tech-stack-list">
-                        <li data-i18n="project.gradingdino.sidebar.tech.django"><i data-lucide="code-2"></i> Django 5.0</li>
-                        <li data-i18n="project.gradingdino.sidebar.tech.postgres"><i data-lucide="database"></i> PostgreSQL 16</li>
-                        <li data-i18n="project.gradingdino.sidebar.tech.argon2"><i data-lucide="lock"></i> Argon2 (Luxembourg!)</li>
-                        <li data-i18n="project.gradingdino.sidebar.tech.docker"><i data-lucide="box"></i> Docker & Compose</li>
-                        <li data-i18n="project.gradingdino.sidebar.tech.pico"><i data-lucide="palette"></i> Pico.css</li>
-                        <li data-i18n="project.gradingdino.sidebar.tech.ssr"><i data-lucide="server"></i> Server-Side Rendering</li>
-                        <li data-i18n="project.gradingdino.sidebar.tech.python"><i data-lucide="terminal"></i> Python 3.11</li>
+                        <li><i data-lucide="code-2"></i> <span data-i18n="project.gradingdino.sidebar.tech.django">Django 5.0</span></li>
+                        <li><i data-lucide="database"></i> <span data-i18n="project.gradingdino.sidebar.tech.postgres">PostgreSQL 16</span></li>
+                        <li><i data-lucide="lock"></i> <span data-i18n="project.gradingdino.sidebar.tech.argon2">Argon2 (Luxembourg!)</span></li>
+                        <li><i data-lucide="box"></i> <span data-i18n="project.gradingdino.sidebar.tech.docker">Docker & Compose</span></li>
+                        <li><i data-lucide="git-branch"></i> <span data-i18n="project.gradingdino.sidebar.tech.github">GitHub</span></li>
+                        <li><i data-lucide="palette"></i> <span data-i18n="project.gradingdino.sidebar.tech.pico">Pico.css</span></li>
+                        <li><i data-lucide="server"></i> <span data-i18n="project.gradingdino.sidebar.tech.ssr">Server-Side Rendering</span></li>
+                        <li><i data-lucide="terminal"></i> <span data-i18n="project.gradingdino.sidebar.tech.python">Python 3.11</span></li>
                     </ul>
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.gradingdino.sidebar.projectManagement">Project Management</h3>
@@ -411,8 +291,28 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="projects-data.js"></script>
     <script>
         lucide.createIcons();
+        
+        // Use centralized category display function (updates dynamically on language change)
+        function initProjectCategories() {
+            if (typeof updateProjectCategories === 'function') {
+                updateProjectCategories('gradingdino');
+            } else {
+                // Retry if script.js hasn't loaded yet
+                setTimeout(initProjectCategories, 100);
+            }
+        }
+        
+        // Wait for translations and projects data to load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(initProjectCategories, 100);
+            });
+        } else {
+            setTimeout(initProjectCategories, 100);
+        }
     </script>
 </body>
 </html>

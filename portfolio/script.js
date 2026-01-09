@@ -93,6 +93,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+        
+        // Update category badges when language changes
+        if (typeof updateProjectCategories === 'function') {
+            // updateProjectCategories will auto-detect projectId from the page
+            updateProjectCategories(null, lang);
+        }
+        
+        // Update filter modal category labels when language changes
+        if (typeof updateCategoryFilterLabels === 'function') {
+            updateCategoryFilterLabels(lang);
+        }
     }
     
     /**
@@ -117,6 +128,126 @@ document.addEventListener('DOMContentLoaded', () => {
         // Return translation for language, fallback to English
         return entry[lang] || entry['en'] || null;
     }
+    
+    /**
+     * Centralized function to display project categories with translations
+     * Updates dynamically when language changes
+     * @param {string} projectId - Project ID from projects-data.js
+     * @param {string} lang - Current language code
+     */
+    window.updateProjectCategories = function(projectId, lang) {
+        // If lang is not provided, get it from the document
+        if (!lang) {
+            lang = document.documentElement.getAttribute('data-lang') || 'en';
+        }
+        
+        // If projectId is not provided, try to find it from the page
+        if (!projectId) {
+            // Try to get project ID from the page context
+            const categorySection = document.getElementById('category-section');
+            if (categorySection && categorySection.dataset.projectId) {
+                projectId = categorySection.dataset.projectId;
+            } else {
+                // Fallback: try to detect from URL or page context
+                const path = window.location.pathname;
+                if (path.includes('project-homelab')) projectId = 'homelab';
+                else if (path.includes('project-pif')) projectId = 'pif';
+                else if (path.includes('project-gradingdino')) projectId = 'gradingdino';
+                else return; // Can't determine project
+            }
+        }
+        
+        if (typeof getProjectById === 'undefined' || typeof getTranslation === 'undefined') {
+            // Retry after a short delay if dependencies aren't loaded
+            setTimeout(() => updateProjectCategories(projectId, lang), 100);
+            return;
+        }
+        
+        const project = getProjectById(projectId);
+        const categorySection = document.getElementById('category-section');
+        const categoriesContainer = document.getElementById('project-categories');
+        
+        if (!project || !categorySection || !categoriesContainer) return;
+        
+        // Store project ID for future updates
+        categorySection.dataset.projectId = projectId;
+        
+        // Get all categories for this project
+        const projectCategories = project.categories || [project.category];
+        const projectCategoryKeys = project.categoryKeys || (project.categoryKey ? [project.categoryKey] : []);
+        
+        // Hide section if no categories
+        if (!projectCategories || projectCategories.length === 0) {
+            categorySection.style.display = 'none';
+            return;
+        }
+        
+        // Show section and render categories
+        categorySection.style.display = 'block';
+        categoriesContainer.innerHTML = '';
+        
+        projectCategories.forEach((category, index) => {
+            // Create category badge similar to certification badges
+            const categoryBadge = document.createElement('a');
+            const categorySlug = category.toLowerCase().replace(/\s+/g, '');
+            categoryBadge.href = 'projects.html?category=' + encodeURIComponent(categorySlug);
+            categoryBadge.className = 'project-cert-badge';
+            categoryBadge.style.cssText = 'text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-right: 0.75rem; margin-bottom: 0.5rem;';
+            
+            // Create badge text with translation
+            const badgeText = document.createElement('span');
+            badgeText.className = 'project-cert-name';
+            
+            const categoryKey = projectCategoryKeys[index];
+            if (categoryKey && typeof getTranslation !== 'undefined') {
+                badgeText.textContent = getTranslation(categoryKey, lang) || category;
+            } else if (category) {
+                badgeText.textContent = category;
+            }
+            
+            categoryBadge.appendChild(badgeText);
+            categoriesContainer.appendChild(categoryBadge);
+        });
+    };
+    
+    /**
+     * Update category filter modal labels when language changes
+     * @param {string} lang - Current language code
+     */
+    window.updateCategoryFilterLabels = function(lang) {
+        if (!lang) {
+            lang = document.documentElement.getAttribute('data-lang') || 'en';
+        }
+        
+        // Find all category filter labels
+        const filterLabels = document.querySelectorAll('#category-filter-options label[data-category-key]');
+        
+        filterLabels.forEach(label => {
+            const categoryKey = label.getAttribute('data-category-key');
+            const categoryName = label.getAttribute('data-category-name');
+            
+            if (categoryKey && typeof getTranslation !== 'undefined') {
+                // Get translated name
+                const translatedName = getTranslation(categoryKey, lang) || categoryName;
+                
+                // Preserve the count if it exists
+                const countElement = label.querySelector('.category-count');
+                const countText = countElement ? countElement.textContent : '';
+                
+                // Update label text
+                label.textContent = translatedName;
+                
+                // Re-add count if it existed
+                if (countText) {
+                    const count = document.createElement('span');
+                    count.className = 'category-count';
+                    count.style.cssText = 'color: var(--text-secondary); font-size: 0.8rem; margin-left: auto;';
+                    count.textContent = countText;
+                    label.appendChild(count);
+                }
+            }
+        });
+    };
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

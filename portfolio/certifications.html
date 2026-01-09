@@ -158,6 +158,15 @@
             object-fit: contain;
         }
 
+        /* Formation Logo - Arηs white logo in light mode needs inversion */
+        [data-theme="light"] .formation-logo[src*="arns-group-logo-white"] {
+            filter: invert(1);
+        }
+
+        [data-theme="dark"] .formation-logo[src*="arns-group-logo-white"] {
+            filter: none;
+        }
+
         /* Certification Info */
         .cert-info {
             display: flex;
@@ -738,7 +747,34 @@
             return entry[currentLang] || entry['en'] || fallback;
         }
 
-        // Listen for language changes
+        // Function to update formation logos based on theme
+        function updateFormationLogos() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const formationLogos = document.querySelectorAll('.formation-logo');
+            
+            formationLogos.forEach(img => {
+                const formationId = img.getAttribute('data-formation-id');
+                if (!formationId) return;
+                
+                const formation = getAllFormations().find(f => f.id === formationId);
+                if (!formation) return;
+                
+                // Determine which logo to use
+                let logoToUse = formation.logo;
+                if (currentTheme === 'dark' && formation.logoDark) {
+                    logoToUse = formation.logoDark;
+                } else if (currentTheme === 'light' && formation.logoLight) {
+                    logoToUse = formation.logoLight;
+                }
+                
+                // Update src if different
+                if (logoToUse && img.src !== new URL(logoToUse, window.location.href).href) {
+                    img.src = logoToUse;
+                }
+            });
+        }
+
+        // Listen for language changes and theme changes
         document.addEventListener('DOMContentLoaded', () => {
             // Update currentLang when language buttons are clicked
             document.querySelectorAll('.lang-dropdown button[data-lang]').forEach(btn => {
@@ -747,6 +783,20 @@
                     // Re-render certifications with new language
                     renderCertifications(document.querySelector('.filter-btn.active').dataset.filter);
                 });
+            });
+            
+            // Listen for theme changes (from script.js)
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                        updateFormationLogos();
+                    }
+                });
+            });
+            
+            observer.observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ['data-theme']
             });
         });
 
@@ -914,10 +964,35 @@
                 ? new Date(formation.dateCompleted).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' })
                 : '';
 
+            // Determine which logo to use based on theme
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            let logoToUse = formation.logo;
+            
+            // Use theme-specific logo if available
+            if (currentTheme === 'dark' && formation.logoDark) {
+                logoToUse = formation.logoDark;
+            } else if (currentTheme === 'light' && formation.logoLight) {
+                logoToUse = formation.logoLight;
+            }
+            
+            // Special handling for Arηs white logo in light mode - apply invert filter
+            const isArnsWhiteLogo = logoToUse && logoToUse.includes('arns-group-logo-white');
+            const logoStyle = isArnsWhiteLogo && currentTheme === 'light' 
+                ? 'width: 100%; height: 100%; object-fit: contain; padding: 8px; box-sizing: border-box; filter: invert(1);'
+                : 'width: 100%; height: 100%; object-fit: contain; padding: 8px; box-sizing: border-box;';
+            
+            // Use logo if available, otherwise fallback to icon
+            const logoHtml = logoToUse 
+                ? `<div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border: 1px solid var(--border-color); position: relative;">
+                       <img src="${logoToUse}" alt="${formationName}" style="${logoStyle}" loading="lazy" class="formation-logo" data-formation-id="${formation.id}" onerror="this.style.display='none'; this.parentElement.querySelector('i').style.display='flex';">
+                       <i data-lucide="book-open" style="width: 32px; height: 32px; color: var(--text-secondary); display: none; position: absolute;"></i>
+                   </div>`
+                : `<div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+                       <i data-lucide="book-open" style="width: 32px; height: 32px; color: var(--text-secondary);"></i>
+                   </div>`;
+
             row.innerHTML = `
-                <div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border: 1px solid var(--border-color);">
-                    <i data-lucide="book-open" style="width: 32px; height: 32px; color: var(--text-secondary);"></i>
-                </div>
+                ${logoHtml}
                 
                 <div class="cert-info">
                     <div class="cert-name">${formationName}</div>
@@ -1064,12 +1139,6 @@
             modalName.textContent = formationName;
             modalProvider.innerHTML = `<i data-lucide="users"></i> ${formation.provider}`;
             modalDescription.textContent = formationDescription;
-            
-            // Add notes if available
-            if (formation.notes || formation.notesKey) {
-                const notes = formation.notesKey ? t(formation.notesKey, formation.notes) : formation.notes;
-                modalDescription.textContent += `\n\n${t('certifications.modal.notes', 'Notes')}: ${notes}`;
-            }
             
             // Render skills
             modalSkills.innerHTML = formation.skills.map((skill, index) => {

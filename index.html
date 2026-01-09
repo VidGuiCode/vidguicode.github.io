@@ -199,12 +199,13 @@
                 </div>
                 <ul class="skill-list">
                     <li data-i18n="skills.cloud.1">Docker / Docker Compose</li>
-                    <li data-i18n="skills.cloud.2">Git</li>
-                    <li data-i18n="skills.cloud.3">Virtualization (VirtualBox)</li>
-                    <li data-i18n="skills.cloud.4">Kubernetes (K3s cluster)</li>
-                    <li data-i18n="skills.cloud.5">Web Hosting (IONOS, Hetzner)</li>
+                    <li data-i18n="skills.cloud.2">Kubernetes (K3s cluster)</li>
+                    <li data-i18n="skills.cloud.3">Traefik (Ingress & Load Balancing)</li>
+                    <li data-i18n="skills.cloud.4">Portainer (Container Management)</li>
+                    <li data-i18n="skills.cloud.5">Git / GitHub</li>
                     <li data-i18n="skills.cloud.6">Cloud Platforms (Oracle Cloud, Hetzner Cloud)</li>
-                    <li data-i18n="skills.cloud.7">Infrastructure management & cost optimization</li>
+                    <li data-i18n="skills.cloud.7">Web Hosting (IONOS, Hetzner)</li>
+                    <li data-i18n="skills.cloud.8">Infrastructure management & cost optimization</li>
                 </ul>
             </div>
 
@@ -216,37 +217,53 @@
                 <ul class="skill-list">
                     <li data-i18n="skills.networking.1">CCNA fundamentals</li>
                     <li data-i18n="skills.networking.2">WireGuard (VPN & tunneling)</li>
-                    <li data-i18n="skills.networking.3">DNS management</li>
-                    <li data-i18n="skills.networking.4">Caddy (reverse proxy & TLS automation)</li>
+                    <li data-i18n="skills.networking.3">Caddy (reverse proxy & TLS automation)</li>
+                    <li data-i18n="skills.networking.4">DNS management (Cloudflare)</li>
+                    <li data-i18n="skills.networking.5">Network security & monitoring</li>
                 </ul>
             </div>
 
             <div class="card skill-category">
                 <div class="skill-header">
-                    <i data-lucide="terminal"></i>
-                    <h3 data-i18n="skills.programming">Programming</h3>
+                    <i data-lucide="code-2"></i>
+                    <h3 data-i18n="skills.programming">Programming & Frameworks</h3>
                 </div>
                 <ul class="skill-list">
-                    <li data-i18n="skills.programming.1">PowerShell / Bash</li>
-                    <li data-i18n="skills.programming.2">JavaScript / jQuery / Node.js</li>
-                    <li data-i18n="skills.programming.3">PHP</li>
-                    <li data-i18n="skills.programming.4">HTML / CSS</li>
-                    <li data-i18n="skills.programming.5">SQL (MySQL / PostgreSQL)</li>
-                    <li data-i18n="skills.programming.6">Database design (MCD/MLD)</li>
-                    <li data-i18n="skills.programming.7">Python / FastAPI</li>
+                    <li data-i18n="skills.programming.1">Python / FastAPI</li>
+                    <li data-i18n="skills.programming.2">JavaScript / Node.js</li>
+                    <li data-i18n="skills.programming.3">Django (Python Framework)</li>
+                    <li data-i18n="skills.programming.4">SvelteKit (Frontend Framework)</li>
+                    <li data-i18n="skills.programming.5">PHP</li>
+                    <li data-i18n="skills.programming.6">HTML / CSS</li>
+                    <li data-i18n="skills.programming.7">PowerShell / Bash</li>
+                </ul>
+            </div>
+
+            <div class="card skill-category">
+                <div class="skill-header">
+                    <i data-lucide="database"></i>
+                    <h3 data-i18n="skills.database">Database & Security</h3>
+                </div>
+                <ul class="skill-list">
+                    <li data-i18n="skills.database.1">SQL (MySQL, PostgreSQL, SQLite)</li>
+                    <li data-i18n="skills.database.2">Alembic (Database Migrations)</li>
+                    <li data-i18n="skills.database.3">JWT Authentication</li>
+                    <li data-i18n="skills.database.4">Argon2 (Password Hashing)</li>
+                    <li data-i18n="skills.database.5">Database design (MCD/MLD)</li>
                 </ul>
             </div>
 
             <div class="card skill-category">
                 <div class="skill-header">
                     <i data-lucide="wrench"></i>
-                    <h3 data-i18n="skills.systems">Systems</h3>
+                    <h3 data-i18n="skills.systems">Systems & Tools</h3>
                 </div>
                 <ul class="skill-list">
                     <li data-i18n="skills.systems.1">Windows Server</li>
                     <li data-i18n="skills.systems.2">Linux Server</li>
                     <li data-i18n="skills.systems.3">Hardware Diagnostics</li>
-                    <li data-i18n="skills.systems.4">IoT Integration</li>
+                    <li data-i18n="skills.systems.4">IoT Integration (ESP8266, Raspberry Pi)</li>
+                    <li data-i18n="skills.systems.5">Playwright (Browser Automation)</li>
                 </ul>
             </div>
         </section>
@@ -294,7 +311,7 @@
                 <div class="project-cta">
                     <span data-i18n="projects.homelab.cta">View Case Study</span>
                     <i data-lucide="arrow-right"></i>
-                </div>
+            </div>
             </a>
 
             <div class="card project-card">
@@ -330,7 +347,7 @@
 
             <a id="projects-view-more" href="portfolio/projects.html" class="btn primary" style="grid-column: 1 / -1; justify-self: center; margin-top: 1rem;" data-i18n="projects.viewMore">
                 View All Projects <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
-            </a>
+                </a>
         </section>
 
         <!-- Experience Section -->
@@ -522,16 +539,16 @@
                         const statusLine = item.statusKey ? tIndex(item.statusKey, '') : '';
 
                         card = document.createElement('div');
-                        card.className = 'card cert-card powered-on';
-                        card.innerHTML = `
-                            <div class="cert-icon">
+                    card.className = 'card cert-card powered-on';
+                    card.innerHTML = `
+                        <div class="cert-icon">
                                 <img src="portfolio/${item.image}" alt="${title} badge" class="cert-badge-img" loading="lazy" width="48" height="48">
-                            </div>
-                            <div class="cert-info">
-                                <h3>${title}</h3>
-                                ${statusLine ? `<p class="cert-status">${statusLine}</p>` : ''}
-                            </div>
-                        `;
+                        </div>
+                        <div class="cert-info">
+                            <h3>${title}</h3>
+                            ${statusLine ? `<p class="cert-status">${statusLine}</p>` : ''}
+                        </div>
+                    `;
                     } else if (item.type === 'formation') {
                         const titleKey = item.nameKey;
                         const title = titleKey ? tIndex(titleKey, item.name) : item.name;
@@ -539,11 +556,31 @@
                             ? new Date(item.dateCompleted).toLocaleDateString(currentLang, { year: 'numeric', month: 'short' })
                             : '';
 
+                        // Determine which logo to use based on theme
+                        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                        let logoToUse = null;
+                        if (item.logo) {
+                            if (currentTheme === 'light' && item.logoLight) {
+                                logoToUse = item.logoLight;
+                            } else if (currentTheme === 'dark' && item.logoDark) {
+                                logoToUse = item.logoDark;
+                            } else {
+                                logoToUse = item.logo;
+                            }
+                        }
+
                         card = document.createElement('div');
                         card.className = 'card cert-card powered-on';
                         card.innerHTML = `
-                            <div class="cert-icon" style="background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3);">
-                                <i data-lucide="book-open" style="width: 32px; height: 32px; color: #8b5cf6;"></i>
+                            <div class="cert-icon">
+                                ${logoToUse ? `
+                                    <img src="portfolio/${logoToUse}" alt="${title}" class="cert-logo ${item.logoLight && currentTheme === 'light' ? 'arns-logo-light-mode' : ''}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="cert-icon-fallback" style="display: none;">
+                                        <i data-lucide="book-open"></i>
+                                    </div>
+                                ` : `
+                                    <i data-lucide="book-open" style="width: 32px; height: 32px; color: #8b5cf6;"></i>
+                                `}
                             </div>
                             <div class="cert-info">
                                 <h3>${title}</h3>
@@ -567,8 +604,8 @@
             } catch (e) {
                 // Silently handle errors in production
                 if (typeof console !== 'undefined' && console.error) {
-                    console.error('Error rendering certifications:', e);
-                }
+                console.error('Error rendering certifications:', e);
+            }
             }
         }
         
@@ -597,6 +634,16 @@
                     setTimeout(renderIndexCertifications, 100);
                 });
             }
+            
+            // Observe theme changes to update logos
+            const themeObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                        renderIndexCertifications();
+                    }
+                });
+            });
+            themeObserver.observe(document.documentElement, { attributes: true });
         });
     </script>
     

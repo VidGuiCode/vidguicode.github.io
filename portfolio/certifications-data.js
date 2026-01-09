@@ -124,9 +124,9 @@ const FORMATIONS = [
         id: 'azure-fundamentals-training',
         name: 'Azure Fundamentals (AZ-900) Training',
         nameKey: 'formation.azure.az900.name',
-        provider: 'Microsoft',
+        provider: 'Deep',
         category: 'Cloud Computing',
-        description: 'Training course covering Azure Fundamentals concepts as preparation for the AZ-900 certification exam.',
+        description: 'Attended a full-day training course (9h-17h) covering Azure Fundamentals concepts as preparation for the AZ-900 certification exam. Hosted by Deep (POST Luxembourg Group) and conducted by a trainer from their team, as part of my BTS Cloud Computing program at LGK.',
         descriptionKey: 'formation.azure.az900.description',
         dateCompleted: '2025-11-27', // Date when training was completed
         duration: '1 day', // Duration of training
@@ -135,16 +135,15 @@ const FORMATIONS = [
         relatedCertifications: ['azure-az900'], // Linked to AZ-900 certification
         skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
         skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'],
-        notes: 'Attended this training as part of my BTS Cloud Computing program at LGK. Preparing for AZ-900 certification.',
-        notesKey: 'formation.azure.az900.notes',
+        logo: 'assets/img/logos/azure-logo.webp', // Azure logo (certification issuer)
     },
     {
         id: 'pl-900-training',
         name: 'Power Platform Fundamentals (PL-900) Training',
         nameKey: 'formation.pl900.name',
-        provider: 'Microsoft',
+        provider: 'Deep',
         category: 'Cloud Computing',
-        description: 'Full-day training course at Lycée Guillaume Kroll (LGK) as part of BTS Cloud Computing program. Course runs from 9h to 17h where a trainer explains PL-900 concepts and Power Platform fundamentals.',
+        description: 'Attended a full-day training course (9h-17h) covering PL-900 concepts and Power Platform fundamentals. Hosted by Deep (POST Luxembourg Group) and conducted by a trainer from their team, as part of my BTS Cloud Computing program at LGK.',
         descriptionKey: 'formation.pl900.description',
         dateCompleted: '2025-12-05', // Date when training was completed
         duration: '1 day (9h-17h)', // Duration of training
@@ -153,8 +152,26 @@ const FORMATIONS = [
         relatedCertifications: [], // IDs of related certifications (empty - certification not yet decided)
         skills: ['Power Platform', 'Power Apps', 'Power Automate', 'Power BI'],
         skillsKeys: ['formation.pl900.skills.platform', 'formation.pl900.skills.apps', 'formation.pl900.skills.automate', 'formation.pl900.skills.bi'],
-        notes: 'Attended this training as part of my BTS Cloud Computing program at LGK. Learned PL-900 content through instructor-led sessions.',
-        notesKey: 'formation.pl900.notes',
+        logo: 'assets/img/logos/power-platform-logo.webp', // Power Platform logo (certification issuer)
+    },
+    {
+        id: 'sustainable-cloud-workshop',
+        name: 'Sustainable Cloud Workshop',
+        nameKey: 'formation.sustainablecloud.name',
+        provider: 'Arηs Group',
+        category: 'Cloud Computing',
+        description: 'Attended a 3-hour presentation/workshop on Sustainable Cloud, focusing on environmental impact and sustainable practices in cloud computing. Hosted by Arηs Group and conducted by a representative from their team, as part of my BTS Cloud Computing program at LGK.',
+        descriptionKey: 'formation.sustainablecloud.description',
+        dateCompleted: '2026-01-06', // January 6, 2026
+        duration: '3 hours', // Duration of training (rounded from 2h45)
+        format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
+        location: 'Lycée Guillaume Kroll (LGK)', // Location/context
+        relatedCertifications: [], // No related certification
+        skills: ['Sustainable Cloud', 'Environmental Impact', 'Cloud Best Practices', 'Green IT'],
+        skillsKeys: ['formation.sustainablecloud.skills.sustainable', 'formation.sustainablecloud.skills.environmental', 'formation.sustainablecloud.skills.practices', 'formation.sustainablecloud.skills.greenit'],
+        logo: 'assets/img/logos/arns-group-logo-white.webp', // Arηs Group logo - white version for dark mode
+        logoLight: null, // No light version available - will need dark version or CSS filter
+        logoDark: 'assets/img/logos/arns-group-logo-white.webp', // White logo for dark backgrounds
     },
     // Add more formations as needed
 ];

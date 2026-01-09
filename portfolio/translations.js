@@ -110,11 +110,11 @@ const translations = {
         fr: "DevOps"
     },
     "stat.devops.desc": {
-        en: "Docker & CI/CD",
-        pt: "Docker & CI/CD",
-        lu: "Docker & CI/CD",
-        de: "Docker & CI/CD",
-        fr: "Docker & CI/CD"
+        en: "Docker & Kubernetes",
+        pt: "Docker & Kubernetes",
+        lu: "Docker & Kubernetes",
+        de: "Docker & Kubernetes",
+        fr: "Docker & Kubernetes"
     },
     "stat.network": {
         en: "Network",
@@ -124,11 +124,11 @@ const translations = {
         fr: "Réseau"
     },
     "stat.network.desc": {
-        en: "CCNA & Routing",
-        pt: "CCNA & Encaminhamento",
-        lu: "CCNA & Routing",
-        de: "CCNA & Routing",
-        fr: "CCNA & Routage"
+        en: "CCNA & Security",
+        pt: "CCNA & Segurança",
+        lu: "CCNA & Sécherheet",
+        de: "CCNA & Sicherheit",
+        fr: "CCNA & Sécurité"
     },
     "stat.development": {
         en: "Development",
@@ -235,32 +235,32 @@ const translations = {
         fr: "Docker / Docker Compose"
     },
     "skills.cloud.2": {
-        en: "Git",
-        pt: "Git",
-        lu: "Git",
-        de: "Git",
-        fr: "Git"
-    },
-    "skills.cloud.3": {
-        en: "Virtualization (VirtualBox)",
-        pt: "Virtualização (VirtualBox)",
-        lu: "Virtualiséierung (VirtualBox)",
-        de: "Virtualisierung (VirtualBox)",
-        fr: "Virtualisation (VirtualBox)"
-    },
-    "skills.cloud.4": {
         en: "Kubernetes (K3s cluster)",
         pt: "Kubernetes (cluster K3s)",
         lu: "Kubernetes (K3s Cluster)",
         de: "Kubernetes (K3s-Cluster)",
         fr: "Kubernetes (cluster K3s)"
     },
+    "skills.cloud.3": {
+        en: "Traefik (Ingress & Load Balancing)",
+        pt: "Traefik (Ingress & Balanceamento de Carga)",
+        lu: "Traefik (Ingress & Load Balancing)",
+        de: "Traefik (Ingress & Lastausgleich)",
+        fr: "Traefik (Ingress & Équilibrage de charge)"
+    },
+    "skills.cloud.4": {
+        en: "Portainer (Container Management)",
+        pt: "Portainer (Gestão de Contentores)",
+        lu: "Portainer (Container Gestioun)",
+        de: "Portainer (Container-Verwaltung)",
+        fr: "Portainer (Gestion de conteneurs)"
+    },
     "skills.cloud.5": {
-        en: "Web Hosting (IONOS, Hetzner)",
-        pt: "Alojamento Web (IONOS, Hetzner)",
-        lu: "Web Hosting (IONOS, Hetzner)",
-        de: "Web-Hosting (IONOS, Hetzner)",
-        fr: "Hébergement Web (IONOS, Hetzner)"
+        en: "Git / GitHub",
+        pt: "Git / GitHub",
+        lu: "Git / GitHub",
+        de: "Git / GitHub",
+        fr: "Git / GitHub"
     },
     "skills.cloud.6": {
         en: "Cloud Platforms (Oracle Cloud, Hetzner Cloud)",
@@ -270,6 +270,13 @@ const translations = {
         fr: "Plateformes Cloud (Oracle Cloud, Hetzner Cloud)"
     },
     "skills.cloud.7": {
+        en: "Web Hosting (IONOS, Hetzner)",
+        pt: "Alojamento Web (IONOS, Hetzner)",
+        lu: "Web Hosting (IONOS, Hetzner)",
+        de: "Web-Hosting (IONOS, Hetzner)",
+        fr: "Hébergement Web (IONOS, Hetzner)"
+    },
+    "skills.cloud.8": {
         en: "Infrastructure management & cost optimization",
         pt: "Gestão de infraestrutura & otimização de custos",
         lu: "Infrastruktur Gestioun & Käschte Optimiséierung",
@@ -298,81 +305,88 @@ const translations = {
         fr: "WireGuard (VPN & tunneling)"
     },
     "skills.networking.3": {
-        en: "DNS management",
-        pt: "Gestão DNS",
-        lu: "DNS Gestioun",
-        de: "DNS-Verwaltung",
-        fr: "Gestion DNS"
-    },
-    "skills.networking.4": {
         en: "Caddy (reverse proxy & TLS automation)",
         pt: "Caddy (proxy reverso & automação TLS)",
         lu: "Caddy (Reverse Proxy & TLS Automatiséierung)",
         de: "Caddy (Reverse Proxy & TLS-Automatisierung)",
         fr: "Caddy (proxy inverse & automatisation TLS)"
     },
+    "skills.networking.4": {
+        en: "DNS management (Cloudflare)",
+        pt: "Gestão DNS (Cloudflare)",
+        lu: "DNS Gestioun (Cloudflare)",
+        de: "DNS-Verwaltung (Cloudflare)",
+        fr: "Gestion DNS (Cloudflare)"
+    },
+    "skills.networking.5": {
+        en: "Network security & monitoring",
+        pt: "Segurança de rede & monitorização",
+        lu: "Netzwierk Sécherheet & Iwwerwaachung",
+        de: "Netzwerksicherheit & Überwachung",
+        fr: "Sécurité réseau & surveillance"
+    },
     "skills.programming": {
-        en: "Programming",
-        pt: "Programação",
-        lu: "Programméierung",
-        de: "Programmierung",
-        fr: "Programmation"
+        en: "Programming & Frameworks",
+        pt: "Programação & Frameworks",
+        lu: "Programméierung & Frameworks",
+        de: "Programmierung & Frameworks",
+        fr: "Programmation & Frameworks"
     },
     "skills.programming.1": {
-        en: "PowerShell / Bash",
-        pt: "PowerShell / Bash",
-        lu: "PowerShell / Bash",
-        de: "PowerShell / Bash",
-        fr: "PowerShell / Bash"
-    },
-    "skills.programming.2": {
-        en: "JavaScript / jQuery / Node.js",
-        pt: "JavaScript / jQuery / Node.js",
-        lu: "JavaScript / jQuery / Node.js",
-        de: "JavaScript / jQuery / Node.js",
-        fr: "JavaScript / jQuery / Node.js"
-    },
-    "skills.programming.3": {
-        en: "PHP",
-        pt: "PHP",
-        lu: "PHP",
-        de: "PHP",
-        fr: "PHP"
-    },
-    "skills.programming.4": {
-        en: "HTML / CSS",
-        pt: "HTML / CSS",
-        lu: "HTML / CSS",
-        de: "HTML / CSS",
-        fr: "HTML / CSS"
-    },
-    "skills.programming.5": {
-        en: "SQL (MySQL / PostgreSQL)",
-        pt: "SQL (MySQL / PostgreSQL)",
-        lu: "SQL (MySQL / PostgreSQL)",
-        de: "SQL (MySQL / PostgreSQL)",
-        fr: "SQL (MySQL / PostgreSQL)"
-    },
-    "skills.programming.6": {
-        en: "Database design (MCD/MLD)",
-        pt: "Design de base de dados (MCD/MLD)",
-        lu: "Datenbank Design (MCD/MLD)",
-        de: "Datenbankdesign (MCD/MLD)",
-        fr: "Conception de base de données (MCD/MLD)"
-    },
-    "skills.programming.7": {
         en: "Python / FastAPI",
         pt: "Python / FastAPI",
         lu: "Python / FastAPI",
         de: "Python / FastAPI",
         fr: "Python / FastAPI"
     },
+    "skills.programming.2": {
+        en: "JavaScript / Node.js",
+        pt: "JavaScript / Node.js",
+        lu: "JavaScript / Node.js",
+        de: "JavaScript / Node.js",
+        fr: "JavaScript / Node.js"
+    },
+    "skills.programming.3": {
+        en: "Django (Python Framework)",
+        pt: "Django (Framework Python)",
+        lu: "Django (Python Framework)",
+        de: "Django (Python-Framework)",
+        fr: "Django (Framework Python)"
+    },
+    "skills.programming.4": {
+        en: "SvelteKit (Frontend Framework)",
+        pt: "SvelteKit (Framework Frontend)",
+        lu: "SvelteKit (Frontend Framework)",
+        de: "SvelteKit (Frontend-Framework)",
+        fr: "SvelteKit (Framework Frontend)"
+    },
+    "skills.programming.5": {
+        en: "PHP",
+        pt: "PHP",
+        lu: "PHP",
+        de: "PHP",
+        fr: "PHP"
+    },
+    "skills.programming.6": {
+        en: "HTML / CSS",
+        pt: "HTML / CSS",
+        lu: "HTML / CSS",
+        de: "HTML / CSS",
+        fr: "HTML / CSS"
+    },
+    "skills.programming.7": {
+        en: "PowerShell / Bash",
+        pt: "PowerShell / Bash",
+        lu: "PowerShell / Bash",
+        de: "PowerShell / Bash",
+        fr: "PowerShell / Bash"
+    },
     "skills.systems": {
-        en: "Systems",
-        pt: "Sistemas",
-        lu: "Systemer",
-        de: "Systeme",
-        fr: "Systèmes"
+        en: "Systems & Tools",
+        pt: "Sistemas & Ferramentas",
+        lu: "Systemer & Tools",
+        de: "Systeme & Tools",
+        fr: "Systèmes & Outils"
     },
     "skills.systems.1": {
         en: "Windows Server",
@@ -395,12 +409,61 @@ const translations = {
         de: "Hardware-Diagnose",
         fr: "Diagnostic Matériel"
     },
+    "skills.database": {
+        en: "Database & Security",
+        pt: "Base de Dados & Segurança",
+        lu: "Datenbank & Sécherheet",
+        de: "Datenbank & Sicherheit",
+        fr: "Base de données & Sécurité"
+    },
+    "skills.database.1": {
+        en: "SQL (MySQL, PostgreSQL, SQLite)",
+        pt: "SQL (MySQL, PostgreSQL, SQLite)",
+        lu: "SQL (MySQL, PostgreSQL, SQLite)",
+        de: "SQL (MySQL, PostgreSQL, SQLite)",
+        fr: "SQL (MySQL, PostgreSQL, SQLite)"
+    },
+    "skills.database.2": {
+        en: "Alembic (Database Migrations)",
+        pt: "Alembic (Migrações de Base de Dados)",
+        lu: "Alembic (Datenbank Migratiounen)",
+        de: "Alembic (Datenbank-Migrationen)",
+        fr: "Alembic (Migrations de base de données)"
+    },
+    "skills.database.3": {
+        en: "JWT Authentication",
+        pt: "Autenticação JWT",
+        lu: "JWT Authentifizéierung",
+        de: "JWT-Authentifizierung",
+        fr: "Authentification JWT"
+    },
+    "skills.database.4": {
+        en: "Argon2 (Password Hashing)",
+        pt: "Argon2 (Hash de Palavras-passe)",
+        lu: "Argon2 (Passwuert Hashing)",
+        de: "Argon2 (Passwort-Hashing)",
+        fr: "Argon2 (Hachage de mots de passe)"
+    },
+    "skills.database.5": {
+        en: "Database design (MCD/MLD)",
+        pt: "Design de base de dados (MCD/MLD)",
+        lu: "Datenbank Design (MCD/MLD)",
+        de: "Datenbankdesign (MCD/MLD)",
+        fr: "Conception de base de données (MCD/MLD)"
+    },
     "skills.systems.4": {
-        en: "IoT Integration",
-        pt: "Integração IoT",
-        lu: "IoT Integratioun",
-        de: "IoT-Integration",
-        fr: "Intégration IoT"
+        en: "IoT Integration (ESP8266, Raspberry Pi)",
+        pt: "Integração IoT (ESP8266, Raspberry Pi)",
+        lu: "IoT Integratioun (ESP8266, Raspberry Pi)",
+        de: "IoT-Integration (ESP8266, Raspberry Pi)",
+        fr: "Intégration IoT (ESP8266, Raspberry Pi)"
+    },
+    "skills.systems.5": {
+        en: "Playwright (Browser Automation)",
+        pt: "Playwright (Automação de Navegador)",
+        lu: "Playwright (Browser Automatiséierung)",
+        de: "Playwright (Browser-Automatisierung)",
+        fr: "Playwright (Automatisation de navigateur)"
     },
 
     // Projects Section
@@ -668,11 +731,11 @@ const translations = {
         fr: "La configuration « petite mais puissante »"
     },
     "project.homelab.section.setup.body": {
-        en: "This isn't a noisy server rack in a basement—it's a silent, efficient cluster sitting right on my desk. A hybrid of 3 nodes that started as a way to learn Docker but grew into a capable personal cloud hosting custom web applications with SSO, a full media automation stack, and a K3s cluster for containerized services.",
-        pt: "Isto não é um rack barulhento na cave — é um cluster silencioso e eficiente em cima da minha secretária. Um híbrido de 3 nós que começou para aprender Docker mas cresceu para uma nuvem pessoal capaz, hospedando aplicações web personalizadas com SSO, uma stack completa de automação multimédia e um cluster K3s para serviços conteinerizados.",
-        lu: "Dat ass kee lëftege Rack am Keller – et ass e rouegt, effiziënt Cluster op mengem Schreifdësch. En Hybrid mat 3 Noden, ugefaangen fir Docker ze léieren, an elo eng perséinlech Cloud mat personalisierten Web Apps mat SSO, enger kompletter Medien-Automatiséierungsstack an engem K3s Cluster fir Container Servicer.",
-        de: "Das ist kein lauter Serverrack im Keller – es ist ein leiser, effizienter Cluster auf meinem Schreibtisch. Ein hybrides 3-Knoten-Setup, gestartet zum Docker-Lernen, jetzt eine leistungsfähige persönliche Cloud mit maßgeschneiderten Web-Apps und SSO, einem vollständigen Media-Automation-Stack und einem K3s-Cluster für containerisierte Dienste.",
-        fr: "Ce n’est pas une baie bruyante au sous-sol — c’est un cluster silencieux et efficace posé sur mon bureau. Un hybride de 3 nœuds né pour apprendre Docker et devenu un cloud personnel capable d’héberger des applications web sur mesure avec SSO, une stack complète d’automatisation média et un cluster K3s pour les services conteneurisés."
+        en: "This isn't a noisy server rack tucked away in a basement—it's a silent, efficient cluster running in my living room. With only one LAN outlet in the home, I needed the cluster where internet speeds matter most. This constraint pushed me to prioritize silent operation and low power consumption so it wouldn't disturb daily life. What started as a way to learn Docker evolved into a capable personal cloud hosting 5 custom web applications with unified SSO, a complete media automation stack, and a K3s cluster for containerized services.",
+        pt: "Isto não é um rack de servidores barulhento escondido numa cave—é um cluster silencioso e eficiente a funcionar na minha sala. Com apenas uma tomada LAN em casa, precisava do cluster onde a velocidade da internet mais importa. Esta limitação obrigou-me a priorizar operação silenciosa e baixo consumo energético para não perturbar o dia a dia. O que começou como forma de aprender Docker evoluiu para uma cloud pessoal capaz com 5 aplicações web personalizadas com SSO unificado, uma stack completa de automação multimédia e um cluster K3s para serviços conteinerizados.",
+        lu: "Dat ass kee lauten Server Rack verstoppt am Keller—et ass e ruegen, effizienten Cluster deen a mengem Wunnzëmmer leeft. Mat nëmmen enger LAN Outlet doheem, hunn ech de Cluster gebraucht wou Internet Geschwindegkeet am meeschten zielt. Dës Aschränkung huet mech gezwongen roueg Operatioun an niddrege Stroumverbrauch ze priorisséieren fir den Alldag net ze stéieren. Wat als Wee ugefaang huet fir Docker ze léieren huet sech zu enger fäeger perséinlecher Cloud entwéckelt mat 5 personaliséierten Web Apps mat eenheetlechem SSO, engem komplette Media Automation Stack, an engem K3s Cluster fir containeréiert Servicer.",
+        de: "Das ist kein lautes Server-Rack versteckt im Keller—es ist ein leiser, effizienter Cluster in meinem Wohnzimmer. Mit nur einer LAN-Buchse im Haus brauchte ich den Cluster dort, wo die Internetgeschwindigkeit am wichtigsten ist. Diese Einschränkung zwang mich, leisen Betrieb und niedrigen Stromverbrauch zu priorisieren, damit er den Alltag nicht stört. Was als Weg begann, Docker zu lernen, entwickelte sich zu einer fähigen persönlichen Cloud mit 5 benutzerdefinierten Webanwendungen mit einheitlichem SSO, einem kompletten Medien-Automation-Stack und einem K3s-Cluster für containerisierte Dienste.",
+        fr: "Ce n'est pas un rack de serveurs bruyant caché dans une cave—c'est un cluster silencieux et efficace dans mon salon. Avec une seule prise LAN à la maison, j'avais besoin du cluster là où la vitesse internet compte le plus. Cette contrainte m'a poussé à prioriser le fonctionnement silencieux et la faible consommation d'énergie pour ne pas perturber la vie quotidienne. Ce qui a commencé comme un moyen d'apprendre Docker a évolué en un cloud personnel capable hébergeant 5 applications web personnalisées avec SSO unifié, une stack complète d'automatisation multimédia, et un cluster K3s pour services conteneurisés."
     },
     "project.homelab.section.what.title": {
         en: "What It Does",
@@ -1008,7 +1071,21 @@ const translations = {
         pt: "Complexidade da arquitetura híbrida — Coordenar Docker Compose e K3s no mesmo nó, mais um gateway VPS remoto, exigiu planeamento cuidadoso de portas e desenho de rede.",
         lu: "Komplexitéit vun der Hybrid Architektur — Docker Compose a K3s um selwechte Node koordinéieren, plus e VPS Gateway, huet genee Port a Netzwierk Planung verlaangt.",
         de: "Komplexität der Hybrid-Architektur — Docker Compose und K3s auf demselben Node plus ein Remote-VPS-Gateway erforderten sorgfältige Port- und Netzplanung.",
-        fr: "Complexité de l’architecture hybride — Coordonner Docker Compose et K3s sur le même nœud, plus une passerelle VPS distante, a demandé un vrai travail sur les ports et le réseau."
+        fr: "Complexité de l'architecture hybride — Coordonner Docker Compose et K3s sur le même nœud, plus une passerelle VPS distante, a demandé un vrai travail sur les ports et le réseau."
+    },
+    "project.homelab.section.lessons.environment.title": {
+        en: "Environment matters",
+        pt: "O ambiente importa",
+        lu: "D'Ëmfeld zielt",
+        de: "Die Umgebung zählt",
+        fr: "L'environnement compte"
+    },
+    "project.homelab.section.lessons.environment.body": {
+        en: "With only one LAN outlet in the home, the cluster had to live in the living room. This constraint forced smart hardware choices: silent components, low-power ARM processors, and efficient cooling. Adapting to real-world limitations made me a better engineer.",
+        pt: "Com apenas uma tomada LAN em casa, o cluster teve de ficar na sala. Esta limitação obrigou-me a fazer escolhas inteligentes de hardware: componentes silenciosos, processadores ARM de baixo consumo e refrigeração eficiente. Adaptar-me às limitações do mundo real tornou-me um melhor engenheiro.",
+        lu: "Mat nëmmen enger LAN Outlet doheem, huet de Cluster am Wunnzëmmer missen sinn. Dës Aschränkung huet intelligent Hardware Choixen forcéiert: roueg Komponenten, niddreg-Verbrauch ARM Prozessoren, an effizient Killung. Sech un real-Welt Limitatiounen unzepassen huet mech zu engem besseren Ingenieur gemaach.",
+        de: "Mit nur einer LAN-Buchse im Haus musste der Cluster im Wohnzimmer stehen. Diese Einschränkung erzwang kluge Hardware-Entscheidungen: leise Komponenten, stromsparende ARM-Prozessoren und effiziente Kühlung. Die Anpassung an reale Einschränkungen machte mich zu einem besseren Ingenieur.",
+        fr: "Avec une seule prise LAN à la maison, le cluster devait vivre dans le salon. Cette contrainte a forcé des choix matériels intelligents : composants silencieux, processeurs ARM basse consommation et refroidissement efficace. S'adapter aux limitations du monde réel a fait de moi un meilleur ingénieur."
     },
     "project.homelab.section.next.title": {
         en: "What's Next",
@@ -1022,7 +1099,207 @@ const translations = {
         pt: "A plataforma continua a evoluir com melhorias planeadas no conjunto de aplicações, workflows de automação alargados e mais ferramentas self-hosted. A arquitetura modular facilita adicionar novos serviços conforme necessário.",
         lu: "D'Plattform entwéckelt sech weider mat geplangte Verbesserungen un den Apps, méi Automatiséierungs-Workflows an zousätzlech self-hosted Tools. D'modular Architektur mécht et einfach nei Servicer derbäizefügen.",
         de: "Die Plattform entwickelt sich weiter: geplante Verbesserungen an der App-Suite, mehr Automatisierungs-Workflows und zusätzliche Self-Hosted-Tools. Die modulare Architektur erleichtert das Hinzufügen neuer Services.",
-        fr: "La plateforme continue d’évoluer : améliorations prévues de la suite d’apps, workflows d’automatisation étendus et nouveaux outils self-hosted. L’architecture modulaire facilite l’ajout de services."
+        fr: "La plateforme continue d'évoluer : améliorations prévues de la suite d'apps, workflows d'automatisation étendus et nouveaux outils self-hosted. L'architecture modulaire facilite l'ajout de services."
+    },
+    
+    // Home Lab Tech Stack Sidebar
+    "project.homelab.sidebar.tech.k3s": {
+        en: "K3s Kubernetes",
+        pt: "K3s Kubernetes",
+        lu: "K3s Kubernetes",
+        de: "K3s Kubernetes",
+        fr: "K3s Kubernetes"
+    },
+    "project.homelab.sidebar.tech.compose": {
+        en: "Docker Compose",
+        pt: "Docker Compose",
+        lu: "Docker Compose",
+        de: "Docker Compose",
+        fr: "Docker Compose"
+    },
+    "project.homelab.sidebar.tech.vps": {
+        en: "Oracle Cloud (ARM64)",
+        pt: "Oracle Cloud (ARM64)",
+        lu: "Oracle Cloud (ARM64)",
+        de: "Oracle Cloud (ARM64)",
+        fr: "Oracle Cloud (ARM64)"
+    },
+    "project.homelab.sidebar.tech.wireguard": {
+        en: "WireGuard VPN",
+        pt: "WireGuard VPN",
+        lu: "WireGuard VPN",
+        de: "WireGuard VPN",
+        fr: "WireGuard VPN"
+    },
+    "project.homelab.sidebar.tech.caddy": {
+        en: "Caddy Reverse Proxy",
+        pt: "Caddy Reverse Proxy",
+        lu: "Caddy Reverse Proxy",
+        de: "Caddy Reverse Proxy",
+        fr: "Caddy Reverse Proxy"
+    },
+    "project.homelab.sidebar.tech.cloudflare": {
+        en: "Cloudflare DNS",
+        pt: "Cloudflare DNS",
+        lu: "Cloudflare DNS",
+        de: "Cloudflare DNS",
+        fr: "Cloudflare DNS"
+    },
+    "project.homelab.sidebar.tech.fastapi": {
+        en: "FastAPI (Python)",
+        pt: "FastAPI (Python)",
+        lu: "FastAPI (Python)",
+        de: "FastAPI (Python)",
+        fr: "FastAPI (Python)"
+    },
+    "project.homelab.sidebar.tech.sqlite": {
+        en: "SQLite + Alembic",
+        pt: "SQLite + Alembic",
+        lu: "SQLite + Alembic",
+        de: "SQLite + Alembic",
+        fr: "SQLite + Alembic"
+    },
+    "project.homelab.sidebar.tech.sveltekit": {
+        en: "SvelteKit",
+        pt: "SvelteKit",
+        lu: "SvelteKit",
+        de: "SvelteKit",
+        fr: "SvelteKit"
+    },
+    "project.homelab.sidebar.tech.jwt": {
+        en: "JWT Authentication",
+        pt: "Autenticação JWT",
+        lu: "JWT Authentifizéierung",
+        de: "JWT-Authentifizierung",
+        fr: "Authentification JWT"
+    },
+    "project.homelab.sidebar.tech.argon2": {
+        en: "Argon2 Hashing",
+        pt: "Hashing Argon2",
+        lu: "Argon2 Hashing",
+        de: "Argon2-Hashing",
+        fr: "Hachage Argon2"
+    },
+    "project.homelab.sidebar.tech.traefik": {
+        en: "Traefik Ingress",
+        pt: "Traefik Ingress",
+        lu: "Traefik Ingress",
+        de: "Traefik Ingress",
+        fr: "Traefik Ingress"
+    },
+    "project.homelab.sidebar.tech.portainer": {
+        en: "Portainer",
+        pt: "Portainer",
+        lu: "Portainer",
+        de: "Portainer",
+        fr: "Portainer"
+    },
+    "project.homelab.sidebar.tech.monitoring": {
+        en: "Uptime Monitoring",
+        pt: "Monitorização de Uptime",
+        lu: "Uptime Iwwerwaachung",
+        de: "Uptime-Überwachung",
+        fr: "Surveillance de disponibilité"
+    },
+    "project.homelab.sidebar.tech.playwright": {
+        en: "Playwright",
+        pt: "Playwright",
+        lu: "Playwright",
+        de: "Playwright",
+        fr: "Playwright"
+    },
+    "project.homelab.sidebar.tech.mistral": {
+        en: "Mistral AI",
+        pt: "Mistral AI",
+        lu: "Mistral AI",
+        de: "Mistral AI",
+        fr: "Mistral AI"
+    },
+    "project.homelab.sidebar.tech.jellyfin": {
+        en: "Jellyfin",
+        pt: "Jellyfin",
+        lu: "Jellyfin",
+        de: "Jellyfin",
+        fr: "Jellyfin"
+    },
+    "project.homelab.sidebar.tech.arr": {
+        en: "*arr Stack (Radarr/Sonarr/Bazarr)",
+        pt: "*arr Stack (Radarr/Sonarr/Bazarr)",
+        lu: "*arr Stack (Radarr/Sonarr/Bazarr)",
+        de: "*arr Stack (Radarr/Sonarr/Bazarr)",
+        fr: "*arr Stack (Radarr/Sonarr/Bazarr)"
+    },
+    "project.homelab.sidebar.tech.clamav": {
+        en: "ClamAV",
+        pt: "ClamAV",
+        lu: "ClamAV",
+        de: "ClamAV",
+        fr: "ClamAV"
+    },
+    
+    // Home Lab Key Features
+    "project.homelab.sidebar.features.custom": {
+        en: "5 Custom Web Apps (Self-Built)",
+        pt: "5 Aplicações Web Personalizadas (Desenvolvidas por mim)",
+        lu: "5 Personaliséiert Web Apps (Selwer gebaut)",
+        de: "5 Benutzerdefinierte Web-Apps (Selbst gebaut)",
+        fr: "5 Applications web personnalisées (Auto-construites)"
+    },
+    "project.homelab.sidebar.features.sso": {
+        en: "Unified SSO System",
+        pt: "Sistema SSO Unificado",
+        lu: "Eenheetlech SSO System",
+        de: "Einheitliches SSO-System",
+        fr: "Système SSO unifié"
+    },
+    "project.homelab.sidebar.features.hybrid": {
+        en: "Hybrid ARM/x86 Architecture",
+        pt: "Arquitetura Híbrida ARM/x86",
+        lu: "Hybrid ARM/x86 Architektur",
+        de: "Hybride ARM/x86-Architektur",
+        fr: "Architecture hybride ARM/x86"
+    },
+    "project.homelab.sidebar.features.silent": {
+        en: "Silent Living Room Operation",
+        pt: "Funcionamento Silencioso na Sala",
+        lu: "Roueg Wunnzëmmer Operatioun",
+        de: "Leiser Wohnzimmerbetrieb",
+        fr: "Fonctionnement silencieux au salon"
+    },
+    "project.homelab.sidebar.features.dual": {
+        en: "K3s + Docker Compose",
+        pt: "K3s + Docker Compose",
+        lu: "K3s + Docker Compose",
+        de: "K3s + Docker Compose",
+        fr: "K3s + Docker Compose"
+    },
+    "project.homelab.sidebar.features.wireguard": {
+        en: "WireGuard Secure Tunnel",
+        pt: "Túnel Seguro WireGuard",
+        lu: "WireGuard Sécheren Tunnel",
+        de: "WireGuard sicherer Tunnel",
+        fr: "Tunnel sécurisé WireGuard"
+    },
+    "project.homelab.sidebar.features.ai": {
+        en: "AI-Powered Content Processing",
+        pt: "Processamento de Conteúdo com IA",
+        lu: "AI-gestäerzte Inhaltsveraarbechtung",
+        de: "KI-gestützte Inhaltsverarbeitung",
+        fr: "Traitement de contenu par IA"
+    },
+    "project.homelab.sidebar.features.media": {
+        en: "Full Media Automation",
+        pt: "Automação Multimédia Completa",
+        lu: "Komplett Medien Automatiséierung",
+        de: "Vollständige Medienautomatisierung",
+        fr: "Automatisation multimédia complète"
+    },
+    "project.homelab.sidebar.features.lowpower": {
+        en: "Low-Power ARM Design",
+        pt: "Design ARM de Baixo Consumo",
+        lu: "Niddreg-Verbrauch ARM Design",
+        de: "Stromsparendes ARM-Design",
+        fr: "Conception ARM basse consommation"
     },
     "project.pif.badge": {
         en: "FINAL PROJECT",
@@ -1901,6 +2178,13 @@ const translations = {
         de: "Docker & Compose",
         fr: "Docker & Compose"
     },
+    "project.gradingdino.sidebar.tech.github": {
+        en: "GitHub",
+        pt: "GitHub",
+        lu: "GitHub",
+        de: "GitHub",
+        fr: "GitHub"
+    },
     "project.gradingdino.sidebar.tech.pico": {
         en: "Pico.css",
         pt: "Pico.css",
@@ -2684,6 +2968,20 @@ const translations = {
     },
 
     // Formations/Training Translations
+    "formation.azure.az900.name": {
+        en: "Azure Fundamentals (AZ-900) Training",
+        pt: "Formação Azure Fundamentals (AZ-900)",
+        lu: "Azure Fundamentals (AZ-900) Training",
+        de: "Azure Fundamentals (AZ-900) Schulung",
+        fr: "Formation Azure Fundamentals (AZ-900)"
+    },
+    "formation.azure.az900.description": {
+        en: "Attended a full-day training course (9h-17h) covering Azure Fundamentals concepts as preparation for the AZ-900 certification exam. Hosted by Deep (POST Luxembourg Group) and conducted by a trainer from their team, as part of my BTS Cloud Computing program at LGK.",
+        pt: "Frequentei um curso de formação de dia inteiro (9h-17h) cobrindo conceitos de Azure Fundamentals como preparação para o exame de certificação AZ-900. Organizado pela Deep (POST Luxembourg Group) e conduzido por um formador da sua equipa, como parte do meu programa BTS Cloud Computing no LGK.",
+        lu: "Besicht e ganzen Dag Training (9h-17h) deen Azure Fundamentals Konzepter behandelt als Virbereedung fir d'AZ-900 Zertifizéierungsexamen. Organiséiert vun Deep (POST Luxembourg Group) a geleed vun engem Trainer vun hirer Ekipp, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
+        de: "Besuchte einen eintägigen Schulungskurs (9h-17h) zu Azure Fundamentals Konzepten als Vorbereitung auf die AZ-900 Zertifizierungsprüfung. Organisiert von Deep (POST Luxembourg Group) und durchgeführt von einem Trainer ihres Teams, im Rahmen meines BTS Cloud Computing Programms am LGK.",
+        fr: "Suivi un cours de formation d'une journée complète (9h-17h) couvrant les concepts Azure Fundamentals en préparation de l'examen de certification AZ-900. Organisé par Deep (POST Luxembourg Group) et animé par un formateur de leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
+    },
     "formation.pl900.name": {
         en: "Power Platform Fundamentals (PL-900) Training",
         pt: "Formação Power Platform Fundamentals (PL-900)",
@@ -2692,18 +2990,11 @@ const translations = {
         fr: "Formation Power Platform Fundamentals (PL-900)"
     },
     "formation.pl900.description": {
-        en: "Full-day training course at Lycée Guillaume Kroll (LGK) as part of BTS Cloud Computing program. Course runs from 9h to 17h where a trainer explains PL-900 concepts and Power Platform fundamentals.",
-        pt: "Curso de formação de dia inteiro no Lycée Guillaume Kroll (LGK) como parte do programa BTS Cloud Computing. O curso decorre das 9h às 17h onde um formador explica os conceitos PL-900 e fundamentos do Power Platform.",
-        lu: "Ganzen Dag Training am Lycée Guillaume Kroll (LGK) als Deel vum BTS Cloud Computing Programm. De Cours geet vun 9h bis 17h wou en Trainer PL-900 Konzepter a Power Platform Grondlagen erkläert.",
-        de: "Eintägiger Schulungskurs am Lycée Guillaume Kroll (LGK) im Rahmen des BTS Cloud Computing Programms. Der Kurs läuft von 9h bis 17h, wo ein Trainer PL-900 Konzepte und Power Platform Grundlagen erklärt.",
-        fr: "Cours de formation d'une journée complète au Lycée Guillaume Kroll (LGK) dans le cadre du programme BTS Cloud Computing. Le cours se déroule de 9h à 17h où un formateur explique les concepts PL-900 et les fondamentaux de Power Platform."
-    },
-    "formation.pl900.notes": {
-        en: "Attended this training as part of my BTS Cloud Computing program at LGK. Learned PL-900 content through instructor-led sessions.",
-        pt: "Frequentei esta formação como parte do meu programa BTS Cloud Computing no LGK. Aprendi o conteúdo PL-900 através de sessões orientadas por formador.",
-        lu: "Besicht dëst Training als Deel vu mengem BTS Cloud Computing Programm am LGK. Geléiert PL-900 Inhalt duerch Instruktuer-geféiert Sessiounen.",
-        de: "Besuchte diese Schulung im Rahmen meines BTS Cloud Computing Programms am LGK. Lernte PL-900 Inhalte durch trainer-geführte Sitzungen.",
-        fr: "Suivi cette formation dans le cadre de mon programme BTS Cloud Computing au LGK. Appris le contenu PL-900 à travers des sessions dirigées par un formateur."
+        en: "Attended a full-day training course (9h-17h) covering PL-900 concepts and Power Platform fundamentals. Hosted by Deep (POST Luxembourg Group) and conducted by a trainer from their team, as part of my BTS Cloud Computing program at LGK.",
+        pt: "Frequentei um curso de formação de dia inteiro (9h-17h) cobrindo conceitos PL-900 e fundamentos do Power Platform. Organizado pela Deep (POST Luxembourg Group) e conduzido por um formador da sua equipa, como parte do meu programa BTS Cloud Computing no LGK.",
+        lu: "Besicht e ganzen Dag Training (9h-17h) deen PL-900 Konzepter a Power Platform Grondlagen behandelt. Organiséiert vun Deep (POST Luxembourg Group) a geleed vun engem Trainer vun hirer Ekipp, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
+        de: "Besuchte einen eintägigen Schulungskurs (9h-17h) zu PL-900 Konzepten und Power Platform Grundlagen. Organisiert von Deep (POST Luxembourg Group) und durchgeführt von einem Trainer ihres Teams, im Rahmen meines BTS Cloud Computing Programms am LGK.",
+        fr: "Suivi un cours de formation d'une journée complète (9h-17h) couvrant les concepts PL-900 et les fondamentaux de Power Platform. Organisé par Deep (POST Luxembourg Group) et animé par un formateur de leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
     },
     "formation.pl900.skills.platform": {
         en: "Power Platform",
@@ -2732,6 +3023,48 @@ const translations = {
         lu: "Power BI",
         de: "Power BI",
         fr: "Power BI"
+    },
+    "formation.sustainablecloud.name": {
+        en: "Sustainable Cloud Workshop",
+        pt: "Workshop Cloud Sustentável",
+        lu: "Sustainable Cloud Workshop",
+        de: "Sustainable Cloud Workshop",
+        fr: "Atelier Cloud Durable"
+    },
+    "formation.sustainablecloud.description": {
+        en: "Attended a 3-hour presentation/workshop on Sustainable Cloud, focusing on environmental impact and sustainable practices in cloud computing. Hosted by Arηs Group and conducted by a representative from their team, as part of my BTS Cloud Computing program at LGK.",
+        pt: "Frequentei uma apresentação/workshop de 3 horas sobre Cloud Sustentável, focando no impacto ambiental e práticas sustentáveis em cloud computing. Organizado pela Arηs Group e conduzido por um representante da sua equipa, como parte do meu programa BTS Cloud Computing no LGK.",
+        lu: "Besicht eng 3-Stonnen Presentatioun/Workshop iwwer Sustainable Cloud, deen sech op ëmweltbezunn Impakt a nohalteg Praktiken am Cloud Computing konzentréiert. Organiséiert vun Arηs Group a geleed vun engem Vertrieder vun hirer Ekipp, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
+        de: "Besuchte einen 3-stündigen Präsentation/Workshop zu Sustainable Cloud, mit Fokus auf Umweltauswirkungen und nachhaltige Praktiken im Cloud Computing. Organisiert von Arηs Group und durchgeführt von einem Vertreter ihres Teams, im Rahmen meines BTS Cloud Computing Programms am LGK.",
+        fr: "Suivi une présentation/atelier de 3 heures sur le Cloud Durable, axé sur l'impact environnemental et les pratiques durables en cloud computing. Organisé par Arηs Group et animé par un représentant de leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
+    },
+    "formation.sustainablecloud.skills.sustainable": {
+        en: "Sustainable Cloud",
+        pt: "Cloud Sustentável",
+        lu: "Sustainable Cloud",
+        de: "Nachhaltiges Cloud",
+        fr: "Cloud Durable"
+    },
+    "formation.sustainablecloud.skills.environmental": {
+        en: "Environmental Impact",
+        pt: "Impacto Ambiental",
+        lu: "Ëmweltbezunn Impakt",
+        de: "Umweltauswirkungen",
+        fr: "Impact Environnemental"
+    },
+    "formation.sustainablecloud.skills.practices": {
+        en: "Cloud Best Practices",
+        pt: "Melhores Práticas Cloud",
+        lu: "Cloud Best Practices",
+        de: "Cloud Best Practices",
+        fr: "Meilleures Pratiques Cloud"
+    },
+    "formation.sustainablecloud.skills.greenit": {
+        en: "Green IT",
+        pt: "TI Verde",
+        lu: "Green IT",
+        de: "Green IT",
+        fr: "IT Verte"
     },
 
     // Project Names (for modal display)

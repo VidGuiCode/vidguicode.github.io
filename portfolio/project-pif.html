@@ -23,92 +23,11 @@
     <script src="certifications-techstack.js"></script>
     <style>
         /* Project Page Specific Styles */
-        .project-hero {
-            padding: 4rem 0;
-            margin-bottom: 2rem;
-        }
         .project-title-group h1 {
             font-size: 2.5rem;
             line-height: 1.2;
             margin-bottom: 0.75rem;
             color: var(--text-primary);
-        }
-        
-        .project-title-group .subtitle {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-        }
-        .project-meta-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        @media (max-width: 768px) {
-            .project-meta-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .project-sidebar .card {
-            position: sticky;
-            top: 100px;
-        }
-        .tech-stack-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-        }
-        .tech-stack-list li i {
-            color: var(--accent-primary);
-            width: 18px;
-            height: 18px;
-        }
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        .feature-list li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        .feature-list li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-secondary);
-        }
-        article h2 {
-            margin-top: 1.5rem;
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-bottom: 2rem;
-            transition: color 0.3s ease;
-        }
-        .back-link:hover {
-            color: var(--accent-primary);
-        }
-        article h2 {
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            border-left: 4px solid var(--accent-primary);
-            padding-left: 1rem;
-        }
-        article p, article li {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            margin-bottom: 1.2rem;
         }
         .score-badge {
             display: inline-flex;
@@ -123,63 +42,12 @@
             margin-left: 1rem;
         }
 
-        /* Project Certifications Section - Small Badges */
-        .project-certifications {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-        
-        /* Mobile: Compact category display */
+        /* Mobile: Category filter button */
         @media (max-width: 768px) {
-            .project-certifications {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
-            }
-            
-            .project-cert-badge {
-                font-size: 0.7rem;
-                padding: 0.3rem 0.5rem;
-                margin-right: 0;
-                margin-bottom: 0;
-            }
-            
-            .project-cert-name {
-                font-size: 0.7rem;
-            }
-            
             .category-filter-button {
                 font-size: 0.9rem !important;
                 padding: 0.65rem !important;
             }
-        }
-
-        .project-cert-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.4rem 0.6rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-size: 0.8rem;
-        }
-
-        .project-cert-badge:hover {
-            border-color: var(--accent-primary);
-            background: var(--surface-secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-cert-badge img {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
         }
 
         /* Project Images */
@@ -375,135 +243,6 @@
             margin: 0;
         }
 
-        /* Image Modal/Lightbox */
-        .image-modal {
-            display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
-        }
-
-        .image-modal.active {
-            opacity: 1;
-            visibility: visible;
-            background: rgba(0, 0, 0, 0.95);
-        }
-        
-        /* Category Filter Modal */
-        .category-filter-modal-content {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            max-width: 500px;
-            width: 90%;
-            max-height: 80vh;
-            cursor: default;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-        
-        #category-filter-modal.active .category-filter-modal-content {
-            transform: scale(1);
-        }
-        
-        .category-filter-option {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .category-filter-option:hover {
-            background: var(--surface-secondary);
-            border-color: var(--accent-primary);
-        }
-        
-        .category-filter-option input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-            accent-color: var(--accent-primary);
-        }
-        
-        .category-filter-option label {
-            flex: 1;
-            cursor: pointer;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-        }
-        
-        .category-filter-button:hover {
-            background: var(--surface-secondary);
-            border-color: var(--accent-primary);
-        }
-
-        .image-modal-content {
-            max-width: 90vw;
-            max-height: 90vh;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0);
-            cursor: default;
-            display: block;
-            transform: scale(0.9);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .image-modal.active .image-modal-content {
-            transform: scale(1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-        }
-
-        .image-modal-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 32px;
-            line-height: 1;
-            z-index: 2001;
-            opacity: 0;
-            transform: scale(0.8);
-        }
-
-        .image-modal.active .image-modal-close {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .image-modal-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1) rotate(90deg);
-        }
 
         @media (max-width: 768px) {
             .project-image {
@@ -829,13 +568,11 @@
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <h3 data-i18n="project.sidebar.category">Category</h3>
-                    <div class="line"></div>
-                    <button id="category-filter-btn" class="category-filter-button" style="margin-top: 0.75rem; width: 100%; padding: 0.5rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-primary); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.2s ease;">
-                        <span id="category-filter-text">All Categories</span>
-                        <i data-lucide="filter" style="width: 16px; height: 16px;"></i>
-                    </button>
-                    <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
+                    <div id="category-section">
+                        <h3 data-i18n="project.sidebar.category">Category</h3>
+                        <div class="line"></div>
+                        <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
+                    </div>
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.techStack">Tech Stack</h3>
                     <div class="line"></div>
@@ -895,216 +632,29 @@
     </div>
 
     <!-- Category Filter Modal -->
-    <div id="category-filter-modal" class="image-modal" onclick="closeCategoryFilterModal(event)">
-        <div class="category-filter-modal-content" onclick="event.stopPropagation()">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                <h3 style="margin: 0; color: var(--text-primary);">Filter Categories</h3>
-                <button class="image-modal-close" onclick="closeCategoryFilterModal()" aria-label="Close filter">×</button>
-            </div>
-            <div id="category-filter-options" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 60vh; overflow-y: auto;"></div>
-            <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
-                <button onclick="applyCategoryFilter()" style="flex: 1; padding: 0.75rem; background: var(--accent-primary); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Apply</button>
-                <button onclick="closeCategoryFilterModal()" style="flex: 1; padding: 0.75rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px; cursor: pointer;">Cancel</button>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
     <script src="projects-data.js"></script>
     <script>
         lucide.createIcons();
         
-        // Category filter state
-        let selectedCategories = [];
-        let allProjectCategories = [];
-        let allProjectCategoryKeys = [];
-        
-        // Display project categories from projects-data.js
-        function displayProjectCategories() {
-            if (typeof getProjectById !== 'undefined') {
-                const project = getProjectById('pif');
-                if (project) {
-                    // Store all categories
-                    allProjectCategories = project.categories || [project.category];
-                    allProjectCategoryKeys = project.categoryKeys || (project.categoryKey ? [project.categoryKey] : []);
-                    
-                    // Initialize: show all categories
-                    selectedCategories = [...allProjectCategories];
-                    
-                    // Setup filter button
-                    setupCategoryFilterButton();
-                    
-                    // Setup filter modal
-                    setupCategoryFilterModal();
-                    
-                    // Render categories
-                    renderSelectedCategories();
-                }
-            }
-        }
-        
-        function setupCategoryFilterButton() {
-            const filterBtn = document.getElementById('category-filter-btn');
-            if (filterBtn) {
-                filterBtn.onclick = function() {
-                    openCategoryFilterModal();
-                };
-                updateFilterButtonText();
-            }
-        }
-        
-        function setupCategoryFilterModal() {
-            const modal = document.getElementById('category-filter-modal');
-            const optionsContainer = document.getElementById('category-filter-options');
-            
-            if (!modal || !optionsContainer) return;
-            
-            // Clear and populate options
-            optionsContainer.innerHTML = '';
-            
-            allProjectCategories.forEach((category, index) => {
-                const option = document.createElement('div');
-                option.className = 'category-filter-option';
-                
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.id = `category-${index}`;
-                checkbox.value = category;
-                checkbox.checked = selectedCategories.includes(category);
-                
-                const label = document.createElement('label');
-                label.htmlFor = `category-${index}`;
-                
-                const categoryKey = allProjectCategoryKeys[index];
-                if (categoryKey && typeof getTranslation !== 'undefined') {
-                    const lang = document.documentElement.getAttribute('data-lang') || 'en';
-                    label.textContent = getTranslation(categoryKey, lang);
-                } else if (category) {
-                    label.textContent = category;
-                }
-                
-                // Get project count
-                const projectsInCategory = typeof getProjectsByCategory !== 'undefined' 
-                    ? getProjectsByCategory(category)
-                    : [];
-                if (projectsInCategory.length > 0) {
-                    const count = document.createElement('span');
-                    count.style.cssText = 'color: var(--text-secondary); font-size: 0.8rem; margin-left: auto;';
-                    count.textContent = `(${projectsInCategory.length})`;
-                    label.appendChild(count);
-                }
-                
-                option.appendChild(checkbox);
-                option.appendChild(label);
-                optionsContainer.appendChild(option);
-            });
-        }
-        
-        function openCategoryFilterModal() {
-            const modal = document.getElementById('category-filter-modal');
-            if (modal) {
-                // Update checkboxes to match current selection
-                setupCategoryFilterModal();
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-        
-        function closeCategoryFilterModal(event) {
-            if (event && event.target !== event.currentTarget) return;
-            const modal = document.getElementById('category-filter-modal');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-        
-        function applyCategoryFilter() {
-            const checkboxes = document.querySelectorAll('#category-filter-options input[type="checkbox"]');
-            selectedCategories = [];
-            
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    selectedCategories.push(checkbox.value);
-                }
-            });
-            
-            // If none selected, show all
-            if (selectedCategories.length === 0) {
-                selectedCategories = [...allProjectCategories];
-            }
-            
-            renderSelectedCategories();
-            updateFilterButtonText();
-            closeCategoryFilterModal();
-        }
-        
-        function renderSelectedCategories() {
-            const categoriesContainer = document.getElementById('project-categories');
-            if (!categoriesContainer) return;
-            
-            categoriesContainer.innerHTML = '';
-            
-            selectedCategories.forEach((category) => {
-                const index = allProjectCategories.indexOf(category);
-                if (index === -1) return;
-                
-                // Get all projects in this category
-                const projectsInCategory = typeof getProjectsByCategory !== 'undefined' 
-                    ? getProjectsByCategory(category)
-                    : [];
-                
-                // Create category badge similar to certification badges
-                const categoryBadge = document.createElement('a');
-                const categorySlug = category.toLowerCase().replace(/\s+/g, '');
-                categoryBadge.href = 'projects.html?category=' + encodeURIComponent(categorySlug);
-                categoryBadge.className = 'project-cert-badge';
-                categoryBadge.style.cssText = 'text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-right: 0.75rem; margin-bottom: 0.5rem;';
-                
-                // Create badge text
-                const badgeText = document.createElement('span');
-                badgeText.className = 'project-cert-name';
-                
-                const categoryKey = allProjectCategoryKeys[index];
-                if (categoryKey && typeof getTranslation !== 'undefined') {
-                    const lang = document.documentElement.getAttribute('data-lang') || 'en';
-                    badgeText.textContent = getTranslation(categoryKey, lang);
-                } else if (category) {
-                    badgeText.textContent = category;
-                }
-                
-                categoryBadge.appendChild(badgeText);
-                
-                // Add project count if more than 1
-                if (projectsInCategory.length > 1) {
-                    const count = document.createElement('span');
-                    count.style.cssText = 'color: var(--text-secondary); font-size: 0.75rem; margin-left: 0.25rem;';
-                    count.textContent = `(${projectsInCategory.length})`;
-                    categoryBadge.appendChild(count);
-                }
-                
-                categoriesContainer.appendChild(categoryBadge);
-            });
-        }
-        
-        function updateFilterButtonText() {
-            const filterText = document.getElementById('category-filter-text');
-            if (filterText) {
-                if (selectedCategories.length === allProjectCategories.length) {
-                    filterText.textContent = 'All Categories';
-                } else {
-                    filterText.textContent = `${selectedCategories.length} Selected`;
-                }
+        // Use centralized category display function (updates dynamically on language change)
+        function initProjectCategories() {
+            if (typeof updateProjectCategories === 'function') {
+                updateProjectCategories('pif');
+            } else {
+                // Retry if script.js hasn't loaded yet
+                setTimeout(initProjectCategories, 100);
             }
         }
         
         // Wait for translations and projects data to load
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function() {
-                setTimeout(displayProjectCategories, 100);
+                setTimeout(initProjectCategories, 100);
             });
         } else {
-            setTimeout(displayProjectCategories, 100);
+            setTimeout(initProjectCategories, 100);
         }
 
         // Image Modal Functions
