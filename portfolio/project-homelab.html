@@ -16,26 +16,27 @@
     
     <!-- Flags - Load locally -->
     <link rel="stylesheet" href="assets/css/flag-icons.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logos/vidguicode-favicon.svg">
+    <link rel="apple-touch-icon" href="assets/img/logos/vidguicode-favicon.svg">
 
     <link rel="stylesheet" href="styles.css">
     <script src="translations.js"></script>
     <script src="certifications-data.js"></script>
     <script src="certifications-techstack.js"></script>
     <style>
-        /* Project Page Specific Styles */
-        .project-title-group h1 {
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
+        /* Typography uses centralized scale - see styles.css */
     </style>
 </head>
 <body>
     <div class="grid-background"></div>
     
     <nav class="navbar">
-        <a href="../index.html#home" class="nav-brand">VIDGUICODE</a>
+        <a href="../index.html#home" class="nav-brand">
+            <img src="assets/img/logos/vidguicode-favicon.svg" alt="VidGuiCode" class="nav-brand-logo">
+            <span>VIDGUICODE</span>
+        </a>
         <div class="nav-links">
         </div>
         <div class="nav-controls">
@@ -95,18 +96,18 @@
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.primary.title">Primary Node</h3>
-                                        <div style="font-family: monospace; color: #ef4444; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.primary.spec">arm64 / raspberry-pi-5</div>
+                                        <div class="node-spec" style="color: #ef4444; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.primary.spec">arm64 / raspberry-pi-5</div>
                                     </div>
-                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #888;">
+                                    <div class="node-detail" style="text-align: right; color: #888;">
                                         <div data-i18n="project.homelab.nodes.primary.cores">4 cores</div>
                                         <div style="font-weight: 600; color: #ef4444;" data-i18n="project.homelab.nodes.primary.ram">8GB RAM</div>
                                     </div>
                                 </div>
-                                <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.homelab.nodes.primary.body">
+                                <p class="node-card p" style="color: #888; margin: 0;" data-i18n="project.homelab.nodes.primary.body">
                                     The heart of the cluster. Efficient, silent, and always on. Handles orchestration and lightweight services.
                                 </p>
                             </div>
-                            <div style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; font-size: 0.75rem; color: #555; font-family: monospace;">
+                            <div class="node-tags" style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; color: #555;">
                                 <span data-i18n="project.homelab.nodes.primary.tag.master">[MASTER]</span> <span data-i18n="project.homelab.nodes.primary.tag.arm64">[ARM64]</span> <span data-i18n="project.homelab.nodes.primary.tag.lowpower">[LOW-POWER]</span>
                             </div>
                         </div>
@@ -120,18 +121,18 @@
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #111827; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.worker.title">Worker Node</h3>
-                                        <div style="font-family: monospace; color: #374151; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.worker.spec">amd64 / ryzen-5-5600u</div>
+                                        <div class="node-spec" style="color: #374151; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.worker.spec">amd64 / ryzen-5-5600u</div>
                                     </div>
-                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #374151;">
+                                    <div class="node-detail" style="text-align: right; color: #374151;">
                                         <div data-i18n="project.homelab.nodes.worker.cores">6 cores</div>
                                         <div style="font-weight: 600;" data-i18n="project.homelab.nodes.worker.ram">16GB RAM</div>
                                     </div>
                                 </div>
-                                <p style="color: #374151; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.homelab.nodes.worker.body">
+                                <p class="node-card p" style="color: #374151; margin: 0;" data-i18n="project.homelab.nodes.worker.body">
                                     The heavy lifter. Repurposed x86 laptop acting as the muscle for demanding containers. Built-in battery serves as a dedicated UPS.
                                 </p>
                             </div>
-                            <div style="background: rgba(0,0,0,0.08); padding: 0.75rem 1.5rem; border-top: 1px solid #6b7280; display: flex; gap: 1rem; font-size: 0.75rem; color: #374151; font-family: monospace;">
+                            <div class="node-tags" style="background: rgba(0,0,0,0.08); padding: 0.75rem 1.5rem; border-top: 1px solid #6b7280; display: flex; gap: 1rem; color: #374151;">
                                 <span data-i18n="project.homelab.nodes.worker.tag.worker">[WORKER]</span> <span data-i18n="project.homelab.nodes.worker.tag.x86">[X86_64]</span> <span data-i18n="project.homelab.nodes.worker.tag.ups">[BATTERY-UPS]</span>
                             </div>
                         </div>
@@ -146,21 +147,21 @@
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.gateway.title">Cloud Gateway</h3>
-                                        <div style="font-family: monospace; color: #60a5fa; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.gateway.spec">arm64 / oracle-ampere</div>
+                                        <div class="node-spec" style="color: #60a5fa; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.gateway.spec">arm64 / oracle-ampere</div>
                                     </div>
                                     <div style="text-align: right;">
-                                        <div style="font-family: monospace; font-size: 0.8rem; color: #94a3b8;">
+                                        <div class="node-detail" style="color: #94a3b8;">
                                             <div data-i18n="project.homelab.nodes.gateway.cores">4 cores</div>
                                             <div style="font-weight: 600; color: #60a5fa;" data-i18n="project.homelab.nodes.gateway.ram">24GB RAM</div>
                                         </div>
-                                        <div style="margin-top: 0.5rem; font-size: 0.7rem; background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 2px 8px; border-radius: 10px; display: inline-block;" data-i18n="project.homelab.nodes.gateway.badge">FREE TIER</div>
+                                        <div class="score-badge" style="margin-top: 0.5rem; background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 2px 8px; border-radius: 10px; display: inline-block;" data-i18n="project.homelab.nodes.gateway.badge">FREE TIER</div>
                                     </div>
                                 </div>
-                                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.homelab.nodes.gateway.body">
+                                <p class="node-card p" style="color: #94a3b8; margin: 0;" data-i18n="project.homelab.nodes.gateway.body">
                                     The public face. Handles ingress, reverse proxy, and secure tunneling. Connects the home cluster to the world.
                                 </p>
                             </div>
-                            <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; font-size: 0.75rem; color: #64748b; font-family: monospace;">
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; color: #64748b;">
                                 <span data-i18n="project.homelab.nodes.gateway.tag.gateway">[GATEWAY]</span> <span data-i18n="project.homelab.nodes.gateway.tag.caddy">[CADDY]</span> <span data-i18n="project.homelab.nodes.gateway.tag.wireguard">[WIREGUARD]</span>
                             </div>
                         </div>
@@ -172,7 +173,7 @@
                     
                     <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.compose.title">Docker Compose Stack</h3>
                     
-                    <h4 style="margin-top: 1rem; font-size: 1rem; color: var(--text-primary);">Media Automation Stack</h4>
+                    <h4 style="margin-top: 1rem; color: var(--text-primary);">Media Automation Stack</h4>
                     <ul class="feature-list">
                         <li><strong>Jellyfin</strong>: Self-hosted media streaming server with hardware transcoding</li>
                         <li><strong>Radarr</strong>: Movie collection manager with automatic downloads and organization</li>
@@ -183,7 +184,7 @@
                         <li><strong>ClamAV</strong>: Antivirus scanner for downloaded content</li>
                     </ul>
                     
-                    <h4 style="margin-top: 1rem; font-size: 1rem; color: var(--text-primary);">Custom Web Platform (Self-Built Applications)</h4>
+                    <h4 style="margin-top: 1rem; color: var(--text-primary);">Custom Web Platform (Self-Built Applications)</h4>
                     <ul class="feature-list">
                         <li><strong>Backend API (FastAPI)</strong>: Developed from scratch with JWT authentication, token blacklisting, user management, and AI-powered content processing</li>
                         <li><strong>Content Digest App</strong>: Built a custom AI-powered web scraping and summarization tool with browser automation (SvelteKit)</li>
@@ -192,9 +193,9 @@
                         <li><strong>App Launcher</strong>: Built a user portal for accessing platform applications and account management (SvelteKit)</li>
                         <li><strong>QR Generator</strong>: Developed a QR code generation service deployed on Kubernetes (SvelteKit)</li>
                     </ul>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary); font-style: italic;"><strong>Deployment Workflow:</strong> All applications are initially built and hosted on Docker Compose for rapid development and testing. Once I'm confident in their stability, I compile them into Docker images and deploy them to the K3s cluster. Currently, the QR app is the only application running in K3s, with others still in the Docker Compose stack.</p>
+                    <p class="sidebar-description" style="margin-top: 1rem; font-style: italic;"><strong>Deployment Workflow:</strong> All applications are initially built and hosted on Docker Compose for rapid development and testing. Once I'm confident in their stability, I compile them into Docker images and deploy them to the K3s cluster. Currently, the QR app is the only application running in K3s, with others still in the Docker Compose stack.</p>
                     
-                    <h4 style="margin-top: 1rem; font-size: 1rem; color: var(--text-primary);">Infrastructure Services</h4>
+                    <h4 style="margin-top: 1rem; color: var(--text-primary);">Infrastructure Services</h4>
                     <ul class="feature-list">
                         <li><strong>SQLite + Alembic</strong>: Database with automated migrations for platform data</li>
                         <li><strong>Single Sign-On</strong>: JWT-based SSO across all subdomains with HttpOnly cookies and token blacklisting</li>

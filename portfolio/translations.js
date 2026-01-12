@@ -212,7 +212,7 @@ const translations = {
         fr: "Anglais"
     },
 
-    // Skills Section
+    // Skills Section - Redesigned
     "skills.title": {
         en: "Technical Arsenal",
         pt: "Arsenal Técnico",
@@ -220,6 +220,136 @@ const translations = {
         de: "Technisches Arsenal",
         fr: "Arsenal Technique"
     },
+    // Infrastructure & Cloud
+    "skills.infrastructure.title": {
+        en: "Infrastructure & Cloud",
+        pt: "Infraestrutura & Cloud",
+        lu: "Infrastruktur & Cloud",
+        de: "Infrastruktur & Cloud",
+        fr: "Infrastructure & Cloud"
+    },
+    "skills.infrastructure.description": {
+        en: "Designing and operating containerized, scalable infrastructure across hybrid environments.",
+        pt: "Projetando e operando infraestrutura containerizada e escalável em ambientes híbridos.",
+        lu: "Designen a Betreiwen vun containeriséierter, skaléierbarer Infrastruktur iwwer hybrid Umgebungen.",
+        de: "Entwerfen und Betreiben containerisierter, skalierbarer Infrastruktur in hybriden Umgebungen.",
+        fr: "Conception et exploitation d'infrastructures containerisées et évolutives dans des environnements hybrides."
+    },
+    "skills.infrastructure.highlight.1": {
+        en: "Kubernetes orchestration (K3s)",
+        pt: "Orquestração Kubernetes (K3s)",
+        lu: "Kubernetes Orchestratioun (K3s)",
+        de: "Kubernetes-Orchestrierung (K3s)",
+        fr: "Orchestration Kubernetes (K3s)"
+    },
+    "skills.infrastructure.highlight.2": {
+        en: "Multi-cloud deployments",
+        pt: "Implantações multi-cloud",
+        lu: "Multi-Cloud Deployments",
+        de: "Multi-Cloud-Bereitstellungen",
+        fr: "Déploiements multi-cloud"
+    },
+    "skills.infrastructure.highlight.3": {
+        en: "CI/CD pipelines & automation",
+        pt: "Pipelines CI/CD & automação",
+        lu: "CI/CD Pipelines & Automatiséierung",
+        de: "CI/CD-Pipelines & Automatisierung",
+        fr: "Pipelines CI/CD & automatisation"
+    },
+    "skills.infrastructure.highlight.4": {
+        en: "Cost optimization strategies",
+        pt: "Estratégias de otimização de custos",
+        lu: "Käschte Optimiséierungs Strategien",
+        de: "Kostenoptimierungsstrategien",
+        fr: "Stratégies d'optimisation des coûts"
+    },
+    // Network Engineering
+    "skills.network.title": {
+        en: "Network Engineering",
+        pt: "Engenharia de Redes",
+        lu: "Netzwierk Ingenieurie",
+        de: "Netzwerktechnik",
+        fr: "Ingénierie Réseau"
+    },
+    "skills.network.description": {
+        en: "Building secure, resilient network architectures with modern protocols and automation.",
+        pt: "Construindo arquiteturas de rede seguras e resilientes com protocolos modernos e automação.",
+        lu: "Opbau vu sécheren, resilienten Netzwierk Architekturen mat moderne Protokollen an Automatiséierung.",
+        de: "Aufbau sicherer, widerstandsfähiger Netzwerkarchitekturen mit modernen Protokollen und Automatisierung.",
+        fr: "Construction d'architectures réseau sécurisées et résilientes avec des protocoles modernes et l'automatisation."
+    },
+    "skills.network.highlight.1": {
+        en: "VPN & secure tunneling",
+        pt: "VPN & túneis seguros",
+        lu: "VPN & sécheren Tunneling",
+        de: "VPN & sicheres Tunneling",
+        fr: "VPN & tunneling sécurisé"
+    },
+    "skills.network.highlight.2": {
+        en: "Reverse proxy & TLS automation",
+        pt: "Proxy reverso & automação TLS",
+        lu: "Reverse Proxy & TLS Automatiséierung",
+        de: "Reverse Proxy & TLS-Automatisierung",
+        fr: "Proxy inverse & automatisation TLS"
+    },
+    "skills.network.highlight.3": {
+        en: "DNS & traffic management",
+        pt: "DNS & gestão de tráfego",
+        lu: "DNS & Trafic Gestioun",
+        de: "DNS & Traffic-Management",
+        fr: "DNS & gestion du trafic"
+    },
+    "skills.network.highlight.4": {
+        en: "Network security & monitoring",
+        pt: "Segurança de rede & monitorização",
+        lu: "Netzwierk Sécherheet & Iwwerwaachung",
+        de: "Netzwerksicherheit & Überwachung",
+        fr: "Sécurité réseau & surveillance"
+    },
+    // Full-Stack Development
+    "skills.development.title": {
+        en: "Full-Stack Development",
+        pt: "Desenvolvimento Full-Stack",
+        lu: "Full-Stack Entwécklung",
+        de: "Full-Stack-Entwicklung",
+        fr: "Développement Full-Stack"
+    },
+    "skills.development.description": {
+        en: "Building end-to-end applications with modern frameworks, secure authentication, and optimized databases.",
+        pt: "Construindo aplicações de ponta a ponta com frameworks modernos, autenticação segura e bases de dados otimizadas.",
+        lu: "Opbau vun End-to-End Uwendungen mat moderne Frameworks, sécherer Authentifizéierung an optimiséierten Datenbanken.",
+        de: "Entwicklung von End-to-End-Anwendungen mit modernen Frameworks, sicherer Authentifizierung und optimierten Datenbanken.",
+        fr: "Développement d'applications de bout en bout avec des frameworks modernes, une authentification sécurisée et des bases de données optimisées."
+    },
+    "skills.development.highlight.1": {
+        en: "Python, JavaScript, Node.js",
+        pt: "Python, JavaScript, Node.js",
+        lu: "Python, JavaScript, Node.js",
+        de: "Python, JavaScript, Node.js",
+        fr: "Python, JavaScript, Node.js"
+    },
+    "skills.development.highlight.2": {
+        en: "FastAPI, Django, SvelteKit",
+        pt: "FastAPI, Django, SvelteKit",
+        lu: "FastAPI, Django, SvelteKit",
+        de: "FastAPI, Django, SvelteKit",
+        fr: "FastAPI, Django, SvelteKit"
+    },
+    "skills.development.highlight.3": {
+        en: "SQL databases & migrations",
+        pt: "Bases de dados SQL & migrações",
+        lu: "SQL Datenbanken & Migratiounen",
+        de: "SQL-Datenbanken & Migrationen",
+        fr: "Bases de données SQL & migrations"
+    },
+    "skills.development.highlight.4": {
+        en: "JWT auth & security best practices",
+        pt: "Autenticação JWT & melhores práticas de segurança",
+        lu: "JWT Auth & Sécherheets Best Practices",
+        de: "JWT-Auth & Sicherheitsbest Practices",
+        fr: "Authentification JWT & meilleures pratiques de sécurité"
+    },
+    // Legacy translations (kept for backward compatibility)
     "skills.cloud": {
         en: "Cloud & DevOps",
         pt: "Cloud & DevOps",
@@ -2649,11 +2779,11 @@ const translations = {
 
     // Certifications Page
     "certifications.subtitle": {
-        en: "Industry-recognized certifications and training sessions demonstrating expertise in cloud computing, productivity tools, and technical skills. Certifications sorted by level — highest rank first. Trainings shown separately.",
-        pt: "Certificações reconhecidas pela indústria demonstrando expertise em computação em nuvem, ferramentas de produtividade e habilidades técnicas. Ordenadas por nível de certificação — maior classificação primeiro.",
-        lu: "Industrie-unerkannte Zertifikater déi Expertise an Cloud Computing, Produktivitéitstools an technesche Fäegkeeten weisen. Sortéiert no Zertifikatsniveau — héchste Rang als éischt.",
-        de: "Branchenweit anerkannte Zertifizierungen, die Expertise in Cloud Computing, Produktivitätstools und technischen Fähigkeiten nachweisen. Sortiert nach Zertifizierungsstufe — höchster Rang zuerst.",
-        fr: "Certifications reconnues par l'industrie démontrant une expertise en cloud computing, outils de productivité et compétences techniques. Triées par niveau de certification — rang le plus élevé en premier."
+        en: "Industry-recognized certifications and training sessions in cloud computing, infrastructure, and technical skills. Certifications sorted by level (highest first), trainings by date (newest first).",
+        pt: "Certificações reconhecidas pela indústria e sessões de formação em computação em nuvem, infraestrutura e habilidades técnicas. Certificações ordenadas por nível (maior primeiro), formações por data (mais recente primeiro).",
+        lu: "Industrie-unerkannte Zertifikater a Formatiounssessiounen a Cloud Computing, Infrastruktur an technesche Fäegkeeten. Zertifikater sortéiert no Niveau (héchste als éischt), Formatiounen no Datum (rezentste als éischt).",
+        de: "Branchenweit anerkannte Zertifizierungen und Schulungssitzungen in Cloud Computing, Infrastruktur und technischen Fähigkeiten. Zertifizierungen nach Stufe sortiert (höchste zuerst), Schulungen nach Datum (neueste zuerst).",
+        fr: "Certifications reconnues par l'industrie et sessions de formation en cloud computing, infrastructure et compétences techniques. Certifications triées par niveau (plus élevé en premier), formations par date (plus récentes en premier)."
     },
 
     // Certifications
@@ -2770,6 +2900,34 @@ const translations = {
         lu: "Produktivtéit",
         de: "Produktivität",
         fr: "Productivité"
+    },
+    "certifications.filter.categories": {
+        en: "Filter",
+        pt: "Filtrar",
+        lu: "Filter",
+        de: "Filter",
+        fr: "Filtrer"
+    },
+    "certifications.filter.modal.title": {
+        en: "Filter by Category",
+        pt: "Filtrar por Categoria",
+        lu: "Filter no Kategorie",
+        de: "Nach Kategorie filtern",
+        fr: "Filtrer par Catégorie"
+    },
+    "certifications.filter.modal.apply": {
+        en: "Apply",
+        pt: "Aplicar",
+        lu: "Uwennen",
+        de: "Anwenden",
+        fr: "Appliquer"
+    },
+    "certifications.filter.modal.cancel": {
+        en: "Cancel",
+        pt: "Cancelar",
+        lu: "Ofbriechen",
+        de: "Abbrechen",
+        fr: "Annuler"
     },
     "certifications.type.training": {
         en: "Training",
@@ -3065,6 +3223,55 @@ const translations = {
         lu: "Green IT",
         de: "Green IT",
         fr: "IT Verte"
+    },
+    "formation.luxconnect.name": {
+        en: "LuxConnect Data Center Visit",
+        pt: "Visita ao Data Center LuxConnect",
+        lu: "LuxConnect Data Center Visite",
+        de: "LuxConnect Rechenzentrum Besuch",
+        fr: "Visite du Centre de Données LuxConnect"
+    },
+    "formation.luxconnect.description": {
+        en: "Visited the Tier IV LuxConnect data center in Bettembourg with my Cloud Computing class (both 1st and 2nd year students), organized by the 2nd year students through LGK. What stood out most was the incredible level of organization—everything is color-coded and labeled, from power lines to cooling systems. The redundancy is impressive: dual power paths, UPS systems, generators that kick in within seconds, and the facility can run autonomously for days. Efficiency metrics are excellent (PUE ~1.5, WUE ~0.2), and they even reuse waste heat. It's no surprise they've maintained zero SLA downtime since 2009 with this level of structure and redundancy.",
+        pt: "Visitei o data center Tier IV da LuxConnect em Bettembourg com a minha turma de Cloud Computing (alunos do 1º e 2º ano), organizado pelos alunos do 2º ano através do LGK. O que mais me impressionou foi o nível incrível de organização—tudo é codificado por cores e etiquetado, desde linhas de energia até sistemas de refrigeração. A redundância é impressionante: caminhos de energia duplos, sistemas UPS, geradores que entram em ação em segundos, e a instalação pode funcionar autonomamente por dias. As métricas de eficiência são excelentes (PUE ~1.5, WUE ~0.2), e eles até reutilizam o calor residual. Não é surpresa que mantiveram zero tempo de inatividade de SLA desde 2009 com este nível de estrutura e redundância.",
+        lu: "Besicht de Tier IV LuxConnect Data Center zu Bettembourg mat menger Cloud Computing Klass (sowuel 1. wéi och 2. Joer Studenten), organiséiert vun de Studenten vum 2. Joer duerch LGK. Wat mech am meeschte beandrockt huet war de ongläichleche Niveau vun Organisatioun—alles ass faarweg-kodéiert a markéiert, vun Kraaftleitungen bis Killungssystemer. D'Redundanz ass beeindruckend: duebel Kraaftweeër, UPS Systemer, Generatoren déi a Sekonnen ufänken, a d'Installatioun kann autonom fir Deeg lafen. Effizienzmetriken si exzellent (PUE ~1.5, WUE ~0.2), a si benotzen sougu Ofwäermt. Et ass keng Iwwerraschung datt si zéro SLA Downtime zanter 2009 mat dësem Niveau vun Struktur a Redundanz behalen hunn.",
+        de: "Besuchte das Tier IV LuxConnect Rechenzentrum in Bettembourg mit meiner Cloud Computing Klasse (sowohl 1. als auch 2. Jahr Studenten), organisiert von den Studenten des 2. Jahres durch LGK. Was am meisten auffiel, war das unglaubliche Maß an Organisation—alles ist farbcodiert und beschriftet, von Stromleitungen bis zu Kühlsystemen. Die Redundanz ist beeindruckend: doppelte Strompfade, UPS-Systeme, Generatoren, die innerhalb von Sekunden anspringen, und die Anlage kann tagelang autonom laufen. Die Effizienzmetriken sind ausgezeichnet (PUE ~1.5, WUE ~0.2), und sie nutzen sogar Abwärme wieder. Kein Wunder, dass sie seit 2009 null SLA-Ausfallzeiten mit diesem Maß an Struktur und Redundanz aufrechterhalten haben.",
+        fr: "Visité le centre de données Tier IV LuxConnect à Bettembourg avec ma classe de Cloud Computing (étudiants de 1ère et 2ème année), organisé par les étudiants de 2ème année via LGK. Ce qui m'a le plus frappé, c'est le niveau incroyable d'organisation—tout est codé par couleurs et étiqueté, des lignes électriques aux systèmes de refroidissement. La redondance est impressionnante : chemins d'alimentation doubles, systèmes UPS, générateurs qui démarrent en quelques secondes, et l'installation peut fonctionner de manière autonome pendant des jours. Les métriques d'efficacité sont excellentes (PUE ~1.5, WUE ~0.2), et ils réutilisent même la chaleur résiduelle. Ce n'est pas surprenant qu'ils aient maintenu zéro temps d'arrêt SLA depuis 2009 avec ce niveau de structure et de redondance."
+    },
+    "formation.luxconnect.skills.tier4": {
+        en: "Tier IV Data Center",
+        pt: "Data Center Tier IV",
+        lu: "Tier IV Data Center",
+        de: "Tier IV Rechenzentrum",
+        fr: "Centre de Données Tier IV"
+    },
+    "formation.luxconnect.skills.redundancy": {
+        en: "Infrastructure Redundancy",
+        pt: "Redundância de Infraestrutura",
+        lu: "Infrastruktur Redundanz",
+        de: "Infrastruktur-Redundanz",
+        fr: "Redondance d'Infrastructure"
+    },
+    "formation.luxconnect.skills.power": {
+        en: "Power Systems",
+        pt: "Sistemas de Energia",
+        lu: "Kraaftsystemer",
+        de: "Stromversorgungssysteme",
+        fr: "Systèmes d'Alimentation"
+    },
+    "formation.luxconnect.skills.cooling": {
+        en: "Cooling Efficiency",
+        pt: "Eficiência de Refrigeração",
+        lu: "Killungs Effizienz",
+        de: "Kühleffizienz",
+        fr: "Efficacité du Refroidissement"
+    },
+    "formation.luxconnect.skills.operations": {
+        en: "Data Center Operations",
+        pt: "Operações de Data Center",
+        lu: "Data Center Operatiounen",
+        de: "Rechenzentrum Betrieb",
+        fr: "Opérations de Centre de Données"
     },
 
     // Project Names (for modal display)

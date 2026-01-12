@@ -43,6 +43,10 @@
     <!-- Flags - Load locally -->
     <link rel="stylesheet" href="portfolio/assets/css/flag-icons.min.css">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="portfolio/assets/img/logos/vidguicode-favicon.svg">
+    <link rel="apple-touch-icon" href="portfolio/assets/img/logos/vidguicode-favicon.svg">
+    
     <!-- Styles -->
     <link rel="stylesheet" href="portfolio/styles.css">
     
@@ -81,7 +85,10 @@
     <div class="grid-background"></div>
     
     <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <a href="#home" class="nav-brand">VIDGUICODE</a>
+        <a href="#home" class="nav-brand">
+            <img src="portfolio/assets/img/logos/vidguicode-favicon.svg" alt="VidGuiCode" class="nav-brand-logo">
+            <span>VIDGUICODE</span>
+        </a>
         <div class="nav-links">
             <a href="#about" data-i18n="nav.about">About</a>
             <a href="#skills" data-i18n="nav.skills">Skills</a>
@@ -192,78 +199,45 @@
                 <div class="line"></div>
             </div>
             
-            <div class="card skill-category">
+            <div class="card skill-capability">
                 <div class="skill-header">
-                    <i data-lucide="cloud"></i>
-                    <h3 data-i18n="skills.cloud">Cloud & DevOps</h3>
+                    <i data-lucide="server-cog"></i>
+                    <h3 data-i18n="skills.infrastructure.title">Infrastructure & Cloud</h3>
                 </div>
-                <ul class="skill-list">
-                    <li data-i18n="skills.cloud.1">Docker / Docker Compose</li>
-                    <li data-i18n="skills.cloud.2">Kubernetes (K3s cluster)</li>
-                    <li data-i18n="skills.cloud.3">Traefik (Ingress & Load Balancing)</li>
-                    <li data-i18n="skills.cloud.4">Portainer (Container Management)</li>
-                    <li data-i18n="skills.cloud.5">Git / GitHub</li>
-                    <li data-i18n="skills.cloud.6">Cloud Platforms (Oracle Cloud, Hetzner Cloud)</li>
-                    <li data-i18n="skills.cloud.7">Web Hosting (IONOS, Hetzner)</li>
-                    <li data-i18n="skills.cloud.8">Infrastructure management & cost optimization</li>
+                <p class="skill-description" data-i18n="skills.infrastructure.description">Designing and operating containerized, scalable infrastructure across hybrid environments.</p>
+                <ul class="skill-highlights">
+                    <li data-i18n="skills.infrastructure.highlight.1">Kubernetes orchestration (K3s)</li>
+                    <li data-i18n="skills.infrastructure.highlight.2">Multi-cloud deployments</li>
+                    <li data-i18n="skills.infrastructure.highlight.3">CI/CD pipelines & automation</li>
+                    <li data-i18n="skills.infrastructure.highlight.4">Cost optimization strategies</li>
                 </ul>
             </div>
 
-            <div class="card skill-category">
+            <div class="card skill-capability">
                 <div class="skill-header">
                     <i data-lucide="network"></i>
-                    <h3 data-i18n="skills.networking">Networking</h3>
+                    <h3 data-i18n="skills.network.title">Network Engineering</h3>
                 </div>
-                <ul class="skill-list">
-                    <li data-i18n="skills.networking.1">CCNA fundamentals</li>
-                    <li data-i18n="skills.networking.2">WireGuard (VPN & tunneling)</li>
-                    <li data-i18n="skills.networking.3">Caddy (reverse proxy & TLS automation)</li>
-                    <li data-i18n="skills.networking.4">DNS management (Cloudflare)</li>
-                    <li data-i18n="skills.networking.5">Network security & monitoring</li>
+                <p class="skill-description" data-i18n="skills.network.description">Building secure, resilient network architectures with modern protocols and automation.</p>
+                <ul class="skill-highlights">
+                    <li data-i18n="skills.network.highlight.1">VPN & secure tunneling</li>
+                    <li data-i18n="skills.network.highlight.2">Reverse proxy & TLS automation</li>
+                    <li data-i18n="skills.network.highlight.3">DNS & traffic management</li>
+                    <li data-i18n="skills.network.highlight.4">Network security & monitoring</li>
                 </ul>
             </div>
 
-            <div class="card skill-category">
+            <div class="card skill-capability">
                 <div class="skill-header">
                     <i data-lucide="code-2"></i>
-                    <h3 data-i18n="skills.programming">Programming & Frameworks</h3>
+                    <h3 data-i18n="skills.development.title">Full-Stack Development</h3>
                 </div>
-                <ul class="skill-list">
-                    <li data-i18n="skills.programming.1">Python / FastAPI</li>
-                    <li data-i18n="skills.programming.2">JavaScript / Node.js</li>
-                    <li data-i18n="skills.programming.3">Django (Python Framework)</li>
-                    <li data-i18n="skills.programming.4">SvelteKit (Frontend Framework)</li>
-                    <li data-i18n="skills.programming.5">PHP</li>
-                    <li data-i18n="skills.programming.6">HTML / CSS</li>
-                    <li data-i18n="skills.programming.7">PowerShell / Bash</li>
-                </ul>
-            </div>
-
-            <div class="card skill-category">
-                <div class="skill-header">
-                    <i data-lucide="database"></i>
-                    <h3 data-i18n="skills.database">Database & Security</h3>
-                </div>
-                <ul class="skill-list">
-                    <li data-i18n="skills.database.1">SQL (MySQL, PostgreSQL, SQLite)</li>
-                    <li data-i18n="skills.database.2">Alembic (Database Migrations)</li>
-                    <li data-i18n="skills.database.3">JWT Authentication</li>
-                    <li data-i18n="skills.database.4">Argon2 (Password Hashing)</li>
-                    <li data-i18n="skills.database.5">Database design (MCD/MLD)</li>
-                </ul>
-            </div>
-
-            <div class="card skill-category">
-                <div class="skill-header">
-                    <i data-lucide="wrench"></i>
-                    <h3 data-i18n="skills.systems">Systems & Tools</h3>
-                </div>
-                <ul class="skill-list">
-                    <li data-i18n="skills.systems.1">Windows Server</li>
-                    <li data-i18n="skills.systems.2">Linux Server</li>
-                    <li data-i18n="skills.systems.3">Hardware Diagnostics</li>
-                    <li data-i18n="skills.systems.4">IoT Integration (ESP8266, Raspberry Pi)</li>
-                    <li data-i18n="skills.systems.5">Playwright (Browser Automation)</li>
+                <p class="skill-description" data-i18n="skills.development.description">Building end-to-end applications with modern frameworks, secure authentication, and optimized databases.</p>
+                <ul class="skill-highlights">
+                    <li data-i18n="skills.development.highlight.1">Python, JavaScript, Node.js</li>
+                    <li data-i18n="skills.development.highlight.2">FastAPI, Django, SvelteKit</li>
+                    <li data-i18n="skills.development.highlight.3">SQL databases & migrations</li>
+                    <li data-i18n="skills.development.highlight.4">JWT auth & security best practices</li>
                 </ul>
             </div>
         </section>
@@ -299,7 +273,7 @@
                 <div class="project-icon">
                     <i data-lucide="sprout"></i>
                 </div>
-                <h3><span data-i18n="projects.plant.title">Smart Plant Monitoring (PIF)</span> <span style="font-size: 0.7rem; background: #22c55e; color: #fff; padding: 2px 8px; border-radius: 4px; margin-left: 0.5rem; vertical-align: middle;">59/60</span></h3>
+                <h3><span data-i18n="projects.plant.title">Smart Plant Monitoring (PIF)</span> <span class="score-badge">59/60</span></h3>
                 <p class="project-desc" data-i18n="projects.plant.desc">Final project: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.</p>
                 <div class="tags">
                     <span>IoT</span>
@@ -423,6 +397,9 @@
         </section>
 
         <footer>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                <img src="portfolio/assets/img/logos/vidguicode-favicon.svg" alt="VidGuiCode Logo" class="footer-logo">
+            </div>
             <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
         </footer>
 

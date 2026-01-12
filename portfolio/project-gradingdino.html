@@ -16,19 +16,17 @@
     
     <!-- Flags - Load locally -->
     <link rel="stylesheet" href="assets/css/flag-icons.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logos/vidguicode-favicon.svg">
+    <link rel="apple-touch-icon" href="assets/img/logos/vidguicode-favicon.svg">
 
     <link rel="stylesheet" href="styles.css">
     <script src="translations.js"></script>
     <script src="certifications-data.js"></script>
     <script src="certifications-techstack.js"></script>
     <style>
-        /* Project Page Specific Styles */
-        .project-title-group h1 {
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
+        /* Typography uses centralized scale - see styles.css */
         .mvp-badge {
             display: inline-flex;
             align-items: center;
@@ -38,7 +36,6 @@
             padding: 0.5rem 1rem;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
             margin-left: 1rem;
         }
 
@@ -48,7 +45,10 @@
     <div class="grid-background"></div>
     
     <nav class="navbar">
-        <a href="../index.html#home" class="nav-brand">VIDGUICODE</a>
+        <a href="../index.html#home" class="nav-brand">
+            <img src="assets/img/logos/vidguicode-favicon.svg" alt="VidGuiCode" class="nav-brand-logo">
+            <span>VIDGUICODE</span>
+        </a>
         <div class="nav-links">
         </div>
         <div class="nav-controls">
@@ -110,18 +110,18 @@
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.gradingdino.cards.docker.title">Containerized</h3>
-                                        <div style="font-family: monospace; color: #0db7ed; margin-bottom: 0.75rem;" data-i18n="project.gradingdino.cards.docker.spec">Docker & Docker Compose</div>
+                                        <div class="node-spec" style="color: #0db7ed; margin-bottom: 0.75rem;" data-i18n="project.gradingdino.cards.docker.spec">Docker & Docker Compose</div>
                                     </div>
-                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #888;">
+                                    <div class="node-detail" style="text-align: right; color: #888;">
                                         <div data-i18n="project.gradingdino.cards.docker.detail1">One Command</div>
                                         <div style="font-weight: 600; color: #0db7ed;" data-i18n="project.gradingdino.cards.docker.detail2">docker compose up</div>
                                     </div>
                                 </div>
-                                <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.gradingdino.cards.docker.body">
+                                <p class="node-card p" style="color: #888; margin: 0;" data-i18n="project.gradingdino.cards.docker.body">
                                     Everything runs in containers. PostgreSQL + Django orchestrated with health checks, auto-migrations, persistent volumes, and live code reloading for development.
                                 </p>
                             </div>
-                            <div style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; font-size: 0.75rem; color: #555; font-family: monospace;">
+                            <div class="node-tags" style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; color: #555;">
                                 <span data-i18n="project.gradingdino.cards.docker.tag.compose">[COMPOSE]</span> <span data-i18n="project.gradingdino.cards.docker.tag.volumes">[VOLUMES]</span> <span data-i18n="project.gradingdino.cards.docker.tag.health">[HEALTH-CHECKS]</span>
                             </div>
                         </div>
@@ -134,18 +134,18 @@
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.gradingdino.cards.django.title">Backend</h3>
-                                        <div style="font-family: monospace; color: #44b78b; margin-bottom: 0.75rem;" data-i18n="project.gradingdino.cards.django.spec">Django 5.0 / Python 3.11-slim</div>
+                                        <div class="node-spec" style="color: #44b78b; margin-bottom: 0.75rem;" data-i18n="project.gradingdino.cards.django.spec">Django 5.0 / Python 3.11-slim</div>
                                     </div>
-                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #888;">
+                                    <div class="node-detail" style="text-align: right; color: #888;">
                                         <div data-i18n="project.gradingdino.cards.django.detail1">Server-Side</div>
                                         <div style="font-weight: 600; color: #44b78b;" data-i18n="project.gradingdino.cards.django.detail2">Batteries Included</div>
                                     </div>
                                 </div>
-                                <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.gradingdino.cards.django.body">
+                                <p class="node-card p" style="color: #888; margin: 0;" data-i18n="project.gradingdino.cards.django.body">
                                     Django's "batteries included" philosophy gave us built-in admin panel, authentication, forms, and ORM. Custom Dockerfile with layer optimization for fast rebuilds.
                                 </p>
                             </div>
-                            <div style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; font-size: 0.75rem; color: #555; font-family: monospace;">
+                            <div class="node-tags" style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; color: #555;">
                                 <span data-i18n="project.gradingdino.cards.django.tag.orm">[DJANGO-ORM]</span> <span data-i18n="project.gradingdino.cards.django.tag.admin">[ADMIN-PANEL]</span> <span data-i18n="project.gradingdino.cards.django.tag.csrf">[CSRF]</span>
                             </div>
                         </div>
@@ -158,18 +158,18 @@
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.gradingdino.cards.postgres.title">Database</h3>
-                                        <div style="font-family: monospace; color: #60a5fa; margin-bottom: 0.75rem;" data-i18n="project.gradingdino.cards.postgres.spec">PostgreSQL 16</div>
+                                        <div class="node-spec" style="color: #60a5fa; margin-bottom: 0.75rem;" data-i18n="project.gradingdino.cards.postgres.spec">PostgreSQL 16</div>
                                     </div>
-                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #94a3b8;">
+                                    <div class="node-detail" style="text-align: right; color: #94a3b8;">
                                         <div data-i18n="project.gradingdino.cards.postgres.detail1">Relational</div>
                                         <div style="font-weight: 600; color: #60a5fa;" data-i18n="project.gradingdino.cards.postgres.detail2">ACID Compliant</div>
                                     </div>
                                 </div>
-                                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.gradingdino.cards.postgres.body">
+                                <p class="node-card p" style="color: #94a3b8; margin: 0;" data-i18n="project.gradingdino.cards.postgres.body">
                                     Docker-native integration, concurrent write support for multiple professors grading simultaneously, and production-ready deployment path.
                                 </p>
                             </div>
-                            <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; font-size: 0.75rem; color: #64748b; font-family: monospace;">
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; color: #64748b;">
                                 <span data-i18n="project.gradingdino.cards.postgres.tag.docker">[DOCKER]</span> <span data-i18n="project.gradingdino.cards.postgres.tag.concurrent">[CONCURRENT]</span> <span data-i18n="project.gradingdino.cards.postgres.tag.prod">[PRODUCTION-READY]</span>
                             </div>
                         </div>
@@ -182,17 +182,17 @@
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.gradingdino.cards.security.title">Security</h3>
-                                        <div style="font-family: monospace; color: #c084fc; margin-bottom: 0.75rem;" data-i18n="project.gradingdino.cards.security.spec">Argon2 Password Hashing</div>
+                                        <div class="node-spec" style="color: #c084fc; margin-bottom: 0.75rem;" data-i18n="project.gradingdino.cards.security.spec">Argon2 Password Hashing</div>
                                     </div>
                                     <div style="text-align: right;">
-                                        <div style="margin-top: 0.5rem; font-size: 0.7rem; background: rgba(255,255,255,0.2); color: #fff; padding: 2px 8px; border-radius: 10px; display: inline-block;" data-i18n="project.gradingdino.cards.security.badge">Made in Luxembourg 🇱🇺</div>
+                                        <div class="score-badge" style="margin-top: 0.5rem; background: rgba(255,255,255,0.2); color: #fff; padding: 2px 8px; border-radius: 10px; display: inline-block;" data-i18n="project.gradingdino.cards.security.badge">Made in Luxembourg 🇱🇺</div>
                                     </div>
                                 </div>
-                                <p style="color: #e9d5ff; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.gradingdino.cards.security.body" data-i18n-html="true">
+                                <p class="node-card p" style="color: #e9d5ff; margin: 0;" data-i18n="project.gradingdino.cards.security.body" data-i18n-html="true">
                                     Winner of the Password Hashing Competition (2015), developed at the <strong>University of Luxembourg</strong>. Memory-hard algorithm resistant to GPU/ASIC attacks. A proud local tech choice!
                                 </p>
                             </div>
-                            <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #7c3aed; display: flex; gap: 1rem; font-size: 0.75rem; color: #a78bfa; font-family: monospace;">
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #7c3aed; display: flex; gap: 1rem; color: #a78bfa;">
                                 <span data-i18n="project.gradingdino.cards.security.tag.argon2">[ARGON2]</span> <span data-i18n="project.gradingdino.cards.security.tag.csrf">[CSRF-PROTECTION]</span> <span data-i18n="project.gradingdino.cards.security.tag.session">[SESSION-AUTH]</span>
                             </div>
                         </div>
@@ -276,7 +276,7 @@
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.certifications">Certifications Used</h3>
                     <div class="line"></div>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0.75rem;" data-i18n="project.sidebar.certificationsDesc">These certifications helped enhance this project:</p>
+                    <p class="sidebar-description" style="margin-top: 0.5rem; margin-bottom: 0.75rem;" data-i18n="project.sidebar.certificationsDesc">These certifications helped enhance this project:</p>
                     <div class="project-certifications" data-project="gradingdino">
                         <div class="cert-badge-placeholder">badge-Microsoft-PowerPoint-Associate</div>
                         <div class="cert-badge-placeholder">badge-Microsoft-Word-Associate</div>

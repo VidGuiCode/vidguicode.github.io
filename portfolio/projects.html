@@ -24,6 +24,10 @@
     
     <!-- Flags - Load locally -->
     <link rel="stylesheet" href="assets/css/flag-icons.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logos/vidguicode-favicon.svg">
+    <link rel="apple-touch-icon" href="assets/img/logos/vidguicode-favicon.svg">
 
     <link rel="stylesheet" href="styles.css">
     <script src="translations.js"></script>
@@ -37,18 +41,7 @@
             text-align: center;
         }
 
-        .projects-hero h1 {
-            font-size: 2.5rem;
-            line-height: 1.1;
-            margin-bottom: 0.75rem;
-        }
-
-        .projects-hero .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
+        /* Typography uses centralized scale - see styles.css */
 
         /* Stats Row - Card Style */
         .stats-row {
@@ -80,16 +73,7 @@
             margin-bottom: 0.75rem;
         }
 
-        .stat-box h3 {
-            font-size: 2rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .stat-box p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin: 0;
-        }
+        /* Typography uses centralized scale - see styles.css */
 
         /* Filter Controls - Two Buttons */
         .filter-controls {
@@ -107,7 +91,7 @@
             cursor: pointer;
             border-radius: 0;
             transition: all 0.2s;
-            font-size: 0.9rem;
+            /* Typography uses centralized scale - see styles.css */
             font-weight: 500;
             display: flex;
             align-items: center;
@@ -198,7 +182,7 @@
             flex: 1;
             cursor: pointer;
             color: var(--text-primary);
-            font-size: 0.9rem;
+            /* Typography uses centralized scale - see styles.css */
         }
         
         .filter-apply-btn {
@@ -286,26 +270,11 @@
             min-width: 0;
         }
 
-        .project-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .project-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            align-items: center;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
+        /* Typography uses centralized scale - see styles.css */
         .project-category {
             padding: 0.2rem 0.5rem;
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            font-size: 0.75rem;
             white-space: nowrap; /* Prevent text from breaking inside badge */
             display: inline-block; /* Ensure badges don't break mid-word */
         }
@@ -344,7 +313,6 @@
                 padding: 0.2rem 0.5rem;
                 background: var(--bg-secondary);
                 border: 1px solid var(--border-color);
-                font-size: 0.75rem;
                 color: var(--text-secondary);
             }
         }
@@ -353,7 +321,6 @@
         .project-status-badge {
             padding: 0.2rem 0.5rem;
             border: 1px solid;
-            font-size: 0.75rem;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
@@ -496,7 +463,6 @@
             }
 
             .modal-header h2 {
-                font-size: 1.4rem;
                 line-height: 1.3;
                 margin-bottom: 0.5rem;
             }
@@ -507,12 +473,10 @@
             }
             
             #modal-project-category .project-category {
-                font-size: 0.7rem;
                 padding: 0.35rem 0.65rem;
             }
 
             .modal-description {
-                font-size: 1rem;
                 line-height: 1.7;
                 margin-bottom: 1.5rem;
                 color: var(--text-primary);
@@ -524,7 +488,6 @@
             }
 
             .skill-tag {
-                font-size: 0.85rem;
                 padding: 0.4rem 0.7rem;
                 border-radius: 0;
             }
@@ -559,15 +522,9 @@
             padding-right: 2rem;
         }
 
-        .modal-header h2 {
-            margin-bottom: 0.75rem;
-            font-size: 1.5rem;
-        }
-
+        /* Typography uses centralized scale - see styles.css */
         .modal-description {
-            color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 1.5rem;
         }
 
         .modal-skills {
@@ -581,7 +538,6 @@
             padding: 0.35rem 0.75rem;
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            font-size: 0.85rem;
         }
 
         .back-link {
@@ -604,10 +560,7 @@
                 padding: 2rem 0 1rem;
             }
             
-            .projects-hero h1 {
-                font-size: 2rem;
-            }
-
+            /* Typography uses centralized scale - see styles.css */
             .stats-row {
                 gap: 1rem;
             }
@@ -617,10 +570,6 @@
                 padding: 1rem;
             }
 
-            .stat-box h3 {
-                font-size: 1.5rem;
-            }
-
             .filter-controls {
                 gap: 0.75rem;
                 margin: 1.5rem 0;
@@ -628,18 +577,13 @@
 
             .filter-button {
                 padding: 0.6rem 1.2rem;
-                font-size: 0.85rem;
                 border-radius: 0;
             }
         }
 
         @media (max-width: 768px) {
-            .projects-hero h1 {
-                font-size: 1.75rem;
-            }
-
+            /* Typography uses centralized scale - see styles.css */
             .projects-hero .subtitle {
-                font-size: 1rem;
                 padding: 0 1rem;
             }
 
@@ -705,7 +649,10 @@
     <div class="grid-background"></div>
     
     <nav class="navbar">
-        <a href="../index.html#home" class="nav-brand">VIDGUICODE</a>
+        <a href="../index.html#home" class="nav-brand">
+            <img src="assets/img/logos/vidguicode-favicon.svg" alt="VidGuiCode" class="nav-brand-logo">
+            <span>VIDGUICODE</span>
+        </a>
         <div class="nav-links">
         </div>
         <div class="nav-controls">
@@ -1117,7 +1064,7 @@
                 </div>
                 
                 <div class="project-info">
-                    <div class="project-name">${projectName}${project.score ? ` <span style="font-size: 0.7rem; background: #22c55e; color: #fff; padding: 2px 8px; border-radius: 0; margin-left: 0.5rem; vertical-align: middle;">${project.score}</span>` : ''}</div>
+                    <div class="project-name">${projectName}${project.score ? ` <span class="score-badge" style="background: #22c55e; color: #fff; padding: 2px 8px; border-radius: 0; margin-left: 0.5rem; vertical-align: middle; display: inline-block;">${project.score}</span>` : ''}</div>
                     <div class="project-meta">
                         <div class="project-meta-categories">
                             ${categoryHTML}
@@ -1245,7 +1192,8 @@
                 if (projectsInCategory.length > 0) {
                     const count = document.createElement('span');
                     count.className = 'category-count';
-                    count.style.cssText = 'color: var(--text-secondary); font-size: 0.8rem; margin-left: auto;';
+                    count.className = 'category-count';
+                    count.style.cssText = 'margin-left: auto;';
                     count.textContent = `(${projectsInCategory.length})`;
                     label.appendChild(count);
                 }

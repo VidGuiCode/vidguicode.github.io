@@ -16,19 +16,17 @@
     
     <!-- Flags - Load locally -->
     <link rel="stylesheet" href="assets/css/flag-icons.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logos/vidguicode-favicon.svg">
+    <link rel="apple-touch-icon" href="assets/img/logos/vidguicode-favicon.svg">
 
     <link rel="stylesheet" href="styles.css">
     <script src="translations.js"></script>
     <script src="certifications-data.js"></script>
     <script src="certifications-techstack.js"></script>
     <style>
-        /* Project Page Specific Styles */
-        .project-title-group h1 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
+        /* Typography uses centralized scale - see styles.css */
         .score-badge {
             display: inline-flex;
             align-items: center;
@@ -38,14 +36,12 @@
             padding: 0.5rem 1rem;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 1.1rem;
             margin-left: 1rem;
         }
 
         /* Mobile: Category filter button */
         @media (max-width: 768px) {
             .category-filter-button {
-                font-size: 0.9rem !important;
                 padding: 0.65rem !important;
             }
         }
@@ -167,10 +163,9 @@
             transform: scale(1.02);
         }
         
+        /* Typography uses centralized scale - see styles.css */
         .hardware-image-caption {
-            font-size: 0.75rem;
             color: rgba(255, 255, 255, 0.5);
-            line-height: 1.5;
             font-style: italic;
             text-align: left;
             flex: 1;
@@ -221,9 +216,9 @@
         }
 
 
+        /* Typography uses centralized scale - see styles.css */
         .project-image-caption {
             margin-top: 0.75rem;
-            font-size: 0.8rem;
             color: var(--text-secondary);
             font-style: italic;
             line-height: 1.4;
@@ -278,10 +273,7 @@
                 padding: 1rem !important;
             }
 
-            .node-card h3 {
-                font-size: 1.25rem !important;
-            }
-
+            /* Typography uses centralized scale - see styles.css */
             .node-card > div:first-of-type > div:first-of-type {
                 flex-direction: column !important;
                 gap: 0.5rem !important;
@@ -293,7 +285,6 @@
             }
 
             .node-card p {
-                font-size: 0.85rem !important;
                 margin-top: 0.75rem !important;
             }
 
@@ -310,7 +301,6 @@
             /* Tag sections */
             .node-card > div:nth-of-type(2) {
                 padding: 0.5rem 1rem !important;
-                font-size: 0.7rem !important;
                 flex-wrap: wrap;
             }
 
@@ -344,9 +334,9 @@
             margin-right: 0.5rem;
         }
 
+        /* Typography uses centralized scale - see styles.css */
         .project-cert-name {
             font-weight: 500;
-            font-size: 0.8rem;
             color: var(--text-primary);
             white-space: nowrap;
         }
@@ -356,10 +346,6 @@
                 width: 28px;
                 height: 28px;
             }
-
-            .project-cert-name {
-                font-size: 0.75rem;
-            }
         }
     </style>
 </head>
@@ -367,7 +353,10 @@
     <div class="grid-background"></div>
     
     <nav class="navbar">
-        <a href="../index.html#home" class="nav-brand">VIDGUICODE</a>
+        <a href="../index.html#home" class="nav-brand">
+            <img src="assets/img/logos/vidguicode-favicon.svg" alt="VidGuiCode" class="nav-brand-logo">
+            <span>VIDGUICODE</span>
+        </a>
         <div class="nav-links">
         </div>
         <div class="nav-controls">
@@ -427,18 +416,18 @@
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.pif.nodes.sensor.title">Sensor Node</h3>
-                                        <div style="font-family: monospace; color: #22c55e; margin-bottom: 0.75rem;" data-i18n="project.pif.nodes.sensor.spec">ESP8266 / Wemos D1 Mini</div>
+                                        <div class="node-spec" style="color: #22c55e; margin-bottom: 0.75rem;" data-i18n="project.pif.nodes.sensor.spec">ESP8266 / Wemos D1 Mini</div>
                                     </div>
-                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #888;">
+                                    <div class="node-detail" style="text-align: right; color: #888;">
                                         <div data-i18n="project.pif.nodes.sensor.detail1">Custom PCB</div>
                                         <div style="font-weight: 600; color: #22c55e;" data-i18n="project.pif.nodes.sensor.detail2">Wi-Fi + SQL</div>
                                     </div>
                                 </div>
-                                <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.pif.nodes.sensor.body">
+                                <p class="node-card p" style="color: #888; margin: 0;" data-i18n="project.pif.nodes.sensor.body">
                                     Measures soil moisture, temperature, humidity, and light. Controls water pump and grow LED. Authenticates via MAC address and syncs with the hub.
                                 </p>
                             </div>
-                            <div style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; font-size: 0.75rem; color: #555; font-family: monospace;">
+                            <div class="node-tags" style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; color: #555;">
                                 <span data-i18n="project.pif.nodes.sensor.tag.dht22">[DHT22]</span> <span data-i18n="project.pif.nodes.sensor.tag.bh1750">[BH1750]</span> <span data-i18n="project.pif.nodes.sensor.tag.sen0193">[SEN0193]</span> <span data-i18n="project.pif.nodes.sensor.tag.uln2803">[ULN2803]</span>
                             </div>
                             
@@ -460,18 +449,18 @@
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.pif.nodes.hub.title">Hub Server</h3>
-                                        <div style="font-family: monospace; color: #60a5fa; margin-bottom: 0.75rem;" data-i18n="project.pif.nodes.hub.spec">Raspberry Pi 4 / FullpageOS</div>
+                                        <div class="node-spec" style="color: #60a5fa; margin-bottom: 0.75rem;" data-i18n="project.pif.nodes.hub.spec">Raspberry Pi 4 / FullpageOS</div>
                                     </div>
-                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #94a3b8;">
+                                    <div class="node-detail" style="text-align: right; color: #94a3b8;">
                                         <div data-i18n="project.pif.nodes.hub.detail1">Touchscreen</div>
                                         <div style="font-weight: 600; color: #60a5fa;" data-i18n="project.pif.nodes.hub.detail2">LAMP Stack</div>
                                     </div>
                                 </div>
-                                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.pif.nodes.hub.body">
+                                <p class="node-card p" style="color: #94a3b8; margin: 0;" data-i18n="project.pif.nodes.hub.body">
                                     Runs Apache, PHP, MariaDB. Hosts admin dashboard, touch UI for kiosk mode, and log API. Handles task scheduling and node management.
                                 </p>
                             </div>
-                            <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; font-size: 0.75rem; color: #64748b; font-family: monospace;">
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; color: #64748b;">
                                 <span data-i18n="project.pif.nodes.hub.tag.apache">[APACHE]</span> <span data-i18n="project.pif.nodes.hub.tag.mariadb">[MARIADB]</span> <span data-i18n="project.pif.nodes.hub.tag.php">[PHP]</span> <span data-i18n="project.pif.nodes.hub.tag.ssl">[SSL]</span>
                             </div>
                             
@@ -493,18 +482,18 @@
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #111827; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.pif.nodes.backup.title">Backup Server</h3>
-                                        <div style="font-family: monospace; color: #374151; margin-bottom: 0.75rem;" data-i18n="project.pif.nodes.backup.spec">Ubuntu Server VM / RAID1</div>
+                                        <div class="node-spec" style="color: #374151; margin-bottom: 0.75rem;" data-i18n="project.pif.nodes.backup.spec">Ubuntu Server VM / RAID1</div>
                                     </div>
-                                    <div style="text-align: right; font-family: monospace; font-size: 0.8rem; color: #374151;">
+                                    <div class="node-detail" style="text-align: right; color: #374151;">
                                         <div data-i18n="project.pif.nodes.backup.detail1">2× 30GB</div>
                                         <div style="font-weight: 600;" data-i18n="project.pif.nodes.backup.detail2">Mirrored</div>
                                     </div>
                                 </div>
-                                <p style="color: #374151; font-size: 0.9rem; line-height: 1.5; margin: 0;" data-i18n="project.pif.nodes.backup.body">
+                                <p class="node-card p" style="color: #374151; margin: 0;" data-i18n="project.pif.nodes.backup.body">
                                     Receives daily backups via rsync over SSH. Stores database dumps, logs, and web content with 30-day rotation.
                                 </p>
                             </div>
-                            <div style="background: rgba(0,0,0,0.08); padding: 0.75rem 1.5rem; border-top: 1px solid #6b7280; display: flex; gap: 1rem; font-size: 0.75rem; color: #374151; font-family: monospace;">
+                            <div class="node-tags" style="background: rgba(0,0,0,0.08); padding: 0.75rem 1.5rem; border-top: 1px solid #6b7280; display: flex; gap: 1rem; color: #374151;">
                                 <span data-i18n="project.pif.nodes.backup.tag.raid1">[RAID1]</span> <span data-i18n="project.pif.nodes.backup.tag.rsync">[RSYNC]</span> <span data-i18n="project.pif.nodes.backup.tag.cron">[CRON]</span> <span data-i18n="project.pif.nodes.backup.tag.ufw">[UFW]</span>
                             </div>
                         </div>
@@ -577,14 +566,14 @@
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.techStack">Tech Stack</h3>
                     <div class="line"></div>
                     <ul class="tech-stack-list">
-                        <li data-i18n="project.pif.sidebar.tech.esp"><i data-lucide="cpu"></i> ESP8266 (Wemos D1 Mini)</li>
-                        <li data-i18n="project.pif.sidebar.tech.rpi"><i data-lucide="server"></i> Raspberry Pi 4</li>
-                        <li data-i18n="project.pif.sidebar.tech.mariadb"><i data-lucide="database"></i> MariaDB + phpMyAdmin</li>
-                        <li data-i18n="project.pif.sidebar.tech.apache"><i data-lucide="globe"></i> Apache + PHP</li>
-                        <li data-i18n="project.pif.sidebar.tech.security"><i data-lucide="shield"></i> SSL, Fail2Ban, UFW</li>
-                        <li data-i18n="project.pif.sidebar.tech.cisco"><i data-lucide="network"></i> Cisco Networking (VLANs, NAT)</li>
-                        <li data-i18n="project.pif.sidebar.tech.raid"><i data-lucide="hard-drive"></i> RAID1 Backup Server</li>
-                        <li data-i18n="project.pif.sidebar.tech.bash"><i data-lucide="terminal"></i> Bash Automation</li>
+                        <li><i data-lucide="cpu"></i> <span data-i18n="project.pif.sidebar.tech.esp">ESP8266 (Wemos D1 Mini)</span></li>
+                        <li><i data-lucide="server"></i> <span data-i18n="project.pif.sidebar.tech.rpi">Raspberry Pi 4</span></li>
+                        <li><i data-lucide="database"></i> <span data-i18n="project.pif.sidebar.tech.mariadb">MariaDB + phpMyAdmin</span></li>
+                        <li><i data-lucide="globe"></i> <span data-i18n="project.pif.sidebar.tech.apache">Apache + PHP</span></li>
+                        <li><i data-lucide="shield"></i> <span data-i18n="project.pif.sidebar.tech.security">SSL, Fail2Ban, UFW</span></li>
+                        <li><i data-lucide="network"></i> <span data-i18n="project.pif.sidebar.tech.cisco">Cisco Networking (VLANs, NAT)</span></li>
+                        <li><i data-lucide="hard-drive"></i> <span data-i18n="project.pif.sidebar.tech.raid">RAID1 Backup Server</span></li>
+                        <li><i data-lucide="terminal"></i> <span data-i18n="project.pif.sidebar.tech.bash">Bash Automation</span></li>
                     </ul>
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.sensors">Sensors & Actuators</h3>
@@ -611,7 +600,7 @@
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.certifications">Certifications Used</h3>
                     <div class="line"></div>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0.75rem;" data-i18n="project.sidebar.certificationsDesc">These certifications helped enhance this project:</p>
+                    <p class="sidebar-description" style="margin-top: 0.5rem; margin-bottom: 0.75rem;" data-i18n="project.sidebar.certificationsDesc">These certifications helped enhance this project:</p>
                     <div class="project-certifications" data-project="pif">
                         <div class="cert-badge-placeholder">badge-Microsoft-PowerPoint-Associate</div>
                         <div class="cert-badge-placeholder">badge-Microsoft-Word-Associate</div>

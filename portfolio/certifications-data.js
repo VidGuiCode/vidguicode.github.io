@@ -173,6 +173,23 @@ const FORMATIONS = [
         logoLight: null, // No light version available - will need dark version or CSS filter
         logoDark: 'assets/img/logos/arns-group-logo-white.webp', // White logo for dark backgrounds
     },
+    {
+        id: 'luxconnect-datacenter-visit',
+        name: 'LuxConnect Data Center Visit',
+        nameKey: 'formation.luxconnect.name',
+        provider: 'LuxConnect',
+        category: 'Infrastructure',
+        description: 'Visited the Tier IV LuxConnect data center in Bettembourg with my Cloud Computing class (both 1st and 2nd year students), organized by the 2nd year students through LGK. What stood out most was the incredible level of organization—everything is color-coded and labeled, from power lines to cooling systems. The redundancy is impressive: dual power paths, UPS systems, generators that kick in within seconds, and the facility can run autonomously for days. Efficiency metrics are excellent (PUE ~1.5, WUE ~0.2), and they even reuse waste heat. It\'s no surprise they\'ve maintained zero SLA downtime since 2009 with this level of structure and redundancy.',
+        descriptionKey: 'formation.luxconnect.description',
+        dateCompleted: '2026-01-31', // Last Friday (approximate date)
+        duration: '4 hours', // Duration of visit
+        format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
+        location: 'LuxConnect, Bettembourg', // Location/context
+        relatedCertifications: [], // No related certification
+        skills: ['Tier IV Data Center', 'Infrastructure Redundancy', 'Power Systems', 'Cooling Efficiency', 'Data Center Operations'],
+        skillsKeys: ['formation.luxconnect.skills.tier4', 'formation.luxconnect.skills.redundancy', 'formation.luxconnect.skills.power', 'formation.luxconnect.skills.cooling', 'formation.luxconnect.skills.operations'],
+        logo: 'assets/img/logos/luxconnect-icon.webp', // LuxConnect logo
+    },
     // Add more formations as needed
 ];
 
@@ -229,11 +246,13 @@ function getCertificationsByProvider(provider) {
 }
 
 /**
- * Get all unique categories
+ * Get all unique categories (from both certifications and formations)
  * @returns {array} Array of unique category names
  */
 function getAllCategories() {
-    return [...new Set(CERTIFICATIONS.map(cert => cert.category))];
+    const certCategories = CERTIFICATIONS.map(cert => cert.category);
+    const formCategories = FORMATIONS.map(form => form.category);
+    return [...new Set([...certCategories, ...formCategories])];
 }
 
 /**
@@ -290,6 +309,17 @@ function getFormationById(id) {
  */
 function getAllFormations() {
     return FORMATIONS;
+}
+
+/**
+ * Get all formations sorted by date (newest first)
+ * @returns {array} Array of formation objects sorted by dateCompleted (newest first)
+ */
+function getFormationsSortedByDate() {
+    return [...FORMATIONS].sort((a, b) => {
+        if (!a.dateCompleted || !b.dateCompleted) return 0;
+        return new Date(b.dateCompleted) - new Date(a.dateCompleted); // Newest first
+    });
 }
 
 /**
