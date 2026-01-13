@@ -82,7 +82,7 @@ const PROJECTS = [
         statusKey: 'projects.status.completed',
         dateCompleted: '2025-03',
         dateStarted: '2025-03',
-        link: 'project-homelab.html',
+        link: 'projects/project-homelab.html',
         featured: true
     },
     {
@@ -102,7 +102,7 @@ const PROJECTS = [
         dateCompleted: '2025-06',
         dateStarted: '2024-09',
         score: '59/60',
-        link: 'project-pif.html',
+        link: 'projects/project-pif.html',
         featured: true
     },
     {
@@ -139,7 +139,7 @@ const PROJECTS = [
         statusKey: 'projects.status.completed',
         dateCompleted: '2025-11',
         dateStarted: '2025-10',
-        link: 'project-gradingdino.html',
+        link: 'projects/project-gradingdino.html',
         featured: true
     },
     {

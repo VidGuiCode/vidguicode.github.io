@@ -181,6 +181,16 @@ const FORMATIONS = [
         category: 'Infrastructure',
         description: 'Visited the Tier IV LuxConnect data center in Bettembourg with my Cloud Computing class (both 1st and 2nd year students), organized by the 2nd year students through LGK. What stood out most was the incredible level of organization—everything is color-coded and labeled, from power lines to cooling systems. The redundancy is impressive: dual power paths, UPS systems, generators that kick in within seconds, and the facility can run autonomously for days. Efficiency metrics are excellent (PUE ~1.5, WUE ~0.2), and they even reuse waste heat. It\'s no surprise they\'ve maintained zero SLA downtime since 2009 with this level of structure and redundancy.',
         descriptionKey: 'formation.luxconnect.description',
+        descriptionImages: [
+            {
+                src: 'assets/img/trainings/luxconnect/badgeLuxconnect.webp',
+                alt: 'LuxConnect Visitor Badge'
+            },
+            {
+                src: 'assets/img/trainings/luxconnect/classGroupPictureLuxconnect.webp',
+                alt: 'LuxConnect Data Center Visit - Class Group Photo'
+            }
+        ],
         dateCompleted: '2026-01-31', // Last Friday (approximate date)
         duration: '4 hours', // Duration of visit
         format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'

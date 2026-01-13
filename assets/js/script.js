@@ -1,0 +1,320 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+    const iconSun = document.querySelector('.sun-icon');
+    const iconMoon = document.querySelector('.moon-icon');
+    
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ==========================================
+    // THEME MANAGEMENT
+    // ==========================================
+    
+    // Check for saved theme preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    
+    // Apply initial theme
+    if (savedTheme) {
+        htmlElement.setAttribute('data-theme', savedTheme);
+    } else {
+        htmlElement.setAttribute('data-theme', systemTheme);
+    }
+
+    // Toggle Theme Function
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Add a small animation effect to the button
+        themeToggle.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            themeToggle.style.transform = 'scale(1)';
+        }, 100);
+    });
+
+    // ==========================================
+    // LANGUAGE / i18n MANAGEMENT
+    // ==========================================
+    
+    const langButtons = document.querySelectorAll('.lang-dropdown button[data-lang]');
+    const currentLangDisplay = document.querySelector('.current-lang');
+    const defaultLang = 'en';
+    
+    // Get saved language or default
+    const savedLang = localStorage.getItem('lang') || defaultLang;
+    
+    // Apply language on page load
+    setLanguage(savedLang);
+    
+    // Language button click handlers
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            setLanguage(lang);
+            localStorage.setItem('lang', lang);
+        });
+    });
+    
+    /**
+     * Set the page language and update all translatable elements
+     * @param {string} lang - Language code (en, pt, lu, de, fr)
+     */
+    function setLanguage(lang) {
+        // Update HTML lang attribute
+        htmlElement.setAttribute('lang', lang);
+        htmlElement.setAttribute('data-lang', lang);
+        
+        // Update current language display
+        if (currentLangDisplay) {
+            currentLangDisplay.textContent = lang.toUpperCase();
+        }
+        
+        // Update active state on dropdown buttons
+        langButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        
+        // Translate all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            const translation = getTranslation(key, lang);
+            
+            if (translation) {
+                // Check if element should use innerHTML (for elements with <strong> tags)
+                if (element.hasAttribute('data-i18n-html')) {
+                    element.innerHTML = translation;
+                } else {
+                    element.textContent = translation;
+                }
+            }
+        });
+        
+        // Update category badges when language changes
+        if (typeof updateProjectCategories === 'function') {
+            // updateProjectCategories will auto-detect projectId from the page
+            updateProjectCategories(null, lang);
+        }
+        
+        // Update filter modal category labels when language changes
+        if (typeof updateCategoryFilterLabels === 'function') {
+            updateCategoryFilterLabels(lang);
+        }
+    }
+    
+    /**
+     * Get translation for a key in the specified language
+     * @param {string} key - Translation key (e.g., "nav.about")
+     * @param {string} lang - Language code
+     * @returns {string|null} - Translated string or null if not found
+     */
+    function getTranslation(key, lang) {
+        // Check if translations object exists (loaded from translations.js)
+        if (typeof translations === 'undefined') {
+            console.warn('Translations not loaded');
+            return null;
+        }
+        
+        const entry = translations[key];
+        if (!entry) {
+            console.warn(`Translation key not found: ${key}`);
+            return null;
+        }
+        
+        // Return translation for language, fallback to English
+        return entry[lang] || entry['en'] || null;
+    }
+    
+    /**
+     * Centralized function to display project categories with translations
+     * Updates dynamically when language changes
+     * @param {string} projectId - Project ID from projects-data.js
+     * @param {string} lang - Current language code
+     */
+    window.updateProjectCategories = function(projectId, lang) {
+        // If lang is not provided, get it from the document
+        if (!lang) {
+            lang = document.documentElement.getAttribute('data-lang') || 'en';
+        }
+        
+        // If projectId is not provided, try to find it from the page
+        if (!projectId) {
+            // Try to get project ID from the page context
+            const categorySection = document.getElementById('category-section');
+            if (categorySection && categorySection.dataset.projectId) {
+                projectId = categorySection.dataset.projectId;
+            } else {
+                // Fallback: try to detect from URL or page context
+                const path = window.location.pathname;
+                if (path.includes('project-homelab')) projectId = 'homelab';
+                else if (path.includes('project-pif')) projectId = 'pif';
+                else if (path.includes('project-gradingdino')) projectId = 'gradingdino';
+                else return; // Can't determine project
+            }
+        }
+        
+        if (typeof getProjectById === 'undefined' || typeof getTranslation === 'undefined') {
+            // Retry after a short delay if dependencies aren't loaded
+            setTimeout(() => updateProjectCategories(projectId, lang), 100);
+            return;
+        }
+        
+        const project = getProjectById(projectId);
+        const categorySection = document.getElementById('category-section');
+        const categoriesContainer = document.getElementById('project-categories');
+        
+        if (!project || !categorySection || !categoriesContainer) return;
+        
+        // Store project ID for future updates
+        categorySection.dataset.projectId = projectId;
+        
+        // Get all categories for this project
+        const projectCategories = project.categories || [project.category];
+        const projectCategoryKeys = project.categoryKeys || (project.categoryKey ? [project.categoryKey] : []);
+        
+        // Hide section if no categories
+        if (!projectCategories || projectCategories.length === 0) {
+            categorySection.style.display = 'none';
+            return;
+        }
+        
+        // Show section and render categories
+        categorySection.style.display = 'block';
+        categoriesContainer.innerHTML = '';
+        
+        projectCategories.forEach((category, index) => {
+            // Create category badge similar to certification badges
+            const categoryBadge = document.createElement('a');
+            const categorySlug = category.toLowerCase().replace(/\s+/g, '');
+            categoryBadge.href = 'projects.html?category=' + encodeURIComponent(categorySlug);
+            categoryBadge.className = 'project-cert-badge';
+            categoryBadge.style.cssText = 'text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-right: 0.75rem; margin-bottom: 0.5rem;';
+            
+            // Create badge text with translation
+            const badgeText = document.createElement('span');
+            badgeText.className = 'project-cert-name';
+            
+            const categoryKey = projectCategoryKeys[index];
+            if (categoryKey && typeof getTranslation !== 'undefined') {
+                badgeText.textContent = getTranslation(categoryKey, lang) || category;
+            } else if (category) {
+                badgeText.textContent = category;
+            }
+            
+            categoryBadge.appendChild(badgeText);
+            categoriesContainer.appendChild(categoryBadge);
+        });
+    };
+    
+    /**
+     * Update category filter modal labels when language changes
+     * @param {string} lang - Current language code
+     */
+    window.updateCategoryFilterLabels = function(lang) {
+        if (!lang) {
+            lang = document.documentElement.getAttribute('data-lang') || 'en';
+        }
+        
+        // Find all category filter labels
+        const filterLabels = document.querySelectorAll('#category-filter-options label[data-category-key]');
+        
+        filterLabels.forEach(label => {
+            const categoryKey = label.getAttribute('data-category-key');
+            const categoryName = label.getAttribute('data-category-name');
+            
+            if (categoryKey && typeof getTranslation !== 'undefined') {
+                // Get translated name
+                const translatedName = getTranslation(categoryKey, lang) || categoryName;
+                
+                // Preserve the count if it exists
+                const countElement = label.querySelector('.category-count');
+                const countText = countElement ? countElement.textContent : '';
+                
+                // Update label text
+                label.textContent = translatedName;
+                
+                // Re-add count if it existed
+                if (countText) {
+                    const count = document.createElement('span');
+                    count.className = 'category-count';
+                    count.style.cssText = 'color: var(--text-secondary); font-size: 0.8rem; margin-left: auto;';
+                    count.textContent = countText;
+                    label.appendChild(count);
+                }
+            }
+        });
+    };
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Account for fixed header
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // Intersection Observer for "Power On" animations
+    // Skip animations if user prefers reduced motion
+    if (!prefersReducedMotion) {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px"
+        };
+
+        const powerOnObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('powered-on');
+                    powerOnObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Target all cards and node-cards
+        document.querySelectorAll('.card, .node-card').forEach((card) => {
+            // Immediately power-on elements already visible in viewport on load
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                card.classList.add('powered-on');
+            } else {
+                powerOnObserver.observe(card);
+            }
+        });
+            } else {
+        // If reduced motion, immediately show all cards
+        document.querySelectorAll('.card, .node-card').forEach((card) => {
+            card.classList.add('powered-on');
+        });
+    }
+    
+    // Initialize Lucide icons after DOM is ready
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    } else {
+        // Wait for Lucide to load
+        window.addEventListener('load', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    }
+});
