@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
-    const iconSun = document.querySelector('.sun-icon');
-    const iconMoon = document.querySelector('.moon-icon');
     
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -115,13 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function getTranslation(key, lang) {
         // Check if translations object exists (loaded from translations.js)
         if (typeof translations === 'undefined') {
-            console.warn('Translations not loaded');
             return null;
         }
         
         const entry = translations[key];
         if (!entry) {
-            console.warn(`Translation key not found: ${key}`);
             return null;
         }
         
