@@ -557,7 +557,7 @@
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <div id="category-section">
+                    <div id="category-section" style="display: none;">
                         <h3 data-i18n="project.sidebar.category">Category</h3>
                         <div class="line"></div>
                         <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
@@ -622,28 +622,41 @@
 
     <!-- Category Filter Modal -->
 
-    <script src="../assets/js/script.js"></script>
     <script src="../assets/js/projects-data.js"></script>
+    <script src="../assets/js/script.js"></script>
     <script>
-        lucide.createIcons();
-        
         // Use centralized category display function (updates dynamically on language change)
+        // Must wait for DOMContentLoaded since script.js wraps everything in DOMContentLoaded
         function initProjectCategories() {
-            if (typeof updateProjectCategories === 'function') {
-                updateProjectCategories('pif');
+            if (typeof window.updateProjectCategories === 'function' && typeof getProjectById !== 'undefined') {
+                window.updateProjectCategories('pif');
             } else {
-                // Retry if script.js hasn't loaded yet
+                // Retry if dependencies haven't loaded yet
                 setTimeout(initProjectCategories, 100);
             }
         }
         
-        // Wait for translations and projects data to load
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() {
-                setTimeout(initProjectCategories, 100);
-            });
-        } else {
-            setTimeout(initProjectCategories, 100);
+        // Initialize Lucide icons (wait for it to load)
+        function initLucideIcons() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                setTimeout(initLucideIcons, 100);
+            }
+        }
+        
+        // Wait for DOMContentLoaded - script.js initializes on DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize categories
+            setTimeout(initProjectCategories, 200);
+            // Initialize Lucide icons
+            initLucideIcons();
+        });
+        
+        // Also try if DOM is already loaded (fallback)
+        if (document.readyState !== 'loading') {
+            setTimeout(initProjectCategories, 300);
+            initLucideIcons();
         }
 
         // Image Modal Functions

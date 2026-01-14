@@ -149,7 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (path.includes('project-homelab')) projectId = 'homelab';
                 else if (path.includes('project-pif')) projectId = 'pif';
                 else if (path.includes('project-gradingdino')) projectId = 'gradingdino';
-                else return; // Can't determine project
+                else {
+                    // If we can't determine project, don't hide the section - just return
+                    return;
+                }
             }
         }
         
@@ -163,13 +166,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const categorySection = document.getElementById('category-section');
         const categoriesContainer = document.getElementById('project-categories');
         
-        if (!project || !categorySection || !categoriesContainer) return;
+        if (!project) {
+            // Project not found - hide section
+            if (categorySection) categorySection.style.display = 'none';
+            return;
+        }
+        
+        if (!categorySection || !categoriesContainer) {
+            // Elements not found - might not be on a project page
+            return;
+        }
         
         // Store project ID for future updates
         categorySection.dataset.projectId = projectId;
         
         // Get all categories for this project
-        const projectCategories = project.categories || [project.category];
+        const projectCategories = project.categories || (project.category ? [project.category] : []);
         const projectCategoryKeys = project.categoryKeys || (project.categoryKey ? [project.categoryKey] : []);
         
         // Hide section if no categories
@@ -182,11 +194,15 @@ document.addEventListener('DOMContentLoaded', () => {
         categorySection.style.display = 'block';
         categoriesContainer.innerHTML = '';
         
+        // Detect if we're in a subdirectory (like projects/)
+        const isInSubdirectory = window.location.pathname.includes('/projects/');
+        const pathPrefix = isInSubdirectory ? '../' : '';
+        
         projectCategories.forEach((category, index) => {
             // Create category badge similar to certification badges
             const categoryBadge = document.createElement('a');
             const categorySlug = category.toLowerCase().replace(/\s+/g, '');
-            categoryBadge.href = 'projects.html?category=' + encodeURIComponent(categorySlug);
+            categoryBadge.href = pathPrefix + 'projects.html?category=' + encodeURIComponent(categorySlug);
             categoryBadge.className = 'project-cert-badge';
             categoryBadge.style.cssText = 'text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-right: 0.75rem; margin-bottom: 0.5rem;';
             

@@ -563,6 +563,59 @@
             border: 1px solid var(--border-color);
         }
 
+        /* Modal Action Buttons - Icon Only */
+        .modal-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .modal-action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 0;
+            transition: all 0.2s ease;
+            padding: 0;
+        }
+
+        .modal-action-btn:hover {
+            background: var(--bg-secondary);
+            border-color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+
+        .modal-action-btn i {
+            width: 18px;
+            height: 18px;
+        }
+
+        .modal-action-btn span {
+            display: none;
+        }
+
+        .modal-action-btn.credly-btn {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+        }
+
+        .modal-action-btn.credly-btn:hover {
+            background: var(--bg-secondary);
+            border-color: var(--text-primary);
+        }
+
+        .modal-action-btn.external-btn {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+        }
+
         .project-list {
             list-style: none;
             padding: 0;
@@ -803,11 +856,19 @@
                     <i data-lucide="x"></i>
                 </button>
                 <div class="modal-header">
-                    <h2 id="modal-cert-name"></h2>
-                    <div class="cert-provider" id="modal-cert-provider"></div>
+                    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                        <img id="modal-cert-badge-img" src="" alt="" style="width: 80px; height: 80px; object-fit: contain; display: none; border-radius: 8px; border: 1px solid var(--border-color); cursor: pointer;" title="Click to view full badge">
+                        <div style="flex: 1; min-width: 0;">
+                            <h2 id="modal-cert-name"></h2>
+                            <div class="cert-provider" id="modal-cert-provider"></div>
+                        </div>
+                    </div>
                 </div>
                 <p id="modal-cert-description" class="modal-description"></p>
                 <div id="modal-cert-skills" class="modal-skills"></div>
+                
+                <!-- Action Buttons (Credly, External URL) -->
+                <div id="modal-cert-actions" class="modal-actions" style="display: none;"></div>
                 
                 <!-- Related Formations Section (for certifications) -->
                 <div id="modal-formations-section" style="display: none;">
@@ -1554,6 +1615,45 @@
             modalName.textContent = certName;
             modalProvider.innerHTML = `<i data-lucide="award"></i> ${cert.provider}`;
             
+            // Add clickable badge image in modal header
+            const modalBadgeImg = document.getElementById('modal-cert-badge-img');
+            if (modalBadgeImg) {
+                modalBadgeImg.src = cert.image;
+                modalBadgeImg.alt = certName;
+                modalBadgeImg.onclick = () => {
+                    // Open badge image in new tab/window
+                    window.open(cert.image, '_blank');
+                };
+                modalBadgeImg.style.cursor = 'pointer';
+                modalBadgeImg.style.display = 'block';
+            }
+            
+            // Render action buttons (Credly and External URL) - Icon only
+            const modalActions = document.getElementById('modal-cert-actions');
+            if (modalActions) {
+                let actionsHTML = '';
+                if (cert.credlyUrl) {
+                    actionsHTML += `
+                        <a href="${cert.credlyUrl}" target="_blank" rel="noopener noreferrer" class="modal-action-btn credly-btn" title="View on Credly" aria-label="View certification on Credly">
+                            <i data-lucide="external-link"></i>
+                        </a>
+                    `;
+                }
+                if (cert.externalUrl) {
+                    actionsHTML += `
+                        <a href="${cert.externalUrl}" target="_blank" rel="noopener noreferrer" class="modal-action-btn external-btn" title="View certification details" aria-label="View certification details">
+                            <i data-lucide="globe"></i>
+                        </a>
+                    `;
+                }
+                if (actionsHTML) {
+                    modalActions.innerHTML = actionsHTML;
+                    modalActions.style.display = 'flex';
+                } else {
+                    modalActions.style.display = 'none';
+                }
+            }
+            
             // Render description with optional images
             let descriptionHTML = certDescription;
             if (cert.descriptionImages && cert.descriptionImages.length > 0) {
@@ -1733,6 +1833,33 @@
                 document.getElementById('cert-modal').classList.remove('active');
             }
         });
+
+        // Auto-open modal if hash is present in URL (e.g., certifications.html#cert-id)
+        function checkHashAndOpenModal() {
+            const hash = window.location.hash;
+            if (hash && hash.startsWith('#')) {
+                const certId = hash.substring(1); // Remove the #
+                if (certId && typeof getCertificationById !== 'undefined') {
+                    const cert = getCertificationById(certId);
+                    if (cert) {
+                        // Small delay to ensure DOM is ready
+                        setTimeout(() => {
+                            showCertModal(certId);
+                        }, 100);
+                    }
+                }
+            }
+        }
+
+        // Check hash on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', checkHashAndOpenModal);
+        } else {
+            checkHashAndOpenModal();
+        }
+
+        // Also check hash when navigating (for single-page navigation)
+        window.addEventListener('hashchange', checkHashAndOpenModal);
 
         // Wait for certifications-data.js to load before initial render
         function waitForCertificationsData() {
