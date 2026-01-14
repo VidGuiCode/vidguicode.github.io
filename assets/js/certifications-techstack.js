@@ -78,13 +78,19 @@
      */
     function createProjectCertBadge(cert) {
         const badge = document.createElement('a');
-        badge.href = `certifications.html#${cert.id}`;
+        
+        // Detect if we're in a subdirectory (like projects/)
+        const isInSubdirectory = window.location.pathname.includes('/projects/');
+        const pathPrefix = isInSubdirectory ? '../' : '';
+        
+        badge.href = `${pathPrefix}certifications.html#${cert.id}`;
         badge.className = 'project-cert-badge';
         badge.title = cert.name;
         badge.setAttribute('data-cert-id', cert.id);
         
         const img = document.createElement('img');
-        img.src = cert.image;
+        // Adjust image path based on current location
+        img.src = pathPrefix + cert.image;
         img.alt = cert.name;
         img.loading = 'lazy';
         
