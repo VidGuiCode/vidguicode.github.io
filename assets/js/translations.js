@@ -3274,6 +3274,49 @@ const translations = {
         fr: "Opérations de Centre de Données"
     },
 
+    "formation.restena.phishing.name": {
+        en: "Phishing",
+        pt: "Phishing",
+        lu: "Phishing",
+        de: "Phishing",
+        fr: "Phishing"
+    },
+    "formation.restena.phishing.description": {
+        en: "Attended a 3-hour presentation/workshop on Phishing, focusing on various phishing methods, prevention techniques, and social engineering. Hosted by Fondation Restena and conducted by a representative from their team, as part of my BTS Cloud Computing program at LGK.",
+        pt: "Frequentei uma apresentação/workshop de 3 horas sobre Phishing, focando em vários métodos de phishing, técnicas de prevenção e engenharia social. Organizado pela Fondation Restena e conduzido por um representante da sua equipa, como parte do meu programa BTS Cloud Computing no LGK.",
+        lu: "Besicht eng 3-Stonnen Presentatioun/Workshop iwwer Phishing, deen sech op verschidde Phishing Methoden, Prevenciounstechniken a sozial Ingenieurie konzentréiert. Organiséiert vun Fondation Restena a geleed vun engem Vertrieder vun hirer Ekipp, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
+        de: "Besuchte eine 3-stündige Präsentation/Workshop zu Phishing, mit Fokus auf verschiedene Phishing-Methoden, Präventionstechniken und Social Engineering. Organisiert von Fondation Restena und durchgeführt von einem Vertreter ihres Teams, im Rahmen meines BTS Cloud Computing Programms am LGK.",
+        fr: "Suivi une présentation/atelier de 3 heures sur le Phishing, axé sur diverses méthodes de phishing, techniques de prévention et ingénierie sociale. Organisé par Fondation Restena et animé par un représentant de leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
+    },
+    "formation.restena.phishing.skills.methods": {
+        en: "Phishing Methods",
+        pt: "Métodos de Phishing",
+        lu: "Phishing Methoden",
+        de: "Phishing-Methoden",
+        fr: "Méthodes de Phishing"
+    },
+    "formation.restena.phishing.skills.social": {
+        en: "Social Engineering",
+        pt: "Engenharia Social",
+        lu: "Sozial Ingenieurie",
+        de: "Social Engineering",
+        fr: "Ingénierie Sociale"
+    },
+    "formation.restena.phishing.skills.awareness": {
+        en: "Security Awareness",
+        pt: "Consciencialização de Segurança",
+        lu: "Sécherheetsbewosstsinn",
+        de: "Sicherheitsbewusstsein",
+        fr: "Sensibilisation à la Sécurité"
+    },
+    "formation.restena.phishing.skills.prevention": {
+        en: "Prevention Techniques",
+        pt: "Técnicas de Prevenção",
+        lu: "Prevenciounstechniken",
+        de: "Präventionstechniken",
+        fr: "Techniques de Prévention"
+    },
+
     // Project Names (for modal display)
     "project.homelab.name": {
         en: "Home Lab Personal Cloud",

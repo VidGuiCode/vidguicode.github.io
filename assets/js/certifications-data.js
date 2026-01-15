@@ -200,6 +200,23 @@ const FORMATIONS = [
         skillsKeys: ['formation.luxconnect.skills.tier4', 'formation.luxconnect.skills.redundancy', 'formation.luxconnect.skills.power', 'formation.luxconnect.skills.cooling', 'formation.luxconnect.skills.operations'],
         logo: 'assets/img/logos/luxconnect-icon.webp', // LuxConnect logo
     },
+    {
+        id: 'restena-phishing-training',
+        name: 'Phishing',
+        nameKey: 'formation.restena.phishing.name',
+        provider: 'Fondation Restena',
+        category: 'Security',
+        description: 'Attended a 3-hour presentation/workshop on Phishing, focusing on various phishing methods, prevention techniques, and social engineering. Hosted by Fondation Restena and conducted by a representative from their team, as part of my BTS Cloud Computing program at LGK.',
+        descriptionKey: 'formation.restena.phishing.description',
+        dateCompleted: '2025-12-16', // December 16, 2025
+        duration: '3 hours', // Duration of training
+        format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
+        location: 'Lycée Guillaume Kroll (LGK)', // Location/context
+        relatedCertifications: [], // No related certification
+        skills: ['Phishing Methods', 'Social Engineering', 'Security Awareness', 'Prevention Techniques'],
+        skillsKeys: ['formation.restena.phishing.skills.methods', 'formation.restena.phishing.skills.social', 'formation.restena.phishing.skills.awareness', 'formation.restena.phishing.skills.prevention'],
+        logo: 'assets/img/logos/restena-logo.webp', // Restena logo
+    },
     // Add more formations as needed
 ];
 
