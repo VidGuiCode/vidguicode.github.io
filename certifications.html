@@ -1594,10 +1594,21 @@
             updateFormationLogos();
         }
 
+        // Flag to prevent hashchange from reopening modal when we're closing it
+        let isClosingModal = false;
+
         // Modal functionality
         function showCertModal(certId) {
             const cert = getCertificationById(certId);
             if (!cert) return;
+
+            // Update URL hash without triggering hashchange (we'll handle it manually)
+            if (window.location.hash !== '#' + certId) {
+                // Use replaceState to avoid adding to history and triggering hashchange
+                // Preserve pathname and search params, only update hash
+                const newUrl = window.location.pathname + window.location.search + '#' + certId;
+                window.history.replaceState(null, '', newUrl);
+            }
 
             const modal = document.getElementById('cert-modal');
             const modalName = document.getElementById('modal-cert-name');
@@ -1797,6 +1808,25 @@
             lucide.createIcons();
         }
 
+        // Function to close modal and clear hash
+        function closeCertModal() {
+            const certModal = document.getElementById('cert-modal');
+            if (!certModal) return;
+            
+            isClosingModal = true;
+            certModal.classList.remove('active');
+            
+            // Clear hash from URL without triggering hashchange
+            if (window.location.hash) {
+                window.history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+            
+            // Reset flag after a short delay to allow any pending hashchange events to complete
+            setTimeout(() => {
+                isClosingModal = false;
+            }, 100);
+        }
+
         // Close modal - set up event listeners when DOM is ready
         function setupCertModalClose() {
             const certModal = document.getElementById('cert-modal');
@@ -1808,14 +1838,14 @@
                 certModalClose.addEventListener('click', (e) => {
                     e.stopPropagation();
                     e.preventDefault();
-                    certModal.classList.remove('active');
+                    closeCertModal();
                 });
             }
             
             // Close modal on background click
             certModal.addEventListener('click', (e) => {
                 if (e.target.id === 'cert-modal' || e.target === certModal) {
-                    certModal.classList.remove('active');
+                    closeCertModal();
                 }
             });
         }
@@ -1830,22 +1860,31 @@
         // Close modal on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                document.getElementById('cert-modal').classList.remove('active');
+                closeCertModal();
             }
         });
 
         // Auto-open modal if hash is present in URL (e.g., certifications.html#cert-id)
         function checkHashAndOpenModal() {
+            // Don't reopen if we're in the process of closing the modal
+            if (isClosingModal) {
+                return;
+            }
+            
             const hash = window.location.hash;
             if (hash && hash.startsWith('#')) {
                 const certId = hash.substring(1); // Remove the #
                 if (certId && typeof getCertificationById !== 'undefined') {
                     const cert = getCertificationById(certId);
                     if (cert) {
-                        // Small delay to ensure DOM is ready
-                        setTimeout(() => {
-                            showCertModal(certId);
-                        }, 100);
+                        const modal = document.getElementById('cert-modal');
+                        // Only open if modal is not already showing this cert
+                        if (!modal || !modal.classList.contains('active')) {
+                            // Small delay to ensure DOM is ready
+                            setTimeout(() => {
+                                showCertModal(certId);
+                            }, 100);
+                        }
                     }
                 }
             }
