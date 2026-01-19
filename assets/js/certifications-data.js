@@ -115,7 +115,7 @@ const CERTIFICATIONS = [
     {
         id: 'microsoft-word-expert',
         shortCode: 'badge-Microsoft-Word-Expert',
-        name: 'Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)',
+        name: 'Microsoft Office Specialist: Word Expert',
         nameKey: 'cert.word.expert.name', // Detail page translation key
         indexTitleKey: 'cert.word.expert.title', // Compact title for index section
         statusKey: 'cert.word.expert.status',

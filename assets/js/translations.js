@@ -3125,11 +3125,11 @@ const translations = {
         fr: "Références & Collaboration"
     },
     "cert.word.expert.name": {
-        en: "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)",
-        pt: "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)",
-        lu: "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)",
-        de: "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)",
-        fr: "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)"
+        en: "Microsoft Office Specialist: Word Expert",
+        pt: "Microsoft Office Specialist: Word Expert",
+        lu: "Microsoft Office Specialist: Word Expert",
+        de: "Microsoft Office Specialist: Word Expert",
+        fr: "Microsoft Office Specialist: Word Expert"
     },
     "cert.word.expert.title": {
         en: "MOS Word Expert",
@@ -3139,11 +3139,11 @@ const translations = {
         fr: "MOS Word Expert"
     },
     "cert.word.expert.status": {
-        en: "Microsoft 365 Apps — Jan 2026",
-        pt: "Microsoft 365 Apps — Jan 2026",
-        lu: "Microsoft 365 Apps — Jan 2026",
-        de: "Microsoft 365 Apps — Jan 2026",
-        fr: "Microsoft 365 Apps — Janv 2026"
+        en: "Microsoft 365 Apps — January 2026",
+        pt: "Microsoft 365 Apps — Janeiro 2026",
+        lu: "Microsoft 365 Apps — Januar 2026",
+        de: "Microsoft 365 Apps — Januar 2026",
+        fr: "Microsoft 365 Apps — Janvier 2026"
     },
     "cert.word.expert.description": {
         en: "Demonstrates advanced expertise in creating and managing complex documents using Microsoft Word, including advanced formatting, custom document elements, macros, and automation.",
