@@ -112,6 +112,30 @@ const CERTIFICATIONS = [
         isFree: false,
         status: 'completed', // Status: 'completed' or 'in-progress'
     },
+    {
+        id: 'microsoft-word-expert',
+        shortCode: 'badge-Microsoft-Word-Expert',
+        name: 'Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)',
+        nameKey: 'cert.word.expert.name', // Detail page translation key
+        indexTitleKey: 'cert.word.expert.title', // Compact title for index section
+        statusKey: 'cert.word.expert.status',
+        provider: 'Microsoft',
+        category: 'Productivity',
+        level: CERT_LEVELS.ADVANCED, // Expert level is Advanced
+        image: 'assets/img/certifications/badge-microsoft-word-expert.webp',
+        externalUrl: 'https://learn.microsoft.com/en-us/credentials/certifications/mos-word-expert-m365-apps/',
+        credlyUrl: 'https://www.credly.com/badges/0ca263bf-4549-4f54-aa46-2a4144528ef5/public_url',
+        description: 'Demonstrates advanced expertise in creating and managing complex documents using Microsoft Word, including advanced formatting, custom document elements, macros, and automation.',
+        descriptionKey: 'cert.word.expert.description', // Translation key
+        skills: ['Advanced Formatting', 'Custom Document Elements', 'Macros & Automation', 'Advanced Word Features'],
+        skillsKeys: ['cert.word.expert.skills.formatting', 'cert.word.expert.skills.elements', 'cert.word.expert.skills.macros', 'cert.word.expert.skills.features'], // Translation keys
+        relatedProjects: ['pif', 'gradingdino'], // Used in PIF and GradingDino projects for documentation
+        relatedFormations: [], // IDs of related formations/trainings
+        dateEarned: '2026-01-19', // January 19, 2026
+        expiryDate: null,
+        isFree: false,
+        status: 'completed', // Status: 'completed' or 'in-progress'
+    },
 ];
 
 /**
