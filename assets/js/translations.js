@@ -3124,6 +3124,62 @@ const translations = {
         de: "Verweise & Zusammenarbeit",
         fr: "Références & Collaboration"
     },
+    "cert.word.expert.name": {
+        en: "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)",
+        pt: "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)",
+        lu: "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)",
+        de: "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)",
+        fr: "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)"
+    },
+    "cert.word.expert.title": {
+        en: "MOS Word Expert",
+        pt: "MOS Word Expert",
+        lu: "MOS Word Expert",
+        de: "MOS Word Expert",
+        fr: "MOS Word Expert"
+    },
+    "cert.word.expert.status": {
+        en: "Microsoft 365 Apps — Jan 2026",
+        pt: "Microsoft 365 Apps — Jan 2026",
+        lu: "Microsoft 365 Apps — Jan 2026",
+        de: "Microsoft 365 Apps — Jan 2026",
+        fr: "Microsoft 365 Apps — Janv 2026"
+    },
+    "cert.word.expert.description": {
+        en: "Demonstrates advanced expertise in creating and managing complex documents using Microsoft Word, including advanced formatting, custom document elements, macros, and automation.",
+        pt: "Demonstra expertise avançada na criação e gestão de documentos complexos usando o Microsoft Word, incluindo formatação avançada, elementos de documento personalizados, macros e automação.",
+        lu: "Weist fortgeschratt Expertis beim Erstellen a Verwalten vu komplexe Dokumenter mat Microsoft Word, inklusiv fortgeschratt Formatéierung, personaliséiert Dokument Elementer, Makros an Automatiséierung.",
+        de: "Zeigt fortgeschrittene Expertise beim Erstellen und Verwalten komplexer Dokumente mit Microsoft Word, einschließlich erweiterter Formatierung, benutzerdefinierter Dokumentelemente, Makros und Automatisierung.",
+        fr: "Démontre une expertise avancée dans la création et la gestion de documents complexes avec Microsoft Word, y compris la mise en forme avancée, les éléments de document personnalisés, les macros et l'automatisation."
+    },
+    "cert.word.expert.skills.formatting": {
+        en: "Advanced Formatting",
+        pt: "Formatação Avançada",
+        lu: "Fortgeschratt Formatéierung",
+        de: "Erweiterte Formatierung",
+        fr: "Mise en Forme Avancée"
+    },
+    "cert.word.expert.skills.elements": {
+        en: "Custom Document Elements",
+        pt: "Elementos de Documento Personalizados",
+        lu: "Personaliséiert Dokument Elementer",
+        de: "Benutzerdefinierte Dokumentelemente",
+        fr: "Éléments de Document Personnalisés"
+    },
+    "cert.word.expert.skills.macros": {
+        en: "Macros & Automation",
+        pt: "Macros e Automação",
+        lu: "Makros & Automatiséierung",
+        de: "Makros & Automatisierung",
+        fr: "Macros & Automatisation"
+    },
+    "cert.word.expert.skills.features": {
+        en: "Advanced Word Features",
+        pt: "Recursos Avançados do Word",
+        lu: "Fortgeschratt Word Funktiounen",
+        de: "Erweiterte Word-Funktionen",
+        fr: "Fonctionnalités Avancées de Word"
+    },
 
     // Formations/Training Translations
     "formation.azure.az900.name": {
