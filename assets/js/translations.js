@@ -240,11 +240,11 @@ const translations = {
         fr: "Design Graphique"
     },
     "about.hobbies.building": {
-        en: "Building Projects",
-        pt: "Projetos de Construção",
-        lu: "Projeten opbauen",
-        de: "Projekte Bauen",
-        fr: "Construction de Projets"
+        en: "Building Tech Projects",
+        pt: "Desenvolver Projetos",
+        lu: "Tech Projeten opbauen",
+        de: "Tech-Projekte Entwickeln",
+        fr: "Développement de Projets Tech"
     },
 
     // Skills Section - Redesigned
