@@ -215,7 +215,7 @@ const FORMATIONS = [
                 alt: 'LuxConnect Data Center Visit - Class Group Photo'
             }
         ],
-        dateCompleted: '2026-01-31', // Last Friday (approximate date)
+        dateCompleted: '2026-01-09', // January 9, 2026
         duration: '4 hours', // Duration of visit
         format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
         location: 'LuxConnect, Bettembourg', // Location/context
@@ -240,6 +240,40 @@ const FORMATIONS = [
         skills: ['Phishing Methods', 'Social Engineering', 'Security Awareness', 'Prevention Techniques'],
         skillsKeys: ['formation.restena.phishing.skills.methods', 'formation.restena.phishing.skills.social', 'formation.restena.phishing.skills.awareness', 'formation.restena.phishing.skills.prevention'],
         logo: 'assets/img/logos/restena-logo.webp', // Restena logo
+    },
+    {
+        id: 'blockchain-introduction-training-part1',
+        name: 'Blockchain Introduction (Part 1 of 2)',
+        nameKey: 'formation.blockchain.intro.part1.name',
+        provider: 'The Blockchain Academy',
+        category: 'Blockchain',
+        description: 'Attended the first part (3 hours) of a 6-hour Blockchain Introduction training, focusing on the functional principles of blockchain technology, its organizational impact on business and society, and the essential building blocks of distributed ledger systems. The training covered blockchain as a transaction journal, explaining the roles of users (wallets), verifiers (nodes), and block creators (miners), providing a strategic and management-oriented understanding of the technology. Hosted by The Blockchain Academy and conducted by their team, as part of my BTS Cloud Computing program at LGK.',
+        descriptionKey: 'formation.blockchain.intro.part1.description',
+        dateCompleted: '2026-01-20', // January 20, 2026
+        duration: '3 hours (Part 1 of 2)', // Duration of training
+        format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
+        location: 'Lycée Guillaume Kroll (LGK)', // Location/context
+        relatedCertifications: [], // No related certification
+        skills: ['Blockchain Fundamentals', 'Distributed Ledger Technology', 'Cryptocurrency Concepts', 'Blockchain Applications'],
+        skillsKeys: ['formation.blockchain.intro.skills.fundamentals', 'formation.blockchain.intro.skills.dlt', 'formation.blockchain.intro.skills.crypto', 'formation.blockchain.intro.skills.applications'],
+        logo: 'assets/img/logos/blockchain-academy-logo.webp', // The Blockchain Academy logo
+    },
+    {
+        id: 'blockchain-introduction-training-part2',
+        name: 'Blockchain Introduction (Part 2 of 2)',
+        nameKey: 'formation.blockchain.intro.part2.name',
+        provider: 'The Blockchain Academy',
+        category: 'Blockchain',
+        description: 'Attended the second part (3 hours) of a 6-hour Blockchain Introduction training, continuing the exploration of blockchain technology, advanced concepts, and practical applications. This session builds upon the foundational knowledge from Part 1, diving deeper into implementation strategies and real-world use cases. Hosted by The Blockchain Academy and conducted by their team, as part of my BTS Cloud Computing program at LGK.',
+        descriptionKey: 'formation.blockchain.intro.part2.description',
+        dateCompleted: '2026-01-27', // January 27, 2026
+        duration: '3 hours (Part 2 of 2)', // Duration of training
+        format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
+        location: 'Lycée Guillaume Kroll (LGK)', // Location/context
+        relatedCertifications: [], // No related certification
+        skills: ['Blockchain Fundamentals', 'Distributed Ledger Technology', 'Cryptocurrency Concepts', 'Blockchain Applications'],
+        skillsKeys: ['formation.blockchain.intro.skills.fundamentals', 'formation.blockchain.intro.skills.dlt', 'formation.blockchain.intro.skills.crypto', 'formation.blockchain.intro.skills.applications'],
+        logo: 'assets/img/logos/blockchain-academy-logo.webp', // The Blockchain Academy logo
     },
     // Add more formations as needed
 ];
@@ -364,13 +398,25 @@ function getAllFormations() {
 
 /**
  * Get all formations sorted by date (newest first)
+ * Filters out future trainings (dateCompleted is in the future)
  * @returns {array} Array of formation objects sorted by dateCompleted (newest first)
  */
 function getFormationsSortedByDate() {
-    return [...FORMATIONS].sort((a, b) => {
-        if (!a.dateCompleted || !b.dateCompleted) return 0;
-        return new Date(b.dateCompleted) - new Date(a.dateCompleted); // Newest first
-    });
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set to start of day for accurate comparison
+    
+    return [...FORMATIONS]
+        .filter(formation => {
+            // Only include formations that have been completed (date is in the past or today)
+            if (!formation.dateCompleted) return false;
+            const completedDate = new Date(formation.dateCompleted);
+            completedDate.setHours(0, 0, 0, 0);
+            return completedDate <= today;
+        })
+        .sort((a, b) => {
+            if (!a.dateCompleted || !b.dateCompleted) return 0;
+            return new Date(b.dateCompleted) - new Date(a.dateCompleted); // Newest first
+        });
 }
 
 /**
@@ -399,11 +445,25 @@ function getCertificationsByFormation(formationId) {
 
 /**
  * Get all items (certifications + formations) sorted appropriately
+ * Filters out future trainings (dateCompleted is in the future)
  * @returns {array} Combined array with type indicator
  */
 function getAllItemsSorted() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set to start of day for accurate comparison
+    
     const certs = CERTIFICATIONS.map(cert => ({ ...cert, type: 'certification' }));
-    const forms = FORMATIONS.map(form => ({ ...form, type: 'formation' }));
+    
+    // Filter out future formations
+    const forms = FORMATIONS
+        .filter(formation => {
+            // Only include formations that have been completed (date is in the past or today)
+            if (!formation.dateCompleted) return false;
+            const completedDate = new Date(formation.dateCompleted);
+            completedDate.setHours(0, 0, 0, 0);
+            return completedDate <= today;
+        })
+        .map(form => ({ ...form, type: 'formation' }));
     
     // Sort certifications by rank, formations by date (newest first)
     const sortedCerts = certs.sort((a, b) => b.level.rank - a.level.rank);

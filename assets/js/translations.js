@@ -177,39 +177,74 @@ const translations = {
 
     // About Section – language chips
     "about.languages.portuguese": {
-        en: "Portuguese",
-        pt: "Português",
-        lu: "Portugisesch",
-        de: "Portugiesisch",
-        fr: "Portugais"
+        en: "Portuguese (C1)",
+        pt: "Português (C1)",
+        lu: "Portugisesch (C1)",
+        de: "Portugiesisch (C1)",
+        fr: "Portugais (C1)"
     },
     "about.languages.luxembourgish": {
-        en: "Luxembourgish",
-        pt: "Luxemburguês",
-        lu: "Lëtzebuergesch",
-        de: "Luxemburgisch",
-        fr: "Luxembourgeois"
-    },
-    "about.languages.german": {
-        en: "German",
-        pt: "Alemão",
-        lu: "Däitsch",
-        de: "Deutsch",
-        fr: "Allemand"
-    },
-    "about.languages.french": {
-        en: "French",
-        pt: "Francês",
-        lu: "Franséisch",
-        de: "Französisch",
-        fr: "Français"
+        en: "Luxembourgish (C1)",
+        pt: "Luxemburguês (C1)",
+        lu: "Lëtzebuergesch (C1)",
+        de: "Luxemburgisch (C1)",
+        fr: "Luxembourgeois (C1)"
     },
     "about.languages.english": {
-        en: "English",
-        pt: "Inglês",
-        lu: "Englesch",
-        de: "Englisch",
-        fr: "Anglais"
+        en: "English (C1)",
+        pt: "Inglês (C1)",
+        lu: "Englesch (C1)",
+        de: "Englisch (C1)",
+        fr: "Anglais (C1)"
+    },
+    "about.languages.german": {
+        en: "German (B2)",
+        pt: "Alemão (B2)",
+        lu: "Däitsch (B2)",
+        de: "Deutsch (B2)",
+        fr: "Allemand (B2)"
+    },
+    "about.languages.french": {
+        en: "French (B2)",
+        pt: "Francês (B2)",
+        lu: "Franséisch (B2)",
+        de: "Französisch (B2)",
+        fr: "Français (B2)"
+    },
+    "about.hobbies.intro": {
+        en: "Beyond tech, I stay active and creative:",
+        pt: "Além da tecnologia, mantenho-me ativo e criativo:",
+        lu: "Nieft Tech, bleiwen ech aktiv a kreativ:",
+        de: "Neben der Technik bleibe ich aktiv und kreativ:",
+        fr: "Au-delà de la technologie, je reste actif et créatif :"
+    },
+    "about.hobbies.gym": {
+        en: "Strength Training",
+        pt: "Treino de Força",
+        lu: "Kraafttraining",
+        de: "Krafttraining",
+        fr: "Musculation"
+    },
+    "about.hobbies.basketball": {
+        en: "Basketball",
+        pt: "Basquetebol",
+        lu: "Basketball",
+        de: "Basketball",
+        fr: "Basketball"
+    },
+    "about.hobbies.design": {
+        en: "Graphic Design",
+        pt: "Design Gráfico",
+        lu: "Grafescht Design",
+        de: "Grafikdesign",
+        fr: "Design Graphique"
+    },
+    "about.hobbies.building": {
+        en: "Building Projects",
+        pt: "Projetos de Construção",
+        lu: "Projeten opbauen",
+        de: "Projekte Bauen",
+        fr: "Construction de Projets"
     },
 
     // Skills Section - Redesigned
@@ -2776,6 +2811,13 @@ const translations = {
         de: "Immer offen für Gespräche über Cloud-Technologien, Infrastrukturprojekte oder neue Möglichkeiten.",
         fr: "Toujours ouvert pour discuter de technologies cloud, de projets d'infrastructure ou de nouvelles opportunités."
     },
+    "contact.cv": {
+        en: "Download CV",
+        pt: "Descarregar CV",
+        lu: "CV eroflueden",
+        de: "Lebenslauf herunterladen",
+        fr: "Télécharger le CV"
+    },
 
     // Certifications Page
     "certifications.subtitle": {
@@ -3371,6 +3413,62 @@ const translations = {
         lu: "Prevenciounstechniken",
         de: "Präventionstechniken",
         fr: "Techniques de Prévention"
+    },
+    "formation.blockchain.intro.part1.name": {
+        en: "Blockchain Introduction (Part 1 of 2)",
+        pt: "Introdução ao Blockchain (Parte 1 de 2)",
+        lu: "Blockchain Intro (Deel 1 vun 2)",
+        de: "Blockchain Einführung (Teil 1 von 2)",
+        fr: "Introduction à la Blockchain (Partie 1 sur 2)"
+    },
+    "formation.blockchain.intro.part1.description": {
+        en: "Attended the first part (3 hours) of a 6-hour Blockchain Introduction training, focusing on the functional principles of blockchain technology, its organizational impact on business and society, and the essential building blocks of distributed ledger systems. The training covered blockchain as a transaction journal, explaining the roles of users (wallets), verifiers (nodes), and block creators (miners), providing a strategic and management-oriented understanding of the technology. Hosted by The Blockchain Academy and conducted by their team, as part of my BTS Cloud Computing program at LGK.",
+        pt: "Frequentei a primeira parte (3 horas) de uma formação de 6 horas sobre Introdução ao Blockchain, focando nos princípios funcionais da tecnologia blockchain, seu impacto organizacional nos negócios e na sociedade, e os elementos essenciais dos sistemas de ledger distribuído. A formação cobriu blockchain como um diário de transações, explicando os papéis dos utilizadores (carteiras), verificadores (nós) e criadores de blocos (mineiros), fornecendo uma compreensão estratégica e orientada para a gestão da tecnologia. Organizado pela The Blockchain Academy e conduzido pela sua equipa, como parte do meu programa BTS Cloud Computing no LGK.",
+        lu: "Besicht den éischten Deel (3 Stonnen) vun engem 6-Stonnen Blockchain Intro Training, deen sech op d'funktionell Prinzipien vun der Blockchain Technologie, hiren organisatoreschen Impakt op Geschäft a Gesellschaft, an d'wesentlech Bausteng vun distribuéierte Ledger Systemer konzentréiert. D'Training huet Blockchain als Transaktiounsjournal behandelt, d'Rollen vun Benotzer (Portemonnaien), Verifikateuren (Knoten) a Block Schëpfer (Miner) erkläert, a strategesch a managementorientéiert Verständnis vun der Technologie bidden. Organiséiert vun The Blockchain Academy a geleed vun hirer Ekipp, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
+        de: "Besuchte den ersten Teil (3 Stunden) einer 6-stündigen Blockchain-Einführungsschulung, mit Fokus auf die funktionalen Prinzipien der Blockchain-Technologie, ihre organisatorischen Auswirkungen auf Wirtschaft und Gesellschaft und die wesentlichen Bausteine verteilter Ledger-Systeme. Die Schulung behandelte Blockchain als Transaktionsjournal, erklärte die Rollen von Nutzern (Wallets), Verifizierern (Nodes) und Block-Erstellern (Miner) und vermittelte ein strategisches und managementorientiertes Verständnis der Technologie. Organisiert von The Blockchain Academy und durchgeführt von ihrem Team, im Rahmen meines BTS Cloud Computing Programms am LGK.",
+        fr: "Suivi la première partie (3 heures) d'une formation de 6 heures sur l'Introduction à la Blockchain, axée sur les principes fonctionnels de la technologie blockchain, son impact organisationnel sur les entreprises et la société, et les éléments essentiels des systèmes de registre distribué. La formation a couvert la blockchain comme journal de transactions, expliquant les rôles des utilisateurs (portefeuilles), des vérificateurs (nœuds) et des créateurs de blocs (mineurs), fournissant une compréhension stratégique et orientée gestion de la technologie. Organisé par The Blockchain Academy et animé par leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
+    },
+    "formation.blockchain.intro.part2.name": {
+        en: "Blockchain Introduction (Part 2 of 2)",
+        pt: "Introdução ao Blockchain (Parte 2 de 2)",
+        lu: "Blockchain Intro (Deel 2 vun 2)",
+        de: "Blockchain Einführung (Teil 2 von 2)",
+        fr: "Introduction à la Blockchain (Partie 2 sur 2)"
+    },
+    "formation.blockchain.intro.part2.description": {
+        en: "Attended the second part (3 hours) of a 6-hour Blockchain Introduction training, continuing the exploration of blockchain technology, advanced concepts, and practical applications. This session builds upon the foundational knowledge from Part 1, diving deeper into implementation strategies and real-world use cases. Hosted by The Blockchain Academy and conducted by their team, as part of my BTS Cloud Computing program at LGK.",
+        pt: "Frequentei a segunda parte (3 horas) de uma formação de 6 horas sobre Introdução ao Blockchain, continuando a exploração da tecnologia blockchain, conceitos avançados e aplicações práticas. Esta sessão constrói sobre o conhecimento fundamental da Parte 1, aprofundando-se em estratégias de implementação e casos de uso do mundo real. Organizado pela The Blockchain Academy e conduzido pela sua equipa, como parte do meu programa BTS Cloud Computing no LGK.",
+        lu: "Besicht den zweeten Deel (3 Stonnen) vun engem 6-Stonnen Blockchain Intro Training, deen d'Exploratioun vun der Blockchain Technologie, fortgeschratt Konzepter a praktesch Uwendungen weiderfouert. Dës Sessioun baut op de Fundamentalkenntnisser vun Deel 1 op, geet déiwer an Implementatiounsstrategien a real-weltlech Benotzungsfäll. Organiséiert vun The Blockchain Academy a geleed vun hirer Ekipp, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
+        de: "Besuchte den zweiten Teil (3 Stunden) einer 6-stündigen Blockchain-Einführungsschulung, der die Erkundung der Blockchain-Technologie, fortgeschrittene Konzepte und praktische Anwendungen fortsetzt. Diese Sitzung baut auf dem Grundlagenwissen aus Teil 1 auf und vertieft sich in Implementierungsstrategien und reale Anwendungsfälle. Organisiert von The Blockchain Academy und durchgeführt von ihrem Team, im Rahmen meines BTS Cloud Computing Programms am LGK.",
+        fr: "Suivi la deuxième partie (3 heures) d'une formation de 6 heures sur l'Introduction à la Blockchain, poursuivant l'exploration de la technologie blockchain, des concepts avancés et des applications pratiques. Cette session s'appuie sur les connaissances fondamentales de la Partie 1, approfondissant les stratégies d'implémentation et les cas d'usage réels. Organisé par The Blockchain Academy et animé par leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
+    },
+    "formation.blockchain.intro.skills.fundamentals": {
+        en: "Blockchain Fundamentals",
+        pt: "Fundamentos do Blockchain",
+        lu: "Blockchain Fundamenter",
+        de: "Blockchain-Grundlagen",
+        fr: "Fondamentaux de la Blockchain"
+    },
+    "formation.blockchain.intro.skills.dlt": {
+        en: "Distributed Ledger Technology",
+        pt: "Tecnologia de Ledger Distribuído",
+        lu: "Distribuéiert Ledger Technologie",
+        de: "Distributed Ledger Technologie",
+        fr: "Technologie de Registre Distribué"
+    },
+    "formation.blockchain.intro.skills.crypto": {
+        en: "Cryptocurrency Concepts",
+        pt: "Conceitos de Criptomoeda",
+        lu: "Kryptowährung Konzepter",
+        de: "Kryptowährungs-Konzepte",
+        fr: "Concepts de Cryptomonnaie"
+    },
+    "formation.blockchain.intro.skills.applications": {
+        en: "Blockchain Applications",
+        pt: "Aplicações do Blockchain",
+        lu: "Blockchain Uwendungen",
+        de: "Blockchain-Anwendungen",
+        fr: "Applications de la Blockchain"
     },
 
     // Project Names (for modal display)

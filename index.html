@@ -181,11 +181,24 @@
                     <div>
                         <p style="margin-bottom: 0.75rem" data-i18n="about.languages.intro">Fluent in 5 languages, thriving in multicultural environments:</p>
                         <div class="tags" style="margin: 0;">
-                            <span data-i18n="about.languages.portuguese">Portuguese</span>
-                            <span data-i18n="about.languages.luxembourgish">Luxembourgish</span>
-                            <span data-i18n="about.languages.german">German</span>
-                            <span data-i18n="about.languages.french">French</span>
-                            <span data-i18n="about.languages.english">English</span>
+                            <span data-i18n="about.languages.portuguese">Portuguese (C1)</span>
+                            <span data-i18n="about.languages.luxembourgish">Luxembourgish (C1)</span>
+                            <span data-i18n="about.languages.english">English (C1)</span>
+                            <span data-i18n="about.languages.german">German (B2)</span>
+                            <span data-i18n="about.languages.french">French (B2)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-item">
+                    <i data-lucide="heart"></i>
+                    <div>
+                        <p style="margin-bottom: 0.75rem" data-i18n="about.hobbies.intro">Beyond tech, I stay active and creative:</p>
+                        <div class="tags" style="margin: 0;">
+                            <span data-i18n="about.hobbies.gym">Strength Training</span>
+                            <span data-i18n="about.hobbies.basketball">Basketball</span>
+                            <span data-i18n="about.hobbies.design">Graphic Design</span>
+                            <span data-i18n="about.hobbies.building">Building Projects</span>
                         </div>
                     </div>
                 </div>
@@ -392,6 +405,10 @@
                         <i data-lucide="github" aria-hidden="true"></i>
                         <span>GitHub</span>
                     </a>
+                    <a href="assets/docs/cv-guilherme-videira-marques-en.pdf" download="Guilherme-Videira-Marques-CV-EN.pdf" class="contact-item" aria-label="Download CV">
+                        <i data-lucide="file-text" aria-hidden="true"></i>
+                        <span data-i18n="contact.cv">Download CV</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -467,7 +484,17 @@
                 const langChanged = currentLang !== cachedLang;
                 if (!cachedSortedData || langChanged) {
                     const certs = getCertificationsSortedByRank();
-                    const formations = getAllFormations();
+                    const allFormations = getAllFormations();
+                    
+                    // Filter out future formations (only show completed ones)
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    const formations = allFormations.filter(formation => {
+                        if (!formation.dateCompleted) return false;
+                        const completedDate = new Date(formation.dateCompleted);
+                        completedDate.setHours(0, 0, 0, 0);
+                        return completedDate <= today;
+                    });
                     
                     // Pre-compute sort orders (avoid repeated Date parsing)
                     const certItems = certs.map(cert => ({
