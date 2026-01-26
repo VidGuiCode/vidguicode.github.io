@@ -52,17 +52,17 @@ const CERTIFICATIONS = [
         level: CERT_LEVELS.BEGINNER, // Generic level: Beginner / Foundational
         image: 'assets/img/certifications/badge-azure-az900.webp',
         externalUrl: 'https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/',
-        credlyUrl: null, // In progress - not completed yet
+        credlyUrl: 'https://www.credly.com/badges/241c91cc-eda3-4440-a17f-94f741d7d22d/public_url',
         description: 'Demonstrates foundational knowledge of cloud services and how those services are provided with Microsoft Azure.',
         descriptionKey: 'cert.azure.az900.description', // Translation key
         skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
         skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'], // Translation keys
         relatedProjects: [], // No direct project linkage
         relatedFormations: ['azure-fundamentals-training'], // IDs of related formations/trainings
-        dateEarned: null, // Not completed yet
+        dateEarned: '2026-01-26', // January 26, 2026
         expiryDate: null,
         isFree: false, // Not free
-        status: 'in-progress', // Status: 'completed' or 'in-progress'
+        status: 'completed', // Status: 'completed' or 'in-progress'
     },
     {
         id: 'microsoft-powerpoint-associate',

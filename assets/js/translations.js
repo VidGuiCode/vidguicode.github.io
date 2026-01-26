@@ -2747,11 +2747,11 @@ const translations = {
         fr: "Microsoft AZ-900"
     },
     "cert.az900.status": {
-        en: "Azure Fundamentals — In Progress",
-        pt: "Fundamentos Azure — Em Curso",
-        lu: "Azure Fundamentals — Am Gaang",
-        de: "Azure Grundlagen — In Bearbeitung",
-        fr: "Fondamentaux Azure — En Cours"
+        en: "Azure Fundamentals — January 2026",
+        pt: "Fundamentos Azure — Janeiro 2026",
+        lu: "Azure Fundamentals — Januar 2026",
+        de: "Azure Grundlagen — Januar 2026",
+        fr: "Fondamentaux Azure — Janvier 2026"
     },
     "cert.ccna.title": {
         en: "CCNA Modules",
