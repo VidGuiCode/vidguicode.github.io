@@ -249,11 +249,11 @@ const translations = {
 
     // Skills Section - Redesigned
     "skills.title": {
-        en: "Technical Arsenal",
-        pt: "Arsenal Técnico",
-        lu: "Technesch Arsenal",
-        de: "Technisches Arsenal",
-        fr: "Arsenal Technique"
+        en: "Tech Stack",
+        pt: "Tech Stack",
+        lu: "Tech Stack",
+        de: "Tech Stack",
+        fr: "Tech Stack"
     },
     // Infrastructure & Cloud
     "skills.infrastructure.title": {

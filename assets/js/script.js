@@ -329,4 +329,72 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==========================================
+    // SECTION PROGRESS (index navbar)
+    // ==========================================
+    const progressFill = document.querySelector('.nav-progress-fill');
+    const sections = Array.from(document.querySelectorAll('main section[id]'));
+
+    const updateNavOffset = () => {
+        const navbar = document.querySelector('.navbar');
+        if (!navbar) return;
+        const offset = navbar.offsetHeight + 12;
+        document.documentElement.style.setProperty('--nav-offset', navbar.offsetHeight + 'px');
+        document.documentElement.style.setProperty('--nav-offset-gap', offset + 'px');
+        sections.forEach(section => {
+            section.style.scrollMarginTop = offset + 'px';
+        });
+    };
+
+    if (progressFill) {
+        
+        const updateProgress = () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            const clamped = Math.min(100, Math.max(0, progress));
+            progressFill.style.setProperty('--scroll-progress', clamped + '%');
+        };
+
+        updateNavOffset();
+        updateProgress();
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', () => {
+            updateNavOffset();
+            updateProgress();
+        });
+    } else {
+        updateNavOffset();
+        window.addEventListener('resize', updateNavOffset);
+    }
+
+    const scrollToHash = (hash, smooth) => {
+        if (!hash) return;
+        const target = document.querySelector(hash);
+        const navbar = document.querySelector('.navbar');
+        if (!target || !navbar) return;
+        const offset = navbar.offsetHeight + 12;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' });
+    };
+
+    const applyHashOffset = () => {
+        if (!window.location.hash) return;
+        scrollToHash(window.location.hash, false);
+    };
+
+    document.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+        const hash = link.getAttribute('href');
+        if (!hash || hash === '#') return;
+        if (!document.querySelector(hash)) return;
+        event.preventDefault();
+        history.pushState(null, '', hash);
+        scrollToHash(hash, true);
+    });
+
+    window.addEventListener('hashchange', applyHashOffset);
+    setTimeout(applyHashOffset, 0);
 });

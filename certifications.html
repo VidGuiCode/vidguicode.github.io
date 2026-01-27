@@ -21,9 +21,12 @@
     
     <!-- Icons - Load locally (version 0.555.0) -->
     <script src="assets/js/lucide.min.js" defer></script>
-    
+
     <!-- Flags - Load locally -->
     <link rel="stylesheet" href="assets/css/flag-icons.min.css">
+
+    <!-- Fuse.js for fuzzy search -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/img/logos/vidguicode-favicon.svg">
@@ -31,7 +34,9 @@
 
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/translations.js"></script>
+    <script src="assets/js/navbar.js"></script>
     <script src="assets/js/certifications-data.js"></script>
+    <script src="assets/js/projects-data.js"></script>
     
     <style>
         /* Certifications Page - Following Portfolio Design Language */
@@ -488,6 +493,23 @@
                 padding-right: 2.5rem;
             }
 
+            /* Stack badge and title vertically on mobile */
+            .modal-header-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .modal-badge-img {
+                width: 64px;
+                height: 64px;
+            }
+
+            .modal-header-text {
+                width: 100%;
+            }
+
             /* Typography uses centralized scale - see styles.css */
             .modal-skills {
                 gap: 0.4rem;
@@ -517,6 +539,29 @@
         .modal-header {
             margin-bottom: 1.5rem;
             padding-right: 2rem;
+        }
+
+        .modal-header-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .modal-badge-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            display: none;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .modal-header-text {
+            flex: 1;
+            min-width: 0;
         }
 
         /* Typography uses centralized scale - see styles.css */
@@ -767,34 +812,40 @@
 </head>
 <body>
     <div class="grid-background"></div>
-    
-    <nav class="navbar">
-        <a href="index.html#home" class="nav-brand">
-            <img src="assets/img/logos/vidguicode-favicon.svg" alt="VidGuiCode" class="nav-brand-logo">
-            <span>VIDGUICODE</span>
-        </a>
-        <div class="nav-links">
-        </div>
-        <div class="nav-controls">
-            <div class="lang-switcher">
-                <button id="lang-toggle" class="icon-btn" aria-label="Change language">
-                    <i data-lucide="globe"></i>
-                    <span class="current-lang">EN</span>
-                </button>
-                <div class="lang-dropdown">
-                    <button data-lang="en"><span class="fi fi-gb" aria-hidden="true"></span>English</button>
-                    <button data-lang="pt"><span class="fi fi-pt" aria-hidden="true"></span>Português</button>
-                    <button data-lang="lu"><span class="fi fi-lu" aria-hidden="true"></span>Lëtzebuergesch</button>
-                    <button data-lang="de"><span class="fi fi-de" aria-hidden="true"></span>Deutsch</button>
-                    <button data-lang="fr"><span class="fi fi-fr" aria-hidden="true"></span>Français</button>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-title">
+        <div class="search-modal-overlay" id="search-overlay"></div>
+        <div class="search-modal-content">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search projects, certifications, skills..."
+                        autocomplete="off"
+                        aria-label="Search"
+                    >
+                    <button id="search-close" class="search-close-btn" aria-label="Close search">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+                <div class="search-hint">
+                    <kbd>↑</kbd> <kbd>↓</kbd> to navigate • <kbd>Enter</kbd> to select • <kbd>Esc</kbd> to close
                 </div>
             </div>
-            <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
-                <i data-lucide="sun" class="sun-icon"></i>
-                <i data-lucide="moon" class="moon-icon"></i>
-            </button>
+            <div id="search-results" class="search-results">
+                <div class="search-empty">
+                    <i data-lucide="search"></i>
+                    <p>Start typing to search...</p>
+                </div>
+            </div>
         </div>
-    </nav>
+    </div>
+
+    <!-- Navbar (generated by navbar.js) -->
+    <div id="navbar-container"></div>
 
     <main class="container" style="padding-top: 100px;">
         <a href="index.html#home" class="back-link">
@@ -856,9 +907,9 @@
                     <i data-lucide="x"></i>
                 </button>
                 <div class="modal-header">
-                    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-                        <img id="modal-cert-badge-img" src="" alt="" style="width: 80px; height: 80px; object-fit: contain; display: none; border-radius: 8px; border: 1px solid var(--border-color); cursor: pointer;" title="Click to view full badge">
-                        <div style="flex: 1; min-width: 0;">
+                    <div class="modal-header-content">
+                        <img id="modal-cert-badge-img" src="" alt="" class="modal-badge-img" title="Click to view full badge">
+                        <div class="modal-header-text">
                             <h2 id="modal-cert-name"></h2>
                             <div class="cert-provider" id="modal-cert-provider"></div>
                         </div>
@@ -898,6 +949,7 @@
         </footer>
     </main>
 
+    <script src="assets/js/search.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
         // Get current language from localStorage or default to 'en'
@@ -1759,7 +1811,32 @@
 
             modalName.textContent = formationName;
             modalProvider.innerHTML = `<i data-lucide="users"></i> ${formation.provider}`;
-            
+
+            // Handle formation logo/badge in modal header
+            const modalBadgeImg = document.getElementById('modal-cert-badge-img');
+            if (modalBadgeImg) {
+                if (formation.logo) {
+                    // Determine which logo to use based on theme
+                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                    let logoToUse = formation.logo;
+
+                    if (currentTheme === 'light' && formation.logoLight) {
+                        logoToUse = formation.logoLight;
+                    } else if (currentTheme === 'dark' && formation.logoDark) {
+                        logoToUse = formation.logoDark;
+                    }
+
+                    modalBadgeImg.src = logoToUse;
+                    modalBadgeImg.alt = formationName;
+                    modalBadgeImg.onclick = null; // Formations don't need click action
+                    modalBadgeImg.style.cursor = 'default';
+                    modalBadgeImg.style.display = 'block';
+                } else {
+                    // No logo - hide the badge image
+                    modalBadgeImg.style.display = 'none';
+                }
+            }
+
             // Render description with optional images
             let descriptionHTML = formationDescription;
             if (formation.descriptionImages && formation.descriptionImages.length > 0) {
@@ -1781,6 +1858,12 @@
 
             // Hide formations section (not needed for formation modal)
             formationsSection.style.display = 'none';
+
+            // Hide action buttons (Credly, External URL - not applicable to formations)
+            const modalActions = document.getElementById('modal-cert-actions');
+            if (modalActions) {
+                modalActions.style.display = 'none';
+            }
 
             // Render related certifications
             const relatedCerts = getCertificationsByFormation(formationId);
