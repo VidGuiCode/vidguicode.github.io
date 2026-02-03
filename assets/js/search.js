@@ -20,6 +20,15 @@
     // Recent searches (max 5)
     const MAX_RECENT_SEARCHES = 5;
 
+    // Translation helper function
+    const t = (key, fallback) => {
+        const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
+        if (typeof translations === 'undefined') return fallback;
+        const entry = translations[key];
+        if (!entry) return fallback;
+        return entry[currentLang] || entry['en'] || fallback;
+    };
+
     // Wait for DOM to be ready
     document.addEventListener('DOMContentLoaded', initSearch);
 
@@ -166,14 +175,6 @@
         const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
         searchData = [];
 
-        // Get translation helper
-        const t = (key, fallback) => {
-            if (typeof translations === 'undefined') return fallback;
-            const entry = translations[key];
-            if (!entry) return fallback;
-            return entry[currentLang] || entry['en'] || fallback;
-        };
-
         // Add projects
         try {
             const projects = getAllProjects();
@@ -186,6 +187,7 @@
                 searchData.push({
                     type: 'project',
                     id: project.id,
+                    projectId: project.id, // Searchable project ID field
                     name: name,
                     description: description,
                     categories: categories.join(' '),
@@ -255,6 +257,7 @@
             fuse = new Fuse(searchData, {
                 keys: [
                     { name: 'name', weight: 2 },
+                    { name: 'projectId', weight: 2 },
                     { name: 'description', weight: 1 },
                     { name: 'tags', weight: 1.5 },
                     { name: 'categories', weight: 1.5 },
@@ -262,9 +265,12 @@
                     { name: 'category', weight: 1 },
                     { name: 'skills', weight: 1.2 }
                 ],
-                threshold: 0.4,
+                threshold: 0.5,
+                distance: 100,
                 includeScore: true,
-                minMatchCharLength: 2
+                minMatchCharLength: 1,
+                ignoreLocation: true,
+                useExtendedSearch: false
             });
         } else {
             console.error('Fuse.js not loaded');
@@ -332,13 +338,13 @@
 
         // Quick Links
         html += '<div class="search-group">';
-        html += '<div class="search-group-title">Quick Links</div>';
+        html += '<div class="search-group-title">' + t('search.section.quickLinks', 'Quick Links') + '</div>';
 
         const quickLinks = [
-            { name: 'All Projects', icon: 'layers', href: 'projects.html' },
-            { name: 'All Certifications', icon: 'award', href: 'certifications.html' },
-            { name: 'Contact', icon: 'mail', href: 'index.html#contact' },
-            { name: 'Download CV', icon: 'file-text', href: '#', action: 'open-cv' }
+            { name: t('search.quicklink.allProjects', 'All Projects'), icon: 'layers', href: 'projects.html' },
+            { name: t('search.quicklink.allCertifications', 'All Certifications'), icon: 'award', href: 'certifications.html' },
+            { name: t('search.quicklink.contact', 'Contact'), icon: 'mail', href: 'index.html#contact' },
+            { name: t('search.quicklink.downloadCv', 'Download CV'), icon: 'file-text', href: '#', action: 'open-cv' }
         ];
 
         quickLinks.forEach((link, index) => {
@@ -361,7 +367,7 @@
         // Recent searches (if any)
         if (recentSearches.length > 0) {
             html += '<div class="search-group">';
-            html += '<div class="search-group-title">Recent Searches</div>';
+            html += '<div class="search-group-title">' + t('search.section.recent', 'Recent Searches') + '</div>';
 
             recentSearches.forEach((query, index) => {
                 html += '<a href="#" class="search-result-item quick-link-item recent-search-item" data-query="' + escapeHtml(query) + '">';
@@ -378,7 +384,7 @@
 
         // Popular Tech Stack
         html += '<div class="search-group">';
-        html += '<div class="search-group-title">Popular Technologies</div>';
+        html += '<div class="search-group-title">' + t('search.section.popularTech', 'Popular Technologies') + '</div>';
 
         const popularTech = [
             { name: 'Docker', icon: 'box' },
@@ -488,7 +494,7 @@
         }
 
         if (!fuse) {
-            searchResults.innerHTML = '<div class="search-no-results"><i data-lucide="alert-circle"></i><p>Search not ready. Please try again.</p></div>';
+            searchResults.innerHTML = '<div class="search-no-results"><i data-lucide="alert-circle"></i><p>' + t('search.error.notReady', 'Search not ready. Please try again.') + '</p></div>';
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
@@ -568,50 +574,51 @@
             formation: []
         };
 
-        // Action shortcuts (opt-in: user clicks them)
-        if (/\b(cv|resume|résumé)\b/.test(normalizedQuery)) {
+        // Action shortcuts (opt-in: user clicks them) - Multilingual CV detection with partial matching
+        if (/\b(cv|resume|résumé|resum|lebenslauf|leben|currículo|curriculo|curri|liewen)\b/i.test(normalizedQuery) || 
+            normalizedQuery.includes('leben') || normalizedQuery.includes('curri')) {
             grouped.action.push({
                 type: 'action',
                 id: 'open-cv',
-                name: 'Download CV',
-                description: 'Choose language (EN / FR)',
+                name: t('search.action.downloadCv', 'Download CV'),
+                description: t('search.action.downloadCv.desc', 'Choose language (EN / FR)'),
                 icon: 'file-text',
                 action: 'open-cv'
             });
         }
-        if (/\b(projects?|portfolio)\b/.test(normalizedQuery)) {
+        if (/\b(projects?|portfolio|projetos?|projeten|projekte|projets?)\b/i.test(normalizedQuery)) {
             grouped.action.push({
                 type: 'action',
                 id: 'go-projects',
-                name: 'Go to Projects',
-                description: 'Open the projects page',
+                name: t('search.action.goProjects', 'Go to Projects'),
+                description: t('search.action.goProjects.desc', 'Open the projects page'),
                 icon: 'layers',
                 action: 'go-projects'
             });
         }
-        if (/\b(certifications?|certs?)\b/.test(normalizedQuery)) {
+        if (/\b(certifications?|certs?|certificações|certificacoes|zertifikater?|zertifikate?)\b/i.test(normalizedQuery)) {
             grouped.action.push({
                 type: 'action',
                 id: 'go-certifications',
-                name: 'Go to Certifications',
-                description: 'Open the certifications page',
+                name: t('search.action.goCertifications', 'Go to Certifications'),
+                description: t('search.action.goCertifications.desc', 'Open the certifications page'),
                 icon: 'award',
                 action: 'go-certifications'
             });
         }
-        if (/\b(home|main|index)\b/.test(normalizedQuery)) {
+        if (/\b(home|main|index|início|inicio|startsäit|startseite|accueil)\b/i.test(normalizedQuery)) {
             grouped.action.push({
                 type: 'action',
                 id: 'go-home',
-                name: 'Go to Home',
-                description: 'Open the main page',
+                name: t('search.action.goHome', 'Go to Home'),
+                description: t('search.action.goHome.desc', 'Open the main page'),
                 icon: 'home',
                 action: 'go-home'
             });
         }
 
         if (results.length === 0 && grouped.action.length === 0) {
-            searchResults.innerHTML = '<div class="search-no-results"><i data-lucide="search-x"></i><p>No results found for "' + escapeHtml(query) + '"</p></div>';
+            searchResults.innerHTML = '<div class="search-no-results"><i data-lucide="search-x"></i><p>' + t('search.empty.noResults', 'No results found for') + ' "' + escapeHtml(query) + '"</p></div>';
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
@@ -633,6 +640,49 @@
 
     function getSynonymQueries(normalizedQuery) {
         const queries = [];
+
+        // AI / Artificial Intelligence synonyms (multilingual)
+        if (/\b(ai|ki|ia|künstliche intelligenz|inteligência artificial|intelligence artificielle)\b/i.test(normalizedQuery)) {
+            queries.push('ai');
+            queries.push('artificial intelligence');
+            queries.push('ki'); // German: Künstliche Intelligenz
+            queries.push('ia'); // French/Portuguese: Intelligence Artificielle / Inteligência Artificial
+            queries.push('mistral');
+        }
+
+        // IoT / Internet of Things synonyms (multilingual)
+        if (/\b(iot|ido|internet (of|der|das) (things|dinge)|internet dos objetos)\b/i.test(normalizedQuery)) {
+            queries.push('iot');
+            queries.push('internet of things');
+            queries.push('ido'); // Portuguese: Internet das Objetos
+            queries.push('esp8266');
+            queries.push('sensor');
+        }
+
+        // Docker / Container synonyms
+        if (/\b(docker|container|conteneur)\b/i.test(normalizedQuery)) {
+            queries.push('docker');
+            queries.push('docker compose');
+            queries.push('container');
+            queries.push('containerization');
+        }
+
+        // Cloud / Nuvem / Nuage synonyms
+        if (/\b(cloud|nuvem|nuage|wolke)\b/i.test(normalizedQuery)) {
+            queries.push('cloud');
+            queries.push('cloud computing');
+            queries.push('oracle cloud');
+            queries.push('azure');
+        }
+
+        // Web Development synonyms (multilingual)
+        if (/\b(web dev|webdev|desenvolvimento web|développement web|webentwicklung)\b/i.test(normalizedQuery)) {
+            queries.push('web development');
+            queries.push('web dev');
+            queries.push('html');
+            queries.push('css');
+            queries.push('javascript');
+        }
 
         // Kubernetes synonyms
         if (isKubeQuery(normalizedQuery)) {
@@ -930,6 +980,7 @@
         if (!item || !normalizedQuery) return false;
         const parts = [
             item.name,
+            item.projectId,
             item.description,
             item.tags,
             item.categories,
@@ -975,7 +1026,6 @@
     }
 
     function renderResults(grouped, query) {
-        const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
         let html = '';
 
         // Detect current page
@@ -985,18 +1035,10 @@
         const isInSubdirectory = currentPage.includes('/projects/') || currentPage.includes('/certifications/');
         const pathPrefix = isInSubdirectory ? '../' : '';
 
-        // Helper for translations
-        const t = (key, fallback) => {
-            if (typeof translations === 'undefined') return fallback;
-            const entry = translations[key];
-            if (!entry) return fallback;
-            return entry[currentLang] || entry['en'] || fallback;
-        };
-
         // Actions
         if (grouped.action && grouped.action.length > 0) {
             html += '<div class="search-group">';
-            html += '<div class="search-group-title">Actions</div>';
+            html += '<div class="search-group-title">' + t('search.section.actions', 'Actions') + '</div>';
             grouped.action.forEach((item) => {
                 html += '<a href="#" class="search-result-item quick-link-item" data-action="' + item.action + '">';
                 html += '<div class="search-result-header">';
@@ -1014,7 +1056,7 @@
         // Projects
         if (grouped.project.length > 0) {
             html += '<div class="search-group">';
-            html += '<div class="search-group-title">Projects (' + grouped.project.length + ')</div>';
+            html += '<div class="search-group-title">' + t('search.section.projects', 'Projects') + ' (' + grouped.project.length + ')</div>';
             grouped.project.forEach((item, index) => {
                 const link = item.link ? pathPrefix + item.link : '#projects';
 
@@ -1052,7 +1094,7 @@
         // Certifications
         if (grouped.certification.length > 0) {
             html += '<div class="search-group">';
-            html += '<div class="search-group-title">Certifications (' + grouped.certification.length + ')</div>';
+            html += '<div class="search-group-title">' + t('search.section.certifications', 'Certifications') + ' (' + grouped.certification.length + ')</div>';
 
             grouped.certification.forEach((item) => {
                 const certId = item.id;
@@ -1099,7 +1141,7 @@
         // Formations
         if (grouped.formation.length > 0) {
             html += '<div class="search-group">';
-            html += '<div class="search-group-title">Training & Workshops (' + grouped.formation.length + ')</div>';
+            html += '<div class="search-group-title">' + t('search.section.formations', 'Training & Workshops') + ' (' + grouped.formation.length + ')</div>';
 
             grouped.formation.forEach(item => {
                 const formationId = item.id;

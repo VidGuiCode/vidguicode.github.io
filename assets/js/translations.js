@@ -647,11 +647,11 @@ const translations = {
         fr: "Cloud Personnel Home Lab"
     },
     "projects.homelab.desc": {
-        en: "From March 2025 to present: A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers custom web apps with SSO, media automation, and a K3s cluster. Continuously maintained and expanded.",
-        pt: "De março de 2025 até ao presente: Cluster híbrido de 3 nós com Raspberry Pi, portátil e Oracle Cloud VPS. Suporta aplicações web personalizadas com SSO, automação multimédia e um cluster K3s. Continuamente mantido e expandido.",
-        lu: "Vum Mäerz 2025 bis haut: En hybrid 3-Node Cluster deen Raspberry Pi, Laptop, an Oracle Cloud VPS kombinéiert. Bedreiwe personaliséiert Web Apps mat SSO, Medien-Automatiséierung, an e K3s Cluster. Kontinuéierlech ënnerhalen an erweidert.",
-        de: "Von März 2025 bis heute: Ein hybrider 3-Knoten-Cluster, der Raspberry Pi, Laptop und Oracle Cloud VPS kombiniert. Betreibt benutzerdefinierte Web-Apps mit SSO, Medien-Automatisierung und einen K3s-Cluster. Kontinuierlich gewartet und erweitert.",
-        fr: "De mars 2025 à aujourd'hui : Un cluster hybride à 3 nœuds combinant Raspberry Pi, laptop et Oracle Cloud VPS. Alimente des applications web personnalisées avec SSO, automatisation média et un cluster K3s. Maintenu et développé en continu."
+        en: "From March 2025 to present: I built this hybrid 3-node cluster using a Raspberry Pi, an old laptop, and an Oracle Cloud VPS. It runs my custom web apps with single sign-on, handles my media automation, and hosts a K3s Kubernetes cluster. I keep adding new features and services as I learn more.",
+        pt: "De março de 2025 até ao presente: Construí este cluster híbrido de 3 nós usando um Raspberry Pi, um portátil antigo e um Oracle Cloud VPS. Executa as minhas aplicações web personalizadas com single sign-on, trata da minha automação multimédia e aloja um cluster K3s Kubernetes. Continuo a adicionar novas funcionalidades e serviços à medida que aprendo mais.",
+        lu: "Vum Mäerz 2025 bis haut: Ech hunn dësen hybrid 3-Node Cluster mat engem Raspberry Pi, engem alen Laptop, an engem Oracle Cloud VPS gebaut. Et bedreiwe meng personaliséiert Web Apps mat Single Sign-on, handhabt meng Medien-Automatiséierung, an hostet e K3s Kubernetes Cluster. Ech füügen ëmmer nei Features a Servicer derbäi wéi ech méi léieren.",
+        de: "Von März 2025 bis heute: Ich habe diesen hybriden 3-Knoten-Cluster mit einem Raspberry Pi, einem alten Laptop und einem Oracle Cloud VPS gebaut. Er betreibt meine benutzerdefinierten Web-Apps mit Single Sign-on, verwaltet meine Medien-Automatisierung und hostet einen K3s Kubernetes-Cluster. Ich füge weiterhin neue Features und Services hinzu, während ich mehr lerne.",
+        fr: "De mars 2025 à aujourd'hui : J'ai construit ce cluster hybride à 3 nœuds en utilisant un Raspberry Pi, un vieux laptop et un Oracle Cloud VPS. Il exécute mes applications web personnalisées avec single sign-on, gère mon automatisation média et héberge un cluster K3s Kubernetes. Je continue à ajouter de nouvelles fonctionnalités et services au fur et à mesure que j'apprends."
     },
     "projects.homelab.cta": {
         en: "View Case Study",
@@ -668,11 +668,11 @@ const translations = {
         fr: "Surveillance Intelligente des Plantes - Projet Final"
     },
     "projects.plant.desc": {
-        en: "Final project from September 2024 to June 2025: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups. Presented the completed product as part of the Computer Technician diploma.",
-        pt: "Projeto final de setembro de 2024 a junho de 2025: sistema IoT completo com nós ESP8266, hub Raspberry Pi, painel web, rede empresarial e cópias de segurança automatizadas. Apresentei o produto concluído como parte do diploma de Técnico de Informática.",
-        lu: "Finale Projet vum September 2024 bis Juni 2025: Komplett IoT System mat ESP8266 Noden, Raspberry Pi Hub, Web Dashboard, Enterprise Networking, an automatiséierte Backups. Hunn de komplett Produit presentéiert als Deel vum Computer Technician Diplom.",
-        de: "Abschlussprojekt von September 2024 bis Juni 2025: Vollständiges IoT-System mit ESP8266-Knoten, Raspberry Pi Hub, Web-Dashboard, Enterprise-Networking und automatisierten Backups. Präsentierte das fertige Produkt als Teil des Computer-Techniker-Diploms.",
-        fr: "Projet final de septembre 2024 à juin 2025 : Système IoT complet avec nœuds ESP8266, hub Raspberry Pi, tableau de bord web, réseau d'entreprise et sauvegardes automatisées. Présenté le produit terminé dans le cadre du diplôme de Technicien en informatique."
+        en: "Final project from September 2024 to June 2025: This was my big final project for my Computer Technician diploma. I built a complete IoT system with ESP8266 sensor nodes, a Raspberry Pi hub, a web dashboard to monitor everything, enterprise networking with VLANs, and automated backups. Presented the whole thing and got 59/60.",
+        pt: "Projeto final de setembro de 2024 a junho de 2025: Este foi o meu grande projeto final para o diploma de Técnico de Informática. Construí um sistema IoT completo com nós sensores ESP8266, um hub Raspberry Pi, um painel web para monitorizar tudo, networking empresarial com VLANs e backups automatizados. Apresentei tudo e obtive 59/60.",
+        lu: "Finale Projet vum September 2024 bis Juni 2025: Dëst war mäi grousse Finalprojekt fir mäi Computer Technician Diplom. Ech hunn e komplett IoT System mat ESP8266 Sensor Noden, engem Raspberry Pi Hub, engem Web Dashboard fir alles ze iwwerwaachen, Enterprise Networking mat VLANs, an automatiséierte Backups gebaut. Hunn dat ganzt presentéiert an hunn 59/60 kritt.",
+        de: "Abschlussprojekt von September 2024 bis Juni 2025: Das war mein großes Abschlussprojekt für mein Computer-Techniker-Diplom. Ich habe ein komplettes IoT-System mit ESP8266-Sensorknoten, einem Raspberry Pi Hub, einem Web-Dashboard zur Überwachung von allem, Enterprise-Networking mit VLANs und automatisierten Backups gebaut. Habe das Ganze präsentiert und 59/60 bekommen.",
+        fr: "Projet final de septembre 2024 à juin 2025 : C'était mon grand projet final pour mon diplôme de Technicien en informatique. J'ai construit un système IoT complet avec des nœuds capteurs ESP8266, un hub Raspberry Pi, un tableau de bord web pour tout surveiller, du networking d'entreprise avec VLANs, et des sauvegardes automatisées. J'ai présenté le tout et j'ai obtenu 59/60."
     },
     "projects.cylro.title": {
         en: "Cylro (In Development)",
@@ -682,11 +682,11 @@ const translations = {
         fr: "Cylro (En Développement)"
     },
     "projects.cylro.desc": {
-        en: "From August 2025, in development: A modular, AI-powered CMS and website builder designed to streamline content creation and site management. Built in partnership with a collaborator.",
-        pt: "Desde agosto de 2025, em desenvolvimento: Um CMS modular com IA e construtor de sites concebido para simplificar a criação de conteúdos e a gestão de websites. Construído em parceria com um colaborador.",
-        lu: "Vum August 2025, an Entwécklung: E modulare, KI-bedriwwene CMS a Websäit Builder entwéckelt fir d'Inhaltskreatioun an d'Säiteverwaltung ze vereinfachen. Gebaut a Partnerschaft mat engem Kollaborateur.",
-        de: "Seit August 2025, in Entwicklung: Ein modulares, KI-gestütztes CMS und Website-Builder, entwickelt um Content-Erstellung und Site-Management zu optimieren. In Partnerschaft mit einem Mitarbeiter entwickelt.",
-        fr: "Depuis août 2025, en développement : Un CMS modulaire alimenté par l'IA et constructeur de sites conçu pour simplifier la création de contenu et la gestion de sites. Construit en partenariat avec un collaborateur."
+        en: "From August 2025, in development: I'm co-founding this agency platform with a partner. It's designed as an operating system for agencies and freelancers managing multiple client websites. One workspace for everything, built in Luxembourg, hosted in Europe. We started researching in June 2025 and have been building steadily since August.",
+        pt: "Desde agosto de 2025, em desenvolvimento: Estou a co-fundar esta plataforma para agências com um parceiro. Foi concebida como um sistema operativo para agências e freelancers que gerem vários websites de clientes. Um espaço de trabalho para tudo, construído no Luxemburgo, alojado na Europa. Começámos a pesquisar em junho de 2025 e temos estado a construir constantemente desde agosto.",
+        lu: "Vum August 2025, an Entwécklung: Ech grënnen dës Agence Plattform mat engem Partner. Et ass entwéckelt als Betribssystem fir Agencen a Freelancer déi verschidde Client Websäiten verwalten. Ee Workspace fir alles, gebaut am Lëtzebuerg, gehost an Europa. Mir hunn ugefaang ze fuerschen am Juni 2025 an bauen kontinuéierlech zënter August.",
+        de: "Seit August 2025, in Entwicklung: Ich gründe diese Agenturplattform mit einem Partner. Sie ist als Betriebssystem für Agenturen und Freelancer konzipiert, die mehrere Kunden-Websites verwalten. Ein Workspace für alles, gebaut in Luxemburg, gehostet in Europa. Wir haben im Juni 2025 mit der Recherche begonnen und bauen seit August kontinuierlich.",
+        fr: "Depuis août 2025, en développement : Je co-fonde cette plateforme d'agence avec un partenaire. Elle est conçue comme un système d'exploitation pour les agences et freelances gérant plusieurs sites clients. Un espace de travail pour tout, construit au Luxembourg, hébergé en Europe. Nous avons commencé la recherche en juin 2025 et construisons régulièrement depuis août."
     },
     "projects.gradingdino.title": {
         en: "GradingDino",
@@ -696,11 +696,25 @@ const translations = {
         fr: "GradingDino"
     },
     "projects.gradingdino.desc": {
-        en: "From October 2025 to November 2025: A grade management system built with Django. Teachers create classrooms and manage student grades, while students track their progress. Group project MVP — learned valuable lessons about framework selection.",
-        pt: "De outubro de 2025 a novembro de 2025: Um sistema de gestão de notas construído com Django. Os professores criam turmas e gerem as notas dos alunos, enquanto os alunos acompanham o seu progresso. MVP de projeto de grupo — lições valiosas sobre a escolha de frameworks.",
-        lu: "Vum Oktober 2025 bis November 2025: E Noteverwaltungssystem mat Django gebaut. D'Enseignanten kreéieren Klassen a verwalten d'Noten, an d'Schüler suivéieren hire Fortschrëtt. Grupp-Projet MVP — wäertvoll Lektiounen iwwer Framework-Auswiel.",
-        de: "Von Oktober 2025 bis November 2025: Ein Notenverwaltungssystem mit Django. Lehrer erstellen Klassen und verwalten Noten, Schüler verfolgen ihren Fortschritt. Gruppenprojekt MVP — wertvolle Lektionen über Framework-Auswahl.",
-        fr: "D'octobre 2025 à novembre 2025 : Un système de gestion des notes construit avec Django. Les enseignants créent des classes et gèrent les notes, les étudiants suivent leur progression. MVP de projet de groupe — leçons précieuses sur le choix des frameworks."
+        en: "From October 2025 to November 2025: This was a group project where we built a grade management system with Django. Teachers can create classrooms and manage grades, students can track their progress. We delivered an MVP and I learned some valuable lessons about choosing the right framework for the job.",
+        pt: "De outubro de 2025 a novembro de 2025: Este foi um projeto de grupo onde construímos um sistema de gestão de notas com Django. Os professores podem criar turmas e gerir notas, os alunos podem acompanhar o seu progresso. Entregámos um MVP e aprendi algumas lições valiosas sobre escolher o framework certo para o trabalho.",
+        lu: "Vum Oktober 2025 bis November 2025: Dëst war e Gruppeprojet wou mir e Noteverwaltungssystem mat Django gebaut hunn. D'Enseignanten kënnen Klassen kreéieren a Noten verwalten, d'Schüler kënnen hire Fortschrëtt suivéieren. Mir hunn en MVP geliwwert an ech hunn e puer wäertvoll Lektiounen iwwer d'richtegt Framework fir d'Aarbecht ze wielen geléiert.",
+        de: "Von Oktober 2025 bis November 2025: Das war ein Gruppenprojekt, bei dem wir ein Notenverwaltungssystem mit Django gebaut haben. Lehrer können Klassen erstellen und Noten verwalten, Schüler können ihren Fortschritt verfolgen. Wir haben ein MVP geliefert und ich habe einige wertvolle Lektionen über die Wahl des richtigen Frameworks für den Job gelernt.",
+        fr: "D'octobre 2025 à novembre 2025 : C'était un projet de groupe où nous avons construit un système de gestion des notes avec Django. Les enseignants peuvent créer des classes et gérer les notes, les étudiants peuvent suivre leur progression. Nous avons livré un MVP et j'ai appris de précieuses leçons sur le choix du bon framework pour le travail."
+    },
+    "projects.teamsbroadcast.title": {
+        en: "Teams Broadcast System",
+        pt: "Sistema de Transmissão Teams",
+        lu: "Teams Broadcast System",
+        de: "Teams Broadcast System",
+        fr: "Système de Diffusion Teams"
+    },
+    "projects.teamsbroadcast.desc": {
+        en: "From November 2025 to January 2026: I built this school project with Power Platform after a teacher mentioned how much work it was to send messages to 20+ Teams channels manually. It gets old really fast. This tool lets you select all your channels at once, write your message once, and send it everywhere with a single click. It's designed for teachers managing hundreds of class channels and anyone else who's tired of copy-pasting announcements over and over.",
+        pt: "De novembro de 2025 a janeiro de 2026: Construí este projeto escolar com Power Platform depois de um professor mencionar quanto trabalho dava enviar mensagens para mais de 20 canais do Teams manualmente. Cansa-se muito rápido. Esta ferramenta permite selecionar todos os teus canais de uma vez, escrever a mensagem uma vez e enviá-la para todo o lado com um único clique. Foi projetada para professores que gerem centenas de canais de turmas e para qualquer pessoa cansada de copiar e colar anúncios repetidamente.",
+        lu: "Vum November 2025 bis Januar 2026: Ech hunn dëse Schoulprojet mat Power Platform gebaut nodeems en Enseignant erwähnt huet wéivill Aarbecht et ass fir Messagen op 20+ Teams Kanäl manuell ze schécken. Et gëtt séier al. Dëst Tool léisst dech all deng Kanäl op eemol auswielen, däi Message eemol schreiwen, an et iwwerall mat engem Klick schécken. Et ass entworf fir Enseignanten déi Honnerte vu Klasskanäl verwalten an all deen aneren deen et sat ass Ukënnegungen ëmmer erëm ze kopéieren a pasten.",
+        de: "Von November 2025 bis Januar 2026: Ich habe dieses Schulprojekt mit Power Platform gebaut, nachdem ein Lehrer erwähnte, wie viel Arbeit es war, Nachrichten manuell an 20+ Teams-Kanäle zu senden. Es wird richtig schnell alt. Dieses Tool lässt dich alle deine Kanäle auf einmal auswählen, deine Nachricht einmal schreiben und sie überall mit einem Klick senden. Es ist für Lehrer konzipiert, die Hunderte von Klassenkanälen verwalten, und jeden anderen, der es satt hat, Ankündigungen immer wieder zu kopieren und einzufügen.",
+        fr: "De novembre 2025 à janvier 2026 : J'ai construit ce projet scolaire avec Power Platform après qu'un enseignant a mentionné combien de travail c'était d'envoyer des messages à 20+ canaux Teams manuellement. Ça devient vieux très vite. Cet outil te permet de sélectionner tous tes canaux en une fois, écrire ton message une fois, et l'envoyer partout en un seul clic. Il est conçu pour les enseignants gérant des centaines de canaux de classe et tous ceux qui en ont marre de copier-coller des annonces encore et encore."
     },
 
     // Projects Page
@@ -850,6 +864,13 @@ const translations = {
         lu: "Projet kucken",
         de: "Projekt ansehen",
         fr: "Voir le Projet"
+    },
+    "projects.viewDetails": {
+        en: "View Details",
+        pt: "Ver Detalhes",
+        lu: "Detailer kucken",
+        de: "Details ansehen",
+        fr: "Voir les Détails"
     },
     "projects.portfolio.title": {
         en: "Portfolio Website",
@@ -4075,6 +4096,458 @@ const translations = {
         lu: "PIF - Personal Informatiouns Formular",
         de: "PIF - Persönliches Informationsformular",
         fr: "PIF - Formulaire d'Informations Personnelles"
+    },
+
+    // Teams Broadcast Project Page
+    "project.teamsbroadcast.badge": {
+        en: "SCHOOL PROJECT",
+        pt: "PROJETO ESCOLAR",
+        lu: "SCHOULPROJET",
+        de: "SCHULPROJEKT",
+        fr: "PROJET SCOLAIRE"
+    },
+    "project.teamsbroadcast.hero.title": {
+        en: "Teams Broadcast System",
+        pt: "Sistema de Transmissão Teams",
+        lu: "Teams Broadcast System",
+        de: "Teams Broadcast System",
+        fr: "Système de Diffusion Teams"
+    },
+    "project.teamsbroadcast.hero.subtitle": {
+        en: "Power Platform solution that eliminates the manual hassle of broadcasting messages to 20+ Microsoft Teams channels. Built for teachers, students, and organizational leaders.",
+        pt: "Solução Power Platform que elimina o trabalho manual de transmitir mensagens para mais de 20 canais do Microsoft Teams. Construído para professores, estudantes e líderes organizacionais.",
+        lu: "Power Platform Léisung déi d'manuell Aarbecht ewechhuelt fir Messagen op 20+ Microsoft Teams Kanäl ze schécken. Gebaut fir Enseignanten, Schüler a Leaderen.",
+        de: "Power Platform-Lösung, die die manuelle Arbeit beim Broadcasting von Nachrichten an 20+ Microsoft Teams-Kanäle eliminiert. Für Lehrer, Studenten und Organisationsleiter.",
+        fr: "Solution Power Platform qui élimine le travail manuel de diffusion de messages vers 20+ canaux Microsoft Teams. Conçu pour les enseignants, étudiants et responsables."
+    },
+    "project.teamsbroadcast.problem.title": {
+        en: "The Problem",
+        pt: "O Problema",
+        lu: "De Problem",
+        de: "Das Problem",
+        fr: "Le Problème"
+    },
+    "project.teamsbroadcast.problem.body": {
+        en: "Sending the same message to 20+ Teams channels manually is tedious. You have to open each one, copy-paste, and hope you didn't forget any. There's no way to track what was sent where.",
+        pt: "Enviar a mesma mensagem para mais de 20 canais do Teams manualmente é tedioso. Tens de abrir cada um, copiar e colar, e esperar que não te tenhas esquecido de nenhum. Não há forma de rastrear o que foi enviado para onde.",
+        lu: "Déiselwecht Message manuell op 20+ Teams Kanäl ze schécken ass miisam. Du muss jiddereen opmaachen, kopéieren a pasten, an hoffen datt s du keen vergiess hues. Et gëtt kee Wee fir ze verfollegen wat wou geschéckt gouf.",
+        de: "Dieselbe Nachricht manuell an 20+ Teams-Kanäle zu senden ist mühsam. Du musst jeden öffnen, kopieren-einfügen und hoffen, dass du keinen vergessen hast. Es gibt keine Möglichkeit zu verfolgen, was wohin gesendet wurde.",
+        fr: "Envoyer le même message à 20+ canaux Teams manuellement est fastidieux. Il faut ouvrir chacun, copier-coller, et espérer n'en avoir oublié aucun. Il n'y a aucun moyen de suivre ce qui a été envoyé où."
+    },
+    "project.teamsbroadcast.solution.title": {
+        en: "The Solution",
+        pt: "A Solução",
+        lu: "D'Léisung",
+        de: "Die Lösung",
+        fr: "La Solution"
+    },
+    "project.teamsbroadcast.solution.body1": {
+        en: "This tool lets you select all channels at once, write your message once, and broadcast everywhere with one click. Full logs show exactly what was sent where.",
+        pt: "Esta ferramenta permite selecionar todos os canais de uma vez, escrever a mensagem uma vez e transmitir para todos com um clique. Os registos completos mostram exatamente o que foi enviado para onde.",
+        lu: "Dëst Tool léisst dech all Kanäl op eemol auswielen, däi Message eemol schreiwen, an iwwerall mat engem Klick verbreeden. Komplett Logge weisen genee wat wou geschéckt gouf.",
+        de: "Dieses Tool lässt dich alle Kanäle auf einmal auswählen, deine Nachricht einmal schreiben und überall mit einem Klick senden. Vollständige Logs zeigen genau, was wohin gesendet wurde.",
+        fr: "Cet outil vous permet de sélectionner tous les canaux à la fois, écrire votre message une fois, et diffuser partout en un clic. Les logs complets montrent exactement ce qui a été envoyé où."
+    },
+    "project.teamsbroadcast.solution.body2": {
+        en: "Built for teachers managing hundreds of class channels, students uploading to multiple courses, project leaders coordinating across departments, and directors sending company-wide announcements. Anyone who needs consistent messaging across multiple Teams channels.",
+        pt: "Construído para professores que gerem centenas de canais de turmas, estudantes que fazem upload para vários cursos, líderes de projeto que coordenam entre departamentos e diretores que enviam anúncios para toda a empresa. Qualquer pessoa que precise de mensagens consistentes em vários canais do Teams.",
+        lu: "Gebaut fir Enseignanten déi Honnerte vu Klass-Kanäl verwalten, Schüler déi op verschidde Coursen eroplueden, Projet-Leaderen déi iwwer Departementer koordinéieren, a Direkteren déi Ukënnegungen un déi ganz Firma schécken. Jiddereen deen konsequent Messagen iwwer verschidde Teams Kanäl brauch.",
+        de: "Entwickelt für Lehrer, die Hunderte von Klassenkanälen verwalten, Studenten, die auf mehrere Kurse hochladen, Projektleiter, die abteilungsübergreifend koordinieren, und Direktoren, die unternehmensweite Ankündigungen versenden. Jeder, der konsistente Nachrichten über mehrere Teams-Kanäle benötigt.",
+        fr: "Conçu pour les enseignants gérant des centaines de canaux de classe, les étudiants téléchargeant sur plusieurs cours, les chefs de projet coordonnant entre départements, et les directeurs envoyant des annonces à toute l'entreprise. Toute personne ayant besoin de messages cohérents sur plusieurs canaux Teams."
+    },
+    "project.teamsbroadcast.howbuilt.title": {
+        en: "How It's Built",
+        pt: "Como Foi Construído",
+        lu: "Wéi et gebaut gouf",
+        de: "Wie es gebaut wurde",
+        fr: "Comment c'est construit"
+    },
+    "project.teamsbroadcast.howbuilt.powerapps": {
+        en: "Power Apps handles the UI. Select channels, write messages, see real-time status. The interface blocks you from sending twice and shows clear feedback while broadcasting.",
+        pt: "O Power Apps gere a interface. Seleciona canais, escreve mensagens, vê o estado em tempo real. A interface impede-te de enviar duas vezes e mostra feedback claro durante a transmissão.",
+        lu: "Power Apps handhabt d'UI. Kanäl auswielen, Messagen schreiwen, Echtzäit-Status gesinn. D'Interface blockéiert dech vum zweemol Schécken a weist kloer Feedback beim Broadcasten.",
+        de: "Power Apps handhabt die UI. Kanäle auswählen, Nachrichten schreiben, Echtzeit-Status sehen. Die Oberfläche blockiert doppeltes Senden und zeigt klares Feedback beim Broadcasting.",
+        fr: "Power Apps gère l'UI. Sélectionne les canaux, écris les messages, vois le statut en temps réel. L'interface empêche d'envoyer deux fois et affiche un feedback clair pendant la diffusion."
+    },
+    "project.teamsbroadcast.howbuilt.powerautomate": {
+        en: "Power Automate has two flows working together. The first flow automatically fetches all your Teams and channels when you open the app or click \"Refresh Channels\". The second flow handles the actual sending, posting your message to each selected Teams channel and returning success or failure for each one.",
+        pt: "O Power Automate tem dois fluxos a trabalhar em conjunto. O primeiro fluxo obtém automaticamente todas as tuas Teams e canais quando abres a app ou clicas em \"Atualizar Canais\". O segundo fluxo trata do envio real, publicando a tua mensagem em cada canal do Teams selecionado e devolvendo sucesso ou falha para cada um.",
+        lu: "Power Automate huet zwee Flows déi zesumme schaffen. Den éischte Flow hëlt automatesch all deng Teams a Kanäl wann s de d'App opmaachs oder \"Kanäl aktualiséieren\" klicks. Den zweete Flow behandelt dat tatsächlecht Schécken, publizéiert däi Message op all ausgewielten Teams Kanal a gëtt Erfolleg oder Feelschlag fir all een zréck.",
+        de: "Power Automate hat zwei Flows, die zusammenarbeiten. Der erste Flow holt automatisch alle deine Teams und Kanäle, wenn du die App öffnest oder \"Kanäle aktualisieren\" klickst. Der zweite Flow handhabt das eigentliche Senden, postet deine Nachricht an jeden ausgewählten Teams-Kanal und gibt Erfolg oder Fehler für jeden zurück.",
+        fr: "Power Automate a deux flux qui travaillent ensemble. Le premier flux récupère automatiquement toutes tes Teams et canaux quand tu ouvres l'app ou cliques sur \"Actualiser les Canaux\". Le deuxième flux gère l'envoi réel, poste ton message sur chaque canal Teams sélectionné et renvoie succès ou échec pour chacun."
+    },
+    "project.teamsbroadcast.howbuilt.dataverse": {
+        en: "Dataverse stores the logs. Search through broadcast history anytime. Every message is tracked with timestamps, sender info, and per-channel delivery status.",
+        pt: "O Dataverse armazena os registos. Pesquisa no histórico de transmissões a qualquer momento. Cada mensagem é rastreada com carimbos de data/hora, informações do remetente e estado de entrega por canal.",
+        lu: "Dataverse späichert d'Logge. Sich duerch Broadcast Geschicht ëmmer. All Message gëtt verfollegt mat Zäitstempelen, Sender Info, an Liwwerstatus pro Kanal.",
+        de: "Dataverse speichert die Logs. Durchsuche die Broadcast-Historie jederzeit. Jede Nachricht wird mit Zeitstempeln, Absenderinformationen und Zustellstatus pro Kanal verfolgt.",
+        fr: "Dataverse stocke les logs. Recherche dans l'historique de diffusion à tout moment. Chaque message est suivi avec horodatages, infos expéditeur, et statut de livraison par canal."
+    },
+    "project.teamsbroadcast.imagecaption1": {
+        en: "Main broadcast interface: channel selection, message composition, and real-time sending status. Uses real Teams with test channels to avoid spamming school channels during development.",
+        pt: "Interface principal de transmissão: seleção de canais, composição de mensagens e estado de envio em tempo real. Usa Teams reais com canais de teste para evitar spam nos canais escolares durante o desenvolvimento.",
+        lu: "Haaptbroadcast Interface: Kanal Auswiel, Message Kompositioun, an Echtzäit Schéck-Status. Benotzt richteg Teams mat Test-Kanäl fir Spam op Schoulkanäl während der Entwécklung ze vermeiden.",
+        de: "Haupt-Broadcast-Oberfläche: Kanalauswahl, Nachrichtenkomposition und Echtzeit-Sendestatus. Verwendet echte Teams mit Testkanälen, um Spam in Schulkanälen während der Entwicklung zu vermeiden.",
+        fr: "Interface principale de diffusion : sélection des canaux, composition de messages et statut d'envoi en temps réel. Utilise de vrais Teams avec des canaux de test pour éviter le spam sur les canaux scolaires pendant le développement."
+    },
+    "project.teamsbroadcast.keyfeatures.title": {
+        en: "Key Features",
+        pt: "Funcionalidades Principais",
+        lu: "Haaptfeatures",
+        de: "Hauptfunktionen",
+        fr: "Fonctionnalités Clés"
+    },
+    "project.teamsbroadcast.keyfeatures.multichannel": {
+        en: "Multi-channel selection in one interface",
+        pt: "Seleção multi-canal numa única interface",
+        lu: "Multi-Kanal Auswiel an enger Interface",
+        de: "Multi-Kanal-Auswahl in einer Oberfläche",
+        fr: "Sélection multi-canaux dans une interface"
+    },
+    "project.teamsbroadcast.keyfeatures.richeditor": {
+        en: "Rich text editor with subject line",
+        pt: "Editor de texto rico com linha de assunto",
+        lu: "Rich Text Editor mat Betreff",
+        de: "Rich-Text-Editor mit Betreffzeile",
+        fr: "Éditeur de texte enrichi avec ligne d'objet"
+    },
+    "project.teamsbroadcast.keyfeatures.realtime": {
+        en: "Real-time status feedback while sending",
+        pt: "Feedback de estado em tempo real durante o envio",
+        lu: "Echtzäit Status Feedback beim Schécken",
+        de: "Echtzeit-Status-Feedback beim Senden",
+        fr: "Feedback de statut en temps réel pendant l'envoi"
+    },
+    "project.teamsbroadcast.keyfeatures.history": {
+        en: "Complete broadcast history with search",
+        pt: "Histórico completo de transmissões com pesquisa",
+        lu: "Komplett Broadcast Geschicht mat Sich",
+        de: "Vollständige Broadcast-Historie mit Suche",
+        fr: "Historique complet de diffusion avec recherche"
+    },
+    "project.teamsbroadcast.keyfeatures.confirmation": {
+        en: "Per-channel delivery confirmation",
+        pt: "Confirmação de entrega por canal",
+        lu: "Liwwerbestätegung pro Kanal",
+        de: "Zustellbestätigung pro Kanal",
+        fr: "Confirmation de livraison par canal"
+    },
+    "project.teamsbroadcast.keyfeatures.statemanagement": {
+        en: "Prevents duplicate sends with proper state management",
+        pt: "Previne envios duplicados com gestão de estado adequada",
+        lu: "Verhënnert duebel Schécken mat korrekter State Management",
+        de: "Verhindert doppelte Sendungen mit korrektem State Management",
+        fr: "Empêche les envois en double avec une gestion d'état appropriée"
+    },
+    "project.teamsbroadcast.sidebar.feature1": {
+        en: "Multi-channel selection interface",
+        pt: "Interface de seleção multi-canal",
+        lu: "Multi-Kanal Auswiel Interface",
+        de: "Multi-Kanal-Auswahlschnittstelle",
+        fr: "Interface de sélection multi-canaux"
+    },
+    "project.teamsbroadcast.sidebar.feature2": {
+        en: "Rich text message editor",
+        pt: "Editor de mensagens de texto rico",
+        lu: "Rich Text Message Editor",
+        de: "Rich-Text-Nachrichten-Editor",
+        fr: "Éditeur de messages texte enrichi"
+    },
+    "project.teamsbroadcast.sidebar.feature3": {
+        en: "Real-time delivery status",
+        pt: "Estado de entrega em tempo real",
+        lu: "Echtzäit Liwwerstatus",
+        de: "Echtzeit-Zustellstatus",
+        fr: "Statut de livraison en temps réel"
+    },
+    "project.teamsbroadcast.sidebar.feature4": {
+        en: "Professional state management",
+        pt: "Gestão de estado profissional",
+        lu: "Professionnell State Management",
+        de: "Professionelles State Management",
+        fr: "Gestion d'état professionnelle"
+    },
+    "project.teamsbroadcast.sidebar.feature5": {
+        en: "Complete broadcast history",
+        pt: "Histórico completo de transmissões",
+        lu: "Komplett Broadcast Geschicht",
+        de: "Vollständige Broadcast-Historie",
+        fr: "Historique complet de diffusion"
+    },
+    "project.teamsbroadcast.sidebar.feature6": {
+        en: "Search and filter logs",
+        pt: "Pesquisar e filtrar registos",
+        lu: "Loggen sichen a filteren",
+        de: "Logs suchen und filtern",
+        fr: "Rechercher et filtrer les logs"
+    },
+    "project.teamsbroadcast.sidebar.feature7": {
+        en: "Enterprise audit trail",
+        pt: "Trilha de auditoria empresarial",
+        lu: "Entreprise Audit Trail",
+        de: "Enterprise Audit-Trail",
+        fr: "Piste d'audit d'entreprise"
+    },
+    "project.teamsbroadcast.sidebar.feature8": {
+        en: "Input validation",
+        pt: "Validação de entrada",
+        lu: "Input Validatioun",
+        de: "Eingabevalidierung",
+        fr: "Validation des entrées"
+    },
+    "project.teamsbroadcast.sidebar.feature9": {
+        en: "Error prevention",
+        pt: "Prevenção de erros",
+        lu: "Fehlerverhënnerung",
+        de: "Fehlervermeidung",
+        fr: "Prévention des erreurs"
+    },
+    "project.teamsbroadcast.imagecaption2": {
+        en: "Broadcast logs: complete history with search, filters, and per-channel delivery status",
+        pt: "Registos de transmissão: histórico completo com pesquisa, filtros e estado de entrega por canal",
+        lu: "Broadcast Loggen: komplett Geschicht mat Sich, Filteren, a Liwwerstatus pro Kanal",
+        de: "Broadcast-Logs: vollständige Historie mit Suche, Filtern und Zustellstatus pro Kanal",
+        fr: "Logs de diffusion : historique complet avec recherche, filtres et statut de livraison par canal"
+    },
+    "project.teamsbroadcast.learned.title": {
+        en: "What I Learned",
+        pt: "O Que Aprendi",
+        lu: "Wat ech geléiert hunn",
+        de: "Was ich gelernt habe",
+        fr: "Ce que j'ai appris"
+    },
+    "project.teamsbroadcast.learned.body1": {
+        en: "Power Automate's premium features required creative workarounds. The learning curve was steep, but I focused on proper architecture: separate UI/logic/data layers, proper state management (sending/success/error), and audit trails from day one.",
+        pt: "As funcionalidades premium do Power Automate exigiram soluções criativas. A curva de aprendizagem foi acentuada, mas concentrei-me na arquitetura adequada: camadas separadas de UI/lógica/dados, gestão de estado apropriada (envio/sucesso/erro) e trilhas de auditoria desde o início.",
+        lu: "Power Automate seng Premium Features hunn kreativ Léisunge gefuerdert. D'Léierkurve war staark, mee ech hunn mech op richteg Architektur konzentréiert: getrennt UI/Logik/Dateeschichten, korrekt State Management (Schécken/Erfolleg/Fehler), an Audit Trails vun Ufank un.",
+        de: "Power Automate's Premium-Funktionen erforderten kreative Workarounds. Die Lernkurve war steil, aber ich konzentrierte mich auf richtige Architektur: getrennte UI/Logik/Datenschichten, korrektes State Management (Senden/Erfolg/Fehler) und Audit-Trails von Tag eins.",
+        fr: "Les fonctionnalités premium de Power Automate ont nécessité des solutions créatives. La courbe d'apprentissage était raide, mais je me suis concentré sur une architecture appropriée : couches UI/logique/données séparées, gestion d'état correcte (envoi/succès/erreur), et pistes d'audit dès le premier jour."
+    },
+    "project.teamsbroadcast.learned.body2": {
+        en: "Building this taught me that low-code doesn't mean low-quality. With the right design patterns, you can build production-grade tools. State management is critical for async operations. Users need clear feedback at every step, or they get confused and frustrated.",
+        pt: "Construir isto ensinou-me que low-code não significa baixa qualidade. Com os padrões de design corretos, podes construir ferramentas de nível de produção. A gestão de estado é crítica para operações assíncronas. Os utilizadores precisam de feedback claro em cada passo, ou ficam confusos e frustrados.",
+        lu: "Dëst ze bauen huet mir geléiert datt Low-Code net schlecht Qualitéit bedeit. Mat de richtege Design Patterns kanns de Produktiouns-Niveau Tools bauen. State Management ass kritesch fir async Operatiounen. Benotzer brauchen kloer Feedback op all Schrëtt, soss ginn se verwierrt a frustréiert.",
+        de: "Das zu bauen lehrte mich, dass Low-Code nicht niedrige Qualität bedeutet. Mit den richtigen Designmustern kannst du produktionsreife Tools bauen. State Management ist kritisch für asynchrone Operationen. Benutzer brauchen klares Feedback bei jedem Schritt, sonst werden sie verwirrt und frustriert.",
+        fr: "Construire ceci m'a appris que low-code ne signifie pas basse qualité. Avec les bons modèles de conception, tu peux construire des outils de niveau production. La gestion d'état est critique pour les opérations asynchrones. Les utilisateurs ont besoin de feedback clair à chaque étape, sinon ils sont confus et frustrés."
+    },
+    "project.teamsbroadcast.learned.body3": {
+        en: "The hardest part wasn't the code. It was understanding Power Platform's conventions and working around its limitations without making the UX suffer.",
+        pt: "A parte mais difícil não foi o código. Foi compreender as convenções da Power Platform e contornar as suas limitações sem fazer a UX sofrer.",
+        lu: "Déi schwiereegst Deel war net de Code. Et war d'Verständnis vun de Power Platform Konventiounen an d'Ëmgoen vu senge Limitatiounen ouni datt d'UX leit.",
+        de: "Der schwierigste Teil war nicht der Code. Es war das Verständnis der Power Platform-Konventionen und das Umgehen ihrer Einschränkungen ohne die UX leiden zu lassen.",
+        fr: "La partie la plus difficile n'était pas le code. C'était de comprendre les conventions de Power Platform et de contourner ses limitations sans faire souffrir l'UX."
+    },
+    "project.teamsbroadcast.projectinfo.title": {
+        en: "Project Info",
+        pt: "Informações do Projeto",
+        lu: "Projet Info",
+        de: "Projektinfo",
+        fr: "Info Projet"
+    },
+    "project.teamsbroadcast.projectinfo.body": {
+        en: "Solo school project presented in January 2026. Graded exercise using Power Platform to solve a real organizational problem.",
+        pt: "Projeto escolar individual apresentado em janeiro de 2026. Exercício avaliado usando Power Platform para resolver um problema organizacional real.",
+        lu: "Solo Schoulprojet presentéiert am Januar 2026. Bewäert Übung mat Power Platform fir e richtegt organisatorescht Problem ze léisen.",
+        de: "Solo-Schulprojekt präsentiert im Januar 2026. Bewertete Übung mit Power Platform zur Lösung eines echten Organisationsproblems.",
+        fr: "Projet scolaire solo présenté en janvier 2026. Exercice noté utilisant Power Platform pour résoudre un vrai problème organisationnel."
+    },
+    "project.teamsbroadcast.presentation.title": {
+        en: "Presentation",
+        pt: "Apresentação",
+        lu: "Presentatioun",
+        de: "Präsentation",
+        fr: "Présentation"
+    },
+    "project.teamsbroadcast.presentation.desc": {
+        en: "View the project presentation slides used during the graded demonstration.",
+        pt: "Vê os slides da apresentação do projeto usados durante a demonstração avaliada.",
+        lu: "Kuck d'Projet Presentatiounssliden déi während der bewäerter Demonstratioun benotzt goufen.",
+        de: "Siehe die Projektpräsentationsfolien, die während der bewerteten Demonstration verwendet wurden.",
+        fr: "Voir les diapositives de présentation du projet utilisées lors de la démonstration notée."
+    },
+    "project.teamsbroadcast.presentation.button": {
+        en: "Download Presentation (PDF)",
+        pt: "Descarregar Apresentação (PDF)",
+        lu: "Presentatioun eroflueden (PDF)",
+        de: "Präsentation herunterladen (PDF)",
+        fr: "Télécharger la Présentation (PDF)"
+    },
+
+    // Search
+    "search.placeholder": {
+        en: "Search projects, certifications, skills...",
+        pt: "Pesquisar projetos, certificações, competências...",
+        lu: "Projeten, Zertifikater, Fäegkeeten sichen...",
+        de: "Projekte, Zertifikate, Fähigkeiten suchen...",
+        fr: "Rechercher projets, certifications, compétences..."
+    },
+    "search.hint.keyboard": {
+        en: "to navigate * to select * to close",
+        pt: "para navegar * para selecionar * para fechar",
+        lu: "fir ze navigéieren * fir ze wielen * fir zou ze maachen",
+        de: "zum Navigieren * zum Auswählen * zum Schließen",
+        fr: "pour naviguer * pour sélectionner * pour fermer"
+    },
+    "search.hint.mobile": {
+        en: "Tap a result to open • Tap × to close",
+        pt: "Toca num resultado para abrir • Toca × para fechar",
+        lu: "Tipp e Resultat fir opzemaachen • Tipp × fir zou ze maachen",
+        de: "Tippe auf ein Ergebnis zum Öffnen • Tippe × zum Schließen",
+        fr: "Appuyez sur un résultat pour ouvrir • Appuyez × pour fermer"
+    },
+    "search.empty.initial": {
+        en: "Start typing to search...",
+        pt: "Começa a escrever para pesquisar...",
+        lu: "Fänk un ze tippen fir ze sichen...",
+        de: "Beginne zu tippen zum Suchen...",
+        fr: "Commencez à taper pour rechercher..."
+    },
+    "search.empty.noResults": {
+        en: "No results found for",
+        pt: "Nenhum resultado encontrado para",
+        lu: "Keng Resultater fonnt fir",
+        de: "Keine Ergebnisse gefunden für",
+        fr: "Aucun résultat trouvé pour"
+    },
+    "search.error.notReady": {
+        en: "Search not ready. Please try again.",
+        pt: "Pesquisa não pronta. Por favor tenta novamente.",
+        lu: "Sich net prett. Probéier w.e.g. nach emol.",
+        de: "Suche nicht bereit. Bitte versuche es erneut.",
+        fr: "Recherche non prête. Veuillez réessayer."
+    },
+    "search.section.quickLinks": {
+        en: "Quick Links",
+        pt: "Ligações Rápidas",
+        lu: "Séier Linken",
+        de: "Schnellzugriffe",
+        fr: "Liens Rapides"
+    },
+    "search.section.actions": {
+        en: "Actions",
+        pt: "Ações",
+        lu: "Aktiounen",
+        de: "Aktionen",
+        fr: "Actions"
+    },
+    "search.section.recent": {
+        en: "Recent Searches",
+        pt: "Pesquisas Recentes",
+        lu: "Rezent Sichungen",
+        de: "Letzte Suchen",
+        fr: "Recherches Récentes"
+    },
+    "search.section.popularTech": {
+        en: "Popular Technologies",
+        pt: "Tecnologias Populares",
+        lu: "Populär Technologien",
+        de: "Beliebte Technologien",
+        fr: "Technologies Populaires"
+    },
+    "search.section.projects": {
+        en: "Projects",
+        pt: "Projetos",
+        lu: "Projeten",
+        de: "Projekte",
+        fr: "Projets"
+    },
+    "search.section.certifications": {
+        en: "Certifications",
+        pt: "Certificações",
+        lu: "Zertifikater",
+        de: "Zertifikate",
+        fr: "Certifications"
+    },
+    "search.section.formations": {
+        en: "Training & Workshops",
+        pt: "Formações & Workshops",
+        lu: "Formatiounen & Workshops",
+        de: "Schulungen & Workshops",
+        fr: "Formations & Ateliers"
+    },
+    "search.action.downloadCv": {
+        en: "Download CV",
+        pt: "Descarregar CV",
+        lu: "CV eroflueden",
+        de: "Lebenslauf herunterladen",
+        fr: "Télécharger CV"
+    },
+    "search.action.downloadCv.desc": {
+        en: "Choose language (EN / FR)",
+        pt: "Escolher idioma (EN / FR)",
+        lu: "Sprooch wielen (EN / FR)",
+        de: "Sprache wählen (EN / FR)",
+        fr: "Choisir la langue (EN / FR)"
+    },
+    "search.action.goProjects": {
+        en: "Go to Projects",
+        pt: "Ir para Projetos",
+        lu: "Zu Projeten goen",
+        de: "Zu Projekten gehen",
+        fr: "Aller aux Projets"
+    },
+    "search.action.goProjects.desc": {
+        en: "Open the projects page",
+        pt: "Abrir a página de projetos",
+        lu: "Projete Säit opmaachen",
+        de: "Öffne die Projektseite",
+        fr: "Ouvrir la page des projets"
+    },
+    "search.action.goCertifications": {
+        en: "Go to Certifications",
+        pt: "Ir para Certificações",
+        lu: "Zu Zertifikater goen",
+        de: "Zu Zertifikaten gehen",
+        fr: "Aller aux Certifications"
+    },
+    "search.action.goCertifications.desc": {
+        en: "Open the certifications page",
+        pt: "Abrir a página de certificações",
+        lu: "Zertifikater Säit opmaachen",
+        de: "Öffne die Zertifikate-Seite",
+        fr: "Ouvrir la page des certifications"
+    },
+    "search.action.goHome": {
+        en: "Go to Home",
+        pt: "Ir para Início",
+        lu: "Zu Startsäit goen",
+        de: "Zur Startseite gehen",
+        fr: "Aller à l'Accueil"
+    },
+    "search.action.goHome.desc": {
+        en: "Open the main page",
+        pt: "Abrir a página principal",
+        lu: "Haaptsäit opmaachen",
+        de: "Öffne die Hauptseite",
+        fr: "Ouvrir la page principale"
+    },
+    "search.quicklink.allProjects": {
+        en: "All Projects",
+        pt: "Todos os Projetos",
+        lu: "All Projeten",
+        de: "Alle Projekte",
+        fr: "Tous les Projets"
+    },
+    "search.quicklink.allCertifications": {
+        en: "All Certifications",
+        pt: "Todas as Certificações",
+        lu: "All Zertifikater",
+        de: "Alle Zertifikate",
+        fr: "Toutes les Certifications"
+    },
+    "search.quicklink.contact": {
+        en: "Contact",
+        pt: "Contacto",
+        lu: "Kontakt",
+        de: "Kontakt",
+        fr: "Contact"
+    },
+    "search.quicklink.downloadCv": {
+        en: "Download CV",
+        pt: "Descarregar CV",
+        lu: "CV eroflueden",
+        de: "Lebenslauf herunterladen",
+        fr: "Télécharger CV"
     },
 
     // Footer

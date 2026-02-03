@@ -231,6 +231,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
+        // Translate all title attributes with data-i18n-title
+        document.querySelectorAll('[data-i18n-title]').forEach(element => {
+            const key = element.getAttribute('data-i18n-title');
+            const translation = getTranslation(key, lang);
+            
+            if (translation) {
+                element.setAttribute('title', translation);
+            }
+        });
+        
+        // Translate all placeholder attributes with data-i18n-placeholder
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+            const key = element.getAttribute('data-i18n-placeholder');
+            const translation = getTranslation(key, lang);
+            
+            if (translation) {
+                element.setAttribute('placeholder', translation);
+            }
+        });
+        
         // Update category badges when language changes
         if (typeof updateProjectCategories === 'function') {
             // updateProjectCategories will auto-detect projectId from the page

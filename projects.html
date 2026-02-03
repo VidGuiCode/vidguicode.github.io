@@ -664,6 +664,7 @@
                         type="text"
                         id="search-input"
                         placeholder="Search projects, certifications, skills..."
+                        data-i18n-placeholder="search.placeholder"
                         autocomplete="off"
                         aria-label="Search"
                     >
@@ -672,16 +673,16 @@
                     </button>
                 </div>
                 <div class="search-hint">
-                    <kbd>↑</kbd> <kbd>↓</kbd> to navigate • <kbd>Enter</kbd> to select • <kbd>Esc</kbd> to close
+                    <kbd>↑</kbd> <kbd>↓</kbd> <span data-i18n="search.hint.keyboard">to navigate * to select * to close</span>
                 </div>
-                <div class="search-hint-mobile">
+                <div class="search-hint-mobile" data-i18n="search.hint.mobile">
                     Tap a result to open • Tap × to close
                 </div>
             </div>
             <div id="search-results" class="search-results">
                 <div class="search-empty">
                     <i data-lucide="search"></i>
-                    <p>Start typing to search...</p>
+                    <p data-i18n="search.empty.initial">Start typing to search...</p>
                 </div>
             </div>
         </div>
@@ -1090,13 +1091,13 @@
 
                 <div class="project-actions">
                     ${project.link ? `
-                        <a href="${project.link}" class="project-action-icon" title="View Project"
+                        <a href="${project.link}" class="project-action-icon" data-i18n-title="projects.modal.viewProject"
                            target="_blank" rel="noopener noreferrer"
                            onclick="event.stopPropagation()">
                             <i data-lucide="external-link"></i>
                         </a>
                     ` : ''}
-                    <button class="project-action-icon" title="View Details" 
+                    <button class="project-action-icon" data-i18n-title="projects.viewDetails"
                             onclick="showProjectModal('${project.id}'); event.stopPropagation();">
                         <i data-lucide="info"></i>
                     </button>
@@ -1374,6 +1375,18 @@
 
             modal.classList.add('active');
             lucide.createIcons();
+            
+            // Apply translations to the newly added modal content
+            const currentLang = localStorage.getItem('lang') || document.documentElement.getAttribute('data-lang') || 'en';
+            if (typeof translations !== 'undefined') {
+                modal.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    const entry = translations[key];
+                    if (entry && entry[currentLang]) {
+                        element.textContent = entry[currentLang];
+                    }
+                });
+            }
         }
 
         // Close modal using event delegation

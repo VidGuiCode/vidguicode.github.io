@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams Broadcast System | VidGuiCode</title>
+    <meta name="description" content="Teams Broadcast System: Production-grade Power Platform solution for broadcasting messages to multiple Microsoft Teams channels simultaneously.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons - Load locally (version 0.555.0) -->
+    <script src="../assets/js/lucide.min.js" defer></script>
+
+    <!-- Flags - Load locally -->
+    <link rel="stylesheet" href="../assets/css/flag-icons.min.css">
+
+    <!-- Fuse.js for fuzzy search -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logos/vidguicode-favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/img/logos/vidguicode-favicon.svg">
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../assets/js/translations.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/projects-data.js"></script>
+    <script src="../assets/js/certifications-data.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/certifications-techstack.js"></script>
+    <style>
+        /* Typography uses centralized scale - see styles.css */
+        
+        /* Project Images */
+        .project-image-container {
+            margin: 2rem 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .project-image-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            max-width: 100%;
+        }
+
+        .project-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .project-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @media (min-width: 769px) {
+            .project-image-wrapper:hover::after,
+            .project-image-wrapper:hover::before {
+                opacity: 1;
+            }
+        }
+
+        .project-image {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        @media (min-width: 769px) {
+            .project-image-wrapper:hover .project-image {
+                transform: scale(1.02);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                filter: brightness(0.95);
+            }
+        }
+
+        .project-image-caption {
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            /* Image modal on mobile */
+            .image-modal {
+                padding: 1rem;
+            }
+
+            .image-modal-content {
+                max-width: 100%;
+                max-height: 90vh;
+            }
+
+            .image-modal-content img {
+                max-width: 100%;
+                max-height: 90vh;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-title">
+        <div class="search-modal-overlay" id="search-overlay"></div>
+        <div class="search-modal-content">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search projects, certifications, skills..."
+                        data-i18n-placeholder="search.placeholder"
+                        autocomplete="off"
+                        aria-label="Search"
+                    >
+                    <button id="search-close" class="search-close-btn" aria-label="Close search">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+                <div class="search-hint">
+                    <kbd>Up</kbd> <kbd>Down</kbd> <span data-i18n="search.hint.keyboard">to navigate * to select * to close</span>
+                </div>
+                <div class="search-hint-mobile" data-i18n="search.hint.mobile">
+                    Tap a result to open • Tap × to close
+                </div>
+            </div>
+            <div id="search-results" class="search-results">
+                <div class="search-empty">
+                    <i data-lucide="search"></i>
+                    <p data-i18n="search.empty.initial">Start typing to search...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar (generated by navbar.js) -->
+    <div id="navbar-container"></div>
+
+    <main class="container" style="padding-top: 100px;">
+        
+        <a href="../index.html#projects" class="back-link">
+            <i data-lucide="arrow-left"></i>
+            <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
+        </a>
+
+        <section class="project-hero">
+            <div class="project-title-group">
+                <div class="badge" data-i18n="project.teamsbroadcast.badge">SCHOOL PROJECT</div>
+                <h1 data-i18n="project.teamsbroadcast.hero.title">Teams Broadcast System</h1>
+                <p class="subtitle" data-i18n="project.teamsbroadcast.hero.subtitle">Power Platform solution that eliminates the manual hassle of broadcasting messages to 20+ Microsoft Teams channels. Built for teachers, students, and organizational leaders.</p>
+            </div>
+        </section>
+
+        <div class="project-meta-grid">
+            <!-- Main Content -->
+            <article>
+                <div class="card">
+                    <i data-lucide="radio" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+
+                    <h2 data-i18n="project.teamsbroadcast.problem.title">The Problem</h2>
+                    <p data-i18n="project.teamsbroadcast.problem.body">Sending the same message to 20+ Teams channels manually is tedious. You have to open each one, copy-paste, and hope you didn't forget any. There's no way to track what was sent where.</p>
+
+                    <h2 data-i18n="project.teamsbroadcast.solution.title">The Solution</h2>
+                    <p data-i18n="project.teamsbroadcast.solution.body1">This tool lets you select all channels at once, write your message once, and broadcast everywhere with one click. Full logs show exactly what was sent where.</p>
+                    <p data-i18n="project.teamsbroadcast.solution.body2">Built for teachers managing hundreds of class channels, students uploading to multiple courses, project leaders coordinating across departments, and directors sending company-wide announcements. Anyone who needs consistent messaging across multiple Teams channels.</p>
+                    
+                    <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
+                        
+                        <!-- Power Apps Card -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); border-radius: 12px; overflow: hidden; border: 1px solid #818cf8; position: relative; box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #818cf8, #a5b4fc);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Power Apps</h3>
+                                        <div class="node-spec" style="color: #c7d2fe; margin-bottom: 0.75rem;">Canvas App / Frontend</div>
+                                    </div>
+                                    <div class="node-detail" style="text-align: right; color: #e0e7ff;">
+                                        <div>UI Layer</div>
+                                        <div style="font-weight: 600; color: #c7d2fe;">User Interface</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #e0e7ff; margin: 0;">Handles channel selection, input validation, state management, and real-time feedback. Professional UX with clear status indicators.</p>
+                            </div>
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #4338ca; display: flex; gap: 1rem; color: #c7d2fe;">
+                                <span>[CANVAS-APP]</span> <span>[STATE-MGMT]</span> <span>[UX]</span>
+                            </div>
+                        </div>
+
+                        <!-- Power Automate Card -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%); border-radius: 12px; overflow: hidden; border: 1px solid #2b88d8; position: relative; box-shadow: 0 10px 30px rgba(0, 120, 212, 0.2);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #0078d4, #50e6ff);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Power Automate</h3>
+                                        <div class="node-spec" style="color: #9cdcfe; margin-bottom: 0.75rem;">Workflow Engine / Backend</div>
+                                    </div>
+                                    <div class="node-detail" style="text-align: right; color: #d4efff;">
+                                        <div>Logic Layer</div>
+                                        <div style="font-weight: 600; color: #9cdcfe;">Automation</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #d4efff; margin: 0;">Backend processing that receives data from Power Apps, sends messages to Teams channels via connectors, and returns success/failure responses.</p>
+                            </div>
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #004578; display: flex; gap: 1rem; color: #9cdcfe;">
+                                <span>[WORKFLOWS]</span> <span>[CONNECTORS]</span> <span>[BACKEND]</span>
+                            </div>
+                        </div>
+
+                        <!-- Dataverse Card -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #107c10 0%, #0b5a0b 100%); border-radius: 12px; overflow: hidden; border: 1px solid #16a34a; position: relative; box-shadow: 0 10px 30px rgba(22, 163, 74, 0.2);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #16a34a, #4ade80);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Dataverse</h3>
+                                        <div class="node-spec" style="color: #86efac; margin-bottom: 0.75rem;">Database / Storage</div>
+                                    </div>
+                                    <div class="node-detail" style="text-align: right; color: #d1fae5;">
+                                        <div>Data Layer</div>
+                                        <div style="font-weight: 600; color: #86efac;">Audit Trail</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #d1fae5; margin: 0;">Stores broadcast metadata, timestamps, delivery status per channel, and team information. Enables full traceability and audit logs.</p>
+                            </div>
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #065f46; display: flex; gap: 1rem; color: #86efac;">
+                                <span>[DATABASE]</span> <span>[AUDIT]</span> <span>[STORAGE]</span>
+                            </div>
+                        </div>
+
+                        <!-- Teams Integration Card -->
+                        <div class="node-card" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #6264a7, #8b8cc7);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Microsoft Teams</h3>
+                                        <div class="node-spec" style="color: #8b8cc7; margin-bottom: 0.75rem;">Teams Connector / Integration</div>
+                                    </div>
+                                    <div class="node-detail" style="text-align: right; color: #888;">
+                                        <div>Delivery</div>
+                                        <div style="font-weight: 600; color: #8b8cc7;">Native API</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #888; margin: 0;">Native Teams API integration for posting messages to channels. Handles message delivery and confirmation across all selected channels.</p>
+                            </div>
+                            <div class="node-tags" style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; color: #555;">
+                                <span>[TEAMS-API]</span> <span>[CONNECTOR]</span> <span>[DELIVERY]</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <h2 data-i18n="project.teamsbroadcast.howbuilt.title">How It's Built</h2>
+                    <p data-i18n="project.teamsbroadcast.howbuilt.powerapps" data-i18n-html="true"><strong>Power Apps</strong> handles the UI. Select channels, write messages, see real-time status. The interface blocks you from sending twice and shows clear feedback while broadcasting.</p>
+                    <p data-i18n="project.teamsbroadcast.howbuilt.powerautomate" data-i18n-html="true"><strong>Power Automate</strong> has two flows working together. The first flow automatically fetches all your Teams and channels when you open the app or click "Refresh Channels". The second flow handles the actual sending, posting your message to each selected Teams channel and returning success or failure for each one.</p>
+                    <p data-i18n="project.teamsbroadcast.howbuilt.dataverse" data-i18n-html="true"><strong>Dataverse</strong> stores the logs. Search through broadcast history anytime. Every message is tracked with timestamps, sender info, and per-channel delivery status.</p>
+
+                    <div class="project-image-container">
+                        <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/teams-broadcast/broadcast-main.webp', 'Teams Broadcast main interface showing channel selection and message composition')" style="cursor: pointer;">
+                            <img src="../assets/img/projects/teams-broadcast/broadcast-main.webp" alt="Teams Broadcast main interface" class="project-image" loading="lazy" style="max-width: 100%; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color);">
+                        </div>
+                        <p class="project-image-caption" data-i18n="project.teamsbroadcast.imagecaption1">Main broadcast interface: channel selection, message composition, and real-time sending status. Uses real Teams with test channels to avoid spamming school channels during development.</p>
+                    </div>
+
+                    <h2 data-i18n="project.teamsbroadcast.keyfeatures.title">Key Features</h2>
+                    <ul class="feature-list">
+                        <li data-i18n="project.teamsbroadcast.keyfeatures.multichannel">Multi-channel selection in one interface</li>
+                        <li data-i18n="project.teamsbroadcast.keyfeatures.richeditor">Rich text editor with subject line</li>
+                        <li data-i18n="project.teamsbroadcast.keyfeatures.realtime">Real-time status feedback while sending</li>
+                        <li data-i18n="project.teamsbroadcast.keyfeatures.history">Complete broadcast history with search</li>
+                        <li data-i18n="project.teamsbroadcast.keyfeatures.confirmation">Per-channel delivery confirmation</li>
+                        <li data-i18n="project.teamsbroadcast.keyfeatures.statemanagement">Prevents duplicate sends with proper state management</li>
+                    </ul>
+
+                    <div class="project-image-container">
+                        <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/teams-broadcast/broadcast-logs.webp', 'Broadcast logs showing complete message history with search and filters')" style="cursor: pointer;">
+                            <img src="../assets/img/projects/teams-broadcast/broadcast-logs.webp" alt="Broadcast logs interface" class="project-image" loading="lazy" style="max-width: 100%; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color);">
+                        </div>
+                        <p class="project-image-caption" data-i18n="project.teamsbroadcast.imagecaption2">Broadcast logs: complete history with search, filters, and per-channel delivery status</p>
+                    </div>
+
+                    <h2 data-i18n="project.teamsbroadcast.learned.title">What I Learned</h2>
+                    <p data-i18n="project.teamsbroadcast.learned.body1">Power Automate's premium features required creative workarounds. The learning curve was steep, but I focused on proper architecture: separate UI/logic/data layers, proper state management (sending/success/error), and audit trails from day one.</p>
+                    <p data-i18n="project.teamsbroadcast.learned.body2">Building this taught me that low-code doesn't mean low-quality. With the right design patterns, you can build production-grade tools. State management is critical for async operations. Users need clear feedback at every step, or they get confused and frustrated.</p>
+                    <p data-i18n="project.teamsbroadcast.learned.body3">The hardest part wasn't the code. It was understanding Power Platform's conventions and working around its limitations without making the UX suffer.</p>
+
+                    <h2 data-i18n="project.teamsbroadcast.projectinfo.title">Project Info</h2>
+                    <p data-i18n="project.teamsbroadcast.projectinfo.body" data-i18n-html="true">Solo school project presented in <strong>January 2026</strong>. Graded exercise using Power Platform to solve a real organizational problem.</p>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;">
+                        <h3 style="margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="presentation" style="width: 20px; height: 20px;"></i>
+                            <span data-i18n="project.teamsbroadcast.presentation.title">Presentation</span>
+                        </h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="project.teamsbroadcast.presentation.desc">View the project presentation slides used during the graded demonstration.</p>
+                        <a href="../assets/docs/projects/teams-broadcast/teams-broadcast-presentation.pdf" target="_blank" class="button" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: var(--accent-primary); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500; transition: all 0.2s ease;">
+                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
+                            <span data-i18n="project.teamsbroadcast.presentation.button">Download Presentation (PDF)</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="project-sidebar">
+                <div class="card">
+                    <div id="category-section" style="display: none;">
+                        <h3 data-i18n="project.sidebar.category">Category</h3>
+                        <div class="line"></div>
+                        <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
+                    </div>
+
+                    <h3 data-i18n="project.sidebar.techStack">Tech Stack</h3>
+                    <div class="line"></div>
+                    <ul class="tech-stack-list">
+                        <li><i data-lucide="layout"></i> <span>Power Apps (Canvas App)</span></li>
+                        <li><i data-lucide="zap"></i> <span>Power Automate</span></li>
+                        <li><i data-lucide="database"></i> <span>Dataverse</span></li>
+                        <li><i data-lucide="message-square"></i> <span>Microsoft Teams Connector</span></li>
+                        <li><i data-lucide="cloud"></i> <span>Microsoft 365 Integration</span></li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
+                    <div class="line"></div>
+                    <ul class="skill-list" style="margin-top: 1rem;">
+                        <li data-i18n="project.teamsbroadcast.sidebar.feature1">Multi-channel selection interface</li>
+                        <li data-i18n="project.teamsbroadcast.sidebar.feature2">Rich text message editor</li>
+                        <li data-i18n="project.teamsbroadcast.sidebar.feature3">Real-time delivery status</li>
+                        <li data-i18n="project.teamsbroadcast.sidebar.feature4">Professional state management</li>
+                        <li data-i18n="project.teamsbroadcast.sidebar.feature5">Complete broadcast history</li>
+                        <li data-i18n="project.teamsbroadcast.sidebar.feature6">Search and filter logs</li>
+                        <li data-i18n="project.teamsbroadcast.sidebar.feature7">Enterprise audit trail</li>
+                        <li data-i18n="project.teamsbroadcast.sidebar.feature8">Input validation</li>
+                        <li data-i18n="project.teamsbroadcast.sidebar.feature9">Error prevention</li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.certifications">Certifications Used</h3>
+                    <div class="line"></div>
+                    <p class="sidebar-description" style="margin-top: 0.5rem; margin-bottom: 0.75rem;" data-i18n="project.sidebar.certificationsDesc">These certifications helped enhance this project:</p>
+                    <div class="project-certifications" data-project="teams-broadcast">
+                        <div class="cert-badge-placeholder">badge-Microsoft-PowerPoint-Associate</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer style="margin-top: 4rem;">
+            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+        </footer>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal" onclick="closeImageModal()">
+        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">×</button>
+        <img id="modal-image" class="image-modal-content" src="" alt="">
+    </div>
+
+    <script src="../assets/js/projects-data.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Re-init Lucide icons after navbar loads
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+
+        function initLucideIcons() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+
+        // Image Modal Functions
+        function openImageModal(imageSrc, imageAlt) {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            if (modal && modalImage) {
+                modalImage.src = imageSrc;
+                modalImage.alt = imageAlt || '';
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                modalImage.onerror = function() {
+                    console.error('Failed to load image:', imageSrc);
+                    modalImage.alt = 'Image failed to load';
+                };
+            }
+        }
+
+        function closeImageModal(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            const modal = document.getElementById('image-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('image-modal');
+                if (modal && modal.classList.contains('active')) {
+                    closeImageModal();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -56,6 +56,7 @@
                         type="text"
                         id="search-input"
                         placeholder="Search projects, certifications, skills..."
+                        data-i18n-placeholder="search.placeholder"
                         autocomplete="off"
                         aria-label="Search"
                     >
@@ -64,16 +65,16 @@
                     </button>
                 </div>
                 <div class="search-hint">
-                    <kbd>Up</kbd> <kbd>Down</kbd> to navigate * <kbd>Enter</kbd> to select * <kbd>Esc</kbd> to close
+                    <kbd>Up</kbd> <kbd>Down</kbd> <span data-i18n="search.hint.keyboard">to navigate * to select * to close</span>
                 </div>
-                <div class="search-hint-mobile">
+                <div class="search-hint-mobile" data-i18n="search.hint.mobile">
                     Tap a result to open • Tap × to close
                 </div>
             </div>
             <div id="search-results" class="search-results">
                 <div class="search-empty">
                     <i data-lucide="search"></i>
-                    <p>Start typing to search...</p>
+                    <p data-i18n="search.empty.initial">Start typing to search...</p>
                 </div>
             </div>
         </div>
