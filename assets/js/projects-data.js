@@ -76,7 +76,7 @@ const PROJECTS = [
         categoryKey: 'projects.category.infrastructure',
         categories: ['Infrastructure', 'Cloud Computing', 'DevOps', 'Full-Stack', 'Security', 'Networking', 'Database', 'Web Development'],
         categoryKeys: ['projects.category.infrastructure', 'projects.category.cloud', 'projects.category.devops', 'projects.category.fullstack', 'projects.category.security', 'projects.category.networking', 'projects.category.database', 'projects.category.webdev'],
-        tags: ['K3s', 'Docker', 'FastAPI', 'SvelteKit', 'WireGuard', 'Caddy', 'JWT', 'SQLite', 'Jellyfin', 'Radarr', 'Sonarr', 'Playwright', 'AI', 'Traefik', 'Portainer', 'Monitoring', 'Alembic', 'ClamAV', 'Oracle Cloud', 'Cloudflare'],
+        tags: ['Raspberry Pi 5', 'K3s', 'Kubernetes', 'Docker', 'Docker Compose', 'FastAPI', 'Python', 'SvelteKit', 'WireGuard', 'Caddy', 'Traefik', 'Cloudflare', 'Oracle Cloud', 'JWT', 'SQLite', 'Alembic', 'Argon2', 'Portainer', 'Uptime Monitoring', 'Playwright', 'Mistral', 'AI', 'Jellyfin', 'Radarr', 'Sonarr', 'Bazarr', 'ClamAV'],
         icon: 'server-cog',
         status: 'completed',
         statusKey: 'projects.status.completed',
@@ -95,7 +95,7 @@ const PROJECTS = [
         categoryKey: 'projects.category.iot',
         categories: ['IoT', 'School Projects', 'Full-Stack', 'Networking', 'Database', 'Infrastructure'],
         categoryKeys: ['projects.category.iot', 'projects.category.school', 'projects.category.fullstack', 'projects.category.networking', 'projects.category.database', 'projects.category.infrastructure'],
-        tags: ['IoT', 'ESP8266', 'Raspberry Pi', 'MariaDB', 'Networking'],
+        tags: ['IoT', 'ESP8266', 'Wemos D1 Mini', 'Raspberry Pi 4', 'MariaDB', 'phpMyAdmin', 'Apache', 'PHP', 'SSL', 'Fail2Ban', 'UFW', 'Cisco', 'VLAN', 'NAT', 'RAID1', 'Backup', 'Bash', 'DHT22', 'BH1750', 'SEN0193', 'ULN2803', 'Water Pump', 'Grow LED', 'RGB LED'],
         icon: 'sprout',
         status: 'completed',
         statusKey: 'projects.status.completed',
@@ -109,18 +109,18 @@ const PROJECTS = [
         id: 'cylro',
         name: 'Cylro',
         nameKey: 'projects.cylro.title',
-        description: 'From June 2025, in development: A modular, AI-powered CMS and website builder designed to streamline content creation and site management. Built in partnership with a collaborator.',
+        description: 'From August 2025, in development: A modular, AI-powered CMS and website builder designed to streamline content creation and site management. Built in partnership with a collaborator.',
         descriptionKey: 'projects.cylro.desc',
         category: 'Web Development',
         categoryKey: 'projects.category.webdev',
         categories: ['Web Development', 'Full-Stack', 'Infrastructure', 'Cloud Computing', 'DevOps', 'Database', 'Security'],
         categoryKeys: ['projects.category.webdev', 'projects.category.fullstack', 'projects.category.infrastructure', 'projects.category.cloud', 'projects.category.devops', 'projects.category.database', 'projects.category.security'],
-        tags: ['AI', 'CMS', 'Web Dev'],
+        tags: ['AI', 'CMS', 'Web Dev', 'Vue', 'Nuxt', 'Node.js', 'Express', 'PostgreSQL', 'pgvector', 'Redis', 'Keycloak', 'SSO', 'Mollie', 'Docker', 'K3s', 'S3', 'Object Storage'],
         icon: 'layout',
         status: 'in-development',
         statusKey: 'projects.status.inDevelopment',
-        dateStarted: '2025-06',
-        link: null,
+        dateStarted: '2025-08',
+        link: 'projects/project-cylro.html',
         featured: true
     },
     {
@@ -133,7 +133,7 @@ const PROJECTS = [
         categoryKey: 'projects.category.school',
         categories: ['School Projects', 'Web Development', 'Full-Stack', 'Database'],
         categoryKeys: ['projects.category.school', 'projects.category.webdev', 'projects.category.fullstack', 'projects.category.database'],
-        tags: ['Django', 'PostgreSQL', 'Docker', 'Team Project'],
+        tags: ['Django', 'Python', 'PostgreSQL', 'Argon2', 'Docker', 'Docker Compose', 'GitHub', 'Pico.css', 'SSR', 'Team Project'],
         icon: 'graduation-cap',
         status: 'completed',
         statusKey: 'projects.status.completed',
@@ -146,19 +146,19 @@ const PROJECTS = [
         id: 'portfolio',
         name: 'Portfolio Website',
         nameKey: 'projects.portfolio.title',
-        description: 'From November 2025 to present: A fully custom portfolio website built from scratch with vanilla HTML, CSS, and JavaScript. Features a unique server rack aesthetic, dynamic content system with centralized data files, multi-language support (EN, PT, LU, DE, FR), comprehensive SEO optimization, accessibility features, and performance enhancements. Includes dedicated pages for projects and certifications with filtering, modals, and responsive design. Continuously maintained and expanded with new features.',
+        description: 'Since November 2025: My living portfolio built from scratch with vanilla HTML, CSS, and JavaScript. It combines a server-rack inspired UI with dark/light themes, multi-language i18n (EN/PT/LU/DE/FR), and global fuzzy search across projects and certifications. Content is driven by centralized data files, with responsive layouts, SEO-friendly metadata, and accessibility touches like keyboard navigation and reduced-motion support. Continuously improved as I add new projects and features.',
         descriptionKey: 'projects.portfolio.desc',
         category: 'Web Development',
         categoryKey: 'projects.category.webdev',
         categories: ['Web Development', 'Full-Stack'],
         categoryKeys: ['projects.category.webdev', 'projects.category.fullstack'],
-        tags: ['HTML', 'CSS', 'JavaScript', 'SEO', 'Accessibility', 'Performance'],
+        tags: ['HTML', 'CSS', 'JavaScript', 'Vanilla JS', 'i18n', 'Fuse.js', 'Lucide', 'Responsive Design', 'Dark Mode', 'Search', 'Modals', 'SEO', 'Accessibility', 'Performance'],
         icon: 'code-2',
         status: 'completed',
         statusKey: 'projects.status.completed',
         dateCompleted: '2025-11',
         dateStarted: '2025-11',
-        link: null,
+        link: 'index.html',
         featured: false
     }
 ];
@@ -211,4 +211,3 @@ if (typeof module !== 'undefined' && module.exports) {
         isValidCategory
     };
 }
-

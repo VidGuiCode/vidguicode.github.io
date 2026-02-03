@@ -109,6 +109,9 @@
                 <div class="search-hint">
                     <kbd>↑</kbd> <kbd>↓</kbd> to navigate • <kbd>Enter</kbd> to select • <kbd>Esc</kbd> to close
                 </div>
+                <div class="search-hint-mobile">
+                    Tap a result to open • Tap × to close
+                </div>
             </div>
             <div id="search-results" class="search-results">
                 <div class="search-empty">
@@ -116,6 +119,20 @@
                     <p>Start typing to search...</p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- CV Modal (Mobile-friendly) -->
+    <div id="cv-modal" class="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title" aria-hidden="true">
+        <div class="cv-modal-overlay" id="cv-modal-overlay"></div>
+        <div class="cv-modal-content">
+            <div class="cv-modal-header">
+                <h2 id="cv-modal-title" class="cv-modal-title" data-i18n="contact.cv">Download CV</h2>
+                <button id="cv-modal-close" class="cv-modal-close" type="button" aria-label="Close">
+                    <i data-lucide="x" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div id="cv-modal-list" class="cv-modal-list" role="menu" aria-label="CV languages"></div>
         </div>
     </div>
 
@@ -382,10 +399,16 @@
                         <i data-lucide="github" aria-hidden="true"></i>
                         <span>GitHub</span>
                     </a>
-                    <a href="assets/docs/cv-guilherme-videira-marques-en.pdf" download="Guilherme-Videira-Marques-CV-EN.pdf" class="contact-item" aria-label="Download CV">
-                        <i data-lucide="file-text" aria-hidden="true"></i>
-                        <span data-i18n="contact.cv">Download CV</span>
-                    </a>
+                    <div class="cv-dropdown">
+                        <button type="button" class="contact-item cv-dropdown-toggle" aria-label="Download CV" aria-expanded="false" aria-haspopup="true">
+                            <i data-lucide="file-text" aria-hidden="true"></i>
+                            <span data-i18n="contact.cv">Download CV</span>
+                        </button>
+                        <div class="cv-dropdown-menu" role="menu" aria-hidden="true">
+                            <a href="assets/docs/cv-guilherme-videira-marques-en.pdf" download="Guilherme-Videira-Marques-CV-EN.pdf" class="cv-dropdown-item" role="menuitem" data-i18n="contact.cv.option.en">English (EN)</a>
+                            <a href="assets/docs/cv-guilherme-videira-marques-fr.pdf" download="Guilherme-Videira-Marques-CV-FR.pdf" class="cv-dropdown-item" role="menuitem" data-i18n="contact.cv.option.fr">Français (FR)</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

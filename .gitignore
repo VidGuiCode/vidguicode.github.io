@@ -30,3 +30,6 @@ coverage/
 __pycache__/
 *.py[cod]
 
+context/
+.obsidian
+planer/

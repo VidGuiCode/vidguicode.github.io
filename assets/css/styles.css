@@ -1142,6 +1142,7 @@ article p, article li {
 .about-item p {
     margin: 0;
     line-height: 1.6;
+    max-width: 75ch;
 }
 
 .about-facts {
@@ -1637,11 +1638,72 @@ html[data-theme="light"] img.arns-logo-light-mode {
     gap: 0.75rem;
     padding: 1rem 2rem;
     border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-primary);
+    font: inherit;
+    cursor: pointer;
     font-weight: 500;
     transition: all 0.2s;
 }
 
 .contact-item:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+.contact-card {
+    overflow: visible;
+}
+
+.cv-dropdown {
+    position: relative;
+    display: inline-flex;
+}
+
+.cv-dropdown-toggle {
+    cursor: pointer;
+    background: transparent;
+}
+
+.cv-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 50%;
+    min-width: 200px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 50;
+}
+
+.cv-dropdown.open .cv-dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
+
+.cv-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.cv-dropdown-item:hover,
+.cv-dropdown-item:focus {
     background: var(--text-primary);
     color: var(--bg-primary);
     border-color: var(--text-primary);
@@ -2316,6 +2378,115 @@ footer {
     margin-bottom: 10vh;
 }
 
+/* ==========================================
+   CV MODAL (MOBILE)
+   ========================================== */
+
+.cv-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 10vh 1rem 1rem;
+    overflow-y: auto;
+}
+
+.cv-modal.active {
+    display: flex;
+}
+
+.cv-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.cv-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    z-index: 10000;
+    animation: slideDown 0.25s ease-out;
+}
+
+.cv-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cv-modal-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--fs-h3);
+    margin: 0;
+}
+
+.cv-modal-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.cv-modal-close:hover,
+.cv-modal-close:focus {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+.cv-modal-list {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.cv-modal-list .cv-dropdown-item {
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .cv-modal {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .cv-modal-content {
+        max-width: 100%;
+        width: 100%;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        border-radius: 16px 16px 0 0;
+        animation: cvSlideUp 0.25s ease-out;
+    }
+
+    @keyframes cvSlideUp {
+        from { opacity: 0; transform: translateY(16px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -2408,6 +2579,12 @@ footer {
     border-radius: 0;
     font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', monospace;
     font-size: var(--fs-xs);
+}
+
+.search-hint-mobile {
+    display: none;
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
 }
 
 .search-results {
@@ -2586,11 +2763,12 @@ footer {
     }
 
     .search-hint {
-        font-size: 0.7rem;
+        display: none;
     }
 
-    .search-hint kbd {
-        padding: 0.125rem 0.25rem;
-        font-size: 0.65rem;
+    .search-hint-mobile {
+        display: block;
+        font-size: var(--fs-xs);
+        line-height: 1.4;
     }
 }

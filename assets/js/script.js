@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
+
+    const CV_OPEN_FLAG = 'openCvModal';
     
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -57,6 +59,143 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('lang', lang);
         });
     });
+
+    // ==========================================
+    // CV DROPDOWN
+    // ==========================================
+
+    const cvDropdown = document.querySelector('.cv-dropdown');
+    const cvToggle = document.querySelector('.cv-dropdown-toggle');
+    const cvMenu = document.querySelector('.cv-dropdown-menu');
+    const cvModal = document.getElementById('cv-modal');
+    const cvModalOverlay = document.getElementById('cv-modal-overlay');
+    const cvModalClose = document.getElementById('cv-modal-close');
+    const cvModalList = document.getElementById('cv-modal-list');
+
+    window.openCvDownload = function() {
+        const isInSubdirectory = window.location.pathname.includes('/projects/') || window.location.pathname.includes('/certifications/');
+        const pathPrefix = isInSubdirectory ? '../' : '';
+
+        if (typeof window.openCvModal === 'function') {
+            window.openCvModal();
+            return;
+        }
+
+        try {
+            localStorage.setItem(CV_OPEN_FLAG, '1');
+        } catch (_) {
+            // ignore
+        }
+
+        window.location.href = pathPrefix + 'index.html#contact';
+    };
+
+    if (cvDropdown && cvToggle && cvMenu) {
+        const shouldUseCvModal = () => {
+            if (!cvModal) return false;
+            return true;
+        };
+
+        const closeCvModal = () => {
+            if (!cvModal) return;
+            cvModal.classList.remove('active');
+            cvModal.setAttribute('aria-hidden', 'true');
+            cvToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        const openCvModal = () => {
+            if (!cvModal) return;
+            if (cvModalList) {
+                cvModalList.innerHTML = cvMenu.innerHTML;
+            }
+            closeCvDropdown();
+            cvModal.classList.add('active');
+            cvModal.setAttribute('aria-hidden', 'false');
+            cvToggle.setAttribute('aria-expanded', 'true');
+        };
+
+        const closeCvDropdown = () => {
+            cvDropdown.classList.remove('open');
+            cvToggle.setAttribute('aria-expanded', 'false');
+            cvMenu.setAttribute('aria-hidden', 'true');
+        };
+
+        const openCvDropdown = () => {
+            cvDropdown.classList.add('open');
+            cvToggle.setAttribute('aria-expanded', 'true');
+            cvMenu.setAttribute('aria-hidden', 'false');
+        };
+
+        cvToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            if (shouldUseCvModal()) {
+                if (cvModal.classList.contains('active')) {
+                    closeCvModal();
+                } else {
+                    openCvModal();
+                }
+                return;
+            }
+            if (cvDropdown.classList.contains('open')) {
+                closeCvDropdown();
+            } else {
+                openCvDropdown();
+            }
+        });
+
+        document.addEventListener('click', (event) => {
+            if (cvModal && cvModal.classList.contains('active')) {
+                if (cvModalOverlay && (event.target === cvModalOverlay || cvModalOverlay.contains(event.target))) {
+                    closeCvModal();
+                    return;
+                }
+                if (!cvModal.contains(event.target) && !cvToggle.contains(event.target)) {
+                    closeCvModal();
+                    return;
+                }
+            }
+            if (!cvDropdown.contains(event.target)) {
+                closeCvDropdown();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeCvDropdown();
+                closeCvModal();
+            }
+        });
+
+        if (cvModalList) {
+            cvModalList.addEventListener('click', (event) => {
+                const link = event.target.closest('a');
+                if (link) {
+                    closeCvModal();
+                }
+            });
+        }
+
+        if (cvModalClose) {
+            cvModalClose.addEventListener('click', (event) => {
+                event.preventDefault();
+                closeCvModal();
+            });
+        }
+
+        window.openCvModal = openCvModal;
+        window.closeCvModal = closeCvModal;
+    }
+
+    try {
+        if (localStorage.getItem(CV_OPEN_FLAG) === '1') {
+            localStorage.removeItem(CV_OPEN_FLAG);
+            if (typeof window.openCvModal === 'function') {
+                window.openCvModal();
+            }
+        }
+    } catch (_) {
+        // ignore
+    }
     
     /**
      * Set the page language and update all translatable elements
@@ -148,6 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const path = window.location.pathname;
                 if (path.includes('project-homelab')) projectId = 'homelab';
                 else if (path.includes('project-pif')) projectId = 'pif';
+                else if (path.includes('project-cylro')) projectId = 'cylro';
                 else if (path.includes('project-gradingdino')) projectId = 'gradingdino';
                 else {
                     // If we can't determine project, don't hide the section - just return

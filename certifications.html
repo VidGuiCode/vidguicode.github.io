@@ -257,12 +257,37 @@
             border-color: var(--text-primary);
         }
 
-        /* Badge Thumbnail */
-        .cert-badge-thumb {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-        }
+	        /* Badge Thumbnail */
+	        .cert-icon-box {
+	            width: 60px;
+	            height: 60px;
+	            display: flex;
+	            align-items: center;
+	            justify-content: center;
+	            background: var(--bg-secondary);
+	            border: 1px solid var(--border-color);
+	            position: relative;
+	            box-sizing: border-box;
+	        }
+
+	        .cert-badge-thumb {
+	            width: 100%;
+	            height: 100%;
+	            object-fit: contain;
+	            padding: 8px;
+	            box-sizing: border-box;
+	        }
+
+	        .cert-icon-fallback {
+	            width: 32px;
+	            height: 32px;
+	            color: var(--text-secondary);
+	            position: absolute;
+	            top: 50%;
+	            left: 50%;
+	            transform: translate(-50%, -50%);
+	            display: none;
+	        }
 
         /* Formation Logo - Arηs white logo in light mode needs inversion */
         [data-theme="light"] .formation-logo[src*="arns-group-logo-white"] {
@@ -407,38 +432,22 @@
             }
         }
 
-        @media (max-width: 640px) {
-            .cert-row {
-                grid-template-columns: 1fr;
-                text-align: center;
-                justify-items: center;
-            }
+	        @media (max-width: 640px) {
+	            .cert-row {
+	                grid-template-columns: 1fr;
+	                text-align: center;
+	                justify-items: center;
+	            }
 
-            .cert-row > img {
-                justify-self: center;
-                margin: 0 auto;
-            }
+	            .cert-icon-box {
+	                margin: 0 auto;
+	                justify-content: center;
+	                align-items: center;
+	            }
 
-            .cert-badge-thumb {
-                margin: 0 auto;
-                display: block;
-            }
-
-            .cert-row > div:first-child {
-                justify-self: center;
-                margin: 0 auto;
-            }
-
-            .formation-row > div:first-child {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0 auto;
-            }
-
-            .cert-info {
-                align-items: center;
-                text-align: center;
+	            .cert-info {
+	                align-items: center;
+	                text-align: center;
             }
 
             .cert-meta {
@@ -834,6 +843,9 @@
                 <div class="search-hint">
                     <kbd>↑</kbd> <kbd>↓</kbd> to navigate • <kbd>Enter</kbd> to select • <kbd>Esc</kbd> to close
                 </div>
+                <div class="search-hint-mobile">
+                    Tap a result to open • Tap × to close
+                </div>
             </div>
             <div id="search-results" class="search-results">
                 <div class="search-empty">
@@ -1086,10 +1098,10 @@
             lucide.createIcons();
         }
 
-        function createCertificationRow(cert) {
-            const row = document.createElement('div');
-            row.className = 'cert-row';
-            row.dataset.certId = cert.id;
+	        function createCertificationRow(cert) {
+	            const row = document.createElement('div');
+	            row.className = 'cert-row';
+	            row.dataset.certId = cert.id;
 
             const levelClass = `level-${cert.level.label.toLowerCase()}`;
 
@@ -1118,12 +1130,16 @@
                 ? new Date(cert.dateEarned).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' })
                 : '';
 
-            row.innerHTML = `
-                <img src="${cert.image}" alt="${certName}" class="cert-badge-thumb" loading="lazy">
-                
-                <div class="cert-info">
-                    <div class="cert-name">${certName}</div>
-                    <div class="cert-meta">
+	            row.innerHTML = `
+	                <div class="cert-icon-box">
+	                    <img src="${cert.image}" alt="${certName}" class="cert-badge-thumb" loading="lazy"
+	                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+	                    <i data-lucide="award" class="cert-icon-fallback"></i>
+	                </div>
+	                
+	                <div class="cert-info">
+	                    <div class="cert-name">${certName}</div>
+	                    <div class="cert-meta">
                         <span class="cert-provider">
                             <i data-lucide="award"></i>
                             ${cert.provider}
@@ -1167,7 +1183,7 @@
             return row;
         }
 
-        function createFormationRow(formation) {
+	        function createFormationRow(formation) {
             const row = document.createElement('div');
             row.className = 'cert-row formation-row';
             row.dataset.formationId = formation.id;
@@ -1191,21 +1207,16 @@
                 logoToUse = formation.logoLight;
             }
             
-            // Special handling for Arηs white logo in light mode - apply invert filter
-            const isArnsWhiteLogo = logoToUse && logoToUse.includes('arns-group-logo-white');
-            const logoStyle = isArnsWhiteLogo && currentTheme === 'light' 
-                ? 'width: 100%; height: 100%; object-fit: contain; padding: 8px; box-sizing: border-box; filter: invert(1);'
-                : 'width: 100%; height: 100%; object-fit: contain; padding: 8px; box-sizing: border-box;';
-            
-            // Use logo if available, otherwise fallback to icon
-            const logoHtml = logoToUse 
-                ? `<div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border: 1px solid var(--border-color); position: relative;">
-                       <img src="${logoToUse}" alt="${formationName}" style="${logoStyle}" loading="lazy" class="formation-logo" data-formation-id="${formation.id}" onerror="this.style.display='none'; this.parentElement.querySelector('i').style.display='flex';">
-                       <i data-lucide="book-open" style="width: 32px; height: 32px; color: var(--text-secondary); display: none; position: absolute;"></i>
-                   </div>`
-                : `<div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border: 1px solid var(--border-color);">
-                       <i data-lucide="book-open" style="width: 32px; height: 32px; color: var(--text-secondary);"></i>
-                   </div>`;
+	            // Use logo if available, otherwise fallback to icon
+	            const logoHtml = logoToUse 
+	                ? `<div class="cert-icon-box">
+	                       <img src="${logoToUse}" alt="${formationName}" class="cert-badge-thumb formation-logo" loading="lazy" data-formation-id="${formation.id}"
+	                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+	                       <i data-lucide="book-open" class="cert-icon-fallback"></i>
+	                   </div>`
+	                : `<div class="cert-icon-box">
+	                       <i data-lucide="book-open" class="cert-icon-fallback" style="display: block;"></i>
+	                   </div>`;
 
             row.innerHTML = `
                 ${logoHtml}

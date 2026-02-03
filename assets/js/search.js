@@ -15,12 +15,60 @@
     // Keyboard navigation state
     let selectedIndex = -1;
     let selectableItems = [];
+    let highlightTerms = null;
 
     // Recent searches (max 5)
     const MAX_RECENT_SEARCHES = 5;
 
     // Wait for DOM to be ready
     document.addEventListener('DOMContentLoaded', initSearch);
+
+    function triggerCvDownload() {
+        // Close the search modal first so the CV modal isn't blocked visually.
+        if (searchModal?.classList?.contains('active')) {
+            closeSearch();
+        }
+
+        const openInlineCvModal = () => {
+            const cvModal = document.getElementById('cv-modal');
+            if (!cvModal) return false;
+
+            if (typeof window.openCvModal === 'function') {
+                window.openCvModal();
+                return true;
+            }
+
+            // Fallback: open modal without relying on script.js helpers
+            const cvMenu = document.querySelector('.cv-dropdown-menu');
+            const cvModalList = document.getElementById('cv-modal-list');
+
+            if (cvMenu && cvModalList) {
+                cvModalList.innerHTML = cvMenu.innerHTML;
+            }
+
+            cvModal.classList.add('active');
+            cvModal.setAttribute('aria-hidden', 'false');
+            return true;
+        };
+
+        // If we're on a page that has the CV modal, open it directly.
+        // Use a microtask delay so the DOM updates after closing search.
+        setTimeout(() => {
+            if (openInlineCvModal()) return;
+
+            // Otherwise redirect to index and ask it to auto-open the modal.
+            const isInSubdirectory = window.location.pathname.includes('/projects/') || window.location.pathname.includes('/certifications/');
+            const pathPrefix = isInSubdirectory ? '../' : '';
+
+            try {
+                localStorage.setItem('openCvModal', '1');
+            } catch (_) {
+                // ignore
+            }
+
+            window.location.href = pathPrefix + 'index.html#contact';
+        }, 0);
+    }
 
     function initSearch() {
         // Get DOM elements
@@ -290,7 +338,7 @@
             { name: 'All Projects', icon: 'layers', href: 'projects.html' },
             { name: 'All Certifications', icon: 'award', href: 'certifications.html' },
             { name: 'Contact', icon: 'mail', href: 'index.html#contact' },
-            { name: 'Download CV', icon: 'download', href: 'assets/docs/cv-guilherme-videira-marques-en.pdf', download: true }
+            { name: 'Download CV', icon: 'file-text', href: '#', action: 'open-cv' }
         ];
 
         quickLinks.forEach((link, index) => {
@@ -299,7 +347,8 @@
             const href = link.href.startsWith('http') ? link.href : pathPrefix + link.href;
 
             html += '<a href="' + href + '" class="search-result-item quick-link-item"' +
-                    (link.download ? ' download' : '') + '>';
+                    (link.download ? ' download' : '') +
+                    (link.action ? (' data-action="' + link.action + '"') : '') + '>';
             html += '<div class="search-result-header">';
             html += '<i data-lucide="' + link.icon + '" class="search-result-icon"></i>';
             html += '<div class="search-result-info">';
@@ -363,6 +412,15 @@
     }
 
     function attachInitialStateHandlers() {
+        // CV quick action
+        const cvAction = searchResults.querySelector('[data-action="open-cv"]');
+        if (cvAction) {
+            cvAction.addEventListener('click', (e) => {
+                e.preventDefault();
+                triggerCvDownload();
+            });
+        }
+
         // Recent search items
         const recentItems = searchResults.querySelectorAll('.recent-search-item');
         recentItems.forEach(item => {
@@ -416,8 +474,10 @@
         }
     }
 
-    function handleSearch(e) {
-        const query = e.target.value.trim();
+	    function handleSearch(e) {
+	        const query = e.target.value.trim();
+	        const normalizedQuery = query.toLowerCase();
+	        highlightTerms = getHighlightTerms(normalizedQuery);
 
         // Reset keyboard navigation
         selectedIndex = -1;
@@ -435,15 +495,66 @@
             return;
         }
 
-        // Perform search
-        const results = fuse.search(query);
+	        const isDbGroup = isDatabaseGroupQuery(normalizedQuery);
+	        const dbTerm = getDatabaseTerm(normalizedQuery);
+	        const isDbTerm = Boolean(dbTerm);
+	        const isRpi = isRpiQuery(normalizedQuery);
+	        const isPyGroup = isPythonQuery(normalizedQuery);
 
-        if (results.length === 0) {
-            searchResults.innerHTML = '<div class="search-no-results"><i data-lucide="search-x"></i><p>No results found for "' + escapeHtml(query) + '"</p></div>';
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
+	        // Perform search (with synonym expansion)
+	        let results = mergeSearchResults([query, ...getSynonymQueries(normalizedQuery)]);
+	        if (query.length <= 4 && !isJavaScriptQuery(normalizedQuery) && !isDbGroup && !isDbTerm && !isRpi && !isPyGroup) {
+	            results = results.filter(result => itemContainsQuery(result.item, normalizedQuery));
+	        }
+	        if (isJavaScriptQuery(normalizedQuery)) {
+	            const jsMatchers = getJavaScriptMatchers();
+	            const filtered = results.filter(result => itemMatchesAnyPattern(result.item, jsMatchers));
+	            const direct = directSearchByPatterns(jsMatchers);
+	            const seen = new Set(filtered.map(r => `${r.item.type}:${r.item.id}`));
+	            direct.forEach(r => {
+	                const key = `${r.item.type}:${r.item.id}`;
+	                if (seen.has(key)) return;
+	                seen.add(key);
+	                filtered.push(r);
+	            });
+	            results = filtered;
+	        }
+	        if (isPyGroup) {
+	            const pyMatchers = getPythonMatchers();
+	            const filtered = results.filter(result => itemMatchesAnyPattern(result.item, pyMatchers));
+	            const direct = directSearchByPatterns(pyMatchers);
+	            const seen = new Set(filtered.map(r => `${r.item.type}:${r.item.id}`));
+	            direct.forEach(r => {
+	                const key = `${r.item.type}:${r.item.id}`;
+	                if (seen.has(key)) return;
+	                seen.add(key);
+	                filtered.push(r);
+	            });
+	            results = filtered;
+	        }
+	        if (isDbGroup || isDbTerm) {
+	            const dbMatchers = getDatabaseMatchers(normalizedQuery);
+	            results = results.filter(result => itemMatchesAnyPattern(result.item, dbMatchers));
+	            if (results.length === 0) {
+	                // Fuse can be inconsistent for some short/edge queries; fallback to direct matching.
+                results = directSearchByPatterns(dbMatchers);
             }
-            return;
+        }
+        if (isRpi) {
+            const piMatchers = getRpiMatchers();
+            results = results.filter(result => itemMatchesAnyPattern(result.item, piMatchers));
+            if (results.length === 0) {
+                results = directSearchByPatterns(piMatchers);
+            }
+        }
+        if (isJavaPriorityQuery(normalizedQuery)) {
+            results = prioritizeJavaResults(results);
+        }
+
+        // Final fallback: if Fuse returns nothing but we have an exact substring hit (e.g., tag-only terms),
+        // return those matches so users can still find "obvious" keywords like "Apache".
+        if (results.length === 0) {
+            results = directSearchBySubstring(normalizedQuery);
         }
 
         // Save to recent searches
@@ -451,10 +562,61 @@
 
         // Group results by type
         const grouped = {
+            action: [],
             project: [],
             certification: [],
             formation: []
         };
+
+        // Action shortcuts (opt-in: user clicks them)
+        if (/\b(cv|resume|résumé)\b/.test(normalizedQuery)) {
+            grouped.action.push({
+                type: 'action',
+                id: 'open-cv',
+                name: 'Download CV',
+                description: 'Choose language (EN / FR)',
+                icon: 'file-text',
+                action: 'open-cv'
+            });
+        }
+        if (/\b(projects?|portfolio)\b/.test(normalizedQuery)) {
+            grouped.action.push({
+                type: 'action',
+                id: 'go-projects',
+                name: 'Go to Projects',
+                description: 'Open the projects page',
+                icon: 'layers',
+                action: 'go-projects'
+            });
+        }
+        if (/\b(certifications?|certs?)\b/.test(normalizedQuery)) {
+            grouped.action.push({
+                type: 'action',
+                id: 'go-certifications',
+                name: 'Go to Certifications',
+                description: 'Open the certifications page',
+                icon: 'award',
+                action: 'go-certifications'
+            });
+        }
+        if (/\b(home|main|index)\b/.test(normalizedQuery)) {
+            grouped.action.push({
+                type: 'action',
+                id: 'go-home',
+                name: 'Go to Home',
+                description: 'Open the main page',
+                icon: 'home',
+                action: 'go-home'
+            });
+        }
+
+        if (results.length === 0 && grouped.action.length === 0) {
+            searchResults.innerHTML = '<div class="search-no-results"><i data-lucide="search-x"></i><p>No results found for "' + escapeHtml(query) + '"</p></div>';
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+            return;
+        }
 
         results.forEach(result => {
             const item = result.item;
@@ -467,6 +629,349 @@
 
         // Render results with query for highlighting
         renderResults(grouped, query);
+    }
+
+    function getSynonymQueries(normalizedQuery) {
+        const queries = [];
+
+        // Kubernetes synonyms
+        if (isKubeQuery(normalizedQuery)) {
+            queries.push('kubernetes');
+            queries.push('k8s');
+            queries.push('k3s');
+            queries.push('kube');
+            queries.push('kubernete');
+            queries.push('kubernetis');
+        }
+
+        // Python group (only when searching Python, not when searching a framework)
+        if (isPythonQuery(normalizedQuery)) {
+            queries.push('python');
+            queries.push('django');
+            queries.push('fastapi');
+            queries.push('flask');
+        }
+
+        // S3 / Object Storage group
+        if (isS3Query(normalizedQuery)) {
+            queries.push('s3');
+            queries.push('s3-compatible');
+            queries.push('object storage');
+        }
+
+        // Raspberry Pi group
+        if (isRpiQuery(normalizedQuery)) {
+            queries.push('raspberry pi');
+            queries.push('rpi');
+            queries.push('raspi');
+            queries.push('raspberry pi 5');
+            queries.push('raspberry pi 4');
+        }
+
+        // Database group/terms
+        const dbTerm = getDatabaseTerm(normalizedQuery);
+        if (isDatabaseGroupQuery(normalizedQuery)) {
+            queries.push('database');
+            queries.push('databases');
+            queries.push('postgres');
+            queries.push('postgresql');
+            queries.push('mysql');
+            queries.push('mariadb');
+            queries.push('sqlite');
+            queries.push('redis');
+            queries.push('pgvector');
+        } else if (dbTerm) {
+            getDatabaseAliases(dbTerm).forEach(alias => queries.push(alias));
+        }
+        
+        // JavaScript group (only when searching JavaScript)
+        if (isJavaScriptQuery(normalizedQuery)) {
+            queries.push('javascript');
+            queries.push('js');
+            queries.push('nodejs');
+            queries.push('node.js');
+            queries.push('react');
+            queries.push('vue');
+            queries.push('svelte');
+            queries.push('sveltekit');
+            queries.push('nuxt');
+        }
+
+        return queries;
+    }
+
+    function getHighlightTerms(normalizedQuery) {
+        if (isKubeQuery(normalizedQuery)) {
+            return ['kubernetes', 'k8s', 'k3s', 'kube', 'kubernete', 'kubernetis'];
+        }
+        if (isPythonQuery(normalizedQuery)) {
+            return ['python', 'django', 'fastapi', 'flask', 'py'];
+        }
+        if (isS3Query(normalizedQuery)) {
+            return ['s3', 's3-compatible', 'object storage'];
+        }
+        if (isRpiQuery(normalizedQuery)) {
+            // Avoid highlighting "pi" alone (would highlight in "API", etc.)
+            return ['raspberry', 'raspberry pi', 'rpi', 'raspi', 'raspberry pi 5', 'raspberry pi 4'];
+        }
+        if (isDatabaseGroupQuery(normalizedQuery)) {
+            return ['database', 'databases', 'postgres', 'postgresql', 'mysql', 'mariadb', 'sqlite', 'redis', 'pgvector'];
+        }
+        const dbTerm = getDatabaseTerm(normalizedQuery);
+        if (dbTerm) {
+            return getDatabaseAliases(dbTerm);
+        }
+        if (isJavaScriptQuery(normalizedQuery)) {
+            return getJavaScriptHighlightTerms();
+        }
+        return null;
+    }
+
+    function isKubeQuery(normalizedQuery) {
+        return (
+            normalizedQuery.includes('ku') ||
+            normalizedQuery.includes('k8s') ||
+            normalizedQuery.includes('k3s') ||
+            normalizedQuery.includes('kube')
+        );
+    }
+
+	    function isPythonQuery(normalizedQuery) {
+	        const compact = normalizedQuery.replace(/\s+/g, '');
+	        if (compact.includes('python')) return true;
+	        const tokens = normalizedQuery.split(/\s+/).filter(Boolean);
+	        return tokens.some(token => token.startsWith('py'));
+	    }
+
+    function isDatabaseGroupQuery(normalizedQuery) {
+        const compact = normalizedQuery.replace(/\s+/g, '');
+        return (
+            /\bdb\b/.test(normalizedQuery) ||
+            normalizedQuery.includes('database') ||
+            normalizedQuery.includes('databases') ||
+            compact.startsWith('datab')
+        );
+    }
+
+    function getDatabaseTerm(normalizedQuery) {
+        const compact = normalizedQuery.replace(/\s+/g, '');
+
+        const defs = [
+            { key: 'postgres', aliases: ['postgres', 'postgresql'], minPrefix: 4 },
+            { key: 'mysql', aliases: ['mysql'], minPrefix: 3 },
+            { key: 'mariadb', aliases: ['mariadb'], minPrefix: 4 },
+            { key: 'sqlite', aliases: ['sqlite'], minPrefix: 4 },
+            { key: 'redis', aliases: ['redis'], minPrefix: 4 },
+            { key: 'pgvector', aliases: ['pgvector'], minPrefix: 3 }
+        ];
+
+        for (const def of defs) {
+            for (const alias of def.aliases) {
+                const aliasCompact = alias.replace(/\s+/g, '');
+                if (compact.includes(aliasCompact)) return def.key;
+                if (aliasCompact.length >= def.minPrefix && compact.startsWith(aliasCompact.slice(0, def.minPrefix))) return def.key;
+            }
+        }
+
+        return null;
+    }
+
+    function getDatabaseAliases(dbTerm) {
+        if (dbTerm === 'postgres') return ['postgres', 'postgresql'];
+        if (dbTerm === 'mysql') return ['mysql'];
+        if (dbTerm === 'mariadb') return ['mariadb'];
+        if (dbTerm === 'sqlite') return ['sqlite'];
+        if (dbTerm === 'redis') return ['redis'];
+        if (dbTerm === 'pgvector') return ['pgvector'];
+        return [];
+    }
+
+    function isS3Query(normalizedQuery) {
+        return (
+            /\bs3\b/.test(normalizedQuery) ||
+            normalizedQuery.includes('object storage') ||
+            normalizedQuery.includes('object-store') ||
+            normalizedQuery.includes('s3 compatible')
+        );
+    }
+
+    function isRpiQuery(normalizedQuery) {
+        const compact = normalizedQuery.replace(/\s+/g, '');
+        return (
+            /\bpi\b/.test(normalizedQuery) ||
+            /\brpi\b/.test(normalizedQuery) ||
+            compact.startsWith('rasp') ||
+            normalizedQuery.includes('raspberry')
+        );
+    }
+
+    function isJavaScriptQuery(normalizedQuery) {
+        const compact = normalizedQuery.replace(/\s+/g, '');
+        return (
+            normalizedQuery.includes('javascript') ||
+            /\bjs\b/.test(normalizedQuery) ||
+            normalizedQuery.includes('java script') ||
+            (compact.startsWith('jav') && compact.length >= 3)
+        );
+    }
+
+    function isJavaPriorityQuery(normalizedQuery) {
+        return (
+            normalizedQuery.includes('java') &&
+            !normalizedQuery.includes('javascript') &&
+            !normalizedQuery.includes('java script')
+        );
+    }
+
+    function prioritizeJavaResults(results) {
+        const javaPattern = /\bjava\b(?!\s*script)/i;
+        return results.slice().sort((a, b) => {
+            const aHas = itemMatchesAnyPattern(a.item, [javaPattern]);
+            const bHas = itemMatchesAnyPattern(b.item, [javaPattern]);
+            if (aHas === bHas) return 0;
+            return aHas ? -1 : 1;
+        });
+    }
+
+    function getJavaScriptTerms() {
+        return ['javascript', 'js', 'nodejs', 'node.js', 'react', 'vue', 'svelte', 'sveltekit', 'nuxt'];
+    }
+
+    function getJavaScriptHighlightTerms() {
+        return ['javascript', 'js', 'nodejs', 'node.js', 'react', 'vue', 'svelte', 'sveltekit', 'nuxt'];
+    }
+
+	    function getJavaScriptMatchers() {
+	        return [
+	            /\bjavascript\b/i,
+	            /\bjs\b/i,
+	            /\bnode\.?js\b/i,
+	            /\breact\b/i,
+	            /\bvue\b/i,
+	            /\bnuxt\b/i,
+	            /\bsvelte\b/i,
+	            /\bsveltekit\b/i
+	        ];
+	    }
+
+	    function getPythonMatchers() {
+	        return [
+	            /\bpython\b/i,
+	            /\bdjango\b/i,
+	            /\bfastapi\b/i,
+	            /\bflask\b/i
+	        ];
+	    }
+
+    function getDatabaseMatchers(normalizedQuery) {
+        if (isDatabaseGroupQuery(normalizedQuery)) {
+            return [
+                /\bpostgres(?:ql)?\b/i,
+                /\bmysql\b/i,
+                /\bmariadb\b/i,
+                /\bsqlite\b/i,
+                /\bredis\b/i,
+                /\bpgvector\b/i
+            ];
+        }
+
+        const dbTerm = getDatabaseTerm(normalizedQuery);
+        if (dbTerm === 'postgres') return [/\bpostgres(?:ql)?\b/i];
+        if (dbTerm === 'mysql') return [/\bmysql\b/i];
+        if (dbTerm === 'mariadb') return [/\bmariadb\b/i];
+        if (dbTerm === 'sqlite') return [/\bsqlite\b/i];
+        if (dbTerm === 'redis') return [/\bredis\b/i];
+        if (dbTerm === 'pgvector') return [/\bpgvector\b/i];
+        return [];
+    }
+
+    function directSearchByPatterns(patterns) {
+        if (!Array.isArray(patterns) || patterns.length === 0) return [];
+        return searchData
+            .filter(item => itemMatchesAnyPattern(item, patterns))
+            .map(item => ({ item, score: 0 }));
+    }
+
+    function directSearchBySubstring(normalizedQuery) {
+        if (!normalizedQuery || normalizedQuery.length < 2) return [];
+        return searchData
+            .filter(item => itemContainsQuery(item, normalizedQuery))
+            .map(item => ({ item, score: 0 }));
+    }
+
+    function getRpiMatchers() {
+        return [
+            /\bras(pberry)?\s*pi\b/i,
+            /\brpi\b/i,
+            /\braspi\b/i,
+            /\bras(pberry)?\s*pi\s*5\b/i,
+            /\bras(pberry)?\s*pi\s*4\b/i
+        ];
+    }
+
+    function mergeSearchResults(queries) {
+        const results = [];
+        const seen = new Set();
+
+        queries.forEach((q) => {
+            if (!q || q.length < 2) return;
+            fuse.search(q).forEach((result) => {
+                const key = result.item.type + ':' + result.item.id;
+                if (seen.has(key)) return;
+                seen.add(key);
+                results.push(result);
+            });
+        });
+
+        return results;
+    }
+
+    function itemContainsQuery(item, normalizedQuery) {
+        if (!item || !normalizedQuery) return false;
+        const parts = [
+            item.name,
+            item.description,
+            item.tags,
+            item.categories,
+            item.provider,
+            item.category,
+            item.skills,
+            item.level
+        ].filter(Boolean);
+        const haystack = parts.join(' ').toLowerCase();
+        return haystack.includes(normalizedQuery);
+    }
+
+    function itemContainsAnyTerm(item, terms) {
+        if (!item || !Array.isArray(terms) || terms.length === 0) return false;
+        const parts = [
+            item.name,
+            item.description,
+            item.tags,
+            item.categories,
+            item.provider,
+            item.category,
+            item.skills,
+            item.level
+        ].filter(Boolean);
+        const haystack = parts.join(' ').toLowerCase();
+        return terms.some(term => haystack.includes(term));
+    }
+
+    function itemMatchesAnyPattern(item, patterns) {
+        if (!item || !Array.isArray(patterns) || patterns.length === 0) return false;
+        const parts = [
+            item.name,
+            item.description,
+            item.tags,
+            item.categories,
+            item.provider,
+            item.category,
+            item.skills,
+            item.level
+        ].filter(Boolean);
+        const haystack = parts.join(' ');
+        return patterns.some(pattern => pattern.test(haystack));
     }
 
     function renderResults(grouped, query) {
@@ -487,6 +992,24 @@
             if (!entry) return fallback;
             return entry[currentLang] || entry['en'] || fallback;
         };
+
+        // Actions
+        if (grouped.action && grouped.action.length > 0) {
+            html += '<div class="search-group">';
+            html += '<div class="search-group-title">Actions</div>';
+            grouped.action.forEach((item) => {
+                html += '<a href="#" class="search-result-item quick-link-item" data-action="' + item.action + '">';
+                html += '<div class="search-result-header">';
+                html += '<i data-lucide="' + item.icon + '" class="search-result-icon"></i>';
+                html += '<div class="search-result-info">';
+                html += '<div class="search-result-title">' + highlightMatch(item.name, query) + '</div>';
+                if (item.description) {
+                    html += '<div class="search-result-description">' + escapeHtml(item.description) + '</div>';
+                }
+                html += '</div></div></a>';
+            });
+            html += '</div>';
+        }
 
         // Projects
         if (grouped.project.length > 0) {
@@ -624,6 +1147,7 @@
 
         // Attach click handlers for modal items
         attachModalHandlers();
+        attachActionHandlers();
 
         // Re-initialize Lucide icons
         if (typeof lucide !== 'undefined') {
@@ -655,6 +1179,31 @@
         });
     }
 
+    function attachActionHandlers() {
+        const actionItems = searchResults.querySelectorAll('[data-action]');
+        actionItems.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                const action = item.getAttribute('data-action');
+                if (!action) return;
+
+                if (action === 'open-cv') {
+                    e.preventDefault();
+                    triggerCvDownload();
+                }
+                if (action === 'go-projects' || action === 'go-certifications' || action === 'go-home') {
+                    e.preventDefault();
+                    const isInSubdirectory = window.location.pathname.includes('/projects/') || window.location.pathname.includes('/certifications/');
+                    const pathPrefix = isInSubdirectory ? '../' : '';
+                    const target =
+                        action === 'go-projects' ? (pathPrefix + 'projects.html') :
+                        action === 'go-certifications' ? (pathPrefix + 'certifications.html') :
+                        (pathPrefix + 'index.html');
+                    window.location.href = target;
+                }
+            });
+        });
+    }
+
     function escapeHtml(text) {
         const div = document.createElement('div');
         div.textContent = text;
@@ -665,7 +1214,13 @@
         if (!query) return escapeHtml(text);
 
         const escapedText = escapeHtml(text);
-        const regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+        const terms = Array.isArray(highlightTerms) && highlightTerms.length > 0
+            ? highlightTerms
+            : [query];
+        const pattern = terms
+            .map(term => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+            .join('|');
+        const regex = new RegExp('(' + pattern + ')', 'gi');
         return escapedText.replace(regex, '<mark>$1</mark>');
     }
 
