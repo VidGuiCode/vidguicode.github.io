@@ -44,6 +44,7 @@
             font-weight: 600;
             margin-left: 1rem;
         }
+        
 
         /* Mobile: Category filter button */
         @media (max-width: 768px) {
@@ -143,6 +144,13 @@
             aspect-ratio: 1 / 1;
         }
         
+        @media (max-width: 768px) {
+            .project-image.node-image,
+            .project-image.display-image {
+                max-width: 100%;
+            }
+        }
+        
         /* Image section container - seamlessly integrated */
         .hardware-image-section {
             padding: 1.5rem;
@@ -235,9 +243,16 @@
 
         .project-image-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .project-image-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
 
         .project-image-grid .project-image {
@@ -246,12 +261,15 @@
 
 
         @media (max-width: 768px) {
+            
             .project-image {
                 max-width: 100%;
+                width: 100%;
             }
             .project-image-wrapper {
                 cursor: pointer;
                 -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+                max-width: 100%;
             }
             .project-image-wrapper::after,
             .project-image-wrapper::before {
@@ -263,93 +281,8 @@
                 touch-action: manipulation;
             }
 
-            /* Hardware showcase - stack on mobile */
-            .hardware-showcase {
-                display: flex !important;
-                flex-direction: column;
-                gap: 1rem !important;
-            }
-
-            /* Node cards - adjust padding and layout */
-            .node-card {
-                width: 100%;
-            }
-
-            .node-card > div:first-of-type {
-                padding: 1rem !important;
-            }
-
-            /* Typography uses centralized scale - see styles.css */
-            .node-card > div:first-of-type > div:first-of-type {
-                flex-direction: column !important;
-                gap: 0.5rem !important;
-            }
-
-            .node-card > div:first-of-type > div:first-of-type > div:last-of-type {
-                text-align: left !important;
-                margin-top: 0.5rem;
-            }
-
-            .node-card p {
-                margin-top: 0.75rem !important;
-            }
-
-            /* Image containers in cards */
-            .node-card > div:last-of-type {
-                padding: 1rem !important;
-                padding-top: 0.75rem !important;
-            }
-
-            .node-card .project-image {
-                max-width: 100% !important;
-            }
-
-            /* Tag sections */
-            .node-card > div:nth-of-type(2) {
-                padding: 0.5rem 1rem !important;
-                flex-wrap: wrap;
-            }
-
-            /* Image modal on mobile */
-            .image-modal {
-                padding: 1rem;
-            }
-
-            .image-modal-content {
-                max-width: 100%;
-                max-height: 90vh;
-            }
-
-            .image-modal-content img {
-                max-width: 100%;
-                max-height: 90vh;
-                object-fit: contain;
-            }
-
-            /* Ensure project content doesn't overflow */
-            article {
-                overflow-x: hidden;
-            }
-
-            /* Adjust project meta grid spacing */
-            .project-meta-grid {
-                gap: 2rem !important;
-            }
         }
 
-        /* Typography uses centralized scale - see styles.css */
-        .project-cert-name {
-            font-weight: 500;
-            color: var(--text-primary);
-            white-space: nowrap;
-        }
-
-        @media (max-width: 768px) {
-            .project-cert-badge img {
-                width: 28px;
-                height: 28px;
-            }
-        }
     </style>
 </head>
 <body>

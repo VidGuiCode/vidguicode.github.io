@@ -835,20 +835,36 @@ article p, article li {
 
 @media (max-width: 768px) {
     .project-certifications {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
     }
     
     .project-cert-badge {
         padding: 0.3rem 0.5rem;
         margin-right: 0;
         margin-bottom: 0;
+        flex: 0 1 auto;
+        max-width: 100%;
+        white-space: normal !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     .project-cert-badge img {
         width: 28px;
         height: 28px;
+    }
+    
+    .project-cert-name {
+        white-space: normal !important;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 }
 
