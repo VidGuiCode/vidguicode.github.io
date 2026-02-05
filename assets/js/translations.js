@@ -944,7 +944,7 @@ const translations = {
         pt: "Começámos a pesquisar a ideia em junho de 2025, durante os últimos meses do meu diploma de Técnico de Informática no Lycée Guillaume Kroll. Esse período ajudou-nos a definir a visão e a perceber a arquitetura necessária. O desenvolvimento começou em agosto de 2025 e temos vindo a construir de forma consistente desde então.",
         lu: "Mir hunn d'Iddi am Juni 2025 ugefaangen ze recherchéieren, an de leschte Méint vu mengem Computer Technician Diplom am Lycée Guillaume Kroll. Déi Zäit huet eis gehollef d'Visioun ze formen an d'Architektur ze definéieren déi mir brauchen. D'Entwécklung huet am August 2025 ugefaangen, an zënterhier baue mir kontinuéierlech drun.",
         de: "Wir haben die Idee im Juni 2025 recherchiert – in den letzten Monaten meines Computer-Technician-Diploms am Lycée Guillaume Kroll. Diese Zeit half uns, die Vision zu schärfen und die nötige Architektur zu definieren. Die Entwicklung startete im August 2025 und seitdem bauen wir kontinuierlich daran.",
-        fr: "Nous avons commencé à explorer l’idée en juin 2025, pendant les derniers mois de mon diplôme de Technicien informatique au Lycée Guillaume Kroll. Cette période nous a aidés à cadrer la vision et l’architecture nécessaire. Le développement a démarré en août 2025 et, depuis, nous avançons régulièrement."
+        fr: "Nous avons commencé à explorer l’idée en juin 2025, pendant les derniers mois de mon diplôme de Technicien informatique au Lycée Guillaume Kroll. Cette période nous a aidé à cadrer la vision et l’architecture nécessaire. Le développement a démarré en août 2025 et, depuis, nous avançons régulièrement."
     },
     "project.cylro.section.idea.p4": {
         en: "The platform includes a visual builder (we call it the Studio), a CMS core, and content models. We're designing the API with headless use in mind, though full headless workflows will come after the first beta.",
@@ -1273,7 +1273,7 @@ const translations = {
         pt: "Beta Privada",
         lu: "Privat Beta",
         de: "Private Beta",
-        fr: "Bêta privée"
+        fr: "Beta privée"
     },
     "project.cylro.next.beta.spec": {
         en: "Cohort Access",
@@ -2773,11 +2773,11 @@ const translations = {
         fr: "Batteries incluses"
     },
     "project.gradingdino.cards.django.body": {
-        en: "Django's \"batteries included\" philosophy gave us built-in admin panel, authentication, forms, and ORM. Custom Dockerfile with layer optimization for fast rebuilds.",
-        pt: "A filosofia \"baterias incluídas\" do Django deu-nos painel de admin incorporado, autenticação, formulários e ORM. Dockerfile customizado com otimização de camadas para rebuilds rápidos.",
-        lu: "Django seng \"batteries included\" Philosophie huet eis integréierten Admin, Auth, Forme, an ORM ginn. Custom Dockerfile mat Layer Optimiséierung fir séier Rebuilds.",
-        de: "Djangos \"batteries included\"-Philosophie gab uns eingebautes Admin-Panel, Authentifizierung, Forms und ORM. Custom Dockerfile mit Layer-Optimierung für schnelle Rebuilds.",
-        fr: "La philosophie \"batteries incluses\" de Django nous a offert admin intégré, authentification, formulaires et ORM. Dockerfile custom avec optimisation des couches pour des rebuilds rapides."
+        en: "Django's \"batteries included\" philosophy gave us built-in admin panel, authentication, forms with server-side validation, and ORM. Security features like CSRF, XSS, and SQL injection protection come by default. Custom Dockerfile with layer optimization for fast rebuilds.",
+        pt: "A filosofia \"baterias incluídas\" do Django deu-nos painel de admin incorporado, autenticação, formulários com validação no servidor e ORM. Funcionalidades de segurança como CSRF, XSS e proteção contra SQL injection vêm por padrão. Dockerfile customizado com otimização de camadas para rebuilds rápidos.",
+        lu: "Django seng \"batteries included\" Philosophie huet eis integréierten Admin, Auth, Forme mat Server-Side Validatioun an ORM ginn. Sécherheets-Features wéi CSRF, XSS an SQL Injection Schutz kommen standardméisseg. Custom Dockerfile mat Layer Optimiséierung fir séier Rebuilds.",
+        de: "Djangos \"batteries included\"-Philosophie gab uns eingebautes Admin-Panel, Authentifizierung, Forms mit serverseitiger Validierung und ORM. Sicherheitsfeatures wie CSRF, XSS und SQL-Injection-Schutz sind standardmäßig enthalten. Custom Dockerfile mit Layer-Optimierung für schnelle Rebuilds.",
+        fr: "La philosophie \"batteries incluses\" de Django nous a offert admin intégré, authentification, formulaires avec validation côté serveur et ORM. Les fonctionnalités de sécurité comme CSRF, XSS et la protection contre les injections SQL sont incluses par défaut. Dockerfile custom avec optimisation des couches pour des rebuilds rapides."
     },
     "project.gradingdino.cards.django.tag.orm": {
         en: "[DJANGO-ORM]",
@@ -2904,6 +2904,62 @@ const translations = {
         lu: "[SESSION-AUTH]",
         de: "[SESSION-AUTH]",
         fr: "[SESSION-AUTH]"
+    },
+    "project.gradingdino.cards.frontend.title": {
+        en: "Frontend",
+        pt: "Frontend",
+        lu: "Frontend",
+        de: "Frontend",
+        fr: "Frontend"
+    },
+    "project.gradingdino.cards.frontend.spec": {
+        en: "Pico.css + Server-Side Rendering",
+        pt: "Pico.css + Renderização no Servidor",
+        lu: "Pico.css + Server-Side Rendering",
+        de: "Pico.css + Server-Side Rendering",
+        fr: "Pico.css + Rendu côté serveur"
+    },
+    "project.gradingdino.cards.frontend.detail1": {
+        en: "Minimalist",
+        pt: "Minimalista",
+        lu: "Minimalistesch",
+        de: "Minimalistisch",
+        fr: "Minimaliste"
+    },
+    "project.gradingdino.cards.frontend.detail2": {
+        en: "~10KB",
+        pt: "~10KB",
+        lu: "~10KB",
+        de: "~10KB",
+        fr: "~10KB"
+    },
+    "project.gradingdino.cards.frontend.body": {
+        en: "Pico.css is a minimalist single-file CSS framework that automatically styles semantic HTML5 elements. Zero learning curve — just write HTML. We chose server-side rendering for security (all validation server-side), simplicity (standard HTTP POST cycle), and seamless Django CSRF protection.",
+        pt: "Pico.css é um framework CSS minimalista de ficheiro único que estiliza automaticamente elementos HTML5 semânticos. Zero curva de aprendizagem — apenas escrever HTML. Escolhemos renderização no servidor pela segurança (toda a validação no servidor), simplicidade (ciclo HTTP POST padrão) e proteção CSRF do Django sem complicações.",
+        lu: "Pico.css ass e minimalistescht Single-File CSS Framework dat automatesch semantesch HTML5 Elementer stylt. Null Léierkurve — just HTML schreiwen. Mir hunn Server-Side Rendering gewielt fir Sécherheet (all Validatioun server-side), Simplizitéit (standard HTTP POST Zyklus), an nahtlos Django CSRF Schutz.",
+        de: "Pico.css ist ein minimalistisches Single-File-CSS-Framework, das automatisch semantische HTML5-Elemente stylt. Keine Lernkurve — einfach HTML schreiben. Wir haben Server-Side Rendering für Sicherheit (alle Validierung serverseitig), Einfachheit (standard HTTP-POST-Zyklus) und nahtlosen Django-CSRF-Schutz gewählt.",
+        fr: "Pico.css est un framework CSS minimaliste en fichier unique qui stylise automatiquement les éléments HTML5 sémantiques. Aucune courbe d'apprentissage — il suffit d'écrire du HTML. Nous avons choisi le rendu côté serveur pour la sécurité (toute la validation côté serveur), la simplicité (cycle HTTP POST standard) et la protection CSRF Django sans complications."
+    },
+    "project.gradingdino.cards.frontend.tag.semantic": {
+        en: "[SEMANTIC-HTML]",
+        pt: "[SEMANTIC-HTML]",
+        lu: "[SEMANTIC-HTML]",
+        de: "[SEMANTIC-HTML]",
+        fr: "[SEMANTIC-HTML]"
+    },
+    "project.gradingdino.cards.frontend.tag.ssr": {
+        en: "[SERVER-SIDE]",
+        pt: "[SERVER-SIDE]",
+        lu: "[SERVER-SIDE]",
+        de: "[SERVER-SIDE]",
+        fr: "[SERVER-SIDE]"
+    },
+    "project.gradingdino.cards.frontend.tag.csrf": {
+        en: "[CSRF-SAFE]",
+        pt: "[CSRF-SAFE]",
+        lu: "[CSRF-SAFE]",
+        de: "[CSRF-SAFE]",
+        fr: "[CSRF-SAFE]"
     },
     "project.gradingdino.sidebar.tech.django": {
         en: "Django 5.0",
@@ -3158,25 +3214,25 @@ const translations = {
         fr: "Pourquoi Django (Et ce que nous avons appris)"
     },
     "project.gradingdino.djangoIntro1": {
-        en: "We researched Django, Flask, and FastAPI before choosing. Django won because of its <strong>\"batteries included\"</strong> approach — built-in admin panel, authentication, forms, and ORM meant we could focus on features instead of boilerplate.",
-        pt: "Pesquisámos Django, Flask e FastAPI antes de escolher. O Django ganhou pela sua abordagem <strong>\"baterias incluídas\"</strong> — painel de administração integrado, autenticação, formulários e ORM significavam que podíamos focar-nos nas funcionalidades em vez de código repetitivo.",
-        lu: "Mir hunn Django, Flask, a FastAPI recherchéiert ier mir gewielt hunn. Django huet gewonnen wéinst senger <strong>\"Batterien abegraff\"</strong> Approche — agebauten Admin Panel, Authentifikatioun, Formulairen, an ORM hunn bedeit datt mir eis op Features konzentréiere konnten amplaz Boilerplate.",
-        de: "Wir haben Django, Flask und FastAPI recherchiert, bevor wir uns entschieden haben. Django gewann wegen seines <strong>\"Batterien inklusive\"</strong>-Ansatzes — eingebautes Admin-Panel, Authentifizierung, Formulare und ORM bedeuteten, dass wir uns auf Features statt Boilerplate konzentrieren konnten.",
-        fr: "Nous avons recherché Django, Flask et FastAPI avant de choisir. Django a gagné grâce à son approche <strong>\"piles incluses\"</strong> — panneau d'administration intégré, authentification, formulaires et ORM signifiaient que nous pouvions nous concentrer sur les fonctionnalités plutôt que sur le code répétitif."
+        en: "We researched Django, Flask, and FastAPI before choosing. Django won because of its <strong>\"batteries included\"</strong> approach — built-in admin, authentication, forms, and ORM meant we could build fast.",
+        pt: "Pesquisámos Django, Flask e FastAPI antes de escolher. Django ganhou pela sua abordagem <strong>\"baterias incluídas\"</strong> — admin integrado, autenticação, formulários e ORM permitiram-nos construir rapidamente.",
+        lu: "Mir hunn Django, Flask a FastAPI recherchéiert ier mir gewielt hunn. Django huet gewonnen wéinst senger <strong>\"Batterien abegraff\"</strong> Approche — agebauten Admin, Authentifikatioun, Formularen an ORM hunn eis erlaabt séier ze bauen.",
+        de: "Wir haben Django, Flask und FastAPI recherchiert, bevor wir uns entschieden haben. Django gewann wegen seines <strong>\"Batterien inklusive\"</strong>-Ansatzes — eingebautes Admin, Authentifizierung, Formulare und ORM ermöglichten schnelles Bauen.",
+        fr: "Nous avons recherché Django, Flask et FastAPI avant de choisir. Django a gagné grâce à son approche <strong>\"piles incluses\"</strong> — admin intégré, authentification, formulaires et ORM ont permis de construire rapidement."
     },
     "project.gradingdino.djangoIntro2": {
-        en: "However, \"batteries included\" doesn't mean \"no learning required.\" Django has a steep learning curve with its own conventions, project structure, and way of doing things. With our tight deadline, we didn't have enough time to properly understand the framework — we were building while learning, which slowed us down.",
-        pt: "No entanto, \"baterias incluídas\" não significa \"sem necessidade de aprendizagem\". O Django tem uma curva de aprendizagem acentuada com as suas próprias convenções, estrutura de projeto e forma de fazer as coisas. Com o nosso prazo apertado, não tivemos tempo suficiente para compreender adequadamente o framework — estávamos a construir enquanto aprendíamos, o que nos atrasou.",
-        lu: "Awer \"Batterien abegraff\" heescht net \"keng Léieren néideg\". Django huet eng steil Léierkurv mat sengen eegene Konventiounen, Projet-Struktur, a Manéier Saachen ze maachen. Mat eisem enken Deadline hate mir net genuch Zäit fir de Framework richteg ze verstoen — mir hunn gebaut während mir geléiert hunn, wat eis verlangsamt huet.",
-        de: "Allerdings bedeutet \"Batterien inklusive\" nicht \"kein Lernen erforderlich\". Django hat eine steile Lernkurve mit eigenen Konventionen, Projektstruktur und Art, Dinge zu tun. Mit unserer engen Deadline hatten wir nicht genug Zeit, das Framework richtig zu verstehen — wir haben gebaut während wir gelernt haben, was uns verlangsamt hat.",
-        fr: "Cependant, \"piles incluses\" ne signifie pas \"pas d'apprentissage requis\". Django a une courbe d'apprentissage raide avec ses propres conventions, structure de projet et façon de faire les choses. Avec notre délai serré, nous n'avons pas eu assez de temps pour bien comprendre le framework — nous construisions tout en apprenant, ce qui nous a ralentis."
+        en: "However, Django has a steep learning curve because you must do things <strong>their way</strong> — specific conventions, project structure, and patterns. With our tight deadline, we didn't have time to properly learn it, which slowed us down.",
+        pt: "No entanto, Django tem uma curva de aprendizagem íngreme porque tens de fazer as coisas à <strong>maneira deles</strong> — convenções específicas, estrutura de projeto e padrões. Com o nosso prazo apertado, não tivemos tempo para aprender adequadamente, o que nos atrasou.",
+        lu: "Awer Django huet eng steil Léierkurve well een d'Saachen <strong>op hir Manéier</strong> maache muss — spezifesch Konventiounen, Projet-Struktur a Patternen. Mat eisem enge Deadline hunn mir net genuch Zäit gehat fir et richteg ze léieren, wat eis verlaangsaamt huet.",
+        de: "Django hat jedoch eine steile Lernkurve, weil man Dinge <strong>auf ihre Weise</strong> machen muss — spezifische Konventionen, Projektstruktur und Muster. Mit unserer knappen Deadline hatten wir keine Zeit, es richtig zu lernen, was uns verlangsamte.",
+        fr: "Cependant, Django a une courbe d'apprentissage raide car il faut faire les choses <strong>à leur manière</strong> — conventions spécifiques, structure de projet et modèles. Avec notre délai serré, nous n'avions pas le temps de l'apprendre correctement, ce qui nous a ralentis."
     },
     "project.gradingdino.djangoIntro3": {
-        en: "<strong>The honest truth:</strong> The project was an MVP that worked but wasn't finished. It taught us that choosing a framework you don't know adds hidden time costs — the \"batteries\" are only useful if you know how to use them.",
-        pt: "<strong>A verdade honesta:</strong> O projeto foi um MVP que funcionou mas não ficou terminado. Ensinou-nos que escolher um framework que não conhecemos adiciona custos de tempo ocultos — as \"baterias\" só são úteis se soubermos como usá-las.",
-        lu: "<strong>Déi éierlech Wourecht:</strong> De Projet war en MVP deen funktionéiert huet awer net fäerdeg war. Et huet eis geléiert datt e Framework wielen deen een net kennt verstoppten Zäitkäschten derbäisetzt — d'\"Batterien\" sinn nëmme nëtzlech wann een weess wéi een se benotzt.",
-        de: "<strong>Die ehrliche Wahrheit:</strong> Das Projekt war ein MVP, das funktionierte, aber nicht fertig war. Es lehrte uns, dass die Wahl eines Frameworks, das man nicht kennt, versteckte Zeitkosten hinzufügt — die \"Batterien\" sind nur nützlich, wenn man weiß, wie man sie benutzt.",
-        fr: "<strong>La vérité honnête :</strong> Le projet était un MVP qui fonctionnait mais n'était pas terminé. Cela nous a appris que choisir un framework qu'on ne connaît pas ajoute des coûts de temps cachés — les \"piles\" ne sont utiles que si on sait comment les utiliser."
+        en: "<strong>The lesson:</strong> Django is great for rapid development, but the \"batteries\" only help if you know how to use them. Learning a new framework adds hidden time costs.",
+        pt: "<strong>A lição:</strong> Django é ótimo para desenvolvimento rápido, mas as \"baterias\" só ajudam se souberes como usá-las. Aprender um novo framework adiciona custos de tempo ocultos.",
+        lu: "<strong>D'Lektioun:</strong> Django ass super fir séier Entwécklung, awer d'\"Batterien\" hëllefen nëmme wann een weess wéi een se benotzt. E neit Framework ze léieren setzt versteckte Zäitkäschten dobäi.",
+        de: "<strong>Die Lektion:</strong> Django ist großartig für schnelle Entwicklung, aber die \"Batterien\" helfen nur, wenn man weiß, wie man sie verwendet. Ein neues Framework zu lernen fügt versteckte Zeitkosten hinzu.",
+        fr: "<strong>La leçon :</strong> Django est excellent pour le développement rapide, mais les \"piles\" n'aident que si vous savez comment les utiliser. Apprendre un nouveau framework ajoute des coûts de temps cachés."
     },
     "project.gradingdino.lessonsTitle": {
         en: "Lessons Learned",
@@ -3219,6 +3275,41 @@ const translations = {
         lu: "<strong>MVP ass ok</strong> — De Projet war net perfekt, awer et huet funktionéiert. Eppes Funktionelles ze liwweren huet eis méi geléiert wéi endlos Planung jeemools kéint.",
         de: "<strong>MVP ist okay</strong> — Das Projekt war nicht perfekt, aber es funktionierte. Etwas Funktionales zu liefern hat uns mehr gelehrt als endlose Planung es je könnte.",
         fr: "<strong>MVP c'est ok</strong> — Le projet n'était pas parfait, mais il fonctionnait. Livrer quelque chose de fonctionnel nous a appris plus que la planification sans fin ne le pourrait jamais."
+    },
+    "project.gradingdino.assets.title": {
+        en: "Deliverables & Assets",
+        pt: "Entregáveis e Ficheiros",
+        lu: "Liwwerungen & Dateien",
+        de: "Abgaben & Dateien",
+        fr: "Livrables & Fichiers"
+    },
+    "project.gradingdino.assets.body": {
+        en: "Research document covering framework selection, project planning methodology, and technical implementation.",
+        pt: "Documento de pesquisa cobrindo seleção de frameworks, metodologia de planeamento de projeto e implementação técnica.",
+        lu: "Forschungsdokument iwwer Framework-Auswiel, Projet-Planungsmethodologie an technesch Implementatioun.",
+        de: "Forschungsdokument zur Framework-Auswahl, Projektplanungsmethodik und technischen Implementierung.",
+        fr: "Document de recherche couvrant la sélection de frameworks, la méthodologie de planification de projet et l'implémentation technique."
+    },
+    "project.gradingdino.asset.research.title": {
+        en: "Research Document",
+        pt: "Documento de Pesquisa",
+        lu: "Forschungsdokument",
+        de: "Forschungsdokument",
+        fr: "Document de recherche"
+    },
+    "project.gradingdino.asset.research.desc": {
+        en: "View the research document covering framework comparison, project planning methodology, and technical decisions.",
+        pt: "Ver o documento de pesquisa cobrindo comparação de frameworks, metodologia de planeamento de projeto e decisões técnicas.",
+        lu: "Kuckt d'Forschungsdokument iwwer Framework-Verglach, Projet-Planungsmethodologie an technesch Decisiounen.",
+        de: "Sehen Sie das Forschungsdokument zur Framework-Vergleich, Projektplanungsmethodik und technischen Entscheidungen.",
+        fr: "Consultez le document de recherche couvrant la comparaison des frameworks, la méthodologie de planification de projet et les décisions techniques."
+    },
+    "project.gradingdino.asset.research.button": {
+        en: "Download Research Document (PDF)",
+        pt: "Descarregar Documento de Pesquisa (PDF)",
+        lu: "Forschungsdokument eroflueden (PDF)",
+        de: "Forschungsdokument herunterladen (PDF)",
+        fr: "Télécharger le document de recherche (PDF)"
     },
     "project.gradingdino.sidebar.projectManagement": {
         en: "Project Management",

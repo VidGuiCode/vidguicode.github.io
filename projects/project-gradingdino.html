@@ -100,10 +100,15 @@
         <section class="project-hero">
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.gradingdino.badge">SCHOOL PROJECT</div>
-                <h1>
-                    <span data-i18n="project.gradingdino.title"></span>GradingDino</span>
-                    <span class="mvp-badge" data-i18n="project.gradingdino.mvp">MVP</span>
-                </h1>
+                <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                    <img src="../assets/img/projects/gradingdino/dino-icon.webp" alt="GradingDino Icon" style="width: 80px; height: 80px; border-radius: 16px; object-fit: contain; flex-shrink: 0;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <h1>
+                            <span data-i18n="project.gradingdino.title">GradingDino</span>
+                            <span class="mvp-badge" data-i18n="project.gradingdino.mvp">MVP</span>
+                        </h1>
+                    </div>
+                </div>
                 <p class="subtitle" data-i18n="project.gradingdino.subtitle">A grade management system built with Django. Teachers create classrooms and manage student grades, while students track their progress. Group project MVP — learned valuable lessons about framework selection.</p>
             </div>
         </section>
@@ -214,6 +219,30 @@
                                 <span data-i18n="project.gradingdino.cards.security.tag.argon2">[ARGON2]</span> <span data-i18n="project.gradingdino.cards.security.tag.csrf">[CSRF-PROTECTION]</span> <span data-i18n="project.gradingdino.cards.security.tag.session">[SESSION-AUTH]</span>
                             </div>
                         </div>
+
+                        <!-- Frontend Card -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 12px; overflow: hidden; border: 1px solid #475569; position: relative; box-shadow: 0 10px 30px rgba(71, 85, 105, 0.2);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #475569, #94a3b8);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.gradingdino.cards.frontend.title">Frontend</h3>
+                                        <div class="node-spec" style="color: #94a3b8; margin-bottom: 0.75rem;" data-i18n="project.gradingdino.cards.frontend.spec">Pico.css + Server-Side Rendering</div>
+                                    </div>
+                                    <div class="node-detail" style="text-align: right; color: #cbd5e1;">
+                                        <div data-i18n="project.gradingdino.cards.frontend.detail1">Minimalist</div>
+                                        <div style="font-weight: 600; color: #94a3b8;" data-i18n="project.gradingdino.cards.frontend.detail2">~10KB</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #cbd5e1; margin: 0;" data-i18n="project.gradingdino.cards.frontend.body">
+                                    Pico.css is a minimalist single-file CSS framework that automatically styles semantic HTML5 elements. Zero learning curve — just write HTML. We chose server-side rendering for security (all validation server-side), simplicity (standard HTTP POST cycle), and seamless Django CSRF protection.
+                                </p>
+                            </div>
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e293b; display: flex; gap: 1rem; color: #64748b;">
+                                <span data-i18n="project.gradingdino.cards.frontend.tag.semantic">[SEMANTIC-HTML]</span> <span data-i18n="project.gradingdino.cards.frontend.tag.ssr">[SERVER-SIDE]</span> <span data-i18n="project.gradingdino.cards.frontend.tag.csrf">[CSRF-SAFE]</span>
+                            </div>
+                        </div>
                         
                     </div>
 
@@ -235,9 +264,9 @@
                     </ul>
 
                     <h2 data-i18n="project.gradingdino.whyDjango">Why Django (And What We Learned)</h2>
-                    <p data-i18n="project.gradingdino.djangoIntro1" data-i18n-html="true">We researched Django, Flask, and FastAPI before choosing. Django won because of its <strong>"batteries included"</strong> approach — built-in admin panel, authentication, forms, and ORM meant we could focus on features instead of boilerplate.</p>
-                    <p data-i18n="project.gradingdino.djangoIntro2">However, "batteries included" doesn't mean "no learning required." Django has a steep learning curve with its own conventions, project structure, and way of doing things. With our tight deadline, we didn't have enough time to properly understand the framework — we were building while learning, which slowed us down.</p>
-                    <p data-i18n="project.gradingdino.djangoIntro3" data-i18n-html="true"><strong>The honest truth:</strong> The project was an MVP that worked but wasn't finished. It taught us that choosing a framework you don't know adds hidden time costs — the "batteries" are only useful if you know how to use them.</p>
+                    <p data-i18n="project.gradingdino.djangoIntro1" data-i18n-html="true">We researched Django, Flask, and FastAPI before choosing. Django won because of its <strong>"batteries included"</strong> approach — built-in admin, authentication, forms, and ORM meant we could build fast.</p>
+                    <p data-i18n="project.gradingdino.djangoIntro2" data-i18n-html="true">However, Django has a steep learning curve because you must do things <strong>their way</strong> — specific conventions, project structure, and patterns. With our tight deadline, we didn't have time to properly learn it, which slowed us down.</p>
+                    <p data-i18n="project.gradingdino.djangoIntro3" data-i18n-html="true"><strong>The lesson:</strong> Django is great for rapid development, but the "batteries" only help if you know how to use them. Learning a new framework adds hidden time costs.</p>
 
                     <h2 data-i18n="project.gradingdino.lessonsTitle">Lessons Learned</h2>
                     <ul class="feature-list">
@@ -247,6 +276,21 @@
                         <li data-i18n="project.gradingdino.lesson4" data-i18n-html="true"><strong>Learn the tool before the deadline</strong> — Django's "batteries included" only help if you understand how to use them. We spent time fighting the framework instead of building features.</li>
                         <li data-i18n="project.gradingdino.lesson5" data-i18n-html="true"><strong>MVP is okay</strong> — The project wasn't perfect, but it worked. Shipping something functional taught us more than endless planning ever could.</li>
                     </ul>
+
+                    <h2 data-i18n="project.gradingdino.assets.title">Deliverables & Assets</h2>
+                    <p data-i18n="project.gradingdino.assets.body">Research document covering framework selection, project planning methodology, and technical implementation.</p>
+
+                    <div style="margin-top: 1rem; padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;">
+                        <h3 style="margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="file-text" style="width: 20px; height: 20px;"></i>
+                            <span data-i18n="project.gradingdino.asset.research.title">Research Document</span>
+                        </h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="project.gradingdino.asset.research.desc">View the research document covering framework comparison, project planning methodology, and technical decisions.</p>
+                        <a href="../assets/docs/projects/gradingdino/gradingdino-research-document.pdf" target="_blank" class="button" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: var(--accent-primary); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500; transition: all 0.2s ease;">
+                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
+                            <span data-i18n="project.gradingdino.asset.research.button">Download Research Document (PDF)</span>
+                        </a>
+                    </div>
                 </div>
             </article>
 
