@@ -99,12 +99,7 @@
             }
         }
 
-        .project-image-caption {
-            margin-top: 0.75rem;
-            color: var(--text-secondary);
-            font-style: italic;
-            line-height: 1.4;
-        }
+        /* Typography uses centralized scale - see styles.css */
 
         @media (max-width: 768px) {
             /* Image modal on mobile */
@@ -323,14 +318,14 @@
                     <h2 data-i18n="project.teamsbroadcast.projectinfo.title">Project Info</h2>
                     <p data-i18n="project.teamsbroadcast.projectinfo.body" data-i18n-html="true">Solo school project presented in <strong>January 2026</strong>. Graded exercise using Power Platform to solve a real organizational problem.</p>
 
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;">
-                        <h3 style="margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="presentation" style="width: 20px; height: 20px;"></i>
+                    <div class="asset-card" style="margin-top: 2rem;">
+                        <h3>
+                            <i data-lucide="presentation"></i>
                             <span data-i18n="project.teamsbroadcast.presentation.title">Presentation</span>
                         </h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="project.teamsbroadcast.presentation.desc">View the project presentation slides used during the graded demonstration.</p>
-                        <a href="../assets/docs/projects/teams-broadcast/teams-broadcast-presentation.pdf" target="_blank" class="button" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: var(--accent-primary); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500; transition: all 0.2s ease;">
-                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
+                        <p data-i18n="project.teamsbroadcast.presentation.desc">View the project presentation slides used during the graded demonstration.</p>
+                        <a href="../assets/docs/projects/teams-broadcast/teams-broadcast-presentation.pdf" target="_blank" class="asset-download-button">
+                            <i data-lucide="download"></i>
                             <span data-i18n="project.teamsbroadcast.presentation.button">Download Presentation (PDF)</span>
                         </a>
                     </div>

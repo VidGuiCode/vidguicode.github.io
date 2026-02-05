@@ -1128,9 +1128,22 @@
                 }
             }
 
+            // Handle icon rendering
+            let iconHTML = '';
+            if (project.iconImage) {
+                if (project.id === 'cylro') {
+                    // Cylro uses submark logo
+                    iconHTML = `<img src="${project.iconImage}" alt="${projectName}" style="width: 64px; height: 64px; object-fit: contain;">`;
+                } else {
+                    iconHTML = `<img src="${project.iconImage}" alt="${projectName}" style="width: 48px; height: 48px; object-fit: contain;">`;
+                }
+            } else {
+                iconHTML = `<i data-lucide="${project.icon}"></i>`;
+            }
+
             row.innerHTML = `
                 <div class="project-icon-thumb">
-                    <i data-lucide="${project.icon}"></i>
+                    ${iconHTML}
                 </div>
                 
                 <div class="project-info">
@@ -1146,7 +1159,6 @@
                 <div class="project-actions">
                     ${project.link ? `
                         <a href="${project.link}" class="project-action-icon" data-i18n-title="projects.modal.viewProject"
-                           target="_blank" rel="noopener noreferrer"
                            onclick="event.stopPropagation()">
                             <i data-lucide="external-link"></i>
                         </a>
@@ -1418,7 +1430,7 @@
             // Render link if available
             if (project.link) {
                 modalLink.innerHTML = `
-                    <a href="${project.link}" class="btn primary" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <a href="${project.link}" class="btn primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
                         <span data-i18n="projects.modal.viewProject">View Project</span>
                         <i data-lucide="external-link"></i>
                     </a>

@@ -35,18 +35,6 @@
     <script src="../assets/js/certifications-techstack.js"></script>
     <style>
         /* Typography uses centralized scale - see styles.css */
-        .mvp-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-weight: 600;
-            margin-left: 1rem;
-        }
-
     </style>
 </head>
 <body>
@@ -102,14 +90,16 @@
                 <div class="badge" data-i18n="project.gradingdino.badge">SCHOOL PROJECT</div>
                 <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
                     <img src="../assets/img/projects/gradingdino/dino-icon.webp" alt="GradingDino Icon" style="width: 80px; height: 80px; border-radius: 16px; object-fit: contain; flex-shrink: 0;">
-                    <div style="flex: 1; min-width: 200px;">
-                        <h1>
+                    <div style="flex: 1; min-width: 200px; display: flex; align-items: center;">
+                        <h1 style="line-height: 1; margin-bottom: 0; display: flex; align-items: center;">
                             <span data-i18n="project.gradingdino.title">GradingDino</span>
-                            <span class="mvp-badge" data-i18n="project.gradingdino.mvp">MVP</span>
                         </h1>
                     </div>
                 </div>
                 <p class="subtitle" data-i18n="project.gradingdino.subtitle">A grade management system built with Django. Teachers create classrooms and manage student grades, while students track their progress. Group project MVP — learned valuable lessons about framework selection.</p>
+                <div style="margin-top: 1rem;">
+                    <div class="badge mvp-badge" style="margin-bottom: 0;" data-i18n="project.gradingdino.mvp">MVP</div>
+                </div>
             </div>
         </section>
 
@@ -280,14 +270,14 @@
                     <h2 data-i18n="project.gradingdino.assets.title">Deliverables & Assets</h2>
                     <p data-i18n="project.gradingdino.assets.body">Research document covering framework selection, project planning methodology, and technical implementation.</p>
 
-                    <div style="margin-top: 1rem; padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;">
-                        <h3 style="margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="file-text" style="width: 20px; height: 20px;"></i>
+                    <div class="asset-card">
+                        <h3>
+                            <i data-lucide="file-text"></i>
                             <span data-i18n="project.gradingdino.asset.research.title">Research Document</span>
                         </h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="project.gradingdino.asset.research.desc">View the research document covering framework comparison, project planning methodology, and technical decisions.</p>
-                        <a href="../assets/docs/projects/gradingdino/gradingdino-research-document.pdf" target="_blank" class="button" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: var(--accent-primary); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500; transition: all 0.2s ease;">
-                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
+                        <p data-i18n="project.gradingdino.asset.research.desc">View the research document covering framework comparison, project planning methodology, and technical decisions.</p>
+                        <a href="../assets/docs/projects/gradingdino/gradingdino-research-document.pdf" target="_blank" class="asset-download-button">
+                            <i data-lucide="download"></i>
                             <span data-i18n="project.gradingdino.asset.research.button">Download Research Document (PDF)</span>
                         </a>
                     </div>

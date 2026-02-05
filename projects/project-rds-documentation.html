@@ -32,20 +32,7 @@
     <script src="../assets/js/search.js"></script>
     <script src="../assets/js/certifications-techstack.js"></script>
     <style>
-        .lab-badge {
-            background: rgba(56, 189, 248, 0.12);
-            border-color: rgba(56, 189, 248, 0.4);
-            color: #7dd3fc;
-            padding: 0.25rem 0.75rem;
-            font-size: var(--fs-xs);
-            text-transform: uppercase;
-        }
-
-        .lab-badge::before {
-            background-color: #38bdf8;
-            box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
-        }
-
+        /* Typography uses centralized scale - see styles.css */
         .inline-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -174,26 +161,26 @@
                     <h2 data-i18n="project.rds.section.assets.title">Deliverables & Assets</h2>
                     <p data-i18n="project.rds.section.assets.body">Scenario description, step-by-step documentation, presentation, and live demonstration.</p>
 
-                    <div style="margin-top: 1rem; padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;">
-                        <h3 style="margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="file-text" style="width: 20px; height: 20px;"></i>
+                    <div class="asset-card">
+                        <h3>
+                            <i data-lucide="file-text"></i>
                             <span data-i18n="project.rds.asset.documentation.title">Documentation</span>
                         </h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="project.rds.asset.documentation.desc">View the full RDS implementation documentation used for the lab delivery.</p>
-                        <a href="../assets/docs/projects/rds-documentation/rds-documentation.pdf" target="_blank" class="button" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: var(--accent-primary); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500; transition: all 0.2s ease;">
-                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
+                        <p data-i18n="project.rds.asset.documentation.desc">View the full RDS implementation documentation used for the lab delivery.</p>
+                        <a href="../assets/docs/projects/rds-documentation/rds-documentation.pdf" target="_blank" class="asset-download-button">
+                            <i data-lucide="download"></i>
                             <span data-i18n="project.rds.asset.documentation.button">Download Documentation (PDF)</span>
                         </a>
                     </div>
 
-                    <div style="margin-top: 1rem; padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;">
-                        <h3 style="margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="presentation" style="width: 20px; height: 20px;"></i>
+                    <div class="asset-card">
+                        <h3>
+                            <i data-lucide="presentation"></i>
                             <span data-i18n="project.rds.asset.presentation.title">Presentation</span>
                         </h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="project.rds.asset.presentation.desc">View the project presentation slides used during the graded demonstration.</p>
-                        <a href="../assets/docs/projects/rds-documentation/rds-presentation.pdf" target="_blank" class="button" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: var(--accent-primary); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500; transition: all 0.2s ease;">
-                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
+                        <p data-i18n="project.rds.asset.presentation.desc">View the project presentation slides used during the graded demonstration.</p>
+                        <a href="../assets/docs/projects/rds-documentation/rds-presentation.pdf" target="_blank" class="asset-download-button">
+                            <i data-lucide="download"></i>
                             <span data-i18n="project.rds.asset.presentation.button">Download Presentation (PDF)</span>
                         </a>
                     </div>

@@ -682,11 +682,11 @@ const translations = {
         fr: "Cylro"
     },
     "projects.cylro.desc": {
-        en: "From August 2025, in development: I'm co-founding this agency platform with a partner. It's designed as an operating system for agencies and freelancers managing multiple client websites. One workspace for everything, built in Luxembourg, hosted in Europe. We started researching in June 2025 and have been building steadily since August.",
-        pt: "Desde agosto de 2025, em desenvolvimento: Estou a co-fundar esta plataforma para agências com um parceiro. Foi concebida como um sistema operativo para agências e freelancers que gerem vários websites de clientes. Um espaço de trabalho para tudo, construído no Luxemburgo, alojado na Europa. Começámos a pesquisar em junho de 2025 e temos estado a construir constantemente desde agosto.",
-        lu: "Vum August 2025, an Entwécklung: Ech grënnen dës Agence Plattform mat engem Partner. Et ass entwéckelt als Betribssystem fir Agencen a Freelancer déi verschidde Client Websäiten verwalten. Ee Workspace fir alles, gebaut am Lëtzebuerg, gehost an Europa. Mir hunn ugefaang ze fuerschen am Juni 2025 an bauen kontinuéierlech zënter August.",
-        de: "Seit August 2025, in Entwicklung: Ich gründe diese Agenturplattform mit einem Partner. Sie ist als Betriebssystem für Agenturen und Freelancer konzipiert, die mehrere Kunden-Websites verwalten. Ein Workspace für alles, gebaut in Luxemburg, gehostet in Europa. Wir haben im Juni 2025 mit der Recherche begonnen und bauen seit August kontinuierlich.",
-        fr: "Depuis août 2025, en développement : Je co-fonde cette plateforme d'agence avec un partenaire. Elle est conçue comme un système d'exploitation pour les agences et freelances gérant plusieurs sites clients. Un espace de travail pour tout, construit au Luxembourg, hébergé en Europe. Nous avons commencé la recherche en juin 2025 et construisons régulièrement depuis août."
+        en: "From August 2025, in development: Platform for Agencies. I'm co-founding this agency platform with a partner. One workspace for all your client websites, built in Luxembourg, hosted in Europe. We started researching in June 2025 and have been building steadily since August.",
+        pt: "Desde agosto de 2025, em desenvolvimento: Plataforma para Agências. Estou a co-fundar esta plataforma para agências com um parceiro. Um espaço de trabalho para todos os websites dos teus clientes, construído no Luxemburgo, alojado na Europa. Começámos a pesquisar em junho de 2025 e temos estado a construir constantemente desde agosto.",
+        lu: "Vum August 2025, an Entwécklung: Plattform fir Agencen. Ech grënnen dës Agence Plattform mat engem Partner. Ee Workspace fir all deng Client Websäiten, gebaut am Lëtzebuerg, gehost an Europa. Mir hunn ugefaang ze fuerschen am Juni 2025 an bauen kontinuéierlech zënter August.",
+        de: "Seit August 2025, in Entwicklung: Plattform für Agenturen. Ich gründe diese Agenturplattform mit einem Partner. Ein Workspace für alle Kunden-Websites, gebaut in Luxemburg, gehostet in Europa. Wir haben im Juni 2025 mit der Recherche begonnen und bauen seit August kontinuierlich.",
+        fr: "Depuis août 2025, en développement : Plateforme pour Agences. Je co-fonde cette plateforme d'agence avec un partenaire. Un espace de travail pour tous les sites de vos clients, construit au Luxembourg, hébergé en Europe. Nous avons commencé la recherche en juin 2025 et construisons régulièrement depuis août."
     },
     "projects.gradingdino.title": {
         en: "GradingDino",
@@ -905,11 +905,53 @@ const translations = {
 
     // Cylro Project Page
     "project.cylro.hero.accent": {
-        en: "Agency Operating System",
-        pt: "Sistema Operativo para Agências",
-        lu: "Agentur-Betribssystem",
-        de: "Betriebssystem für Agenturen",
-        fr: "Système d’exploitation pour agences"
+        en: "The Agency Operating System",
+        pt: "O Sistema Operativo para Agências",
+        lu: "D'Agentur-Betribssystem",
+        de: "Das Betriebssystem für Agenturen",
+        fr: "Le Le système d'exploitation pour agences"
+    },
+    "project.cylro.hero.accent.line1": {
+        en: "The Agency",
+        pt: "O Sistema Operativo",
+        lu: "D'Agentur",
+        de: "Das Betriebssystem",
+        fr: "Le système d'exploitation"
+    },
+    "project.cylro.hero.accent.line2": {
+        en: "Operating System",
+        pt: "para Agências",
+        lu: "Betribssystem",
+        de: "für Agenturen",
+        fr: "pour agences"
+    },
+    "project.cylro.hero.accent.line1": {
+        en: "The Agency",
+        pt: "O Sistema Operativo",
+        lu: "D'Agentur",
+        de: "Das Betriebssystem",
+        fr: "Le système d'exploitation"
+    },
+    "project.cylro.hero.accent.line2": {
+        en: "Operating System",
+        pt: "para Agências",
+        lu: "Betribssystem",
+        de: "für Agenturen",
+        fr: "pour agences"
+    },
+    "project.cylro.hero.accent.mobile.line1": {
+        en: "Platform",
+        pt: "Plataforma",
+        lu: "Plattform",
+        de: "Plattform",
+        fr: "Plateforme"
+    },
+    "project.cylro.hero.accent.mobile.line2": {
+        en: "for Agencies",
+        pt: "para Agências",
+        lu: "fir Agencen",
+        de: "für Agenturen",
+        fr: "pour Agences"
     },
     "project.cylro.hero.subtitle": {
         en: "One workspace for all your client websites. Built in Luxembourg, hosted in Europe.",

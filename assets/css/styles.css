@@ -501,6 +501,158 @@ button:focus-visible {
 /* Hover: Server Bezel Glow moved to main card definition above */
 
 
+/* Asset/Download Card Styles */
+.asset-card {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.asset-card h3 {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.asset-card h3 i {
+    width: 20px;
+    height: 20px;
+}
+
+.asset-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.asset-download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--accent-primary);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.asset-download-button i {
+    width: 18px;
+    height: 18px;
+}
+
+/* Image Caption Styles */
+.hardware-image-caption {
+    color: var(--text-secondary);
+    font-style: italic;
+    text-align: left;
+    flex: 1;
+    margin: 0;
+}
+
+/* Node card captions keep light color (dark backgrounds don't change with theme) */
+.node-card .hardware-image-caption {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.project-image-caption {
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.4;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .hardware-image-caption {
+        text-align: center;
+    }
+}
+
+/* Lab Badge - Server Type Badge */
+.lab-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(29, 78, 216, 0.2) !important;
+    border: 1px solid rgba(29, 78, 216, 0.6) !important;
+    border-color: rgba(29, 78, 216, 0.6) !important;
+    color: #1e3a8a !important;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.lab-badge::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #2563eb !important;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.8);
+    animation: pulse 2s infinite;
+}
+
+[data-theme="dark"] .lab-badge {
+    background: rgba(56, 189, 248, 0.15) !important;
+    border-color: rgba(56, 189, 248, 0.5) !important;
+    color: #7dd3fc !important;
+}
+
+[data-theme="dark"] .lab-badge::before {
+    background-color: #38bdf8 !important;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+}
+
+/* MVP Badge - Orange Badge Style */
+.mvp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(245, 158, 11, 0.2) !important;
+    border: 1px solid rgba(245, 158, 11, 0.6) !important;
+    border-color: rgba(245, 158, 11, 0.6) !important;
+    color: #d97706 !important;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    margin-bottom: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.mvp-badge::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #f59e0b !important;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.8);
+    animation: pulse 2s infinite;
+}
+
+[data-theme="dark"] .mvp-badge {
+    background: rgba(251, 191, 36, 0.15) !important;
+    border-color: rgba(251, 191, 36, 0.5) !important;
+    color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .mvp-badge::before {
+    background-color: #fbbf24 !important;
+    box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+}
+
 /* Hero Section - Bento Grid */
 .hero-grid {
     display: grid;

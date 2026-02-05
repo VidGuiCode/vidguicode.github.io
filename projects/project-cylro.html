@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cylro | VidGuiCode</title>
-    <meta name="description" content="Cylro: one workspace for all your client websites. An EU-hosted agency platform I'm co-founding, built in Luxembourg.">
+    <title>Cylro - Platform for Agencies | VidGuiCode</title>
+    <meta name="description" content="Cylro: Platform for Agencies. One workspace for all your client websites. EU-hosted agency platform built in Luxembourg.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Cylro - Platform for Agencies">
+    <meta property="og:description" content="Platform for Agencies. One workspace for all your client websites. EU-hosted, built in Luxembourg.">
+    <meta property="og:type" content="website">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,9 +39,93 @@
     <style>
         /* Typography uses centralized scale - see styles.css */
         .title-accent {
-            color: #c084fc;
+            color: #9c7dff;
             font-weight: 600;
-            margin-left: 0.75rem;
+            margin-left: 0;
+        }
+
+        /* Cylro logo theme switching */
+        [data-theme="dark"] .cylro-logo-dark {
+            display: block;
+        }
+        [data-theme="dark"] .cylro-logo-light {
+            display: none;
+        }
+        [data-theme="light"] .cylro-logo-dark {
+            display: none;
+        }
+        [data-theme="light"] .cylro-logo-light {
+            display: block;
+        }
+
+        /* Cylro title layout - logo as inline text element */
+        .cylro-title-inline {
+            display: inline;
+            line-height: 1.2;
+        }
+
+        .cylro-logo-inline {
+            display: inline-block;
+            vertical-align: baseline;
+            width: 160px;
+            height: 80px;
+            overflow: visible;
+            line-height: 1;
+            margin-right: -0.25rem;
+            position: relative;
+        }
+
+        .cylro-logo-inline img {
+            height: 120px;
+            width: auto;
+            display: inline-block;
+            object-fit: contain;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-38%) scale(2.5);
+            transform-origin: left center;
+            margin-left: -70px;
+            margin-top: 5px;
+        }
+
+        .cylro-title-inline .title-accent {
+            display: inline;
+            white-space: normal;
+        }
+
+        /* Mobile: adjust logo size and ensure text wraps naturally */
+        @media (max-width: 768px) {
+            .cylro-logo-inline {
+                width: 95px;
+                height: 60px;
+                margin-right: -0.5rem;
+            }
+
+            .cylro-logo-inline img {
+                height: 90px;
+                top: 50%;
+                transform: translateY(-38%) scale(2);
+                transform-origin: left center;
+                margin-left: -50px;
+                margin-top: 4px;
+            }
+
+            .cylro-title-wrapper h1 {
+                font-size: clamp(1.75rem, 5vw + 0.75rem, 2.25rem);
+                line-height: 1.1;
+            }
+
+            /* Show mobile text, hide desktop text */
+            .cylro-title-line1,
+            .cylro-title-line2 {
+                display: none !important;
+            }
+
+            .cylro-title-mobile-line1,
+            .cylro-title-mobile-line2 {
+                display: inline !important;
+            }
         }
 
         /* Keep custom styles minimal for consistency with other project pages */
@@ -93,17 +182,27 @@
         <section class="project-hero">
             <div class="project-title-group">
                 <div class="badge" data-i18n="projects.status.inDevelopment">In Development</div>
-                <h1>
-                    Cylro
-                    <span class="title-accent" data-i18n="project.cylro.hero.accent">Agency Operating System</span>
-                </h1>
+                <div class="cylro-title-wrapper" style="margin-bottom: 1rem;">
+                    <h1 class="cylro-title-inline" style="margin: 0;">
+                        <span class="cylro-logo-inline">
+                            <img src="../assets/img/projects/cylro/primary-w.svg" alt="Cylro Logo" class="cylro-logo-dark">
+                            <img src="../assets/img/projects/cylro/primary-b.svg" alt="Cylro Logo" class="cylro-logo-light">
+                        </span>
+                        <span class="title-accent">
+                            <span class="cylro-title-line1" data-i18n="project.cylro.hero.accent.line1">The Agency</span>
+                            <span class="cylro-title-line2" data-i18n="project.cylro.hero.accent.line2"> Operating System</span>
+                            <span class="cylro-title-mobile-line1" data-i18n="project.cylro.hero.accent.mobile.line1" style="display: none;">Agency</span>
+                            <span class="cylro-title-mobile-line2" data-i18n="project.cylro.hero.accent.mobile.line2" style="display: none;"> OS</span>
+                        </span>
+                    </h1>
+                </div>
                 <p class="subtitle" data-i18n="project.cylro.hero.subtitle">One workspace for all your client websites. Built in Luxembourg, hosted in Europe.</p>
                 <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
                     <a href="https://cylro.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">cylro.com</a>
                 </p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
-                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>28/01/2026</span>
+                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>05/02/2026</span>
                 </p>
             </div>
         </section>
