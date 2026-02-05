@@ -33,6 +33,9 @@
     --fs-body: clamp(0.95rem, 0.5vw + 0.85rem, 1rem);    /* Body text: 0.95rem mobile → 1rem desktop */
     --fs-small: clamp(0.8rem, 0.3vw + 0.7rem, 0.875rem); /* Small text: 0.8rem mobile → 0.875rem desktop */
     --fs-xs: clamp(0.7rem, 0.2vw + 0.6rem, 0.75rem);     /* Extra small: 0.7rem mobile → 0.75rem desktop */
+
+    --nav-offset-gap: 220px;
+    --nav-anchor-align: 0.4;
 }
 
 [data-theme="dark"] {
@@ -505,7 +508,7 @@ button:focus-visible {
     grid-template-rows: auto auto auto;
     gap: 1.5rem;
     margin-top: 6rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .hero-text {
@@ -681,7 +684,7 @@ h1 {
     font-size: var(--fs-subtitle);
     color: var(--text-secondary);
     font-weight: 400;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Project Page Subtitle - Balanced with content */
@@ -694,15 +697,15 @@ h1 {
 
 /* Project Page Common Styles */
 .project-hero {
-    padding: 4rem 0;
-    margin-bottom: 2rem;
+    padding: 2.5rem 0 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .project-meta-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 3rem;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -998,7 +1001,7 @@ article p, article li {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 /* Ensure experience section grid has equal column widths */

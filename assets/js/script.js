@@ -421,26 +421,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Account for fixed header
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-            }
+    // Smooth scrolling for anchor links (event delegation for dynamically injected nav)
+    document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (!anchor) return;
+
+        const targetId = anchor.getAttribute('href');
+        if (targetId === '#' || !targetId) return;
+
+        const targetElement = document.querySelector(targetId);
+        if (!targetElement) return;
+
+        e.preventDefault();
+
+        // Account for fixed header + optional per-section offset + align target in viewport
+        const rootStyle = getComputedStyle(document.documentElement);
+        const cssOffset = parseInt(rootStyle.getPropertyValue('--nav-offset-gap'), 10);
+        const headerOffset = Number.isFinite(cssOffset) ? cssOffset : 80;
+        const alignRatio = parseFloat(rootStyle.getPropertyValue('--nav-anchor-align'));
+        const safeAlign = Number.isFinite(alignRatio) ? Math.min(Math.max(alignRatio, 0), 0.9) : 0;
+        const visibleHeight = Math.max(window.innerHeight - headerOffset, 0);
+        const desiredTop = safeAlign > 0 ? headerOffset + (visibleHeight * safeAlign) : headerOffset;
+
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const extraOffset = parseInt(targetElement.getAttribute('data-scroll-offset'), 10) || 0;
+        const offsetPosition = elementPosition + window.pageYOffset - desiredTop - extraOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
         });
     });
 

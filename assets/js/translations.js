@@ -4019,32 +4019,46 @@ const translations = {
         fr: "Techniques de Prévention"
     },
     "formation.blockchain.intro.part1.name": {
-        en: "Blockchain Introduction (Part 1 of 2)",
-        pt: "Introdução ao Blockchain (Parte 1 de 2)",
-        lu: "Blockchain Intro (Deel 1 vun 2)",
-        de: "Blockchain Einführung (Teil 1 von 2)",
-        fr: "Introduction à la Blockchain (Partie 1 sur 2)"
+        en: "Blockchain Introduction (Part 1 of 3)",
+        pt: "Introdução ao Blockchain (Parte 1 de 3)",
+        lu: "Blockchain Intro (Deel 1 vun 3)",
+        de: "Blockchain Einführung (Teil 1 von 3)",
+        fr: "Introduction à la Blockchain (Partie 1 sur 3)"
     },
     "formation.blockchain.intro.part1.description": {
-        en: "Attended the first part (3 hours) of a 6-hour Blockchain Introduction training, focusing on the functional principles of blockchain technology, its organizational impact on business and society, and the essential building blocks of distributed ledger systems. The training covered blockchain as a transaction journal, explaining the roles of users (wallets), verifiers (nodes), and block creators (miners), providing a strategic and management-oriented understanding of the technology. Hosted by The Blockchain Academy and conducted by their team, as part of my BTS Cloud Computing program at LGK.",
-        pt: "Frequentei a primeira parte (3 horas) de uma formação de 6 horas sobre Introdução ao Blockchain, focando nos princípios funcionais da tecnologia blockchain, seu impacto organizacional nos negócios e na sociedade, e os elementos essenciais dos sistemas de ledger distribuído. A formação cobriu blockchain como um diário de transações, explicando os papéis dos utilizadores (carteiras), verificadores (nós) e criadores de blocos (mineiros), fornecendo uma compreensão estratégica e orientada para a gestão da tecnologia. Organizado pela The Blockchain Academy e conduzido pela sua equipa, como parte do meu programa BTS Cloud Computing no LGK.",
-        lu: "Besicht den éischten Deel (3 Stonnen) vun engem 6-Stonnen Blockchain Intro Training, deen sech op d'funktionell Prinzipien vun der Blockchain Technologie, hiren organisatoreschen Impakt op Geschäft a Gesellschaft, an d'wesentlech Bausteng vun distribuéierte Ledger Systemer konzentréiert. D'Training huet Blockchain als Transaktiounsjournal behandelt, d'Rollen vun Benotzer (Portemonnaien), Verifikateuren (Knoten) a Block Schëpfer (Miner) erkläert, a strategesch a managementorientéiert Verständnis vun der Technologie bidden. Organiséiert vun The Blockchain Academy a geleed vun hirer Ekipp, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
-        de: "Besuchte den ersten Teil (3 Stunden) einer 6-stündigen Blockchain-Einführungsschulung, mit Fokus auf die funktionalen Prinzipien der Blockchain-Technologie, ihre organisatorischen Auswirkungen auf Wirtschaft und Gesellschaft und die wesentlichen Bausteine verteilter Ledger-Systeme. Die Schulung behandelte Blockchain als Transaktionsjournal, erklärte die Rollen von Nutzern (Wallets), Verifizierern (Nodes) und Block-Erstellern (Miner) und vermittelte ein strategisches und managementorientiertes Verständnis der Technologie. Organisiert von The Blockchain Academy und durchgeführt von ihrem Team, im Rahmen meines BTS Cloud Computing Programms am LGK.",
-        fr: "Suivi la première partie (3 heures) d'une formation de 6 heures sur l'Introduction à la Blockchain, axée sur les principes fonctionnels de la technologie blockchain, son impact organisationnel sur les entreprises et la société, et les éléments essentiels des systèmes de registre distribué. La formation a couvert la blockchain comme journal de transactions, expliquant les rôles des utilisateurs (portefeuilles), des vérificateurs (nœuds) et des créateurs de blocs (mineurs), fournissant une compréhension stratégique et orientée gestion de la technologie. Organisé par The Blockchain Academy et animé par leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
+        en: "A proper introduction to blockchain: what it is, how it works, and why it matters. We set up Metamask, got to know the Sepolia testnet and faucets, and were asked to mine some Sepolia ETH at home; we then shared our Ethereum public addresses with the presenter for the next steps. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        pt: "Uma introdução ao blockchain: o que é, como funciona e por que importa. Criámos conta na Metamask, conhecemos a testnet Sepolia e os faucets, e fomos incentivados a minar Sepolia ETH em casa; depois partilhámos os nossos endereços públicos Ethereum com o formador para os próximos passos. The Blockchain Academy no Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        lu: "Eng richteg Intro an d'Blockchain: wat et ass, wéi et funktionnéiert an firwat et zielt. Mir hunn Metamask opgesat, d'Sepolia-Testnet an Faucets kenne geléiert, a solle doheem e bëssen Sepolia-ETH minen; du hu mir eise Ethereum-Ëffentleche Schlëssel un de Presenter weider ginn. The Blockchain Academy um Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        de: "Eine richtige Einführung in die Blockchain: was sie ist, wie sie funktioniert und warum sie relevant ist. Wir haben Metamask eingerichtet, die Sepolia-Testnet und Faucets kennengelernt und sollten zu Hause Sepolia-ETH minen; anschließend haben wir unsere Ethereum-Adressen beim Referenten eingereicht. The Blockchain Academy am Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        fr: "Une vraie introduction à la blockchain : ce que c'est, comment ça marche et pourquoi c'est important. On a créé un compte Metamask, découvert la testnet Sepolia et les faucets, et on nous a demandé de miner un peu de Sepolia ETH chez nous ; on a ensuite communiqué nos adresses Ethereum publiques au formateur. The Blockchain Academy au Lycée Guillaume Kroll (LGK), BTS Cloud Computing."
     },
     "formation.blockchain.intro.part2.name": {
-        en: "Blockchain Introduction (Part 2 of 2)",
-        pt: "Introdução ao Blockchain (Parte 2 de 2)",
-        lu: "Blockchain Intro (Deel 2 vun 2)",
-        de: "Blockchain Einführung (Teil 2 von 2)",
-        fr: "Introduction à la Blockchain (Partie 2 sur 2)"
+        en: "Blockchain Introduction (Part 2 of 3)",
+        pt: "Introdução ao Blockchain (Parte 2 de 3)",
+        lu: "Blockchain Intro (Deel 2 vun 3)",
+        de: "Blockchain Einführung (Teil 2 von 3)",
+        fr: "Introduction à la Blockchain (Partie 2 sur 3)"
     },
     "formation.blockchain.intro.part2.description": {
-        en: "Attended the second part (3 hours) of a 6-hour Blockchain Introduction training, continuing the exploration of blockchain technology, advanced concepts, and practical applications. This session builds upon the foundational knowledge from Part 1, diving deeper into implementation strategies and real-world use cases. Hosted by The Blockchain Academy and conducted by their team, as part of my BTS Cloud Computing program at LGK.",
-        pt: "Frequentei a segunda parte (3 horas) de uma formação de 6 horas sobre Introdução ao Blockchain, continuando a exploração da tecnologia blockchain, conceitos avançados e aplicações práticas. Esta sessão constrói sobre o conhecimento fundamental da Parte 1, aprofundando-se em estratégias de implementação e casos de uso do mundo real. Organizado pela The Blockchain Academy e conduzido pela sua equipa, como parte do meu programa BTS Cloud Computing no LGK.",
-        lu: "Besicht den zweeten Deel (3 Stonnen) vun engem 6-Stonnen Blockchain Intro Training, deen d'Exploratioun vun der Blockchain Technologie, fortgeschratt Konzepter a praktesch Uwendungen weiderfouert. Dës Sessioun baut op de Fundamentalkenntnisser vun Deel 1 op, geet déiwer an Implementatiounsstrategien a real-weltlech Benotzungsfäll. Organiséiert vun The Blockchain Academy a geleed vun hirer Ekipp, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
-        de: "Besuchte den zweiten Teil (3 Stunden) einer 6-stündigen Blockchain-Einführungsschulung, der die Erkundung der Blockchain-Technologie, fortgeschrittene Konzepte und praktische Anwendungen fortsetzt. Diese Sitzung baut auf dem Grundlagenwissen aus Teil 1 auf und vertieft sich in Implementierungsstrategien und reale Anwendungsfälle. Organisiert von The Blockchain Academy und durchgeführt von ihrem Team, im Rahmen meines BTS Cloud Computing Programms am LGK.",
-        fr: "Suivi la deuxième partie (3 heures) d'une formation de 6 heures sur l'Introduction à la Blockchain, poursuivant l'exploration de la technologie blockchain, des concepts avancés et des applications pratiques. Cette session s'appuie sur les connaissances fondamentales de la Partie 1, approfondissant les stratégies d'implémentation et les cas d'usage réels. Organisé par The Blockchain Academy et animé par leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
+        en: "The presenter explained mining and had planned to distribute NFTs, but with many of us not having mined yet, that was pushed to Part 3. We still went through how to mine, the ethics around it, and more theory so the course could continue. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        pt: "O formador explicou a mineração e ia distribuir NFTs, mas como muitos ainda não tinham minerado, isso ficou para a Parte 3. Ainda assim vimos como minar, a ética à volta disso e mais teoria para o curso continuar. The Blockchain Academy no Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        lu: "De Presenter huet Minen erkläert a wollt NFTs verdeelen, mä well vill vun eis nach net gemint hunn, ass dat op Deel 3 verschwon. Mir hunn trotzdem duerchgaang wéi een mint, d’Ethik dohanner an méi Theorie, sou datt de Kurs weiderlafe konnt. The Blockchain Academy um Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        de: "Der Referent erklärte das Mining und wollte NFTs verteilen; weil viele von uns noch nicht gemint hatten, wurde das auf Teil 3 verschoben. Wir haben trotzdem durchgenommen, wie man minet, die Ethik dahinter und weitere Theorie. The Blockchain Academy am Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        fr: "Le formateur a expliqué le minage et devait distribuer les NFTs ; comme beaucoup n’avaient pas encore miné, c’est reporté à la Partie 3. On a quand même vu comment miner, l’éthique autour et davantage de théorie. The Blockchain Academy au Lycée Guillaume Kroll (LGK), BTS Cloud Computing."
+    },
+    "formation.blockchain.intro.part3.name": {
+        en: "Blockchain Introduction (Part 3 of 3)",
+        pt: "Introdução ao Blockchain (Parte 3 de 3)",
+        lu: "Blockchain Intro (Deel 3 vun 3)",
+        de: "Blockchain Einführung (Teil 3 von 3)",
+        fr: "Introduction à la Blockchain (Partie 3 sur 3)"
+    },
+    "formation.blockchain.intro.part3.description": {
+        en: "Everyone received their NFT; we sold it to the person next to us to experience a real peer-to-peer trade. He showed how to create an NFT, used IPFS to explain where they live and how the tech works, and demonstrated a Metamask-based voting app where NFT holders could vote. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        pt: "Todos recebemos o nosso NFT; vendêmo-lo ao colega ao lado para sentir uma troca peer-to-peer a sério. Mostrou como criar um NFT, usou IPFS para explicar onde ficam guardados e como funciona a tech, e demonstrou uma app de voto com Metamask para titulares de NFT. The Blockchain Academy no Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        lu: "Jiddereen huet seng NFT kritt; mir hunn se un de Noper verkaaft fir eng richteg Peer-to-Peer-Transaktioun ze erliewen. Hien huet gewisen wéi een en NFT kreéiert, IPFS benotzt fir ze erklären wou se sinn an wéi d’Tech funktionnéiert, an eng Metamask-Voting-App gewisen wou NFT-Besitzer ofstëmme konnten. The Blockchain Academy um Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        de: "Alle haben ihr NFT bekommen; wir haben es an den Sitznachbarn verkauft, um einen echten Peer-to-Peer-Handel zu erleben. Er zeigte, wie man ein NFT erstellt, nutzte IPFS um zu erklären, wo sie gespeichert sind und wie die Technik funktioniert, und führte eine Metamask-basierte Voting-App für NFT-Inhaber vor. The Blockchain Academy am Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+        fr: "Tout le monde a reçu son NFT ; on l’a vendu à son voisin pour vivre un vrai échange pair-à-pair. Il a montré comment créer un NFT, utilisé IPFS pour expliquer où ils sont stockés et comment ça marche, et démontré une appli de vote avec Metamask pour les détenteurs de NFT. The Blockchain Academy au Lycée Guillaume Kroll (LGK), BTS Cloud Computing."
     },
     "formation.blockchain.intro.skills.fundamentals": {
         en: "Blockchain Fundamentals",
@@ -4549,6 +4563,325 @@ const translations = {
         de: "Lebenslauf herunterladen",
         fr: "Télécharger CV"
     },
+
+
+    // RDS Documentation Project Page
+    "projects.rds.title": {
+        en: "Remote Desktop Services (RDS) Documentation",
+        pt: "Documentação de Remote Desktop Services (RDS)",
+        lu: "Remote Desktop Services (RDS) Dokumentatioun",
+        de: "Remote Desktop Services (RDS) Dokumentation",
+        fr: "Documentation Remote Desktop Services (RDS)"
+    },
+    "projects.rds.desc": {
+        en: "I documented and demonstrated a Windows Server 2022 Remote Desktop Services deployment. It combines AD DS, DNS, RD Web Access, and a session-based collection so students can securely access a shared desktop from external Windows 11 clients.",
+        pt: "Documentei e demonstrei uma implementação de Remote Desktop Services no Windows Server 2022. Combina AD DS, DNS, RD Web Access e uma coleção baseada em sessão para que os alunos possam aceder com segurança a um desktop partilhado a partir de clientes Windows 11 externos.",
+        lu: "Ech hunn eng Remote Desktop Services Umsetzung op Windows Server 2022 dokumentéiert a presentéiert. Et kombinéiert AD DS, DNS, RD Web Access an eng Session-baséiert Collection, sou datt d'Schüler sécher op en deelen Desktop vun externe Windows 11 Clienten zougräife kënnen.",
+        de: "Ich habe eine Remote-Desktop-Services-Bereitstellung auf Windows Server 2022 dokumentiert und demonstriert. Sie kombiniert AD DS, DNS, RD Web Access und eine sitzungsbasierte Sammlung, damit Schüler sicher auf einen gemeinsamen Desktop von externen Windows-11-Clients zugreifen können.",
+        fr: "J'ai documenté et présenté un déploiement Remote Desktop Services sur Windows Server 2022. Il combine AD DS, DNS, RD Web Access et une collection basée sur des sessions afin que les élèves puissent accéder en toute sécurité à un bureau partagé depuis des clients Windows 11 externes."
+    },
+    "project.rds.meta.title": {
+        en: "Remote Desktop Services (RDS) Documentation | VidGuiCode",
+        pt: "Documentação de Remote Desktop Services (RDS) | VidGuiCode",
+        lu: "Remote Desktop Services (RDS) Dokumentatioun | VidGuiCode",
+        de: "Remote Desktop Services (RDS) Dokumentation | VidGuiCode",
+        fr: "Documentation Remote Desktop Services (RDS) | VidGuiCode"
+    },
+    "project.rds.meta.desc": {
+        en: "RDS documentation project: Windows Server 2022 single-server deployment with AD DS, DNS, RD Web Access, and session-based desktops.",
+        pt: "Projeto de documentação RDS: implementação de servidor único no Windows Server 2022 com AD DS, DNS, RD Web Access e desktops baseados em sessão.",
+        lu: "RDS Dokumentatiounsprojet: Windows Server 2022 Single-Server Umsetzung mat AD DS, DNS, RD Web Access an Session-baséierte Desktops.",
+        de: "RDS-Dokumentationsprojekt: Windows Server 2022 Single-Server-Bereitstellung mit AD DS, DNS, RD Web Access und sitzungsbasierten Desktops.",
+        fr: "Projet de documentation RDS : déploiement mono-serveur Windows Server 2022 avec AD DS, DNS, RD Web Access et bureaux basés sur des sessions."
+    },
+    "project.rds.badge": {
+        en: "SCHOOL PROJECT",
+        pt: "PROJETO ESCOLAR",
+        lu: "SCHOULPROJET",
+        de: "SCHULPROJEKT",
+        fr: "PROJET SCOLAIRE"
+    },
+    "project.rds.title": {
+        en: "Remote Desktop Services (RDS)",
+        pt: "Remote Desktop Services (RDS)",
+        lu: "Remote Desktop Services (RDS)",
+        de: "Remote Desktop Services (RDS)",
+        fr: "Remote Desktop Services (RDS)"
+    },
+    "project.rds.subtitle": {
+        en: "Documentation and demo project covering a full Windows Server 2022 RDS deployment with AD DS, DNS, and RD Web Access.",
+        pt: "Projeto de documentação e demonstração cobrindo um deployment completo de RDS no Windows Server 2022 com AD DS, DNS e RD Web Access.",
+        lu: "Dokumentatiouns- a Demo-Projet fir eng komplett Windows Server 2022 RDS Umsetzung mat AD DS, DNS an RD Web Access.",
+        de: "Dokumentations- und Demo-Projekt für eine vollständige Windows Server 2022 RDS-Bereitstellung mit AD DS, DNS und RD Web Access.",
+        fr: "Projet de documentation et de démonstration d'un déploiement RDS complet sur Windows Server 2022 avec AD DS, DNS et RD Web Access."
+    },
+    "project.rds.labBadge": {
+        en: "LAB 08 - WINDOWS SERVER SERVICES",
+        pt: "LAB 08 - SERVIÇOS DO WINDOWS SERVER",
+        lu: "LAB 08 - WINDOWS SERVER SERVICER",
+        de: "LAB 08 - WINDOWS SERVER DIENSTE",
+        fr: "LAB 08 - SERVICES WINDOWS SERVER"
+    },
+    "project.rds.section.overview.title": {
+        en: "Overview",
+        pt: "Visão Geral",
+        lu: "Iwwersiicht",
+        de: "Überblick",
+        fr: "Vue d'ensemble"
+    },
+    "project.rds.section.overview.body": {
+        en: "This project documents a centralized Remote Desktop Services environment where students can access a shared Windows desktop and applications securely from their own devices using domain credentials.",
+        pt: "Este projeto documenta um ambiente centralizado de Remote Desktop Services onde os alunos podem aceder com segurança a um desktop Windows partilhado e aplicações a partir dos seus próprios dispositivos usando credenciais de domínio.",
+        lu: "Dëst Projet dokumentéiert eng zentraliséiert Remote Desktop Services Ëmwelt, wou d'Schüler sécher op en deelen Windows Desktop an Applikatioune vun hiren eegene Geräter mat Domain-Login zougräife kënnen.",
+        de: "Dieses Projekt dokumentiert eine zentralisierte Remote-Desktop-Services-Umgebung, in der Schüler sicher auf einen gemeinsamen Windows-Desktop und Anwendungen von ihren eigenen Geräten mit Domänenanmeldedaten zugreifen können.",
+        fr: "Ce projet documente un environnement Remote Desktop Services centralisé où les élèves peuvent accéder en toute sécurité à un bureau Windows partagé et à des applications depuis leurs propres appareils avec des identifiants de domaine."
+    },
+    "project.rds.section.scenario.title": {
+        en: "Scenario",
+        pt: "Cenário",
+        lu: "Szenario",
+        de: "Szenario",
+        fr: "Scénario"
+    },
+    "project.rds.card.single.title": {
+        en: "Single-Server RDS",
+        pt: "RDS em Servidor Único",
+        lu: "Single-Server RDS",
+        de: "Single-Server RDS",
+        fr: "RDS sur Serveur Unique"
+    },
+    "project.rds.card.single.spec": {
+        en: "Windows Server 2022",
+        pt: "Windows Server 2022",
+        lu: "Windows Server 2022",
+        de: "Windows Server 2022",
+        fr: "Windows Server 2022"
+    },
+    "project.rds.card.single.detail1": {
+        en: "Lab 08",
+        pt: "Lab 08",
+        lu: "Lab 08",
+        de: "Lab 08",
+        fr: "Lab 08"
+    },
+    "project.rds.card.single.detail2": {
+        en: "School Project",
+        pt: "Projeto Escolar",
+        lu: "Schoulprojet",
+        de: "Schulprojekt",
+        fr: "Projet scolaire"
+    },
+    "project.rds.card.single.body": {
+        en: "Centralized RDS environment with AD DS, DNS, and RD Web Access. Students connect from external Windows 11 PCs using domain credentials without domain-joining.",
+        pt: "Ambiente RDS centralizado com AD DS, DNS e RD Web Access. Os alunos ligam-se a partir de PCs Windows 11 externos usando credenciais de domínio sem juntar ao domínio.",
+        lu: "Zentraliséiert RDS Ëmwelt mat AD DS, DNS an RD Web Access. d'Schüler verbannen sech vun externe Windows 11 PCs mat Domain-Login ouni de PC an d'Domain ze huelen.",
+        de: "Zentralisierte RDS-Umgebung mit AD DS, DNS und RD Web Access. Schüler verbinden sich von externen Windows-11-PCs mit Domänenanmeldedaten ohne Domänenbeitritt.",
+        fr: "Environnement RDS centralisé avec AD DS, DNS et RD Web Access. Les élèves se connectent depuis des PC Windows 11 externes avec des identifiants de domaine sans joindre le domaine."
+    },
+    "project.rds.section.core.title": {
+        en: "Core Components",
+        pt: "Componentes Principais",
+        lu: "Haaptkomponenten",
+        de: "Kernkomponenten",
+        fr: "Composants Clés"
+    },
+    "project.rds.section.core.body": {
+        en: "<strong>Server:</strong> <code>RDS-SRV01</code> on domain <code>lab8.local</code> with AD DS, DNS Server, and Remote Desktop Services. The RDS deployment is session-based (Quick Start) with RD Web Access. <strong>Clients:</strong> Physical Windows 11 PCs using bridged networking.",
+        pt: "<strong>Servidor:</strong> <code>RDS-SRV01</code> no domínio <code>lab8.local</code> com AD DS, DNS Server e Remote Desktop Services. O deployment RDS é baseado em sessão (Quick Start) com RD Web Access. <strong>Clientes:</strong> PCs Windows 11 físicos com networking em bridge.",
+        lu: "<strong>Server:</strong> <code>RDS-SRV01</code> am Domain <code>lab8.local</code> mat AD DS, DNS Server an Remote Desktop Services. D'RDS Umsetzung ass session-baséiert (Quick Start) mat RD Web Access. <strong>Clienten:</strong> Physesch Windows 11 PCs mat Bridged Networking.",
+        de: "<strong>Server:</strong> <code>RDS-SRV01</code> in der Domäne <code>lab8.local</code> mit AD DS, DNS-Server und Remote Desktop Services. Die RDS-Bereitstellung ist sitzungsbasiert (Quick Start) mit RD Web Access. <strong>Clients:</strong> Physische Windows-11-PCs mit Bridged Networking.",
+        fr: "<strong>Serveur :</strong> <code>RDS-SRV01</code> sur le domaine <code>lab8.local</code> avec AD DS, serveur DNS et Remote Desktop Services. Le déploiement RDS est basé sur des sessions (Quick Start) avec RD Web Access. <strong>Clients :</strong> PC Windows 11 physiques en mode bridge."
+    },
+    "project.rds.section.security.title": {
+        en: "Access & Security",
+        pt: "Acesso e Segurança",
+        lu: "Zougang & Sécherheet",
+        de: "Zugriff & Sicherheit",
+        fr: "Accès & Sécurité"
+    },
+    "project.rds.section.security.body": {
+        en: "Access is controlled via the <code>RDS_Students</code> Active Directory group. RD Web Access uses a self-signed certificate, and client name resolution is handled with a hosts file entry for the server hostname.",
+        pt: "O acesso é controlado pelo grupo do Active Directory <code>RDS_Students</code>. O RD Web Access usa um certificado autoassinado e a resolução de nome no cliente é feita com uma entrada no ficheiro hosts para o hostname do servidor.",
+        lu: "De Zougang ass iwwert d'Active Directory Grupp <code>RDS_Students</code> kontrolléiert. RD Web Access benotzt e self-signed Zertifikat, an d'Nimm-Opléisung um Client gëtt iwwert eng hosts Datei Entrée fir den Server-Hostname gemaach.",
+        de: "Der Zugriff wird über die Active-Directory-Gruppe <code>RDS_Students</code> gesteuert. RD Web Access verwendet ein selbstsigniertes Zertifikat, und die Namensauflösung auf dem Client erfolgt über einen Hosts-Datei-Eintrag für den Server-Hostname.",
+        fr: "L'accès est contrôlé via le groupe Active Directory <code>RDS_Students</code>. RD Web Access utilise un certificat auto-signé et la résolution de nom côté client est gérée via une entrée dans le fichier hosts pour le nom d'hôte du serveur."
+    },
+    "project.rds.section.connect.title": {
+        en: "How Users Connect",
+        pt: "Como os Utilizadores se Ligam",
+        lu: "Wéi verbannen d'Benotzer",
+        de: "So verbinden sich Benutzer",
+        fr: "Comment les utilisateurs se connectent"
+    },
+    "project.rds.section.connect.body": {
+        en: "Users connect via Remote Desktop (<code>mstsc</code>) using domain credentials or through RD Web Access by launching <code>.rdp</code> files for full desktop sessions or RemoteApps.",
+        pt: "Os utilizadores ligam-se via Remote Desktop (<code>mstsc</code>) usando credenciais de domínio ou através do RD Web Access ao iniciar ficheiros <code>.rdp</code> para sessões completas ou RemoteApps.",
+        lu: "Benotzer verbannen sech iwwert Remote Desktop (<code>mstsc</code>) mat Domain-Login oder iwwert RD Web Access andeems se <code>.rdp</code> Dateien fir voll Desktop Sessions oder RemoteApps starten.",
+        de: "Benutzer verbinden sich per Remote Desktop (<code>mstsc</code>) mit Domänenanmeldedaten oder über RD Web Access durch Starten von <code>.rdp</code>-Dateien für volle Desktop-Sitzungen oder RemoteApps.",
+        fr: "Les utilisateurs se connectent via Remote Desktop (<code>mstsc</code>) avec des identifiants de domaine ou via RD Web Access en lançant des fichiers <code>.rdp</code> pour des sessions de bureau complètes ou des RemoteApps."
+    },
+    "project.rds.section.assets.title": {
+        en: "Deliverables & Assets",
+        pt: "Entregáveis e Ficheiros",
+        lu: "Liwwerungen & Dateien",
+        de: "Abgaben & Dateien",
+        fr: "Livrables & Fichiers"
+    },
+    "project.rds.section.assets.body": {
+        en: "Scenario description, step-by-step documentation, presentation, and live demonstration.",
+        pt: "Descrição do cenário, documentação passo-a-passo, apresentação e demonstração ao vivo.",
+        lu: "Szenario-Beschreiwung, Step-by-step Dokumentatioun, Presentatioun an Live-Demo.",
+        de: "Szenariobeschreibung, Schritt-für-Schritt-Dokumentation, Präsentation und Live-Demonstration.",
+        fr: "Description du scénario, documentation pas à pas, présentation et démonstration en direct."
+    },
+    "project.rds.asset.documentation.title": {
+        en: "Documentation",
+        pt: "Documentação",
+        lu: "Dokumentatioun",
+        de: "Dokumentation",
+        fr: "Documentation"
+    },
+    "project.rds.asset.documentation.desc": {
+        en: "View the full RDS implementation documentation used for the lab delivery.",
+        pt: "Ver a documentação completa da implementação RDS usada para a entrega do lab.",
+        lu: "Kuckt d'ganz RDS Umsetzungs-Dokumentatioun déi fir d'Lab Ofgab benotzt gouf.",
+        de: "Sehen Sie die vollständige RDS-Implementierungsdokumentation für die Lab-Abgabe.",
+        fr: "Consultez la documentation complète de l'implémentation RDS utilisée pour la remise du lab."
+    },
+    "project.rds.asset.documentation.button": {
+        en: "Download Documentation (PDF)",
+        pt: "Descarregar Documentação (PDF)",
+        lu: "Dokumentatioun eroflueden (PDF)",
+        de: "Dokumentation herunterladen (PDF)",
+        fr: "Télécharger la documentation (PDF)"
+    },
+    "project.rds.asset.presentation.title": {
+        en: "Presentation",
+        pt: "Apresentação",
+        lu: "Presentatioun",
+        de: "Präsentation",
+        fr: "Présentation"
+    },
+    "project.rds.asset.presentation.desc": {
+        en: "View the project presentation slides used during the graded demonstration.",
+        pt: "Ver os slides da apresentação usados durante a demonstração avaliada.",
+        lu: "Kuckt d'Presentatiouns-Slides déi bei der bewerteter Demo benotzt goufen.",
+        de: "Sehen Sie die Präsentationsfolien, die während der bewerteten Demonstration verwendet wurden.",
+        fr: "Consultez les diapositives de présentation utilisées pendant la démonstration notée."
+    },
+    "project.rds.asset.presentation.button": {
+        en: "Download Presentation (PDF)",
+        pt: "Descarregar Apresentação (PDF)",
+        lu: "Presentatioun eroflueden (PDF)",
+        de: "Präsentation herunterladen (PDF)",
+        fr: "Télécharger la présentation (PDF)"
+    },
+    "project.rds.sidebar.tech.server2022": {
+        en: "Windows Server 2022",
+        pt: "Windows Server 2022",
+        lu: "Windows Server 2022",
+        de: "Windows Server 2022",
+        fr: "Windows Server 2022"
+    },
+    "project.rds.sidebar.tech.adds": {
+        en: "Active Directory Domain Services",
+        pt: "Active Directory Domain Services",
+        lu: "Active Directory Domain Services",
+        de: "Active Directory-Domänendienste",
+        fr: "Services de domaine Active Directory"
+    },
+    "project.rds.sidebar.tech.dns": {
+        en: "DNS Server",
+        pt: "Servidor DNS",
+        lu: "DNS Server",
+        de: "DNS-Server",
+        fr: "Serveur DNS"
+    },
+    "project.rds.sidebar.tech.rds": {
+        en: "Remote Desktop Services",
+        pt: "Remote Desktop Services",
+        lu: "Remote Desktop Services",
+        de: "Remotedesktopdienste",
+        fr: "Services Bureau à distance"
+    },
+    "project.rds.sidebar.tech.rdweb": {
+        en: "RD Web Access",
+        pt: "RD Web Access",
+        lu: "RD Web Access",
+        de: "RD Web Access",
+        fr: "RD Web Access"
+    },
+    "project.rds.sidebar.config.title": {
+        en: "Key Configuration",
+        pt: "Configuração Principal",
+        lu: "Wichteg Konfiguratioun",
+        de: "Wichtige Konfiguration",
+        fr: "Configuration Clés"
+    },
+    "project.rds.sidebar.config.sessionBased": {
+        en: "Session-based deployment",
+        pt: "Deployment baseado em sessão",
+        lu: "Session-baséiert Umsetzung",
+        de: "Sitzungsbasierte Bereitstellung",
+        fr: "Déploiement basé sur des sessions"
+    },
+    "project.rds.sidebar.config.groupAccess": {
+        en: "Security group access control",
+        pt: "Controlo de acesso por grupo",
+        lu: "Zougangskontroll iwwer Grupp",
+        de: "Zugriffssteuerung per Sicherheitsgruppe",
+        fr: "Contrôle d'accès par groupe"
+    },
+    "project.rds.sidebar.config.selfSigned": {
+        en: "Self-signed certificate",
+        pt: "Certificado autoassinado",
+        lu: "Self-signed Zertifikat",
+        de: "Selbstsigniertes Zertifikat",
+        fr: "Certificat auto-signé"
+    },
+    "project.rds.sidebar.config.hostsFile": {
+        en: "Hosts file name resolution",
+        pt: "Resolução de nome via hosts",
+        lu: "Nimm-Opléisung iwwert hosts Datei",
+        de: "Namensauflösung über Hosts-Datei",
+        fr: "Résolution de nom via fichier hosts"
+    },
+    "project.rds.sidebar.config.bridgedLan": {
+        en: "Bridged LAN access",
+        pt: "Acesso LAN em bridge",
+        lu: "Bridged LAN Zougang",
+        de: "Bridged-LAN-Zugriff",
+        fr: "Accès LAN en mode bridge"
+    },
+    "project.rds.sidebar.deliverables.title": {
+        en: "Deliverables",
+        pt: "Entregáveis",
+        lu: "Liwwerungen",
+        de: "Abgaben",
+        fr: "Livrables"
+    },
+    "project.rds.sidebar.deliverables.docPdf": {
+        en: "Documentation PDF",
+        pt: "PDF da documentação",
+        lu: "Dokumentatioun PDF",
+        de: "Dokumentation (PDF)",
+        fr: "PDF de documentation"
+    },
+    "project.rds.sidebar.deliverables.presentation": {
+        en: "Presentation",
+        pt: "Apresentação",
+        lu: "Presentatioun",
+        de: "Präsentation",
+        fr: "Présentation"
+    },
+    "project.rds.sidebar.deliverables.demo": {
+        en: "Live demo",
+        pt: "Demonstração ao vivo",
+        lu: "Live Demo",
+        de: "Live-Demo",
+        fr: "Démo en direct"
+    },
+
 
     // Footer
     "footer.copyright": {

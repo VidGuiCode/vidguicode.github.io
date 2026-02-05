@@ -162,6 +162,25 @@ const PROJECTS = [
         featured: true
     },
     {
+        id: 'rds-documentation',
+        name: 'Remote Desktop Services (RDS) Documentation',
+        nameKey: 'projects.rds.title',
+        description: 'I documented and demonstrated a Windows Server 2022 Remote Desktop Services deployment. It combines AD DS, DNS, RD Web Access, and a session-based collection so students can securely access a shared desktop from external Windows 11 clients.',
+        descriptionKey: 'projects.rds.desc',
+        category: 'School Projects',
+        categoryKey: 'projects.category.school',
+        categories: ['School Projects', 'Infrastructure', 'Networking', 'Cloud Computing', 'Security'],
+        categoryKeys: ['projects.category.school', 'projects.category.infrastructure', 'projects.category.networking', 'projects.category.cloud', 'projects.category.security'],
+        tags: ['Windows Server 2022', 'RDS', 'Remote Desktop Services', 'Active Directory', 'AD DS', 'DNS', 'RD Web Access', 'Session-based deployment', 'RDS_Students', 'Windows 11', 'Hosts file', 'Self-signed certificate'],
+        icon: 'monitor',
+        status: 'completed',
+        statusKey: 'projects.status.completed',
+        dateCompleted: '2025-12',
+        dateStarted: '2025-11',
+        link: 'projects/project-rds-documentation.html',
+        featured: false
+    },
+    {
         id: 'portfolio',
         name: 'Portfolio Website',
         nameKey: 'projects.portfolio.title',
