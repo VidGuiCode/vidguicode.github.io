@@ -3996,6 +3996,20 @@ const translations = {
         de: "Besuchte einen eintägigen Schulungskurs (9h-17h) zu Azure Fundamentals Konzepten als Vorbereitung auf die AZ-900 Zertifizierungsprüfung. Organisiert von Deep (POST Luxembourg Group) und durchgeführt von einem Trainer ihres Teams, im Rahmen meines BTS Cloud Computing Programms am LGK.",
         fr: "Suivi un cours de formation d'une journée complète (9h-17h) couvrant les concepts Azure Fundamentals en préparation de l'examen de certification AZ-900. Organisé par Deep (POST Luxembourg Group) et animé par un formateur de leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
     },
+    "formation.pluralsight.az900.name": {
+        en: "Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight",
+        pt: "Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight",
+        lu: "Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight",
+        de: "Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight",
+        fr: "Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight"
+    },
+    "formation.pluralsight.az900.description": {
+        en: "Finished the full Microsoft Certified: Azure Fundamentals (AZ-900) learning path on Pluralsight. Total time spent: ~19h. This preparation contributed to passing the AZ-900 certification exam.",
+        pt: "Terminei o percurso completo Microsoft Certified: Azure Fundamentals (AZ-900) na Pluralsight. Tempo total: ~19h. Esta preparação contribuiu para a aprovação no exame AZ-900.",
+        lu: "Hunn de vollstännege Microsoft Certified: Azure Fundamentals (AZ-900) Learning Path op Pluralsight ofgeschloss. Total Zäit: ~19h. Dës Virbereedung huet zum Bestoen vum AZ-900 Examen bäigedroe.",
+        de: "Den vollständigen Microsoft Certified: Azure Fundamentals (AZ-900) Lernpfad auf Pluralsight abgeschlossen. Gesamtzeit: ~19h. Diese Vorbereitung trug zum Bestehen der AZ-900-Prüfung bei.",
+        fr: "Parcours complet Microsoft Certified: Azure Fundamentals (AZ-900) sur Pluralsight terminé. Temps total : ~19h. Cette préparation a contribué à la réussite de l'examen AZ-900."
+    },
     "formation.pl900.name": {
         en: "Power Platform Fundamentals (PL-900) Training",
         pt: "Formação Power Platform Fundamentals (PL-900)",

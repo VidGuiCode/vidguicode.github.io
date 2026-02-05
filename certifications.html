@@ -1729,8 +1729,8 @@
                 }
             }
             
-            // Render description with optional images
-            let descriptionHTML = certDescription;
+            // Render description with optional images; include exam score in description when present
+            let descriptionHTML = (cert.examScore ? `<p style="margin-bottom: 0.5rem;">Exam score: ${cert.examScore}</p>` : '') + '<p>' + certDescription + '</p>';
             if (cert.descriptionImages && cert.descriptionImages.length > 0) {
                 const imagesHTML = cert.descriptionImages.map(img => {
                     const alt = img.alt || certName;

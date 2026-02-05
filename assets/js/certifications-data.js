@@ -55,6 +55,7 @@ const CERTIFICATIONS = [
         credlyUrl: 'https://www.credly.com/badges/241c91cc-eda3-4440-a17f-94f741d7d22d/public_url',
         description: 'Demonstrates foundational knowledge of cloud services and how those services are provided with Microsoft Azure.',
         descriptionKey: 'cert.azure.az900.description', // Translation key
+        examScore: 771, // Official exam score (pass 700)
         skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
         skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'], // Translation keys
         relatedProjects: [], // No direct project linkage
@@ -79,6 +80,7 @@ const CERTIFICATIONS = [
         credlyUrl: 'https://www.credly.com/badges/855f023f-6d1b-450a-bc31-996cb29c9470/public_url',
         description: 'Demonstrates competency in creating, managing, and delivering effective presentations using Microsoft PowerPoint.',
         descriptionKey: 'cert.powerpoint.associate.description', // Translation key
+        examScore: 850, // Official exam score
         skills: ['Presentation Design', 'Slide Management', 'Graphics & Media', 'Transitions & Animations'],
         skillsKeys: ['cert.powerpoint.associate.skills.design', 'cert.powerpoint.associate.skills.management', 'cert.powerpoint.associate.skills.graphics', 'cert.powerpoint.associate.skills.transitions'], // Translation keys
         relatedProjects: ['pif', 'gradingdino'], // Used in PIF and GradingDino projects for documentation
@@ -103,6 +105,7 @@ const CERTIFICATIONS = [
         credlyUrl: 'https://www.credly.com/badges/8d584202-b65d-4bde-a815-75de44ffe648/public_url',
         description: 'Demonstrates competency in creating and managing professional documents using Microsoft Word.',
         descriptionKey: 'cert.word.associate.description', // Translation key
+        examScore: 960, // Official exam score
         skills: ['Document Management', 'Formatting', 'Tables & Lists', 'References & Collaboration'],
         skillsKeys: ['cert.word.associate.skills.management', 'cert.word.associate.skills.formatting', 'cert.word.associate.skills.tables', 'cert.word.associate.skills.references'], // Translation keys
         relatedProjects: ['pif', 'gradingdino'], // Used in PIF and GradingDino projects for documentation
@@ -127,6 +130,7 @@ const CERTIFICATIONS = [
         credlyUrl: 'https://www.credly.com/badges/0ca263bf-4549-4f54-aa46-2a4144528ef5/public_url',
         description: 'Demonstrates advanced expertise in creating and managing complex documents using Microsoft Word, including advanced formatting, custom document elements, macros, and automation.',
         descriptionKey: 'cert.word.expert.description', // Translation key
+        examScore: 790, // Official exam score
         skills: ['Advanced Formatting', 'Custom Document Elements', 'Macros & Automation', 'Advanced Word Features'],
         skillsKeys: ['cert.word.expert.skills.formatting', 'cert.word.expert.skills.elements', 'cert.word.expert.skills.macros', 'cert.word.expert.skills.features'], // Translation keys
         relatedProjects: ['pif', 'gradingdino'], // Used in PIF and GradingDino projects for documentation
@@ -160,6 +164,23 @@ const FORMATIONS = [
         skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
         skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'],
         logo: 'assets/img/logos/azure-logo.webp', // Azure logo (certification issuer)
+    },
+    {
+        id: 'pluralsight-az900',
+        name: 'Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight',
+        nameKey: 'formation.pluralsight.az900.name',
+        provider: 'Pluralsight',
+        category: 'Cloud Computing',
+        description: 'Finished the full Microsoft Certified: Azure Fundamentals (AZ-900) learning path on Pluralsight. Total time spent: ~19h. This preparation contributed to passing the AZ-900 certification exam.',
+        descriptionKey: 'formation.pluralsight.az900.description',
+        dateCompleted: '2025-12-17', // Last viewed Dec 17, 2025
+        duration: '~19h', // Total view time (My Paths)
+        format: 'Online',
+        location: 'Pluralsight',
+        relatedCertifications: ['azure-az900'],
+        skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
+        skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'],
+        logo: 'assets/img/logos/pluralsight-logo.webp',
     },
     {
         id: 'pl-900-training',

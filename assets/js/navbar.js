@@ -19,8 +19,9 @@
         const isInSubdirectory = currentPath.includes('/projects/');
         const pathPrefix = isInSubdirectory ? '../' : '';
 
-        // Determine if we're on index page
-        const isIndexPage = currentPath.endsWith('index.html') || currentPath.endsWith('/') || currentPath === '';
+        // Determine if we're on index page (including school version)
+        const isSchoolPage = currentPath.endsWith('index-school.html');
+        const isIndexPage = currentPath.endsWith('index.html') || isSchoolPage || currentPath.endsWith('/') || currentPath === '';
 
         // Build navbar HTML
         let html = '<nav class="navbar" role="navigation" aria-label="Main navigation">';
@@ -35,13 +36,16 @@
         html += '<span>VIDGUICODE</span>';
         html += '</a>';
 
-        // Nav Links (only on index page)
+        // Nav Links (only on index / school page)
         html += '<div class="nav-links">';
         if (isIndexPage) {
             html += '<a href="#about" data-i18n="nav.about">About</a>';
             html += '<a href="#skills" data-i18n="nav.skills">Skills</a>';
             html += '<a href="#projects" data-i18n="nav.projects">Projects</a>';
             html += '<a href="#experience" data-i18n="nav.experience">Experience</a>';
+            if (isSchoolPage) {
+                html += '<a href="#reflection" data-i18n="nav.reflection">Reflection</a>';
+            }
         }
         html += '</div>';
 
