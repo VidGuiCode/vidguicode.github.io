@@ -275,6 +275,23 @@
             min-width: 0;
         }
 
+        .project-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .project-meta-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-date-status {
+            margin-top: 0.25rem;
+            display: block;
+        }
+
         /* Typography uses centralized scale - see styles.css */
         .project-category {
             padding: 0.2rem 0.5rem;
@@ -296,16 +313,10 @@
         /* Mobile: Limit category badges to 2 lines */
         @media (max-width: 768px) {
             .project-meta {
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                align-items: flex-start;
+                gap: 0.75rem;
             }
             
             .project-meta-categories {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
                 width: 100%;
                 line-height: 1.5;
             }
@@ -322,15 +333,43 @@
             }
         }
 
-        /* In Development Badge - shown in date area */
+        /* Title Badges - appear next to project name (score, in-development) */
+        .project-status-badge.title-badge {
+            padding: 2px 6px;
+            border-radius: 0;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-weight: 500;
+            white-space: nowrap;
+            font-size: 0.75em;
+            line-height: 1;
+        }
+
+        .project-status-badge.title-badge i {
+            width: 6px;
+            height: 6px;
+        }
+
+        .project-status-badge.status-in-development.title-badge {
+            color: #f59e0b;
+            border: 1px solid #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        /* In Development Badge - legacy style for other uses */
         .project-status-badge {
             padding: 0.2rem 0.5rem;
+            background: var(--bg-secondary);
             border: 1px solid;
-            font-weight: 600;
+            font-weight: 500;
             display: inline-flex;
             align-items: center;
             gap: 0.3rem;
             white-space: nowrap;
+            font-size: inherit;
         }
 
         .project-status-badge i {
@@ -1033,41 +1072,56 @@
                 categoryHTML = `<span class="project-category">${categoryName}</span>`;
             }
             
-            // Date or In Development badge
-            let dateOrStatusBadge = '';
+            // Title badges (score, in-development) - appear next to project name
+            let titleBadges = '';
+            if (project.score) {
+                titleBadges += ` <span class="score-badge" style="background: #22c55e; color: #fff; padding: 2px 8px; border-radius: 0; margin-left: 0.5rem; vertical-align: middle; display: inline-block;">${project.score}</span>`;
+            }
             if (project.status === 'in-development') {
                 const statusText = project.statusKey ? t(project.statusKey, 'In Development') : 'In Development';
-                dateOrStatusBadge = `<span class="project-status-badge status-in-development">
+                titleBadges += ` <span class="project-status-badge status-in-development title-badge">
                     <i data-lucide="clock"></i>
                     ${statusText}
                 </span>`;
+            }
+            
+            // Date badge
+            let dateOrStatusBadge = '';
+            
+            // Format date helper - original format
+            const formatDate = (dateValue) => {
+                if (!dateValue) return '';
+                if (/^\d{4}$/.test(dateValue)) {
+                    return dateValue;
+                } else if (/^\d{4}-\d{2}$/.test(dateValue)) {
+                    const [year, month] = dateValue.split('-');
+                    const dateObj = new Date(parseInt(year), parseInt(month) - 1);
+                    return dateObj.toLocaleDateString(currentLang, { year: 'numeric', month: 'long' });
+                } else {
+                    return new Date(dateValue).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' });
+                }
+            };
+            
+            // Check if project is ongoing (no dateCompleted or dateCompleted is recent/ongoing)
+            const isOngoing = !project.dateCompleted || (project.dateStarted && project.dateCompleted === project.dateStarted);
+            
+            if (project.status === 'in-development' && project.dateStarted) {
+                // For in-development projects, show "Month Year - present"
+                const startedDate = formatDate(project.dateStarted);
+                const presentText = t('projects.present', 'present');
+                dateOrStatusBadge = `<span class="project-category">${startedDate} - ${presentText}</span>`;
+            } else if (isOngoing && project.dateStarted) {
+                // For ongoing projects (like Homelab), show "Month Year - present"
+                const startedDate = formatDate(project.dateStarted);
+                const presentText = t('projects.present', 'present');
+                dateOrStatusBadge = `<span class="project-category">${startedDate} - ${presentText}</span>`;
             } else {
-                // Handle year-only dates, year-month, or full dates
+                // Completed projects - show completion date
                 let dateStr = '';
                 if (project.dateCompleted) {
-                    // If it's just a year (4 digits), use it directly
-                    if (/^\d{4}$/.test(project.dateCompleted)) {
-                        dateStr = project.dateCompleted;
-                    } else if (/^\d{4}-\d{2}$/.test(project.dateCompleted)) {
-                        // Format: YYYY-MM (e.g., "2025-03")
-                        const [year, month] = project.dateCompleted.split('-');
-                        const dateObj = new Date(parseInt(year), parseInt(month) - 1);
-                        dateStr = dateObj.toLocaleDateString(currentLang, { year: 'numeric', month: 'long' });
-                    } else {
-                        // Otherwise parse as full date
-                        dateStr = new Date(project.dateCompleted).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' });
-                    }
+                    dateStr = formatDate(project.dateCompleted);
                 } else if (project.dateStarted) {
-                    if (/^\d{4}$/.test(project.dateStarted)) {
-                        dateStr = project.dateStarted;
-                    } else if (/^\d{4}-\d{2}$/.test(project.dateStarted)) {
-                        // Format: YYYY-MM
-                        const [year, month] = project.dateStarted.split('-');
-                        const dateObj = new Date(parseInt(year), parseInt(month) - 1);
-                        dateStr = dateObj.toLocaleDateString(currentLang, { year: 'numeric', month: 'long' });
-                    } else {
-                        dateStr = new Date(project.dateStarted).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' });
-                    }
+                    dateStr = formatDate(project.dateStarted);
                 }
                 if (dateStr) {
                     dateOrStatusBadge = `<span class="project-category">${dateStr}</span>`;
@@ -1080,12 +1134,12 @@
                 </div>
                 
                 <div class="project-info">
-                    <div class="project-name">${projectName}${project.score ? ` <span class="score-badge" style="background: #22c55e; color: #fff; padding: 2px 8px; border-radius: 0; margin-left: 0.5rem; vertical-align: middle; display: inline-block;">${project.score}</span>` : ''}</div>
+                    <div class="project-name">${projectName}${titleBadges}</div>
                     <div class="project-meta">
                         <div class="project-meta-categories">
                             ${categoryHTML}
                         </div>
-                        ${dateOrStatusBadge}
+                        ${dateOrStatusBadge ? `<div class="project-date-status">${dateOrStatusBadge}</div>` : ''}
                     </div>
                 </div>
 

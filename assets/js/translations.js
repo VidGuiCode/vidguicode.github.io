@@ -675,11 +675,11 @@ const translations = {
         fr: "Projet final de septembre 2024 à juin 2025 : C'était mon grand projet final pour mon diplôme de Technicien en informatique. J'ai construit un système IoT complet avec des nœuds capteurs ESP8266, un hub Raspberry Pi, un tableau de bord web pour tout surveiller, du networking d'entreprise avec VLANs, et des sauvegardes automatisées. J'ai présenté le tout et j'ai obtenu 59/60."
     },
     "projects.cylro.title": {
-        en: "Cylro (In Development)",
-        pt: "Cylro (Em Desenvolvimento)",
-        lu: "Cylro (An Entwécklung)",
-        de: "Cylro (In Entwicklung)",
-        fr: "Cylro (En Développement)"
+        en: "Cylro",
+        pt: "Cylro",
+        lu: "Cylro",
+        de: "Cylro",
+        fr: "Cylro"
     },
     "projects.cylro.desc": {
         en: "From August 2025, in development: I'm co-founding this agency platform with a partner. It's designed as an operating system for agencies and freelancers managing multiple client websites. One workspace for everything, built in Luxembourg, hosted in Europe. We started researching in June 2025 and have been building steadily since August.",
@@ -2657,6 +2657,27 @@ const translations = {
         lu: "Dës Zertifikater hunn dëst Projet verbessert:",
         de: "Diese Zertifizierungen haben dieses Projekt verbessert:",
         fr: "Ces certifications ont aidé à améliorer ce projet:"
+    },
+    "project.lastUpdated": {
+        en: "Last updated:",
+        pt: "Última atualização:",
+        lu: "Läscht Aktualiséierung:",
+        de: "Zuletzt aktualisiert:",
+        fr: "Dernière mise à jour :"
+    },
+    "project.started": {
+        en: "Started",
+        pt: "Iniciado",
+        lu: "Ugefaang",
+        de: "Gestartet",
+        fr: "Démarré"
+    },
+    "projects.present": {
+        en: "present",
+        pt: "presente",
+        lu: "aktuell",
+        de: "aktuell",
+        fr: "présent"
     },
     "project.sidebar.sensors": {
         en: "Sensors & Actuators",
