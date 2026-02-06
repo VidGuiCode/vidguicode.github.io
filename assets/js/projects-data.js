@@ -220,6 +220,25 @@ const PROJECTS = [
         dateStarted: '2025-11',
         link: 'index.html',
         featured: false
+    },
+    {
+        id: 'sentinel',
+        name: 'Sentinel',
+        nameKey: 'projects.sentinel.title',
+        description: 'A lightweight terminal UI (TUI) system monitor for Linux with real-time graphs, container monitoring, security log analysis, and infrastructure-focused design. Inspired by btop, optimized for low-power devices like Raspberry Pi. Features CPU, memory, disk, network, Docker, Kubernetes, and security monitoring with 5 built-in themes.',
+        descriptionKey: 'projects.sentinel.desc',
+        category: 'Infrastructure',
+        categoryKey: 'projects.category.infrastructure',
+        categories: ['Infrastructure', 'DevOps', 'Security'],
+        categoryKeys: ['projects.category.infrastructure', 'projects.category.devops', 'projects.category.security'],
+        tags: ['Python', 'Linux', 'TUI', 'Docker', 'Kubernetes', 'System Monitor', 'Security', 'Raspberry Pi', 'btop', 'Open Source'],
+        icon: 'activity',
+        status: 'completed',
+        statusKey: 'projects.status.completed',
+        dateCompleted: '2026-01',
+        dateStarted: '2025-12',
+        githubUrl: 'https://github.com/VidGuiCode/sentinel',
+        featured: false
     }
 ];
 

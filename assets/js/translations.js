@@ -4571,11 +4571,11 @@ const translations = {
         fr: "WhispFlow"
     },
     "project.whispflow.hero.subtitle": {
-        en: "Desktop application that records meetings, transcribes audio, and generates AI-powered summaries with key points, decisions, and action items — all in one workflow.",
-        pt: "Aplicação desktop que grava reuniões, transcreve áudio e gera resumos com IA — pontos-chave, decisões e ações — tudo num só fluxo.",
-        lu: "Desktop Applikatioun déi Sëtzungen opnëmmt, Audio transkribéiert, an AI-generéiert Zesummefaassungen mat Haaptpunkten, Decisiounen an Aktiounspunkten erstellt — alles an engem Workflow.",
-        de: "Desktop-Anwendung die Meetings aufnimmt, Audio transkribiert und KI-gestützte Zusammenfassungen mit Kernpunkten, Entscheidungen und Aktionspunkten generiert — alles in einem Workflow.",
-        fr: "Application de bureau qui enregistre les réunions, transcrit l'audio et génère des résumés IA avec points clés, décisions et actions — le tout en un seul flux."
+        en: "A desktop application that records audio, transcribes it locally using faster-whisper, and generates structured AI summaries — built for the PROMA2 Talent Exhibition.",
+        pt: "Aplicação desktop que grava áudio, transcreve localmente com faster-whisper e gera resumos IA estruturados — desenvolvida para a Exposição de Talentos PROMA2.",
+        lu: "Desktop Applikatioun déi Audio opnëmmt, et lokal mat faster-whisper transkribéiert, an strukturéiert AI Resuméen generéiert — gebaut fir d'PROMA2 Talent Ausstellung.",
+        de: "Desktop-Anwendung die Audio aufnimmt, lokal mit faster-whisper transkribiert und strukturierte KI-Zusammenfassungen generiert — gebaut für die PROMA2 Talent-Ausstellung.",
+        fr: "Application de bureau qui enregistre l'audio, le transcrit localement avec faster-whisper et génère des résumés IA structurés — conçue pour l'Exposition de Talents PROMA2."
     },
     "project.whispflow.problem.title": {
         en: "The Problem",
@@ -4585,11 +4585,11 @@ const translations = {
         fr: "Le Problème"
     },
     "project.whispflow.problem.body": {
-        en: "Taking notes during meetings is inefficient. You either lose focus by writing things down, or you miss important details by listening without notes. Reviewing hour-long recordings is tedious. Key decisions, action items, and commitments get lost.",
-        pt: "Tirar notas durante reuniões é ineficiente. Ou perdes o foco a escrever, ou perdes detalhes importantes a ouvir sem notas. Rever gravações de uma hora é tedioso. Decisões, ações e compromissos perdem-se.",
-        lu: "Notizen während Sëtzungen ze maachen ass ineffizient. Entweder verléiers du de Fokus beim Schreiwen, oder du verpasst wichteg Detailer beim Nolauschteren ouni Notizen. Stonnelaang Opnamen nozeliesen ass miisam. Decisiounen, Aktiounspunkten a Verpflichtungen gi verluer.",
-        de: "Notizen während Meetings zu machen ist ineffizient. Entweder verlierst du den Fokus beim Schreiben oder du verpasst wichtige Details beim Zuhören ohne Notizen. Stundenlange Aufnahmen durchzugehen ist mühsam. Wichtige Entscheidungen, Aktionspunkte und Zusagen gehen verloren.",
-        fr: "Prendre des notes pendant les réunions est inefficace. Soit on perd le focus en écrivant, soit on rate des détails importants en écoutant sans notes. Revoir des enregistrements d'une heure est fastidieux. Les décisions clés, actions et engagements se perdent."
+        en: "During meetings and lectures, important information often gets lost. Taking notes manually splits attention between listening and writing, and reviewing long recordings afterward is time-consuming. This project explores how local AI and cloud services can automate the documentation workflow.",
+        pt: "Durante reuniões e aulas, informações importantes perdem-se frequentemente. Tirar notas manualmente divide a atenção entre ouvir e escrever, e rever gravações longas é demorado. Este projeto explora como IA local e serviços cloud podem automatizar o fluxo de documentação.",
+        lu: "Während Sëtzungen a Virlesunge gi wichteg Informatiounen dacks verluer. Manuell Notizen maachen deelt d'Opmierksamkeet tëscht Nolauschteren a Schreiwen, a laang Opnamen nozeliesen brauch Zäit. Dëse Projet exploréiert wéi lokal AI a Cloud-Servicer de Dokumentatiounsworkflow automatiséiere kënnen.",
+        de: "Während Meetings und Vorlesungen gehen wichtige Informationen oft verloren. Manuelles Notieren teilt die Aufmerksamkeit zwischen Zuhören und Schreiben, und lange Aufnahmen nachträglich durchzugehen ist zeitaufwändig. Dieses Projekt untersucht, wie lokale KI und Cloud-Dienste den Dokumentations-Workflow automatisieren können.",
+        fr: "Pendant les réunions et les cours, des informations importantes se perdent souvent. Prendre des notes manuellement divise l'attention entre écouter et écrire, et revoir de longs enregistrements prend du temps. Ce projet explore comment l'IA locale et les services cloud peuvent automatiser le flux de documentation."
     },
     "project.whispflow.solution.title": {
         en: "The Solution",
@@ -4599,11 +4599,11 @@ const translations = {
         fr: "La Solution"
     },
     "project.whispflow.solution.body": {
-        en: "WhispFlow automates the entire documentation process: press one button to start recording, AI transcribes your audio into searchable text, AI summarizes the transcript into structured output, then export and share with colleagues, classmates, or clients. No more manual note-taking. No more forgotten decisions.",
-        pt: "O WhispFlow automatiza todo o processo de documentação: carrega num botão para gravar, a IA transcreve o áudio em texto pesquisável, a IA resume a transcrição em output estruturado, depois exporta e partilha. Sem mais notas manuais. Sem mais decisões esquecidas.",
-        lu: "WhispFlow automatiséiert de ganze Dokumentatiounsprozess: dréckt een Knäppchen fir opzehuelen, AI transkribéiert deen Audio an sichbaren Text, AI faaßt d'Transkriptioun an strukturéierten Output zesummen, dann exportéieren a mat Kollegen deelen. Keng manuell Notizen méi. Keng vergiesse Decisiounen méi.",
-        de: "WhispFlow automatisiert den gesamten Dokumentationsprozess: einen Knopf drücken zum Aufnehmen, KI transkribiert das Audio in durchsuchbaren Text, KI fasst das Transkript in strukturiertem Output zusammen, dann exportieren und teilen. Keine manuellen Notizen mehr. Keine vergessenen Entscheidungen mehr.",
-        fr: "WhispFlow automatise tout le processus de documentation : appuyez sur un bouton pour enregistrer, l'IA transcrit votre audio en texte recherchable, l'IA résume la transcription en sortie structurée, puis exportez et partagez. Plus de notes manuelles. Plus de décisions oubliées."
+        en: "WhispFlow combines local speech-to-text with cloud-based AI summarization. It records audio, transcribes it on-device using faster-whisper, then sends the transcript to a cloud AI provider for structured output — key points, decisions, and action items. The entire workflow runs from a single desktop application, from recording to organized notes ready to share.",
+        pt: "O WhispFlow combina speech-to-text local com resumos IA na cloud. Grava áudio, transcreve no dispositivo com faster-whisper, e depois envia a transcrição a um fornecedor cloud para output estruturado — pontos-chave, decisões e ações. Todo o fluxo corre numa única aplicação desktop, da gravação a notas organizadas prontas a partilhar.",
+        lu: "WhispFlow kombinéiert lokal Speech-to-Text mat Cloud-baséierter AI Zesummefaassung. Et hëlt Audio op, transkribéiert et um Apparat mat faster-whisper, a schéckt dann d'Transkriptioun un e Cloud AI Provider fir strukturéierten Output — Haaptpunkten, Decisiounen an Aktiounspunkten. De ganze Workflow leeft vun enger eenzeger Desktop Applikatioun, vun der Opnam bis zu organiséierten Notizen fäerdeg fir ze deelen.",
+        de: "WhispFlow kombiniert lokale Spracherkennung mit Cloud-basierter KI-Zusammenfassung. Es nimmt Audio auf, transkribiert es auf dem Gerät mit faster-whisper und sendet das Transkript dann an einen Cloud-KI-Anbieter für strukturierten Output — Kernpunkte, Entscheidungen und Aktionspunkte. Der gesamte Workflow läuft in einer einzigen Desktop-Anwendung, von der Aufnahme bis zu organisierten Notizen zum Teilen.",
+        fr: "WhispFlow combine la reconnaissance vocale locale avec la synthèse IA en cloud. Il enregistre l'audio, le transcrit sur l'appareil avec faster-whisper, puis envoie la transcription à un fournisseur IA cloud pour une sortie structurée — points clés, décisions et actions. Tout le flux fonctionne depuis une seule application de bureau, de l'enregistrement aux notes organisées prêtes à partager."
     },
     "project.whispflow.workflow.title": {
         en: "Core Workflow",
@@ -4760,18 +4760,18 @@ const translations = {
         fr: "<strong>Phase 2 (Prévue) — Cloud-First :</strong> Stockage cloud, transcription à distance, synchronisation multi-appareils, comptes utilisateur, collaboration et mode hors ligne de secours."
     },
     "project.whispflow.context.title": {
-        en: "Project Context",
-        pt: "Contexto do Projeto",
-        lu: "Projet Kontext",
-        de: "Projektkontext",
-        fr: "Contexte du Projet"
+        en: "About This Project",
+        pt: "Sobre Este Projeto",
+        lu: "Iwwer Dëse Projet",
+        de: "Über Dieses Projekt",
+        fr: "À Propos de ce Projet"
     },
     "project.whispflow.context.body": {
-        en: "Developed as part of the <strong>Talent Exhibition</strong> for the BTS Cloud Computing & Cyber Security programme (PROMA2 course). The Talent Exhibition gives students the opportunity to explore their interests, build innovative solutions, and showcase their skills to peers, faculty, and industry professionals.",
-        pt: "Desenvolvido como parte da <strong>Exposição de Talentos</strong> do programa BTS Cloud Computing & Cyber Security (curso PROMA2). A Exposição de Talentos dá aos estudantes a oportunidade de explorar os seus interesses, construir soluções inovadoras e mostrar as suas competências a colegas, professores e profissionais da indústria.",
-        lu: "Entwéckelt als Deel vun der <strong>Talent Ausstellung</strong> fir de BTS Cloud Computing & Cyber Security Programm (PROMA2 Cours). D'Talent Ausstellung gëtt de Studenten d'Méiglechkeet hir Interessen z'entdecken, innovativ Léisungen ze bauen an hir Fäegkeeten virum Kolleegen, Enseignanten an Industrieprofessionellen ze weisen.",
-        de: "Entwickelt als Teil der <strong>Talent-Ausstellung</strong> für das BTS Cloud Computing & Cyber Security Programm (PROMA2-Kurs). Die Talent-Ausstellung gibt Studenten die Möglichkeit, ihre Interessen zu erkunden, innovative Lösungen zu bauen und ihre Fähigkeiten vor Kommilitonen, Dozenten und Branchenprofis zu präsentieren.",
-        fr: "Développé dans le cadre de l'<strong>Exposition de Talents</strong> pour le programme BTS Cloud Computing & Cyber Security (cours PROMA2). L'Exposition de Talents donne aux étudiants l'opportunité d'explorer leurs intérêts, de construire des solutions innovantes et de présenter leurs compétences aux pairs, enseignants et professionnels de l'industrie."
+        en: "Built for the <strong>Talent Exhibition</strong> (PROMA2 course) in the BTS Cloud Computing programme at Lycée Guillaume Kroll. The goal: pick a real problem, design a technical solution, and deliver a working prototype that applies cloud and AI concepts from the semester.",
+        pt: "Desenvolvido para a <strong>Exposição de Talentos</strong> (curso PROMA2) no programa BTS Cloud Computing no Lycée Guillaume Kroll. O objetivo: escolher um problema real, conceber uma solução técnica e entregar um protótipo funcional que aplique conceitos de cloud e IA do semestre.",
+        lu: "Gebaut fir d'<strong>Talent Ausstellung</strong> (PROMA2 Cours) am BTS Cloud Computing Programm um Lycée Guillaume Kroll. D'Zil: e reelle Problem erkennen, eng technesch Léisung designen, an e funktionéierende Prototyp ofliwweren deen Cloud- an AI-Konzepter vum Semester applizéiert.",
+        de: "Gebaut für die <strong>Talent-Ausstellung</strong> (PROMA2-Kurs) im BTS Cloud Computing Programm am Lycée Guillaume Kroll. Das Ziel: ein reales Problem wählen, eine technische Lösung entwerfen und einen funktionierenden Prototyp liefern, der Cloud- und KI-Konzepte des Semesters anwendet.",
+        fr: "Conçu pour l'<strong>Exposition de Talents</strong> (cours PROMA2) dans le programme BTS Cloud Computing au Lycée Guillaume Kroll. L'objectif : choisir un problème réel, concevoir une solution technique et livrer un prototype fonctionnel qui applique les concepts cloud et IA du semestre."
     },
     "project.whispflow.sidebar.feature1": {
         en: "One-click audio recording",
@@ -4877,6 +4877,22 @@ const translations = {
         lu: "Desktop App déi Sëtzungen opnëmmt, Audio lokal mat faster-whisper transkribéiert, an AI Resuméen generéiert. Local-first, Privacy-fokusséiert, mat versionéierten Transkriptiounen.",
         de: "Desktop-App die Meetings aufnimmt, Audio lokal mit faster-whisper transkribiert und KI-Zusammenfassungen generiert. Local-first, datenschutzorientiert, mit versionierten Transkripten.",
         fr: "App bureau qui enregistre les réunions, transcrit l'audio localement avec faster-whisper et génère des résumés IA. Local-first, axée sur la vie privée, avec transcriptions versionnées."
+    },
+
+    // Sentinel
+    "projects.sentinel.title": {
+        en: "Sentinel",
+        pt: "Sentinel",
+        lu: "Sentinel",
+        de: "Sentinel",
+        fr: "Sentinel"
+    },
+    "projects.sentinel.desc": {
+        en: "A lightweight TUI system monitor for Linux with real-time graphs, Docker and Kubernetes monitoring, security log analysis, and 5 built-in themes. Optimized for low-power devices like Raspberry Pi.",
+        pt: "Monitor de sistema TUI leve para Linux com gráficos em tempo real, monitorização Docker e Kubernetes, análise de logs de segurança e 5 temas integrados. Otimizado para dispositivos de baixa potência como Raspberry Pi.",
+        lu: "E liichte TUI System Monitor fir Linux mat Echtzäit-Graphen, Docker a Kubernetes Iwwerwaachung, Sécherheets-Log Analyse, a 5 integréierte Themen. Optimiséiert fir Low-Power Geräter wéi Raspberry Pi.",
+        de: "Ein leichtgewichtiger TUI-Systemmonitor für Linux mit Echtzeit-Graphen, Docker- und Kubernetes-Überwachung, Sicherheits-Log-Analyse und 5 integrierten Themes. Optimiert für Low-Power-Geräte wie Raspberry Pi.",
+        fr: "Moniteur système TUI léger pour Linux avec graphiques en temps réel, surveillance Docker et Kubernetes, analyse des logs de sécurité et 5 thèmes intégrés. Optimisé pour les appareils à faible consommation comme Raspberry Pi."
     },
 
     // Search

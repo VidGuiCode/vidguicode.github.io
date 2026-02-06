@@ -2812,6 +2812,20 @@ footer {
     border-bottom: 1px solid var(--border-color);
 }
 
+.search-subgroup-title {
+    padding: 0.375rem 1.5rem 0.375rem 2rem;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    border-top: 1px solid var(--border-color);
+    background: transparent;
+}
+
+.search-subgroup-title:first-child {
+    border-top: none;
+}
+
 .search-result-item {
     padding: 1rem 1.5rem;
     border-bottom: 1px solid var(--border-color);

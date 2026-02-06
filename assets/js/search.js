@@ -16,6 +16,8 @@
     let selectedIndex = -1;
     let selectableItems = [];
     let highlightTerms = null;
+    let _debounceTimer = null;
+    const DEBOUNCE_MS = 150;
 
     // Recent searches (max 5)
     const MAX_RECENT_SEARCHES = 5;
@@ -28,6 +30,22 @@
         if (!entry) return fallback;
         return entry[currentLang] || entry['en'] || fallback;
     };
+
+    // Build searchable text across all supported languages
+    function getAllLangText(keys) {
+        if (typeof translations === 'undefined' || !Array.isArray(keys)) return '';
+        const langs = ['en', 'pt', 'lu', 'de', 'fr'];
+        const parts = [];
+        keys.forEach(key => {
+            if (!key) return;
+            const entry = translations[key];
+            if (!entry) return;
+            langs.forEach(lang => {
+                if (entry[lang]) parts.push(entry[lang]);
+            });
+        });
+        return parts.join(' ');
+    }
 
     // Wait for DOM to be ready
     document.addEventListener('DOMContentLoaded', initSearch);
@@ -100,7 +118,16 @@
         searchToggle?.addEventListener('click', openSearch);
         searchClose?.addEventListener('click', closeSearch);
         searchOverlay?.addEventListener('click', closeSearch);
-        searchInput?.addEventListener('input', handleSearch);
+        searchInput?.addEventListener('input', (e) => {
+            clearTimeout(_debounceTimer);
+            const val = e.target.value.trim();
+            if (!val || val.length < 2) {
+                selectedIndex = -1;
+                showInitialState();
+                return;
+            }
+            _debounceTimer = setTimeout(() => handleSearch(e), DEBOUNCE_MS);
+        });
 
         // Keyboard shortcuts
         document.addEventListener('keydown', handleGlobalKeyboard);
@@ -192,6 +219,7 @@
                     description: description,
                     categories: categories.join(' '),
                     tags: tags.join(' '),
+                    allLangText: getAllLangText([project.nameKey, project.descriptionKey, ...(project.categoryKeys || [])]),
                     icon: project.icon || 'folder',
                     link: project.link,
                     data: project
@@ -218,6 +246,7 @@
                     category: cert.category,
                     skills: skills.join(' '),
                     level: cert.level?.label || '',
+                    allLangText: getAllLangText([cert.nameKey, cert.descriptionKey, ...(cert.skillsKeys || [])]),
                     icon: 'award',
                     link: cert.credlyUrl || cert.externalUrl,
                     data: cert
@@ -243,6 +272,7 @@
                     provider: formation.provider,
                     category: formation.category,
                     skills: skills.join(' '),
+                    allLangText: getAllLangText([formation.nameKey, formation.descriptionKey]),
                     icon: 'book-open',
                     link: null,
                     data: formation
@@ -263,7 +293,8 @@
                     { name: 'categories', weight: 1.5 },
                     { name: 'provider', weight: 0.8 },
                     { name: 'category', weight: 1 },
-                    { name: 'skills', weight: 1.2 }
+                    { name: 'skills', weight: 1.2 },
+                    { name: 'allLangText', weight: 0.4 }
                 ],
                 threshold: 0.5,
                 distance: 100,
@@ -642,12 +673,23 @@
         const queries = [];
 
         // AI / Artificial Intelligence synonyms (multilingual)
-        if (/\b(ai|ki|ia|künstliche intelligenz|inteligência artificial|intelligence artificielle)\b/i.test(normalizedQuery)) {
+        if (/\b(ai|ki|ia|künstliche intelligenz|inteligência artificial|intelligence artificielle|whisp)\b/i.test(normalizedQuery)) {
             queries.push('ai');
             queries.push('artificial intelligence');
             queries.push('ki'); // German: Künstliche Intelligenz
             queries.push('ia'); // French/Portuguese: Intelligence Artificielle / Inteligência Artificial
             queries.push('mistral');
+            queries.push('whisper');
+            queries.push('whispflow');
+        }
+
+        // Transcription / Speech-to-Text synonyms (multilingual)
+        if (/\b(transcri|speech.to.text|sprach|fala|parole|whisper|whisp)\b/i.test(normalizedQuery)) {
+            queries.push('transcription');
+            queries.push('speech-to-text');
+            queries.push('whisper');
+            queries.push('whispflow');
+            queries.push('faster-whisper');
         }
 
         // IoT / Internet of Things synonyms (multilingual)
@@ -773,6 +815,9 @@
         }
         if (isJavaScriptQuery(normalizedQuery)) {
             return getJavaScriptHighlightTerms();
+        }
+        if (/\b(transcri|speech.to.text|sprach|fala|parole|whisper|whisp)\b/i.test(normalizedQuery)) {
+            return ['transcription', 'speech-to-text', 'whisper', 'whispflow', 'faster-whisper'];
         }
         return null;
     }
@@ -962,10 +1007,15 @@
     function mergeSearchResults(queries) {
         const results = [];
         const seen = new Set();
+        const MAX_PER_QUERY = 15;
+        const MAX_TOTAL = 30;
 
         queries.forEach((q) => {
             if (!q || q.length < 2) return;
-            fuse.search(q).forEach((result) => {
+            if (results.length >= MAX_TOTAL) return;
+            const queryResults = fuse.search(q, { limit: MAX_PER_QUERY });
+            queryResults.forEach((result) => {
+                if (results.length >= MAX_TOTAL) return;
                 const key = result.item.type + ':' + result.item.id;
                 if (seen.has(key)) return;
                 seen.add(key);
@@ -1053,87 +1103,115 @@
             html += '</div>';
         }
 
-        // Projects
+        // Projects (sub-grouped by category)
         if (grouped.project.length > 0) {
             html += '<div class="search-group">';
             html += '<div class="search-group-title">' + t('search.section.projects', 'Projects') + ' (' + grouped.project.length + ')</div>';
-            grouped.project.forEach((item, index) => {
-                const link = item.link ? pathPrefix + item.link : '#projects';
 
-                html += '<a href="' + link + '" class="search-result-item">';
-                html += '<div class="search-result-header">';
-                html += '<i data-lucide="' + item.icon + '" class="search-result-icon"></i>';
-                html += '<div class="search-result-info">';
-                html += '<div class="search-result-title">' + highlightMatch(item.name, query) + '</div>';
+            const projectSubGroups = new Map();
+            grouped.project.forEach(item => {
+                const catKey = item.data.categoryKeys && item.data.categoryKeys[0];
+                const cat = catKey ? t(catKey, (item.data.categories && item.data.categories[0]) || 'Other') : (item.data.categories && item.data.categories[0]) || 'Other';
+                if (!projectSubGroups.has(cat)) projectSubGroups.set(cat, []);
+                projectSubGroups.get(cat).push(item);
+            });
 
-                if (item.data.categories && item.data.categories.length > 0) {
-                    html += '<div class="search-result-meta">';
-                    item.data.categories.slice(0, 3).forEach(cat => {
-                        html += '<span class="search-result-badge">' + highlightMatch(cat, query) + '</span>';
-                    });
-                    html += '</div>';
+            const showProjectSubHeaders = projectSubGroups.size > 1;
+
+            projectSubGroups.forEach((items, category) => {
+                if (showProjectSubHeaders) {
+                    html += '<div class="search-subgroup-title">' + escapeHtml(category) + '</div>';
                 }
+                items.forEach(item => {
+                    const link = item.link ? pathPrefix + item.link : '#projects';
 
-                if (item.description) {
-                    html += '<div class="search-result-description">' + highlightMatch(item.description, query) + '</div>';
-                }
+                    html += '<a href="' + link + '" class="search-result-item">';
+                    html += '<div class="search-result-header">';
+                    html += '<i data-lucide="' + item.icon + '" class="search-result-icon"></i>';
+                    html += '<div class="search-result-info">';
+                    html += '<div class="search-result-title">' + highlightMatch(item.name, query) + '</div>';
 
-                if (item.data.tags && item.data.tags.length > 0) {
-                    html += '<div class="search-result-tags">';
-                    item.data.tags.slice(0, 6).forEach(tag => {
-                        html += '<span class="search-result-tag">' + highlightMatch(tag, query) + '</span>';
-                    });
-                    html += '</div>';
-                }
+                    if (item.data.categories && item.data.categories.length > 0) {
+                        html += '<div class="search-result-meta">';
+                        item.data.categories.slice(0, 3).forEach(cat => {
+                            html += '<span class="search-result-badge">' + highlightMatch(cat, query) + '</span>';
+                        });
+                        html += '</div>';
+                    }
 
-                html += '</div></div></a>';
+                    if (item.description) {
+                        html += '<div class="search-result-description">' + highlightMatch(item.description, query) + '</div>';
+                    }
+
+                    if (item.data.tags && item.data.tags.length > 0) {
+                        html += '<div class="search-result-tags">';
+                        item.data.tags.slice(0, 6).forEach(tag => {
+                            html += '<span class="search-result-tag">' + highlightMatch(tag, query) + '</span>';
+                        });
+                        html += '</div>';
+                    }
+
+                    html += '</div></div></a>';
+                });
             });
             html += '</div>';
         }
 
-        // Certifications
+        // Certifications (sub-grouped by provider)
         if (grouped.certification.length > 0) {
             html += '<div class="search-group">';
             html += '<div class="search-group-title">' + t('search.section.certifications', 'Certifications') + ' (' + grouped.certification.length + ')</div>';
 
-            grouped.certification.forEach((item) => {
-                const certId = item.id;
+            const certSubGroups = new Map();
+            grouped.certification.forEach(item => {
+                const provider = item.provider || 'Other';
+                if (!certSubGroups.has(provider)) certSubGroups.set(provider, []);
+                certSubGroups.get(provider).push(item);
+            });
 
-                if (isOnCertificationsPage) {
-                    // On certifications page - open modal directly
-                    html += '<a href="#" class="search-result-item" data-type="certification" data-id="' + certId + '">';
-                } else {
-                    // Not on certifications page - navigate there with hash
-                    html += '<a href="' + pathPrefix + 'certifications.html#' + certId + '" class="search-result-item">';
+            const showCertSubHeaders = certSubGroups.size > 1;
+
+            certSubGroups.forEach((items, provider) => {
+                if (showCertSubHeaders) {
+                    html += '<div class="search-subgroup-title">' + escapeHtml(provider) + '</div>';
                 }
+                items.forEach((item) => {
+                    const certId = item.id;
 
-                html += '<div class="search-result-header">';
-                html += '<i data-lucide="' + item.icon + '" class="search-result-icon"></i>';
-                html += '<div class="search-result-info">';
-                html += '<div class="search-result-title">' + highlightMatch(item.name, query) + '</div>';
+                    if (isOnCertificationsPage) {
+                        html += '<a href="#" class="search-result-item" data-type="certification" data-id="' + certId + '">';
+                    } else {
+                        html += '<a href="' + pathPrefix + 'certifications.html#' + certId + '" class="search-result-item">';
+                    }
 
-                html += '<div class="search-result-meta">';
-                if (item.provider) {
-                    html += '<span class="search-result-badge">' + highlightMatch(item.provider, query) + '</span>';
-                }
-                if (item.level) {
-                    html += '<span class="search-result-badge">' + escapeHtml(item.level) + '</span>';
-                }
-                html += '</div>';
+                    html += '<div class="search-result-header">';
+                    html += '<i data-lucide="' + item.icon + '" class="search-result-icon"></i>';
+                    html += '<div class="search-result-info">';
+                    html += '<div class="search-result-title">' + highlightMatch(item.name, query) + '</div>';
 
-                if (item.description) {
-                    html += '<div class="search-result-description">' + highlightMatch(item.description, query) + '</div>';
-                }
-
-                if (item.data.skills && item.data.skills.length > 0) {
-                    html += '<div class="search-result-tags">';
-                    item.data.skills.slice(0, 6).forEach(skill => {
-                        html += '<span class="search-result-tag">' + highlightMatch(skill, query) + '</span>';
-                    });
+                    html += '<div class="search-result-meta">';
+                    if (item.provider) {
+                        html += '<span class="search-result-badge">' + highlightMatch(item.provider, query) + '</span>';
+                    }
+                    if (item.level) {
+                        html += '<span class="search-result-badge">' + escapeHtml(item.level) + '</span>';
+                    }
                     html += '</div>';
-                }
 
-                html += '</div></div></a>';
+                    if (item.description) {
+                        html += '<div class="search-result-description">' + highlightMatch(item.description, query) + '</div>';
+                    }
+
+                    if (item.data.skills && item.data.skills.length > 0) {
+                        html += '<div class="search-result-tags">';
+                        item.data.skills.slice(0, 6).forEach(skill => {
+                            html += '<span class="search-result-tag">' + highlightMatch(skill, query) + '</span>';
+                        });
+                        html += '</div>';
+                    }
+
+                    html += '</div></div></a>';
+                });
             });
             html += '</div>';
         }
