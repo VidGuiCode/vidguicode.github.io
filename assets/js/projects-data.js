@@ -165,6 +165,25 @@ const PROJECTS = [
         featured: true
     },
     {
+        id: 'whispflow',
+        name: 'WhispFlow',
+        nameKey: 'projects.whispflow.title',
+        description: 'Talent Exhibition project: A desktop app that records meetings, transcribes audio locally with faster-whisper, and generates AI-powered summaries (key points, decisions, action items) via 5 cloud providers. Local-first, privacy-focused, with versioned transcripts and multi-language support.',
+        descriptionKey: 'projects.whispflow.desc',
+        category: 'School Projects',
+        categoryKey: 'projects.category.school',
+        categories: ['School Projects', 'Full-Stack', 'Cloud Computing'],
+        categoryKeys: ['projects.category.school', 'projects.category.fullstack', 'projects.category.cloud'],
+        tags: ['Electron', 'Node.js', 'Python', 'faster-whisper', 'OpenAI', 'Mistral', 'Anthropic', 'Groq', 'Cohere', 'FFmpeg', 'AI', 'Transcription', 'Speech-to-Text', 'Local-First'],
+        icon: 'audio-waveform',
+        iconImage: 'assets/img/projects/whispflow/whispflow-submark.webp',
+        status: 'in-development',
+        statusKey: 'projects.status.inDevelopment',
+        dateStarted: '2025-10',
+        link: 'projects/project-whispflow.html',
+        featured: true
+    },
+    {
         id: 'rds-documentation',
         name: 'Remote Desktop Services (RDS) Documentation',
         nameKey: 'projects.rds.title',

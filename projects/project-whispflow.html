@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhispFlow | VidGuiCode</title>
+    <meta name="description" content="WhispFlow: A desktop application that records meetings, transcribes audio, and generates AI-powered summaries with key points, decisions, and action items.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons - Load locally (version 0.555.0) -->
+    <script src="../assets/js/lucide.min.js" defer></script>
+
+    <!-- Flags - Load locally -->
+    <link rel="stylesheet" href="../assets/css/flag-icons.min.css">
+
+    <!-- Fuse.js for fuzzy search -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logos/vidguicode-favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/img/logos/vidguicode-favicon.svg">
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../assets/js/translations.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/projects-data.js"></script>
+    <script src="../assets/js/certifications-data.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/certifications-techstack.js"></script>
+    <style>
+        /* Typography uses centralized scale - see styles.css */
+        
+        /* Project Images */
+        .project-image-container {
+            margin: 2rem 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .project-image-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            max-width: 100%;
+        }
+
+        .project-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .project-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @media (min-width: 769px) {
+            .project-image-wrapper:hover::after,
+            .project-image-wrapper:hover::before {
+                opacity: 1;
+            }
+        }
+
+        .project-image {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        @media (min-width: 769px) {
+            .project-image-wrapper:hover .project-image {
+                transform: scale(1.02);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                filter: brightness(0.95);
+            }
+        }
+
+        /* Typography uses centralized scale - see styles.css */
+
+        @media (max-width: 768px) {
+            /* Image modal on mobile */
+            .image-modal {
+                padding: 1rem;
+            }
+
+            .image-modal-content {
+                max-width: 100%;
+                max-height: 90vh;
+            }
+
+            .image-modal-content img {
+                max-width: 100%;
+                max-height: 90vh;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-title">
+        <div class="search-modal-overlay" id="search-overlay"></div>
+        <div class="search-modal-content">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search projects, certifications, skills..."
+                        data-i18n-placeholder="search.placeholder"
+                        autocomplete="off"
+                        aria-label="Search"
+                    >
+                    <button id="search-close" class="search-close-btn" aria-label="Close search">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+                <div class="search-hint">
+                    <kbd>Up</kbd> <kbd>Down</kbd> <span data-i18n="search.hint.keyboard">to navigate * to select * to close</span>
+                </div>
+                <div class="search-hint-mobile" data-i18n="search.hint.mobile">
+                    Tap a result to open • Tap × to close
+                </div>
+            </div>
+            <div id="search-results" class="search-results">
+                <div class="search-empty">
+                    <i data-lucide="search"></i>
+                    <p data-i18n="search.empty.initial">Start typing to search...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar (generated by navbar.js) -->
+    <div id="navbar-container"></div>
+
+    <main class="container" style="padding-top: 100px;">
+        
+        <a href="../index.html#projects" class="back-link">
+            <i data-lucide="arrow-left"></i>
+            <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
+        </a>
+
+        <section class="project-hero">
+            <div class="project-title-group">
+                <div class="badge" data-i18n="project.whispflow.badge">TALENT EXHIBITION — PROMA2</div>
+                <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                    <img src="../assets/img/projects/whispflow/whispflow-submark-white.svg" alt="WhispFlow Icon" style="width: 80px; height: 80px; border-radius: 16px; object-fit: contain; flex-shrink: 0;">
+                    <div style="flex: 1; min-width: 200px; display: flex; align-items: center;">
+                        <h1 style="line-height: 1; margin-bottom: 0; display: flex; align-items: center;">
+                            <span data-i18n="project.whispflow.hero.title">WhispFlow</span>
+                        </h1>
+                    </div>
+                </div>
+                <p class="subtitle" data-i18n="project.whispflow.hero.subtitle">Desktop application that records meetings, transcribes audio, and generates AI-powered summaries with key points, decisions, and action items — all in one workflow.</p>
+            </div>
+        </section>
+
+        <div class="project-meta-grid">
+            <!-- Main Content -->
+            <article>
+                <div class="card">
+                    <i data-lucide="audio-waveform" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+
+                    <h2 data-i18n="project.whispflow.problem.title">The Problem</h2>
+                    <p data-i18n="project.whispflow.problem.body">Taking notes during meetings is inefficient. You either lose focus by writing things down, or you miss important details by listening without notes. Reviewing hour-long recordings is tedious. Key decisions, action items, and commitments get lost.</p>
+
+                    <h2 data-i18n="project.whispflow.solution.title">The Solution</h2>
+                    <p data-i18n="project.whispflow.solution.body">WhispFlow automates the entire documentation process: press one button to start recording, AI transcribes your audio into searchable text, AI summarizes the transcript into structured output, then export and share with colleagues, classmates, or clients. No more manual note-taking. No more forgotten decisions.</p>
+                    
+                    <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
+                        
+                        <!-- Electron App Card -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #2f3241 0%, #1a1b26 100%); border-radius: 12px; overflow: hidden; border: 1px solid #414868; position: relative; box-shadow: 0 10px 30px rgba(65, 72, 104, 0.2);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #7aa2f7, #bb9af7);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Electron</h3>
+                                        <div class="node-spec" style="color: #a9b1d6; margin-bottom: 0.75rem;">Desktop App / UI Framework</div>
+                                    </div>
+                                    <div class="node-detail" style="text-align: right; color: #c0caf5;">
+                                        <div>App Layer</div>
+                                        <div style="font-weight: 600; color: #7aa2f7;">Cross-Platform</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #a9b1d6; margin: 0;">Desktop shell with audio capture via MediaRecorder API, session management UI, live waveform visualization, and organized file storage.</p>
+                            </div>
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #414868; display: flex; gap: 1rem; color: #7aa2f7;">
+                                <span>[ELECTRON]</span> <span>[NODE.JS]</span> <span>[HTML/CSS/JS]</span>
+                            </div>
+                        </div>
+
+                        <!-- Whisper Transcription Card -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #1a6b3c 0%, #0d4a26 100%); border-radius: 12px; overflow: hidden; border: 1px solid #2dd4bf; position: relative; box-shadow: 0 10px 30px rgba(45, 212, 191, 0.15);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #2dd4bf, #34d399);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">faster-whisper</h3>
+                                        <div class="node-spec" style="color: #a7f3d0; margin-bottom: 0.75rem;">Python / Local Transcription</div>
+                                    </div>
+                                    <div class="node-detail" style="text-align: right; color: #d1fae5;">
+                                        <div>Speech-to-Text</div>
+                                        <div style="font-weight: 600; color: #2dd4bf;">On-Device</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #a7f3d0; margin: 0;">Local transcription with multiple Whisper models (tiny → large). Multi-language with auto-detection. Works fully offline — no data leaves your device.</p>
+                            </div>
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #065f46; display: flex; gap: 1rem; color: #2dd4bf;">
+                                <span>[PYTHON]</span> <span>[WHISPER]</span> <span>[FFMPEG]</span>
+                            </div>
+                        </div>
+
+                        <!-- AI Summarization Card -->
+                        <div class="node-card" style="background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 100%); border-radius: 12px; overflow: hidden; border: 1px solid #8b5cf6; position: relative; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #8b5cf6, #c084fc);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">AI Summarization</h3>
+                                        <div class="node-spec" style="color: #ddd6fe; margin-bottom: 0.75rem;">Cloud APIs / 5 Providers</div>
+                                    </div>
+                                    <div class="node-detail" style="text-align: right; color: #ede9fe;">
+                                        <div>Intelligence</div>
+                                        <div style="font-weight: 600; color: #c084fc;">Cloud AI</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #ddd6fe; margin: 0;">Structured output: key points, decisions, action items. Supports OpenAI, Mistral, Anthropic, Groq, and Cohere. Multi-language summaries with caching to save cost.</p>
+                            </div>
+                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #4c1d95; display: flex; gap: 1rem; color: #c084fc;">
+                                <span>[OPENAI]</span> <span>[MISTRAL]</span> <span>[ANTHROPIC]</span>
+                            </div>
+                        </div>
+
+                        <!-- Local Storage Card -->
+                        <div class="node-card" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <div style="height: 4px; background: linear-gradient(90deg, #f59e0b, #fbbf24);"></div>
+                            
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;">Local Storage</h3>
+                                        <div class="node-spec" style="color: #fcd34d; margin-bottom: 0.75rem;">Filesystem / JSON Metadata</div>
+                                    </div>
+                                    <div class="node-detail" style="text-align: right; color: #888;">
+                                        <div>Data Layer</div>
+                                        <div style="font-weight: 600; color: #fbbf24;">Privacy-First</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #888; margin: 0;">Session folders with audio files, versioned transcripts, and cached summaries. All data stays on your device. Organized structure for easy backup and export.</p>
+                            </div>
+                            <div class="node-tags" style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; color: #555;">
+                                <span>[FILESYSTEM]</span> <span>[JSON]</span> <span>[WEBM/OPUS]</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <h2 data-i18n="project.whispflow.workflow.title">Core Workflow</h2>
+                    <p data-i18n="project.whispflow.workflow.body1" data-i18n-html="true"><strong>Record</strong> — One-click recording or keyboard shortcut (Ctrl+R). Three modes: Microphone, System Audio, or Hybrid. Live waveform and timer during recording.</p>
+                    <p data-i18n="project.whispflow.workflow.body2" data-i18n-html="true"><strong>Transcribe</strong> — Local transcription using faster-whisper. Choose your model (tiny to large) based on speed vs. accuracy. Multi-language with auto-detection. Live transcription available during recording.</p>
+                    <p data-i18n="project.whispflow.workflow.body3" data-i18n-html="true"><strong>Summarize</strong> — AI generates structured output: key points, decisions, action items, and a full summary. Pick from 5 providers. Generate in any language. Results are cached to save API costs.</p>
+                    <p data-i18n="project.whispflow.workflow.body4" data-i18n-html="true"><strong>Export</strong> — Copy to clipboard or export to file. Open session folders directly in file explorer. Share with colleagues or classmates.</p>
+
+                    <h2 data-i18n="project.whispflow.features.title">Key Features</h2>
+                    <ul class="feature-list">
+                        <li data-i18n="project.whispflow.features.recording">One-click recording with 3 audio modes (mic, system, hybrid)</li>
+                        <li data-i18n="project.whispflow.features.transcription">Local transcription with multiple Whisper models — works offline</li>
+                        <li data-i18n="project.whispflow.features.summaries">AI summaries from 5 providers with multi-language support</li>
+                        <li data-i18n="project.whispflow.features.versioning">Versioned transcripts and summaries — re-transcribe without losing data</li>
+                        <li data-i18n="project.whispflow.features.sessions">Session management with search, tags, sorting, and context menus</li>
+                        <li data-i18n="project.whispflow.features.export">Export and sharing: clipboard, file, or open folder directly</li>
+                    </ul>
+
+                    <h2 data-i18n="project.whispflow.versioning.title">Versioned Transcripts</h2>
+                    <p data-i18n="project.whispflow.versioning.body">Re-transcribe with a different model or language — no data is overwritten. Switch between transcript versions (v1, v2, v3...) via dropdown. Each version tracks the model, language, and timestamp. Summaries are keyed by transcript version and language (e.g. v1_en, v2_fr).</p>
+
+                    <h2 data-i18n="project.whispflow.learned.title">Lessons Learned</h2>
+                    <ul class="feature-list">
+                        <li data-i18n="project.whispflow.learned.hybrid" data-i18n-html="true"><strong>Hybrid architecture works</strong> — Local-first for privacy and offline use, cloud for intelligence. Users get the best of both worlds.</li>
+                        <li data-i18n="project.whispflow.learned.models" data-i18n-html="true"><strong>Model selection matters</strong> — Giving users a choice between speed and accuracy (tiny vs. large Whisper models) solved the hardware limitation problem elegantly.</li>
+                        <li data-i18n="project.whispflow.learned.versioning" data-i18n-html="true"><strong>Never overwrite user data</strong> — The versioning system means you can always go back. Users trust the tool more when they know nothing gets deleted.</li>
+                        <li data-i18n="project.whispflow.learned.caching" data-i18n-html="true"><strong>Cache everything expensive</strong> — Caching AI summaries by transcript version + language prevents unnecessary API calls and keeps costs under control.</li>
+                    </ul>
+
+                    <h2 data-i18n="project.whispflow.phases.title">Project Phases</h2>
+                    <p data-i18n="project.whispflow.phases.body1" data-i18n-html="true"><strong>Phase 1 (Current) — Local-First:</strong> All core features are implemented and working. Desktop recording, local transcription, AI summaries, versioning, session management, and export.</p>
+                    <p data-i18n="project.whispflow.phases.body2" data-i18n-html="true"><strong>Phase 2 (Planned) — Cloud-First:</strong> Cloud storage, remote transcription, cross-device sync, user accounts, collaboration, and offline fallback mode.</p>
+
+                    <h2 data-i18n="project.whispflow.context.title">Project Context</h2>
+                    <p data-i18n="project.whispflow.context.body" data-i18n-html="true">Developed as part of the <strong>Talent Exhibition</strong> for the BTS Cloud Computing & Cyber Security programme (PROMA2 course). The Talent Exhibition gives students the opportunity to explore their interests, build innovative solutions, and showcase their skills to peers, faculty, and industry professionals.</p>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="project-sidebar">
+                <div class="card">
+                    <div id="category-section" style="display: none;">
+                        <h3 data-i18n="project.sidebar.category">Category</h3>
+                        <div class="line"></div>
+                        <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
+                    </div>
+
+                    <h3 data-i18n="project.sidebar.techStack">Tech Stack</h3>
+                    <div class="line"></div>
+                    <ul class="tech-stack-list">
+                        <li><i data-lucide="monitor"></i> <span>Electron (Node.js)</span></li>
+                        <li><i data-lucide="file-code-2"></i> <span>Python + faster-whisper</span></li>
+                        <li><i data-lucide="brain"></i> <span>OpenAI / Mistral / Anthropic</span></li>
+                        <li><i data-lucide="clapperboard"></i> <span>FFmpeg</span></li>
+                        <li><i data-lucide="hard-drive"></i> <span>Local Filesystem + JSON</span></li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
+                    <div class="line"></div>
+                    <ul class="skill-list" style="margin-top: 1rem;">
+                        <li data-i18n="project.whispflow.sidebar.feature1">One-click audio recording</li>
+                        <li data-i18n="project.whispflow.sidebar.feature2">Local AI transcription</li>
+                        <li data-i18n="project.whispflow.sidebar.feature3">5 AI summary providers</li>
+                        <li data-i18n="project.whispflow.sidebar.feature4">Versioned transcripts</li>
+                        <li data-i18n="project.whispflow.sidebar.feature5">Multi-language support</li>
+                        <li data-i18n="project.whispflow.sidebar.feature6">Session management</li>
+                        <li data-i18n="project.whispflow.sidebar.feature7">Privacy-first architecture</li>
+                        <li data-i18n="project.whispflow.sidebar.feature8">Export & sharing</li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.whispflow.sidebar.usecases.title">Use Cases</h3>
+                    <div class="line"></div>
+                    <ul class="skill-list" style="margin-top: 1rem;">
+                        <li data-i18n="project.whispflow.sidebar.usecase1">Students capturing lectures</li>
+                        <li data-i18n="project.whispflow.sidebar.usecase2">Consultants documenting meetings</li>
+                        <li data-i18n="project.whispflow.sidebar.usecase3">Team leads tracking decisions</li>
+                        <li data-i18n="project.whispflow.sidebar.usecase4">Researchers transcribing interviews</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <footer style="margin-top: 4rem;">
+            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+        </footer>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal" onclick="closeImageModal()">
+        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">×</button>
+        <img id="modal-image" class="image-modal-content" src="" alt="">
+    </div>
+
+    <script src="../assets/js/projects-data.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Re-init Lucide icons after navbar loads
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+
+        function initLucideIcons() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+
+        // Image Modal Functions
+        function openImageModal(imageSrc, imageAlt) {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            if (modal && modalImage) {
+                modalImage.src = imageSrc;
+                modalImage.alt = imageAlt || '';
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                modalImage.onerror = function() {
+                    console.error('Failed to load image:', imageSrc);
+                    modalImage.alt = 'Image failed to load';
+                };
+            }
+        }
+
+        function closeImageModal(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            const modal = document.getElementById('image-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('image-modal');
+                if (modal && modal.classList.contains('active')) {
+                    closeImageModal();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
