@@ -1528,11 +1528,11 @@ const translations = {
         fr: "La configuration « petite mais puissante »"
     },
     "project.homelab.section.setup.body": {
-        en: "This isn't a noisy server rack tucked away in a basement—it's a silent, efficient cluster running in my living room. With only one LAN outlet in the home, I needed the cluster where internet speeds matter most. This constraint pushed me to prioritize silent operation and low power consumption so it wouldn't disturb daily life. What started as a way to learn Docker evolved into a capable personal cloud hosting 5 custom web applications with unified SSO, a complete media automation stack, and a K3s cluster for containerized services.",
-        pt: "Isto não é um rack de servidores barulhento escondido numa cave—é um cluster silencioso e eficiente a funcionar na minha sala. Com apenas uma tomada LAN em casa, precisava do cluster onde a velocidade da internet mais importa. Esta limitação obrigou-me a priorizar operação silenciosa e baixo consumo energético para não perturbar o dia a dia. O que começou como forma de aprender Docker evoluiu para uma cloud pessoal capaz com 5 aplicações web personalizadas com SSO unificado, uma stack completa de automação multimédia e um cluster K3s para serviços conteinerizados.",
-        lu: "Dat ass kee lauten Server Rack verstoppt am Keller—et ass e ruegen, effizienten Cluster deen a mengem Wunnzëmmer leeft. Mat nëmmen enger LAN Outlet doheem, hunn ech de Cluster gebraucht wou Internet Geschwindegkeet am meeschten zielt. Dës Aschränkung huet mech gezwongen roueg Operatioun an niddrege Stroumverbrauch ze priorisséieren fir den Alldag net ze stéieren. Wat als Wee ugefaang huet fir Docker ze léieren huet sech zu enger fäeger perséinlecher Cloud entwéckelt mat 5 personaliséierten Web Apps mat eenheetlechem SSO, engem komplette Media Automation Stack, an engem K3s Cluster fir containeréiert Servicer.",
-        de: "Das ist kein lautes Server-Rack versteckt im Keller—es ist ein leiser, effizienter Cluster in meinem Wohnzimmer. Mit nur einer LAN-Buchse im Haus brauchte ich den Cluster dort, wo die Internetgeschwindigkeit am wichtigsten ist. Diese Einschränkung zwang mich, leisen Betrieb und niedrigen Stromverbrauch zu priorisieren, damit er den Alltag nicht stört. Was als Weg begann, Docker zu lernen, entwickelte sich zu einer fähigen persönlichen Cloud mit 5 benutzerdefinierten Webanwendungen mit einheitlichem SSO, einem kompletten Medien-Automation-Stack und einem K3s-Cluster für containerisierte Dienste.",
-        fr: "Ce n'est pas un rack de serveurs bruyant caché dans une cave—c'est un cluster silencieux et efficace dans mon salon. Avec une seule prise LAN à la maison, j'avais besoin du cluster là où la vitesse internet compte le plus. Cette contrainte m'a poussé à prioriser le fonctionnement silencieux et la faible consommation d'énergie pour ne pas perturber la vie quotidienne. Ce qui a commencé comme un moyen d'apprendre Docker a évolué en un cloud personnel capable hébergeant 5 applications web personnalisées avec SSO unifié, une stack complète d'automatisation multimédia, et un cluster K3s pour services conteneurisés."
+        en: "This isn't a noisy server rack tucked away in a basement—it's a silent, efficient cluster running in my living room. With only one LAN outlet in the home, I needed the cluster where internet speeds matter most. This constraint pushed me to prioritize silent operation and low power consumption so it wouldn't disturb daily life. What started as a way to learn Docker evolved into a capable personal cloud hosting 6+ custom web applications with unified SSO, a complete media automation stack, and a K3s cluster for containerized services — all running across ~15 containerized services.",
+        pt: "Isto não é um rack de servidores barulhento escondido numa cave—é um cluster silencioso e eficiente a funcionar na minha sala. Com apenas uma tomada LAN em casa, precisava do cluster onde a velocidade da internet mais importa. Esta limitação obrigou-me a priorizar operação silenciosa e baixo consumo energético para não perturbar o dia a dia. O que começou como forma de aprender Docker evoluiu para uma cloud pessoal capaz com 6+ aplicações web personalizadas com SSO unificado, uma stack completa de automação multimédia e um cluster K3s para serviços conteinerizados — tudo a correr em ~15 serviços conteinerizados.",
+        lu: "Dat ass kee lauten Server Rack verstoppt am Keller—et ass e ruegen, effizienten Cluster deen a mengem Wunnzëmmer leeft. Mat nëmmen enger LAN Outlet doheem, hunn ech de Cluster gebraucht wou Internet Geschwindegkeet am meeschten zielt. Dës Aschränkung huet mech gezwongen roueg Operatioun an niddrege Stroumverbrauch ze priorisséieren fir den Alldag net ze stéieren. Wat als Wee ugefaang huet fir Docker ze léieren huet sech zu enger fäeger perséinlecher Cloud entwéckelt mat 6+ personaliséierten Web Apps mat eenheetlechem SSO, engem komplette Media Automation Stack, an engem K3s Cluster fir containeréiert Servicer — alles iwwer ~15 containeréiert Servicer.",
+        de: "Kein lautes Server-Rack im Keller, sondern ein leiser, effizienter Cluster mitten im Wohnzimmer. Da es zu Hause nur eine einzige LAN-Dose gibt, musste der Cluster genau dort stehen, wo die Leitung am meisten bringt. Diese Einschränkung hat mich gezwungen, auf Lautstärke und Stromverbrauch zu achten, damit der Alltag ganz normal weiterläuft. Was als Docker-Lernprojekt begonnen hat, ist heute eine vollwertige persönliche Cloud: 6+ selbst entwickelte Web-Apps mit einheitlichem SSO, ein kompletter Media-Automation-Stack und ein K3s-Cluster für containerisierte Workloads — verteilt auf rund 15 Services.",
+        fr: "Ce n'est pas un rack de serveurs bruyant caché dans une cave—c'est un cluster silencieux et efficace dans mon salon. Avec une seule prise LAN à la maison, j'avais besoin du cluster là où la vitesse internet compte le plus. Cette contrainte m'a poussé à prioriser le fonctionnement silencieux et la faible consommation d'énergie pour ne pas perturber la vie quotidienne. Ce qui a commencé comme un moyen d'apprendre Docker a évolué en un cloud personnel capable hébergeant 6+ applications web personnalisées avec SSO unifié, une stack complète d'automatisation multimédia, et un cluster K3s pour services conteneurisés — le tout réparti sur ~15 services conteneurisés."
     },
     "project.homelab.section.what.title": {
         en: "What It Does",
@@ -1815,11 +1815,18 @@ const translations = {
         fr: "J’avais besoin d’un bac à sable pour casser les choses en sécurité. C’était mon premier vrai projet personnel, qui m’a poussé au-delà des tutos vers la résolution concrète de problèmes. Parti de Jellyfin pour le streaming, c’est devenu une plateforme complète après la création d’un tunnel sécurisé maison."
     },
     "project.homelab.section.why.body2": {
-        en: "Along the way I learned: how Docker containers communicate, how to build and deploy FastAPI backends, how JWT authentication flows work, and how to manage a hybrid architecture spanning ARM and x86 nodes. It's small, but it taught me that you don't need enterprise gear to build enterprise-grade skills.",
-        pt: "Pelo caminho aprendi: como os contêineres Docker comunicam, como construir e colocar em produção backends FastAPI, como funcionam os fluxos de autenticação JWT e como gerir uma arquitetura híbrida entre nós ARM e x86. É pequeno, mas ensinou-me que não é preciso hardware empresarial para ganhar competências de nível empresarial.",
-        lu: "Ënnerwee hunn ech geléiert: wéi Docker Container kommunizéieren, wéi een FastAPI Backends baut a deployéiert, wéi JWT Authentifikatioun leeft, an wéi een eng Hybrid Architektur mat ARM an x86 Noden verwalt. Et ass kleng, mee huet mir gewisen datt een keng Enterprise Hardware brauch fir Enterprise Fäegkeeten.",
-        de: "Unterwegs habe ich gelernt: wie Docker-Container kommunizieren, wie man FastAPI-Backends baut und deployt, wie JWT-Authentifizierungsflüsse funktionieren und wie man eine hybride ARM-/x86-Architektur betreibt. Es ist klein, aber es zeigte mir, dass man keine Enterprise-Hardware braucht, um Enterprise-Skills aufzubauen.",
-        fr: "En chemin j’ai appris : comment les conteneurs Docker communiquent, comment construire et déployer des backends FastAPI, comment fonctionnent les flux d’authentification JWT, et comment gérer une architecture hybride ARM/x86. C’est petit, mais ça m’a montré qu’on n’a pas besoin de matériel d’entreprise pour acquérir des compétences d’entreprise."
+        en: "Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, I started building my own — and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.",
+        pt: "Para além de aprender, continuava a esbarrar na mesma frustração: as ferramentas existentes eram limitadas, cheias de anúncios ou simplesmente não se adequavam ao que precisava. O gerador de QR? A maioria das versões online estavam atrás de paywalls ou cobertas de anúncios. A app Vault? Nada do que existia correspondia ao workflow que tinha em mente. Então, em vez de me conformar, comecei a construir as minhas próprias — e isso cresceu para um ecossistema self-hosted completo de aplicações personalizadas que substituem ferramentas de terceiros nos meus termos.",
+        lu: "Nieft dem Léieren, sinn ech ëmmer erëm op déi selwecht Frustratioun gestouss: existéierend Tools waren entweder limitéiert, voller Reklammen, oder hunn einfach net gepasst. De QR Generator? Déi meescht online Versiounen waren hannert Paywalls oder voller Reklammen. D'Vault App? Näischt do baussen huet mäi Workflow getraff. Also, amplaz mech zefriddenzegin, hunn ech ugefaang meng eegen ze bauen — an dat ass zu engem komplette self-hosted Ökosystem vu personaliséierten Applikatiounen gewuess déi Drëtt-Partei Tools ersetzen.",
+        de: "Neben dem Lerneffekt gab es immer wieder denselben Nervfaktor: Viele Tools waren eingeschränkt, voller Werbung oder schlicht nicht das, was ich brauchte. Beim QR-Generator landete man oft hinter Paywalls oder zwischen Bannern. Für die Vault-App fand ich nichts, das zu meinem Workflow passte. Also habe ich aufgehört, Kompromisse zu machen, und angefangen, meine eigenen Lösungen zu bauen. Daraus ist Schritt für Schritt ein komplettes Self-Hosted-Ökosystem entstanden, das Drittanbieter-Tools ersetzt — zu meinen Regeln.",
+        fr: "Au-delà de l'apprentissage, je me heurtais toujours à la même frustration : les outils existants étaient soit limités, soit bourrés de pubs, soit inadaptés à mes besoins. Le générateur de QR ? La plupart des versions en ligne étaient derrière des paywalls ou couvertes de pubs. L'app Vault ? Rien ne correspondait au workflow que j'avais en tête. Alors plutôt que de me contenter, j'ai commencé à construire les miens — et ça s'est transformé en un écosystème self-hosted complet d'applications personnalisées remplaçant les outils tiers à ma façon."
+    },
+    "project.homelab.section.why.body3": {
+        en: "Along the way I learned: how Docker containers communicate, how to build and deploy FastAPI backends, how JWT authentication flows work, and how to manage a hybrid architecture spanning ARM and x86 nodes. I built 6+ custom web applications from scratch with a unified SSO system — proving that you don't need enterprise gear to build enterprise-grade solutions.",
+        pt: "Pelo caminho aprendi: como os contêineres Docker comunicam, como construir e colocar em produção backends FastAPI, como funcionam os fluxos de autenticação JWT e como gerir uma arquitetura híbrida entre nós ARM e x86. Construí 6+ aplicações web de raiz com um sistema SSO unificado — provando que não é preciso hardware empresarial para construir soluções de nível empresarial.",
+        lu: "Ënnerwee hunn ech geléiert: wéi Docker Container kommunizéieren, wéi een FastAPI Backends baut a deployéiert, wéi JWT Authentifikatioun leeft, an wéi een eng Hybrid Architektur mat ARM an x86 Noden verwalt. Ech hunn 6+ personaliséiert Web Applikatiounen vun Null gebaut mat engem eenheetleche SSO System — als Beweis datt een keng Enterprise Hardware brauch fir Enterprise Léisungen ze bauen.",
+        de: "Dabei habe ich nicht nur Theorie gesammelt, sondern Praxis: wie Docker-Container miteinander sprechen, wie man FastAPI-Backends baut und sauber ausrollt, wie JWT-Flows in der Realität funktionieren und wie man eine hybride ARM/x86-Architektur stabil betreibt. Am Ende standen 6+ selbst entwickelte Web-Apps mit gemeinsamem SSO. Für mich der Beweis: Für starke, professionelle Lösungen braucht man kein Enterprise-Budget.",
+        fr: "En chemin j'ai appris : comment les conteneurs Docker communiquent, comment construire et déployer des backends FastAPI, comment fonctionnent les flux d'authentification JWT, et comment gérer une architecture hybride ARM/x86. J'ai construit 6+ applications web personnalisées de zéro avec un système SSO unifié — prouvant qu'on n'a pas besoin de matériel d'entreprise pour construire des solutions d'entreprise."
     },
     "project.homelab.section.lessons.title": {
         en: "Lessons Learned",
@@ -1957,11 +1964,18 @@ const translations = {
         fr: "SQLite + Alembic"
     },
     "project.homelab.sidebar.tech.sveltekit": {
-        en: "SvelteKit",
-        pt: "SvelteKit",
-        lu: "SvelteKit",
-        de: "SvelteKit",
-        fr: "SvelteKit"
+        en: "SvelteKit 2 (Svelte 4/5)",
+        pt: "SvelteKit 2 (Svelte 4/5)",
+        lu: "SvelteKit 2 (Svelte 4/5)",
+        de: "SvelteKit 2 (Svelte 4/5)",
+        fr: "SvelteKit 2 (Svelte 4/5)"
+    },
+    "project.homelab.sidebar.tech.react": {
+        en: "React 18",
+        pt: "React 18",
+        lu: "React 18",
+        de: "React 18",
+        fr: "React 18"
     },
     "project.homelab.sidebar.tech.jwt": {
         en: "JWT Authentication",
@@ -1970,12 +1984,12 @@ const translations = {
         de: "JWT-Authentifizierung",
         fr: "Authentification JWT"
     },
-    "project.homelab.sidebar.tech.argon2": {
-        en: "Argon2 Hashing",
-        pt: "Hashing Argon2",
-        lu: "Argon2 Hashing",
-        de: "Argon2-Hashing",
-        fr: "Hachage Argon2"
+    "project.homelab.sidebar.tech.bcrypt": {
+        en: "bcrypt (Passlib)",
+        pt: "bcrypt (Passlib)",
+        lu: "bcrypt (Passlib)",
+        de: "bcrypt (Passlib)",
+        fr: "bcrypt (Passlib)"
     },
     "project.homelab.sidebar.tech.traefik": {
         en: "Traefik Ingress",
@@ -1991,12 +2005,26 @@ const translations = {
         de: "Portainer",
         fr: "Portainer"
     },
-    "project.homelab.sidebar.tech.monitoring": {
-        en: "Uptime Monitoring",
-        pt: "Monitorização de Uptime",
-        lu: "Uptime Iwwerwaachung",
-        de: "Uptime-Überwachung",
-        fr: "Surveillance de disponibilité"
+    "project.homelab.sidebar.tech.crowdsec": {
+        en: "CrowdSec",
+        pt: "CrowdSec",
+        lu: "CrowdSec",
+        de: "CrowdSec",
+        fr: "CrowdSec"
+    },
+    "project.homelab.sidebar.tech.tailscale": {
+        en: "Tailscale Mesh VPN",
+        pt: "Tailscale Mesh VPN",
+        lu: "Tailscale Mesh VPN",
+        de: "Tailscale Mesh VPN",
+        fr: "Tailscale Mesh VPN"
+    },
+    "project.homelab.sidebar.tech.registry": {
+        en: "Docker Registry",
+        pt: "Docker Registry",
+        lu: "Docker Registry",
+        de: "Docker Registry",
+        fr: "Docker Registry"
     },
     "project.homelab.sidebar.tech.playwright": {
         en: "Playwright",
@@ -2011,6 +2039,13 @@ const translations = {
         lu: "Mistral AI",
         de: "Mistral AI",
         fr: "Mistral AI"
+    },
+    "project.homelab.sidebar.tech.sharp": {
+        en: "Sharp (libvips)",
+        pt: "Sharp (libvips)",
+        lu: "Sharp (libvips)",
+        de: "Sharp (libvips)",
+        fr: "Sharp (libvips)"
     },
     "project.homelab.sidebar.tech.jellyfin": {
         en: "Jellyfin",
@@ -2036,11 +2071,11 @@ const translations = {
     
     // Home Lab Key Features
     "project.homelab.sidebar.features.custom": {
-        en: "5 Custom Web Apps (Self-Built)",
-        pt: "5 Aplicações Web Personalizadas (Desenvolvidas por mim)",
-        lu: "5 Personaliséiert Web Apps (Selwer gebaut)",
-        de: "5 Benutzerdefinierte Web-Apps (Selbst gebaut)",
-        fr: "5 Applications web personnalisées (Auto-construites)"
+        en: "6+ Custom Web Apps (Self-Built)",
+        pt: "6+ Aplicações Web Personalizadas (Desenvolvidas por mim)",
+        lu: "6+ Personaliséiert Web Apps (Selwer gebaut)",
+        de: "6+ Eigene Web-Apps (selbst entwickelt)",
+        fr: "6+ Applications web personnalisées (Auto-construites)"
     },
     "project.homelab.sidebar.features.sso": {
         en: "Unified SSO System",
@@ -2064,11 +2099,11 @@ const translations = {
         fr: "Fonctionnement silencieux au salon"
     },
     "project.homelab.sidebar.features.dual": {
-        en: "K3s + Docker Compose",
-        pt: "K3s + Docker Compose",
-        lu: "K3s + Docker Compose",
-        de: "K3s + Docker Compose",
-        fr: "K3s + Docker Compose"
+        en: "K3s + Docker Compose (~15 services)",
+        pt: "K3s + Docker Compose (~15 serviços)",
+        lu: "K3s + Docker Compose (~15 Servicer)",
+        de: "K3s + Docker Compose (ca. 15 Services)",
+        fr: "K3s + Docker Compose (~15 services)"
     },
     "project.homelab.sidebar.features.wireguard": {
         en: "WireGuard Secure Tunnel",
@@ -2090,6 +2125,20 @@ const translations = {
         lu: "Komplett Medien Automatiséierung",
         de: "Vollständige Medienautomatisierung",
         fr: "Automatisation multimédia complète"
+    },
+    "project.homelab.sidebar.features.offload": {
+        en: "Worker Offload Architecture",
+        pt: "Arquitetura de Offload de Workers",
+        lu: "Worker Offload Architektur",
+        de: "Worker-Offload-Architektur",
+        fr: "Architecture d'offload workers"
+    },
+    "project.homelab.sidebar.features.crowdsec": {
+        en: "CrowdSec Threat Detection",
+        pt: "Deteção de Ameaças CrowdSec",
+        lu: "CrowdSec Bedrohungserkennung",
+        de: "CrowdSec-Bedrohungserkennung",
+        fr: "Détection de menaces CrowdSec"
     },
     "project.homelab.sidebar.features.lowpower": {
         en: "Low-Power ARM Design",

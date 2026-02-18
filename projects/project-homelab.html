@@ -90,7 +90,7 @@
                 <p class="subtitle" data-i18n="projects.homelab.desc">A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers custom web apps with SSO, media automation, and a K3s cluster.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
-                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>26/01/2026</span>
+                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>18/02/2026</span>
                 </p>
             </div>
         </section>
@@ -101,7 +101,7 @@
                 <div class="card">
                     <i data-lucide="server" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
                     <h2 data-i18n="project.homelab.section.setup.title">The "Small but Mighty" Setup</h2>
-                    <p data-i18n="project.homelab.section.setup.body">This isn't a noisy server rack tucked away in a basement—it's a silent, efficient cluster running in my living room. With only one LAN outlet in the home, I needed the cluster where internet speeds matter most. This constraint pushed me to prioritize <strong>silent operation and low power consumption</strong> so it wouldn't disturb daily life. What started as a way to learn Docker evolved into a capable personal cloud hosting <strong>5 custom web applications with unified SSO</strong>, a complete <strong>media automation stack</strong>, and a <strong>K3s cluster</strong> for containerized services.</p>
+                    <p data-i18n="project.homelab.section.setup.body">This isn't a noisy server rack tucked away in a basement—it's a silent, efficient cluster running in my living room. With only one LAN outlet in the home, I needed the cluster where internet speeds matter most. This constraint pushed me to prioritize <strong>silent operation and low power consumption</strong> so it wouldn't disturb daily life. What started as a way to learn Docker evolved into a capable personal cloud hosting <strong>6+ custom web applications with unified SSO</strong>, a complete <strong>media automation stack</strong>, and a <strong>K3s cluster</strong> for containerized services — all running across <strong>~15 containerized services</strong>.</p>
                     
                     <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
                         
@@ -199,9 +199,11 @@
                         <li><strong>Radarr</strong>: Movie collection manager with automatic downloads and organization</li>
                         <li><strong>Sonarr</strong>: TV series manager with episode tracking and automated downloads</li>
                         <li><strong>Bazarr</strong>: Subtitle management for Radarr and Sonarr</li>
+                        <li><strong>Seerr</strong>: User-friendly media request interface integrating with Jellyfin, Radarr, and Sonarr</li>
                         <li><strong>qBittorrent</strong>: Torrent client with web interface and ClamAV integration</li>
                         <li><strong>Jackett</strong>: Indexer proxy/adapter for torrent trackers</li>
-                        <li><strong>ClamAV</strong>: Antivirus scanner for downloaded content</li>
+                        <li><strong>FlareSolverr</strong>: Proxy to bypass Cloudflare protection on certain indexers</li>
+                        <li><strong>ClamAV</strong>: Antivirus scanner for all downloaded content before library ingestion</li>
                     </ul>
                     
                     <h4 style="margin-top: 1rem; color: var(--text-primary);">Custom Web Platform (Self-Built Applications)</h4>
@@ -210,34 +212,46 @@
                         <li><strong>Content Digest App</strong>: Built a custom AI-powered web scraping and summarization tool with browser automation (SvelteKit)</li>
                         <li><strong>Admin Panel</strong>: Created a comprehensive web interface for managing users, applications, and permissions (SvelteKit)</li>
                         <li><strong>Authentication Portal</strong>: Designed and implemented a centralized login system with cross-subdomain SSO (SvelteKit)</li>
-                        <li><strong>App Launcher</strong>: Built a user portal for accessing platform applications and account management (SvelteKit)</li>
-                        <li><strong>QR Generator</strong>: Developed a QR code generation service deployed on Kubernetes (SvelteKit)</li>
+                        <li><strong>App Hub</strong>: Built a user portal for accessing platform applications and account management (SvelteKit)</li>
+                        <li><strong>QR Generator</strong>: Developed a QR code generation microservice deployed on Kubernetes (React 18)</li>
+                        <li><strong>Vault App</strong>: AI-assisted acquisition and ownership tracker with smart item structuring, product summarization, and image optimization (SvelteKit)</li>
+                        <li><strong>Task Log</strong>: Internal backlog and run-tracking system for operator and agent task workflows (SvelteKit)</li>
                     </ul>
-                    <p class="sidebar-description" style="margin-top: 1rem; font-style: italic;"><strong>Deployment Workflow:</strong> All applications are initially built and hosted on Docker Compose for rapid development and testing. Once I'm confident in their stability, I compile them into Docker images and deploy them to the K3s cluster. Currently, the QR app is the only application running in K3s, with others still in the Docker Compose stack.</p>
+                    <p class="sidebar-description" style="margin-top: 1rem; font-style: italic;"><strong>Deployment Workflow:</strong> All applications are initially built and hosted on Docker Compose for rapid development and testing. Once stable, they are compiled into Docker images and deployed to the K3s cluster. Currently, the QR app is the only application running in K3s, with others still in the Docker Compose stack.</p>
+
+                    <h4 style="margin-top: 1rem; color: var(--text-primary);">Worker Offload Architecture</h4>
+                    <p>Heavy compute tasks are offloaded from the Raspberry Pi to the laptop Docker host over the local network, avoiding Pi overload and ARM64 build complexity for certain native libraries.</p>
+                    <ul class="feature-list">
+                        <li><strong>Playwright Scraping Worker</strong>: Node.js + headless Chromium on the laptop — receives URLs via HTTP API, returns extracted content. Falls back to local Playwright on the Pi if unreachable</li>
+                        <li><strong>Sharp Image Worker</strong>: Node.js + Sharp (libvips) on the laptop — receives raw images via HTTP API, returns WebP-optimized output (quality 80, max 1600px). Falls back to Pillow on the Pi if unreachable</li>
+                    </ul>
                     
                     <h4 style="margin-top: 1rem; color: var(--text-primary);">Infrastructure Services</h4>
                     <ul class="feature-list">
-                        <li><strong>SQLite + Alembic</strong>: Database with automated migrations for platform data</li>
-                        <li><strong>Single Sign-On</strong>: JWT-based SSO across all subdomains with HttpOnly cookies and token blacklisting</li>
+                        <li><strong>SQLite + Alembic</strong>: Database with automated migrations versioned per feature area (auth, digest, apps, vault)</li>
+                        <li><strong>Single Sign-On</strong>: JWT-based SSO across all subdomains with HttpOnly cookies, token blacklisting, and bcrypt password hashing</li>
+                        <li><strong>Docker Registry</strong>: Private self-hosted image registry for consistent distribution across the mixed-architecture environment (ARM64 + x86_64)</li>
                     </ul>
                     
                     <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.k3s.title">K3s Cluster</h3>
                     <ul class="feature-list">
                         <li><strong>Traefik Ingress</strong>: Automatic routing and load balancing for Kubernetes services</li>
                         <li><strong>Portainer</strong>: Web-based Kubernetes management UI for cluster monitoring and deployment</li>
-                        <li><strong>QR App</strong>: QR code generator running as a Kubernetes deployment with SvelteKit</li>
+                        <li><strong>QR App</strong>: QR code generator running as a Kubernetes deployment with React 18</li>
                     </ul>
                     
                     <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.gateway.title">Cloud Gateway (Oracle VPS)</h3>
                     <ul class="feature-list">
-                        <li><strong>Caddy</strong>: Reverse proxy with automatic SSL/TLS certificates for all domains</li>
-                        <li><strong>WireGuard VPN</strong>: Encrypted tunnel connecting VPS to home server without exposing ports</li>
-                        <li><strong>Uptime Monitoring</strong>: Status page and monitoring for all services with alerting capabilities</li>
+                        <li><strong>Caddy</strong>: Reverse proxy with automatic SSL/TLS certificates, security headers (HSTS, CSP, X-Frame-Options), rate limiting, and Gzip/Zstd compression</li>
+                        <li><strong>CrowdSec</strong>: Collaborative threat detection and automatic IP blocking integrated as a Caddy plugin for inline request filtering</li>
+                        <li><strong>WireGuard VPN</strong>: Encrypted tunnel connecting VPS to home server — the Pi has zero direct internet exposure</li>
+                        <li><strong>Tailscale</strong>: Mesh VPN across all devices for zero-config secure remote access during administration and development</li>
                     </ul>
 
                     <h2 data-i18n="project.homelab.section.why.title">Why I Built It</h2>
                     <p data-i18n="project.homelab.section.why.body1">I needed a sandbox to break things safely. This was my <strong>first real personal project</strong> that pushed me beyond tutorials and into actual problem-solving. What started with Jellyfin for media streaming grew into a full platform after I built a custom secure tunnel to replace third-party services.</p>
-                    <p data-i18n="project.homelab.section.why.body2">Along the way I learned: how Docker containers communicate, how to build and deploy FastAPI backends, how JWT authentication flows work, and how to manage a hybrid architecture spanning ARM and x86 nodes. <strong>I built 5 custom web applications from scratch</strong> with a unified SSO system — proving that you don't need enterprise gear to build enterprise-grade solutions.</p>
+                    <p data-i18n="project.homelab.section.why.body2">Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> — and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.</p>
+                    <p data-i18n="project.homelab.section.why.body3">Along the way I learned: how Docker containers communicate, how to build and deploy FastAPI backends, how JWT authentication flows work, and how to manage a hybrid architecture spanning ARM and x86 nodes. <strong>I built 6+ custom web applications from scratch</strong> with a unified SSO system — proving that you don't need enterprise gear to build enterprise-grade solutions.</p>
 
                     <h2 data-i18n="project.homelab.section.lessons.title">Lessons Learned</h2>
                     <ul class="feature-list">
@@ -303,18 +317,22 @@
                         <li><i data-lucide="zap"></i> <span data-i18n="project.homelab.sidebar.tech.fastapi">FastAPI (Python)</span></li>
                         <li><i data-lucide="database"></i> <span data-i18n="project.homelab.sidebar.tech.sqlite">SQLite + Alembic</span></li>
                         <li><i data-lucide="key"></i> <span data-i18n="project.homelab.sidebar.tech.jwt">JWT Authentication</span></li>
-                        <li><i data-lucide="lock"></i> <span data-i18n="project.homelab.sidebar.tech.argon2">Argon2 Hashing</span></li>
+                        <li><i data-lucide="lock"></i> <span data-i18n="project.homelab.sidebar.tech.bcrypt">bcrypt (Passlib)</span></li>
                         
                         <!-- Frontend -->
-                        <li><i data-lucide="code-2"></i> <span data-i18n="project.homelab.sidebar.tech.sveltekit">SvelteKit</span></li>
+                        <li><i data-lucide="code-2"></i> <span data-i18n="project.homelab.sidebar.tech.sveltekit">SvelteKit 2 (Svelte 4/5)</span></li>
+                        <li><i data-lucide="code-2"></i> <span data-i18n="project.homelab.sidebar.tech.react">React 18</span></li>
                         
-                        <!-- Management & Monitoring -->
+                        <!-- Management & Security -->
                         <li><i data-lucide="container"></i> <span data-i18n="project.homelab.sidebar.tech.portainer">Portainer</span></li>
-                        <li><i data-lucide="activity"></i> <span data-i18n="project.homelab.sidebar.tech.monitoring">Uptime Monitoring</span></li>
+                        <li><i data-lucide="shield-alert"></i> <span data-i18n="project.homelab.sidebar.tech.crowdsec">CrowdSec</span></li>
+                        <li><i data-lucide="network"></i> <span data-i18n="project.homelab.sidebar.tech.tailscale">Tailscale Mesh VPN</span></li>
+                        <li><i data-lucide="archive"></i> <span data-i18n="project.homelab.sidebar.tech.registry">Docker Registry</span></li>
                         
                         <!-- AI & Automation -->
                         <li><i data-lucide="bot"></i> <span data-i18n="project.homelab.sidebar.tech.playwright">Playwright</span></li>
                         <li><i data-lucide="sparkles"></i> <span data-i18n="project.homelab.sidebar.tech.mistral">Mistral AI</span></li>
+                        <li><i data-lucide="image"></i> <span data-i18n="project.homelab.sidebar.tech.sharp">Sharp (libvips)</span></li>
                         
                         <!-- Media Stack -->
                         <li><i data-lucide="film"></i> <span data-i18n="project.homelab.sidebar.tech.jellyfin">Jellyfin</span></li>
@@ -325,14 +343,16 @@
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
                     <div class="line"></div>
                     <ul class="skill-list" style="margin-top: 1rem;">
-                        <li data-i18n="project.homelab.sidebar.features.custom">5 Custom Web Apps (Self-Built)</li>
+                        <li data-i18n="project.homelab.sidebar.features.custom">6+ Custom Web Apps (Self-Built)</li>
                         <li data-i18n="project.homelab.sidebar.features.sso">Unified SSO System</li>
                         <li data-i18n="project.homelab.sidebar.features.hybrid">Hybrid ARM/x86 Architecture</li>
                         <li data-i18n="project.homelab.sidebar.features.silent">Silent Living Room Operation</li>
-                        <li data-i18n="project.homelab.sidebar.features.dual">K3s + Docker Compose</li>
+                        <li data-i18n="project.homelab.sidebar.features.dual">K3s + Docker Compose (~15 services)</li>
                         <li data-i18n="project.homelab.sidebar.features.wireguard">WireGuard Secure Tunnel</li>
                         <li data-i18n="project.homelab.sidebar.features.ai">AI-Powered Content Processing</li>
                         <li data-i18n="project.homelab.sidebar.features.media">Full Media Automation</li>
+                        <li data-i18n="project.homelab.sidebar.features.offload">Worker Offload Architecture</li>
+                        <li data-i18n="project.homelab.sidebar.features.crowdsec">CrowdSec Threat Detection</li>
                         <li data-i18n="project.homelab.sidebar.features.lowpower">Low-Power ARM Design</li>
                     </ul>
                 </div>
