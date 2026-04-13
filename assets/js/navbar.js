@@ -90,8 +90,8 @@
         navbarContainer.innerHTML = html;
 
         // Re-initialize Lucide icons
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
+        if (typeof renderIcons !== 'undefined') {
+            renderIcons();
         }
     }
 

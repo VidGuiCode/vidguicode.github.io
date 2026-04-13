@@ -19,843 +19,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Icons - Load locally (version 0.555.0) -->
-    <script src="assets/js/lucide.min.js" defer></script>
+    <!-- Icons -->
+    <script src="assets/js/icons.js" defer></script>
 
     <!-- Flags - Load locally -->
-    <link rel="stylesheet" href="assets/css/flag-icons.min.css">
+    <link rel="stylesheet" href="assets/css/flag-icons-minimal.css">
 
     <!-- Fuse.js for fuzzy search -->
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+    <script src="assets/js/fuse.min.js"></script>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/img/logos/vidguicode-favicon.svg">
     <link rel="apple-touch-icon" href="assets/img/logos/vidguicode-favicon.svg">
 
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/translations/core.js"></script>
+    <script src="assets/js/translations/certifications.js"></script>
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/certifications-data.js"></script>
     <script src="assets/js/projects-data.js"></script>
-    
-    <style>
-        /* Certifications Page - Following Portfolio Design Language */
-        
-        .certifications-hero {
-            padding: 3rem 0 2rem;
-            text-align: center;
-        }
-
-        /* Typography uses centralized scale - see styles.css */
-
-        /* Stats Row - Card Style */
-        .stats-row {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            min-width: 200px;
-            text-align: center;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .stat-box:hover {
-            transform: translateY(-2px);
-            border-color: var(--text-primary);
-        }
-
-        .stat-box i {
-            width: 32px;
-            height: 32px;
-            color: var(--text-primary);
-            margin-bottom: 0.75rem;
-        }
-
-        /* Typography uses centralized scale - see styles.css */
-
-        /* Filter Controls - Simple Buttons */
-        .filter-controls {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-
-        .filter-btn {
-            padding: 0.75rem 1.5rem;
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            /* Typography uses centralized scale - see styles.css */
-        }
-
-        .filter-btn:hover {
-            background: var(--bg-secondary);
-        }
-
-        .filter-btn.active {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-            border-color: var(--text-primary);
-        }
-
-        /* Category Filter Modal */
-        .category-filter-modal {
-            display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
-        }
-
-        .category-filter-modal.active {
-            opacity: 1;
-            visibility: visible;
-            background: rgba(0, 0, 0, 0.95);
-        }
-        
-        .category-filter-modal-content {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 0;
-            padding: 2rem;
-            max-width: 500px;
-            width: 90%;
-            max-height: 80vh;
-            cursor: default;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .category-filter-modal.active .category-filter-modal-content {
-            transform: scale(1);
-        }
-        
-        .category-filter-option {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 0;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        
-        .category-filter-option:hover {
-            background: var(--surface-secondary);
-            border-color: var(--accent-primary);
-        }
-        
-        .category-filter-option input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-            accent-color: var(--accent-primary);
-            flex-shrink: 0;
-            margin: 0;
-        }
-        
-        .category-filter-option label {
-            flex: 1;
-            cursor: pointer;
-            color: var(--text-primary);
-            font-size: var(--fs-body);
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            pointer-events: auto;
-            display: block;
-        }
-        
-        .filter-apply-btn {
-            flex: 1;
-            padding: 0.75rem;
-            background: var(--text-primary);
-            color: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 0;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            font-size: var(--fs-body);
-        }
-        
-        .filter-apply-btn:hover {
-            background: var(--text-secondary);
-        }
-        
-        .filter-cancel-btn {
-            flex: 1;
-            padding: 0.75rem;
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 0;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: var(--fs-body);
-        }
-        
-        .filter-cancel-btn:hover {
-            background: var(--surface-secondary);
-        }
-
-        /* Certifications List - Compact Table Structure */
-        .certifications-list {
-            max-width: 1200px;
-            margin: 2rem auto 0;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-        }
-
-        /* Certification Row */
-        .cert-row {
-            display: grid;
-            grid-template-columns: 80px 1fr auto auto;
-            gap: 1.5rem;
-            align-items: center;
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            transition: background 0.2s, border-color 0.2s;
-            cursor: pointer;
-        }
-
-        .cert-row:last-child {
-            border-bottom: none;
-        }
-
-        .cert-row:hover {
-            background: var(--bg-secondary);
-            border-color: var(--text-primary);
-        }
-
-	        /* Badge Thumbnail */
-	        .cert-icon-box {
-	            width: 60px;
-	            height: 60px;
-	            display: flex;
-	            align-items: center;
-	            justify-content: center;
-	            background: var(--bg-secondary);
-	            border: 1px solid var(--border-color);
-	            position: relative;
-	            box-sizing: border-box;
-	        }
-
-	        .cert-badge-thumb {
-	            width: 100%;
-	            height: 100%;
-	            object-fit: contain;
-	            padding: 8px;
-	            box-sizing: border-box;
-	        }
-
-	        .cert-icon-fallback {
-	            width: 32px;
-	            height: 32px;
-	            color: var(--text-secondary);
-	            position: absolute;
-	            top: 50%;
-	            left: 50%;
-	            transform: translate(-50%, -50%);
-	            display: none;
-	        }
-
-        /* Formation Logo - Arηs white logo in light mode needs inversion */
-        [data-theme="light"] .formation-logo[src*="arns-group-logo-white"] {
-            filter: invert(1);
-        }
-
-        [data-theme="dark"] .formation-logo[src*="arns-group-logo-white"] {
-            filter: none;
-        }
-
-        /* Certification Info */
-        .cert-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            min-width: 0;
-        }
-
-        /* Typography uses centralized scale - see styles.css */
-
-        .cert-provider {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .cert-provider i {
-            width: 14px;
-            height: 14px;
-        }
-
-        .cert-category {
-            padding: 0.2rem 0.5rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-        }
-
-        /* Level Badge - Using Certification Level Colors */
-        .cert-level {
-            padding: 0.4rem 0.75rem;
-            border: 1px solid;
-            font-weight: 600;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            justify-self: end;
-            min-width: 140px; /* Ensure all badges are the same width */
-        }
-
-        .cert-level i {
-            width: 16px;
-            height: 16px;
-        }
-
-        .level-advanced {
-            color: #dc2626;
-            border-color: #dc2626;
-            background: rgba(220, 38, 38, 0.1);
-        }
-
-        .level-intermediate {
-            color: #2563eb;
-            border-color: #2563eb;
-            background: rgba(37, 99, 235, 0.1);
-        }
-
-        .level-beginner {
-            color: #059669;
-            border-color: #059669;
-            background: rgba(5, 150, 105, 0.1);
-        }
-
-        /* Status Badges */
-        .status-badge {
-            padding: 0.2rem 0.5rem;
-            border: 1px solid;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .status-in-progress {
-            color: #f59e0b;
-            border-color: #f59e0b;
-            background: rgba(245, 158, 11, 0.1);
-        }
-
-        .status-in-progress i {
-            width: 12px;
-            height: 12px;
-        }
-
-        /* Actions Column */
-        .cert-actions {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-            justify-self: end;
-        }
-
-        .cert-action-icon {
-            padding: 0.5rem;
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-
-        .cert-action-icon:hover {
-            background: var(--bg-secondary);
-            border-color: var(--text-primary);
-        }
-
-        .cert-action-icon i {
-            width: 18px;
-            height: 18px;
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .cert-row {
-                grid-template-columns: 60px 1fr;
-                gap: 1rem;
-            }
-
-            .cert-level {
-                grid-column: 2;
-                justify-self: start;
-            }
-
-            .cert-actions {
-                grid-column: 2;
-                justify-self: start;
-            }
-        }
-
-	        @media (max-width: 640px) {
-	            .cert-row {
-	                grid-template-columns: 1fr;
-	                text-align: center;
-	                justify-items: center;
-	            }
-
-	            .cert-icon-box {
-	                margin: 0 auto;
-	                justify-content: center;
-	                align-items: center;
-	            }
-
-	            .cert-info {
-	                align-items: center;
-	                text-align: center;
-            }
-
-            .cert-meta {
-                justify-content: center;
-            }
-
-            .cert-level,
-            .cert-actions {
-                grid-column: 1;
-                justify-self: center;
-            }
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            max-width: 700px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        @media (max-width: 768px) {
-            .modal-content {
-                padding: 1.5rem;
-                max-height: 90vh;
-                margin: 0.5rem;
-            }
-
-            .modal-header {
-                padding-right: 2.5rem;
-            }
-
-            /* Stack badge and title vertically on mobile */
-            .modal-header-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            .modal-badge-img {
-                width: 64px;
-                height: 64px;
-            }
-
-            .modal-header-text {
-                width: 100%;
-            }
-
-            /* Typography uses centralized scale - see styles.css */
-            .modal-skills {
-                gap: 0.4rem;
-            }
-
-            .skill-tag {
-                padding: 0.3rem 0.6rem;
-            }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            cursor: pointer;
-            padding: 0.5rem;
-            transition: all 0.2s;
-        }
-
-        .modal-close:hover {
-            background: var(--bg-secondary);
-        }
-
-        .modal-header {
-            margin-bottom: 1.5rem;
-            padding-right: 2rem;
-        }
-
-        .modal-header-content {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .modal-badge-img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            display: none;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-
-        .modal-header-text {
-            flex: 1;
-            min-width: 0;
-        }
-
-        /* Typography uses centralized scale - see styles.css */
-        .modal-description {
-            line-height: 1.6;
-        }
-
-        .modal-description-images {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-        }
-
-        .modal-description img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 0.5rem;
-            margin: 0;
-            border: 1px solid var(--border-color);
-            display: block;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .modal-description img {
-                width: 150px;
-                height: 150px;
-            }
-        }
-
-        .modal-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-tag {
-            padding: 0.35rem 0.75rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-        }
-
-        /* Modal Action Buttons - Icon Only */
-        .modal-actions {
-            display: flex;
-            gap: 0.75rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .modal-action-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: 0;
-            transition: all 0.2s ease;
-            padding: 0;
-        }
-
-        .modal-action-btn:hover {
-            background: var(--bg-secondary);
-            border-color: var(--text-primary);
-            transform: translateY(-1px);
-        }
-
-        .modal-action-btn i {
-            width: 18px;
-            height: 18px;
-        }
-
-        .modal-action-btn span {
-            display: none;
-        }
-
-        .modal-action-btn.credly-btn {
-            background: var(--card-bg);
-            border-color: var(--border-color);
-        }
-
-        .modal-action-btn.credly-btn:hover {
-            background: var(--bg-secondary);
-            border-color: var(--text-primary);
-        }
-
-        .modal-action-btn.external-btn {
-            background: var(--card-bg);
-            border-color: var(--border-color);
-        }
-
-        .project-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .project-list li {
-            margin-bottom: 0.75rem;
-            padding: 1rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            transition: all 0.2s;
-        }
-
-        .project-list li:hover {
-            border-color: var(--text-primary);
-        }
-
-        .project-list a {
-            color: var(--text-primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 500;
-        }
-
-        .project-list a i {
-            width: 20px;
-            height: 20px;
-        }
-
-        .no-projects {
-            text-align: center;
-            color: var(--text-secondary);
-            padding: 2rem;
-            font-style: italic;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-bottom: 2rem;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: var(--text-primary);
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .certifications-hero {
-                padding: 2rem 0 1rem;
-            }
-            
-            /* Typography uses centralized scale - see styles.css */
-            .stats-row {
-                gap: 1rem;
-            }
-
-            .stat-box {
-                min-width: 140px;
-                padding: 1rem;
-            }
-
-            .filter-controls {
-                gap: 0.75rem;
-                margin: 1.5rem 0;
-            }
-
-            .filter-btn {
-                padding: 0.6rem 1.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            /* Typography uses centralized scale - see styles.css */
-            .certifications-hero .subtitle {
-                padding: 0 1rem;
-            }
-
-            .stats-row {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 1rem;
-            }
-
-            .stat-box {
-                min-width: auto;
-                width: 100%;
-            }
-
-            .filter-controls {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .filter-btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .certifications-list {
-                margin: 1rem 0;
-            }
-
-            .modal-content {
-                padding: 1.5rem;
-                max-height: 90vh;
-            }
-
-            .modal-header {
-                padding-right: 2.5rem;
-            }
-        }
-
-        /* Empty state */
-        .empty-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-secondary);
-        }
-
-        .empty-state i {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 1rem;
-        }
-
-        /* Formation Row Styling */
-        .level-training {
-            color: #8b5cf6 !important;
-            border-color: #8b5cf6 !important;
-            background: rgba(139, 92, 246, 0.1) !important;
-        }
-
-        /* Mobile container adjustments */
-        @media (max-width: 768px) {
-            main.container {
-                padding-top: 80px !important;
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="grid-background"></div>
 
-    <!-- Search Modal -->
-    <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-title">
-        <div class="search-modal-overlay" id="search-overlay"></div>
-        <div class="search-modal-content">
-            <div class="search-header">
-                <div class="search-input-wrapper">
-                    <i data-lucide="search" class="search-icon"></i>
-                    <input
-                        type="text"
-                        id="search-input"
-                        placeholder="Search projects, certifications, skills..."
-                        data-i18n-placeholder="search.placeholder"
-                        autocomplete="off"
-                        aria-label="Search"
-                    >
-                    <button id="search-close" class="search-close-btn" aria-label="Close search">
-                        <i data-lucide="x"></i>
-                    </button>
-                </div>
-                <div class="search-hint">
-                    <kbd>Up</kbd> <kbd>Down</kbd> <span data-i18n="search.hint.keyboard">to navigate * to select * to close</span>
-                </div>
-                <div class="search-hint-mobile" data-i18n="search.hint.mobile">
-                    Tap a result to open • Tap × to close
-                </div>
-            </div>
-            <div id="search-results" class="search-results">
-                <div class="search-empty">
-                    <i data-lucide="search"></i>
-                    <p data-i18n="search.empty.initial">Start typing to search...</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Search Modal (generated by search.js) -->
+    <div id="search-container"></div>
 
     <!-- Navbar (generated by navbar.js) -->
     <div id="navbar-container"></div>
@@ -965,17 +154,6 @@
     <script src="assets/js/search.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
-        // Get current language from localStorage or default to 'en'
-        let currentLang = localStorage.getItem('lang') || document.documentElement.getAttribute('data-lang') || 'en';
-
-        // Simple translation helper for dynamic strings
-        function t(key, fallback) {
-            if (typeof translations === 'undefined') return fallback;
-            const entry = translations[key];
-            if (!entry) return fallback;
-            return entry[currentLang] || entry['en'] || fallback;
-        }
-
         // Function to update formation logos based on theme
         function updateFormationLogos() {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
@@ -1005,10 +183,9 @@
 
         // Listen for language changes and theme changes
         document.addEventListener('DOMContentLoaded', () => {
-            // Update currentLang when language buttons are clicked
+            // Re-render when language changes
             document.querySelectorAll('.lang-dropdown button[data-lang]').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    currentLang = btn.getAttribute('data-lang');
                     // Re-render certifications with new language
                     renderCertifications(document.querySelector('.filter-btn.active').dataset.filter);
                 });
@@ -1067,7 +244,7 @@
                         <p>${emptyText}</p>
                     </div>
                 `;
-                lucide.createIcons();
+                renderIcons();
                 return;
             }
 
@@ -1096,7 +273,7 @@
             });
 
             // Re-initialize Lucide icons
-            lucide.createIcons();
+            renderIcons();
         }
 
 	        function createCertificationRow(cert) {
@@ -1128,7 +305,7 @@
             
             // Date earned (for completed certifications)
             const dateEarnedStr = cert.dateEarned 
-                ? new Date(cert.dateEarned).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' })
+                ? new Date(cert.dateEarned).toLocaleDateString(getCurrentLang(), { year: 'numeric', month: 'long' })
                 : '';
 
 	            row.innerHTML = `
@@ -1194,7 +371,7 @@
             
             // Format date
             const dateStr = formation.dateCompleted 
-                ? new Date(formation.dateCompleted).toLocaleDateString(currentLang, { year: 'numeric', month: 'long' })
+                ? new Date(formation.dateCompleted).toLocaleDateString(getCurrentLang(), { year: 'numeric', month: 'long' })
                 : '';
 
             // Determine which logo to use based on theme
@@ -1235,6 +412,13 @@
                 </div>
 
                 <div class="cert-actions">
+                    ${formation.externalUrl ? `
+                        <a href="${formation.externalUrl}" target="_blank" rel="noopener noreferrer"
+                           class="cert-action-icon" title="Open event page"
+                           onclick="event.stopPropagation()">
+                            <i data-lucide="globe"></i>
+                        </a>
+                    ` : ''}
                     <button class="cert-action-icon" title="View Details" 
                             onclick="showFormationModal('${formation.id}'); event.stopPropagation();">
                         <i data-lucide="info"></i>
@@ -1414,7 +598,7 @@
             });
             
             modal.classList.add('active');
-            lucide.createIcons();
+            renderIcons();
         }
 
         // Update category counts when main filter changes
@@ -1573,7 +757,7 @@
                         <p>${emptyText}</p>
                     </div>
                 `;
-                lucide.createIcons();
+                renderIcons();
                 return;
             }
 
@@ -1601,7 +785,7 @@
                 }
             });
 
-            lucide.createIcons();
+            renderIcons();
             updateFormationLogos();
         }
 
@@ -1626,7 +810,7 @@
                         <p>${emptyText}</p>
                     </div>
                 `;
-                lucide.createIcons();
+                renderIcons();
                 return;
             }
 
@@ -1654,7 +838,7 @@
                 }
             });
 
-            lucide.createIcons();
+            renderIcons();
             updateFormationLogos();
         }
 
@@ -1797,7 +981,7 @@
             }
 
             modal.classList.add('active');
-            lucide.createIcons();
+            renderIcons();
         }
 
         // Formation modal functionality
@@ -1871,10 +1055,19 @@
             // Hide formations section (not needed for formation modal)
             formationsSection.style.display = 'none';
 
-            // Hide action buttons (Credly, External URL - not applicable to formations)
+            // Render action buttons for formations when an external link is available
             const modalActions = document.getElementById('modal-cert-actions');
             if (modalActions) {
-                modalActions.style.display = 'none';
+                if (formation.externalUrl) {
+                    modalActions.innerHTML = `
+                        <a href="${formation.externalUrl}" target="_blank" rel="noopener noreferrer" class="modal-action-btn external-btn" title="Open event page" aria-label="Open event page">
+                            <i data-lucide="globe"></i>
+                        </a>
+                    `;
+                    modalActions.style.display = 'flex';
+                } else {
+                    modalActions.style.display = 'none';
+                }
             }
 
             // Render related certifications
@@ -1900,7 +1093,7 @@
             modalProjectsList.innerHTML = `<div class="no-projects">${t('certifications.modal.noProjects', 'No related projects.')}</div>`;
 
             modal.classList.add('active');
-            lucide.createIcons();
+            renderIcons();
         }
 
         // Function to close modal and clear hash
@@ -2002,13 +1195,13 @@
                 renderCertifications();
                 
                 // Initialize Lucide icons
-                if (typeof lucide !== 'undefined') {
-                    lucide.createIcons();
+                if (typeof renderIcons !== 'undefined') {
+                    renderIcons();
                 } else {
                     // Wait for Lucide to load
                     window.addEventListener('load', () => {
-                        if (typeof lucide !== 'undefined') {
-                            lucide.createIcons();
+                        if (typeof renderIcons !== 'undefined') {
+                            renderIcons();
                         }
                     });
                 }

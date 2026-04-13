@@ -12,23 +12,6 @@
     'use strict';
 
     /**
-     * Get translation helper - accesses translations object if available
-     * @param {string} key - Translation key
-     * @param {string} fallback - Fallback text
-     * @returns {string} Translated text or fallback
-     */
-    function getTranslation(key, fallback) {
-        if (typeof translations === 'undefined') return fallback;
-        const entry = translations[key];
-        if (!entry) return fallback;
-        // Get current language from HTML element or default to 'en'
-        const currentLang = document.documentElement.getAttribute('data-lang') || 
-                           localStorage.getItem('lang') || 
-                           'en';
-        return entry[currentLang] || entry['en'] || fallback;
-    }
-
-    /**
      * Initialize badge injection on DOM load
      */
     function initBadgeInjection() {
@@ -98,7 +81,7 @@
         let shortName = cert.name;
         if (cert.indexTitleKey) {
             // Get short name from translations using indexTitleKey
-            shortName = getTranslation(cert.indexTitleKey, cert.name);
+            shortName = t(cert.indexTitleKey, cert.name);
         }
         
         const name = document.createElement('span');
@@ -194,8 +177,8 @@
         injectBadgeStyles();
         initBadgeInjection();
         // Re-initialize Lucide icons after badge injection
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
+        if (typeof renderIcons !== 'undefined') {
+            renderIcons();
         }
     }
 

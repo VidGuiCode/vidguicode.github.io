@@ -32,8 +32,11 @@ __pycache__/
 
 context/
 .obsidian/
+.claude/
 scripts/
 
 # School-only (not for public repo)
 assets/js/school-translations.js
 index-school.html
+
+skills/

@@ -313,6 +313,76 @@ const FORMATIONS = [
         skillsKeys: ['formation.blockchain.intro.skills.fundamentals', 'formation.blockchain.intro.skills.dlt', 'formation.blockchain.intro.skills.crypto', 'formation.blockchain.intro.skills.applications'],
         logo: 'assets/img/logos/blockchain-academy-logo.webp', // The Blockchain Academy logo
     },
+    {
+        id: 'aws-reinvent-recap-2026',
+        name: 'AWS re:Invent re:Cap 2026',
+        nameKey: 'formation.awsrecap2026.name',
+        provider: 'ARHS Group',
+        category: 'Cloud Computing',
+        description: 'Attended the afternoon AWS re:Invent re:Cap 2026 recap hosted and presented by ARHS Group in Belval, Luxembourg. Their team shared takeaways and demos from the event, covering Amazon Connect, security topics, the Kiro coding IDE, Model Context Protocol (MCP), and AI models and demonstrations they are working on. I attended as part of the Lycée Guillaume Kroll student group, representing the school through the BTS Cloud Computing program.',
+        descriptionKey: 'formation.awsrecap2026.description',
+        dateCompleted: '2026-03-04', // March 4, 2026
+        duration: 'Half-day (from 13:00)', // Afternoon session
+        format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
+        location: 'Belval, Luxembourg', // Location/context
+        externalUrl: 'https://aws-recap-2024.spikeseed.cloud/?ItnationInvite',
+        relatedCertifications: [], // No related certification
+        skills: ['Amazon Connect', 'Cloud Security', 'Kiro IDE', 'Model Context Protocol', 'Enterprise AI Models'],
+        skillsKeys: ['formation.awsrecap2026.skills.connect', 'formation.awsrecap2026.skills.security', 'formation.awsrecap2026.skills.kiro', 'formation.awsrecap2026.skills.mcp', 'formation.awsrecap2026.skills.models'],
+        logo: 'assets/img/logos/aws-logo.webp', // AWS logo
+    },
+    {
+        id: 'luxembourg-army-visit',
+        name: 'Visit to the Luxembourg Army',
+        nameKey: 'formation.luxembourgarmy.name',
+        provider: 'Armée du Luxembourg',
+        category: 'Security',
+        description: 'Visited the Luxembourg Army as part of our BTS Cloud Computing class at LGK. The visit covered how the military operates and its career paths, but what stood out most from a technical perspective was their satellite capabilities — Luxembourg\'s investment in space and defense communication is impressive. We also got insight into their cybersecurity operations and IT infrastructure. It was a good look at how national defense intersects with the kind of tech and infrastructure work we study.',
+        descriptionKey: 'formation.luxembourgarmy.description',
+        dateCompleted: '2026-03-13', // March 13, 2026
+        duration: 'Half-day',
+        format: 'In-person',
+        location: 'Luxembourg',
+        relatedCertifications: [],
+        skills: ['Defense IT Infrastructure', 'Satellite Communications', 'Cybersecurity Operations', 'National Security Systems'],
+        skillsKeys: ['formation.luxembourgarmy.skills.infrastructure', 'formation.luxembourgarmy.skills.satellite', 'formation.luxembourgarmy.skills.cybersecurity', 'formation.luxembourgarmy.skills.security'],
+        logo: 'assets/img/logos/luxembourg-army-logo.webp',
+    },
+    {
+        id: 'az040-powershell-training',
+        name: 'Automating Administration with PowerShell (AZ-040) Training',
+        nameKey: 'formation.az040.name',
+        provider: 'Deep',
+        category: 'Infrastructure',
+        description: 'Attended a 5-day advanced training course on automating Windows Server administration with PowerShell. Covered scripting fundamentals, pipeline usage, remote management, and task automation for administrator roles. Hosted by Deep (POST Luxembourg Group) and conducted by a trainer from their team, as part of my BTS Cloud Computing program at LGK.',
+        descriptionKey: 'formation.az040.description',
+        dateCompleted: '2026-03-27', // March 23-27, 2026
+        duration: '5 days',
+        format: 'In-person',
+        location: 'Lycée Guillaume Kroll (LGK)',
+        relatedCertifications: [],
+        skills: ['PowerShell Scripting', 'Task Automation', 'Remote Administration', 'Azure PowerShell'],
+        skillsKeys: ['formation.az040.skills.scripting', 'formation.az040.skills.automation', 'formation.az040.skills.remote', 'formation.az040.skills.azure'],
+        logo: 'assets/img/logos/powershell-logo.webp',
+    },
+    {
+        id: 'quantum-computing-intro',
+        name: 'Introduction to Quantum Computing',
+        nameKey: 'formation.quantum.name',
+        provider: 'Deep',
+        category: 'Cloud Computing',
+        description: 'Attended a presentation introducing quantum computing concepts, covering the fundamentals of how quantum computers work, their potential applications, and what they mean for the future of computing and cloud infrastructure. Hosted by Deep (POST Luxembourg Group) and conducted by a trainer from their team, as part of my BTS Cloud Computing program at LGK.',
+        descriptionKey: 'formation.quantum.description',
+        dateCompleted: '2026-03-03', // March 3, 2026
+        duration: '2 hours',
+        format: 'In-person',
+        location: 'Lycée Guillaume Kroll (LGK)',
+        relatedCertifications: [],
+        skills: ['Quantum Computing Fundamentals', 'Quantum vs Classical Computing', 'Emerging Technologies'],
+        skillsKeys: ['formation.quantum.skills.fundamentals', 'formation.quantum.skills.comparison', 'formation.quantum.skills.emerging'],
+        logo: 'assets/img/logos/deep-logo.webp',
+        logoDark: 'assets/img/logos/deep-logo-white.webp',
+    },
     // Add more formations as needed
 ];
 

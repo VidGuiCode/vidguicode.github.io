@@ -22,14 +22,38 @@
     // Recent searches (max 5)
     const MAX_RECENT_SEARCHES = 5;
 
-    // Translation helper function
-    const t = (key, fallback) => {
-        const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
-        if (typeof translations === 'undefined') return fallback;
-        const entry = translations[key];
-        if (!entry) return fallback;
-        return entry[currentLang] || entry['en'] || fallback;
-    };
+    // Generate search modal HTML (like navbar.js generates the navbar)
+    function renderSearchModal() {
+        var container = document.getElementById('search-container');
+        if (!container) return;
+        container.outerHTML =
+            '<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-title">' +
+                '<div class="search-modal-overlay" id="search-overlay"></div>' +
+                '<div class="search-modal-content">' +
+                    '<div class="search-header">' +
+                        '<div class="search-input-wrapper">' +
+                            '<i data-lucide="search" class="search-icon"></i>' +
+                            '<input type="text" id="search-input" placeholder="Search projects, certifications, skills..." data-i18n-placeholder="search.placeholder" autocomplete="off" aria-label="Search">' +
+                            '<button id="search-close" class="search-close-btn" aria-label="Close search">' +
+                                '<i data-lucide="x"></i>' +
+                            '</button>' +
+                        '</div>' +
+                        '<div class="search-hint">' +
+                            '<kbd>\u2191</kbd> <kbd>\u2193</kbd> <span data-i18n="search.hint.keyboard">to navigate \u2022 Enter to select \u2022 Esc to close</span>' +
+                        '</div>' +
+                        '<div class="search-hint-mobile" data-i18n="search.hint.mobile">' +
+                            'Tap a result to open \u2022 Tap \u00d7 to close' +
+                        '</div>' +
+                    '</div>' +
+                    '<div id="search-results" class="search-results">' +
+                        '<div class="search-empty">' +
+                            '<i data-lucide="search"></i>' +
+                            '<p data-i18n="search.empty.initial">Start typing to search...</p>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+    }
 
     // Build searchable text across all supported languages
     function getAllLangText(keys) {
@@ -98,6 +122,9 @@
     }
 
     function initSearch() {
+        // Generate modal HTML if placeholder exists
+        renderSearchModal();
+
         // Get DOM elements
         searchModal = document.getElementById('search-modal');
         searchInput = document.getElementById('search-input');
@@ -355,8 +382,8 @@
         selectableItems = [];
 
         // Re-initialize Lucide icons
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
+        if (typeof renderIcons !== 'undefined') {
+            renderIcons();
         }
     }
 
@@ -443,8 +470,8 @@
         attachInitialStateHandlers();
 
         // Re-initialize Lucide icons
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
+        if (typeof renderIcons !== 'undefined') {
+            renderIcons();
         }
     }
 
@@ -526,8 +553,8 @@
 
         if (!fuse) {
             searchResults.innerHTML = '<div class="search-no-results"><i data-lucide="alert-circle"></i><p>' + t('search.error.notReady', 'Search not ready. Please try again.') + '</p></div>';
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
+            if (typeof renderIcons !== 'undefined') {
+                renderIcons();
             }
             return;
         }
@@ -650,8 +677,8 @@
 
         if (results.length === 0 && grouped.action.length === 0) {
             searchResults.innerHTML = '<div class="search-no-results"><i data-lucide="search-x"></i><p>' + t('search.empty.noResults', 'No results found for') + ' "' + escapeHtml(query) + '"</p></div>';
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
+            if (typeof renderIcons !== 'undefined') {
+                renderIcons();
             }
             return;
         }
@@ -1270,8 +1297,8 @@
         attachActionHandlers();
 
         // Re-initialize Lucide icons
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
+        if (typeof renderIcons !== 'undefined') {
+            renderIcons();
         }
     }
 

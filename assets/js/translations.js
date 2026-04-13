@@ -4305,6 +4305,55 @@ const translations = {
         de: "Blockchain-Anwendungen",
         fr: "Applications de la Blockchain"
     },
+    "formation.awsrecap2026.name": {
+        en: "AWS re:Invent re:Cap 2026",
+        pt: "AWS re:Invent re:Cap 2026",
+        lu: "AWS re:Invent re:Cap 2026",
+        de: "AWS re:Invent re:Cap 2026",
+        fr: "AWS re:Invent re:Cap 2026"
+    },
+    "formation.awsrecap2026.description": {
+        en: "Attended the afternoon AWS re:Invent re:Cap 2026 recap hosted and presented by ARHS Group in Belval, Luxembourg. Their team shared takeaways and demos from the event, covering Amazon Connect, security topics, the Kiro coding IDE, Model Context Protocol (MCP), and AI models and demonstrations they are working on. I attended as part of the Lycée Guillaume Kroll student group, representing the school through the BTS Cloud Computing program.",
+        pt: "Participei no recap da tarde do AWS re:Invent re:Cap 2026, organizado e apresentado pelo ARHS Group em Belval, Luxemburgo. A equipa deles partilhou os principais pontos e demos do evento, cobrindo Amazon Connect, temas de segurança, o IDE Kiro, o Model Context Protocol (MCP) e modelos e demonstrações de IA em que estão a trabalhar. Participei como parte do grupo de estudantes do Lycée Guillaume Kroll, representando a escola através do programa BTS Cloud Computing.",
+        lu: "Un der Nomëtteg-Re:Cap vum AWS re:Invent re:Cap 2026 deelgeholl, organiséiert a presentéiert vun ARHS Group zu Belval, Lëtzebuerg. Hiert Team huet d'Haaptpunkte an Demoen vum Event gewisen, dorënner Amazon Connect, Security-Themen, d'Kiro Coding IDE, de Model Context Protocol (MCP) an KI-Modeller an Demoen un deenen si schaffen. Ech war als Deel vun der Schülergrupp vum Lycée Guillaume Kroll dobäi a hunn d'Schoul iwwer de BTS Cloud Computing Programm vertrueden.",
+        de: "Am Nachmittags-Recap der AWS re:Invent re:Cap 2026 teilgenommen, das von der ARHS Group in Belval, Luxemburg, organisiert und präsentiert wurde. Ihr Team stellte Erkenntnisse und Demos aus dem Event vor, darunter Amazon Connect, Sicherheitsthemen, die Kiro-Coding-IDE, das Model Context Protocol (MCP) sowie KI-Modelle und Demonstrationen, an denen sie arbeiten. Ich nahm als Teil der Schülergruppe des Lycée Guillaume Kroll teil und vertrat die Schule im Rahmen des BTS-Cloud-Computing-Programms.",
+        fr: "Participation au récapitulatif de l'après-midi de l'AWS re:Invent re:Cap 2026, organisé et présenté par ARHS Group à Belval, Luxembourg. Leur équipe a partagé les points clés et des démonstrations de l'événement, couvrant Amazon Connect, des sujets de sécurité, l'IDE Kiro, le Model Context Protocol (MCP), ainsi que des modèles et démonstrations d'IA sur lesquels ils travaillent. J'y ai participé avec le groupe d'étudiants du Lycée Guillaume Kroll, en représentant l'école dans le cadre du programme BTS Cloud Computing."
+    },
+    "formation.awsrecap2026.skills.connect": {
+        en: "Amazon Connect",
+        pt: "Amazon Connect",
+        lu: "Amazon Connect",
+        de: "Amazon Connect",
+        fr: "Amazon Connect"
+    },
+    "formation.awsrecap2026.skills.security": {
+        en: "Cloud Security",
+        pt: "Segurança Cloud",
+        lu: "Cloud Security",
+        de: "Cloud-Sicherheit",
+        fr: "Sécurité Cloud"
+    },
+    "formation.awsrecap2026.skills.kiro": {
+        en: "Kiro IDE",
+        pt: "Kiro IDE",
+        lu: "Kiro IDE",
+        de: "Kiro IDE",
+        fr: "Kiro IDE"
+    },
+    "formation.awsrecap2026.skills.mcp": {
+        en: "Model Context Protocol",
+        pt: "Model Context Protocol",
+        lu: "Model Context Protocol",
+        de: "Model Context Protocol",
+        fr: "Model Context Protocol"
+    },
+    "formation.awsrecap2026.skills.models": {
+        en: "Enterprise AI Models",
+        pt: "Modelos de IA Empresariais",
+        lu: "Enterprise KI Modeller",
+        de: "Unternehmens-KI-Modelle",
+        fr: "Modèles d'IA d'Entreprise"
+    },
 
     // Project Names (for modal display)
     "project.homelab.name": {
