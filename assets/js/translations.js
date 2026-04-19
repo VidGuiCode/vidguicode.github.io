@@ -1545,7 +1545,7 @@ const translations = {
         en: "The system powers a variety of critical services across two orchestration layers:",
         pt: "O sistema suporta vários serviços críticos em duas camadas de orquestração:",
         lu: "De System bedreiwt vill wichteg Servicer iwwer zwou Orchestratiounsschichten:",
-        de: "Das System betreibt verschiedene kritische Dienste über zwei Orchestrierungsebenen:",
+        de: "Das System betreibt verschiedene zentrale Dienste auf zwei Orchestrierungsebenen:",
         fr: "Le système alimente plusieurs services critiques sur deux couches d’orchestration :"
     },
     "project.homelab.section.what.compose.title": {
@@ -1556,17 +1556,17 @@ const translations = {
         fr: "Stack Docker Compose"
     },
     "project.homelab.section.what.compose.media": {
-        en: "Media Automation: Full *arr stack (Radarr, Sonarr, Bazarr) for automatic media organization, with Jellyfin as the streaming frontend and integrated virus scanning.",
-        pt: "Automação multimédia: Stack completa *arr (Radarr, Sonarr, Bazarr) para organização automática de media, com Jellyfin como frontend de streaming e antivírus integrado.",
-        lu: "Medien-Automatiséierung: Voll *arr Stack (Radarr, Sonarr, Bazarr) fir automatesch Medien-Organisatioun, mat Jellyfin als Streaming-Frontend a Virenscan.",
-        de: "Media-Automatisierung: Vollständiger *arr-Stack (Radarr, Sonarr, Bazarr) für automatische Medienorganisation, mit Jellyfin als Streaming-Frontend und integriertem Virenscan.",
-        fr: "Automatisation média : Stack *arr complet (Radarr, Sonarr, Bazarr) pour organiser les médias automatiquement, avec Jellyfin en frontend de streaming et antivirus intégré."
+        en: "Self-hosted Media: Jellyfin for personal media streaming, Immich for photo backup with ML features, Nextcloud for file sync, and Navidrome for music.",
+        pt: "Media self-hosted: Jellyfin para streaming de media pessoal, Immich para backup de fotos com recursos de ML, Nextcloud para sincronização de ficheiros e Navidrome para música.",
+        lu: "Self-hosted Medien: Jellyfin fir perséinleche Streaming, Immich fir Foto-Backup mat ML Features, Nextcloud fir File-Sync, a Navidrome fir Musek.",
+        de: "Selbst-gehostete Medien: Jellyfin für persönliches Streaming, Immich für Foto-Backup mit ML-Funktionen, Nextcloud für Dateisynchronisation und Navidrome für Musik.",
+        fr: "Médias auto-hébergés : Jellyfin pour le streaming personnel, Immich pour la sauvegarde photo avec ML, Nextcloud pour la synchronisation de fichiers et Navidrome pour la musique."
     },
     "project.homelab.section.what.compose.platform": {
         en: "Custom Web Platform: Self-built apps including an AI-powered content digest tool, QR code generator, and centralized app launcher—all sharing a unified authentication system.",
         pt: "Plataforma web personalizada: Apps próprias incluindo ferramenta de resumos com IA, gerador de códigos QR e lançador centralizado — todos com um sistema de autenticação unificado.",
         lu: "Personaliséiert Web Plattform: Selwer gebaut Apps inklusiv AI-gestäerkte Digest-Tool, QR Code Generator, an zentrale App Launcher — all mat engem eenheetleche Auth System.",
-        de: "Individuelle Web-Plattform: Eigenentwickelte Apps wie ein KI-gestütztes Digest-Tool, QR-Code-Generator und zentraler App-Launcher – alle teilen sich ein einheitliches Auth-System.",
+        de: "Eigene Web-Plattform: Selbst entwickelte Apps wie ein KI-gestütztes Digest-Tool, ein QR-Code-Generator und ein zentraler App-Launcher – alle mit demselben Auth-System.",
         fr: "Plateforme web personnalisée : Applications maison dont un outil de digest IA, un générateur de QR codes et un lanceur centralisé — tous avec une authentification unifiée."
     },
     "project.homelab.section.what.compose.sso": {
@@ -1587,7 +1587,7 @@ const translations = {
         en: "Lightweight Orchestration: Kubernetes-based cluster with Traefik ingress for routing and Portainer for management.",
         pt: "Orquestração leve: Cluster baseado em Kubernetes com Traefik ingress para encaminhamento e Portainer para gestão.",
         lu: "Liicht Orchestratioun: Kubernetes-baséierte Cluster mat Traefik Ingress fir Routing a Portainer fir Gestioun.",
-        de: "Leichtgewicht-Orchestrierung: Kubernetes-basierter Cluster mit Traefik Ingress fürs Routing und Portainer für das Management.",
+        de: "Leichtgewichtige Orchestrierung: Ein Kubernetes-basierter Cluster mit Traefik Ingress fürs Routing und Portainer fürs Management.",
         fr: "Orchestration légère : Cluster basé sur Kubernetes avec Traefik Ingress pour le routage et Portainer pour la gestion."
     },
     "project.homelab.section.what.k3s.apps": {
@@ -1608,7 +1608,7 @@ const translations = {
         en: "Secure Tunnel: WireGuard VPN connects the home cluster to a cloud VPS, enabling public access without exposing home ports.",
         pt: "Túnel seguro: WireGuard VPN liga o cluster doméstico a um VPS na cloud, permitindo acesso público sem expor portas de casa.",
         lu: "Sécheren Tunnel: WireGuard VPN verbënnt den Heem-Cluster mat engem Cloud VPS, ouni Heem-Porten opzemaachen.",
-        de: "Sicherer Tunnel: WireGuard VPN verbindet den Heim-Cluster mit einem Cloud-VPS und ermöglicht öffentlichen Zugriff ohne Ports daheim zu öffnen.",
+        de: "Sicherer Tunnel: WireGuard VPN verbindet den Heim-Cluster mit einem Cloud-VPS und macht öffentlichen Zugriff möglich, ohne zu Hause Ports freigeben zu müssen.",
         fr: "Tunnel sécurisé : WireGuard VPN relie le cluster maison à un VPS cloud, offrant un accès public sans exposer les ports domestiques."
     },
     "project.homelab.section.what.gateway.proxy": {
@@ -1622,7 +1622,7 @@ const translations = {
         en: "Uptime Monitoring: Status page tracks all services with alerting capabilities.",
         pt: "Monitorização: Página de estado acompanha todos os serviços com alertas.",
         lu: "Uptime Iwwerwaachung: Status Säit iwwerwaacht all Servicer mat Alarmer.",
-        de: "Uptime-Monitoring: Statusseite überwacht alle Dienste mit Alarmierungen.",
+        de: "Uptime-Monitoring: Eine Statusseite überwacht alle Dienste und meldet Ausfälle direkt weiter.",
         fr: "Supervision : Une page de statut suit tous les services avec alertes."
     },
     "project.homelab.nodes.primary.title": {
@@ -1657,7 +1657,7 @@ const translations = {
         en: "The heart of the cluster. Efficient, silent, and always on. Handles orchestration and lightweight services.",
         pt: "O coração do cluster. Eficiente, silencioso e sempre ligado. Gere a orquestração e serviços leves.",
         lu: "D’Häerz vum Cluster. Effizient, roueg a stänneg un. Hëlt d’Orchestratioun a liicht Servicer iwwer.",
-        de: "Das Herz des Clusters. Effizient, leise und immer an. Übernimmt Orchestrierung und leichte Services.",
+        de: "Das Herz des Clusters. Effizient, leise und immer aktiv. Kümmert sich um die Orchestrierung und die leichteren Dienste.",
         fr: "Le cœur du cluster. Efficace, silencieux et toujours actif. Gère l’orchestration et les services légers."
     },
     "project.homelab.nodes.primary.tag.master": {
@@ -1713,7 +1713,7 @@ const translations = {
         en: "The heavy lifter. Repurposed x86 laptop acting as the muscle for demanding containers. Built-in battery serves as a dedicated UPS.",
         pt: "O peso pesado. Portátil x86 reaproveitado como músculo para contentores exigentes. A bateria integrada serve como UPS dedicada.",
         lu: "De Schwéieraarbechter. Ëmgenotzte x86 Laptop als Muskel fir ufuerderend Container. D’Batterie déngt als dedizéierten UPS.",
-        de: "Der Lastenträger. Umgenutztes x86-Laptop als Kraft für anspruchsvolle Container. Eingebaute Batterie dient als dedizierte USV.",
+        de: "Das Arbeitstier im Setup. Ein umfunktioniertes x86-Laptop, das die schweren Container-Workloads übernimmt. Die eingebaute Batterie dient dabei als eigene USV.",
         fr: "Le gros bras. Laptop x86 réutilisé pour les conteneurs exigeants. Batterie intégrée servant d’onduleur dédié."
     },
     "project.homelab.nodes.worker.tag.worker": {
@@ -1811,7 +1811,7 @@ const translations = {
         en: "I needed a sandbox to break things safely. This was my first real personal project that pushed me beyond tutorials and into actual problem-solving. What started with Jellyfin for media streaming grew into a full platform after I built a custom secure tunnel to replace third-party services.",
         pt: "Precisava de um sandbox para partir coisas em segurança. Este foi o meu primeiro projeto pessoal real que me levou para lá dos tutoriais e para a resolução prática de problemas. O que começou com Jellyfin para streaming evoluiu para uma plataforma completa depois de criar um túnel seguro personalizado para substituir serviços de terceiros.",
         lu: "Ech brauchten e Sandbox fir sécher Saachen ze briechen. Dat war mäin éischte richtege perséinleche Projet dee mech iwwer Tutorials eraus gedréckt huet. Wat mat Jellyfin ugefaangen huet, ass zu enger kompletter Plattform gewuess nodeems ech en eegene sécheren Tunnel gebaut hunn.",
-        de: "Ich brauchte eine Sandbox, um Dinge sicher kaputtzumachen. Das war mein erstes richtiges persönliches Projekt, das mich über Tutorials hinaus zu echter Problemlösung gebracht hat. Was mit Jellyfin als Streaming begann, wurde zur Plattform, nachdem ich einen eigenen sicheren Tunnel gebaut habe.",
+        de: "Ich brauchte eine Sandbox, in der ich Dinge gefahrlos kaputtmachen konnte. Das war mein erstes echtes persönliches Projekt, das mich aus der Tutorial-Welt in echte Problemlösung gezogen hat. Was mit Jellyfin fürs Streaming begann, wurde spätestens mit meinem eigenen sicheren Tunnel zu einer richtigen Plattform.",
         fr: "J’avais besoin d’un bac à sable pour casser les choses en sécurité. C’était mon premier vrai projet personnel, qui m’a poussé au-delà des tutos vers la résolution concrète de problèmes. Parti de Jellyfin pour le streaming, c’est devenu une plateforme complète après la création d’un tunnel sécurisé maison."
     },
     "project.homelab.section.why.body2": {
@@ -1839,42 +1839,42 @@ const translations = {
         en: "ARM has quirks — Not all Docker images support ARM64. Finding compatible alternatives and tweaking configs taught me to read docs carefully.",
         pt: "ARM tem quirks — Nem todas as imagens Docker suportam ARM64. Encontrar alternativas compatíveis e ajustar configs ensinou-me a ler a documentação com atenção.",
         lu: "ARM huet seng Launen — Net all Docker Images ënnerstëtzen ARM64. Kompatibel Alternativen fannen an Configs upassen huet mech geléiert d'Dokumentatioun genee ze liesen.",
-        de: "ARM hat Eigenheiten — Nicht alle Docker-Images unterstützen ARM64. Kompatible Alternativen zu finden und Configs anzupassen, hat mich gelehrt, Dokus genau zu lesen.",
+        de: "ARM hat seine Eigenheiten — Nicht alle Docker-Images unterstützen ARM64. Kompatible Alternativen zu finden und Konfigurationen anzupassen, hat mir beigebracht, Dokumentation wirklich sauber zu lesen.",
         fr: "ARM a ses bizarreries — Toutes les images Docker ne gèrent pas ARM64. Chercher des alternatives compatibles et ajuster les configs m’a appris à lire la doc attentivement."
     },
     "project.homelab.section.lessons.dns": {
         en: "DNS is powerful — Managing records in Cloudflare and understanding how traffic flows made the whole system click.",
         pt: "DNS é poderoso — Gerir registos no Cloudflare e entender o fluxo de tráfego fez o sistema ganhar sentido.",
         lu: "DNS ass staark — DNS Records managen a Verkéiersflëss verstoen huet de System klick maachen gelooss.",
-        de: "DNS ist mächtig — DNS-Einträge in Cloudflare zu managen und den Traffic-Flow zu verstehen, ließ alles zusammenpassen.",
+        de: "DNS ist mächtig — DNS-Einträge in Cloudflare zu verwalten und den Traffic-Fluss zu verstehen, war der Punkt, an dem das ganze System plötzlich Sinn ergeben hat.",
         fr: "Le DNS est puissant — Gérer les enregistrements dans Cloudflare et comprendre les flux a fait déclic."
     },
     "project.homelab.section.lessons.iterate": {
         en: "Start small, iterate fast — This setup grew organically. Each problem solved unlocked the next improvement.",
         pt: "Começa pequeno, itera rápido — Esta configuração cresceu organicamente. Cada problema resolvido desbloqueou a melhoria seguinte.",
         lu: "Kleng ufänken, séier iteréieren — Dës Opstellung ass organesch gewuess. All geléiste Problem huet déi nächst Verbesserung opgemaach.",
-        de: "Klein starten, schnell iterieren — Dieses Setup ist organisch gewachsen. Jedes gelöste Problem öffnete die nächste Verbesserung.",
+        de: "Klein anfangen, schnell iterieren — Dieses Setup ist organisch gewachsen. Jedes gelöste Problem hat den Weg für die nächste Verbesserung freigemacht.",
         fr: "Commencer petit, itérer vite — Cette configuration a grandi organiquement. Chaque problème résolu a débloqué la suite."
     },
     "project.homelab.section.lessons.cost": {
         en: "Cost-conscious infrastructure — Running on low-power devices and free-tier cloud taught me to optimize before scaling.",
         pt: "Infra consciente de custos — Correr em dispositivos de baixo consumo e cloud gratuita ensinou-me a optimizar antes de escalar.",
         lu: "Käschtebewosst Infra — Op niddereg-Stroum Geräter a Free-Tier Cloud lafen huet mech geléiert ze optimiséieren éier ech skalaéieren.",
-        de: "Kostenbewusste Infrastruktur — Auf stromsparenden Geräten und Free-Tier-Cloud zu laufen, lehrte mich zu optimieren, bevor ich skaliere.",
+        de: "Kostenbewusste Infrastruktur — Der Betrieb auf stromsparender Hardware und in der Free-Tier-Cloud hat mir beigebracht, erst zu optimieren und dann zu skalieren.",
         fr: "Infra soucieuse des coûts — Tourner sur du matériel basse conso et du cloud gratuit m’a appris à optimiser avant de scaler."
     },
     "project.homelab.section.lessons.security": {
         en: "Security is a journey — Implementing SSO, token blacklisting, and audit logging taught me that authentication is more than just passwords.",
         pt: "Segurança é uma jornada — Implementar SSO, blacklist de tokens e auditoria mostrou-me que autenticação é mais do que senhas.",
         lu: "Sécherheet ass eng Rees — SSO, Token Blacklisting an Audit Logging ëmsetzen huet gewisen datt Authentifikatioun méi wéi Passwierder ass.",
-        de: "Sicherheit ist eine Reise — SSO, Token-Blacklisting und Audit-Logs zu bauen zeigte mir, dass Auth mehr ist als Passwörter.",
+        de: "Sicherheit ist ein Prozess — SSO, Token-Blacklisting und Audit-Logs umzusetzen hat mir gezeigt, dass Authentifizierung deutlich mehr ist als nur Passwörter.",
         fr: "La sécurité est un parcours — Mettre en place SSO, blacklist de tokens et journaux d’audit m’a montré que l’authentification, ce n’est pas que des mots de passe."
     },
     "project.homelab.section.lessons.hybrid": {
         en: "Hybrid architecture complexity — Coordinating Docker Compose and K3s on the same node, plus a remote VPS gateway, required careful port planning and network design.",
         pt: "Complexidade da arquitetura híbrida — Coordenar Docker Compose e K3s no mesmo nó, mais um gateway VPS remoto, exigiu planeamento cuidadoso de portas e desenho de rede.",
         lu: "Komplexitéit vun der Hybrid Architektur — Docker Compose a K3s um selwechte Node koordinéieren, plus e VPS Gateway, huet genee Port a Netzwierk Planung verlaangt.",
-        de: "Komplexität der Hybrid-Architektur — Docker Compose und K3s auf demselben Node plus ein Remote-VPS-Gateway erforderten sorgfältige Port- und Netzplanung.",
+        de: "Komplexität der Hybrid-Architektur — Docker Compose und K3s auf demselben Knoten plus ein externes VPS-Gateway erforderten eine saubere Port- und Netzplanung.",
         fr: "Complexité de l'architecture hybride — Coordonner Docker Compose et K3s sur le même nœud, plus une passerelle VPS distante, a demandé un vrai travail sur les ports et le réseau."
     },
     "project.homelab.section.lessons.environment.title": {
@@ -1902,7 +1902,7 @@ const translations = {
         en: "The platform continues to evolve with planned improvements to the application suite, expanded automation workflows, and additional self-hosted tools. The modular architecture makes it easy to add new services as needs arise.",
         pt: "A plataforma continua a evoluir com melhorias planeadas no conjunto de aplicações, workflows de automação alargados e mais ferramentas self-hosted. A arquitetura modular facilita adicionar novos serviços conforme necessário.",
         lu: "D'Plattform entwéckelt sech weider mat geplangte Verbesserungen un den Apps, méi Automatiséierungs-Workflows an zousätzlech self-hosted Tools. D'modular Architektur mécht et einfach nei Servicer derbäizefügen.",
-        de: "Die Plattform entwickelt sich weiter: geplante Verbesserungen an der App-Suite, mehr Automatisierungs-Workflows und zusätzliche Self-Hosted-Tools. Die modulare Architektur erleichtert das Hinzufügen neuer Services.",
+        de: "Die Plattform entwickelt sich ständig weiter: mit geplanten Verbesserungen an den Apps, mehr Automatisierungs-Workflows und zusätzlichen Self-Hosted-Tools. Durch die modulare Architektur lassen sich neue Dienste unkompliziert ergänzen.",
         fr: "La plateforme continue d'évoluer : améliorations prévues de la suite d'apps, workflows d'automatisation étendus et nouveaux outils self-hosted. L'architecture modulaire facilite l'ajout de services."
     },
     
@@ -2055,18 +2055,11 @@ const translations = {
         fr: "Jellyfin"
     },
     "project.homelab.sidebar.tech.arr": {
-        en: "*arr Stack (Radarr/Sonarr/Bazarr)",
-        pt: "*arr Stack (Radarr/Sonarr/Bazarr)",
-        lu: "*arr Stack (Radarr/Sonarr/Bazarr)",
-        de: "*arr Stack (Radarr/Sonarr/Bazarr)",
-        fr: "*arr Stack (Radarr/Sonarr/Bazarr)"
-    },
-    "project.homelab.sidebar.tech.clamav": {
-        en: "ClamAV",
-        pt: "ClamAV",
-        lu: "ClamAV",
-        de: "ClamAV",
-        fr: "ClamAV"
+        en: "Jellyfin, Immich, Nextcloud, Navidrome",
+        pt: "Jellyfin, Immich, Nextcloud, Navidrome",
+        lu: "Jellyfin, Immich, Nextcloud, Navidrome",
+        de: "Jellyfin, Immich, Nextcloud, Navidrome",
+        fr: "Jellyfin, Immich, Nextcloud, Navidrome"
     },
     
     // Home Lab Key Features
@@ -2109,7 +2102,7 @@ const translations = {
         en: "WireGuard Secure Tunnel",
         pt: "Túnel Seguro WireGuard",
         lu: "WireGuard Sécheren Tunnel",
-        de: "WireGuard sicherer Tunnel",
+        de: "Sicherer WireGuard-Tunnel",
         fr: "Tunnel sécurisé WireGuard"
     },
     "project.homelab.sidebar.features.ai": {
@@ -2130,7 +2123,7 @@ const translations = {
         en: "Worker Offload Architecture",
         pt: "Arquitetura de Offload de Workers",
         lu: "Worker Offload Architektur",
-        de: "Worker-Offload-Architektur",
+        de: "Offload-Architektur mit Worker-Node",
         fr: "Architecture d'offload workers"
     },
     "project.homelab.sidebar.features.crowdsec": {
@@ -2146,6 +2139,27 @@ const translations = {
         lu: "Niddreg-Verbrauch ARM Design",
         de: "Stromsparendes ARM-Design",
         fr: "Conception ARM basse consommation"
+    },
+    "project.homelab.sidebar.features.cli": {
+        en: "Platform CLI for terminal workflows over VPN",
+        pt: "CLI da plataforma para workflows de terminal via VPN",
+        lu: "Plattform CLI fir Terminal Workflows iwwer VPN",
+        de: "Plattform-CLI für Terminal-Workflows über VPN",
+        fr: "CLI de plateforme pour workflows terminal via VPN"
+    },
+    "project.homelab.sidebar.tech.cli": {
+        en: "Typer CLI + Private PyPI",
+        pt: "Typer CLI + PyPI Privado",
+        lu: "Typer CLI + Privat PyPI",
+        de: "Typer-CLI + Private PyPI",
+        fr: "Typer CLI + PyPI privé"
+    },
+    "project.homelab.section.what.compose.cli": {
+        en: "Platform CLI: A Typer-based Python CLI wraps the backend API for terminal workflows over VPN. Supports auth, task management, security operations, and health checks via Personal Access Tokens. Distributed through a self-hosted private PyPI server.",
+        pt: "CLI da plataforma: Uma CLI Python baseada em Typer que envolve a API backend para workflows de terminal via VPN. Suporta autenticação, gestão de tarefas, operações de segurança e verificações de saúde via Tokens de Acesso Pessoal. Distribuída através de um servidor PyPI privado auto-hospedado.",
+        lu: "Plattform CLI: Eng Typer-baséiert Python CLI déi d'Backend API fir Terminal Workflows iwwer VPN wrappen. Ënnerstëtzt Auth, Task Gestioun, Sécherheets Operatiounen a Gesondheets-Checken iwwer Personal Access Tokens. Verdeelt duerch en selwer gehosten private PyPI Server.",
+        de: "Plattform-CLI: Eine Typer-basierte Python-CLI, die die Backend-API für Terminal-Workflows über VPN kapselt. Sie unterstützt Authentifizierung, Task-Management, Sicherheitsoperationen und Health-Checks über Personal Access Tokens. Verteilt wird sie über einen selbst gehosteten privaten PyPI-Server.",
+        fr: "CLI de plateforme : Une CLI Python basée sur Typer qui encapsule l'API backend pour les workflows terminal via VPN. Prend en charge l'authentification, la gestion des tâches, les opérations de sécurité et les vérifications de santé via des jetons d'accès personnels. Distribuée via un serveur PyPI privé auto-hébergé."
     },
     "project.pif.badge": {
         en: "FINAL PROJECT",

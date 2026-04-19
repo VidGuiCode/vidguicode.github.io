@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Lab Personal Cloud | VidGuiCode</title>
-    <meta name="description" content="Deep dive into my Hybrid Homelab Infrastructure - Raspberry Pi, VPS, Docker, and WireGuard.">
+    <title>Home Lab Platform | VidGuiCode</title>
+    <meta name="description" content="Deep dive into my four-node homelab platform: edge gateway, ARM home server, x86 offload node, ZFS NAS, custom apps, agents, and secure self-hosting.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +35,175 @@
     <script src="../assets/js/certifications-techstack.js"></script>
     <style>
         /* Typography uses centralized scale - see styles.css */
+
+        /* Project Images */
+        .project-image-container {
+            margin: 2rem 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .project-image-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            max-width: 100%;
+        }
+
+        .project-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .project-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @media (min-width: 769px) {
+            .project-image-wrapper:hover::after,
+            .project-image-wrapper:hover::before {
+                opacity: 1;
+            }
+        }
+
+        .project-image {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        @media (min-width: 769px) {
+            .project-image-wrapper:hover .project-image {
+                transform: scale(1.02);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                filter: brightness(0.95);
+            }
+        }
+
+        .project-image-caption {
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        /* Side-by-side layout for intro section */
+        .intro-with-image {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-top: 1rem;
+        }
+
+        .intro-with-image .intro-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .intro-with-image .intro-text h2 {
+            margin-top: 0;
+        }
+
+        .intro-with-image .intro-image {
+            flex: 0 0 320px;
+            max-width: 320px;
+            margin-top: calc(48px + 1rem); /* Icon height + margin-bottom to align with h2 */
+        }
+
+        .intro-with-image .intro-image .project-image-wrapper img {
+            max-height: 320px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .intro-with-image {
+                flex-direction: column;
+                margin-top: 0;
+            }
+
+            .intro-with-image .intro-image {
+                flex: 1;
+                max-width: 100%;
+                margin-top: 1.5rem;
+            }
+
+            .intro-with-image .intro-image .project-image-wrapper img {
+                max-height: 280px;
+            }
+        }
+
+        /* Image Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .image-modal {
+                padding: 1rem;
+            }
+
+            .image-modal-content {
+                max-width: 100%;
+                max-height: 90vh;
+            }
+        }
     </style>
 </head>
 <body>
@@ -57,10 +226,10 @@
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.homelab.badge">INFRASTRUCTURE</div>
                 <h1 data-i18n="projects.homelab.title">Home Lab Personal Cloud</h1>
-                <p class="subtitle" data-i18n="projects.homelab.desc">A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers custom web apps with SSO, media automation, and a K3s cluster.</p>
+                <p class="subtitle" data-i18n="projects.homelab.desc">A four-node self-hosted platform spanning a cloud edge gateway, ARM home server, x86 compute offload node, and a dedicated ZFS NAS. It powers custom apps, agents, media services, and K3s behind a self-operated WireGuard edge.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
-                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>18/02/2026</span>
+                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>19/04/2026</span>
                 </p>
             </div>
         </section>
@@ -69,9 +238,19 @@
             <!-- Main Content -->
             <article>
                 <div class="card">
-                    <i data-lucide="server" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
-                    <h2 data-i18n="project.homelab.section.setup.title">The "Small but Mighty" Setup</h2>
-                    <p data-i18n="project.homelab.section.setup.body">This isn't a noisy server rack tucked away in a basement—it's a silent, efficient cluster running in my living room. With only one LAN outlet in the home, I needed the cluster where internet speeds matter most. This constraint pushed me to prioritize <strong>silent operation and low power consumption</strong> so it wouldn't disturb daily life. What started as a way to learn Docker evolved into a capable personal cloud hosting <strong>6+ custom web applications with unified SSO</strong>, a complete <strong>media automation stack</strong>, and a <strong>K3s cluster</strong> for containerized services — all running across <strong>~15 containerized services</strong>.</p>
+                    <div class="intro-with-image">
+                        <div class="intro-text">
+                            <i data-lucide="server" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                            <h2 data-i18n="project.homelab.section.setup.title">From Tiny Cluster to Full Rack</h2>
+                            <p data-i18n="project.homelab.section.setup.body">What started as a quiet Raspberry Pi cluster in my living room has grown into a four-node self-hosted platform: an ARM edge gateway in the cloud, an ARM home server, an x86_64 laptop for compute offload, and a dedicated ZFS NAS for storage. The on-site gear now lives in a compact 10U rack with monitored power and airflow, while public traffic still reaches the platform only through a self-operated WireGuard tunnel.</p>
+                        </div>
+                        <div class="intro-image project-image-container">
+                            <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/homelab/homelab-rack.webp', 'My Home Lab rack with the home server, compute node, storage node, and networking gear')">
+                                <img src="../assets/img/projects/homelab/homelab-rack.webp" alt="My Home Lab rack with the home server, compute node, storage node, and networking gear" class="project-image" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border-color);">
+                            </div>
+                            <p class="project-image-caption" data-i18n="project.homelab.image.caption">Current physical layout: a compact 10U rack</p>
+                        </div>
+                    </div>
                     
                     <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
                         
@@ -94,7 +273,7 @@
                                     </div>
                                 </div>
                                 <p class="node-card p" style="color: #888; margin: 0;" data-i18n="project.homelab.nodes.primary.body">
-                                    The heart of the cluster. Efficient, silent, and always on. Handles orchestration and lightweight services.
+                                    The control plane. Runs the main Docker Compose stack, hosts the backend and custom apps, and acts as the K3s control node.
                                 </p>
                             </div>
                             <div class="node-tags" style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; color: #555;">
@@ -119,7 +298,7 @@
                                     </div>
                                 </div>
                                 <p class="node-card p" style="color: #374151; margin: 0;" data-i18n="project.homelab.nodes.worker.body">
-                                    The heavy lifter. Repurposed x86 laptop acting as the muscle for demanding containers. Built-in battery serves as a dedicated UPS.
+                                    The offload node. Handles Playwright, Sharp/libvips, private search, and other heavier workloads that are faster on x86_64.
                                 </p>
                             </div>
                             <div class="node-tags" style="background: rgba(0,0,0,0.08); padding: 0.75rem 1.5rem; border-top: 1px solid #6b7280; display: flex; gap: 1rem; color: #374151;">
@@ -148,80 +327,90 @@
                                     </div>
                                 </div>
                                 <p class="node-card p" style="color: #94a3b8; margin: 0;" data-i18n="project.homelab.nodes.gateway.body">
-                                    The public face. Handles ingress, reverse proxy, and secure tunneling. Connects the home cluster to the world.
+                                    The internet-facing edge. Terminates TLS, filters traffic with CrowdSec, exposes a VPN-only gateway API, and carries ingress over WireGuard.
                                 </p>
                             </div>
                             <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; color: #64748b;">
                                 <span data-i18n="project.homelab.nodes.gateway.tag.gateway">[GATEWAY]</span> <span data-i18n="project.homelab.nodes.gateway.tag.caddy">[CADDY]</span> <span data-i18n="project.homelab.nodes.gateway.tag.wireguard">[WIREGUARD]</span>
                             </div>
                         </div>
+
+                        <div class="node-card storage-style" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border-radius: 12px; overflow: hidden; border: 1px solid #374151; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+                            <div style="height: 6px; background: linear-gradient(90deg, #22c55e, #0ea5e9, #22c55e);"></div>
+
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                                    <div>
+                                        <h3 style="color: #f9fafb; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.storage.title">Storage Node</h3>
+                                        <div class="node-spec" style="color: #86efac; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.storage.spec">x86_64 / truenas-scale</div>
+                                    </div>
+                                    <div style="text-align: right; color: #cbd5e1;">
+                                        <div data-i18n="project.homelab.nodes.storage.cores">2 x 16TB mirror</div>
+                                        <div style="font-weight: 600; color: #86efac;" data-i18n="project.homelab.nodes.storage.ram">32GB RAM</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #cbd5e1; margin: 0;" data-i18n="project.homelab.nodes.storage.body">
+                                    The storage plane. Hosts ZFS pools, the media stack, photo backup, file sync, music services, and hot/cold S3-compatible object storage.
+                                </p>
+                            </div>
+                            <div class="node-tags" style="background: rgba(0,0,0,0.25); padding: 0.75rem 1.5rem; border-top: 1px solid #374151; display: flex; gap: 1rem; color: #9ca3af;">
+                                <span data-i18n="project.homelab.nodes.storage.tag.storage">[STORAGE]</span> <span data-i18n="project.homelab.nodes.storage.tag.zfs">[ZFS]</span> <span data-i18n="project.homelab.nodes.storage.tag.object">[OBJECT]</span>
+                            </div>
+                        </div>
                         
                     </div>
 
-                    <h2 data-i18n="project.homelab.section.what.title">What It Does</h2>
-                    <p data-i18n="project.homelab.section.what.body">The system powers a variety of critical services across two orchestration layers:</p>
-                    
-                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.compose.title">Docker Compose Stack</h3>
-                    
-                    <h4 style="margin-top: 1rem; color: var(--text-primary);">Media Automation Stack</h4>
-                    <ul class="feature-list">
-                        <li><strong>Jellyfin</strong>: Self-hosted media streaming server with hardware transcoding</li>
-                        <li><strong>Radarr</strong>: Movie collection manager with automatic downloads and organization</li>
-                        <li><strong>Sonarr</strong>: TV series manager with episode tracking and automated downloads</li>
-                        <li><strong>Bazarr</strong>: Subtitle management for Radarr and Sonarr</li>
-                        <li><strong>Seerr</strong>: User-friendly media request interface integrating with Jellyfin, Radarr, and Sonarr</li>
-                        <li><strong>qBittorrent</strong>: Torrent client with web interface and ClamAV integration</li>
-                        <li><strong>Jackett</strong>: Indexer proxy/adapter for torrent trackers</li>
-                        <li><strong>FlareSolverr</strong>: Proxy to bypass Cloudflare protection on certain indexers</li>
-                        <li><strong>ClamAV</strong>: Antivirus scanner for all downloaded content before library ingestion</li>
-                    </ul>
-                    
-                    <h4 style="margin-top: 1rem; color: var(--text-primary);">Custom Web Platform (Self-Built Applications)</h4>
-                    <ul class="feature-list">
-                        <li><strong>Backend API (FastAPI)</strong>: Developed from scratch with JWT authentication, token blacklisting, user management, and AI-powered content processing</li>
-                        <li><strong>Content Digest App</strong>: Built a custom AI-powered web scraping and summarization tool with browser automation (SvelteKit)</li>
-                        <li><strong>Admin Panel</strong>: Created a comprehensive web interface for managing users, applications, and permissions (SvelteKit)</li>
-                        <li><strong>Authentication Portal</strong>: Designed and implemented a centralized login system with cross-subdomain SSO (SvelteKit)</li>
-                        <li><strong>App Hub</strong>: Built a user portal for accessing platform applications and account management (SvelteKit)</li>
-                        <li><strong>QR Generator</strong>: Developed a QR code generation microservice deployed on Kubernetes (React 18)</li>
-                        <li><strong>Vault App</strong>: AI-assisted acquisition and ownership tracker with smart item structuring, product summarization, and image optimization (SvelteKit)</li>
-                        <li><strong>Task Log</strong>: Internal backlog and run-tracking system for operator and agent task workflows (SvelteKit)</li>
-                    </ul>
-                    <p class="sidebar-description" style="margin-top: 1rem; font-style: italic;"><strong>Deployment Workflow:</strong> All applications are initially built and hosted on Docker Compose for rapid development and testing. Once stable, they are compiled into Docker images and deployed to the K3s cluster. Currently, the QR app is the only application running in K3s, with others still in the Docker Compose stack.</p>
+                    <p style="margin-top: 1rem; color: var(--text-secondary);" data-i18n="project.homelab.hardware.body">All on-site hardware is organized around the same real-world constraints that shaped the first version of the lab: quiet operation, low idle power, minimal cable mess, and hardware that earns its spot in the rack by solving an actual problem.</p>
 
-                    <h4 style="margin-top: 1rem; color: var(--text-primary);">Worker Offload Architecture</h4>
-                    <p>Heavy compute tasks are offloaded from the Raspberry Pi to the laptop Docker host over the local network, avoiding Pi overload and ARM64 build complexity for certain native libraries.</p>
+                    <h2 data-i18n="project.homelab.section.what.title">What Runs On It</h2>
+                    <p data-i18n="project.homelab.section.what.body">The platform is now split across four complementary layers: the home-server control plane, an agent and worker layer, a dedicated storage/media plane, and a hardened edge gateway.</p>
+                    
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.core.title">Core Platform (Home Server)</h3>
                     <ul class="feature-list">
-                        <li><strong>Playwright Scraping Worker</strong>: Node.js + headless Chromium on the laptop — receives URLs via HTTP API, returns extracted content. Falls back to local Playwright on the Pi if unreachable</li>
-                        <li><strong>Sharp Image Worker</strong>: Node.js + Sharp (libvips) on the laptop — receives raw images via HTTP API, returns WebP-optimized output (quality 80, max 1600px). Falls back to Pillow on the Pi if unreachable</li>
+                        <li data-i18n="project.homelab.section.what.core.list" data-i18n-html><strong>Unified backend control plane</strong>: FastAPI + SQLAlchemy + Alembic + SQLite drive authentication, permissions, app registration, audit logs, AI orchestration, and cross-app state.</li>
+                        <li data-i18n="project.homelab.section.what.core.suite" data-i18n-html><strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery app, task log, career workspace, and a QR generator microservice.</li>
+                        <li data-i18n="project.homelab.section.what.core.compose" data-i18n-html><strong>Compose-first runtime</strong>: The home server still runs the main Docker Compose stack for day-to-day services and hot-reload development, while K3s is reserved for isolated microservices.</li>
+                        <li data-i18n="project.homelab.section.what.core.killswitch" data-i18n-html><strong>Hard application kill switch</strong>: Every custom frontend is registered centrally, so disabling an app immediately blocks access even on direct URL visits.</li>
+                        <li data-i18n="project.homelab.section.what.compose.cli" data-i18n-html><strong>Platform CLI</strong>: A Typer-based Python CLI wraps the backend API for terminal workflows over VPN. Supports auth, task management, security operations, and health checks via Personal Access Tokens. Distributed through a self-hosted private PyPI server.</li>
                     </ul>
                     
-                    <h4 style="margin-top: 1rem; color: var(--text-primary);">Infrastructure Services</h4>
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.apps.title">Agent + Worker Layer</h3>
                     <ul class="feature-list">
-                        <li><strong>SQLite + Alembic</strong>: Database with automated migrations versioned per feature area (auth, digest, apps, vault)</li>
-                        <li><strong>Single Sign-On</strong>: JWT-based SSO across all subdomains with HttpOnly cookies, token blacklisting, and bcrypt password hashing</li>
-                        <li><strong>Docker Registry</strong>: Private self-hosted image registry for consistent distribution across the mixed-architecture environment (ARM64 + x86_64)</li>
+                        <li data-i18n="project.homelab.section.what.apps.retriever" data-i18n-html><strong>Retriever agent</strong>: Researches the web through a private meta-search backend and headless browsing, then returns structured briefs.</li>
+                        <li data-i18n="project.homelab.section.what.apps.term" data-i18n-html><strong>Term-mastery agent</strong>: Generates summaries, flashcards, and remediation workflows for learning content.</li>
+                        <li data-i18n="project.homelab.section.what.apps.security" data-i18n-html><strong>Security triage agent</strong>: Correlates edge alerts, access logs, sessions, and approval-gated write actions for admin review.</li>
+                        <li data-i18n="project.homelab.section.what.apps.offload" data-i18n-html><strong>Compute offload pattern</strong>: The laptop handles Playwright scraping, Sharp image optimization, SearXNG, and audio feature extraction, with local fallbacks on the home server.</li>
+                        <li data-i18n="project.homelab.section.what.apps.guardrails" data-i18n-html><strong>Shared guardrails</strong>: Every agent runs behind kill switches, token/cost/runtime budgets, tool allowlists, concurrency caps, and blocked-action logging.</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.media.title">Storage + Media Plane (NAS)</h3>
+                    <ul class="feature-list">
+                        <li data-i18n="project.homelab.section.what.media.truenas" data-i18n-html><strong>TrueNAS SCALE + ZFS</strong>: Separate storage node with mirrored HDD bulk storage, SSD hot tier, and service-specific datasets.</li>
+                        <li data-i18n="project.homelab.section.what.media.services" data-i18n-html><strong>Self-hosted media services</strong>: Jellyfin for streaming personal media libraries, Immich for photo backup with ML-powered organization, Nextcloud for file sync and collaboration, and Navidrome for music streaming.</li>
+                        <li data-i18n="project.homelab.section.what.media.object" data-i18n-html><strong>S3-compatible object storage</strong>: Dual MinIO tiers keep hot objects on SSD and move colder data to HDD through lifecycle rules.</li>
                     </ul>
                     
                     <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.k3s.title">K3s Cluster</h3>
                     <ul class="feature-list">
-                        <li><strong>Traefik Ingress</strong>: Automatic routing and load balancing for Kubernetes services</li>
-                        <li><strong>Portainer</strong>: Web-based Kubernetes management UI for cluster monitoring and deployment</li>
-                        <li><strong>QR App</strong>: QR code generator running as a Kubernetes deployment with React 18</li>
+                        <li data-i18n="project.homelab.section.what.k3s.ingress" data-i18n-html><strong>Traefik ingress</strong>: Host-based routing and a clean path to declarative microservice deployments.</li>
+                        <li data-i18n="project.homelab.section.what.k3s.portainer" data-i18n-html><strong>Portainer</strong>: Cluster visibility and day-to-day Kubernetes management.</li>
+                        <li data-i18n="project.homelab.section.what.k3s.qr" data-i18n-html><strong>QR microservice</strong>: A React + Vite service running in K3s as the current reference workload for the cluster.</li>
+                        <li data-i18n="project.homelab.section.what.k3s.images" data-i18n-html><strong>Private multi-arch image flow</strong>: Images are prepared for ARM64 and x86_64 and distributed through a private registry workflow.</li>
                     </ul>
                     
                     <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.gateway.title">Cloud Gateway (Oracle VPS)</h3>
                     <ul class="feature-list">
-                        <li><strong>Caddy</strong>: Reverse proxy with automatic SSL/TLS certificates, security headers (HSTS, CSP, X-Frame-Options), rate limiting, and Gzip/Zstd compression</li>
-                        <li><strong>CrowdSec</strong>: Collaborative threat detection and automatic IP blocking integrated as a Caddy plugin for inline request filtering</li>
-                        <li><strong>WireGuard VPN</strong>: Encrypted tunnel connecting VPS to home server — the Pi has zero direct internet exposure</li>
-                        <li><strong>Tailscale</strong>: Mesh VPN across all devices for zero-config secure remote access during administration and development</li>
+                        <li data-i18n="project.homelab.section.what.gateway.caddy" data-i18n-html><strong>Caddy at the edge</strong>: Automatic TLS, strict security headers, structured logs, compression, and route-level rate limits.</li>
+                        <li data-i18n="project.homelab.section.what.gateway.crowdsec" data-i18n-html><strong>CrowdSec inline filtering</strong>: Suspicious traffic is blocked before it ever reaches the backend.</li>
+                        <li data-i18n="project.homelab.section.what.gateway.wireguard" data-i18n-html><strong>WireGuard backhaul</strong>: All public ingress crosses a self-operated VPN tunnel; the home server has zero direct internet exposure.</li>
+                        <li data-i18n="project.homelab.section.what.gateway.tailscale" data-i18n-html><strong>Tailscale admin mesh</strong>: A separate VPN for remote SSH and development access that never carries public request traffic.</li>
+                        <li data-i18n="project.homelab.section.what.gateway.api" data-i18n-html><strong>Gateway API</strong>: A VPN-only internal API exposes threat and access-log data to backend tooling and the security agent.</li>
                     </ul>
 
                     <h2 data-i18n="project.homelab.section.why.title">Why I Built It</h2>
-                    <p data-i18n="project.homelab.section.why.body1">I needed a sandbox to break things safely. This was my <strong>first real personal project</strong> that pushed me beyond tutorials and into actual problem-solving. What started with Jellyfin for media streaming grew into a full platform after I built a custom secure tunnel to replace third-party services.</p>
-                    <p data-i18n="project.homelab.section.why.body2">Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> — and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.</p>
-                    <p data-i18n="project.homelab.section.why.body3">Along the way I learned: how Docker containers communicate, how to build and deploy FastAPI backends, how JWT authentication flows work, and how to manage a hybrid architecture spanning ARM and x86 nodes. <strong>I built 6+ custom web applications from scratch</strong> with a unified SSO system — proving that you don't need enterprise gear to build enterprise-grade solutions.</p>
+                    <p data-i18n="project.homelab.section.why.body1" data-i18n-html>I needed a sandbox to break things safely. This was my <strong>first real personal project</strong> that pushed me beyond tutorials and into actual problem-solving. What started with Jellyfin for media streaming grew into a full platform after I built a custom secure tunnel to replace third-party services.</p>
+                    <p data-i18n="project.homelab.section.why.body2" data-i18n-html>Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> — and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.</p>
+                    <p data-i18n="project.homelab.section.why.body3" data-i18n-html>Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 8+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.</p>
 
                     <h2 data-i18n="project.homelab.section.lessons.title">Lessons Learned</h2>
                     <ul class="feature-list">
@@ -256,7 +445,7 @@
                     </ul>
                     
                     <h2 data-i18n="project.homelab.section.next.title">What's Next</h2>
-                    <p data-i18n="project.homelab.section.next.body">The platform continues to evolve with planned improvements to the application suite, expanded automation workflows, and additional self-hosted tools. The modular architecture makes it easy to add new services as needs arise.</p>
+                    <p data-i18n="project.homelab.section.next.body">Next steps are deeper K3s adoption for selected microservices, more agent-driven workflows, continued hardening of the edge and auth stack, and expanding the platform with new internal tools only when they solve a real gap in my day-to-day workflows.</p>
                 </div>
             </article>
 
@@ -272,58 +461,37 @@
                     <h3 data-i18n="project.sidebar.techStack">Tech Stack</h3>
                     <div class="line"></div>
                     <ul class="tech-stack-list">
-                        <!-- Infrastructure & Orchestration -->
                         <li><i data-lucide="server"></i> <span data-i18n="project.homelab.sidebar.tech.k3s">K3s Kubernetes</span></li>
                         <li><i data-lucide="box"></i> <span data-i18n="project.homelab.sidebar.tech.compose">Docker Compose</span></li>
-                        <li><i data-lucide="cloud"></i> <span data-i18n="project.homelab.sidebar.tech.vps">Oracle Cloud (ARM64)</span></li>
-                        
-                        <!-- Networking & Security -->
-                        <li><i data-lucide="shield"></i> <span data-i18n="project.homelab.sidebar.tech.wireguard">WireGuard VPN</span></li>
-                        <li><i data-lucide="globe"></i> <span data-i18n="project.homelab.sidebar.tech.caddy">Caddy Reverse Proxy</span></li>
-                        <li><i data-lucide="route"></i> <span data-i18n="project.homelab.sidebar.tech.traefik">Traefik Ingress</span></li>
-                        <li><i data-lucide="cloud-cog"></i> <span data-i18n="project.homelab.sidebar.tech.cloudflare">Cloudflare DNS</span></li>
-                        
-                        <!-- Backend & Database -->
-                        <li><i data-lucide="zap"></i> <span data-i18n="project.homelab.sidebar.tech.fastapi">FastAPI (Python)</span></li>
-                        <li><i data-lucide="database"></i> <span data-i18n="project.homelab.sidebar.tech.sqlite">SQLite + Alembic</span></li>
-                        <li><i data-lucide="key"></i> <span data-i18n="project.homelab.sidebar.tech.jwt">JWT Authentication</span></li>
-                        <li><i data-lucide="lock"></i> <span data-i18n="project.homelab.sidebar.tech.bcrypt">bcrypt (Passlib)</span></li>
-                        
-                        <!-- Frontend -->
-                        <li><i data-lucide="code-2"></i> <span data-i18n="project.homelab.sidebar.tech.sveltekit">SvelteKit 2 (Svelte 4/5)</span></li>
-                        <li><i data-lucide="code-2"></i> <span data-i18n="project.homelab.sidebar.tech.react">React 18</span></li>
-                        
-                        <!-- Management & Security -->
-                        <li><i data-lucide="container"></i> <span data-i18n="project.homelab.sidebar.tech.portainer">Portainer</span></li>
-                        <li><i data-lucide="shield-alert"></i> <span data-i18n="project.homelab.sidebar.tech.crowdsec">CrowdSec</span></li>
-                        <li><i data-lucide="network"></i> <span data-i18n="project.homelab.sidebar.tech.tailscale">Tailscale Mesh VPN</span></li>
-                        <li><i data-lucide="archive"></i> <span data-i18n="project.homelab.sidebar.tech.registry">Docker Registry</span></li>
-                        
-                        <!-- AI & Automation -->
-                        <li><i data-lucide="bot"></i> <span data-i18n="project.homelab.sidebar.tech.playwright">Playwright</span></li>
-                        <li><i data-lucide="sparkles"></i> <span data-i18n="project.homelab.sidebar.tech.mistral">Mistral AI</span></li>
-                        <li><i data-lucide="image"></i> <span data-i18n="project.homelab.sidebar.tech.sharp">Sharp (libvips)</span></li>
-                        
-                        <!-- Media Stack -->
-                        <li><i data-lucide="film"></i> <span data-i18n="project.homelab.sidebar.tech.jellyfin">Jellyfin</span></li>
-                        <li><i data-lucide="download"></i> <span data-i18n="project.homelab.sidebar.tech.arr">*arr Stack (Radarr/Sonarr/Bazarr)</span></li>
-                        <li><i data-lucide="shield-check"></i> <span data-i18n="project.homelab.sidebar.tech.clamav">ClamAV</span></li>
+                        <li><i data-lucide="cloud"></i> <span data-i18n="project.homelab.sidebar.tech.oracle">Oracle Cloud ARM64</span></li>
+                        <li><i data-lucide="hard-drive"></i> <span data-i18n="project.homelab.sidebar.tech.truenas">TrueNAS SCALE + ZFS</span></li>
+                        <li><i data-lucide="shield"></i> <span data-i18n="project.homelab.sidebar.tech.vpn">WireGuard + Tailscale</span></li>
+                        <li><i data-lucide="globe"></i> <span data-i18n="project.homelab.sidebar.tech.edge">Caddy + CrowdSec</span></li>
+                        <li><i data-lucide="route"></i> <span data-i18n="project.homelab.sidebar.tech.cluster">Traefik + Portainer</span></li>
+                        <li><i data-lucide="zap"></i> <span data-i18n="project.homelab.sidebar.tech.backend">FastAPI + SQLAlchemy</span></li>
+                        <li><i data-lucide="database"></i> <span data-i18n="project.homelab.sidebar.tech.data">SQLite + Alembic + MinIO</span></li>
+                        <li><i data-lucide="key"></i> <span data-i18n="project.homelab.sidebar.tech.auth">JWT + TOTP 2FA</span></li>
+                        <li><i data-lucide="code-2"></i> <span data-i18n="project.homelab.sidebar.tech.frontend">SvelteKit, React, TypeScript</span></li>
+                        <li><i data-lucide="bot"></i> <span data-i18n="project.homelab.sidebar.tech.agents">Mistral AI + Guardrailed Agents</span></li>
+                        <li><i data-lucide="search"></i> <span data-i18n="project.homelab.sidebar.tech.worker">Playwright + Sharp + SearXNG</span></li>
+                        <li><i data-lucide="film"></i> <span data-i18n="project.homelab.sidebar.tech.media">Jellyfin, Immich, Nextcloud, Navidrome</span></li>
+                        <li><i data-lucide="terminal"></i> <span data-i18n="project.homelab.sidebar.tech.cli">Typer CLI + Private PyPI</span></li>
                     </ul>
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
                     <div class="line"></div>
                     <ul class="skill-list" style="margin-top: 1rem;">
-                        <li data-i18n="project.homelab.sidebar.features.custom">6+ Custom Web Apps (Self-Built)</li>
-                        <li data-i18n="project.homelab.sidebar.features.sso">Unified SSO System</li>
-                        <li data-i18n="project.homelab.sidebar.features.hybrid">Hybrid ARM/x86 Architecture</li>
-                        <li data-i18n="project.homelab.sidebar.features.silent">Silent Living Room Operation</li>
-                        <li data-i18n="project.homelab.sidebar.features.dual">K3s + Docker Compose (~15 services)</li>
-                        <li data-i18n="project.homelab.sidebar.features.wireguard">WireGuard Secure Tunnel</li>
-                        <li data-i18n="project.homelab.sidebar.features.ai">AI-Powered Content Processing</li>
-                        <li data-i18n="project.homelab.sidebar.features.media">Full Media Automation</li>
-                        <li data-i18n="project.homelab.sidebar.features.offload">Worker Offload Architecture</li>
-                        <li data-i18n="project.homelab.sidebar.features.crowdsec">CrowdSec Threat Detection</li>
-                        <li data-i18n="project.homelab.sidebar.features.lowpower">Low-Power ARM Design</li>
+                        <li data-i18n="project.homelab.sidebar.features.topology">Four-node hybrid topology</li>
+                        <li data-i18n="project.homelab.sidebar.features.rack">Compact 10U rack with monitored power</li>
+                        <li data-i18n="project.homelab.sidebar.features.exposure">Zero direct internet exposure for the home server</li>
+                        <li data-i18n="project.homelab.sidebar.features.auth">Custom JWT SSO + TOTP + trusted devices</li>
+                        <li data-i18n="project.homelab.sidebar.features.apps">8+ custom apps sharing one backend control plane</li>
+                        <li data-i18n="project.homelab.sidebar.features.cli">Platform CLI for terminal workflows over VPN</li>
+                        <li data-i18n="project.homelab.sidebar.features.agents">Autonomous agents with hard guardrails</li>
+                        <li data-i18n="project.homelab.sidebar.features.nas">Dedicated NAS with hot/cold object storage</li>
+                        <li data-i18n="project.homelab.sidebar.features.mediafull">Full media, photos, files, and music stack</li>
+                        <li data-i18n="project.homelab.sidebar.features.compute">Compute offload for browser and image workloads</li>
+                        <li data-i18n="project.homelab.sidebar.features.deploy">Mixed Docker Compose + K3s deployment model</li>
                     </ul>
                 </div>
             </aside>
@@ -333,6 +501,12 @@
             <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
         </footer>
     </main>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal" onclick="closeImageModal()">
+        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">×</button>
+        <img id="modal-image" class="image-modal-content" src="" alt="">
+    </div>
 
     <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/script.js"></script>
@@ -370,6 +544,43 @@
             setTimeout(initProjectCategories, 300);
             initLucideIcons();
         }
+
+        // Image Modal Functions
+        function openImageModal(imageSrc, imageAlt) {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            if (modal && modalImage) {
+                modalImage.src = imageSrc;
+                modalImage.alt = imageAlt || '';
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                modalImage.onerror = function() {
+                    console.error('Failed to load image:', imageSrc);
+                    modalImage.alt = 'Image failed to load';
+                };
+            }
+        }
+
+        function closeImageModal(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            const modal = document.getElementById('image-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('image-modal');
+                if (modal && modal.classList.contains('active')) {
+                    closeImageModal();
+                }
+            }
+        });
     </script>
 </body>
 </html>
