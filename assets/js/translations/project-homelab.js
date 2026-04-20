@@ -328,6 +328,62 @@
             de: "[OBJECT]",
             fr: "[OBJECT]"
         },
+        "project.homelab.nodes.switch.title": {
+            en: "Network Switch",
+            pt: "Switch de Rede",
+            lu: "Netzwierk-Switch",
+            de: "Netzwerk-Switch",
+            fr: "Switch Réseau"
+        },
+        "project.homelab.nodes.switch.spec": {
+            en: "TP-Link TL-SG608E / 8-Port Gigabit",
+            pt: "TP-Link TL-SG608E / 8 portas Gigabit",
+            lu: "TP-Link TL-SG608E / 8-Port Gigabit",
+            de: "TP-Link TL-SG608E / 8-Port-Gigabit",
+            fr: "TP-Link TL-SG608E / 8 ports Gigabit"
+        },
+        "project.homelab.nodes.switch.ports": {
+            en: "8 ports / 1 Gbps",
+            pt: "8 portas / 1 Gbps",
+            lu: "8 Ports / 1 Gbps",
+            de: "8 Ports / 1 Gbps",
+            fr: "8 ports / 1 Gbps"
+        },
+        "project.homelab.nodes.switch.type": {
+            en: "Easy Smart Managed",
+            pt: "Easy Smart Managed",
+            lu: "Easy Smart Managed",
+            de: "Easy Smart Managed",
+            fr: "Easy Smart Managed"
+        },
+        "project.homelab.nodes.switch.body": {
+            en: "Connects the home server, compute node, and NAS on the local network. Managed switch with QoS and IGMP snooping — sits in the rack and links all on-site nodes to the home router.",
+            pt: "Liga o home server, o nó de computação e a NAS na rede local. Switch gerido com QoS e IGMP snooping — está no rack e liga todos os nós locais ao router doméstico.",
+            lu: "Verbënnt de Home Server, de Compute Node an d'NAS am lokale Netz. Gemanagten Switch mat QoS a IGMP Snooping — steet am Rack a verbënnt all On-Site Noden mam Heemrouter.",
+            de: "Verbindet Home-Server, Compute-Node und NAS im lokalen Netzwerk. Managed Switch mit QoS und IGMP Snooping — sitzt im Rack und verbindet alle On-Site-Knoten mit dem Heimrouter.",
+            fr: "Relie le serveur maison, le nœud de calcul et le NAS sur le réseau local. Switch managé avec QoS et IGMP snooping — installé dans le rack, il connecte tous les nœuds sur site au routeur domestique."
+        },
+        "project.homelab.nodes.switch.tag.managed": {
+            en: "[MANAGED]",
+            pt: "[MANAGED]",
+            lu: "[MANAGED]",
+            de: "[MANAGED]",
+            fr: "[MANAGED]"
+        },
+        "project.homelab.nodes.switch.tag.gigabit": {
+            en: "[GIGABIT]",
+            pt: "[GIGABIT]",
+            lu: "[GIGABIT]",
+            de: "[GIGABIT]",
+            fr: "[GIGABIT]"
+        },
+        "project.homelab.nodes.switch.tag.ports": {
+            en: "[8-PORT]",
+            pt: "[8-PORT]",
+            lu: "[8-PORT]",
+            de: "[8-PORT]",
+            fr: "[8-PORT]"
+        },
         "project.homelab.nodes.gateway.tag.gateway": {
             en: "[GATEWAY]",
             pt: "[GATEWAY]",

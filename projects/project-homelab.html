@@ -254,14 +254,11 @@
                     
                     <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
                         
-                        <!-- Pi Node: DeskPi Design Style (Dark, Vented, Red Accent) -->
+                        <!-- Pi Node: DeskPi Pro — matte black ABS plastic -->
                         <div class="node-card pi-style" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                            <!-- Vent texture simulation -->
                             <div style="height: 12px; width: 100%; background: repeating-linear-gradient(90deg, #111, #111 4px, #222 4px, #222 8px);"></div>
-                            
                             <div style="padding: 1.5rem; position: relative;">
                                 <div style="position: absolute; top: 0; right: 1.5rem; width: 40px; height: 4px; background: #ef4444; border-radius: 0 0 4px 4px;"></div>
-                                
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.primary.title">Primary Node</h3>
@@ -281,11 +278,9 @@
                             </div>
                         </div>
 
-                        <!-- Laptop Node: Darker Silver Metallic -->
-                        <div class="node-card laptop-style" style="background: linear-gradient(135deg, #9ca3af 0%, #d1d5db 100%); border-radius: 12px; overflow: hidden; border: 1px solid #6b7280; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); color: #1f2937;">
-                            <!-- Metallic Hinge/Header -->
+                        <!-- Laptop Node: silver metallic chassis -->
+                        <div class="node-card laptop-style" style="background: linear-gradient(135deg, #9ca3af 0%, #d1d5db 100%); border-radius: 12px; overflow: hidden; border: 1px solid #6b7280; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
                             <div style="height: 20px; background: linear-gradient(to bottom, #6b7280, #9ca3af); border-bottom: 1px solid #4b5563;"></div>
-                            
                             <div style="padding: 1.5rem;">
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
@@ -306,58 +301,96 @@
                             </div>
                         </div>
 
-                        <!-- Oracle Cloud VPS: Cloud/Gradient Style -->
-                        <div class="node-card cloud-style" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); border-radius: 12px; overflow: hidden; border: 1px solid #3b82f6; position: relative; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
-                            <!-- Cloud header with glow -->
-                            <div style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6); background-size: 200% 100%; animation: shimmer 3s linear infinite;"></div>
-                            <style>@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }</style>
-                            
-                            <div style="padding: 1.5rem;">
+                        <!-- Oracle Cloud VPS: Oracle red, 1U server front panel -->
+                        <div class="node-card cloud-style" style="background: #141414; border-radius: 12px; overflow: hidden; border: 1px solid #3a1010; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <div style="height: 6px; background: #c74634; border-bottom: 1px solid #7f1d1d;"></div>
+                            <div style="height: 20px; background: #0e0e0e; border-bottom: 1px solid #2a1010; display: flex; align-items: center; padding: 0 1rem; gap: 8px;">
+                                <div style="width: 9px; height: 9px; background: #c74634; border-radius: 50%;"></div>
+                                <div style="width: 6px; height: 6px; background: #d97706; border-radius: 50%;"></div>
+                                <div style="width: 6px; height: 6px; background: #16a34a; border-radius: 50%;"></div>
+                                <div style="margin-left: auto; font-family: monospace; font-size: 9px; color: #b06060; letter-spacing: 1px;">ORACLE AMPERE A1</div>
+                            </div>
+                            <div style="padding: 1.5rem; position: relative;">
+                                <div style="position: absolute; top: 0; right: 1.5rem; width: 40px; height: 4px; background: #c74634; border-radius: 0 0 4px 4px;"></div>
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
                                         <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.gateway.title">Cloud Gateway</h3>
-                                        <div class="node-spec" style="color: #60a5fa; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.gateway.spec">arm64 / oracle-ampere</div>
+                                        <div class="node-spec" style="color: #f87171; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.gateway.spec">arm64 / oracle-ampere</div>
                                     </div>
                                     <div style="text-align: right;">
-                                        <div class="node-detail" style="color: #94a3b8;">
+                                        <div class="node-detail" style="color: #888;">
                                             <div data-i18n="project.homelab.nodes.gateway.cores">4 cores</div>
-                                            <div style="font-weight: 600; color: #60a5fa;" data-i18n="project.homelab.nodes.gateway.ram">24GB RAM</div>
+                                            <div style="font-weight: 600; color: #f87171;" data-i18n="project.homelab.nodes.gateway.ram">24GB RAM</div>
                                         </div>
-                                        <div class="score-badge" style="margin-top: 0.5rem; background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 2px 8px; border-radius: 10px; display: inline-block;" data-i18n="project.homelab.nodes.gateway.badge">FREE TIER</div>
+                                        <div class="score-badge" style="margin-top: 0.5rem; background: #0a1a0a; color: #22c55e; border: 1px solid #166534; padding: 2px 8px; border-radius: 10px; display: inline-block;" data-i18n="project.homelab.nodes.gateway.badge">FREE TIER</div>
                                     </div>
                                 </div>
-                                <p class="node-card p" style="color: #94a3b8; margin: 0;" data-i18n="project.homelab.nodes.gateway.body">
+                                <p class="node-card p" style="color: #888; margin: 0;" data-i18n="project.homelab.nodes.gateway.body">
                                     The internet-facing edge. Terminates TLS, filters traffic with CrowdSec, exposes a VPN-only gateway API, and carries ingress over WireGuard.
                                 </p>
                             </div>
-                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; color: #64748b;">
+                            <div class="node-tags" style="background: #0e0e0e; padding: 0.75rem 1.5rem; border-top: 1px solid #2a1010; display: flex; gap: 1rem; color: #555;">
                                 <span data-i18n="project.homelab.nodes.gateway.tag.gateway">[GATEWAY]</span> <span data-i18n="project.homelab.nodes.gateway.tag.caddy">[CADDY]</span> <span data-i18n="project.homelab.nodes.gateway.tag.wireguard">[WIREGUARD]</span>
                             </div>
                         </div>
 
-                        <div class="node-card storage-style" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border-radius: 12px; overflow: hidden; border: 1px solid #374151; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
-                            <div style="height: 6px; background: linear-gradient(90deg, #22c55e, #0ea5e9, #22c55e);"></div>
-
-                            <div style="padding: 1.5rem;">
+                        <!-- Storage Node: custom 3D-printed royal blue PLA Mini-ITX case -->
+                        <div class="node-card storage-style" style="background: #0d1f3c; border-radius: 12px; overflow: hidden; border: 1px solid #1e40af; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <div style="height: 12px; width: 100%; background: repeating-linear-gradient(180deg, #0d1f3c 0px, #0d1f3c 3px, #091628 3px, #091628 6px); border-bottom: 1px solid #1e3a8a;"></div>
+                            <div style="padding: 1.5rem; position: relative;">
+                                <div style="position: absolute; top: 0; right: 1.5rem; width: 9px; height: 9px; background: #2563eb; border-radius: 50%;"></div>
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
                                     <div>
-                                        <h3 style="color: #f9fafb; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.storage.title">Storage Node</h3>
-                                        <div class="node-spec" style="color: #86efac; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.storage.spec">x86_64 / truenas-scale</div>
+                                        <h3 style="color: #f0f9ff; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.storage.title">Storage Node</h3>
+                                        <div class="node-spec" style="color: #60a5fa; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.storage.spec">x86_64 / truenas-scale</div>
                                     </div>
-                                    <div style="text-align: right; color: #cbd5e1;">
+                                    <div class="node-detail" style="text-align: right; color: #94a3b8;">
                                         <div data-i18n="project.homelab.nodes.storage.cores">2 x 16TB mirror</div>
-                                        <div style="font-weight: 600; color: #86efac;" data-i18n="project.homelab.nodes.storage.ram">32GB RAM</div>
+                                        <div style="font-weight: 600; color: #60a5fa;" data-i18n="project.homelab.nodes.storage.ram">32GB RAM</div>
                                     </div>
                                 </div>
-                                <p class="node-card p" style="color: #cbd5e1; margin: 0;" data-i18n="project.homelab.nodes.storage.body">
+                                <p class="node-card p" style="color: #94a3b8; margin: 0;" data-i18n="project.homelab.nodes.storage.body">
                                     The storage plane. Hosts ZFS pools, the media stack, photo backup, file sync, music services, and hot/cold S3-compatible object storage.
                                 </p>
                             </div>
-                            <div class="node-tags" style="background: rgba(0,0,0,0.25); padding: 0.75rem 1.5rem; border-top: 1px solid #374151; display: flex; gap: 1rem; color: #9ca3af;">
+                            <div class="node-tags" style="background: #071020; padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a8a; display: flex; gap: 1rem; color: #475569;">
                                 <span data-i18n="project.homelab.nodes.storage.tag.storage">[STORAGE]</span> <span data-i18n="project.homelab.nodes.storage.tag.zfs">[ZFS]</span> <span data-i18n="project.homelab.nodes.storage.tag.object">[OBJECT]</span>
                             </div>
                         </div>
-                        
+
+                        <!-- Network Switch: TP-Link TL-SG608E — dark matte plastic -->
+                        <div class="node-card switch-style" style="background: #181e1e; border-radius: 12px; overflow: hidden; border: 1px solid #222e2e; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <div style="height: 22px; background: #0e1616; border-bottom: 1px solid #1a2828; display: flex; align-items: center; padding: 0 1rem; gap: 7px;">
+                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
+                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
+                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
+                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
+                                <div style="width: 8px; height: 8px; background: #0e1616; border-radius: 2px; border: 1px solid #1f2e2e;"></div>
+                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
+                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
+                                <div style="width: 8px; height: 8px; background: #d97706; border-radius: 2px;"></div>
+                                <div style="margin-left: auto; font-family: monospace; font-size: 9px; color: #4a7a74; letter-spacing: 1px;">TL-SG608E</div>
+                            </div>
+                            <div style="padding: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <h3 style="color: #e2f8f4; margin-top: 0; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.5px;" data-i18n="project.homelab.nodes.switch.title">Network Switch</h3>
+                                        <div class="node-spec" style="color: #2dd4bf; margin-bottom: 0.75rem;" data-i18n="project.homelab.nodes.switch.spec">TP-Link TL-SG608E / 8-Port Gigabit</div>
+                                    </div>
+                                    <div class="node-detail" style="text-align: right; color: #94a3b8;">
+                                        <div data-i18n="project.homelab.nodes.switch.ports">8 ports / 1 Gbps</div>
+                                        <div style="font-weight: 600; color: #2dd4bf;" data-i18n="project.homelab.nodes.switch.type">Easy Smart Managed</div>
+                                    </div>
+                                </div>
+                                <p class="node-card p" style="color: #94a3b8; margin: 0;" data-i18n="project.homelab.nodes.switch.body">
+                                    Connects the home server, compute node, and NAS on the local network. Managed switch with QoS and IGMP snooping — sits in the rack and links all on-site nodes to the home router.
+                                </p>
+                            </div>
+                            <div class="node-tags" style="background: #0e1616; padding: 0.75rem 1.5rem; border-top: 1px solid #1a2828; display: flex; gap: 1rem; color: #4b5563;">
+                                <span data-i18n="project.homelab.nodes.switch.tag.managed">[MANAGED]</span> <span data-i18n="project.homelab.nodes.switch.tag.gigabit">[GIGABIT]</span> <span data-i18n="project.homelab.nodes.switch.tag.ports">[8-PORT]</span>
+                            </div>
+                        </div>
+
                     </div>
 
                     <p style="margin-top: 1rem; color: var(--text-secondary);" data-i18n="project.homelab.hardware.body">All on-site hardware is organized around the same real-world constraints that shaped the first version of the lab: quiet operation, low idle power, minimal cable mess, and hardware that earns its spot in the rack by solving an actual problem.</p>
