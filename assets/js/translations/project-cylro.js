@@ -28,18 +28,18 @@
             fr: "Plateforme"
         },
         "project.cylro.hero.accent.mobile.line1": {
-            en: "Website",
-            pt: "Web",
-            lu: "Website",
-            de: "Website",
-            fr: "Web"
+            en: "Website Operations",
+            pt: "Operações web",
+            lu: "Website Operations",
+            de: "Website Operations",
+            fr: "Opérations web"
         },
         "project.cylro.hero.accent.mobile.line2": {
-            en: "Ops",
-            pt: "Ops",
-            lu: "Ops",
-            de: "Ops",
-            fr: "Ops"
+            en: "Platform",
+            pt: "Plataforma",
+            lu: "Plattform",
+            de: "Plattform",
+            fr: "Plateforme"
         },
         "project.cylro.hero.subtitle": {
             en: "Many websites, one secure Space. Built in Luxembourg for EU teams.",

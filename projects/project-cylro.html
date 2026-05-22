@@ -116,6 +116,11 @@
 
         /* Mobile: adjust logo size and ensure text wraps naturally */
         @media (max-width: 768px) {
+            .cylro-title-inline {
+                display: inline;
+                max-width: 100%;
+            }
+
             .cylro-logo-inline {
                 width: 95px;
                 height: 60px;
@@ -132,8 +137,15 @@
             }
 
             .cylro-title-wrapper h1 {
-                font-size: clamp(1.75rem, 5vw + 0.75rem, 2.25rem);
+                font-size: clamp(1.95rem, 5.5vw + 0.85rem, 2.45rem);
                 line-height: 1.1;
+            }
+
+            .cylro-title-inline .title-accent {
+                display: inline;
+                max-width: 100%;
+                font-size: inherit;
+                line-height: inherit;
             }
 
             /* Show mobile text, hide desktop text */
@@ -179,8 +191,8 @@
                         <span class="title-accent">
                             <span class="cylro-title-line1" data-i18n="project.cylro.hero.accent.line1">Website Operations</span>
                             <span class="cylro-title-line2" data-i18n="project.cylro.hero.accent.line2"> Platform</span>
-                            <span class="cylro-title-mobile-line1" data-i18n="project.cylro.hero.accent.mobile.line1" style="display: none;">Website</span>
-                            <span class="cylro-title-mobile-line2" data-i18n="project.cylro.hero.accent.mobile.line2" style="display: none;">Ops</span>
+                            <span class="cylro-title-mobile-line1" data-i18n="project.cylro.hero.accent.mobile.line1" style="display: none;">Website Operations</span>
+                            <span class="cylro-title-mobile-line2" data-i18n="project.cylro.hero.accent.mobile.line2" style="display: none;">Platform</span>
                         </span>
                     </h1>
                 </div>
