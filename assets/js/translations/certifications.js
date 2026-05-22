@@ -770,6 +770,50 @@
             fr: "Modèles d'IA d'Entreprise"
         },
 
+        // AWS Architecture Workshop
+        "formation.awsarchitecture.name": {
+            en: "AWS Architecture Workshop",
+            pt: "Workshop de Arquitetura AWS",
+            lu: "AWS Architektur Workshop",
+            de: "AWS Architektur Workshop",
+            fr: "Workshop d'Architecture AWS"
+        },
+        "formation.awsarchitecture.description": {
+            en: "Attended a 28-hour AWS Architecture workshop led by Arnaud Charlier from ARHS Group. The workshop introduced AWS, its core cloud services, architecture concepts, and practical labs for working with AWS services, as part of my BTS Cloud Computing program at LGK.",
+            pt: "Participei num workshop de Arquitetura AWS de 28 horas conduzido por Arnaud Charlier da ARHS Group. O workshop introduziu a AWS, os seus principais serviços cloud, conceitos de arquitetura e laboratórios práticos para trabalhar com serviços AWS, como parte do meu programa BTS Cloud Computing no LGK.",
+            lu: "Un engem 28-Stonnen AWS Architektur Workshop deelgeholl, geleed vum Arnaud Charlier vun ARHS Group. De Workshop huet AWS, hir wichtegst Cloud-Servicer, Architekturkonzepter a praktesch Labs fir mat AWS-Servicer ze schaffen agefouert, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
+            de: "An einem 28-stündigen AWS Architektur Workshop teilgenommen, geleitet von Arnaud Charlier von ARHS Group. Der Workshop führte in AWS, zentrale Cloud-Dienste, Architekturkonzepte und praktische Labs zur Arbeit mit AWS-Diensten ein, im Rahmen meines BTS-Cloud-Computing-Programms am LGK.",
+            fr: "Participation à un workshop d'Architecture AWS de 28 heures animé par Arnaud Charlier d'ARHS Group. Le workshop a introduit AWS, ses principaux services cloud, des concepts d'architecture et des labs pratiques pour travailler avec les services AWS, dans le cadre de mon programme BTS Cloud Computing au LGK."
+        },
+        "formation.awsarchitecture.skills.architecture": {
+            en: "AWS Architecture",
+            pt: "Arquitetura AWS",
+            lu: "AWS Architektur",
+            de: "AWS Architektur",
+            fr: "Architecture AWS"
+        },
+        "formation.awsarchitecture.skills.services": {
+            en: "AWS Services",
+            pt: "Serviços AWS",
+            lu: "AWS Servicer",
+            de: "AWS-Dienste",
+            fr: "Services AWS"
+        },
+        "formation.awsarchitecture.skills.fundamentals": {
+            en: "Cloud Fundamentals",
+            pt: "Fundamentos de Cloud",
+            lu: "Cloud Grondlagen",
+            de: "Cloud-Grundlagen",
+            fr: "Fondamentaux Cloud"
+        },
+        "formation.awsarchitecture.skills.labs": {
+            en: "Hands-on Labs",
+            pt: "Laboratórios Práticos",
+            lu: "Praktesch Labs",
+            de: "Praktische Labs",
+            fr: "Labs Pratiques"
+        },
+
         // Luxembourg Army Visit
         "formation.luxembourgarmy.name": {
             en: "Visit to the Luxembourg Army",

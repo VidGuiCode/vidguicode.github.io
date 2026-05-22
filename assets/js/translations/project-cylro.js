@@ -7,46 +7,46 @@
     'use strict';
     const extra = {
         "project.cylro.hero.accent": {
-            en: "The Agency Operating System",
-            pt: "O Sistema Operativo para Agências",
-            lu: "D'Agentur-Betribssystem",
-            de: "Das Betriebssystem für Agenturen",
-            fr: "Le Le système d'exploitation pour agences"
+            en: "Website Operations Platform",
+            pt: "Plataforma de operações web",
+            lu: "Website-Operations-Plattform",
+            de: "Website-Operations-Plattform",
+            fr: "Plateforme d'opérations web"
         },
         "project.cylro.hero.accent.line1": {
-            en: "The Agency",
-            pt: "O Sistema Operativo",
-            lu: "D'Agentur",
-            de: "Das Betriebssystem",
-            fr: "Le système d'exploitation"
+            en: "Website Operations",
+            pt: "Operações web",
+            lu: "Website Operations",
+            de: "Website Operations",
+            fr: "Opérations web"
         },
         "project.cylro.hero.accent.line2": {
-            en: "Operating System",
-            pt: "para Agências",
-            lu: "Betribssystem",
-            de: "für Agenturen",
-            fr: "pour agences"
-        },
-        "project.cylro.hero.accent.mobile.line1": {
             en: "Platform",
             pt: "Plataforma",
             lu: "Plattform",
             de: "Plattform",
             fr: "Plateforme"
         },
+        "project.cylro.hero.accent.mobile.line1": {
+            en: "Website",
+            pt: "Web",
+            lu: "Website",
+            de: "Website",
+            fr: "Web"
+        },
         "project.cylro.hero.accent.mobile.line2": {
-            en: "for Agencies",
-            pt: "para Agências",
-            lu: "fir Agencen",
-            de: "für Agenturen",
-            fr: "pour Agences"
+            en: "Ops",
+            pt: "Ops",
+            lu: "Ops",
+            de: "Ops",
+            fr: "Ops"
         },
         "project.cylro.hero.subtitle": {
-            en: "One workspace for all your client websites. Built in Luxembourg, hosted in Europe.",
-            pt: "Um workspace para todos os websites dos teus clientes. Construído no Luxemburgo, alojado na Europa.",
-            lu: "Ee Workspace fir all deng Client Websäiten. Gebaut zu Lëtzebuerg, gehost an Europa.",
-            de: "Ein Workspace für alle Kunden-Websites. In Luxemburg gebaut, in Europa gehostet.",
-            fr: "Un workspace pour tous les sites de vos clients. Construit au Luxembourg, hébergé en Europe."
+            en: "Many websites, one secure Space. Built in Luxembourg for EU teams.",
+            pt: "Muitos websites, um Space seguro. Construído no Luxemburgo para equipas da UE.",
+            lu: "Vill Websäiten, ee séchere Space. Zu Lëtzebuerg fir EU-Teams gebaut.",
+            de: "Viele Websites, ein sicherer Space. In Luxemburg für EU-Teams gebaut.",
+            fr: "De nombreux sites, un Space sécurisé. Construit au Luxembourg pour les équipes européennes."
         },
         "project.cylro.section.idea.title": {
             en: "The Idea",
@@ -56,18 +56,18 @@
             fr: "L’idée"
         },
         "project.cylro.section.idea.p1": {
-            en: "Cylro is a platform I'm co-founding with a partner. It's built for agencies, freelancers, and teams who manage multiple client websites. We think of it as an agency operating system, not just another CMS. The goal is to run many websites predictably, securely, and at scale.",
-            pt: "Cylro é uma plataforma que estou a cofundar com um parceiro. É feita para agências, freelancers e equipas que gerem vários websites de clientes. Vemos isto como um sistema operativo para agências, não apenas mais um CMS. O objetivo é operar muitos websites de forma previsível, segura e escalável.",
-            lu: "Cylro ass eng Plattform déi ech zesumme mat engem Partner matgrënnen. Si ass fir Agencen, Freelancer an Teams déi méi Client Websäite verwalten. Mir gesinn et als en Agentur-Betribssystem, net just nach en CMS. D'Zil ass vill Websäiten viraussiichtlech, sécher a skaléierbar ze bedreiwen.",
-            de: "Cylro ist eine Plattform, die ich gemeinsam mit einem Partner mitgründe. Sie ist für Agenturen, Freelancer und Teams gedacht, die mehrere Kunden-Websites verwalten. Wir sehen es als ein Betriebssystem für Agenturen – nicht nur als ein weiteres CMS. Das Ziel: viele Websites planbar, sicher und skalierbar betreiben.",
-            fr: "Cylro est une plateforme que je cofonde avec un partenaire. Elle est conçue pour les agences, freelances et équipes qui gèrent plusieurs sites clients. Nous la voyons comme un système d’exploitation pour agences, pas juste un CMS de plus. L’objectif est d’exploiter de nombreux sites de manière prévisible, sécurisée et scalable."
+            en: "Cylro is a platform I'm co-founding with a partner. It's built for EU agencies, freelancers, developers, and businesses that manage many websites across clients, brands, teams, divisions, campaigns, or locations. The goal is to make website operations feel controlled instead of fragmented.",
+            pt: "O Cylro é uma plataforma que estou a cofundar com um parceiro. É feita para agências, freelancers, developers e empresas da UE que gerem muitos websites para clientes, marcas, equipas, divisões, campanhas ou localizações. O objetivo é fazer as operações de websites parecerem controladas em vez de fragmentadas.",
+            lu: "Cylro ass eng Plattform déi ech zesumme mat engem Partner matgrënnen. Si ass fir EU-Agencen, Freelancer, Developer an Entreprisen déi vill Websäiten iwwer Clienten, Marken, Teams, Divisiounen, Campagnen oder Standuerter verwalten. D'Zil ass Website Operations kontrolléiert amplaz fragmentéiert ze maachen.",
+            de: "Cylro ist eine Plattform, die ich gemeinsam mit einem Partner mitgründe. Sie ist für EU-Agenturen, Freelancer, Entwickler und Unternehmen gedacht, die viele Websites für Kunden, Marken, Teams, Abteilungen, Kampagnen oder Standorte betreiben. Das Ziel ist, Website Operations kontrolliert statt fragmentiert wirken zu lassen.",
+            fr: "Cylro est une plateforme que je cofonde avec un partenaire. Elle est conçue pour les agences, freelances, développeurs et entreprises européennes qui gèrent de nombreux sites pour des clients, marques, équipes, divisions, campagnes ou lieux. L'objectif est de rendre les opérations web contrôlées plutôt que fragmentées."
         },
         "project.cylro.section.idea.p2": {
-            en: "Instead of stitching together a CMS, hosting, plugins, security tools, backups, and dashboards from different places, Cylro brings all of that into one integrated EU-based platform.",
-            pt: "Em vez de juntar um CMS, hosting, plugins, ferramentas de segurança, backups e dashboards vindos de vários sítios, o Cylro junta tudo numa única plataforma integrada baseada na UE.",
-            lu: "Amplaz e CMS, Hosting, Plugins, Sécherheets-Tools, Backups an Dashboards aus verschiddene Plazen zesummen ze stécken, bréngt Cylro dat alles an eng eenzeg integréiert EU-baséiert Plattform.",
-            de: "Statt CMS, Hosting, Plugins, Security-Tools, Backups und Dashboards aus verschiedenen Quellen zusammenzustückeln, bündelt Cylro alles in einer integrierten, EU-basierten Plattform.",
-            fr: "Au lieu d’assembler un CMS, de l’hébergement, des plugins, des outils de sécurité, des sauvegardes et des tableaux de bord venant de partout, Cylro réunit tout dans une plateforme intégrée basée dans l’UE."
+            en: "Instead of spreading CMS, hosting, domains, SEO, publishing, rollback, access control, and AI help across separate tools, Cylro brings building and operating websites into one secure Space.",
+            pt: "Em vez de espalhar CMS, hosting, domínios, SEO, publicação, rollback, controlo de acesso e ajuda de IA por ferramentas separadas, o Cylro junta construção e operação de websites num Space seguro.",
+            lu: "Amplaz CMS, Hosting, Domainer, SEO, Publishing, Rollback, Access Control an AI Hëllef iwwer separat Tools ze verdeelen, bréngt Cylro Websäite bauen an operéieren an ee séchere Space.",
+            de: "Statt CMS, Hosting, Domains, SEO, Publishing, Rollback, Zugriffskontrolle und KI-Hilfe über getrennte Tools zu verteilen, bringt Cylro Website-Bau und Betrieb in einen sicheren Space.",
+            fr: "Au lieu de disperser CMS, hébergement, domaines, SEO, publication, rollback, contrôle d'accès et aide IA entre plusieurs outils, Cylro réunit la construction et l'exploitation des sites dans un Space sécurisé."
         },
         "project.cylro.section.idea.p3": {
             en: "We started researching the idea in June 2025, during the final months of my Computer Technician diploma at Lycée Guillaume Kroll. That time helped us shape the vision and figure out the architecture we'd need. Development kicked off in August 2025, and we've been building steadily since then.",
@@ -77,11 +77,11 @@
             fr: "Nous avons commencé à explorer l’idée en juin 2025, pendant les derniers mois de mon diplôme de Technicien informatique au Lycée Guillaume Kroll. Cette période nous a aidé à cadrer la vision et l’architecture nécessaire. Le développement a démarré en août 2025 et, depuis, nous avançons régulièrement."
         },
         "project.cylro.section.idea.p4": {
-            en: "The platform includes a visual builder (we call it the Studio), a CMS core, and content models. We're designing the API with headless use in mind, though full headless workflows will come after the first beta.",
-            pt: "A plataforma inclui um construtor visual (chamamos-lhe Studio), um núcleo de CMS e modelos de conteúdo. Estamos a desenhar a API a pensar em uso headless, embora os workflows totalmente headless venham depois da primeira beta.",
-            lu: "D'Plattform enthält en visuelle Builder (mir nennen en de Studio), en CMS Core an Content Modeller. Mir designen d'API mat Headless am Kapp, mee voll Headless Workflows kommen no der éischter Beta.",
-            de: "Die Plattform umfasst einen visuellen Builder (den wir Studio nennen), einen CMS-Core und Content-Modelle. Wir entwerfen die API mit Blick auf Headless-Nutzung, auch wenn vollständige Headless-Workflows erst nach der ersten Beta kommen.",
-            fr: "La plateforme inclut un constructeur visuel (le Studio), un noyau CMS et des modèles de contenu. Nous concevons l’API en pensant à l’usage headless, même si des workflows headless complets viendront après la première bêta."
+            en: "The platform combines Studio for page building with Website Management for domains, SEO, publishing, rollback, modules, and access. Public API access is planned for the broader release.",
+            pt: "A plataforma combina o Studio para construir páginas com Website Management para domínios, SEO, publicação, rollback, módulos e acessos. O acesso público à API está planeado para uma release mais ampla.",
+            lu: "D'Plattform kombinéiert Studio fir Säiten ze bauen mat Website Management fir Domainer, SEO, Publishing, Rollback, Moduler an Access. Ëffentlechen API-Zougang ass fir eng méi breet Release geplangt.",
+            de: "Die Plattform kombiniert Studio für den Seitenbau mit Website Management für Domains, SEO, Publishing, Rollback, Module und Zugriff. Öffentlicher API-Zugang ist für den breiteren Release geplant.",
+            fr: "La plateforme combine Studio pour construire les pages avec Website Management pour les domaines, le SEO, la publication, le rollback, les modules et les accès. L'accès API public est prévu pour une version plus large."
         },
         "project.cylro.cards.spaces.title": {
             en: "Spaces + Multi-tenancy",
@@ -105,18 +105,18 @@
             fr: "Isolés"
         },
         "project.cylro.cards.spaces.detail2": {
-            en: "Workspaces",
-            pt: "Workspaces",
-            lu: "Workspaces",
-            de: "Workspaces",
-            fr: "Workspaces"
+            en: "Websites",
+            pt: "Websites",
+            lu: "Websäiten",
+            de: "Websites",
+            fr: "Sites web"
         },
         "project.cylro.cards.spaces.body": {
-            en: "Each Space keeps client data completely separate. Simple roles control who can do what.",
-            pt: "Cada Space mantém os dados dos clientes totalmente separados. Papéis simples controlam quem pode fazer o quê.",
-            lu: "All Space hält Client Daten komplett getrennt. Einfach Rollen kontrolléieren wien wat maache kann.",
-            de: "Jeder Space hält Kundendaten vollständig getrennt. Einfache Rollen steuern, wer was tun darf.",
-            fr: "Chaque Space garde les données des clients totalement séparées. Des rôles simples contrôlent qui peut faire quoi."
+            en: "One Space can run many client, brand, division, campaign, or location websites while keeping ownership and access clear.",
+            pt: "Um Space pode gerir muitos websites de clientes, marcas, divisões, campanhas ou localizações, mantendo ownership e acessos claros.",
+            lu: "Ee Space ka vill Client-, Marken-, Divisiouns-, Campagne- oder Location-Websäite bedreiwen an dobäi Ownership an Access kloer halen.",
+            de: "Ein Space kann viele Kunden-, Marken-, Abteilungs-, Kampagnen- oder Standort-Websites betreiben und dabei Ownership und Zugriff klar halten.",
+            fr: "Un Space peut gérer de nombreux sites clients, marques, divisions, campagnes ou lieux, tout en gardant la propriété et les accès clairs."
         },
         "project.cylro.cards.euInfra.title": {
             en: "EU Infrastructure by Design",
@@ -126,11 +126,11 @@
             fr: "Infrastructure UE par conception"
         },
         "project.cylro.cards.euInfra.spec": {
-            en: "Luxembourg + Hetzner (planned)",
-            pt: "Luxemburgo + Hetzner (planeado)",
-            lu: "Lëtzebuerg + Hetzner (geplangt)",
-            de: "Luxemburg + Hetzner (geplant)",
-            fr: "Luxembourg + Hetzner (prévu)"
+            en: "Luxembourg + European providers",
+            pt: "Luxemburgo + fornecedores europeus",
+            lu: "Lëtzebuerg + europäesch Provider",
+            de: "Luxemburg + europäische Anbieter",
+            fr: "Luxembourg + fournisseurs européens"
         },
         "project.cylro.cards.euInfra.detail1": {
             en: "EU",
@@ -140,18 +140,18 @@
             fr: "UE"
         },
         "project.cylro.cards.euInfra.detail2": {
-            en: "Planned",
-            pt: "Planeado",
-            lu: "Geplangt",
-            de: "Geplant",
-            fr: "Prévu"
+            en: "Managed",
+            pt: "Gerido",
+            lu: "Gereet",
+            de: "Gemanagt",
+            fr: "Géré"
         },
         "project.cylro.cards.euInfra.body": {
-            en: "Planning to host on Hetzner (Germany) so data and infrastructure stay in Europe.",
-            pt: "Planeamos alojar na Hetzner (Alemanha) para que os dados e a infraestrutura fiquem na Europa.",
-            lu: "Mir plangen op Hetzner (Däitschland) ze hosten, fir datt Daten an Infrastruktur an Europa bleiwen.",
-            de: "Geplant ist Hosting bei Hetzner (Deutschland), damit Daten und Infrastruktur in Europa bleiben.",
-            fr: "Nous prévoyons d’héberger chez Hetzner (Allemagne) afin que les données et l’infrastructure restent en Europe."
+            en: "Core infrastructure runs on Hetzner in Germany, with Infomaniak for email, Mistral for AI, and Mollie for payments.",
+            pt: "A infraestrutura principal corre na Hetzner na Alemanha, com Infomaniak para email, Mistral para IA e Mollie para pagamentos.",
+            lu: "D'Haaptinfrastruktur leeft op Hetzner an Däitschland, mat Infomaniak fir E-Mail, Mistral fir AI a Mollie fir Bezuelungen.",
+            de: "Die Kerninfrastruktur läuft bei Hetzner in Deutschland, mit Infomaniak für E-Mail, Mistral für KI und Mollie für Zahlungen.",
+            fr: "L'infrastructure principale tourne chez Hetzner en Allemagne, avec Infomaniak pour l'email, Mistral pour l'IA et Mollie pour les paiements."
         },
         "project.cylro.cards.studioPublishing.title": {
             en: "Studio + Versioned Publishing",
@@ -182,11 +182,11 @@
             fr: "En sécurité"
         },
         "project.cylro.cards.studioPublishing.body": {
-            en: "Websites only change when explicitly published. Versions are frozen per site, and failed publishes never go live.",
-            pt: "Os websites só mudam quando são publicados explicitamente. As versões ficam congeladas por site e publicações falhadas nunca entram em produção.",
-            lu: "Websäite änneren sech just wann se explizit publizéiert ginn. Versiounen si pro Site gefruer, an feelgeschloe Publikatiounen ginn ni live.",
-            de: "Websites ändern sich nur bei expliziter Veröffentlichung. Versionen sind pro Site eingefroren, und fehlgeschlagene Veröffentlichungen gehen nie live.",
-            fr: "Les sites ne changent que lors d’une publication explicite. Les versions sont figées par site, et les publications échouées ne passent jamais en production."
+            en: "Published sites are immutable snapshots. Changes are tested first, published intentionally, and rolled back automatically if something goes wrong.",
+            pt: "Sites publicados são snapshots imutáveis. As alterações são testadas primeiro, publicadas de propósito e revertidas automaticamente se algo correr mal.",
+            lu: "Publizéiert Websäite sinn immutable Snapshots. Ännerunge ginn als éischt getest, bewosst publizéiert an automatesch zeréckgesat wann eppes schif geet.",
+            de: "Veröffentlichte Websites sind immutable Snapshots. Änderungen werden zuerst getestet, bewusst veröffentlicht und automatisch zurückgerollt, wenn etwas schiefläuft.",
+            fr: "Les sites publiés sont des snapshots immuables. Les changements sont testés d'abord, publiés volontairement et annulés automatiquement si quelque chose tourne mal."
         },
         "project.cylro.cards.clientPortal.title": {
             en: "Client Portal Boundary",
@@ -217,11 +217,11 @@
             fr: "Restreint"
         },
         "project.cylro.cards.clientPortal.body": {
-            en: "Clients get a restricted portal for their website only. They can edit content but can't touch Studio, domains, or system settings.",
-            pt: "Os clientes têm um portal restrito apenas para o seu website. Podem editar conteúdo, mas não mexer no Studio, domínios ou configurações do sistema.",
-            lu: "Clienten kréien e restriktéierte Portal just fir hir Websäit. Si kënnen Inhalt änneren, mee net un de Studio, Domainer oder System-Astellungen kommen.",
-            de: "Kunden erhalten ein eingeschränktes Portal nur für ihre Website. Sie können Inhalte bearbeiten, aber nicht Studio, Domains oder Systemeinstellungen anfassen.",
-            fr: "Les clients disposent d’un portail restreint uniquement pour leur site. Ils peuvent éditer le contenu, mais pas toucher au Studio, aux domaines ou aux réglages système."
+            en: "Clients get a scoped, white-labeled portal for their website content while operators keep control of structure, publishing, domains, and risk.",
+            pt: "Clientes recebem um portal limitado e white-label para o conteúdo do seu website, enquanto operadores mantêm controlo da estrutura, publicação, domínios e risco.",
+            lu: "Clientë kréien e scoped, white-labeled Portal fir hiren Website-Content, wärend Operatoren d'Kontroll iwwer Struktur, Publishing, Domainer a Risiko behalen.",
+            de: "Kunden erhalten ein scoped, white-label Portal für ihre Website-Inhalte, während Betreiber Struktur, Publishing, Domains und Risiko kontrollieren.",
+            fr: "Les clients obtiennent un portail limité et white-label pour le contenu de leur site, tandis que les opérateurs gardent le contrôle de la structure, de la publication, des domaines et du risque."
         },
         "project.cylro.section.underTheHood.title": {
             en: "Under the Hood",
@@ -252,11 +252,11 @@
             fr: "Backend"
         },
         "project.cylro.section.underTheHood.backend.body": {
-            en: "On the backend we're running Node.js with Express.js. PostgreSQL 16 with pgvector powers the database and will handle AI features later, while Redis takes care of caching and sessions.",
-            pt: "No backend usamos Node.js com Express.js. PostgreSQL 16 com pgvector alimenta a base de dados e vai suportar funcionalidades de IA mais tarde, enquanto Redis trata do cache e das sessões.",
-            lu: "Am Backend lafe mir Node.js mat Express.js. PostgreSQL 16 mat pgvector bedreiwt d'Datebank a wäert spéider AI Features ënnerstëtzen, a Redis mécht Cache a Sessions.",
-            de: "Im Backend läuft Node.js mit Express.js. PostgreSQL 16 mit pgvector betreibt die Datenbank und wird später KI-Features unterstützen, während Redis Caching und Sessions übernimmt.",
-            fr: "Côté backend, nous utilisons Node.js avec Express.js. PostgreSQL 16 avec pgvector alimente la base de données et servira plus tard aux fonctionnalités IA, tandis que Redis gère le cache et les sessions."
+            en: "On the backend we're running Node.js with Express.js. PostgreSQL 16 with pgvector powers the database and AI context, while Redis takes care of caching and sessions.",
+            pt: "No backend usamos Node.js com Express.js. PostgreSQL 16 com pgvector alimenta a base de dados e o contexto de IA, enquanto Redis trata do cache e das sessões.",
+            lu: "Am Backend lafe mir Node.js mat Express.js. PostgreSQL 16 mat pgvector bedreiwt d'Datebank an den AI Kontext, a Redis mécht Cache a Sessions.",
+            de: "Im Backend läuft Node.js mit Express.js. PostgreSQL 16 mit pgvector betreibt die Datenbank und den KI-Kontext, während Redis Caching und Sessions übernimmt.",
+            fr: "Côté backend, nous utilisons Node.js avec Express.js. PostgreSQL 16 avec pgvector alimente la base de données et le contexte IA, tandis que Redis gère le cache et les sessions."
         },
         "project.cylro.section.underTheHood.auth.title": {
             en: "Auth",
@@ -273,18 +273,18 @@
             fr: "Nous utilisons Keycloak pour le SSO, mais il est derrière notre backend afin d’ajouter notre propre couche de protection. Les rôles restent simples pour l’instant : Owner, Admin, Editor et Client, appliqués par Space."
         },
         "project.cylro.section.underTheHood.ai.title": {
-            en: "AI (Planned)",
-            pt: "IA (Planeado)",
-            lu: "KI (Geplangt)",
-            de: "KI (Geplant)",
-            fr: "IA (Prévu)"
+            en: "Permission-Aware AI",
+            pt: "IA consciente das permissões",
+            lu: "Permission-aware AI",
+            de: "Permission-aware KI",
+            fr: "IA sensible aux permissions"
         },
         "project.cylro.section.underTheHood.ai.body": {
-            en: "For AI features we're planning to use Mistral since they're based in France. The goal is to help with things like drafting, rewriting, and SEO suggestions, all in context where you need them.",
-            pt: "Para funcionalidades de IA planeamos usar Mistral, já que estão sediados em França. O objetivo é ajudar com coisas como rascunhos, reescrita e sugestões de SEO, sempre no contexto certo.",
-            lu: "Fir AI Features plange mir Mistral ze benotzen, well si a Frankräich baséiert sinn. D'Zil ass bei Drafting, Rewriting an SEO Suggestioune ze hëllefen, alles am richtege Kontext.",
-            de: "Für KI-Features planen wir Mistral zu nutzen, da sie in Frankreich ansässig sind. Ziel ist Hilfe bei Entwürfen, Umschreiben und SEO-Vorschlägen – direkt im passenden Kontext.",
-            fr: "Pour les fonctionnalités IA, nous prévoyons d’utiliser Mistral puisqu’ils sont basés en France. L’objectif est d’aider pour les brouillons, la réécriture et des suggestions SEO, toujours dans le bon contexte."
+            en: "AI is embedded as assistance, not the product identity. It can help with SEO checks, content drafts, translations, launch readiness, and operational guidance while respecting each user's role and access scope.",
+            pt: "A IA é assistência integrada, não a identidade do produto. Pode ajudar com checks de SEO, rascunhos de conteúdo, traduções, prontidão de lançamento e orientação operacional, respeitando o papel e o escopo de acesso de cada utilizador.",
+            lu: "AI ass als Assistenz agebett, net als Produktidentitéit. Si kann mat SEO Checks, Content Drafts, Iwwersetzungen, Launch Readiness an operationeller Guidance hëllefen, wärend si d'Roll an den Access Scope vun all User respektéiert.",
+            de: "KI ist als Unterstützung eingebettet, nicht als Produktidentität. Sie kann bei SEO-Checks, Content-Entwürfen, Übersetzungen, Launch Readiness und operativer Guidance helfen und respektiert dabei Rolle und Zugriffsumfang jedes Nutzers.",
+            fr: "L'IA est une assistance intégrée, pas l'identité du produit. Elle peut aider avec les contrôles SEO, les brouillons de contenu, les traductions, la préparation au lancement et les conseils opérationnels tout en respectant le rôle et le périmètre d'accès de chaque utilisateur."
         },
         "project.cylro.section.underTheHood.infrastructure.title": {
             en: "Infrastructure",
@@ -294,11 +294,11 @@
             fr: "Infrastructure"
         },
         "project.cylro.section.underTheHood.infrastructure.body": {
-            en: "Development runs locally on Docker Compose with the full stack in containers. For production we're planning to use K3s with Caddy handling HTTPS. Billing will go through Mollie since they're EU-based, and storage is S3-compatible by design so we can easily switch providers.",
-            pt: "O desenvolvimento corre localmente em Docker Compose com a stack completa em contentores. Para produção planeamos usar K3s com Caddy a gerir HTTPS. A faturação será via Mollie (baseada na UE) e o storage é compatível com S3 por design para podermos trocar de fornecedor facilmente.",
-            lu: "D'Entwécklung leeft lokal op Docker Compose mat der ganzer Stack an Containeren. Fir Produktioun plange mir K3s mat Caddy fir HTTPS. Billing geet iwwer Mollie (EU-baséiert), an Storage ass S3-kompatibel by design fir einfach Provider ze wiesselen.",
-            de: "Die Entwicklung läuft lokal per Docker Compose mit dem kompletten Stack in Containern. Für die Produktion planen wir K3s, mit Caddy für HTTPS. Abrechnung läuft über Mollie (EU-basiert), und Storage ist bewusst S3-kompatibel, damit wir Provider leicht wechseln können.",
-            fr: "Le développement tourne localement avec Docker Compose et toute la stack en conteneurs. En production, nous prévoyons d’utiliser K3s avec Caddy pour le HTTPS. La facturation passera par Mollie (basé dans l’UE) et le stockage est compatible S3 par conception pour pouvoir changer de fournisseur facilement."
+            en: "Development runs locally on Docker Compose with the full stack in containers. The production direction is EU-managed infrastructure: Hetzner in Germany, Infomaniak in Switzerland for email operations, Mollie in the Netherlands for payments, Mistral in France for AI, and S3-compatible storage by design.",
+            pt: "O desenvolvimento corre localmente com Docker Compose e a stack completa em contentores. A direção de produção é infraestrutura europeia gerida: Hetzner na Alemanha, Infomaniak na Suíça para email, Mollie nos Países Baixos para pagamentos, Mistral em França para IA e armazenamento compatível com S3 por design.",
+            lu: "D'Entwécklung leeft lokal op Docker Compose mat der ganzer Stack a Containeren. D'Produktiounsrichtung ass EU-gereet Infrastruktur: Hetzner an Däitschland, Infomaniak an der Schwäiz fir E-Mail, Mollie an Holland fir Bezuelungen, Mistral a Frankräich fir AI an S3-kompatibele Storage by design.",
+            de: "Die Entwicklung läuft lokal mit Docker Compose und dem vollständigen Stack in Containern. Die Produktionsrichtung ist EU-gemanagte Infrastruktur: Hetzner in Deutschland, Infomaniak in der Schweiz für E-Mail, Mollie in den Niederlanden für Zahlungen, Mistral in Frankreich für KI und S3-kompatibler Storage by design.",
+            fr: "Le développement tourne localement avec Docker Compose et toute la stack en conteneurs. La direction production est une infrastructure européenne gérée : Hetzner en Allemagne, Infomaniak en Suisse pour l'email, Mollie aux Pays-Bas pour les paiements, Mistral en France pour l'IA et stockage compatible S3 par design."
         },
         "project.cylro.section.features.title": {
             en: "Features",
@@ -308,18 +308,18 @@
             fr: "Fonctionnalités"
         },
         "project.cylro.section.features.item1": {
-            en: "Visual drag-and-drop builder with responsive blocks",
-            pt: "Construtor visual de arrastar e largar com blocos responsivos",
-            lu: "Visuelle Drag-and-drop Builder mat responsiven Blocks",
-            de: "Visueller Drag-and-drop-Builder mit responsiven Blöcken",
-            fr: "Constructeur visuel en glisser-déposer avec blocs responsifs"
+            en: "Studio for building pages, content, and media",
+            pt: "Studio para construir páginas, conteúdo e media",
+            lu: "Studio fir Säiten, Content a Medien ze bauen",
+            de: "Studio zum Erstellen von Seiten, Inhalten und Medien",
+            fr: "Studio pour construire pages, contenus et médias"
         },
         "project.cylro.section.features.item2": {
-            en: "CMS with draft/publish, rollback, and SEO tools",
-            pt: "CMS com rascunho/publicação, rollback e ferramentas de SEO",
-            lu: "CMS mat Draft/Publish, Rollback an SEO Tools",
-            de: "CMS mit Entwurf/Veröffentlichung, Rollback und SEO-Tools",
-            fr: "CMS avec brouillon/publication, rollback et outils SEO"
+            en: "Website Management for domains, SEO, publishing, rollback, modules, and access",
+            pt: "Website Management para domínios, SEO, publicação, rollback, módulos e acessos",
+            lu: "Website Management fir Domainer, SEO, Publishing, Rollback, Moduler an Access",
+            de: "Website Management für Domains, SEO, Publishing, Rollback, Module und Zugriff",
+            fr: "Website Management pour domaines, SEO, publication, rollback, modules et accès"
         },
         "project.cylro.section.features.item3": {
             en: "Custom domains with automated SSL",
@@ -336,25 +336,25 @@
             fr: "Gestion des médias avec optimisation d’images"
         },
         "project.cylro.section.features.item5": {
-            en: "Built-in modules for pages, blog, and forms",
-            pt: "Módulos integrados para páginas, blog e formulários",
-            lu: "Agebaute Moduler fir Säiten, Blog a Formulairen",
-            de: "Integrierte Module für Seiten, Blog und Formulare",
-            fr: "Modules intégrés pour pages, blog et formulaires"
+            en: "Immutable published snapshots with approval-first changes",
+            pt: "Snapshots publicados imutáveis com alterações primeiro aprovadas",
+            lu: "Immutable publizéiert Snapshots mat approval-first Ännerungen",
+            de: "Immutable veröffentlichte Snapshots mit Approval-first Änderungen",
+            fr: "Snapshots publiés immuables avec changements soumis à approbation"
         },
         "project.cylro.section.features.item6": {
-            en: "Onboarding flows for Spaces and team invites",
-            pt: "Fluxos de onboarding para Spaces e convites de equipa",
-            lu: "Onboarding Flows fir Spaces an Team Invitatiounen",
-            de: "Onboarding-Flows für Spaces und Team-Einladungen",
-            fr: "Parcours d’onboarding pour les Spaces et invitations d’équipe"
+            en: "Scoped access for clients, teams, brands, divisions, and contributors",
+            pt: "Acesso limitado para clientes, equipas, marcas, divisões e contribuidores",
+            lu: "Scoped Access fir Clienten, Teams, Marken, Divisiounen a Contributeuren",
+            de: "Scoped Access für Kunden, Teams, Marken, Abteilungen und Beitragende",
+            fr: "Accès limité pour clients, équipes, marques, divisions et contributeurs"
         },
         "project.cylro.section.features.item7": {
-            en: "Real-time collaboration and AI tools (planned)",
-            pt: "Colaboração em tempo real e ferramentas de IA (planeado)",
-            lu: "Realtime Kollaboratioun an KI Tools (geplangt)",
-            de: "Echtzeit-Kollaboration und KI-Tools (geplant)",
-            fr: "Collaboration en temps réel et outils IA (prévu)"
+            en: "Permission-aware AI for SEO, drafting, translations, launch checks, and guidance",
+            pt: "IA consciente das permissões para SEO, rascunhos, traduções, checks de lançamento e orientação",
+            lu: "Permission-aware AI fir SEO, Drafting, Iwwersetzungen, Launch Checks a Guidance",
+            de: "Permission-aware KI für SEO, Entwürfe, Übersetzungen, Launch Checks und Guidance",
+            fr: "IA sensible aux permissions pour SEO, brouillons, traductions, checks de lancement et conseils"
         },
         "project.cylro.section.next.title": {
             en: "What's Next",
@@ -392,18 +392,18 @@
             fr: "Architecture cœur"
         },
         "project.cylro.next.core.body": {
-            en: "Building out Spaces, modules, Studio, and the publish pipeline. Making sure websites behave like stable infrastructure.",
-            pt: "A construir Spaces, módulos, Studio e o pipeline de publicação. Garantir que os websites se comportam como infraestrutura estável.",
-            lu: "Mir bauen Spaces, Moduler, Studio an d'Publish Pipeline aus. Dofir datt Websäite wéi stabil Infrastruktur funktionéieren.",
-            de: "Aufbau von Spaces, Modulen, Studio und der Publish-Pipeline. Damit Websites sich wie stabile Infrastruktur verhalten.",
-            fr: "Construction des Spaces, modules, du Studio et de la pipeline de publication. Objectif : que les sites se comportent comme une infrastructure stable."
+            en: "Finalizing Studio, Website Management, publishing, rollback, module foundations, and permission-aware AI assistance.",
+            pt: "A finalizar Studio, Website Management, publicação, rollback, bases de módulos e assistência de IA consciente das permissões.",
+            lu: "Studio, Website Management, Publishing, Rollback, Modul-Fondatiounen a permission-aware AI Assistenz finaliséieren.",
+            de: "Finalisierung von Studio, Website Management, Publishing, Rollback, Modul-Grundlagen und permission-aware KI-Unterstützung.",
+            fr: "Finalisation de Studio, Website Management, publication, rollback, bases des modules et assistance IA sensible aux permissions."
         },
         "project.cylro.next.beta.title": {
-            en: "Private Beta",
-            pt: "Beta Privada",
-            lu: "Privat Beta",
-            de: "Private Beta",
-            fr: "Beta privée"
+            en: "Private Alpha",
+            pt: "Alpha Privada",
+            lu: "Privat Alpha",
+            de: "Private Alpha",
+            fr: "Alpha privée"
         },
         "project.cylro.next.beta.spec": {
             en: "Cohort Access",
@@ -413,11 +413,11 @@
             fr: "Accès par cohorte"
         },
         "project.cylro.next.beta.body": {
-            en: "Testing with real users. Validating roles, content editing, client portal, and safe publishing.",
-            pt: "Testes com utilizadores reais. Validar papéis, edição de conteúdo, portal do cliente e publicação segura.",
-            lu: "Testen mat richtege Benotzer. Rollen, Content Editing, Client Portal an séchert Publishing validéieren.",
-            de: "Tests mit echten Nutzern. Rollen, Content-Editing, Kundenportal und sicheres Publishing validieren.",
-            fr: "Tests avec de vrais utilisateurs. Validation des rôles, de l’édition de contenu, du portail client et de la publication sécurisée."
+            en: "Onboarding selected agencies, freelancers, developers, and business website operators to refine multi-site operations and the developer experience.",
+            pt: "Onboarding de agências, freelancers, developers e operadores de websites empresariais selecionados para refinar operações multi-site e a experiência de developer.",
+            lu: "Ausgewielten Agencen, Freelancer, Developer a Business-Website-Operatoren onboarden, fir Multi-Site Operations an Developer Experience ze verfeineren.",
+            de: "Onboarding ausgewählter Agenturen, Freelancer, Entwickler und Business-Website-Betreiber, um Multi-Site Operations und Developer Experience zu verfeinern.",
+            fr: "Onboarding d'agences, freelances, développeurs et opérateurs de sites business sélectionnés pour affiner les opérations multi-sites et l'expérience développeur."
         },
         "project.cylro.next.hardening.title": {
             en: "Release Hardening",
@@ -434,11 +434,11 @@
             fr: "Échelle + fiabilité"
         },
         "project.cylro.next.hardening.body": {
-            en: "Hardening for production. Monitoring, scaling, and reliability so Spaces can grow without issues.",
-            pt: "Preparar para produção. Monitorização, escala e fiabilidade para que os Spaces cresçam sem problemas.",
-            lu: "Hardening fir Produktioun. Monitoring, Skaléierung a Zouverlässegkeet, fir datt Spaces ouni Problemer kënne wuessen.",
-            de: "Härtung für die Produktion. Monitoring, Skalierung und Zuverlässigkeit, damit Spaces ohne Probleme wachsen können.",
-            fr: "Renforcement pour la production : monitoring, montée en charge et fiabilité afin que les Spaces puissent grandir sans souci."
+            en: "Preparing the public release with stable modules, API V1 access, monitoring, scaling, and a vetted path for future ecosystem growth.",
+            pt: "Preparar a release pública com módulos estáveis, acesso API V1, monitorização, escala e um caminho validado para crescimento futuro do ecossistema.",
+            lu: "D'ëffentlech Release mat stabile Moduler, API V1 Zougang, Monitoring, Skaléierung an engem gepréifte Wee fir zukünftegen Ecosystem-Wuesstem virbereeden.",
+            de: "Vorbereitung des öffentlichen Releases mit stabilen Modulen, API-V1-Zugang, Monitoring, Skalierung und einem geprüften Weg für künftiges Ökosystem-Wachstum.",
+            fr: "Préparation de la release publique avec modules stables, accès API V1, monitoring, montée en charge et trajectoire validée pour la croissance future de l'écosystème."
         },
         "project.cylro.section.why.title": {
             en: "Why This Exists",
@@ -448,18 +448,18 @@
             fr: "Pourquoi ça existe"
         },
         "project.cylro.section.why.p1": {
-            en: "Most CMS platforms run on US infrastructure, and it's often unclear where your data actually lives. For European agencies and their clients, that creates real friction around GDPR and trust.",
-            pt: "Muitas plataformas de CMS correm em infraestrutura dos EUA, e muitas vezes não é claro onde os dados realmente estão. Para agências europeias e os seus clientes, isso cria fricção real em torno do RGPD e da confiança.",
-            lu: "Vill CMS Plattformen lafen op US Infrastruktur, an et ass oft onkloer wou deng Daten wierklech leien. Fir europäesch Agencen an hir Clienten féiert dat zu reeller Friktioun ronderëm GDPR an Vertrauen.",
-            de: "Viele CMS-Plattformen laufen auf US-Infrastruktur, und oft ist unklar, wo die Daten tatsächlich liegen. Für europäische Agenturen und deren Kunden erzeugt das echte Reibung rund um DSGVO und Vertrauen.",
-            fr: "La plupart des CMS tournent sur une infrastructure américaine, et il est souvent difficile de savoir où vos données résident réellement. Pour les agences européennes et leurs clients, cela crée une vraie friction autour du RGPD et de la confiance."
+            en: "When one team manages many websites, small tasks become operational risk: too many dashboards, unclear ownership, plugin or platform changes, separate logins, scattered backups, and hard questions about where data lives.",
+            pt: "Quando uma equipa gere muitos websites, pequenas tarefas tornam-se risco operacional: demasiados dashboards, ownership pouco claro, mudanças em plugins ou plataformas, logins separados, backups espalhados e perguntas difíceis sobre onde vivem os dados.",
+            lu: "Wann een Team vill Websäite verwalt, ginn kleng Aufgaben zu operationellem Risiko: ze vill Dashboards, onkloer Ownership, Plugin- oder Plattformännerungen, getrennte Logins, verdeelt Backups a schwéier Froen iwwer wou Daten leien.",
+            de: "Wenn ein Team viele Websites verwaltet, werden kleine Aufgaben zu operativem Risiko: zu viele Dashboards, unklare Ownership, Plugin- oder Plattformänderungen, getrennte Logins, verstreute Backups und schwierige Fragen dazu, wo Daten liegen.",
+            fr: "Quand une équipe gère beaucoup de sites, de petites tâches deviennent un risque opérationnel : trop de dashboards, propriété floue, changements de plugins ou de plateforme, logins séparés, sauvegardes dispersées et questions difficiles sur l'emplacement des données."
         },
         "project.cylro.section.why.p2": {
-            en: "Cylro is our attempt to build a proper EU-hosted alternative that you can actually subscribe to, not just another self-hosted tool. I'm genuinely excited about it. Building it has been one of the biggest learning experiences of my life: product decisions, architecture trade-offs, infrastructure planning. The goal is simple: agencies stop worrying about maintenance and start treating websites like stable infrastructure.",
-            pt: "O Cylro é a nossa tentativa de construir uma alternativa realmente alojada na UE que dá para subscrever — não apenas mais uma ferramenta self-hosted. Estou genuinamente entusiasmado. Construí-lo tem sido uma das maiores experiências de aprendizagem da minha vida: decisões de produto, compromissos de arquitetura e planeamento de infraestrutura. O objetivo é simples: as agências deixam de se preocupar com manutenção e passam a tratar websites como infraestrutura estável.",
-            lu: "Cylro ass eisen Versuch eng richteg EU-gehost Alternativ ze bauen déi s de effektiv kann abonnéieren, net just nach en self-hosted Tool. Ech sinn wierklech begeeschtert. Et ze bauen ass eng vun de gréisste Learning Experiences vu mengem Liewen: Produkt-Entscheedungen, Architektur Trade-offs, Infrastruktur Planung. D'Zil ass einfach: Agencen maache sech keng Suergen méi ëm Maintenance a behandelen Websäiten wéi stabil Infrastruktur.",
-            de: "Cylro ist unser Versuch, eine echte EU-gehostete Alternative zu bauen, die man abonnieren kann – nicht nur ein weiteres Self-Hosted-Tool. Ich bin wirklich begeistert. Der Aufbau ist eine der größten Lernerfahrungen meines Lebens: Produktentscheidungen, Architektur-Trade-offs, Infrastrukturplanung. Das Ziel ist simpel: Agenturen sollen sich nicht mehr um Wartung sorgen und Websites wie stabile Infrastruktur behandeln.",
-            fr: "Cylro est notre tentative de construire une vraie alternative hébergée dans l’UE, à laquelle on peut s’abonner — pas juste un outil self-hosted de plus. J’en suis vraiment enthousiaste. Le construire a été l’une des plus grandes expériences d’apprentissage de ma vie : décisions produit, compromis d’architecture, planification d’infrastructure. Le but est simple : que les agences arrêtent de stresser sur la maintenance et traitent les sites comme une infrastructure stable."
+            en: "Cylro is our attempt to build a proper EU-first alternative: one managed SaaS Space where agencies and website operators can build, publish, roll back, assign access, answer trust questions, and treat websites like stable infrastructure instead of isolated installs.",
+            pt: "O Cylro é a nossa tentativa de construir uma alternativa verdadeiramente EU-first: um Space SaaS gerido onde agências e operadores de websites podem construir, publicar, fazer rollback, atribuir acessos, responder a perguntas de confiança e tratar websites como infraestrutura estável em vez de instalações isoladas.",
+            lu: "Cylro ass eisen Versuch eng richteg EU-first Alternativ ze bauen: ee gereete SaaS Space wou Agencen a Website-Operatoren bauen, publizéieren, zeréckrollen, Access zouweisen, Trust-Froen beäntweren a Websäite wéi stabil Infrastruktur amplaz isoléiert Installatioune behandelen.",
+            de: "Cylro ist unser Versuch, eine echte EU-first Alternative zu bauen: ein gemanagter SaaS Space, in dem Agenturen und Website-Betreiber bauen, veröffentlichen, zurückrollen, Zugriff vergeben, Trust-Fragen beantworten und Websites wie stabile Infrastruktur statt isolierte Installationen behandeln können.",
+            fr: "Cylro est notre tentative de construire une vraie alternative EU-first : un Space SaaS géré où agences et opérateurs de sites peuvent construire, publier, rollback, attribuer les accès, répondre aux questions de confiance et traiter les sites comme une infrastructure stable plutôt que comme des installations isolées."
         },
         "project.cylro.section.lessons.title": {
             en: "Lessons So Far",
@@ -469,11 +469,11 @@
             fr: "Leçons jusqu’ici"
         },
         "project.cylro.section.lessons.p1": {
-            en: "Building a SaaS is more than code. Onboarding, GDPR, payments, and infrastructure shape the product just as much as the codebase does. Multi-tenancy needs to be designed from day one because retrofitting isolation later is painful. Choosing temporary tools wisely, like using MinIO locally while keeping everything S3-compatible for production, saves a lot of rework down the line. Planning for features like real-time collaboration early affects the whole architecture. And documentation keeps a fast-moving codebase understandable when you come back to it weeks later.",
-            pt: "Construir um SaaS é mais do que código. Onboarding, RGPD, pagamentos e infraestrutura moldam o produto tanto quanto a codebase. Multi-tenancy tem de ser pensado desde o primeiro dia porque adaptar isolamento mais tarde é doloroso. Escolher bem ferramentas temporárias, como usar MinIO localmente mantendo tudo compatível com S3 para produção, poupa muito retrabalho. Planear cedo funcionalidades como colaboração em tempo real influencia toda a arquitetura. E documentação mantém uma codebase em evolução compreensível quando voltas a ela semanas depois.",
-            lu: "E SaaS ze bauen ass méi wéi Code. Onboarding, GDPR, Payments an Infrastruktur formen de Produit esou vill wéi d'Codebase. Multi-tenancy muss vun Dag 1 un designt ginn, well Isolatioun spéider nozebauen ass painful. Temporär Tools clever wielen, wéi MinIO lokal ze benotzen awer alles S3-kompatibel fir Produktioun ze halen, spuert vill Rework. Features wéi Realtime Kollaboratioun fréi anzëplangen beaflosst d'ganzt Architektur. An Dokumentatioun hält eng séier beweegend Codebase verständlech wann s de Wochen dono zeréckkënns.",
-            de: "Ein SaaS zu bauen ist mehr als Code. Onboarding, DSGVO, Payments und Infrastruktur prägen das Produkt genauso wie die Codebase. Multi-Tenancy muss von Tag 1 an durchdacht sein, weil Isolation später nachzurüsten schmerzhaft ist. Temporäre Tools klug zu wählen – z. B. lokal MinIO zu nutzen, aber alles für die Produktion S3-kompatibel zu halten – spart später viel Rework. Frühes Planen von Features wie Echtzeit-Kollaboration beeinflusst die gesamte Architektur. Und Dokumentation hält eine schnelllebige Codebase verständlich, wenn man Wochen später wieder zurückkommt.",
-            fr: "Construire un SaaS, c’est plus que du code. L’onboarding, le RGPD, les paiements et l’infrastructure façonnent le produit autant que la codebase. La multi-tenancy doit être pensée dès le premier jour, car ajouter l’isolation après coup est douloureux. Choisir intelligemment des outils temporaires — comme utiliser MinIO en local tout en gardant une compatibilité S3 pour la prod — évite beaucoup de rework. Planifier tôt des fonctionnalités comme la collaboration temps réel impacte toute l’architecture. Et la documentation rend une codebase qui évolue vite compréhensible quand on y revient des semaines plus tard."
+            en: "Building a SaaS is more than code. Product positioning, onboarding, GDPR, providers, payments, access rules, and infrastructure shape the platform as much as the codebase. The biggest lesson so far is that multi-site operations need to be designed as one system from the start: publishing, rollback, permissions, AI assistance, and data sovereignty all affect each other.",
+            pt: "Construir um SaaS é mais do que código. Posicionamento de produto, onboarding, RGPD, fornecedores, pagamentos, regras de acesso e infraestrutura moldam a plataforma tanto quanto a codebase. A maior lição até agora é que operações multi-site precisam de ser desenhadas como um sistema desde o início: publicação, rollback, permissões, assistência de IA e soberania de dados afetam-se mutuamente.",
+            lu: "E SaaS ze bauen ass méi wéi Code. Produktpositionéierung, Onboarding, GDPR, Provider, Payments, Access-Regelen an Infrastruktur formen d'Plattform esou vill wéi d'Codebase. Déi gréisst Lektioun bis elo ass datt Multi-Site Operations vun Ufank un als ee System designt musse ginn: Publishing, Rollback, Permissions, AI Assistenz an Datesouveränitéit beaflosse sech géigesäiteg.",
+            de: "Ein SaaS zu bauen ist mehr als Code. Produktpositionierung, Onboarding, DSGVO, Anbieter, Payments, Zugriffsregeln und Infrastruktur prägen die Plattform genauso wie die Codebase. Die größte Erkenntnis bisher: Multi-Site Operations müssen von Anfang an als ein System entworfen werden, weil Publishing, Rollback, Berechtigungen, KI-Unterstützung und Datensouveränität sich gegenseitig beeinflussen.",
+            fr: "Construire un SaaS, c'est plus que du code. Positionnement produit, onboarding, RGPD, fournisseurs, paiements, règles d'accès et infrastructure façonnent la plateforme autant que la codebase. La plus grande leçon jusqu'ici : les opérations multi-sites doivent être conçues comme un seul système dès le départ, car publication, rollback, permissions, assistance IA et souveraineté des données s'influencent mutuellement."
         },
         "project.cylro.section.now.title": {
             en: "Right Now",
@@ -483,11 +483,11 @@
             fr: "En ce moment"
         },
         "project.cylro.section.now.p1": {
-            en: "The platform has a clear product model and a growing feature set, but we're still building out what we need for real agency workflows. Right now the focus is on stability, safe publishing, and getting a controlled private beta ready.",
-            pt: "A plataforma tem um modelo de produto claro e um conjunto de funcionalidades a crescer, mas ainda estamos a construir o que é necessário para workflows reais de agência. Neste momento o foco é estabilidade, publicação segura e preparar uma beta privada controlada.",
-            lu: "D'Plattform huet e kloert Produktmodell an ëmmer méi Features, mee mir bauen nach dat wat mir fir richteg Agentur Workflows brauchen. Elo läit de Fokus op Stabilitéit, séchert Publishing an eng kontrolléiert Privat Beta.",
-            de: "Die Plattform hat ein klares Produktmodell und ein wachsendes Feature-Set, aber wir bauen noch das, was für echte Agentur-Workflows nötig ist. Aktuell liegt der Fokus auf Stabilität, sicherem Publishing und einer kontrollierten Private Beta.",
-            fr: "La plateforme a un modèle produit clair et un ensemble de fonctionnalités en croissance, mais nous construisons encore ce qu’il faut pour de vrais workflows d’agence. Pour l’instant, le focus est la stabilité, la publication sécurisée et la préparation d’une bêta privée contrôlée."
+            en: "Cylro is actively being built and the private alpha is planned for 2026. Right now the focus is finalizing the website operations core, safe publishing, scoped access, EU provider integration, and permission-aware AI assistance.",
+            pt: "O Cylro está a ser construído ativamente e a alpha privada está planeada para 2026. Neste momento o foco é finalizar o core de website operations, publicação segura, acessos limitados, integração de fornecedores europeus e assistência de IA consciente das permissões.",
+            lu: "Cylro gëtt aktiv gebaut an d'Privat Alpha ass fir 2026 geplangt. Elo läit de Fokus drop de Website-Operations-Core, séchert Publishing, scoped Access, EU-Provider-Integratioun an permission-aware AI Assistenz ze finaliséieren.",
+            de: "Cylro wird aktiv gebaut und die Private Alpha ist für 2026 geplant. Aktuell liegt der Fokus auf der Finalisierung des Website-Operations-Kerns, sicherem Publishing, scoped Access, EU-Anbieter-Integration und permission-aware KI-Unterstützung.",
+            fr: "Cylro est activement en construction et l'alpha privée est prévue pour 2026. En ce moment, le focus est la finalisation du coeur website operations, la publication sûre, les accès limités, l'intégration de fournisseurs européens et l'assistance IA sensible aux permissions."
         },
         "project.cylro.sidebar.tech.nuxt": {
             en: "Nuxt 4 + Vue 3",
@@ -531,12 +531,26 @@
             de: "Keycloak SSO",
             fr: "Keycloak SSO"
         },
+        "project.cylro.sidebar.tech.mistral": {
+            en: "Mistral AI",
+            pt: "Mistral AI",
+            lu: "Mistral AI",
+            de: "Mistral KI",
+            fr: "Mistral IA"
+        },
         "project.cylro.sidebar.tech.mollie": {
             en: "Mollie (EU payments)",
             pt: "Mollie (pagamentos UE)",
             lu: "Mollie (EU Bezuelungen)",
             de: "Mollie (EU-Zahlungen)",
             fr: "Mollie (paiements UE)"
+        },
+        "project.cylro.sidebar.tech.euProviders": {
+            en: "Hetzner + Infomaniak",
+            pt: "Hetzner + Infomaniak",
+            lu: "Hetzner + Infomaniak",
+            de: "Hetzner + Infomaniak",
+            fr: "Hetzner + Infomaniak"
         },
         "project.cylro.sidebar.tech.s3": {
             en: "S3-compatible storage",
@@ -553,32 +567,32 @@
             fr: "Docker + K3s"
         },
         "project.cylro.sidebar.features.euHosted": {
-            en: "EU-hosted infrastructure",
-            pt: "Infraestrutura alojada na UE",
-            lu: "EU-gehost Infrastruktur",
-            de: "Infrastruktur in der EU gehostet",
-            fr: "Infrastructure hébergée dans l’UE"
+            en: "EU-managed infrastructure",
+            pt: "Infraestrutura europeia gerida",
+            lu: "EU-gereet Infrastruktur",
+            de: "EU-gemanagte Infrastruktur",
+            fr: "Infrastructure européenne gérée"
         },
         "project.cylro.sidebar.features.isolation": {
-            en: "Workspaces with data isolation",
-            pt: "Workspaces com isolamento de dados",
-            lu: "Workspaces mat Daten-Isolatioun",
-            de: "Workspaces mit Datenisolation",
-            fr: "Workspaces avec isolation des données"
+            en: "One Space for many websites",
+            pt: "Um Space para muitos websites",
+            lu: "Ee Space fir vill Websäiten",
+            de: "Ein Space für viele Websites",
+            fr: "Un Space pour de nombreux sites"
         },
         "project.cylro.sidebar.features.builder": {
-            en: "Visual website builder",
-            pt: "Construtor visual de websites",
-            lu: "Visuelle Websäit Builder",
-            de: "Visueller Website-Builder",
-            fr: "Constructeur visuel de sites web"
+            en: "Studio + Website Management",
+            pt: "Studio + Website Management",
+            lu: "Studio + Website Management",
+            de: "Studio + Website Management",
+            fr: "Studio + Website Management"
         },
         "project.cylro.sidebar.features.cmsSeo": {
-            en: "CMS with SEO tools",
-            pt: "CMS com ferramentas de SEO",
-            lu: "CMS mat SEO Tools",
-            de: "CMS mit SEO-Tools",
-            fr: "CMS avec outils SEO"
+            en: "SEO and launch checks",
+            pt: "Checks de SEO e lançamento",
+            lu: "SEO an Launch Checks",
+            de: "SEO- und Launch-Checks",
+            fr: "Checks SEO et lancement"
         },
         "project.cylro.sidebar.features.domainsSsl": {
             en: "Custom domains + SSL",
@@ -600,6 +614,13 @@
             lu: "Client Content Portal",
             de: "Content-Portal für Kunden",
             fr: "Portail de contenu client"
+        },
+        "project.cylro.sidebar.features.permissionAi": {
+            en: "Permission-aware AI",
+            pt: "IA consciente das permissões",
+            lu: "Permission-aware AI",
+            de: "Permission-aware KI",
+            fr: "IA sensible aux permissions"
         }
     };
     Object.assign(translations, extra);

@@ -112,6 +112,7 @@
                 </div>
                 <p id="modal-project-description" class="modal-description"></p>
                 <div id="modal-project-tags" class="modal-skills"></div>
+                <div id="modal-related-projects" style="display: none; margin-top: 1.5rem;"></div>
                 <div id="modal-project-link" style="margin-top: 1.5rem;"></div>
             </div>
         </div>
@@ -709,6 +710,7 @@
             const modalCategory = document.getElementById('modal-project-category');
             const modalDescription = document.getElementById('modal-project-description');
             const modalTags = document.getElementById('modal-project-tags');
+            const modalRelatedProjects = document.getElementById('modal-related-projects');
             const modalLink = document.getElementById('modal-project-link');
 
             // Localized name & description
@@ -739,6 +741,36 @@
             modalTags.innerHTML = project.tags.map(tag => 
                 `<span class="skill-tag">${tag}</span>`
             ).join('');
+
+            // Render related projects if configured in projects-data.js
+            if (modalRelatedProjects) {
+                const relatedProjects = (project.relatedProjectIds || [])
+                    .map(id => getProjectById(id))
+                    .filter(Boolean);
+
+                if (relatedProjects.length > 0) {
+                    modalRelatedProjects.style.display = 'block';
+                    modalRelatedProjects.innerHTML = `
+                        <h3 data-i18n="projects.modal.relatedProjects" style="margin: 0 0 0.75rem; color: var(--text-primary);">Related Projects</h3>
+                        <ul class="project-list">
+                            ${relatedProjects.map(relatedProject => {
+                                const relatedName = relatedProject.nameKey ? t(relatedProject.nameKey, relatedProject.name) : relatedProject.name;
+                                return `
+                                    <li>
+                                        <a href="#" onclick="showProjectModal('${relatedProject.id}'); event.preventDefault(); return false;">
+                                            <i data-lucide="${relatedProject.icon || 'folder'}"></i>
+                                            <span>${relatedName}</span>
+                                        </a>
+                                    </li>
+                                `;
+                            }).join('')}
+                        </ul>
+                    `;
+                } else {
+                    modalRelatedProjects.style.display = 'none';
+                    modalRelatedProjects.innerHTML = '';
+                }
+            }
 
             // Render link(s) if available
             let linkHTML = '';

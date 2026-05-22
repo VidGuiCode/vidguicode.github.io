@@ -94,13 +94,13 @@ const PROJECTS = [
         id: 'cylro',
         name: 'Cylro',
         nameKey: 'projects.cylro.title',
-        description: 'From August 2025, in development: Platform for Agencies. I\'m co-founding this agency platform with a partner. One workspace for all your client websites, built in Luxembourg, hosted in Europe. We started researching in June 2025 and have been building steadily since August.',
+        description: 'From August 2025, in development: Cylro is a website operations platform for EU teams. I\'m co-founding it with a partner to help agencies, freelancers, developers, and businesses manage many websites from one secure Space with scoped access, immutable publishing, EU-managed infrastructure, and permission-aware AI assistance.',
         descriptionKey: 'projects.cylro.desc',
         category: 'Web Development',
         categoryKey: 'projects.category.webdev',
         categories: ['Web Development', 'Full-Stack', 'Infrastructure', 'Cloud Computing', 'DevOps', 'Database', 'Security'],
         categoryKeys: ['projects.category.webdev', 'projects.category.fullstack', 'projects.category.infrastructure', 'projects.category.cloud', 'projects.category.devops', 'projects.category.database', 'projects.category.security'],
-        tags: ['AI', 'CMS', 'Web Dev', 'Vue', 'Nuxt', 'Node.js', 'Express', 'PostgreSQL', 'pgvector', 'Redis', 'Keycloak', 'SSO', 'Mollie', 'Docker', 'K3s', 'S3', 'Object Storage'],
+        tags: ['AI', 'Website Operations', 'CMS', 'Multi-tenant SaaS', 'Scoped Access', 'Immutable Publishing', 'GDPR', 'EU Infrastructure', 'Vue', 'Nuxt', 'Node.js', 'Express', 'PostgreSQL', 'pgvector', 'Redis', 'Keycloak', 'SSO', 'Mistral', 'Mollie', 'Infomaniak', 'Hetzner', 'Docker', 'K3s', 'S3', 'Object Storage'],
         icon: 'layout',
         iconImage: 'assets/img/projects/cylro/submark.svg',
         status: 'in-development',
@@ -149,6 +149,26 @@ const PROJECTS = [
         featured: true
     },
     {
+        id: 'az-where',
+        name: 'az-where',
+        nameKey: 'projects.azwhere.title',
+        description: 'An open-source unofficial Azure availability discovery CLI. It checks where VM SKUs can actually deploy by combining Azure Policy, SKU availability, subscription restrictions, and live quota, and now also supports generic resource availability checks, VM pricing estimates, scripted output modes, and update checks.',
+        descriptionKey: 'projects.azwhere.desc',
+        category: 'Cloud Computing',
+        categoryKey: 'projects.category.cloud',
+        categories: ['Cloud Computing', 'DevOps', 'Open Source'],
+        categoryKeys: ['projects.category.cloud', 'projects.category.devops', 'projects.category.opensource'],
+        tags: ['TypeScript', 'Node.js', 'CLI', 'Azure', 'Azure CLI', 'ARM REST', 'Regions', 'VM SKUs', 'Quota', 'Azure Policy', 'Resource Availability', 'Pricing', 'CI', 'Terraform', 'AI Agents', 'Open Source', 'Commander.js', 'Vitest'],
+        icon: 'map-pin',
+        status: 'completed',
+        statusKey: 'projects.status.completed',
+        dateCompleted: '2026-04',
+        dateStarted: '2026-04',
+        githubUrl: 'https://github.com/VidGuiCode/az-where',
+        relatedProjectIds: ['plane-cli', 'solidtime-cli', 'dolibarr-cli'],
+        featured: false
+    },
+    {
         id: 'plane-cli',
         name: 'plane-cli',
         nameKey: 'projects.planecli.title',
@@ -164,6 +184,7 @@ const PROJECTS = [
         statusKey: 'projects.status.completed',
         dateStarted: '2026-03',
         githubUrl: 'https://github.com/VidGuiCode/plane-cli',
+        relatedProjectIds: ['az-where', 'solidtime-cli', 'dolibarr-cli'],
         featured: false
     },
     {
@@ -183,6 +204,7 @@ const PROJECTS = [
         dateCompleted: '2026-04',
         dateStarted: '2026-04',
         githubUrl: 'https://github.com/VidGuiCode/solidtime-cli',
+        relatedProjectIds: ['az-where', 'plane-cli', 'dolibarr-cli'],
         featured: false
     },
     {
@@ -202,6 +224,7 @@ const PROJECTS = [
         dateCompleted: '2026-04',
         dateStarted: '2026-04',
         githubUrl: 'https://github.com/VidGuiCode/dolibarr-cli',
+        relatedProjectIds: ['az-where', 'plane-cli', 'solidtime-cli'],
         featured: false
     },
     {

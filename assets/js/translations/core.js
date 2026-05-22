@@ -663,11 +663,11 @@ const translations = {
         fr: "Cylro"
     },
     "projects.cylro.desc": {
-        en: "From August 2025, in development: Platform for Agencies. I'm co-founding this agency platform with a partner. One workspace for all your client websites, built in Luxembourg, hosted in Europe. We started researching in June 2025 and have been building steadily since August.",
-        pt: "Desde agosto de 2025, em desenvolvimento: Plataforma para Agências. Estou a co-fundar esta plataforma para agências com um parceiro. Um espaço de trabalho para todos os websites dos teus clientes, construído no Luxemburgo, alojado na Europa. Começámos a pesquisar em junho de 2025 e temos estado a construir constantemente desde agosto.",
-        lu: "Vum August 2025, an Entwécklung: Plattform fir Agencen. Ech grënnen dës Agence Plattform mat engem Partner. Ee Workspace fir all deng Client Websäiten, gebaut am Lëtzebuerg, gehost an Europa. Mir hunn ugefaang ze fuerschen am Juni 2025 an bauen kontinuéierlech zënter August.",
-        de: "Seit August 2025, in Entwicklung: Plattform für Agenturen. Ich gründe diese Agenturplattform mit einem Partner. Ein Workspace für alle Kunden-Websites, gebaut in Luxemburg, gehostet in Europa. Wir haben im Juni 2025 mit der Recherche begonnen und bauen seit August kontinuierlich.",
-        fr: "Depuis août 2025, en développement : Plateforme pour Agences. Je co-fonde cette plateforme d'agence avec un partenaire. Un espace de travail pour tous les sites de vos clients, construit au Luxembourg, hébergé en Europe. Nous avons commencé la recherche en juin 2025 et construisons régulièrement depuis août."
+        en: "From August 2025, in development: Cylro is a website operations platform for EU teams. I'm co-founding it with a partner to help agencies, freelancers, developers, and businesses manage many websites from one secure Space with scoped access, immutable publishing, EU-managed infrastructure, and permission-aware AI assistance.",
+        pt: "Desde agosto de 2025, em desenvolvimento: o Cylro é uma plataforma de operações de websites para equipas da UE. Estou a cofundá-la com um parceiro para ajudar agências, freelancers, developers e empresas a gerir muitos websites a partir de um Space seguro, com acesso limitado por função, publicação imutável, infraestrutura europeia gerida e assistência de IA consciente das permissões.",
+        lu: "Vum August 2025 un, an Entwécklung: Cylro ass eng Website-Operations-Plattform fir EU-Teams. Ech grënnen se zesumme mat engem Partner, fir Agencen, Freelancer, Developer an Entreprisen ze hëllefen vill Websäiten aus engem séchere Space ze verwalten, mat scoped Access, immutable Publishing, EU-gereeter Infrastruktur an permission-aware AI Assistenz.",
+        de: "Seit August 2025, in Entwicklung: Cylro ist eine Website-Operations-Plattform für EU-Teams. Ich gründe sie gemeinsam mit einem Partner, damit Agenturen, Freelancer, Entwickler und Unternehmen viele Websites aus einem sicheren Space verwalten können, mit scoped Access, immutable Publishing, EU-gemanagter Infrastruktur und permission-aware KI-Unterstützung.",
+        fr: "Depuis août 2025, en développement : Cylro est une plateforme d'opérations web pour les équipes européennes. Je la cofonde avec un partenaire pour aider agences, freelances, développeurs et entreprises à gérer de nombreux sites depuis un Space sécurisé, avec accès limité par rôle, publication immuable, infrastructure européenne gérée et assistance IA sensible aux permissions."
     },
     "projects.gradingdino.title": {
         en: "GradingDino",
@@ -1102,6 +1102,27 @@ const translations = {
         lu: "En Open-Source inoffiziellen CLI fir Dolibarr ERP mat komplettem REST API Coverage am Terminal. Clienten, Rechnungen, Bankkonten, Produkter a méi verwalten ouni d'Kommandozeil ze verloossen. Ënnerstëtzt Tabell-, JSON- a CSV-Ausgabeformater plus Dry-Run fir sécher Mutatiounen. Selwecht Philosophie wéi meng aner CLIs — gebaut fir Terminal-éischt Workflows an KI-Agent Kompatibilitéit.",
         de: "Ein inoffizielles Open-Source-CLI für Dolibarr ERP mit vollständiger REST-API-Abdeckung im Terminal. Kunden, Rechnungen, Bankkonten, Produkte und mehr verwalten, ohne die Kommandozeile zu verlassen. Unterstützt Tabellen-, JSON- und CSV-Ausgabeformate sowie Dry-Run für sichere Mutationen. Dieselbe Philosophie wie meine anderen CLIs — gebaut für Terminal-first-Workflows und KI-Agent-Kompatibilität.",
         fr: "Un CLI non officiel et open source pour Dolibarr ERP avec une couverture complète de l'API REST depuis le terminal. Gérer clients, factures, comptes bancaires, produits et plus sans quitter la ligne de commande. Prend en charge les formats de sortie tableau, JSON et CSV, plus le dry-run pour des mutations sûres. Même philosophie que mes autres CLIs — construit pour des workflows terminal-first et la compatibilité avec les agents IA."
+    },
+    "projects.azwhere.title": {
+        en: "az-where",
+        pt: "az-where",
+        lu: "az-where",
+        de: "az-where",
+        fr: "az-where"
+    },
+    "projects.azwhere.desc": {
+        en: "An open-source unofficial Azure availability discovery CLI. It checks where VM SKUs can actually deploy by combining Azure Policy, SKU availability, subscription restrictions, and live quota, and now also supports generic resource availability checks, VM pricing estimates, scripted output modes, and update checks.",
+        pt: "Um CLI não oficial e open-source para descoberta de disponibilidade no Azure. Verifica onde SKUs de VM podem realmente ser implementadas ao combinar Azure Policy, disponibilidade da SKU, restrições da subscrição e quota em tempo real, e agora também suporta verificações genéricas de disponibilidade de recursos, estimativas de preço de VMs, modos de saída para scripts e verificações de atualização.",
+        lu: "En Open-Source inoffizielle CLI fir Azure Disponibilitéits-Discovery. Et kontrolléiert wou VM SKUs wierklech deployéiert kënne ginn andeems Azure Policy, SKU Disponibilitéit, Subscription-Restriktiounen a live Quota kombinéiert ginn, an ënnerstëtzt elo och generesch Resource-Disponibilitéits-Checks, VM Präis-Schätzungen, Output-Modi fir Scripts an Update-Checks.",
+        de: "Ein inoffizielles Open-Source-CLI für Azure-Verfügbarkeitsprüfung. Es prüft, wo VM-SKUs tatsächlich bereitgestellt werden können, indem Azure Policy, SKU-Verfügbarkeit, Subscription-Einschränkungen und Live-Quota kombiniert werden, und unterstützt jetzt auch generische Ressourcenverfügbarkeitsprüfungen, VM-Preisschätzungen, Ausgabemodi für Skripte und Update-Checks.",
+        fr: "Un CLI non officiel et open source pour la découverte de disponibilité Azure. Il vérifie où des SKUs de VM peuvent réellement être déployées en combinant Azure Policy, disponibilité des SKUs, restrictions de l'abonnement et quota en temps réel, et prend maintenant aussi en charge les vérifications génériques de disponibilité des ressources, les estimations de prix des VMs, les modes de sortie pour scripts et les vérifications de mise à jour."
+    },
+    "projects.modal.relatedProjects": {
+        en: "Related Projects",
+        pt: "Projetos relacionados",
+        lu: "Verbonne Projeten",
+        de: "Verwandte Projekte",
+        fr: "Projets liés"
     },
     "search.placeholder": {
         en: "Search projects, certifications, skills...",

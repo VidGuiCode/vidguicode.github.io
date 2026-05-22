@@ -332,6 +332,23 @@ const FORMATIONS = [
         logo: 'assets/img/logos/aws-logo.webp', // AWS logo
     },
     {
+        id: 'aws-architecture-workshop',
+        name: 'AWS Architecture Workshop',
+        nameKey: 'formation.awsarchitecture.name',
+        provider: 'ARHS Group',
+        category: 'Cloud Computing',
+        description: 'Attended a 28-hour AWS Architecture workshop led by Arnaud Charlier from ARHS Group. The workshop introduced AWS, its core cloud services, architecture concepts, and practical labs for working with AWS services, as part of my BTS Cloud Computing program at LGK.',
+        descriptionKey: 'formation.awsarchitecture.description',
+        dateCompleted: '2026-05-13', // Final workshop session
+        duration: '28 hours',
+        format: 'In-person',
+        location: 'Lycée Guillaume Kroll (LGK)',
+        relatedCertifications: [],
+        skills: ['AWS Architecture', 'AWS Services', 'Cloud Fundamentals', 'Hands-on Labs'],
+        skillsKeys: ['formation.awsarchitecture.skills.architecture', 'formation.awsarchitecture.skills.services', 'formation.awsarchitecture.skills.fundamentals', 'formation.awsarchitecture.skills.labs'],
+        logo: 'assets/img/logos/aws-logo.webp',
+    },
+    {
         id: 'luxembourg-army-visit',
         name: 'Visit to the Luxembourg Army',
         nameKey: 'formation.luxembourgarmy.name',
