@@ -34,6 +34,7 @@ context/
 .obsidian/
 .claude/
 scripts/
+.hermes/
 
 # School-only (not for public repo)
 assets/js/school-translations.js
