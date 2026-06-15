@@ -56,25 +56,30 @@
         </a>
 
         <section class="certifications-hero">
-            <div class="badge" data-i18n="certifications.badge">PROFESSIONAL CREDENTIALS</div>
+            <div class="hero-eyebrow">
+                <span class="badge" data-i18n="certifications.badge">PROFESSIONAL CREDENTIALS</span>
+                <span class="hero-eyebrow-meta">
+                    <span id="certification-year-range">—</span>
+                </span>
+            </div>
+
             <h1 data-i18n="certifications.heading">Certifications & Training</h1>
             <p class="subtitle" data-i18n="certifications.subtitle">Industry-recognized certifications and training sessions demonstrating expertise in cloud computing, productivity tools, and technical skills. Certifications sorted by level — highest rank first. Trainings shown separately.</p>
-            
-            <div class="stats-row" aria-label="Certification metrics">
-                <div class="stat-box">
-                    <i data-lucide="award"></i>
-                    <h3 id="total-certs">0</h3>
-                    <p data-i18n="certifications.stats.total">Total Certifications</p>
+
+            <div class="hero-metrics" aria-label="Certification metrics">
+                <div class="hero-metric">
+                    <span class="hero-metric-value" id="total-certs">0</span>
+                    <span class="hero-metric-label" data-i18n="certifications.stats.total">Total Certifications</span>
                 </div>
-                <div class="stat-box">
-                    <i data-lucide="book-open"></i>
-                    <h3 id="total-training">0</h3>
-                    <p data-i18n="certifications.filter.formations">Training</p>
+                <div class="hero-metric-divider" aria-hidden="true"></div>
+                <div class="hero-metric">
+                    <span class="hero-metric-value" id="total-training">0</span>
+                    <span class="hero-metric-label" data-i18n="certifications.filter.formations">Training</span>
                 </div>
-                <div class="stat-box">
-                    <i data-lucide="shield-check"></i>
-                    <h3 id="highest-level">—</h3>
-                    <p data-i18n="certifications.stats.highest">Highest Level</p>
+                <div class="hero-metric-divider" aria-hidden="true"></div>
+                <div class="hero-metric">
+                    <span class="hero-metric-value" id="highest-level">—</span>
+                    <span class="hero-metric-label" data-i18n="certifications.stats.highest">Highest Level</span>
                 </div>
             </div>
         </section>
@@ -83,7 +88,10 @@
             <button class="filter-btn active" data-filter="all" data-i18n="certifications.filter.all">All</button>
             <button class="filter-btn" data-filter="certifications" data-i18n="certifications.filter.certifications">Certifications</button>
             <button class="filter-btn" data-filter="formations" data-i18n="certifications.filter.formations">Training</button>
-            <button class="filter-btn" id="category-filter-btn" onclick="openCategoryFilterModal()" data-i18n="certifications.filter.categories">Filter</button>
+            <button class="filter-btn" id="category-filter-btn" onclick="openCategoryFilterModal()">
+                <i data-lucide="filter" style="width: 16px; height: 16px;"></i>
+                <span data-i18n="certifications.filter.categories">Filter</span>
+            </button>
         </div>
 
         <div id="certifications-container" class="certifications-list">
