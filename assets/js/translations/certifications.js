@@ -685,47 +685,19 @@
             de: "Präventionstechniken",
             fr: "Techniques de Prévention"
         },
-        "formation.blockchain.intro.part1.name": {
-            en: "Blockchain Introduction (Part 1 of 3)",
-            pt: "Introdução ao Blockchain (Parte 1 de 3)",
-            lu: "Blockchain Intro (Deel 1 vun 3)",
-            de: "Blockchain Einführung (Teil 1 von 3)",
-            fr: "Introduction à la Blockchain (Partie 1 sur 3)"
+        "formation.blockchain.intro.name": {
+            en: "Blockchain Introduction",
+            pt: "Introdução ao Blockchain",
+            lu: "Blockchain Intro",
+            de: "Blockchain Einführung",
+            fr: "Introduction à la Blockchain"
         },
-        "formation.blockchain.intro.part1.description": {
-            en: "A proper introduction to blockchain: what it is, how it works, and why it matters. We set up Metamask, got to know the Sepolia testnet and faucets, and were asked to mine some Sepolia ETH at home; we then shared our Ethereum public addresses with the presenter for the next steps. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            pt: "Uma introdução ao blockchain: o que é, como funciona e por que importa. Criámos conta na Metamask, conhecemos a testnet Sepolia e os faucets, e fomos incentivados a minar Sepolia ETH em casa; depois partilhámos os nossos endereços públicos Ethereum com o formador para os próximos passos. The Blockchain Academy no Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            lu: "Eng richteg Intro an d'Blockchain: wat et ass, wéi et funktionnéiert an firwat et zielt. Mir hunn Metamask opgesat, d'Sepolia-Testnet an Faucets kenne geléiert, a solle doheem e bëssen Sepolia-ETH minen; du hu mir eise Ethereum-Ëffentleche Schlëssel un de Presenter weider ginn. The Blockchain Academy um Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            de: "Eine richtige Einführung in die Blockchain: was sie ist, wie sie funktioniert und warum sie relevant ist. Wir haben Metamask eingerichtet, die Sepolia-Testnet und Faucets kennengelernt und sollten zu Hause Sepolia-ETH minen; anschließend haben wir unsere Ethereum-Adressen beim Referenten eingereicht. The Blockchain Academy am Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            fr: "Une vraie introduction à la blockchain : ce que c'est, comment ça marche et pourquoi c'est important. On a créé un compte Metamask, découvert la testnet Sepolia et les faucets, et on nous a demandé de miner un peu de Sepolia ETH chez nous ; on a ensuite communiqué nos adresses Ethereum publiques au formateur. The Blockchain Academy au Lycée Guillaume Kroll (LGK), BTS Cloud Computing."
-        },
-        "formation.blockchain.intro.part2.name": {
-            en: "Blockchain Introduction (Part 2 of 3)",
-            pt: "Introdução ao Blockchain (Parte 2 de 3)",
-            lu: "Blockchain Intro (Deel 2 vun 3)",
-            de: "Blockchain Einführung (Teil 2 von 3)",
-            fr: "Introduction à la Blockchain (Partie 2 sur 3)"
-        },
-        "formation.blockchain.intro.part2.description": {
-            en: "The presenter explained mining and had planned to distribute NFTs, but with many of us not having mined yet, that was pushed to Part 3. We still went through how to mine, the ethics around it, and more theory so the course could continue. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            pt: "O formador explicou a mineração e ia distribuir NFTs, mas como muitos ainda não tinham minerado, isso ficou para a Parte 3. Ainda assim vimos como minar, a ética à volta disso e mais teoria para o curso continuar. The Blockchain Academy no Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            lu: "De Presenter huet Minen erkläert a wollt NFTs verdeelen, mä well vill vun eis nach net gemint hunn, ass dat op Deel 3 verschwon. Mir hunn trotzdem duerchgaang wéi een mint, d’Ethik dohanner an méi Theorie, sou datt de Kurs weiderlafe konnt. The Blockchain Academy um Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            de: "Der Referent erklärte das Mining und wollte NFTs verteilen; weil viele von uns noch nicht gemint hatten, wurde das auf Teil 3 verschoben. Wir haben trotzdem durchgenommen, wie man minet, die Ethik dahinter und weitere Theorie. The Blockchain Academy am Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            fr: "Le formateur a expliqué le minage et devait distribuer les NFTs ; comme beaucoup n’avaient pas encore miné, c’est reporté à la Partie 3. On a quand même vu comment miner, l’éthique autour et davantage de théorie. The Blockchain Academy au Lycée Guillaume Kroll (LGK), BTS Cloud Computing."
-        },
-        "formation.blockchain.intro.part3.name": {
-            en: "Blockchain Introduction (Part 3 of 3)",
-            pt: "Introdução ao Blockchain (Parte 3 de 3)",
-            lu: "Blockchain Intro (Deel 3 vun 3)",
-            de: "Blockchain Einführung (Teil 3 von 3)",
-            fr: "Introduction à la Blockchain (Partie 3 sur 3)"
-        },
-        "formation.blockchain.intro.part3.description": {
-            en: "Everyone received their NFT; we sold it to the person next to us to experience a real peer-to-peer trade. He showed how to create an NFT, used IPFS to explain where they live and how the tech works, and demonstrated a Metamask-based voting app where NFT holders could vote. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            pt: "Todos recebemos o nosso NFT; vendêmo-lo ao colega ao lado para sentir uma troca peer-to-peer a sério. Mostrou como criar um NFT, usou IPFS para explicar onde ficam guardados e como funciona a tech, e demonstrou uma app de voto com Metamask para titulares de NFT. The Blockchain Academy no Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            lu: "Jiddereen huet seng NFT kritt; mir hunn se un de Noper verkaaft fir eng richteg Peer-to-Peer-Transaktioun ze erliewen. Hien huet gewisen wéi een en NFT kreéiert, IPFS benotzt fir ze erklären wou se sinn an wéi d’Tech funktionnéiert, an eng Metamask-Voting-App gewisen wou NFT-Besitzer ofstëmme konnten. The Blockchain Academy um Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            de: "Alle haben ihr NFT bekommen; wir haben es an den Sitznachbarn verkauft, um einen echten Peer-to-Peer-Handel zu erleben. Er zeigte, wie man ein NFT erstellt, nutzte IPFS um zu erklären, wo sie gespeichert sind und wie die Technik funktioniert, und führte eine Metamask-basierte Voting-App für NFT-Inhaber vor. The Blockchain Academy am Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            fr: "Tout le monde a reçu son NFT ; on l’a vendu à son voisin pour vivre un vrai échange pair-à-pair. Il a montré comment créer un NFT, utilisé IPFS pour expliquer où ils sont stockés et comment ça marche, et démontré une appli de vote avec Metamask pour les détenteurs de NFT. The Blockchain Academy au Lycée Guillaume Kroll (LGK), BTS Cloud Computing."
+        "formation.blockchain.intro.description": {
+            en: "A three-session introduction to blockchain — what it is, how it works, and why it matters. We set up Metamask, explored the Sepolia testnet and faucets, and mined Sepolia ETH; covered mining mechanics, its ethics, and more theory; and finished hands-on with NFTs — minting them, using IPFS to understand where they live, trading them peer-to-peer with a neighbour, and voting through a Metamask-based app for NFT holders. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+            pt: "Uma introdução ao blockchain em três sessões — o que é, como funciona e por que importa. Criámos conta na Metamask, explorámos a testnet Sepolia e os faucets, e minámos Sepolia ETH; vimos a mecânica da mineração, a sua ética e mais teoria; e terminámos com NFTs na prática — criámo-los, usámos IPFS para perceber onde ficam guardados, trocámo-los peer-to-peer com o colega ao lado, e votámos através de uma app com Metamask para titulares de NFT. The Blockchain Academy no Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+            lu: "Eng Intro an d'Blockchain iwwer dräi Sessiounen — wat et ass, wéi et funktionnéiert an firwat et zielt. Mir hunn Metamask opgesat, d'Sepolia-Testnet an Faucets erkundegt, a Sepolia-ETH gemint; d'Mechanik vum Minen, seng Ethik a méi Theorie duerchgeholl; an um Enn praktesch mat NFTs geschafft — se kreéiert, IPFS benotzt fir ze verstoen wou se sinn, se Peer-to-Peer mam Noper gehandelt, an iwwer eng Metamask-App fir NFT-Besitzer ofgestëmmt. The Blockchain Academy um Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+            de: "Eine Einführung in die Blockchain über drei Sitzungen — was sie ist, wie sie funktioniert und warum sie relevant ist. Wir haben Metamask eingerichtet, die Sepolia-Testnet und Faucets erkundet und Sepolia-ETH gemint; die Mechanik des Minings, seine Ethik und weitere Theorie durchgenommen; und zum Abschluss praktisch mit NFTs gearbeitet — sie erstellt, mit IPFS verstanden, wo sie gespeichert sind, sie peer-to-peer mit dem Sitznachbarn gehandelt und über eine Metamask-App für NFT-Inhaber abgestimmt. The Blockchain Academy am Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
+            fr: "Une introduction à la blockchain en trois séances — ce que c'est, comment ça marche et pourquoi c'est important. On a créé un compte Metamask, exploré la testnet Sepolia et les faucets, et miné du Sepolia ETH ; vu la mécanique du minage, son éthique et davantage de théorie ; et terminé en pratique avec les NFTs — les créer, utiliser IPFS pour comprendre où ils sont stockés, les échanger en pair-à-pair avec son voisin, et voter via une appli Metamask pour les détenteurs de NFT. The Blockchain Academy au Lycée Guillaume Kroll (LGK), BTS Cloud Computing."
         },
         "formation.blockchain.intro.skills.fundamentals": {
             en: "Blockchain Fundamentals",

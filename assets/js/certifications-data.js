@@ -263,49 +263,15 @@ const FORMATIONS = [
         logo: 'assets/img/logos/restena-logo.webp', // Restena logo
     },
     {
-        id: 'blockchain-introduction-training-part1',
-        name: 'Blockchain Introduction (Part 1 of 3)',
-        nameKey: 'formation.blockchain.intro.part1.name',
+        id: 'blockchain-introduction-training',
+        name: 'Blockchain Introduction',
+        nameKey: 'formation.blockchain.intro.name',
         provider: 'The Blockchain Academy',
         category: 'Blockchain',
-        description: 'A proper introduction to blockchain: what it is, how it works, and why it matters. We set up Metamask, got to know the Sepolia testnet and faucets, and were asked to mine some Sepolia ETH at home; we then shared our Ethereum public addresses with the presenter for the next steps. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.',
-        descriptionKey: 'formation.blockchain.intro.part1.description',
-        dateCompleted: '2026-01-20', // January 20, 2026
-        duration: '3 hours (Part 1 of 3)', // Duration of training
-        format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
-        location: 'Lycée Guillaume Kroll (LGK)', // Location/context
-        relatedCertifications: [], // No related certification
-        skills: ['Blockchain Fundamentals', 'Distributed Ledger Technology', 'Cryptocurrency Concepts', 'Blockchain Applications'],
-        skillsKeys: ['formation.blockchain.intro.skills.fundamentals', 'formation.blockchain.intro.skills.dlt', 'formation.blockchain.intro.skills.crypto', 'formation.blockchain.intro.skills.applications'],
-        logo: 'assets/img/logos/blockchain-academy-logo.webp', // The Blockchain Academy logo
-    },
-    {
-        id: 'blockchain-introduction-training-part2',
-        name: 'Blockchain Introduction (Part 2 of 3)',
-        nameKey: 'formation.blockchain.intro.part2.name',
-        provider: 'The Blockchain Academy',
-        category: 'Blockchain',
-        description: 'The presenter explained mining and had planned to distribute NFTs, but with many of us not having mined yet, that was pushed to Part 3. We still went through how to mine, the ethics around it, and more theory so the course could continue. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.',
-        descriptionKey: 'formation.blockchain.intro.part2.description',
-        dateCompleted: '2026-01-27', // January 27, 2026
-        duration: '3 hours (Part 2 of 3)', // Duration of training
-        format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
-        location: 'Lycée Guillaume Kroll (LGK)', // Location/context
-        relatedCertifications: [], // No related certification
-        skills: ['Blockchain Fundamentals', 'Distributed Ledger Technology', 'Cryptocurrency Concepts', 'Blockchain Applications'],
-        skillsKeys: ['formation.blockchain.intro.skills.fundamentals', 'formation.blockchain.intro.skills.dlt', 'formation.blockchain.intro.skills.crypto', 'formation.blockchain.intro.skills.applications'],
-        logo: 'assets/img/logos/blockchain-academy-logo.webp', // The Blockchain Academy logo
-    },
-    {
-        id: 'blockchain-introduction-training-part3',
-        name: 'Blockchain Introduction (Part 3 of 3)',
-        nameKey: 'formation.blockchain.intro.part3.name',
-        provider: 'The Blockchain Academy',
-        category: 'Blockchain',
-        description: 'Everyone received their NFT; we sold it to the person next to us to experience a real peer-to-peer trade. He showed how to create an NFT, used IPFS to explain where they live and how the tech works, and demonstrated a Metamask-based voting app where NFT holders could vote. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.',
-        descriptionKey: 'formation.blockchain.intro.part3.description',
-        dateCompleted: '2026-02-03', // February 3, 2026
-        duration: '3 hours (Part 3 of 3)', // Duration of training
+        description: 'A three-session introduction to blockchain — what it is, how it works, and why it matters. We set up Metamask, explored the Sepolia testnet and faucets, and mined Sepolia ETH; covered mining mechanics, its ethics, and more theory; and finished hands-on with NFTs — minting them, using IPFS to understand where they live, trading them peer-to-peer with a neighbour, and voting through a Metamask-based app for NFT holders. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.',
+        descriptionKey: 'formation.blockchain.intro.description',
+        dateCompleted: '2026-02-03', // February 3, 2026 (final of three sessions)
+        duration: '9 hours (3 sessions)', // Duration of training
         format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
         location: 'Lycée Guillaume Kroll (LGK)', // Location/context
         relatedCertifications: [], // No related certification
@@ -325,7 +291,7 @@ const FORMATIONS = [
         duration: 'Half-day (from 13:00)', // Afternoon session
         format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
         location: 'Belval, Luxembourg', // Location/context
-        externalUrl: 'https://aws-recap-2024.spikeseed.cloud/?ItnationInvite',
+        externalUrl: 'https://aws-recap-2025.arhs-group.com/',
         relatedCertifications: [], // No related certification
         skills: ['Amazon Connect', 'Cloud Security', 'Kiro IDE', 'Model Context Protocol', 'Enterprise AI Models'],
         skillsKeys: ['formation.awsrecap2026.skills.connect', 'formation.awsrecap2026.skills.security', 'formation.awsrecap2026.skills.kiro', 'formation.awsrecap2026.skills.mcp', 'formation.awsrecap2026.skills.models'],
