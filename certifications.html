@@ -101,16 +101,22 @@
         <!-- Category Filter Modal -->
         <div id="category-filter-modal" class="category-filter-modal" onclick="closeCategoryFilterModal(event)">
             <div class="category-filter-modal-content" onclick="event.stopPropagation()">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                    <h3 style="margin: 0; color: var(--text-primary);" data-i18n="certifications.filter.modal.title">Filter by Category</h3>
+                <div class="filter-modal-head">
+                    <h3>
+                        <i data-lucide="filter"></i>
+                        <span data-i18n="certifications.filter.modal.title">Filter by Category</span>
+                    </h3>
                     <button class="modal-close" onclick="closeCategoryFilterModal()" aria-label="Close filter">
                         <i data-lucide="x"></i>
                     </button>
                 </div>
-                <div id="category-filter-options" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 60vh; overflow-y: auto; flex: 1; margin-bottom: 1.5rem;"></div>
-                <div style="display: flex; gap: 0.75rem; margin-top: auto;">
-                    <button onclick="applyCategoryFilter()" class="filter-apply-btn" data-i18n="certifications.filter.modal.apply">Apply</button>
-                    <button onclick="closeCategoryFilterModal()" class="filter-cancel-btn" data-i18n="certifications.filter.modal.cancel">Cancel</button>
+                <div class="filter-quick-actions">
+                    <button class="filter-link-btn" onclick="clearCategoryFilters()" data-i18n="certifications.filter.modal.clear">Clear all</button>
+                    <span class="filter-result-count" id="filter-result-count">0 selected</span>
+                </div>
+                <div id="category-filter-options" class="category-filter-options"></div>
+                <div class="filter-modal-footer">
+                    <button onclick="applyCategoryFilter()" class="filter-show-btn" data-i18n="certifications.filter.modal.showResults">Show results</button>
                 </div>
             </div>
         </div>
@@ -724,8 +730,28 @@
             });
             
             modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            updateFilterResultCount();
             renderIcons();
         }
+        
+        // Instant apply + live counter when toggling filters in the modal
+        document.addEventListener('change', function(e) {
+            if (e.target.matches('#category-filter-options input[type="checkbox"]')) {
+                updateFilterResultCount();
+                applyCategoryFilter(false);
+            }
+        });
+        
+        // Close filter modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('category-filter-modal');
+                if (modal && modal.classList.contains('active')) {
+                    closeCategoryFilterModal();
+                }
+            }
+        });
 
         // Update category counts when main filter changes
         function updateCategoryCounts(mainFilter) {
@@ -761,13 +787,15 @@
             // If clicking outside modal content, close it
             if (event && event.target === modal) {
                 modal.classList.remove('active');
+                document.body.style.overflow = '';
             } else if (!event) {
                 // Called directly (from button)
                 modal.classList.remove('active');
+                document.body.style.overflow = '';
             }
         }
 
-        function applyCategoryFilter() {
+        function applyCategoryFilter(closeModal = true) {
             const checkboxes = document.querySelectorAll('#category-filter-options input[type="checkbox"]');
             const checked = Array.from(checkboxes).filter(cb => cb.checked);
             
@@ -857,7 +885,29 @@
                 renderCertificationsByMultipleCategories(checkedCategories.map(cb => cb.value));
             }
             
-            closeCategoryFilterModal();
+            if (closeModal) closeCategoryFilterModal();
+        }
+        
+        function clearCategoryFilters() {
+            document.querySelectorAll('#category-filter-options input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+            });
+            updateFilterResultCount();
+            applyCategoryFilter(false);
+        }
+        
+        function updateFilterResultCount() {
+            const countEl = document.getElementById('filter-result-count');
+            if (!countEl) return;
+            const checked = document.querySelectorAll('#category-filter-options input[type="checkbox"]:checked').length;
+            const total = document.querySelectorAll('#category-filter-options input[type="checkbox"]').length;
+            if (checked === 0) {
+                countEl.textContent = t('certifications.filter.modal.noneSelected', 'None selected');
+            } else if (checked === total) {
+                countEl.textContent = t('certifications.filter.modal.allSelected', 'All selected');
+            } else {
+                countEl.textContent = t('certifications.filter.modal.selectedCount', '{count} selected').replace('{count}', checked);
+            }
         }
 
         function renderCertificationsByTypeAndCategory(showCerts, formationGroups, categories) {

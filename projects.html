@@ -105,16 +105,22 @@
         <!-- Category Filter Modal -->
         <div id="category-filter-modal" class="category-filter-modal" onclick="closeCategoryFilterModal(event)">
             <div class="category-filter-modal-content" onclick="event.stopPropagation()">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                    <h3 style="margin: 0; color: var(--text-primary);">Filter Categories</h3>
+                <div class="filter-modal-head">
+                    <h3>
+                        <i data-lucide="filter"></i>
+                        <span data-i18n="projects.filter.modal.title">Filter Categories</span>
+                    </h3>
                     <button class="modal-close" onclick="closeCategoryFilterModal()" aria-label="Close filter">
                         <i data-lucide="x"></i>
                     </button>
                 </div>
-                <div id="category-filter-options" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 60vh; overflow-y: auto; flex: 1; margin-bottom: 1.5rem;"></div>
-                <div style="display: flex; gap: 0.75rem; margin-top: auto;">
-                    <button onclick="applyCategoryFilter()" class="filter-apply-btn">Apply</button>
-                    <button onclick="closeCategoryFilterModal()" class="filter-cancel-btn">Cancel</button>
+                <div class="filter-quick-actions">
+                    <button class="filter-link-btn" onclick="clearCategoryFilters()" data-i18n="projects.filter.modal.clear">Clear all</button>
+                    <span class="filter-result-count" id="filter-result-count">0 selected</span>
+                </div>
+                <div id="category-filter-options" class="category-filter-options"></div>
+                <div class="filter-modal-footer">
+                    <button onclick="applyCategoryFilter()" class="filter-show-btn" data-i18n="projects.filter.modal.showResults">Show results</button>
                 </div>
             </div>
         </div>
@@ -652,8 +658,27 @@
                 setupCategoryFilterModal();
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
+                updateFilterResultCount();
             }
         }
+        
+        // Instant apply + live counter when toggling filters in the modal
+        document.addEventListener('change', function(e) {
+            if (e.target.matches('#category-filter-options input[type="checkbox"]')) {
+                updateFilterResultCount();
+                applyCategoryFilter(false);
+            }
+        });
+        
+        // Close filter modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('category-filter-modal');
+                if (modal && modal.classList.contains('active')) {
+                    closeCategoryFilterModal();
+                }
+            }
+        });
         
         function closeCategoryFilterModal(event) {
             if (event && event.target !== event.currentTarget) return;
@@ -664,7 +689,7 @@
             }
         }
         
-        function applyCategoryFilter() {
+        function applyCategoryFilter(closeModal = true) {
             const checkboxes = document.querySelectorAll('#category-filter-options input[type="checkbox"]');
             selectedCategories = [];
             
@@ -688,7 +713,30 @@
             
             updateFilterButtonState();
             if (typeof updateChipActiveState === 'function') updateChipActiveState();
-            closeCategoryFilterModal();
+            if (closeModal) closeCategoryFilterModal();
+        }
+        
+        function clearCategoryFilters() {
+            selectedCategories = [];
+            document.querySelectorAll('#category-filter-options input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+            });
+            updateFilterResultCount();
+            applyCategoryFilter(false);
+        }
+        
+        function updateFilterResultCount() {
+            const countEl = document.getElementById('filter-result-count');
+            if (!countEl) return;
+            const checked = document.querySelectorAll('#category-filter-options input[type="checkbox"]:checked').length;
+            const total = document.querySelectorAll('#category-filter-options input[type="checkbox"]').length;
+            if (checked === 0) {
+                countEl.textContent = t('projects.filter.modal.noneSelected', 'None selected');
+            } else if (checked === total) {
+                countEl.textContent = t('projects.filter.modal.allSelected', 'All selected');
+            } else {
+                countEl.textContent = t('projects.filter.modal.selectedCount', '{count} selected').replace('{count}', checked);
+            }
         }
         
         function renderProjectsByMultipleCategories(categories) {
@@ -696,7 +744,7 @@
             if (!container) return;
             
             const allProjects = getAllProjects();
-            const filteredProjects = allProjects.filter(project => {
+            let filteredProjects = allProjects.filter(project => {
                 const projectCategories = project.categories || [project.category];
                 return categories.some(cat => projectCategories.includes(cat));
             });
@@ -704,16 +752,47 @@
             container.innerHTML = '';
             
             if (filteredProjects.length === 0) {
-                container.innerHTML = `<p style="text-align: center; color: var(--text-secondary); padding: 2rem;">${t('projects.empty', 'No projects found.')}</p>`;
+                const emptyText = t('projects.empty', 'No projects found for this category.');
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i data-lucide="folder-x"></i>
+                        <p>${emptyText}</p>
+                    </div>
+                `;
+                renderIcons();
                 return;
             }
             
+            // Update stats
+            document.getElementById('total-projects').textContent = allProjects.length;
+            updateHeroStats(allProjects);
+            
+            // Same sort order as renderProjects
+            filteredProjects = filteredProjects.slice().sort((a, b) => {
+                const ap = Number.isFinite(a.priority) ? a.priority : Number.POSITIVE_INFINITY;
+                const bp = Number.isFinite(b.priority) ? b.priority : Number.POSITIVE_INFINITY;
+                if (ap !== bp) return ap - bp;
+                const af = a.featured ? 1 : 0;
+                const bf = b.featured ? 1 : 0;
+                if (af !== bf) return bf - af;
+                const ai = a.status === 'in-development' ? 1 : 0;
+                const bi = b.status === 'in-development' ? 1 : 0;
+                if (ai !== bi) return bi - ai;
+                const ad = a.dateStarted || a.dateCompleted || '';
+                const bd = b.dateStarted || b.dateCompleted || '';
+                return bd.localeCompare(ad);
+            });
+            
             filteredProjects.forEach(project => {
-                const row = createProjectRow(project);
-                container.appendChild(row);
+                const card = createProjectCard(project);
+                container.appendChild(card);
             });
             
             renderIcons();
+            
+            if (window.innerWidth <= 768) {
+                truncateCategoryBadges();
+            }
         }
         
         function updateFilterButtonState() {

@@ -90,6 +90,48 @@
             de: "Filter",
             fr: "Filtrer"
         },
+        "projects.filter.modal.title": {
+            en: "Filter Categories",
+            pt: "Filtrar Categorias",
+            lu: "Kategorien filteren",
+            de: "Kategorien filtern",
+            fr: "Filtrer les Catégories"
+        },
+        "projects.filter.modal.clear": {
+            en: "Clear all",
+            pt: "Limpar tudo",
+            lu: "Alläi läschen",
+            de: "Alle zurücksetzen",
+            fr: "Tout effacer"
+        },
+        "projects.filter.modal.showResults": {
+            en: "Show results",
+            pt: "Mostrar resultados",
+            lu: "Resultater weisen",
+            de: "Ergebnisse anzeigen",
+            fr: "Afficher les résultats"
+        },
+        "projects.filter.modal.noneSelected": {
+            en: "None selected",
+            pt: "Nenhum selecionado",
+            lu: "Nichts ausgewielt",
+            de: "Keine ausgewählt",
+            fr: "Aucune sélection"
+        },
+        "projects.filter.modal.allSelected": {
+            en: "All selected",
+            pt: "Todos selecionados",
+            lu: "Alles ausgewielt",
+            de: "Alle ausgewählt",
+            fr: "Tout sélectionné"
+        },
+        "projects.filter.modal.selectedCount": {
+            en: "{count} selected",
+            pt: "{count} selecionado(s)",
+            lu: "{count} ausgewielt",
+            de: "{count} ausgewählt",
+            fr: "{count} sélectionné(s)"
+        },
         "projects.stats.categories": {
             en: "Categories",
             pt: "Categorias",

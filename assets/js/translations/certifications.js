@@ -223,19 +223,40 @@
             de: "Nach Kategorie filtern",
             fr: "Filtrer par Catégorie"
         },
-        "certifications.filter.modal.apply": {
-            en: "Apply",
-            pt: "Aplicar",
-            lu: "Uwennen",
-            de: "Anwenden",
-            fr: "Appliquer"
+        "certifications.filter.modal.showResults": {
+            en: "Show results",
+            pt: "Mostrar resultados",
+            lu: "Resultater weisen",
+            de: "Ergebnisse anzeigen",
+            fr: "Afficher les résultats"
         },
-        "certifications.filter.modal.cancel": {
-            en: "Cancel",
-            pt: "Cancelar",
-            lu: "Ofbriechen",
-            de: "Abbrechen",
-            fr: "Annuler"
+        "certifications.filter.modal.clear": {
+            en: "Clear all",
+            pt: "Limpar tudo",
+            lu: "Alläi läschen",
+            de: "Alle zurücksetzen",
+            fr: "Tout effacer"
+        },
+        "certifications.filter.modal.noneSelected": {
+            en: "None selected",
+            pt: "Nenhum selecionado",
+            lu: "Nichts ausgewielt",
+            de: "Keine ausgewählt",
+            fr: "Aucune sélection"
+        },
+        "certifications.filter.modal.allSelected": {
+            en: "All selected",
+            pt: "Todos selecionados",
+            lu: "Alles ausgewielt",
+            de: "Alle ausgewählt",
+            fr: "Tout sélectionné"
+        },
+        "certifications.filter.modal.selectedCount": {
+            en: "{count} selected",
+            pt: "{count} selecionado(s)",
+            lu: "{count} ausgewielt",
+            de: "{count} ausgewählt",
+            fr: "{count} sélectionné(s)"
         },
         "certifications.type.training": {
             en: "Training",

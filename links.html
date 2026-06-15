@@ -201,41 +201,19 @@
             width: 100%;
             max-width: 480px;
             margin-top: 1.35rem;
-            padding: 0.9rem 1.05rem;
+            padding: 0.9rem 1.15rem;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 4px;
             box-shadow: 0 2px 10px var(--shadow-color);
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
+            text-align: center;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-primary);
             animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
             animation-delay: 0.05s;
         }
-        .bio-row { display: flex; align-items: center; gap: 0.7rem; }
-        .bio-row .icon {
-            flex-shrink: 0;
-            width: 28px; height: 28px;
-            display: grid; place-items: center;
-            border-radius: 3px;
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-        }
-        .bio-row .icon svg { width: 15px; height: 15px; }
-        .bio-row .text { font-size: 0.82rem; line-height: 1.35; }
-        .bio-row .text strong { font-weight: 600; }
-        .bio-row .text .muted { color: var(--text-secondary); }
-        .bio-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.3rem; }
-        .bio-tags span {
-            font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', monospace;
-            font-size: 0.68rem;
-            letter-spacing: -0.02em;
-            padding: 0.2rem 0.5rem;
-            border-radius: 3px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            color: var(--text-secondary);
-        }
+        .bio strong { font-weight: 600; }
 
         /* ----- Link list ----- */
         .links {
@@ -357,6 +335,14 @@
         .hub-footer a { color: var(--text-primary); text-decoration: none; font-weight: 500; }
         .hub-footer a:hover { text-decoration: underline; }
 
+        /* ----- Desktop card wrapper ----- */
+        .linkhub-card {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         /* ----- Animations ----- */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(14px); }
@@ -381,10 +367,148 @@
             .link { opacity: 1; transform: none; }
         }
 
-        /* Desktop comfort */
+        /* Tablet */
         @media (min-width: 600px) {
-            .avatar-wrap { width: 124px; height: 124px; }
+            .avatar-wrap { width: 128px; height: 128px; }
             .links { gap: 0.95rem; }
+        }
+
+        /* Desktop layout */
+        @media (min-width: 900px) {
+            body {
+                padding: 2.5rem 1.5rem;
+                justify-content: center;
+            }
+
+            .linkhub-card {
+                max-width: 900px;
+                background: var(--card-bg);
+                border: 1px solid var(--border-color);
+                border-radius: 18px;
+                padding: 3rem 3.5rem 2.5rem;
+                box-shadow: 0 24px 70px var(--shadow-color);
+            }
+
+            .hub, .bio, .links {
+                max-width: 100%;
+            }
+
+            .avatar-wrap {
+                width: 160px;
+                height: 160px;
+                margin-bottom: 1.5rem;
+            }
+            .avatar-status {
+                width: 26px;
+                height: 26px;
+                border-width: 4px;
+            }
+
+            .name {
+                font-size: 2.35rem;
+            }
+            .handle {
+                font-size: 1.05rem;
+                margin-top: 0.3rem;
+            }
+            .status-pill {
+                margin-top: 1.35rem;
+                padding: 0.55rem 1.15rem;
+                font-size: 0.82rem;
+            }
+
+            .bio {
+                max-width: 680px;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                padding: 1.5rem 0;
+                margin-top: 1.5rem;
+                border-top: 1px solid var(--border-color);
+                border-bottom: 1px solid var(--border-color);
+                border-radius: 0;
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .links {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+            .link {
+                padding: 1.1rem 1.25rem;
+                font-size: 1rem;
+                border-radius: 8px;
+            }
+            .link.featured {
+                grid-column: 1 / -1;
+                padding: 1.25rem 1.5rem;
+                font-size: 1.1rem;
+            }
+            .link .icon {
+                width: 46px;
+                height: 46px;
+                border-radius: 6px;
+            }
+            .link .icon svg { width: 22px; height: 22px; }
+            .link .label .sub { font-size: 0.82rem; }
+            .link .chev svg { width: 20px; height: 20px; }
+
+            .socials {
+                gap: 1rem;
+                margin-top: 2.25rem;
+            }
+            .social {
+                width: 54px;
+                height: 54px;
+                border-radius: 8px;
+            }
+            .social svg { width: 24px; height: 24px; }
+
+            .hub-footer {
+                margin-top: 2.5rem;
+                font-size: 0.85rem;
+            }
+            .hub-footer img { width: 30px; height: 30px; }
+
+            .theme-toggle {
+                width: 50px;
+                height: 50px;
+                border-radius: 8px;
+                top: 1.75rem;
+                right: 1.75rem;
+            }
+            .theme-toggle svg { width: 22px; height: 22px; }
+
+            .ambient-glow {
+                width: min(950px, 80vw);
+                height: 700px;
+            }
+        }
+
+        /* Large desktop */
+        @media (min-width: 1200px) {
+            body { padding: 3rem 2rem; }
+
+            .linkhub-card {
+                max-width: 1000px;
+                padding: 3.5rem 4.5rem 3rem;
+            }
+
+            .name { font-size: 2.6rem; }
+            .handle { font-size: 1.1rem; }
+
+            .bio {
+                padding: 1.75rem 0;
+                font-size: 1.05rem;
+            }
+
+            .links { gap: 1.1rem; margin-top: 2.25rem; }
+            .link { padding: 1.2rem 1.4rem; font-size: 1.05rem; }
+            .link.featured { padding: 1.35rem 1.6rem; font-size: 1.15rem; }
+            .link .label .sub { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -397,6 +521,7 @@
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
     </button>
 
+    <main class="linkhub-card">
     <header class="hub">
         <div class="avatar-wrap">
             <img class="avatar" src="assets/img/hero-profile.webp" alt="Guilherme Videira Marques" width="124" height="124">
@@ -404,40 +529,13 @@
         </div>
         <h1 class="name">Guilherme Videira Marques</h1>
         <p class="handle">@VidGuiCode · Luxembourg</p>
-        <span class="status-pill"><span class="dot" aria-hidden="true"></span>Available for opportunities</span>
     </header>
 
     <section class="bio" aria-label="About me">
-        <div class="bio-row">
-            <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            </span>
-            <p class="text"><strong>Cloud Computing student</strong> (BTS, 2025–2027) at Lycée Guillaume Kroll, Luxembourg.</p>
-        </div>
-        <div class="bio-row">
-            <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/><circle cx="12" cy="8" r="6"/></svg>
-            </span>
-            <p class="text"><strong>Computer Technician Diploma</strong> (Diplôme de Technicien) <span class="muted">— Lycée Guillaume Kroll, 2025, graduated with "Very Good" mention.</span></p>
-        </div>
-        <div class="bio-row">
-            <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-3 7h6l-3 7"/><path d="M5.5 12a5.5 5.5 0 1 1 11 0"/></svg>
-            </span>
-            <div class="text">
-                <span>Main interests: <strong>cloud infrastructure, DevOps &amp; automation.</strong></span>
-                <div class="bio-tags">
-                    <span>Docker</span><span>Kubernetes</span><span>Networking / CCNA</span><span>Full-Stack</span><span>AI Tools</span>
-                </div>
-            </div>
-        </div>
-        <div class="bio-row">
-            <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
-            </span>
-            <p class="text">Fluent in <strong>5 languages</strong> <span class="muted">— Portuguese, Luxembourgish, English, German &amp; French.</span></p>
-        </div>
+        <p><strong>Cloud Computing student</strong> in Luxembourg, interested in AI, self-hosting and fitness.</p>
     </section>
+
+    <span class="status-pill"><span class="dot" aria-hidden="true"></span>Available for opportunities</span>
 
     <nav class="links" aria-label="My links">
         <a class="link featured" href="index.html">
@@ -507,6 +605,7 @@
         <img src="assets/img/logos/vidguicode-favicon.svg" alt="VidGuiCode logo">
         <p>&copy; <span id="year"></span> Guilherme Videira Marques · <a href="index.html">vidguicode.github.io</a></p>
     </footer>
+    </main>
 
     <script>
         // Year
