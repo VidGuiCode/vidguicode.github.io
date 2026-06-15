@@ -400,6 +400,24 @@ const FORMATIONS = [
         logo: 'assets/img/logos/deep-logo.webp',
         logoDark: 'assets/img/logos/deep-logo-white.webp',
     },
+    {
+        id: 'lgk-open-day-bts-cloud-computing',
+        name: 'BTS Cloud Computing Representative — LGK Open Day',
+        nameKey: 'formation.lgkopenday.name',
+        provider: 'Lycée Guillaume Kroll (LGK)',
+        group: 'outreach',
+        category: 'Outreach',
+        description: 'At the Lycée Guillaume Kroll Open Day, I represented the BTS Cloud Computing program and spoke with future students and parents about what the course is like, what we work on, and where an IT path can lead. I also created a promotional video for the Diplôme de Technicien en Informatique path under a tight deadline and helped prepare the event.',
+        descriptionKey: 'formation.lgkopenday.description',
+        dateCompleted: '2026-05-16', // May 16, 2026
+        duration: '1 day',
+        format: 'In-person',
+        location: 'Lycée Guillaume Kroll (LGK)',
+        relatedCertifications: [],
+        skills: ['Public Speaking', 'Technical Communication', 'Event Coordination', 'Video Production', 'Visitor Engagement'],
+        skillsKeys: ['formation.lgkopenday.skills.publicspeaking', 'formation.lgkopenday.skills.communication', 'formation.lgkopenday.skills.eventcoordination', 'formation.lgkopenday.skills.video', 'formation.lgkopenday.skills.visitorengagement'],
+        logo: 'assets/img/logos/lgk-logo.webp',
+    },
     // Add more formations as needed
 ];
 

@@ -61,6 +61,48 @@
             lu: "Detailer kucken",
             de: "Details ansehen",
             fr: "Voir les Détails"
+        },
+        "projects.featured.heading": {
+            en: "Featured",
+            pt: "Em Destaque",
+            lu: "Highlights",
+            de: "Ausgewählt",
+            fr: "À la une"
+        },
+        "projects.all.heading": {
+            en: "All projects",
+            pt: "Todos os projetos",
+            lu: "All Projeten",
+            de: "Alle Projekte",
+            fr: "Tous les projets"
+        },
+        "projects.filter.more": {
+            en: "More",
+            pt: "Mais",
+            lu: "Méi",
+            de: "Mehr",
+            fr: "Plus"
+        },
+        "projects.filter.label": {
+            en: "Filter",
+            pt: "Filtrar",
+            lu: "Filteren",
+            de: "Filter",
+            fr: "Filtrer"
+        },
+        "projects.stats.categories": {
+            en: "Categories",
+            pt: "Categorias",
+            lu: "Kategorien",
+            de: "Kategorien",
+            fr: "Catégories"
+        },
+        "projects.stats.years": {
+            en: "Years Active",
+            pt: "Anos Ativos",
+            lu: "Joren Aktiv",
+            de: "Aktive Jahre",
+            fr: "Années d'activité"
         }
     };
     Object.assign(translations, extra);

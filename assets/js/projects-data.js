@@ -88,7 +88,8 @@ const PROJECTS = [
         dateCompleted: '2025-03',
         dateStarted: '2025-03',
         link: 'projects/project-homelab.html',
-        featured: true
+        featured: true,
+        priority: 1
     },
     {
         id: 'cylro',
@@ -107,7 +108,8 @@ const PROJECTS = [
         statusKey: 'projects.status.inDevelopment',
         dateStarted: '2025-08',
         link: 'projects/project-cylro.html',
-        featured: true
+        featured: true,
+        priority: 2
     },
     {
         id: 'pif',
@@ -127,26 +129,28 @@ const PROJECTS = [
         dateStarted: '2024-09',
         score: '59/60',
         link: 'projects/project-pif.html',
-        featured: true
+        featured: true,
+        priority: 3
     },
     {
         id: 'whispflow',
         name: 'WhispFlow',
         nameKey: 'projects.whispflow.title',
-        description: 'Talent Exhibition project: A desktop app that records meetings, transcribes audio locally with faster-whisper, and generates AI-powered summaries (key points, decisions, action items) via 5 cloud providers. Local-first, privacy-focused, with versioned transcripts and multi-language support.',
+        description: 'Talent Exhibition project: A desktop app that records meetings, transcribes audio locally with faster-whisper, and generates AI-powered summaries (key points, decisions, action items) via 3 cloud providers. Local-first, privacy-focused, with versioned transcripts and multi-language support.',
         descriptionKey: 'projects.whispflow.desc',
         category: 'School Projects',
         categoryKey: 'projects.category.school',
         categories: ['School Projects', 'Full-Stack', 'Cloud Computing'],
         categoryKeys: ['projects.category.school', 'projects.category.fullstack', 'projects.category.cloud'],
-        tags: ['Electron', 'Node.js', 'Python', 'faster-whisper', 'OpenAI', 'Mistral', 'Anthropic', 'Groq', 'Cohere', 'FFmpeg', 'AI', 'Transcription', 'Speech-to-Text', 'Local-First'],
+        tags: ['Electron', 'Node.js', 'Python', 'faster-whisper', 'OpenAI', 'Mistral', 'Anthropic', 'FFmpeg', 'AI', 'Transcription', 'Speech-to-Text', 'Local-First'],
         icon: 'audio-waveform',
         iconImage: 'assets/img/projects/whispflow/whispflow-submark.webp',
         status: 'in-development',
         statusKey: 'projects.status.inDevelopment',
         dateStarted: '2025-10',
         link: 'projects/project-whispflow.html',
-        featured: true
+        featured: true,
+        priority: 4
     },
     {
         id: 'az-where',
@@ -264,7 +268,7 @@ const PROJECTS = [
         dateCompleted: '2026-01',
         dateStarted: '2025-11',
         link: 'projects/project-teams-broadcast.html',
-        featured: true
+        featured: false
     },
     {
         id: 'gradingdino',
@@ -284,7 +288,8 @@ const PROJECTS = [
         dateCompleted: '2025-11',
         dateStarted: '2025-10',
         link: 'projects/project-gradingdino.html',
-        featured: true
+        featured: true,
+        priority: 6
     },
     {
         id: 'rds-documentation',
@@ -304,6 +309,27 @@ const PROJECTS = [
         dateStarted: '2025-11',
         link: 'projects/project-rds-documentation.html',
         featured: false
+    },
+    {
+        id: 'unraid-nas',
+        name: 'UnRAID Storage Server (NAS)',
+        nameKey: 'projects.unraid.title',
+        description: 'For the Cloud Infrastructure 2 module, my two-person team took a bare Intel 2U rack server and turned it into a full NAS: hardware RAID 5 on an Areca ARC-1880 controller, a Btrfs RAID 1 mirror, SMB shares with per-user permissions, out-of-band management, and an iSCSI block-storage target tested from a Windows client.',
+        descriptionKey: 'projects.unraid.desc',
+        category: 'School Projects',
+        categoryKey: 'projects.category.school',
+        categories: ['School Projects', 'Infrastructure', 'Networking', 'Database', 'Security'],
+        categoryKeys: ['projects.category.school', 'projects.category.infrastructure', 'projects.category.networking', 'projects.category.database', 'projects.category.security'],
+        tags: ['UnRAID', 'NAS', 'Intel SR2600', 'Xeon X5650', 'Areca ARC-1880', 'RAID 5', 'RAID 1', 'Btrfs', 'XFS', 'SAS', 'SATA', 'SMB', 'iSCSI', 'LUN', 'NFS', 'IPMI', 'Intel RMM3', 'Linux', 'Rack Server', 'Block Storage', 'Access Control'],
+        icon: 'hard-drive',
+        iconImage: 'assets/img/logos/unraid-mark.svg',
+        status: 'completed',
+        statusKey: 'projects.status.completed',
+        dateCompleted: '2026-03',
+        dateStarted: '2026-02',
+        link: 'projects/project-unraid-nas.html',
+        featured: true,
+        priority: 5
     },
     {
         id: 'portfolio',

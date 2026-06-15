@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="38.6 -34 145 145" role="img" aria-label="UnRAID">
+  <linearGradient id="unraidMark" x1="68.07" x2="154.073" y1="81.489" y2="-4.514" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#e32929"></stop>
+    <stop offset="1" stop-color="#ff8d30"></stop>
+  </linearGradient>
+  <path fill="url(#unraidMark)" d="M107.8 19.2h6.5v38.5h-6.5V19.2zM50.9 57.7h-6.5V19.2h6.5v38.5zm25.2 4.6h6.5V77h-6.5V62.3zM60.2 45.8h6.5v23.8h-6.5V45.8zm31.7 0h6.5v23.8h-6.5V45.8zm79.4-26.6h6.5v38.5h-6.5V19.2zm-25.2-4.5h-6.5V0h6.5v14.7zM162 31.1h-6.5V7.4h6.5v23.7zm-31.8 0h-6.5V7.4h6.5v23.7z"></path>
+</svg>

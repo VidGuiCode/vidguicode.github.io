@@ -181,6 +181,34 @@
             de: "Produktivität",
             fr: "Productivité"
         },
+        "certifications.filter.infrastructure": {
+            en: "Infrastructure",
+            pt: "Infraestrutura",
+            lu: "Infrastruktur",
+            de: "Infrastruktur",
+            fr: "Infrastructure"
+        },
+        "certifications.filter.security": {
+            en: "Security",
+            pt: "Segurança",
+            lu: "Sécherheet",
+            de: "Sicherheit",
+            fr: "Sécurité"
+        },
+        "certifications.filter.blockchain": {
+            en: "Blockchain",
+            pt: "Blockchain",
+            lu: "Blockchain",
+            de: "Blockchain",
+            fr: "Blockchain"
+        },
+        "certifications.filter.outreach": {
+            en: "Outreach",
+            pt: "Divulgação",
+            lu: "Outreach",
+            de: "Outreach",
+            fr: "Promotion"
+        },
         "certifications.filter.categories": {
             en: "Filter",
             pt: "Filtrar",
@@ -215,6 +243,13 @@
             lu: "Training",
             de: "Schulung",
             fr: "Formation"
+        },
+        "certifications.type.outreach": {
+            en: "Outreach",
+            pt: "Divulgação",
+            lu: "Outreach",
+            de: "Outreach",
+            fr: "Promotion"
         },
         "certifications.modal.relatedFormations": {
             en: "Related Training",
@@ -937,6 +972,57 @@
             lu: "Opkommend Technologien",
             de: "Aufkommende Technologien",
             fr: "Technologies Émergentes"
+        },
+
+        // LGK Open Day — BTS Cloud Computing Representation
+        "formation.lgkopenday.name": {
+            en: "BTS Cloud Computing Representative — LGK Open Day",
+            pt: "Representante do BTS Cloud Computing — Dia Aberto LGK",
+            lu: "BTS Cloud Computing Vertrieder — LGK Porte Ouverte",
+            de: "BTS Cloud Computing Vertreter — LGK Tag der offenen Tür",
+            fr: "Représentant BTS Cloud Computing — Porte Ouverte LGK"
+        },
+        "formation.lgkopenday.description": {
+            en: "At the Lycée Guillaume Kroll Open Day, I represented the BTS Cloud Computing program and spoke with future students and parents about what the course is like, what we work on, and where an IT path can lead. I also created a promotional video for the Diplôme de Technicien en Informatique path under a tight deadline and helped prepare the event.",
+            pt: "No Dia Aberto do Lycée Guillaume Kroll, representei o programa BTS Cloud Computing e falei com futuros alunos e pais sobre como é o curso, no que trabalhamos e até onde um percurso em IT pode levar. Também criei um vídeo promocional para o percurso Diplôme de Technicien en Informatique com um prazo apertado e ajudei a preparar o evento.",
+            lu: "Bei der Porte Ouverte vum Lycée Guillaume Kroll hunn ech de BTS Cloud Computing vertrueden a mat zukünftege Schüler an Elteren doriwwer geschwat, wéi de Cours ass, u wat mir schaffen a wou en IT-Wee hi féiere kann. Ech hunn och ënner engem enke Deadline e Promotiounsvideo fir de Parcours Diplôme de Technicien en Informatique erstallt an beim Preparéiere vum Event gehollef.",
+            de: "Beim Tag der offenen Tür des Lycée Guillaume Kroll vertrat ich den BTS Cloud Computing und sprach mit zukünftigen Schülern und Eltern darüber, wie der Kurs abläuft, woran wir arbeiten und wohin ein Weg in die IT führen kann. Außerdem erstellte ich unter Zeitdruck ein Werbevideo für den Weg Diplôme de Technicien en Informatique und half bei der Vorbereitung der Veranstaltung.",
+            fr: "Lors de la Porte Ouverte du Lycée Guillaume Kroll, j'ai représenté le BTS Cloud Computing et échangé avec de futurs élèves et leurs parents sur le déroulement de la formation, les projets sur lesquels nous travaillons et les débouchés possibles dans l'IT. J'ai aussi créé une vidéo promotionnelle pour la voie Diplôme de Technicien en Informatique dans un délai serré et aidé à préparer l'événement."
+        },
+        "formation.lgkopenday.skills.publicspeaking": {
+            en: "Public Speaking",
+            pt: "Comunicação em Público",
+            lu: "Ëffentlecht Schwätzen",
+            de: "Öffentliches Sprechen",
+            fr: "Prise de Parole"
+        },
+        "formation.lgkopenday.skills.communication": {
+            en: "Technical Communication",
+            pt: "Comunicação Técnica",
+            lu: "Technesch Kommunikatioun",
+            de: "Technische Kommunikation",
+            fr: "Communication Technique"
+        },
+        "formation.lgkopenday.skills.eventcoordination": {
+            en: "Event Coordination",
+            pt: "Coordenação de Eventos",
+            lu: "Event-Koordinatioun",
+            de: "Event-Koordination",
+            fr: "Coordination d'Événement"
+        },
+        "formation.lgkopenday.skills.video": {
+            en: "Video Production",
+            pt: "Produção de Vídeo",
+            lu: "Video-Produktioun",
+            de: "Videoproduktion",
+            fr: "Production Vidéo"
+        },
+        "formation.lgkopenday.skills.visitorengagement": {
+            en: "Visitor Engagement",
+            pt: "Envolvimento de Visitantes",
+            lu: "Visiteur-Engagement",
+            de: "Besucherkommunikation",
+            fr: "Engagement des Visiteurs"
         }
     };
     Object.assign(translations, extra);

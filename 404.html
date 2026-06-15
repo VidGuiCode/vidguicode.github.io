@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | VidGuiCode</title>
+    <meta name="description" content="The requested page could not be found on VidGuiCode.">
+    <meta name="robots" content="noindex">
+
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
+            } catch (_) {}
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/img/logos/vidguicode-favicon.svg">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/icons.js" defer></script>
+
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+        }
+
+        .error-card {
+            width: min(100%, 560px);
+            text-align: center;
+        }
+
+        .error-logo {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1.5rem;
+        }
+
+        [data-theme="light"] .error-logo {
+            filter: brightness(0);
+        }
+
+        .error-code {
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(4rem, 18vw, 7rem);
+            line-height: 0.9;
+            letter-spacing: -0.08em;
+            color: var(--text-primary);
+        }
+
+        .error-title {
+            margin: 1rem 0 0;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--text-primary);
+        }
+
+        .error-text {
+            margin: 1rem auto 0;
+            max-width: 42rem;
+            color: var(--text-secondary);
+        }
+
+        .error-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .theme-button {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            border-radius: 999px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background" aria-hidden="true"></div>
+
+    <button id="theme-toggle" class="icon-btn theme-button" type="button" aria-label="Toggle theme">
+        <i data-lucide="sun" class="sun-icon" aria-hidden="true"></i>
+        <i data-lucide="moon" class="moon-icon" aria-hidden="true"></i>
+    </button>
+
+    <main class="error-page">
+        <section class="error-card" aria-labelledby="error-title">
+            <img class="error-logo" src="assets/img/logos/vidguicode-favicon.svg" alt="" aria-hidden="true">
+            <p class="error-code">404</p>
+            <h1 id="error-title" class="error-title">Page not found</h1>
+            <p class="error-text">
+                This page does not exist, may have moved, or the URL may contain a typo.
+            </p>
+            <div class="error-actions">
+                <a href="/" class="btn primary">Back to Home</a>
+                <a href="/projects.html" class="btn secondary">View Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            var themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function () {
+                    var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                    var nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', nextTheme);
+                    try { localStorage.setItem('theme', nextTheme); } catch (_) {}
+                });
+            }
+
+            function renderPageIcons() {
+                if (typeof renderIcons !== 'undefined') renderIcons();
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', renderPageIcons);
+            } else {
+                renderPageIcons();
+            }
+            window.addEventListener('load', renderPageIcons);
+        })();
+    </script>
+</body>
+</html>

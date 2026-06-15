@@ -49,6 +49,13 @@ const translations = {
         de: "Zertifizierungen",
         fr: "Certifications"
     },
+    "nav.certs": {
+        en: "Certs",
+        pt: "Certs",
+        lu: "Certs",
+        de: "Certs",
+        fr: "Certifs"
+    },
 
     // Hero Section
     "hero.badge": {
@@ -59,18 +66,33 @@ const translations = {
         fr: "DISPONIBLE POUR OPPORTUNITÉS"
     },
     "hero.subtitle": {
-        en: "Cloud Computing Student & Future Infrastructure Architect.",
-        pt: "Estudante de Cloud Computing e futuro arquiteto de infraestruturas.",
-        lu: "Cloud Computing Student & Zukünftegen Infrastruktur Architekt.",
-        de: "Cloud Computing Student & Zukünftiger Infrastruktur-Architekt.",
-        fr: "Étudiant Cloud Computing & Futur Architecte d'Infrastructure."
+        en: "Cloud Computing Student focused on cloud infrastructure, automation, and practical systems.",
+        pt: "Estudante de Cloud Computing focado em infraestrutura cloud, automação e sistemas práticos.",
+        lu: "Cloud Computing Student mat Fokus op Cloud-Infrastruktur, Automatisatioun a praktesch Systemer.",
+        de: "Cloud-Computing-Student mit Fokus auf Cloud-Infrastruktur, Automatisierung und praktische Systeme.",
+        fr: "Étudiant en Cloud Computing, axé sur l'infrastructure cloud, l'automatisation et les systèmes pratiques."
     },
     "hero.description": {
-        en: "Building reliable infrastructure, automating workflows, and turning ideas into polished web experiences. 19 years old, based in Luxembourg.",
-        pt: "Construo infraestruturas fiáveis, automatizo fluxos de trabalho e transformo ideias em experiências web refinadas. 19 anos, sediado no Luxemburgo.",
-        lu: "Zouverlässeg Infrastruktur bauen, Workflows automatiséieren, an Iddien an polished Web Erfarungen ëmsetzen. 19 Joer al, am Lëtzebuerg.",
-        de: "Aufbau zuverlässiger Infrastruktur, Automatisierung von Workflows und Umsetzung von Ideen in elegante Web-Erlebnisse. 19 Jahre alt, in Luxemburg.",
-        fr: "Construction d'infrastructures fiables, automatisation des workflows et transformation d'idées en expériences web soignées. 19 ans, basé au Luxembourg."
+        en: "Based in Luxembourg, I build reliable infrastructure, automate workflows, and turn ideas into polished software and web experiences.",
+        pt: "Com base no Luxemburgo, construo infraestruturas fiáveis, automatizo fluxos de trabalho e transformo ideias em software e experiências web refinadas.",
+        lu: "Baséiert zu Lëtzebuerg bauen ech zouverlässeg Infrastruktur, automatiséieren Workflows a maachen Iddien zu poléierter Software a Web-Erfarungen.",
+        de: "In Luxemburg ansässig baue ich zuverlässige Infrastruktur, automatisiere Workflows und verwandle Ideen in ausgereifte Software- und Web-Erlebnisse.",
+        fr: "Basé au Luxembourg, je construis des infrastructures fiables, j'automatise des workflows et je transforme des idées en logiciels et expériences web soignés."
+    },
+
+    "home.highlight.lgk.title": {
+        en: "Recent highlight: LGK Open Day",
+        pt: "Destaque recente: Dia Aberto LGK",
+        lu: "Rezenten Highlight: LGK Porte Ouverte",
+        de: "Aktuelles Highlight: LGK Tag der offenen Tür",
+        fr: "Temps fort récent : Porte Ouverte LGK"
+    },
+    "home.highlight.lgk.desc": {
+        en: "Represented BTS Cloud Computing, spoke with future students and parents, and produced a promotional video for the IT technician path.",
+        pt: "Representei o BTS Cloud Computing, falei com futuros alunos e pais, e produzi um vídeo promocional para o percurso de técnico em informática.",
+        lu: "Ech hunn de BTS Cloud Computing vertrueden, mat zukünftege Schüler an Elteren geschwat an e Promotiounsvideo fir den Informatik-Techniker-Parcours produzéiert.",
+        de: "Ich vertrat den BTS Cloud Computing, sprach mit zukünftigen Schülern und Eltern und produzierte ein Werbevideo für den Informatiktechniker-Weg.",
+        fr: "J'ai représenté le BTS Cloud Computing, échangé avec de futurs élèves et parents, et produit une vidéo promotionnelle pour la voie technicien informatique."
     },
     "hero.cta.contact": {
         en: "Get in Touch",
@@ -4739,11 +4761,11 @@ const translations = {
         fr: "<strong>Transcrire</strong> — Transcription locale avec faster-whisper. Choisissez le modèle (tiny à large) selon vitesse vs. précision. Multi-langue avec détection auto. Transcription en direct pendant l'enregistrement."
     },
     "project.whispflow.workflow.body3": {
-        en: "<strong>Summarize</strong> — AI generates structured output: key points, decisions, action items, and a full summary. Pick from 5 providers. Generate in any language. Results are cached to save API costs.",
-        pt: "<strong>Resumir</strong> — A IA gera output estruturado: pontos-chave, decisões, ações e um resumo completo. Escolhe entre 5 fornecedores. Gera em qualquer idioma. Resultados em cache para poupar custos.",
-        lu: "<strong>Zesummefaassen</strong> — AI generéiert strukturéierten Output: Haaptpunkten, Decisiounen, Aktiounspunkten an e vollstännege Resumé. Wiel aus 5 Provideren. Generéier an all Sprooch. Resultater ginn gecached fir API-Käschten ze spueren.",
-        de: "<strong>Zusammenfassen</strong> — KI generiert strukturierten Output: Kernpunkte, Entscheidungen, Aktionspunkte und eine vollständige Zusammenfassung. 5 Anbieter zur Wahl. In jeder Sprache generieren. Ergebnisse werden gecacht um API-Kosten zu sparen.",
-        fr: "<strong>Résumer</strong> — L'IA génère une sortie structurée : points clés, décisions, actions et un résumé complet. 5 fournisseurs au choix. Génération dans n'importe quelle langue. Résultats mis en cache pour économiser les coûts API."
+        en: "<strong>Summarize</strong> — AI generates structured output: key points, decisions, action items, and a full summary. Pick from 3 providers. Generate in any language. Results are cached to save API costs.",
+        pt: "<strong>Resumir</strong> — A IA gera output estruturado: pontos-chave, decisões, ações e um resumo completo. Escolhe entre 3 fornecedores. Gera em qualquer idioma. Resultados em cache para poupar custos.",
+        lu: "<strong>Zesummefaassen</strong> — AI generéiert strukturéierten Output: Haaptpunkten, Decisiounen, Aktiounspunkten an e vollstännege Resumé. Wiel aus 3 Provideren. Generéier an all Sprooch. Resultater ginn gecached fir API-Käschten ze spueren.",
+        de: "<strong>Zusammenfassen</strong> — KI generiert strukturierten Output: Kernpunkte, Entscheidungen, Aktionspunkte und eine vollständige Zusammenfassung. 3 Anbieter zur Wahl. In jeder Sprache generieren. Ergebnisse werden gecacht um API-Kosten zu sparen.",
+        fr: "<strong>Résumer</strong> — L'IA génère une sortie structurée : points clés, décisions, actions et un résumé complet. 3 fournisseurs au choix. Génération dans n'importe quelle langue. Résultats mis en cache pour économiser les coûts API."
     },
     "project.whispflow.workflow.body4": {
         en: "<strong>Export</strong> — Copy to clipboard or export to file. Open session folders directly in file explorer. Share with colleagues or classmates.",
@@ -4774,11 +4796,11 @@ const translations = {
         fr: "Transcription locale avec plusieurs modèles Whisper — fonctionne hors ligne"
     },
     "project.whispflow.features.summaries": {
-        en: "AI summaries from 5 providers with multi-language support",
-        pt: "Resumos IA de 5 fornecedores com suporte multi-idioma",
-        lu: "AI Zesummefaassungen vun 5 Provideren mat Multi-Sprooch Support",
-        de: "KI-Zusammenfassungen von 5 Anbietern mit Mehrsprachunterstützung",
-        fr: "Résumés IA de 5 fournisseurs avec support multilingue"
+        en: "AI summaries from 3 providers with multi-language support",
+        pt: "Resumos IA de 3 fornecedores com suporte multi-idioma",
+        lu: "AI Zesummefaassungen vun 3 Provideren mat Multi-Sprooch Support",
+        de: "KI-Zusammenfassungen von 3 Anbietern mit Mehrsprachunterstützung",
+        fr: "Résumés IA de 3 fournisseurs avec support multilingue"
     },
     "project.whispflow.features.versioning": {
         en: "Versioned transcripts and summaries — re-transcribe without losing data",
@@ -4900,11 +4922,11 @@ const translations = {
         fr: "Transcription IA locale"
     },
     "project.whispflow.sidebar.feature3": {
-        en: "5 AI summary providers",
-        pt: "5 fornecedores de resumos IA",
-        lu: "5 AI Resumé Provideren",
-        de: "5 KI-Zusammenfassungsanbieter",
-        fr: "5 fournisseurs de résumés IA"
+        en: "3 AI summary providers",
+        pt: "3 fornecedores de resumos IA",
+        lu: "3 AI Resumé Provideren",
+        de: "3 KI-Zusammenfassungsanbieter",
+        fr: "3 fournisseurs de résumés IA"
     },
     "project.whispflow.sidebar.feature4": {
         en: "Versioned transcripts",

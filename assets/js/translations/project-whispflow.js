@@ -77,11 +77,11 @@
             fr: "<strong>Transcrire</strong> — Transcription locale avec faster-whisper. Choisissez le modèle (tiny à large) selon vitesse vs. précision. Multi-langue avec détection auto. Transcription en direct pendant l'enregistrement."
         },
         "project.whispflow.workflow.body3": {
-            en: "<strong>Summarize</strong> — AI generates structured output: key points, decisions, action items, and a full summary. Pick from 5 providers. Generate in any language. Results are cached to save API costs.",
-            pt: "<strong>Resumir</strong> — A IA gera output estruturado: pontos-chave, decisões, ações e um resumo completo. Escolhe entre 5 fornecedores. Gera em qualquer idioma. Resultados em cache para poupar custos.",
-            lu: "<strong>Zesummefaassen</strong> — AI generéiert strukturéierten Output: Haaptpunkten, Decisiounen, Aktiounspunkten an e vollstännege Resumé. Wiel aus 5 Provideren. Generéier an all Sprooch. Resultater ginn gecached fir API-Käschten ze spueren.",
-            de: "<strong>Zusammenfassen</strong> — KI generiert strukturierten Output: Kernpunkte, Entscheidungen, Aktionspunkte und eine vollständige Zusammenfassung. 5 Anbieter zur Wahl. In jeder Sprache generieren. Ergebnisse werden gecacht um API-Kosten zu sparen.",
-            fr: "<strong>Résumer</strong> — L'IA génère une sortie structurée : points clés, décisions, actions et un résumé complet. 5 fournisseurs au choix. Génération dans n'importe quelle langue. Résultats mis en cache pour économiser les coûts API."
+            en: "<strong>Summarize</strong> — AI generates structured output: key points, decisions, action items, and a full summary. Pick from 3 providers. Generate in any language. Results are cached to save API costs.",
+            pt: "<strong>Resumir</strong> — A IA gera output estruturado: pontos-chave, decisões, ações e um resumo completo. Escolhe entre 3 fornecedores. Gera em qualquer idioma. Resultados em cache para poupar custos.",
+            lu: "<strong>Zesummefaassen</strong> — AI generéiert strukturéierten Output: Haaptpunkten, Decisiounen, Aktiounspunkten an e vollstännege Resumé. Wiel aus 3 Provideren. Generéier an all Sprooch. Resultater ginn gecached fir API-Käschten ze spueren.",
+            de: "<strong>Zusammenfassen</strong> — KI generiert strukturierten Output: Kernpunkte, Entscheidungen, Aktionspunkte und eine vollständige Zusammenfassung. 3 Anbieter zur Wahl. In jeder Sprache generieren. Ergebnisse werden gecacht um API-Kosten zu sparen.",
+            fr: "<strong>Résumer</strong> — L'IA génère une sortie structurée : points clés, décisions, actions et un résumé complet. 3 fournisseurs au choix. Génération dans n'importe quelle langue. Résultats mis en cache pour économiser les coûts API."
         },
         "project.whispflow.workflow.body4": {
             en: "<strong>Export</strong> — Copy to clipboard or export to file. Open session folders directly in file explorer. Share with colleagues or classmates.",
@@ -112,11 +112,11 @@
             fr: "Transcription locale avec plusieurs modèles Whisper — fonctionne hors ligne"
         },
         "project.whispflow.features.summaries": {
-            en: "AI summaries from 5 providers with multi-language support",
-            pt: "Resumos IA de 5 fornecedores com suporte multi-idioma",
-            lu: "AI Zesummefaassungen vun 5 Provideren mat Multi-Sprooch Support",
-            de: "KI-Zusammenfassungen von 5 Anbietern mit Mehrsprachunterstützung",
-            fr: "Résumés IA de 5 fournisseurs avec support multilingue"
+            en: "AI summaries from 3 providers with multi-language support",
+            pt: "Resumos IA de 3 fornecedores com suporte multi-idioma",
+            lu: "AI Zesummefaassungen vun 3 Provideren mat Multi-Sprooch Support",
+            de: "KI-Zusammenfassungen von 3 Anbietern mit Mehrsprachunterstützung",
+            fr: "Résumés IA de 3 fournisseurs avec support multilingue"
         },
         "project.whispflow.features.versioning": {
             en: "Versioned transcripts and summaries — re-transcribe without losing data",
@@ -238,11 +238,11 @@
             fr: "Transcription IA locale"
         },
         "project.whispflow.sidebar.feature3": {
-            en: "5 AI summary providers",
-            pt: "5 fornecedores de resumos IA",
-            lu: "5 AI Resumé Provideren",
-            de: "5 KI-Zusammenfassungsanbieter",
-            fr: "5 fournisseurs de résumés IA"
+            en: "3 AI summary providers",
+            pt: "3 fornecedores de resumos IA",
+            lu: "3 AI Resumé Provideren",
+            de: "3 KI-Zusammenfassungsanbieter",
+            fr: "3 fournisseurs de résumés IA"
         },
         "project.whispflow.sidebar.feature4": {
             en: "Versioned transcripts",

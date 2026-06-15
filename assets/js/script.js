@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
+    htmlElement.classList.add('js-animations');
 
     const CV_OPEN_FLAG = 'openCvModal';
     
@@ -281,8 +282,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // Return translation for language, fallback to English
-        return entry[lang] || entry['en'] || null;
+        let value = entry[lang] || entry['en'] || null;
+        if (value && value.indexOf('{year}') !== -1) {
+            value = value.replace(/\{year\}/g, new Date().getFullYear());
+        }
+        return value;
     }
+
     
     /**
      * Centralized function to display project categories with translations
@@ -295,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!lang) {
             lang = document.documentElement.getAttribute('data-lang') || 'en';
         }
-        
+
         // If projectId is not provided, try to find it from the page
         if (!projectId) {
             // Try to get project ID from the page context
@@ -480,6 +486,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 powerOnObserver.observe(card);
             }
         });
+
+        // Safety net: never leave content hidden if the observer misses a card.
+        setTimeout(() => {
+            document.querySelectorAll('.card:not(.powered-on), .node-card:not(.powered-on)').forEach((card) => {
+                card.classList.add('powered-on');
+                powerOnObserver.unobserve(card);
+            });
+        }, 2500);
             } else {
         // If reduced motion, immediately show all cards
         document.querySelectorAll('.card, .node-card').forEach((card) => {

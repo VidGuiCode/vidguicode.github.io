@@ -42,6 +42,7 @@
             html += '<a href="#about" data-i18n="nav.about">About</a>';
             html += '<a href="#skills" data-i18n="nav.skills">Skills</a>';
             html += '<a href="#projects" data-i18n="nav.projects">Projects</a>';
+            html += '<a href="#certifications" data-i18n="nav.certs">Certs</a>';
             html += '<a href="#experience" data-i18n="nav.experience">Experience</a>';
             if (isSchoolPage) {
                 html += '<a href="#reflection" data-i18n="nav.reflection">Reflection</a>';

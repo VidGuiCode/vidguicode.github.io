@@ -6,11 +6,11 @@
     <title>Projects | VidGuiCode</title>
     <meta name="description" content="Portfolio projects by Guilherme Videira Marques - Infrastructure, Web Development, IoT, and School Projects showcasing technical skills and real-world applications.">
     <meta name="keywords" content="Projects, Portfolio, Infrastructure, Web Development, IoT, Cloud Computing, Homelab, Projects Showcase">
-    <link rel="canonical" href="https://vidguicode.github.io/VidGuiCode/portfolio/projects.html">
+    <link rel="canonical" href="https://vidguicode.github.io/projects.html">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vidguicode.github.io/VidGuiCode/portfolio/projects.html">
+    <meta property="og:url" content="https://vidguicode.github.io/projects.html">
     <meta property="og:title" content="Projects | VidGuiCode">
     <meta property="og:description" content="Portfolio projects showcasing technical skills and real-world applications.">
     
@@ -56,32 +56,52 @@
         </a>
 
         <section class="projects-hero">
-            <div class="badge" data-i18n="projects.badge">PORTFOLIO PROJECTS</div>
+            <div class="hero-eyebrow">
+                <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+                <span class="badge" data-i18n="projects.badge">PORTFOLIO PROJECTS</span>
+                <span class="hero-eyebrow-meta">
+                    <span id="hero-year-range">—</span>
+                </span>
+            </div>
+
             <h1 data-i18n="projects.heading">Projects</h1>
             <p class="subtitle" data-i18n="projects.subtitle">A collection of projects showcasing technical skills, from infrastructure and homelab setups to web development and IoT systems. Filter by category to explore specific areas.</p>
-            
-            <div class="stats-row">
-                <div class="stat-box">
-                    <i data-lucide="folder-open"></i>
-                    <h3 id="total-projects">0</h3>
-                    <p data-i18n="projects.stats.total">Total Projects</p>
+
+            <div class="hero-metrics" aria-label="Portfolio metrics">
+                <div class="hero-metric">
+                    <span class="hero-metric-value" id="total-projects">0</span>
+                    <span class="hero-metric-label" data-i18n="projects.stats.total">Total Projects</span>
+                </div>
+                <div class="hero-metric-divider" aria-hidden="true"></div>
+                <div class="hero-metric">
+                    <span class="hero-metric-value" id="total-categories">0</span>
+                    <span class="hero-metric-label" data-i18n="projects.stats.categories">Categories</span>
+                </div>
+                <div class="hero-metric-divider" aria-hidden="true"></div>
+                <div class="hero-metric">
+                    <span class="hero-metric-value" id="years-active">0</span>
+                    <span class="hero-metric-label" data-i18n="projects.stats.years">Years Active</span>
                 </div>
             </div>
         </section>
 
-        <div class="filter-controls" id="filter-controls">
-            <button class="filter-btn" id="category-all-btn">
-                <span>All</span>
-            </button>
-            <button class="filter-btn" id="category-filter-btn">
-                <i data-lucide="filter" style="width: 16px; height: 16px;"></i>
-                <span>Filter</span>
-            </button>
-        </div>
+        <section class="featured-projects" id="featured-section" style="display: none;"></section>
 
-        <div id="projects-container" class="projects-list">
-            <!-- Projects will be dynamically inserted here -->
-        </div>
+        <section class="all-projects">
+            <div class="filter-controls" id="filter-controls">
+                <button class="filter-btn" id="category-all-btn">
+                    <span data-i18n="projects.filter.all">All</span>
+                </button>
+                <button class="filter-btn" id="category-filter-btn">
+                    <i data-lucide="filter" style="width: 16px; height: 16px;"></i>
+                    <span data-i18n="projects.filter.label">Filter</span>
+                </button>
+            </div>
+
+            <div id="projects-container" class="projects-grid">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+        </section>
 
         <!-- Category Filter Modal -->
         <div id="category-filter-modal" class="category-filter-modal" onclick="closeCategoryFilterModal(event)">
@@ -130,7 +150,11 @@
             // Re-render when language changes
             document.querySelectorAll('.lang-dropdown button[data-lang]').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // Re-render projects with new language
+                    // Re-render featured + chip row + projects with new language
+                    setTimeout(() => {
+                        renderCategoryChips();
+                        renderFeatured();
+                    }, 50);
                     // Get filter from URL or default to 'all'
                     const urlParams = new URLSearchParams(window.location.search);
                     const categoryParam = urlParams.get('category');
@@ -189,11 +213,32 @@
             // Update stats
             const allProjects = getAllProjects();
             document.getElementById('total-projects').textContent = allProjects.length;
+            updateHeroStats(allProjects);
+
+            // Sort priority (all driven from projects-data.js — no hardcoded list):
+            //   1. Explicit priority (1 = strongest first impression)
+            //   2. Featured highlights
+            //   3. In-development projects
+            //   4. Newest first (by dateStarted, then dateCompleted as fallback)
+            projects = projects.slice().sort((a, b) => {
+                const ap = Number.isFinite(a.priority) ? a.priority : Number.POSITIVE_INFINITY;
+                const bp = Number.isFinite(b.priority) ? b.priority : Number.POSITIVE_INFINITY;
+                if (ap !== bp) return ap - bp;
+                const af = a.featured ? 1 : 0;
+                const bf = b.featured ? 1 : 0;
+                if (af !== bf) return bf - af;
+                const ai = a.status === 'in-development' ? 1 : 0;
+                const bi = b.status === 'in-development' ? 1 : 0;
+                if (ai !== bi) return bi - ai;
+                const ad = a.dateStarted || a.dateCompleted || '';
+                const bd = b.dateStarted || b.dateCompleted || '';
+                return bd.localeCompare(ad);
+            });
 
             // Render projects
             projects.forEach(project => {
-                const row = createProjectRow(project);
-                container.appendChild(row);
+                const card = createProjectCard(project);
+                container.appendChild(card);
             });
 
             // Re-initialize Lucide icons
@@ -521,6 +566,7 @@
                     // Clear all filters (empty array = show all)
                     selectedCategories = [];
                     updateFilterButtonState();
+                    if (typeof updateChipActiveState === 'function') updateChipActiveState();
                     renderProjects('all');
                     
                     // Update modal checkboxes if modal is open
@@ -642,6 +688,7 @@
             }
             
             updateFilterButtonState();
+            if (typeof updateChipActiveState === 'function') updateChipActiveState();
             closeCategoryFilterModal();
         }
         
@@ -843,11 +890,213 @@
             }
         });
 
+        // ---- Project card (unified renderer for the grid) ----
+        function formatDateLabel(project) {
+            const formatDate = (dateValue) => {
+                if (!dateValue) return '';
+                if (/^\d{4}$/.test(dateValue)) return dateValue;
+                if (/^\d{4}-\d{2}$/.test(dateValue)) {
+                    const [year, month] = dateValue.split('-');
+                    const dateObj = new Date(parseInt(year), parseInt(month) - 1);
+                    return dateObj.toLocaleDateString(getCurrentLang(), { year: 'numeric', month: 'long' });
+                }
+                return new Date(dateValue).toLocaleDateString(getCurrentLang(), { year: 'numeric', month: 'long' });
+            };
+            const isOngoing = !project.dateCompleted || (project.dateStarted && project.dateCompleted === project.dateStarted);
+            const presentText = t('projects.present', 'present');
+            if (project.status === 'in-development' && project.dateStarted) {
+                return `${formatDate(project.dateStarted)} – ${presentText}`;
+            }
+            if (isOngoing && project.dateStarted) {
+                return `${formatDate(project.dateStarted)} – ${presentText}`;
+            }
+            if (project.dateCompleted) return formatDate(project.dateCompleted);
+            if (project.dateStarted) return formatDate(project.dateStarted);
+            return '';
+        }
+
+        function createProjectCard(project) {
+            const card = document.createElement('article');
+            card.className = 'project-card';
+            card.dataset.projectId = project.id;
+            if (project.status) card.dataset.status = project.status;
+            card.tabIndex = 0;
+            card.setAttribute('role', 'button');
+
+            const projectName = project.nameKey ? t(project.nameKey, project.name) : project.name;
+            const projectDesc = project.descriptionKey
+                ? t(project.descriptionKey, project.description)
+                : (project.description || '');
+
+            const primaryCat = (project.categories && project.categories[0]) || project.category || '';
+            const primaryKey = (project.categoryKeys && project.categoryKeys[0]) || project.categoryKey;
+            const catLabel = primaryKey ? t(primaryKey, primaryCat) : primaryCat;
+
+            const tags = (project.tags || []).slice(0, 4);
+            const tagHTML = tags.map(tag => `<span class="featured-tag">${tag}</span>`).join('');
+
+            let iconHTML;
+            if (project.iconImage) {
+                iconHTML = `<img src="${project.iconImage}" alt="${projectName}">`;
+            } else {
+                iconHTML = `<i data-lucide="${project.icon || 'folder'}"></i>`;
+            }
+
+            const pills = [];
+            if (project.status === 'in-development') {
+                const statusText = project.statusKey ? t(project.statusKey, 'In Development') : 'In Development';
+                pills.push(`<span class="featured-status"><i data-lucide="clock"></i>${statusText}</span>`);
+            }
+            if (project.score) {
+                pills.push(`<span class="featured-score">${project.score}</span>`);
+            }
+
+            const dateLabel = formatDateLabel(project);
+
+            // Action icons (github / external link). Stop propagation so they don't open the modal.
+            const actions = [];
+            if (project.githubUrl) {
+                actions.push(`<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-action-icon" title="GitHub" onclick="event.stopPropagation()"><i data-lucide="github"></i></a>`);
+            }
+            if (project.link) {
+                actions.push(`<a href="${project.link}" class="project-action-icon" data-i18n-title="projects.modal.viewProject" onclick="event.stopPropagation()" title="View project"><i data-lucide="external-link"></i></a>`);
+            }
+            actions.push(`<span class="featured-cta" aria-hidden="true"><i data-lucide="arrow-right"></i></span>`);
+
+            card.innerHTML = `
+                <div class="featured-card-top">
+                    <div class="featured-icon">${iconHTML}</div>
+                    <div class="featured-pills">${pills.join('')}</div>
+                </div>
+                <div class="featured-card-body">
+                    <div class="featured-cat">${catLabel}${dateLabel ? ` · <span class="featured-date">${dateLabel}</span>` : ''}</div>
+                    <h3 class="featured-title">${projectName}</h3>
+                    <p class="featured-desc">${projectDesc}</p>
+                </div>
+                <div class="featured-card-foot">
+                    <div class="featured-tags">${tagHTML}</div>
+                    <div class="featured-actions">${actions.join('')}</div>
+                </div>
+            `;
+
+            const open = () => showProjectModal(project.id);
+            card.addEventListener('click', open);
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    open();
+                }
+            });
+            return card;
+        }
+
+        // ---- Hero stats / Featured / Chip row helpers ----
+        function updateHeroStats(allProjects) {
+            const catEl = document.getElementById('total-categories');
+            if (catEl && typeof getCategories !== 'undefined') {
+                const usedCategories = new Set();
+                allProjects.forEach(p => {
+                    const cats = (p.categories && p.categories.length) ? p.categories : [p.category];
+                    cats.forEach(c => c && usedCategories.add(c));
+                });
+                catEl.textContent = usedCategories.size;
+            }
+
+            const yearsEl = document.getElementById('years-active');
+            const rangeEl = document.getElementById('hero-year-range');
+            let earliest = null;
+            allProjects.forEach(p => {
+                const d = p.dateStarted || p.dateCompleted;
+                if (!d) return;
+                const y = parseInt(String(d).slice(0, 4), 10);
+                if (!isNaN(y) && (earliest === null || y < earliest)) earliest = y;
+            });
+            const now = new Date().getFullYear();
+            if (yearsEl && earliest) {
+                const span = Math.max(1, (now - earliest) + 1);
+                yearsEl.textContent = span;
+            }
+            if (rangeEl && earliest) {
+                rangeEl.textContent = `${earliest} → ${now}`;
+            }
+        }
+
+        function renderFeatured() {
+            // Featured projects are now rendered inline at the top of the main grid
+            // (sorted via the `featured` flag in renderProjects). This kept-for-compat
+            // function simply hides the legacy featured section if it exists.
+            const section = document.getElementById('featured-section');
+            if (section) section.style.display = 'none';
+        }
+
+        function createFeaturedCard(project) {
+            const card = document.createElement('div');
+            card.className = 'featured-card';
+            card.dataset.projectId = project.id;
+
+            const projectName = project.nameKey ? t(project.nameKey, project.name) : project.name;
+            const projectDesc = project.descriptionKey
+                ? t(project.descriptionKey, project.description)
+                : (project.description || '');
+
+            // Primary category badge only (cleaner card)
+            const primaryCat = (project.categories && project.categories[0]) || project.category || '';
+            const primaryKey = (project.categoryKeys && project.categoryKeys[0]) || project.categoryKey;
+            const catLabel = primaryKey ? t(primaryKey, primaryCat) : primaryCat;
+
+            // Tags: limit to 4 for card readability
+            const tags = (project.tags || []).slice(0, 4);
+            const tagHTML = tags.map(tag => `<span class="featured-tag">${tag}</span>`).join('');
+
+            let iconHTML;
+            if (project.iconImage) {
+                iconHTML = `<img src="${project.iconImage}" alt="${projectName}">`;
+            } else {
+                iconHTML = `<i data-lucide="${project.icon || 'folder'}"></i>`;
+            }
+
+            // Status pill (in-development) shown subtly
+            let statusPill = '';
+            if (project.status === 'in-development') {
+                const statusText = project.statusKey ? t(project.statusKey, 'In Development') : 'In Development';
+                statusPill = `<span class="featured-status"><i data-lucide="clock"></i>${statusText}</span>`;
+            }
+
+            card.innerHTML = `
+                <div class="featured-card-top">
+                    <div class="featured-icon">${iconHTML}</div>
+                    ${statusPill}
+                </div>
+                <div class="featured-card-body">
+                    <div class="featured-cat">${catLabel}</div>
+                    <h3 class="featured-title">${projectName}</h3>
+                    <p class="featured-desc">${projectDesc}</p>
+                </div>
+                <div class="featured-card-foot">
+                    <div class="featured-tags">${tagHTML}</div>
+                    <span class="featured-cta" aria-hidden="true">
+                        <i data-lucide="arrow-right"></i>
+                    </span>
+                </div>
+            `;
+
+            card.addEventListener('click', () => showProjectModal(project.id));
+            card.style.cursor = 'pointer';
+            return card;
+        }
+
+        function renderCategoryChips() {
+            // Chip row was removed; the All + Filter modal is the only filter UI.
+        }
+        function updateChipActiveState() { /* no-op */ }
+
         // Wait for projects-data.js to load before initial render
         function waitForProjectsData() {
             if (typeof getAllProjects !== 'undefined' && typeof PROJECTS !== 'undefined') {
                 // Data is loaded, setup filters and render projects
                 setupFilters();
+                renderCategoryChips();
+                renderFeatured();
                 
                 // Check for category parameter in URL
                 const urlParams = new URLSearchParams(window.location.search);

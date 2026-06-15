@@ -46,6 +46,13 @@ const translations = {
         de: "Zertifizierungen",
         fr: "Certifications"
     },
+    "nav.certs": {
+        en: "Certs",
+        pt: "Certs",
+        lu: "Certs",
+        de: "Certs",
+        fr: "Certifs"
+    },
     "hero.badge": {
         en: "AVAILABLE FOR OPPORTUNITIES",
         pt: "DISPONÍVEL PARA NOVAS OPORTUNIDADES",
@@ -54,18 +61,33 @@ const translations = {
         fr: "DISPONIBLE POUR OPPORTUNITÉS"
     },
     "hero.subtitle": {
-        en: "Cloud Computing Student & Future Infrastructure Architect.",
-        pt: "Estudante de Cloud Computing e futuro arquiteto de infraestruturas.",
-        lu: "Cloud Computing Student & Zukünftegen Infrastruktur Architekt.",
-        de: "Cloud Computing Student & Zukünftiger Infrastruktur-Architekt.",
-        fr: "Étudiant Cloud Computing & Futur Architecte d'Infrastructure."
+        en: "Cloud Computing Student focused on cloud infrastructure, automation, and practical systems.",
+        pt: "Estudante de Cloud Computing focado em infraestrutura cloud, automação e sistemas práticos.",
+        lu: "Cloud Computing Student mat Fokus op Cloud-Infrastruktur, Automatisatioun a praktesch Systemer.",
+        de: "Cloud-Computing-Student mit Fokus auf Cloud-Infrastruktur, Automatisierung und praktische Systeme.",
+        fr: "Étudiant en Cloud Computing, axé sur l'infrastructure cloud, l'automatisation et les systèmes pratiques."
     },
     "hero.description": {
-        en: "Building reliable infrastructure, automating workflows, and turning ideas into polished web experiences. 19 years old, based in Luxembourg.",
-        pt: "Construo infraestruturas fiáveis, automatizo fluxos de trabalho e transformo ideias em experiências web refinadas. 19 anos, sediado no Luxemburgo.",
-        lu: "Zouverlässeg Infrastruktur bauen, Workflows automatiséieren, an Iddien an polished Web Erfarungen ëmsetzen. 19 Joer al, am Lëtzebuerg.",
-        de: "Aufbau zuverlässiger Infrastruktur, Automatisierung von Workflows und Umsetzung von Ideen in elegante Web-Erlebnisse. 19 Jahre alt, in Luxemburg.",
-        fr: "Construction d'infrastructures fiables, automatisation des workflows et transformation d'idées en expériences web soignées. 19 ans, basé au Luxembourg."
+        en: "Based in Luxembourg, I build reliable infrastructure, automate workflows, and turn ideas into polished software and web experiences.",
+        pt: "Com base no Luxemburgo, construo infraestruturas fiáveis, automatizo fluxos de trabalho e transformo ideias em software e experiências web refinadas.",
+        lu: "Baséiert zu Lëtzebuerg bauen ech zouverlässeg Infrastruktur, automatiséieren Workflows a maachen Iddien zu poléierter Software a Web-Erfarungen.",
+        de: "In Luxemburg ansässig baue ich zuverlässige Infrastruktur, automatisiere Workflows und verwandle Ideen in ausgereifte Software- und Web-Erlebnisse.",
+        fr: "Basé au Luxembourg, je construis des infrastructures fiables, j'automatise des workflows et je transforme des idées en logiciels et expériences web soignés."
+    },
+
+    "home.highlight.lgk.title": {
+        en: "Recent highlight: LGK Open Day",
+        pt: "Destaque recente: Dia Aberto LGK",
+        lu: "Rezenten Highlight: LGK Porte Ouverte",
+        de: "Aktuelles Highlight: LGK Tag der offenen Tür",
+        fr: "Temps fort récent : Porte Ouverte LGK"
+    },
+    "home.highlight.lgk.desc": {
+        en: "Represented BTS Cloud Computing, spoke with future students and parents, and produced a promotional video for the IT technician path.",
+        pt: "Representei o BTS Cloud Computing, falei com futuros alunos e pais, e produzi um vídeo promocional para o percurso de técnico em informática.",
+        lu: "Ech hunn de BTS Cloud Computing vertrueden, mat zukünftege Schüler an Elteren geschwat an e Promotiounsvideo fir den Informatik-Techniker-Parcours produzéiert.",
+        de: "Ich vertrat den BTS Cloud Computing, sprach mit zukünftigen Schülern und Eltern und produzierte ein Werbevideo für den Informatiktechniker-Weg.",
+        fr: "J'ai représenté le BTS Cloud Computing, échangé avec de futurs élèves et parents, et produit une vidéo promotionnelle pour la voie technicien informatique."
     },
     "hero.cta.contact": {
         en: "Get in Touch",
@@ -1313,11 +1335,25 @@ const translations = {
         de: "Ich habe eine Remote-Desktop-Services-Bereitstellung auf Windows Server 2022 dokumentiert und demonstriert. Sie kombiniert AD DS, DNS, RD Web Access und eine sitzungsbasierte Sammlung, damit Schüler sicher auf einen gemeinsamen Desktop von externen Windows-11-Clients zugreifen können.",
         fr: "J'ai documenté et présenté un déploiement Remote Desktop Services sur Windows Server 2022. Il combine AD DS, DNS, RD Web Access et une collection basée sur des sessions afin que les élèves puissent accéder en toute sécurité à un bureau partagé depuis des clients Windows 11 externes."
     },
+    "projects.unraid.title": {
+        en: "UnRAID Storage Server (NAS)",
+        pt: "Servidor de Armazenamento UnRAID (NAS)",
+        lu: "UnRAID Späicherserver (NAS)",
+        de: "UnRAID Speicherserver (NAS)",
+        fr: "Serveur de stockage UnRAID (NAS)"
+    },
+    "projects.unraid.desc": {
+        en: "For the Cloud Infrastructure 2 module, my two-person team took a bare Intel 2U rack server and turned it into a full NAS: hardware RAID 5 on an Areca ARC-1880 controller, a Btrfs RAID 1 mirror, SMB shares with per-user permissions, out-of-band management, and an iSCSI block-storage target tested from a Windows client.",
+        pt: "Para o módulo Cloud Infrastructure 2, a minha equipa de duas pessoas pegou num servidor rack Intel 2U vazio e transformou-o num NAS completo: RAID 5 por hardware num controlador Areca ARC-1880, um espelho Btrfs RAID 1, partilhas SMB com permissões por utilizador, gestão out-of-band e um alvo de armazenamento em bloco iSCSI testado a partir de um cliente Windows.",
+        lu: "Fir de Modul Cloud Infrastructure 2 huet meng Zwee-Persounen-Equipe e blanke Intel 2U Rackserver geholl an en an e komplette NAS verwandelt: Hardware-RAID 5 op engem Areca ARC-1880 Controller, e Btrfs-RAID-1-Spigel, SMB-Deelunge mat Rechter pro Benotzer, Out-of-Band-Verwaltung an en iSCSI-Block-Späicher-Zil, getest vun engem Windows-Client.",
+        de: "Für das Modul Cloud Infrastructure 2 nahm mein Zweier-Team einen blanken Intel-2U-Rackserver und machte daraus ein vollständiges NAS: Hardware-RAID 5 auf einem Areca-ARC-1880-Controller, ein Btrfs-RAID-1-Spiegel, SMB-Freigaben mit Rechten pro Benutzer, Out-of-Band-Verwaltung und ein iSCSI-Blockspeicher-Ziel, getestet von einem Windows-Client.",
+        fr: "Pour le module Cloud Infrastructure 2, mon équipe de deux personnes a pris un serveur rack Intel 2U nu et en a fait un NAS complet : RAID 5 matériel sur un contrôleur Areca ARC-1880, un miroir Btrfs RAID 1, des partages SMB avec permissions par utilisateur, une gestion hors bande et une cible de stockage en bloc iSCSI testée depuis un client Windows."
+    },
     "footer.copyright": {
-        en: "© 2025 Guilherme Videira Marques.",
-        pt: "© 2025 Guilherme Videira Marques.",
-        lu: "© 2025 Guilherme Videira Marques.",
-        de: "© 2025 Guilherme Videira Marques.",
-        fr: "© 2025 Guilherme Videira Marques."
+        en: "© {year} Guilherme Videira Marques.",
+        pt: "© {year} Guilherme Videira Marques.",
+        lu: "© {year} Guilherme Videira Marques.",
+        de: "© {year} Guilherme Videira Marques.",
+        fr: "© {year} Guilherme Videira Marques."
     }
 };

@@ -136,8 +136,11 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     /* ... */
-    opacity: 0; /* Hidden by default until scroll */
     /* Animation handled by JS adding classes */
+}
+
+.js-animations .card {
+    opacity: 0; /* Hidden by JS only until scroll reveal powers the card on */
 }
 
 /* Clean Entry Animation */
@@ -1601,6 +1604,18 @@ h1 {
     background: rgba(139, 92, 246, 0.1) !important;
 }
 
+.level-formations {
+    color: #8b5cf6 !important;
+    border-color: #8b5cf6 !important;
+    background: rgba(139, 92, 246, 0.1) !important;
+}
+
+.level-outreach {
+    color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    background: rgba(245, 158, 11, 0.1) !important;
+}
+
 /* Certifications Responsive — 968px */
 @media (max-width: 968px) {
     .cert-row {
@@ -2756,6 +2771,12 @@ article p, article li {
     grid-column: span 1;
     width: 100%;
     max-width: 100%;
+    text-decoration: none;
+}
+
+#certifications .index-certification-card .cert-icon,
+#certifications .index-certification-card .cert-badge-img {
+    background: #ffffff;
 }
 
 .cert-info {
@@ -4009,5 +4030,586 @@ footer {
         display: block;
         font-size: var(--fs-xs);
         line-height: 1.4;
+    }
+}
+
+/* ==========================================
+   List pages — Hero (left-aligned, metric strip)
+   ========================================== */
+.projects-hero,
+.certifications-hero {
+    text-align: left;
+    padding: 1.5rem 0 2rem;
+}
+.projects-hero h1,
+.certifications-hero h1 {
+    text-align: left;
+    margin: 0 0 0.75rem 0;
+}
+.projects-hero .subtitle,
+.certifications-hero .subtitle {
+    text-align: left;
+    max-width: 720px;
+    margin: 0 0 1.75rem 0;
+}
+
+/* Eyebrow row above the H1: live dot + label + year range */
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.hero-eyebrow .badge {
+    margin: 0;
+}
+.hero-eyebrow-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--led-green);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.45);
+    animation: pulseBreath 4s ease-in-out infinite;
+    flex-shrink: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-eyebrow-dot { animation: none; }
+}
+.hero-eyebrow-meta {
+    font-family: 'JetBrains Mono', 'Space Grotesk', monospace;
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    letter-spacing: 0.08em;
+    margin-left: auto;
+}
+
+/* Compact metric strip — one bordered row, 3 stats separated by dividers */
+.hero-metrics {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    max-width: 560px;
+}
+.hero-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.85rem 1.25rem;
+    flex: 1;
+    min-width: 0;
+}
+.hero-metric-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--fs-h2);
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+/* The certification level is a word, not a number. Keep it slightly smaller
+   so letters like the final "d" do not squeeze/warp inside the metric cell. */
+.certifications-hero #highest-level {
+    font-size: var(--fs-h3);
+    line-height: 1.15;
+}
+.hero-metric-label {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.hero-metric-divider {
+    width: 1px;
+    background: var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .projects-hero,
+    .certifications-hero {
+        padding: 0.5rem 0 1.25rem;
+    }
+    .projects-hero .subtitle,
+    .certifications-hero .subtitle {
+        margin-bottom: 1.25rem;
+        padding: 0;
+    }
+    .hero-eyebrow {
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+    .hero-eyebrow-meta {
+        margin-left: auto;
+        white-space: nowrap;
+    }
+    .hero-metrics {
+        max-width: 100%;
+    }
+    .hero-metric {
+        padding: 0.65rem 0.75rem;
+    }
+    .hero-metric-value {
+        font-size: 1.35rem;
+    }
+}
+@media (max-width: 380px) {
+    .hero-metric-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+    }
+}
+
+/* ==========================================
+   Certifications page — refined credential rows
+   ========================================== */
+.certifications-list {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 3rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+.cert-row {
+    grid-template-columns: 72px minmax(0, 1fr) auto auto;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    background: var(--card-bg);
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+.cert-row:hover {
+    background: var(--bg-secondary);
+    border-color: var(--text-primary);
+}
+.cert-icon-box {
+    width: 56px;
+    height: 56px;
+}
+.cert-info {
+    gap: 0.45rem;
+}
+.cert-name {
+    line-height: 1.2;
+}
+.cert-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+.cert-provider {
+    color: var(--text-secondary);
+}
+.cert-category,
+.status-badge,
+.cert-level {
+    border-radius: 0;
+}
+.cert-actions {
+    gap: 0.5rem;
+}
+.cert-action-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 0;
+}
+.cert-action-icon i {
+    width: 16px;
+    height: 16px;
+}
+.cert-level {
+    min-width: 132px;
+    padding: 0.55rem 0.75rem;
+    align-self: center;
+}
+.cert-level[title] {
+    cursor: help;
+}
+
+@media (max-width: 968px) {
+    .cert-row {
+        grid-template-columns: 64px minmax(0, 1fr) auto;
+        gap: 1rem;
+    }
+    .cert-icon-box {
+        width: 52px;
+        height: 52px;
+    }
+    .cert-actions {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        align-self: center;
+        justify-self: end;
+        flex-direction: column;
+    }
+    .cert-level {
+        grid-column: 2;
+        justify-self: start;
+        min-width: 0;
+    }
+}
+@media (max-width: 640px) {
+    .certifications-list {
+        margin-bottom: 2rem;
+    }
+    .cert-row {
+        grid-template-columns: 52px minmax(0, 1fr);
+        text-align: left;
+        justify-items: stretch;
+        align-items: start;
+        padding: 1rem;
+        gap: 0.85rem;
+    }
+    .cert-icon-box {
+        width: 48px;
+        height: 48px;
+        margin: 0;
+    }
+    .cert-info {
+        align-items: flex-start;
+        text-align: left;
+        min-width: 0;
+    }
+    .cert-meta {
+        justify-content: flex-start;
+    }
+    .cert-actions {
+        grid-column: 2;
+        grid-row: auto;
+        justify-self: start;
+        flex-direction: row;
+        margin-top: 0.2rem;
+    }
+    .cert-level {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
+
+.certifications-hero + .filter-controls {
+    justify-content: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 2rem;
+}
+
+/* ==========================================
+   Projects page — Card Grid
+   ========================================== */
+
+/* Unified project grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 0 auto 3rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Project card */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.25rem;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    min-height: 100%;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+.project-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--text-primary);
+}
+.project-card:focus-visible {
+    outline: 2px solid var(--led-blue);
+    outline-offset: 2px;
+}
+
+/* Card top row: icon + pills. Reserve right space for the LED dot
+   (which is positioned by the global .project-card::before rule). */
+.featured-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-right: 1.25rem; /* clear the LED dot at top-right */
+}
+.featured-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    flex-shrink: 0;
+}
+.featured-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+.featured-icon i {
+    width: 22px;
+    height: 22px;
+}
+.featured-pills {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.featured-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 3px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.featured-status i {
+    width: 12px;
+    height: 12px;
+}
+.featured-score {
+    display: inline-flex;
+    align-items: center;
+    background: var(--led-green);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: var(--fs-xs);
+    padding: 3px 8px;
+    letter-spacing: 0.02em;
+}
+
+/* Card body */
+.featured-card-body {
+    display: flex;
+    flex-direction: column;
+}
+.featured-cat {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.4rem;
+}
+.featured-date {
+    color: var(--text-secondary);
+}
+.featured-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--fs-h3);
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+    line-height: 1.25;
+}
+.featured-desc {
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Card foot: tags + actions */
+.featured-card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+.featured-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+.featured-tag {
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 2px 8px;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+/* Action buttons reuse the .icon-btn pattern — proper touch target */
+.featured-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+}
+.featured-actions .project-action-icon {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.featured-actions .project-action-icon:hover {
+    background: var(--bg-secondary);
+    border-color: var(--text-primary);
+}
+.featured-actions .project-action-icon i {
+    width: 16px;
+    height: 16px;
+}
+.featured-cta {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    transition: background 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+.project-card:hover .featured-cta {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+.featured-cta i {
+    width: 16px;
+    height: 16px;
+}
+
+/* Hide the LED dot on in-development cards — the IN DEVELOPMENT pill
+   already communicates status, and the green dot semantically means
+   "completed / live". */
+.project-card[data-status="in-development"]::before {
+    display: none;
+}
+
+/* WhispFlow logo: the submark is white-on-transparent. In light mode
+   it disappears on the light card background, so invert it. Same fix
+   applies on the project detail page (white submark variant). */
+[data-theme="light"] img[src*="whispflow-submark"] {
+    filter: invert(1);
+}
+
+/* ----- Mobile: compact hero so a card peeks above the fold ----- */
+@media (max-width: 768px) {
+    main.container {
+        padding-top: 80px !important;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+    }
+}
+
+/* Certifications page — keep the original centered card/list treatment.
+   The homepage/project recommendations should not make this page look like a
+   sparse admin table. */
+.certifications-hero {
+    text-align: center;
+    padding: 3rem 0 2rem;
+}
+.certifications-hero h1 {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+.certifications-hero .subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.certifications-hero + .filter-controls {
+    justify-content: center;
+    max-width: none;
+    width: auto;
+    margin: 2rem 0;
+}
+.certifications-list {
+    margin: 2rem auto 0;
+}
+.cert-row {
+    grid-template-columns: 80px 1fr auto auto;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+.cert-icon-box {
+    width: 60px;
+    height: 60px;
+}
+.cert-info {
+    gap: 0.5rem;
+}
+.cert-action-icon {
+    width: auto;
+    height: auto;
+    padding: 0.5rem;
+}
+.cert-action-icon i {
+    width: 18px;
+    height: 18px;
+}
+.cert-level {
+    min-width: 140px;
+    padding: 0.4rem 0.75rem;
+}
+@media (max-width: 968px) {
+    .certifications-hero {
+        padding: 2rem 0 1rem;
+    }
+    .cert-row {
+        grid-template-columns: 60px 1fr;
+        gap: 1rem;
+    }
+    .cert-actions,
+    .cert-level {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
+@media (max-width: 640px) {
+    .cert-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+    }
+    .cert-icon-box {
+        margin: 0 auto;
+    }
+    .cert-info {
+        align-items: center;
+        text-align: center;
+    }
+    .cert-meta {
+        justify-content: center;
+    }
+    .cert-actions,
+    .cert-level {
+        grid-column: 1;
+        justify-self: center;
     }
 }

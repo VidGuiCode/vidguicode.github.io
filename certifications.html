@@ -6,11 +6,11 @@
     <title>Certifications & Training | VidGuiCode</title>
     <meta name="description" content="Professional certifications and training sessions completed by Guilherme Videira Marques - Microsoft Azure, Office Specialist, Power Platform, and more.">
     <meta name="keywords" content="Certifications, Training, Microsoft Azure, Office Specialist, Power Platform, Cloud Computing, Professional Credentials, Formations">
-    <link rel="canonical" href="https://vidguicode.github.io/VidGuiCode/portfolio/certifications.html">
+    <link rel="canonical" href="https://vidguicode.github.io/certifications.html">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vidguicode.github.io/VidGuiCode/portfolio/certifications.html">
+    <meta property="og:url" content="https://vidguicode.github.io/certifications.html">
     <meta property="og:title" content="Certifications & Training | VidGuiCode">
     <meta property="og:description" content="Professional certifications and training sessions completed by Guilherme Videira Marques.">
     
@@ -60,11 +60,16 @@
             <h1 data-i18n="certifications.heading">Certifications & Training</h1>
             <p class="subtitle" data-i18n="certifications.subtitle">Industry-recognized certifications and training sessions demonstrating expertise in cloud computing, productivity tools, and technical skills. Certifications sorted by level — highest rank first. Trainings shown separately.</p>
             
-            <div class="stats-row">
+            <div class="stats-row" aria-label="Certification metrics">
                 <div class="stat-box">
                     <i data-lucide="award"></i>
                     <h3 id="total-certs">0</h3>
                     <p data-i18n="certifications.stats.total">Total Certifications</p>
+                </div>
+                <div class="stat-box">
+                    <i data-lucide="book-open"></i>
+                    <h3 id="total-training">0</h3>
+                    <p data-i18n="certifications.filter.formations">Training</p>
                 </div>
                 <div class="stat-box">
                     <i data-lucide="shield-check"></i>
@@ -74,11 +79,11 @@
             </div>
         </section>
 
-        <div class="filter-controls">
+        <div class="filter-controls" id="main-filter-controls">
             <button class="filter-btn active" data-filter="all" data-i18n="certifications.filter.all">All</button>
             <button class="filter-btn" data-filter="certifications" data-i18n="certifications.filter.certifications">Certifications</button>
             <button class="filter-btn" data-filter="formations" data-i18n="certifications.filter.formations">Training</button>
-            <button class="filter-btn" id="category-filter-btn" data-i18n="certifications.filter.categories">Filter</button>
+            <button class="filter-btn" id="category-filter-btn" onclick="openCategoryFilterModal()" data-i18n="certifications.filter.categories">Filter</button>
         </div>
 
         <div id="certifications-container" class="certifications-list">
@@ -154,6 +159,133 @@
     <script src="assets/js/search.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
+        const FORMATION_GROUPS = {
+            formations: {
+                labelKey: 'certifications.filter.formations',
+                fallback: 'Training',
+                typeKey: 'certifications.type.training',
+                typeFallback: 'Training',
+                icon: 'book-open'
+            },
+            outreach: {
+                labelKey: 'certifications.filter.outreach',
+                fallback: 'Outreach',
+                typeKey: 'certifications.type.outreach',
+                typeFallback: 'Outreach',
+                icon: 'users'
+            }
+        };
+
+        const CATEGORY_LABEL_KEYS = {
+            'Cloud Computing': 'certifications.filter.cloud',
+            'Productivity': 'certifications.filter.productivity',
+            'Infrastructure': 'certifications.filter.infrastructure',
+            'Security': 'certifications.filter.security',
+            'Blockchain': 'certifications.filter.blockchain',
+            'Outreach': 'certifications.filter.outreach'
+        };
+
+        let currentMainFilter = 'all';
+        let currentCategoryFilter = null;
+
+        function getFormationGroup(formation) {
+            return formation.group || 'formations';
+        }
+
+        function getFormationGroupConfig(group) {
+            return FORMATION_GROUPS[group] || {
+                labelKey: `certifications.filter.${group}`,
+                fallback: group.charAt(0).toUpperCase() + group.slice(1),
+                typeKey: `certifications.type.${group}`,
+                typeFallback: group.charAt(0).toUpperCase() + group.slice(1),
+                icon: 'book-open'
+            };
+        }
+
+        function getMainFilterOptions() {
+            const groups = [...new Set(getAllFormations().map(getFormationGroup))];
+            const preferredGroupOrder = ['formations', 'outreach'];
+            groups.sort((a, b) => {
+                const aIndex = preferredGroupOrder.indexOf(a);
+                const bIndex = preferredGroupOrder.indexOf(b);
+                if (aIndex !== -1 || bIndex !== -1) {
+                    return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+                }
+                return a.localeCompare(b);
+            });
+
+            return [
+                { value: 'all', labelKey: 'certifications.filter.all', fallback: 'All', kind: 'all' },
+                { value: 'certifications', labelKey: 'certifications.filter.certifications', fallback: 'Certifications', kind: 'certification' },
+                ...groups.map(group => {
+                    const config = getFormationGroupConfig(group);
+                    return { value: group, labelKey: config.labelKey, fallback: config.fallback, kind: 'formation-group' };
+                })
+            ];
+        }
+
+        function isMainFilterValue(value) {
+            return getMainFilterOptions().some(option => option.value === value);
+        }
+
+        function getCategoryLabel(category) {
+            const key = CATEGORY_LABEL_KEYS[category];
+            return key ? t(key, category) : category;
+        }
+
+        function getItemsForMainFilter(filter) {
+            if (filter === 'certifications') {
+                return getCertificationsSortedByRank().map(cert => ({ ...cert, type: 'certification' }));
+            }
+            if (filter === 'all') {
+                const certs = getCertificationsSortedByRank().map(cert => ({ ...cert, type: 'certification' }));
+                const forms = getFormationsSortedByDate().map(form => ({ ...form, type: 'formation' }));
+                return [...certs, ...forms];
+            }
+            if (getMainFilterOptions().some(option => option.value === filter && option.kind === 'formation-group')) {
+                return getFormationsSortedByDate()
+                    .filter(form => getFormationGroup(form) === filter)
+                    .map(form => ({ ...form, type: 'formation' }));
+            }
+            return [];
+        }
+
+        function renderMainFilterButtons() {
+            const controls = document.getElementById('main-filter-controls');
+            const categoryFilterBtn = document.getElementById('category-filter-btn');
+            if (!controls || !categoryFilterBtn) return;
+
+            controls.querySelectorAll('.filter-btn:not(#category-filter-btn)').forEach(btn => btn.remove());
+
+            getMainFilterOptions().forEach(option => {
+                const button = document.createElement('button');
+                button.className = 'filter-btn';
+                if (option.value === currentMainFilter && !currentCategoryFilter) {
+                    button.classList.add('active');
+                }
+                button.dataset.filter = option.value;
+                button.setAttribute('data-i18n', option.labelKey);
+                button.textContent = t(option.labelKey, option.fallback);
+                button.addEventListener('click', () => handleMainFilterClick(button));
+                controls.insertBefore(button, categoryFilterBtn);
+            });
+        }
+
+        function handleMainFilterClick(btn) {
+            currentCategoryFilter = null;
+            currentMainFilter = btn.dataset.filter;
+
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                if (b.id === 'category-filter-btn') {
+                    b.classList.remove('active');
+                } else {
+                    b.classList.toggle('active', b === btn);
+                }
+            });
+
+            renderCertifications(btn.dataset.filter);
+        }
+
         // Function to update formation logos based on theme
         function updateFormationLogos() {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
@@ -186,8 +318,11 @@
             // Re-render when language changes
             document.querySelectorAll('.lang-dropdown button[data-lang]').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // Re-render certifications with new language
-                    renderCertifications(document.querySelector('.filter-btn.active').dataset.filter);
+                    renderMainFilterButtons();
+                    if (currentCategoryFilter) {
+                        document.getElementById('category-filter-btn')?.classList.add('active');
+                    }
+                    renderCertifications(currentMainFilter || 'all');
                 });
             });
             
@@ -206,6 +341,42 @@
             });
         });
 
+        function updateCertificationHeroStats() {
+            const certsOnly = getCertificationsSortedByRank();
+            const formationsOnly = getAllFormations();
+            const trainingOnly = formationsOnly.filter(form => getFormationGroup(form) === 'formations');
+            const totalCertsEl = document.getElementById('total-certs');
+            const totalTrainingEl = document.getElementById('total-training');
+            const highestLevelEl = document.getElementById('highest-level');
+            const yearRangeEl = document.getElementById('certification-year-range');
+
+            if (totalCertsEl) totalCertsEl.textContent = certsOnly.length;
+            if (totalTrainingEl) totalTrainingEl.textContent = trainingOnly.length;
+
+            if (highestLevelEl) {
+                if (certsOnly.length > 0) {
+                    const highestCert = certsOnly[0];
+                    const highestLevelNameKey = highestCert.level.nameKey
+                        ? highestCert.level.nameKey
+                        : `certifications.level.${highestCert.level.label.toLowerCase()}`;
+                    highestLevelEl.textContent = t(highestLevelNameKey, highestCert.level.label);
+                } else {
+                    highestLevelEl.textContent = '—';
+                }
+            }
+
+            if (yearRangeEl) {
+                const years = [...certsOnly, ...formationsOnly]
+                    .map(item => item.dateEarned || item.dateCompleted)
+                    .filter(Boolean)
+                    .map(date => new Date(date).getFullYear())
+                    .filter(year => Number.isFinite(year));
+                yearRangeEl.textContent = years.length
+                    ? `${Math.min(...years)} → ${new Date().getFullYear()}`
+                    : '—';
+            }
+        }
+
         // Render certifications and formations
         function renderCertifications(filter = 'all') {
             const container = document.getElementById('certifications-container');
@@ -213,18 +384,9 @@
 
             let items = [];
             
-            // Apply filter
-            if (filter === 'certifications') {
-                // Show only certifications
-                items = getCertificationsSortedByRank().map(cert => ({ ...cert, type: 'certification' }));
-            } else if (filter === 'formations') {
-                // Show only formations (sorted by date, newest first)
-                items = getFormationsSortedByDate().map(form => ({ ...form, type: 'formation' }));
-            } else if (filter === 'all') {
-                // Show both certifications and formations
-                const certs = getCertificationsSortedByRank().map(cert => ({ ...cert, type: 'certification' }));
-                const forms = getFormationsSortedByDate().map(form => ({ ...form, type: 'formation' }));
-                items = [...certs, ...forms];
+            // Apply main filters first; if the value is not a main filter, treat it as a category.
+            if (isMainFilterValue(filter)) {
+                items = getItemsForMainFilter(filter);
             } else {
                 // Filter by category (applies to both certifications and formations)
                 const certs = getCertificationsSortedByRank()
@@ -248,18 +410,7 @@
                 return;
             }
 
-            // Update stats (only count certifications)
-            const certsOnly = getCertificationsSortedByRank();
-            document.getElementById('total-certs').textContent = certsOnly.length;
-            if (certsOnly.length > 0) {
-                const highestCert = certsOnly[0];
-                const highestLevelNameKey = highestCert.level.nameKey
-                    ? highestCert.level.nameKey
-                    : `certifications.level.${highestCert.level.label.toLowerCase()}`;
-                document.getElementById('highest-level').textContent = t(highestLevelNameKey, highestCert.level.label);
-            } else {
-                document.getElementById('highest-level').textContent = '—';
-            }
+            updateCertificationHeroStats();
 
             // Render items
             items.forEach(item => {
@@ -322,7 +473,7 @@
                             <i data-lucide="award"></i>
                             ${cert.provider}
                         </span>
-                        <span class="cert-category">${cert.category}</span>
+                        <span class="cert-category">${getCategoryLabel(cert.category)}</span>
                         ${dateEarnedStr ? `<span class="cert-category">${dateEarnedStr}</span>` : ''}
                         ${statusBadge}
                     </div>
@@ -396,6 +547,10 @@
 	                       <i data-lucide="book-open" class="cert-icon-fallback" style="display: block;"></i>
 	                   </div>`;
 
+            const group = getFormationGroup(formation);
+            const groupConfig = getFormationGroupConfig(group);
+            const groupLabel = t(groupConfig.typeKey, groupConfig.typeFallback);
+
             row.innerHTML = `
                 ${logoHtml}
                 
@@ -406,7 +561,7 @@
                             <i data-lucide="users"></i>
                             ${formation.provider}
                         </span>
-                        <span class="cert-category">${formation.category}</span>
+                        <span class="cert-category">${getCategoryLabel(formation.category)}</span>
                         ${dateStr ? `<span class="cert-category">${dateStr}</span>` : ''}
                     </div>
                 </div>
@@ -425,9 +580,9 @@
                     </button>
                 </div>
 
-                <div class="cert-level level-training" style="color: #8b5cf6; border-color: #8b5cf6; background: rgba(139, 92, 246, 0.1);">
-                    <i data-lucide="book-open"></i>
-                    ${t('certifications.type.training', 'Training')}
+                <div class="cert-level level-${group}">
+                    <i data-lucide="${groupConfig.icon}"></i>
+                    ${groupLabel}
                 </div>
             `;
 
@@ -437,39 +592,7 @@
             return row;
         }
 
-        // Filter functionality
-        // Category filter state
-        let selectedCategories = [];
-        let currentCategoryFilter = null;
-
-        // Setup filter buttons
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Don't handle category-filter-btn here - it opens modal
-                if (btn.id === 'category-filter-btn') {
-                    openCategoryFilterModal();
-                    return;
-                }
-                
-                // Clear category filter when using main filters
-                currentCategoryFilter = null;
-                currentMainFilter = btn.dataset.filter; // Track the main filter
-                
-                // Update active states
-                document.querySelectorAll('.filter-btn').forEach(b => {
-                    if (b.id === 'category-filter-btn') {
-                        b.classList.remove('active');
-                    } else {
-                        b.classList.remove('active');
-                        if (b === btn) {
-                            b.classList.add('active');
-                        }
-                    }
-                });
-                
-                renderCertifications(btn.dataset.filter);
-            });
-        });
+        // Filter state is handled by the dynamic main filter buttons built from the data source.
 
         // Category Filter Modal Functions
         function openCategoryFilterModal() {
@@ -489,16 +612,15 @@
             const categoryCounts = {};
             categories.forEach(category => {
                 if (activeMainFilter === 'certifications') {
-                    // Only count certifications
                     categoryCounts[category] = getCertificationsByCategory(category).length;
-                } else if (activeMainFilter === 'formations') {
-                    // Only count trainings
-                    categoryCounts[category] = getAllFormations().filter(form => form.category === category).length;
-                } else {
-                    // Count both (all)
+                } else if (activeMainFilter === 'all') {
                     const certCount = getCertificationsByCategory(category).length;
                     const formCount = getAllFormations().filter(form => form.category === category).length;
                     categoryCounts[category] = certCount + formCount;
+                } else {
+                    categoryCounts[category] = getAllFormations()
+                        .filter(form => getFormationGroup(form) === activeMainFilter && form.category === category)
+                        .length;
                 }
             });
             
@@ -506,11 +628,7 @@
             optionsContainer.innerHTML = '';
             
             // Add main filter options first
-            const mainFilters = [
-                { value: 'all', label: t('certifications.filter.all', 'All') },
-                { value: 'certifications', label: t('certifications.filter.certifications', 'Certifications') },
-                { value: 'formations', label: t('certifications.filter.formations', 'Training') }
-            ];
+            const mainFilters = getMainFilterOptions();
             
             mainFilters.forEach((filter, index) => {
                 const option = document.createElement('div');
@@ -538,7 +656,7 @@
                 
                 const label = document.createElement('label');
                 label.htmlFor = `filter-${index}`;
-                label.textContent = filter.label;
+                label.textContent = t(filter.labelKey, filter.fallback);
                 
                 // Make entire option clickable (but let label and checkbox handle their own clicks)
                 option.addEventListener('click', function(e) {
@@ -580,7 +698,7 @@
                 const label = document.createElement('label');
                 label.htmlFor = `category-${index}`;
                 label.setAttribute('data-category-label', category);
-                label.textContent = `${category} (${categoryCounts[category]})`;
+                label.textContent = `${getCategoryLabel(category)} (${categoryCounts[category]})`;
                 
                 // Make entire option clickable (but let label and checkbox handle their own clicks)
                 option.addEventListener('click', function(e) {
@@ -609,22 +727,21 @@
                 let count = 0;
                 
                 if (mainFilter === 'certifications') {
-                    // Only count certifications
                     count = getCertificationsByCategory(category).length;
-                } else if (mainFilter === 'formations') {
-                    // Only count trainings
-                    count = getAllFormations().filter(form => form.category === category).length;
-                } else {
-                    // Count both (all)
+                } else if (mainFilter === 'all') {
                     const certCount = getCertificationsByCategory(category).length;
                     const formCount = getAllFormations().filter(form => form.category === category).length;
                     count = certCount + formCount;
+                } else {
+                    count = getAllFormations()
+                        .filter(form => getFormationGroup(form) === mainFilter && form.category === category)
+                        .length;
                 }
                 
                 // Update the label text
                 const label = document.querySelector(`label[data-category-label="${category}"]`);
                 if (label) {
-                    label.textContent = `${category} (${count})`;
+                    label.textContent = `${getCategoryLabel(category)} (${count})`;
                 }
             });
         }
@@ -647,7 +764,7 @@
             const checked = Array.from(checkboxes).filter(cb => cb.checked);
             
             // Separate main filters from categories
-            const mainFilterValues = ['all', 'certifications', 'formations'];
+            const mainFilterValues = getMainFilterOptions().map(filter => filter.value);
             const checkedMainFilters = checked.filter(cb => mainFilterValues.includes(cb.value));
             const checkedCategories = checked.filter(cb => !mainFilterValues.includes(cb.value));
             
@@ -669,9 +786,15 @@
                 currentCategoryFilter = checkedCategories.map(cb => cb.value);
                 currentMainFilter = mainFilter; // Track the main filter
                 
-                // Determine which types to show based on the selected main filter
+                // Determine which groups to show based on the selected main filter
                 const showCerts = mainFilter === 'certifications' || mainFilter === 'all';
-                const showForms = mainFilter === 'formations' || mainFilter === 'all';
+                const formationGroups = mainFilter === 'all'
+                    ? getMainFilterOptions()
+                        .filter(option => option.kind === 'formation-group')
+                        .map(option => option.value)
+                    : getMainFilterOptions().some(option => option.value === mainFilter && option.kind === 'formation-group')
+                        ? [mainFilter]
+                        : [];
                 
                 // Update active state - keep category-filter-btn visually active
                 document.querySelectorAll('.filter-btn').forEach(b => {
@@ -682,7 +805,7 @@
                     }
                 });
                 
-                renderCertificationsByTypeAndCategory(showCerts, showForms, checkedCategories.map(cb => cb.value));
+                renderCertificationsByTypeAndCategory(showCerts, formationGroups, checkedCategories.map(cb => cb.value));
             } else if (checkedMainFilters.length > 0) {
                 // Only main filter selected - no categories (only one main filter allowed)
                 const mainFilter = checkedMainFilters[0].value;
@@ -729,7 +852,7 @@
             closeCategoryFilterModal();
         }
 
-        function renderCertificationsByTypeAndCategory(showCerts, showForms, categories) {
+        function renderCertificationsByTypeAndCategory(showCerts, formationGroups, categories) {
             const container = document.getElementById('certifications-container');
             container.innerHTML = '';
 
@@ -742,9 +865,9 @@
                 items.push(...certs);
             }
             
-            if (showForms) {
+            if (formationGroups.length > 0) {
                 const forms = getFormationsSortedByDate()
-                    .filter(form => categories.includes(form.category))
+                    .filter(form => formationGroups.includes(getFormationGroup(form)) && categories.includes(form.category))
                     .map(form => ({ ...form, type: 'formation' }));
                 items.push(...forms);
             }
@@ -761,18 +884,7 @@
                 return;
             }
 
-            // Update stats (only count certifications)
-            const certsOnly = getCertificationsSortedByRank();
-            document.getElementById('total-certs').textContent = certsOnly.length;
-            if (certsOnly.length > 0) {
-                const highestCert = certsOnly[0];
-                const highestLevelNameKey = highestCert.level.nameKey
-                    ? highestCert.level.nameKey
-                    : `certifications.level.${highestCert.level.label.toLowerCase()}`;
-                document.getElementById('highest-level').textContent = t(highestLevelNameKey, highestCert.level.label);
-            } else {
-                document.getElementById('highest-level').textContent = '—';
-            }
+            updateCertificationHeroStats();
 
             // Render items
             items.forEach(item => {
@@ -814,18 +926,7 @@
                 return;
             }
 
-            // Update stats (only count certifications)
-            const certsOnly = getCertificationsSortedByRank();
-            document.getElementById('total-certs').textContent = certsOnly.length;
-            if (certsOnly.length > 0) {
-                const highestCert = certsOnly[0];
-                const highestLevelNameKey = highestCert.level.nameKey
-                    ? highestCert.level.nameKey
-                    : `certifications.level.${highestCert.level.label.toLowerCase()}`;
-                document.getElementById('highest-level').textContent = t(highestLevelNameKey, highestCert.level.label);
-            } else {
-                document.getElementById('highest-level').textContent = '—';
-            }
+            updateCertificationHeroStats();
 
             // Render items
             items.forEach(item => {
@@ -1191,7 +1292,8 @@
         // Wait for certifications-data.js to load before initial render
         function waitForCertificationsData() {
             if (typeof getCertificationsSortedByRank !== 'undefined' && typeof CERTIFICATIONS !== 'undefined') {
-                // Data is loaded, render certifications
+                // Data is loaded, build filters and render certifications
+                renderMainFilterButtons();
                 renderCertifications();
                 
                 // Initialize Lucide icons

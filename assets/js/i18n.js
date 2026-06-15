@@ -15,6 +15,10 @@
         var entry = translations[key];
         if (!entry) return fallback || null;
         var lang = window.getCurrentLang();
-        return entry[lang] || entry['en'] || fallback || null;
+        var value = entry[lang] || entry['en'] || fallback || null;
+        if (value && value.indexOf('{year}') !== -1) {
+            value = value.replace('{year}', new Date().getFullYear());
+        }
+        return value;
     };
 })();
