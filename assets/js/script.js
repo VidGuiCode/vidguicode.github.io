@@ -45,10 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const langButtons = document.querySelectorAll('.lang-dropdown button[data-lang]');
     const currentLangDisplay = document.querySelector('.current-lang');
     const defaultLang = 'en';
-    
-    // Get saved language or default
-    const savedLang = localStorage.getItem('lang') || defaultLang;
-    
+    const supportedLangs = ['en', 'pt', 'lu', 'de', 'fr'];
+
+    function detectBrowserLang() {
+        const raw = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        const code = raw.split('-')[0];
+        if (supportedLangs.indexOf(code) !== -1) return code;
+        return null;
+    }
+
+    // Get saved language, browser language, or default
+    const savedLang = localStorage.getItem('lang') || detectBrowserLang() || defaultLang;
+
     // Apply language on page load
     setLanguage(savedLang);
     

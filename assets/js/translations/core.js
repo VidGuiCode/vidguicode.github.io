@@ -1355,5 +1355,12 @@ const translations = {
         lu: "© {year} Guilherme Videira Marques.",
         de: "© {year} Guilherme Videira Marques.",
         fr: "© {year} Guilherme Videira Marques."
+    },
+    "contact.allLinks": {
+        en: "All my links",
+        pt: "Todos os meus links",
+        lu: "All meng Links",
+        de: "Alle meine Links",
+        fr: "Tous mes liens"
     }
 };
