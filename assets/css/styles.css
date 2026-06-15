@@ -4520,28 +4520,9 @@ footer {
     }
 }
 
-/* Certifications page — keep the original centered card/list treatment.
-   The homepage/project recommendations should not make this page look like a
-   sparse admin table. */
-.certifications-hero {
-    text-align: center;
-    padding: 3rem 0 2rem;
-}
-.certifications-hero h1 {
-    text-align: center;
-    margin: 0 0 1rem 0;
-}
-.certifications-hero .subtitle {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-}
-.certifications-hero + .filter-controls {
-    justify-content: center;
-    max-width: none;
-    width: auto;
-    margin: 2rem 0;
-}
+/* Certifications page card/list layout. The hero alignment is handled by the
+   shared .projects-hero/.certifications-hero rules above (left-aligned, to match
+   the projects page); no per-page centering override here. */
 .certifications-list {
     margin: 2rem auto 0;
 }
