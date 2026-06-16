@@ -433,7 +433,7 @@
             // Title badges (score, in-development) - appear next to project name
             let titleBadges = '';
             if (project.score) {
-                titleBadges += ` <span class="score-badge" style="background: #22c55e; color: #fff; padding: 2px 8px; border-radius: 0; margin-left: 0.5rem; vertical-align: middle; display: inline-block;">${project.score}</span>`;
+                titleBadges += ` <span class="score-badge">${project.score}</span>`;
             }
             if (project.status === 'in-development') {
                 const statusText = project.statusKey ? t(project.statusKey, 'In Development') : 'In Development';

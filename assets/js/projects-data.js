@@ -13,50 +13,55 @@ const PROJECT_CATEGORIES = {
         icon: 'code-2',
         order: 2
     },
+    'AI & Automation': {
+        key: 'projects.category.ai',
+        icon: 'bot',
+        order: 3
+    },
     'IoT': {
         key: 'projects.category.iot',
         icon: 'sprout',
-        order: 3
+        order: 4
     },
     'School Projects': {
         key: 'projects.category.school',
         icon: 'graduation-cap',
-        order: 4
+        order: 5
     },
     'Cloud Computing': {
         key: 'projects.category.cloud',
         icon: 'cloud',
-        order: 5
+        order: 6
     },
     'DevOps': {
         key: 'projects.category.devops',
         icon: 'git-branch',
-        order: 6
+        order: 7
     },
     'Networking': {
         key: 'projects.category.networking',
         icon: 'network',
-        order: 7
+        order: 8
     },
     'Full-Stack': {
         key: 'projects.category.fullstack',
         icon: 'layers',
-        order: 8
+        order: 9
     },
     'Database': {
         key: 'projects.category.database',
         icon: 'database',
-        order: 9
+        order: 10
     },
     'Security': {
         key: 'projects.category.security',
         icon: 'shield',
-        order: 10
+        order: 11
     },
     'Open Source': {
         key: 'projects.category.opensource',
         icon: 'github',
-        order: 11
+        order: 12
     }
 };
 
@@ -131,6 +136,25 @@ const PROJECTS = [
         link: 'projects/project-pif.html',
         featured: true,
         priority: 3
+    },
+    {
+        id: 'ai-hermes-agent',
+        name: 'Hermes AI Agent',
+        nameKey: 'projects.hermes.title',
+        description: 'From May 2026 to today: my personal AI agent running on its own VPS, connected to my self-hosted Synapse/Matrix server, ntfy push notifications, Groq voice transcription, Piper TTS replies, transport lookups, email and calendar workflows, scoped homelab endpoints, a personal git server, and a markdown wiki knowledge base.',
+        descriptionKey: 'projects.hermes.desc',
+        category: 'AI & Automation',
+        categoryKey: 'projects.category.ai',
+        categories: ['AI & Automation', 'Infrastructure', 'DevOps', 'Networking'],
+        categoryKeys: ['projects.category.ai', 'projects.category.infrastructure', 'projects.category.devops', 'projects.category.networking'],
+        tags: ['Hermes Agent', 'AI Agents', 'Self-hosted', 'VPS', 'Synapse', 'Matrix', 'ntfy', 'Groq', 'Piper TTS', 'Voice Notes', 'Mobiliteit.lu', 'Docker', 'Git Server', 'Email', 'Calendar', 'Homelab APIs', 'Markdown Wiki', 'Model Routing', 'Image Generation'],
+        icon: 'bot',
+        iconImage: 'assets/img/projects/hermes/hermes.webp',
+        status: 'in-development',
+        statusKey: 'projects.status.inDevelopment',
+        dateStarted: '2026-05',
+        link: 'projects/project-ai-hermes-agent.html',
+        featured: false
     },
     {
         id: 'whispflow',

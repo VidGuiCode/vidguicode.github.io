@@ -25,6 +25,18 @@
         rgba(0,0,0,0.05) 4px
     );
     
+    /* Status Colors */
+    --status-advanced: #dc2626;
+    --status-advanced-bg: rgba(220, 38, 38, 0.1);
+    --status-intermediate: #2563eb;
+    --status-intermediate-bg: rgba(37, 99, 235, 0.1);
+    --status-beginner: #059669;
+    --status-beginner-bg: rgba(5, 150, 105, 0.1);
+    --status-training: #8b5cf6;
+    --status-training-bg: rgba(139, 92, 246, 0.1);
+    --status-in-progress: #f59e0b;
+    --status-in-progress-bg: rgba(245, 158, 11, 0.1);
+
     /* Typography Scale - Responsive with clamp() */
     --fs-h1: clamp(2rem, 5vw + 1rem, 3.5rem);           /* Hero titles: 2rem mobile → 3.5rem desktop */
     --fs-h2: clamp(1.5rem, 2.5vw + 0.5rem, 2rem);      /* Section titles: 1.5rem mobile → 2rem desktop */
@@ -52,6 +64,18 @@
     /* Grid Pattern */
     --grid-color: rgba(255, 255, 255, 0.03);
     --rack-rail: #3f3f46;
+
+    /* Status Colors (High Contrast) */
+    --status-advanced: #f87171;
+    --status-advanced-bg: rgba(248, 113, 113, 0.15);
+    --status-intermediate: #38bdf8;
+    --status-intermediate-bg: rgba(56, 189, 248, 0.15);
+    --status-beginner: #34d399;
+    --status-beginner-bg: rgba(52, 211, 153, 0.15);
+    --status-training: #c084fc;
+    --status-training-bg: rgba(192, 132, 252, 0.15);
+    --status-in-progress: #fbbf24;
+    --status-in-progress-bg: rgba(251, 191, 36, 0.15);
 }
 
 * {
@@ -823,13 +847,14 @@ button:focus-visible {
 
 .score-badge {
     font-size: var(--fs-xs);
-    background: #22c55e;
-    color: #fff;
+    background: var(--led-green);
+    color: var(--accent-text);
     padding: 2px 8px;
-    border-radius: 4px;
+    border-radius: 0;
     margin-left: 0.5rem;
     vertical-align: middle;
     display: inline-block;
+    font-weight: 600;
 }
 
 .badge::before {
@@ -837,9 +862,9 @@ button:focus-visible {
     display: block;
     width: 8px;
     height: 8px;
-    background-color: #10b981; /* Emerald Green Status Light */
+    background-color: var(--led-green);
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
     animation: pulse 2s infinite;
 }
 
@@ -1559,39 +1584,41 @@ h1 {
 }
 
 .level-advanced {
-    color: #dc2626;
-    border-color: #dc2626;
-    background: rgba(220, 38, 38, 0.1);
+    color: var(--status-advanced);
+    border-color: var(--status-advanced);
+    background: var(--status-advanced-bg);
 }
 
 .level-intermediate {
-    color: #2563eb;
-    border-color: #2563eb;
-    background: rgba(37, 99, 235, 0.1);
+    color: var(--status-intermediate);
+    border-color: var(--status-intermediate);
+    background: var(--status-intermediate-bg);
 }
 
 .level-beginner {
-    color: #059669;
-    border-color: #059669;
-    background: rgba(5, 150, 105, 0.1);
+    color: var(--status-beginner);
+    border-color: var(--status-beginner);
+    background: var(--status-beginner-bg);
 }
 
 /* Status Badges */
 .status-badge {
     padding: 0.2rem 0.5rem;
-    border: 1px solid;
+    border: 1px solid var(--border-color);
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
 }
 
+.status-badge.status-in-progress,
 .status-in-progress {
-    color: #f59e0b;
-    border-color: #f59e0b;
-    background: rgba(245, 158, 11, 0.1);
+    color: var(--status-in-progress);
+    border-color: var(--status-in-progress);
+    background: var(--status-in-progress-bg);
 }
 
+.status-badge.status-in-progress i,
 .status-in-progress i {
     width: 12px;
     height: 12px;
@@ -1765,21 +1792,21 @@ h1 {
 
 /* Formation Row Styling */
 .level-training {
-    color: #8b5cf6 !important;
-    border-color: #8b5cf6 !important;
-    background: rgba(139, 92, 246, 0.1) !important;
+    color: var(--status-training) !important;
+    border-color: var(--status-training) !important;
+    background: var(--status-training-bg) !important;
 }
 
 .level-formations {
-    color: #8b5cf6 !important;
-    border-color: #8b5cf6 !important;
-    background: rgba(139, 92, 246, 0.1) !important;
+    color: var(--status-training) !important;
+    border-color: var(--status-training) !important;
+    background: var(--status-training-bg) !important;
 }
 
 .level-outreach {
-    color: #f59e0b !important;
-    border-color: #f59e0b !important;
-    background: rgba(245, 158, 11, 0.1) !important;
+    color: var(--status-in-progress) !important;
+    border-color: var(--status-in-progress) !important;
+    background: var(--status-in-progress-bg) !important;
 }
 
 /* Certifications Responsive — 968px */
@@ -1976,9 +2003,9 @@ h1 {
 }
 
 .project-status-badge.status-in-development.title-badge {
-    color: #f59e0b;
-    border: 1px solid #f59e0b;
-    background: rgba(245, 158, 11, 0.1);
+    color: var(--status-in-progress);
+    border: 1px solid var(--status-in-progress);
+    background: var(--status-in-progress-bg);
 }
 
 /* In Development Badge - legacy style for other uses */
@@ -2000,9 +2027,9 @@ h1 {
 }
 
 .project-status-badge.status-in-development {
-    color: #f59e0b;
-    border-color: #f59e0b;
-    background: rgba(245, 158, 11, 0.1);
+    color: var(--status-in-progress);
+    border-color: var(--status-in-progress);
+    background: var(--status-in-progress-bg);
 }
 
 /* Actions Column */
@@ -2191,6 +2218,7 @@ article p, article li {
 .project-cert-badge {
     display: inline-flex;
     align-items: center;
+    gap: 0.5rem;
     padding: 0.4rem 0.6rem;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
@@ -3402,36 +3430,6 @@ html[data-theme="light"] img.arns-logo-light-mode {
     }
 }
 
-/* Certification Level Badges for Index Page */
-/* .cert-level typography moved to unified scale section above */
-
-.level-advanced {
-    color: #dc2626;
-    border-color: #dc2626;
-    background: rgba(220, 38, 38, 0.1);
-}
-
-.level-intermediate {
-    color: #2563eb;
-    border-color: #2563eb;
-    background: rgba(37, 99, 235, 0.1);
-}
-
-.level-beginner {
-    color: #059669;
-    border-color: #059669;
-    background: rgba(5, 150, 105, 0.1);
-}
-
-.status-badge {
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    border: 1px solid #f59e0b;
-    color: #f59e0b;
-    background: rgba(245, 158, 11, 0.1);
-    font-size: var(--fs-xs);
-    font-weight: 600;
-}
 
 /* Compact Top Certification Showcase */
 .top-certification-compact {

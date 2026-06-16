@@ -691,6 +691,20 @@ const translations = {
         de: "Seit August 2025, in Entwicklung: Cylro ist eine Website-Operations-Plattform für EU-Teams. Ich gründe sie gemeinsam mit einem Partner, damit Agenturen, Freelancer, Entwickler und Unternehmen viele Websites aus einem sicheren Space verwalten können, mit scoped Access, immutable Publishing, EU-gemanagter Infrastruktur und permission-aware KI-Unterstützung.",
         fr: "Depuis août 2025, en développement : Cylro est une plateforme d'opérations web pour les équipes européennes. Je la cofonde avec un partenaire pour aider agences, freelances, développeurs et entreprises à gérer de nombreux sites depuis un Space sécurisé, avec accès limité par rôle, publication immuable, infrastructure européenne gérée et assistance IA sensible aux permissions."
     },
+    "projects.hermes.title": {
+        en: "Hermes AI Agent",
+        pt: "Hermes AI Agent",
+        lu: "Hermes AI Agent",
+        de: "Hermes AI Agent",
+        fr: "Hermes AI Agent"
+    },
+    "projects.hermes.desc": {
+        en: "From May 2026 to today: my personal AI agent running on its own VPS, connected to Matrix, ntfy, Groq voice transcription, Piper TTS replies, transport lookups, email, calendar, homelab endpoints, git workflows, and a markdown knowledge base.",
+        pt: "From May 2026 to today: my personal AI agent running on its own VPS, connected to Matrix, ntfy, Groq voice transcription, Piper TTS replies, transport lookups, email, calendar, homelab endpoints, git workflows, and a markdown knowledge base.",
+        lu: "From May 2026 to today: my personal AI agent running on its own VPS, connected to Matrix, ntfy, Groq voice transcription, Piper TTS replies, transport lookups, email, calendar, homelab endpoints, git workflows, and a markdown knowledge base.",
+        de: "From May 2026 to today: my personal AI agent running on its own VPS, connected to Matrix, ntfy, Groq voice transcription, Piper TTS replies, transport lookups, email, calendar, homelab endpoints, git workflows, and a markdown knowledge base.",
+        fr: "From May 2026 to today: my personal AI agent running on its own VPS, connected to Matrix, ntfy, Groq voice transcription, Piper TTS replies, transport lookups, email, calendar, homelab endpoints, git workflows, and a markdown knowledge base."
+    },
     "projects.gradingdino.title": {
         en: "GradingDino",
         pt: "GradingDino",
@@ -753,6 +767,13 @@ const translations = {
         lu: "Web Entwécklung",
         de: "Webentwicklung",
         fr: "Développement Web"
+    },
+    "projects.category.ai": {
+        en: "AI & Automation",
+        pt: "IA & Automacao",
+        lu: "AI & Automatisatioun",
+        de: "KI & Automatisierung",
+        fr: "IA & Automatisation"
     },
     "projects.category.school": {
         en: "School Projects",

@@ -35,6 +35,7 @@ context/
 .claude/
 scripts/
 .hermes/
+.agents/
 
 # School-only (not for public repo)
 assets/js/school-translations.js

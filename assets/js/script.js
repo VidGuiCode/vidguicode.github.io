@@ -378,7 +378,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const categorySlug = category.toLowerCase().replace(/\s+/g, '');
             categoryBadge.href = pathPrefix + 'projects.html?category=' + encodeURIComponent(categorySlug);
             categoryBadge.className = 'project-cert-badge';
-            categoryBadge.style.cssText = 'text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-right: 0.75rem; margin-bottom: 0.5rem;';
             
             // Create badge text with translation
             const badgeText = document.createElement('span');
@@ -427,7 +426,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (countText) {
                     const count = document.createElement('span');
                     count.className = 'category-count';
-                    count.style.cssText = 'color: var(--text-secondary); font-size: 0.8rem; margin-left: auto;';
                     count.textContent = countText;
                     label.appendChild(count);
                 }
