@@ -908,6 +908,10 @@ h1 {
     margin-top: 0.5rem;
 }
 
+.project-meta-grid > * {
+    min-width: 0;
+}
+
 @media (max-width: 768px) {
     .project-meta-grid {
         grid-template-columns: 1fr;
@@ -2249,6 +2253,19 @@ article p, article li {
     font-size: var(--fs-small);
     color: var(--text-primary);
     white-space: nowrap;
+}
+
+.project-sidebar .project-cert-badge {
+    max-width: 100%;
+    min-width: 0;
+}
+
+.project-sidebar .project-cert-name {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap !important;
 }
 
 @media (max-width: 768px) {
