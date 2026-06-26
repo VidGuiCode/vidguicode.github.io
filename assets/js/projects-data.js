@@ -80,19 +80,20 @@ const PROJECTS = [
         id: 'homelab',
         name: 'Home Lab Personal Cloud',
         nameKey: 'projects.homelab.title',
-        description: 'From March 2025 to today: I built this four-node homelab platform around a cloud edge gateway, an ARM home server, an x86 offload node, and a dedicated ZFS NAS. It runs my custom apps, agent workflows, media services, and K3s behind a self-operated WireGuard edge.',
+        description: 'From March 2025 to today: a four-node self-hosted platform — cloud edge gateway, ARM home server, x86 offload node, and a ZFS NAS. It runs 10+ custom apps, five guardrailed AI agents, passwordless passkey login with an OIDC/OAuth provider, AI video generation, and a full media stack behind a self-operated WireGuard edge.',
         descriptionKey: 'projects.homelab.desc',
         category: 'Infrastructure',
         categoryKey: 'projects.category.infrastructure',
-        categories: ['Infrastructure', 'Cloud Computing', 'DevOps', 'Full-Stack', 'Security', 'Networking', 'Database', 'Web Development'],
-        categoryKeys: ['projects.category.infrastructure', 'projects.category.cloud', 'projects.category.devops', 'projects.category.fullstack', 'projects.category.security', 'projects.category.networking', 'projects.category.database', 'projects.category.webdev'],
-        tags: ['Raspberry Pi 5', 'K3s', 'Kubernetes', 'Docker', 'Docker Compose', 'FastAPI', 'Python', 'SvelteKit', 'WireGuard', 'Caddy', 'Traefik', 'Oracle Cloud', 'JWT', 'TOTP', 'SQLite', 'Alembic', 'Portainer', 'Playwright', 'Mistral', 'AI Agents', 'TrueNAS', 'ZFS', 'MinIO', 'Jellyfin', 'Immich', 'Nextcloud', 'Navidrome'],
+        categories: ['Infrastructure', 'Cloud Computing', 'DevOps', 'Full-Stack', 'Security', 'Networking', 'Database', 'Web Development', 'AI & Automation'],
+        categoryKeys: ['projects.category.infrastructure', 'projects.category.cloud', 'projects.category.devops', 'projects.category.fullstack', 'projects.category.security', 'projects.category.networking', 'projects.category.database', 'projects.category.webdev', 'projects.category.ai'],
+        searchTerms: ['SSO', 'Single Sign On', 'Single Sign-On', 'JWT SSO', 'OIDC', 'OAuth', 'OAuth2', 'OAuth 2.0', 'OpenID Connect', 'Identity Provider', 'Federated Login', 'Passkeys', 'Passwordless', 'WebAuthn', 'FIDO2', '2FA', 'MFA', 'Authentication', 'Authorization', 'Tailscale', 'CrowdSec', 'SearXNG', 'Retriever Agent', 'Research Agent', 'Web Research', 'Private Meta Search', 'Headless Browsing', 'LiveKit', 'WebRTC', 'DashScope', 'Keyframe Video', 'Typer CLI', 'Private PyPI', 'Personal Access Tokens', 'S3 Object Storage', 'Object Storage'],
+        tags: ['Raspberry Pi 5', 'K3s', 'Kubernetes', 'Docker', 'Docker Compose', 'FastAPI', 'Python', 'SvelteKit', 'WireGuard', 'Caddy', 'Traefik', 'Oracle Cloud', 'JWT', 'TOTP', 'SQLite', 'Alembic', 'Portainer', 'Playwright', 'AI', 'Mistral', 'AI Agents', 'TrueNAS', 'ZFS', 'MinIO', 'Jellyfin', 'Immich', 'Nextcloud', 'Navidrome'],
         icon: 'server-cog',
         status: 'completed',
         statusKey: 'projects.status.completed',
         dateCompleted: '2025-03',
         dateStarted: '2025-03',
-        link: 'projects/project-homelab.html',
+        link: 'projects/project-homelab',
         featured: true,
         priority: 1
     },
@@ -104,15 +105,15 @@ const PROJECTS = [
         descriptionKey: 'projects.cylro.desc',
         category: 'Web Development',
         categoryKey: 'projects.category.webdev',
-        categories: ['Web Development', 'Full-Stack', 'Infrastructure', 'Cloud Computing', 'DevOps', 'Database', 'Security'],
-        categoryKeys: ['projects.category.webdev', 'projects.category.fullstack', 'projects.category.infrastructure', 'projects.category.cloud', 'projects.category.devops', 'projects.category.database', 'projects.category.security'],
+        categories: ['Web Development', 'Full-Stack', 'Infrastructure', 'Cloud Computing', 'DevOps', 'Database', 'Security', 'AI & Automation'],
+        categoryKeys: ['projects.category.webdev', 'projects.category.fullstack', 'projects.category.infrastructure', 'projects.category.cloud', 'projects.category.devops', 'projects.category.database', 'projects.category.security', 'projects.category.ai'],
         tags: ['AI', 'Website Operations', 'CMS', 'Multi-tenant SaaS', 'Scoped Access', 'Immutable Publishing', 'GDPR', 'EU Infrastructure', 'Vue', 'Nuxt', 'Node.js', 'Express', 'PostgreSQL', 'pgvector', 'Redis', 'Keycloak', 'SSO', 'Mistral', 'Mollie', 'Infomaniak', 'Hetzner', 'Docker', 'K3s', 'S3', 'Object Storage'],
         icon: 'layout',
         iconImage: 'assets/img/projects/cylro/submark.svg',
         status: 'in-development',
         statusKey: 'projects.status.inDevelopment',
         dateStarted: '2025-08',
-        link: 'projects/project-cylro.html',
+        link: 'projects/project-cylro',
         featured: true,
         priority: 2
     },
@@ -133,9 +134,9 @@ const PROJECTS = [
         dateCompleted: '2025-06',
         dateStarted: '2024-09',
         score: '59/60',
-        link: 'projects/project-pif.html',
+        link: 'projects/project-pif',
         featured: true,
-        priority: 3
+        priority: 4
     },
     {
         id: 'ai-hermes-agent',
@@ -147,14 +148,15 @@ const PROJECTS = [
         categoryKey: 'projects.category.ai',
         categories: ['AI & Automation', 'Infrastructure', 'DevOps', 'Networking'],
         categoryKeys: ['projects.category.ai', 'projects.category.infrastructure', 'projects.category.devops', 'projects.category.networking'],
-        tags: ['Hermes Agent', 'AI Agents', 'Self-hosted', 'VPS', 'Synapse', 'Matrix', 'ntfy', 'Groq', 'Piper TTS', 'Voice Notes', 'Mobiliteit.lu', 'Docker', 'Git Server', 'Email', 'Calendar', 'Homelab APIs', 'Markdown Wiki', 'Model Routing', 'Image Generation'],
+        tags: ['AI', 'Hermes Agent', 'AI Agents', 'Self-hosted', 'VPS', 'Synapse', 'Matrix', 'ntfy', 'Groq', 'Piper TTS', 'Voice Notes', 'Mobiliteit.lu', 'Docker', 'Git Server', 'Email', 'Calendar', 'Homelab APIs', 'Markdown Wiki', 'Model Routing', 'Image Generation'],
         icon: 'bot',
         iconImage: 'assets/img/projects/hermes/hermes.webp',
         status: 'in-development',
         statusKey: 'projects.status.inDevelopment',
         dateStarted: '2026-05',
-        link: 'projects/project-ai-hermes-agent.html',
-        featured: false
+        link: 'projects/project-ai-hermes-agent',
+        featured: true,
+        priority: 3
     },
     {
         id: 'whispflow',
@@ -164,17 +166,17 @@ const PROJECTS = [
         descriptionKey: 'projects.whispflow.desc',
         category: 'School Projects',
         categoryKey: 'projects.category.school',
-        categories: ['School Projects', 'Full-Stack', 'Cloud Computing'],
-        categoryKeys: ['projects.category.school', 'projects.category.fullstack', 'projects.category.cloud'],
+        categories: ['School Projects', 'Full-Stack', 'Cloud Computing', 'AI & Automation'],
+        categoryKeys: ['projects.category.school', 'projects.category.fullstack', 'projects.category.cloud', 'projects.category.ai'],
         tags: ['Electron', 'Node.js', 'Python', 'faster-whisper', 'OpenAI', 'Mistral', 'Anthropic', 'FFmpeg', 'AI', 'Transcription', 'Speech-to-Text', 'Local-First'],
         icon: 'audio-waveform',
         iconImage: 'assets/img/projects/whispflow/whispflow-submark.webp',
         status: 'in-development',
         statusKey: 'projects.status.inDevelopment',
         dateStarted: '2025-10',
-        link: 'projects/project-whispflow.html',
+        link: 'projects/project-whispflow',
         featured: true,
-        priority: 4
+        priority: 5
     },
     {
         id: 'az-where',
@@ -184,8 +186,8 @@ const PROJECTS = [
         descriptionKey: 'projects.azwhere.desc',
         category: 'Cloud Computing',
         categoryKey: 'projects.category.cloud',
-        categories: ['Cloud Computing', 'DevOps', 'Open Source'],
-        categoryKeys: ['projects.category.cloud', 'projects.category.devops', 'projects.category.opensource'],
+        categories: ['Cloud Computing', 'DevOps', 'Open Source', 'AI & Automation'],
+        categoryKeys: ['projects.category.cloud', 'projects.category.devops', 'projects.category.opensource', 'projects.category.ai'],
         tags: ['TypeScript', 'Node.js', 'CLI', 'Azure', 'Azure CLI', 'ARM REST', 'Regions', 'VM SKUs', 'Quota', 'Azure Policy', 'Resource Availability', 'Pricing', 'CI', 'Terraform', 'AI Agents', 'Open Source', 'Commander.js', 'Vitest'],
         icon: 'map-pin',
         status: 'completed',
@@ -193,8 +195,29 @@ const PROJECTS = [
         dateCompleted: '2026-04',
         dateStarted: '2026-04',
         githubUrl: 'https://github.com/VidGuiCode/az-where',
-        relatedProjectIds: ['plane-cli', 'solidtime-cli', 'dolibarr-cli'],
-        featured: false
+        relatedProjectIds: ['plane-cli', 'solidtime-cli', 'dolibarr-cli', 'infomaniak-cli'],
+        featured: false,
+        priority: 9
+    },
+    {
+        id: 'minicfl-az104',
+        name: 'MiniCFL — Azure AZ-104 Demonstration',
+        nameKey: 'projects.minicfl-az104.title',
+        description: 'A three-person group project: an Azure AZ-104 administrator demonstration built around a CFL train simulator running Petange → Luxembourg. The train is just the scenario — the real deliverable is a full Azure environment: Entra ID + RBAC, a management-group hierarchy with Policy, tags and budgets, a containerised web app from ACR on App Service, a private PostgreSQL database VM, an Azure Function timer, a VNet with NSGs, and Azure Monitor — across dev and prod in two regions.',
+        descriptionKey: 'projects.minicfl-az104.desc',
+        category: 'Cloud Computing',
+        categoryKey: 'projects.category.cloud',
+        categories: ['Cloud Computing', 'School Projects', 'Infrastructure', 'Networking', 'DevOps', 'Security'],
+        categoryKeys: ['projects.category.cloud', 'projects.category.school', 'projects.category.infrastructure', 'projects.category.networking', 'projects.category.devops', 'projects.category.security'],
+        tags: ['Azure', 'AZ-104', 'Team Project', 'Microsoft Entra ID', 'RBAC', 'Management Groups', 'Azure Policy', 'Budgets', 'Resource Groups', 'ACR', 'App Service', 'Web App for Containers', 'Azure VM', 'Managed Disks', 'PostgreSQL', 'Azure Functions', 'VNet', 'Subnets', 'NSG', 'Azure Monitor', 'Log Analytics', 'Network Watcher', 'Docker', 'CFL'],
+        icon: 'route',
+        status: 'completed',
+        statusKey: 'projects.status.completed',
+        dateCompleted: '2026-06',
+        dateStarted: '2026-06',
+        link: 'projects/project-minicfl-az104',
+        featured: true,
+        priority: 6
     },
     {
         id: 'plane-cli',
@@ -204,16 +227,17 @@ const PROJECTS = [
         descriptionKey: 'projects.planecli.desc',
         category: 'DevOps',
         categoryKey: 'projects.category.devops',
-        categories: ['DevOps', 'Open Source'],
-        categoryKeys: ['projects.category.devops', 'projects.category.opensource'],
+        categories: ['DevOps', 'Open Source', 'AI & Automation'],
+        categoryKeys: ['projects.category.devops', 'projects.category.opensource', 'projects.category.ai'],
         tags: ['TypeScript', 'Node.js', 'CLI', 'Plane', 'REST API', 'AI Agents', 'Open Source', 'Automation', 'Vitest', 'Bun'],
         icon: 'square-kanban',
         status: 'completed',
         statusKey: 'projects.status.completed',
         dateStarted: '2026-03',
         githubUrl: 'https://github.com/VidGuiCode/plane-cli',
-        relatedProjectIds: ['az-where', 'solidtime-cli', 'dolibarr-cli'],
-        featured: false
+        relatedProjectIds: ['az-where', 'solidtime-cli', 'dolibarr-cli', 'infomaniak-cli'],
+        featured: false,
+        priority: 12
     },
     {
         id: 'solidtime-cli',
@@ -223,8 +247,8 @@ const PROJECTS = [
         descriptionKey: 'projects.solidtimecli.desc',
         category: 'DevOps',
         categoryKey: 'projects.category.devops',
-        categories: ['DevOps', 'Open Source'],
-        categoryKeys: ['projects.category.devops', 'projects.category.opensource'],
+        categories: ['DevOps', 'Open Source', 'AI & Automation'],
+        categoryKeys: ['projects.category.devops', 'projects.category.opensource', 'projects.category.ai'],
         tags: ['TypeScript', 'Node.js', 'CLI', 'Solidtime', 'REST API', 'AI Agents', 'Open Source', 'Time Tracking', 'Commander.js'],
         icon: 'timer',
         status: 'completed',
@@ -232,8 +256,9 @@ const PROJECTS = [
         dateCompleted: '2026-04',
         dateStarted: '2026-04',
         githubUrl: 'https://github.com/VidGuiCode/solidtime-cli',
-        relatedProjectIds: ['az-where', 'plane-cli', 'dolibarr-cli'],
-        featured: false
+        relatedProjectIds: ['az-where', 'plane-cli', 'dolibarr-cli', 'infomaniak-cli'],
+        featured: false,
+        priority: 15
     },
     {
         id: 'dolibarr-cli',
@@ -243,8 +268,8 @@ const PROJECTS = [
         descriptionKey: 'projects.dolibarrcli.desc',
         category: 'DevOps',
         categoryKey: 'projects.category.devops',
-        categories: ['DevOps', 'Open Source'],
-        categoryKeys: ['projects.category.devops', 'projects.category.opensource'],
+        categories: ['DevOps', 'Open Source', 'AI & Automation'],
+        categoryKeys: ['projects.category.devops', 'projects.category.opensource', 'projects.category.ai'],
         tags: ['TypeScript', 'Node.js', 'CLI', 'Dolibarr', 'ERP', 'REST API', 'AI Agents', 'Open Source', 'Commander.js'],
         icon: 'receipt',
         status: 'completed',
@@ -252,8 +277,30 @@ const PROJECTS = [
         dateCompleted: '2026-04',
         dateStarted: '2026-04',
         githubUrl: 'https://github.com/VidGuiCode/dolibarr-cli',
-        relatedProjectIds: ['az-where', 'plane-cli', 'solidtime-cli'],
-        featured: false
+        relatedProjectIds: ['az-where', 'plane-cli', 'solidtime-cli', 'infomaniak-cli'],
+        featured: false,
+        priority: 14
+    },
+    {
+        id: 'infomaniak-cli',
+        name: 'infomaniak-cli',
+        nameKey: 'projects.infomaniakcli.title',
+        description: 'An open-source unofficial CLI for Infomaniak that lets you manage your kSuite accounts, kDrive, mail, contacts, calendar, and kChat from any terminal. Built in Python with token-based auth (no browser session), it speaks IMAP, CardDAV/CalDAV, and the Infomaniak REST API, with JSON, table, and human-readable output. Same philosophy as my other CLIs — terminal-first and built so AI agents can use it directly through shell commands, no MCP server or protocol required.',
+        descriptionKey: 'projects.infomaniakcli.desc',
+        category: 'DevOps',
+        categoryKey: 'projects.category.devops',
+        categories: ['DevOps', 'Cloud Computing', 'Open Source', 'AI & Automation'],
+        categoryKeys: ['projects.category.devops', 'projects.category.cloud', 'projects.category.opensource', 'projects.category.ai'],
+        tags: ['Python', 'Click', 'uv', 'CLI', 'Infomaniak', 'kSuite', 'kDrive', 'kChat', 'Mail', 'IMAP', 'CardDAV', 'CalDAV', 'Mattermost', 'REST API', 'AI Agents', 'Open Source'],
+        icon: 'cloud',
+        status: 'completed',
+        statusKey: 'projects.status.completed',
+        dateCompleted: '2026-06',
+        dateStarted: '2026-06',
+        githubUrl: 'https://github.com/VidGuiCode/infomaniak-cli',
+        relatedProjectIds: ['az-where', 'plane-cli', 'solidtime-cli', 'dolibarr-cli'],
+        featured: false,
+        priority: 13
     },
     {
         id: 'sentinel',
@@ -272,7 +319,8 @@ const PROJECTS = [
         dateCompleted: '2026-01',
         dateStarted: '2025-12',
         githubUrl: 'https://github.com/VidGuiCode/sentinel',
-        featured: false
+        featured: false,
+        priority: 10
     },
     {
         id: 'teams-broadcast',
@@ -291,8 +339,9 @@ const PROJECTS = [
         statusKey: 'projects.status.completed',
         dateCompleted: '2026-01',
         dateStarted: '2025-11',
-        link: 'projects/project-teams-broadcast.html',
-        featured: false
+        link: 'projects/project-teams-broadcast',
+        featured: false,
+        priority: 11
     },
     {
         id: 'gradingdino',
@@ -311,9 +360,9 @@ const PROJECTS = [
         statusKey: 'projects.status.completed',
         dateCompleted: '2025-11',
         dateStarted: '2025-10',
-        link: 'projects/project-gradingdino.html',
+        link: 'projects/project-gradingdino',
         featured: true,
-        priority: 6
+        priority: 16
     },
     {
         id: 'rds-documentation',
@@ -331,8 +380,9 @@ const PROJECTS = [
         statusKey: 'projects.status.completed',
         dateCompleted: '2025-12',
         dateStarted: '2025-11',
-        link: 'projects/project-rds-documentation.html',
-        featured: false
+        link: 'projects/project-rds-documentation',
+        featured: false,
+        priority: 17
     },
     {
         id: 'unraid-nas',
@@ -351,9 +401,29 @@ const PROJECTS = [
         statusKey: 'projects.status.completed',
         dateCompleted: '2026-03',
         dateStarted: '2026-02',
-        link: 'projects/project-unraid-nas.html',
+        link: 'projects/project-unraid-nas',
         featured: true,
-        priority: 5
+        priority: 8
+    },
+    {
+        id: 'vircl-virtualization',
+        name: 'Server Virtualization Systems',
+        nameKey: 'projects.vircl-virtualization.title',
+        description: 'For the VIRCL module of the BTS in Cloud Computing, my two-person team deployed and compared VMware ESXi/vCenter and Proxmox VE across four HP servers — 17 virtualization features on both, from VM lifecycle and shared NFS/iSCSI storage to live migration and backups. Our Clustering specialisation nested a third node inside the opposite hypervisor on each side to build real three-node quorum with vSphere HA/DRS and Proxmox HA.',
+        descriptionKey: 'projects.vircl-virtualization.desc',
+        category: 'School Projects',
+        categoryKey: 'projects.category.school',
+        categories: ['School Projects', 'Infrastructure', 'Cloud Computing', 'Networking', 'DevOps'],
+        categoryKeys: ['projects.category.school', 'projects.category.infrastructure', 'projects.category.cloud', 'projects.category.networking', 'projects.category.devops'],
+        tags: ['VMware ESXi', 'vCenter', 'VCSA', 'Proxmox VE', 'KVM', 'LXC', 'Type-1 Hypervisor', 'Clustering', 'vSphere HA', 'DRS', 'Corosync', 'Quorum', 'vMotion', 'Live Migration', 'PowerCLI', 'qm', 'NFS', 'iSCSI', 'Unraid', 'VMFS', 'LVM-thin', 'Snapshots', 'Templates', 'vzdump', 'Nested Virtualization', 'HP ProLiant', 'iLO'],
+        icon: 'server',
+        status: 'completed',
+        statusKey: 'projects.status.completed',
+        dateCompleted: '2026-06',
+        dateStarted: '2026-04',
+        link: 'projects/project-vircl-virtualization',
+        featured: true,
+        priority: 7
     },
     {
         id: 'portfolio',
@@ -371,8 +441,9 @@ const PROJECTS = [
         statusKey: 'projects.status.completed',
         dateCompleted: '2025-11',
         dateStarted: '2025-11',
-        link: 'index.html',
-        featured: false
+        link: '/',
+        featured: false,
+        priority: 18
     }
 ];
 

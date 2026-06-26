@@ -6,6 +6,182 @@
 (function() {
     'use strict';
     const extra = {
+        /* ---- Two-lens layout: at-a-glance metric chips ---- */
+        "project.cylro.glance.space.label": {
+            en: "one Space for every website",
+            pt: "um Space para cada website",
+            lu: "ee Space fir all Websäit",
+            de: "ein Space für jede Website",
+            fr: "un Space pour chaque site"
+        },
+        "project.cylro.glance.roles.label": {
+            en: "access roles per Space",
+            pt: "papéis de acesso por Space",
+            lu: "Zougangsrollen pro Space",
+            de: "Zugriffsrollen pro Space",
+            fr: "rôles d'accès par Space"
+        },
+        "project.cylro.glance.eu.label": {
+            en: "EU-managed infrastructure",
+            pt: "infraestrutura gerida na UE",
+            lu: "EU-gereet Infrastruktur",
+            de: "EU-gemanagte Infrastruktur",
+            fr: "infrastructure gérée dans l'UE"
+        },
+        "project.cylro.glance.alpha.label": {
+            en: "private alpha",
+            pt: "alpha privada",
+            lu: "privat Alpha",
+            de: "Private Alpha",
+            fr: "alpha privée"
+        },
+
+        /* ---- Architecture diagram ---- */
+        "project.cylro.arch.title": {
+            en: "How Cylro fits together",
+            pt: "Como o Cylro se encaixa",
+            lu: "Wéi de Cylro zesummespillt",
+            de: "Wie Cylro zusammenpasst",
+            fr: "Comment Cylro s'articule"
+        },
+        "project.cylro.arch.strip": {
+            en: "Platform architecture",
+            pt: "Arquitetura da plataforma",
+            lu: "Plattform-Architektur",
+            de: "Plattform-Architektur",
+            fr: "Architecture de la plateforme"
+        },
+        "project.cylro.arch.operator": {
+            en: "Operator",
+            pt: "Operador",
+            lu: "Operateur",
+            de: "Betreiber",
+            fr: "Opérateur"
+        },
+        "project.cylro.arch.client": {
+            en: "Client",
+            pt: "Cliente",
+            lu: "Client",
+            de: "Kunde",
+            fr: "Client"
+        },
+        "project.cylro.arch.platform": {
+            en: "Cylro platform — one Space",
+            pt: "Plataforma Cylro — um Space",
+            lu: "Cylro Plattform — ee Space",
+            de: "Cylro-Plattform — ein Space",
+            fr: "Plateforme Cylro — un Space"
+        },
+        "project.cylro.arch.api": {
+            en: "Backend API",
+            pt: "API de backend",
+            lu: "Backend API",
+            de: "Backend-API",
+            fr: "API backend"
+        },
+        "project.cylro.arch.dataai": {
+            en: "Data & AI",
+            pt: "Dados & IA",
+            lu: "Daten & AI",
+            de: "Daten & KI",
+            fr: "Données & IA"
+        },
+        "project.cylro.arch.infra": {
+            en: "EU Infrastructure",
+            pt: "Infraestrutura UE",
+            lu: "EU Infrastruktur",
+            de: "EU-Infrastruktur",
+            fr: "Infrastructure UE"
+        },
+        "project.cylro.arch.note": {
+            en: "Each Space is isolated and roles (Owner, Admin, Editor, Client) are enforced per Space. Published sites are immutable snapshots that roll back automatically — and all data stays on EU-managed infrastructure.",
+            pt: "Cada Space é isolado e os papéis (Owner, Admin, Editor, Client) são aplicados por Space. Os sites publicados são snapshots imutáveis que revertem automaticamente — e todos os dados ficam em infraestrutura gerida na UE.",
+            lu: "All Space ass isoléiert an d'Rollen (Owner, Admin, Editor, Client) ginn pro Space enforced. Publizéiert Websäite sinn immutable Snapshots déi automatesch zeréckrollen — an all Daten bleiwen op EU-gereeter Infrastruktur.",
+            de: "Jeder Space ist isoliert und die Rollen (Owner, Admin, Editor, Client) werden pro Space durchgesetzt. Veröffentlichte Websites sind immutable Snapshots, die automatisch zurückrollen — und alle Daten bleiben auf EU-gemanagter Infrastruktur.",
+            fr: "Chaque Space est isolé et les rôles (Owner, Admin, Editor, Client) sont appliqués par Space. Les sites publiés sont des snapshots immuables qui reviennent automatiquement en arrière — et toutes les données restent sur une infrastructure gérée dans l'UE."
+        },
+
+        /* ---- Overview "what Cylro does" cards ---- */
+        "project.cylro.does.title": {
+            en: "What Cylro does",
+            pt: "O que o Cylro faz",
+            lu: "Wat de Cylro mécht",
+            de: "Was Cylro macht",
+            fr: "Ce que fait Cylro"
+        },
+        "project.cylro.does.studio.title": {
+            en: "Build sites in one Studio",
+            pt: "Cria sites num só Studio",
+            lu: "Bau Websäiten an engem Studio",
+            de: "Sites in einem Studio bauen",
+            fr: "Créez des sites dans un seul Studio"
+        },
+        "project.cylro.does.studio.desc": {
+            en: "Create pages, content and media in a visual builder — no plugins to juggle and no separate CMS.",
+            pt: "Cria páginas, conteúdo e media num construtor visual — sem plugins para gerir nem um CMS separado.",
+            lu: "Erstell Säiten, Content a Medien an engem visuelle Builder — keng Plugins ze jongléieren a kee separaten CMS.",
+            de: "Erstelle Seiten, Inhalte und Medien in einem visuellen Builder — keine Plugins zu jonglieren und kein separates CMS.",
+            fr: "Créez pages, contenus et médias dans un éditeur visuel — sans plugins à gérer ni CMS séparé."
+        },
+        "project.cylro.does.spaces.title": {
+            en: "Many websites, one Space",
+            pt: "Muitos sites, um Space",
+            lu: "Vill Websäiten, ee Space",
+            de: "Viele Websites, ein Space",
+            fr: "De nombreux sites, un Space"
+        },
+        "project.cylro.does.spaces.desc": {
+            en: "Agencies and teams run every client, brand or campaign site from a single secure place, with clear ownership and scoped client portals.",
+            pt: "Agências e equipas gerem cada site de cliente, marca ou campanha a partir de um único lugar seguro, com ownership claro e portais de cliente limitados.",
+            lu: "Agencen an Teams bedreiwen all Client-, Marken- oder Campagne-Websäit vun engem eenzege séchere Plaz aus, mat klorer Ownership a scoped Client-Portaler.",
+            de: "Agenturen und Teams betreiben jede Kunden-, Marken- oder Kampagnen-Website von einem einzigen sicheren Ort aus — mit klarer Ownership und scoped Kundenportalen.",
+            fr: "Les agences et équipes gèrent chaque site client, marque ou campagne depuis un seul endroit sécurisé, avec une propriété claire et des portails clients limités."
+        },
+        "project.cylro.does.publish.title": {
+            en: "Publish safely, undo instantly",
+            pt: "Publica em segurança, desfaz num instante",
+            lu: "Sécher publizéieren, direkt zréckmaachen",
+            de: "Sicher veröffentlichen, sofort rückgängig",
+            fr: "Publiez en sécurité, annulez en un instant"
+        },
+        "project.cylro.does.publish.desc": {
+            en: "Every publish is a snapshot that's tested first and rolls back automatically if something breaks.",
+            pt: "Cada publicação é um snapshot que é testado primeiro e revertido automaticamente se algo falhar.",
+            lu: "All Publizéierung ass e Snapshot deen als éischt getest gëtt an automatesch zeréckrollt wann eppes futti geet.",
+            de: "Jede Veröffentlichung ist ein Snapshot, der zuerst getestet wird und automatisch zurückrollt, wenn etwas kaputtgeht.",
+            fr: "Chaque publication est un snapshot testé d'abord et annulé automatiquement si quelque chose casse."
+        },
+        "project.cylro.does.eu.title": {
+            en: "Your data stays in Europe",
+            pt: "Os teus dados ficam na Europa",
+            lu: "Deng Daten bleiwen an Europa",
+            de: "Deine Daten bleiben in Europa",
+            fr: "Vos données restent en Europe"
+        },
+        "project.cylro.does.eu.desc": {
+            en: "Hosting, email, payments and AI all run on European providers — EU-first and GDPR-friendly by design.",
+            pt: "Hosting, email, pagamentos e IA correm todos em fornecedores europeus — EU-first e amigável ao RGPD por design.",
+            lu: "Hosting, E-Mail, Bezuelungen an AI lafen all op europäesche Provider — EU-first a GDPR-frëndlech vun Ufank un.",
+            de: "Hosting, E-Mail, Zahlungen und KI laufen alle bei europäischen Anbietern — EU-first und DSGVO-freundlich by design.",
+            fr: "Hébergement, email, paiements et IA tournent tous chez des fournisseurs européens — EU-first et compatible RGPD par conception."
+        },
+
+        /* ---- Technical layer-stack titles ---- */
+        "project.cylro.stack.access.title": {
+            en: "Spaces & Access",
+            pt: "Spaces & Acessos",
+            lu: "Spaces & Zougang",
+            de: "Spaces & Zugriff",
+            fr: "Spaces & Accès"
+        },
+        "project.cylro.stack.publishing.title": {
+            en: "Versioned Publishing",
+            pt: "Publicação Versionada",
+            lu: "Versionéiert Publishing",
+            de: "Versioniertes Publishing",
+            fr: "Publication versionnée"
+        },
+
         "project.cylro.hero.accent": {
             en: "Website Operations Platform",
             pt: "Plataforma de operações web",

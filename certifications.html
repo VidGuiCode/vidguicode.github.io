@@ -6,11 +6,11 @@
     <title>Certifications & Training | VidGuiCode</title>
     <meta name="description" content="Professional certifications and training sessions completed by Guilherme Videira Marques - Microsoft Azure, Office Specialist, Power Platform, and more.">
     <meta name="keywords" content="Certifications, Training, Microsoft Azure, Office Specialist, Power Platform, Cloud Computing, Professional Credentials, Formations">
-    <link rel="canonical" href="https://vidguicode.github.io/certifications.html">
+    <link rel="canonical" href="https://vidguicode.github.io/certifications">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vidguicode.github.io/certifications.html">
+    <meta property="og:url" content="https://vidguicode.github.io/certifications">
     <meta property="og:title" content="Certifications & Training | VidGuiCode">
     <meta property="og:description" content="Professional certifications and training sessions completed by Guilherme Videira Marques.">
     
@@ -50,7 +50,7 @@
     <div id="navbar-container"></div>
 
     <main class="container" style="padding-top: 100px;">
-        <a href="index.html#home" class="back-link">
+        <a href="/#home" class="back-link">
             <i data-lucide="arrow-left"></i>
             <span data-i18n="certifications.back">Back to Portfolio</span>
         </a>
@@ -158,10 +158,13 @@
                     </ul>
                 </div>
                 
-                <h3 data-i18n="certifications.modal.projects">Related Projects</h3>
-                <ul id="modal-projects-list" class="project-list">
-                    <!-- Projects will be inserted here -->
-                </ul>
+                <!-- Related Projects Section -->
+                <div id="modal-projects-section" style="display: none;">
+                    <h3 data-i18n="certifications.modal.projects">Related Projects</h3>
+                    <ul id="modal-projects-list" class="project-list">
+                        <!-- Projects will be inserted here -->
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -1113,24 +1116,23 @@
                 formationsSection.style.display = 'none';
             }
 
-            // Render projects
+            // Render related projects
+            const modalProjectsSection = document.getElementById('modal-projects-section');
             if (cert.relatedProjects.length === 0) {
-                const noProjectsText = t('certifications.modal.noProjects', 'No projects using this certification yet.');
-                modalProjectsList.innerHTML = `<div class="no-projects">${noProjectsText}</div>`;
+                if (modalProjectsSection) modalProjectsSection.style.display = 'none';
             } else {
-                const projectMap = {
-                    'homelab': { name: 'SyntraLab Personal Cloud', url: 'projects/project-homelab.html' },
-                    'gradingdino': { name: 'GradingDino', url: 'projects/project-gradingdino.html' },
-                    'pif': { name: 'PIF - Personal Information Form', url: 'projects/project-pif.html' },
-                };
-                
+                if (modalProjectsSection) modalProjectsSection.style.display = 'block';
                 modalProjectsList.innerHTML = cert.relatedProjects.map(projectSlug => {
-                    const projectInfo = PROJECT_NAMES[projectSlug] || { key: null, fallback: projectSlug };
-                    const projectName = projectInfo.key ? t(projectInfo.key, projectInfo.fallback) : projectInfo.fallback;
-                    const project = projectMap[projectSlug] || { name: projectName, url: '#' };
+                    const project = typeof getProjectById !== 'undefined' ? getProjectById(projectSlug) : null;
+                    const projectName = project
+                        ? (project.nameKey ? t(project.nameKey, project.name) : project.name)
+                        : (PROJECT_NAMES[projectSlug] ? t(PROJECT_NAMES[projectSlug].key, PROJECT_NAMES[projectSlug].fallback) : projectSlug);
+                    const url = project
+                        ? (project.link ? project.link + '.html' : (project.githubUrl || '#'))
+                        : '#';
                     return `
                         <li>
-                            <a href="${project.url}">
+                            <a href="${url}">
                                 <i data-lucide="folder-open"></i>
                                 ${projectName}
                             </a>
@@ -1248,8 +1250,31 @@
                 certificationsSection.style.display = 'none';
             }
 
-            // No projects for formations (or add if needed)
-            modalProjectsList.innerHTML = `<div class="no-projects">${t('certifications.modal.noProjects', 'No related projects.')}</div>`;
+            // Render related projects for this formation
+            const modalProjectsSectionF = document.getElementById('modal-projects-section');
+            const formationProjects = formation.relatedProjects || [];
+            if (formationProjects.length === 0) {
+                if (modalProjectsSectionF) modalProjectsSectionF.style.display = 'none';
+            } else {
+                if (modalProjectsSectionF) modalProjectsSectionF.style.display = 'block';
+                modalProjectsList.innerHTML = formationProjects.map(projectSlug => {
+                    const project = typeof getProjectById !== 'undefined' ? getProjectById(projectSlug) : null;
+                    const projectName = project
+                        ? (project.nameKey ? t(project.nameKey, project.name) : project.name)
+                        : (PROJECT_NAMES[projectSlug] ? t(PROJECT_NAMES[projectSlug].key, PROJECT_NAMES[projectSlug].fallback) : projectSlug);
+                    const url = project
+                        ? (project.link ? project.link + '.html' : (project.githubUrl || '#'))
+                        : '#';
+                    return `
+                        <li>
+                            <a href="${url}">
+                                <i data-lucide="folder-open"></i>
+                                ${projectName}
+                            </a>
+                        </li>
+                    `;
+                }).join('');
+            }
 
             modal.classList.add('active');
             renderIcons();
@@ -1320,16 +1345,29 @@
             
             const hash = window.location.hash;
             if (hash && hash.startsWith('#')) {
-                const certId = hash.substring(1); // Remove the #
-                if (certId && typeof getCertificationById !== 'undefined') {
-                    const cert = getCertificationById(certId);
+                const itemId = hash.substring(1); // Remove the #
+                if (itemId && typeof getCertificationById !== 'undefined') {
+                    const cert = getCertificationById(itemId);
                     if (cert) {
                         const modal = document.getElementById('cert-modal');
                         // Only open if modal is not already showing this cert
                         if (!modal || !modal.classList.contains('active')) {
                             // Small delay to ensure DOM is ready
                             setTimeout(() => {
-                                showCertModal(certId);
+                                showCertModal(itemId);
+                            }, 100);
+                        }
+                        return;
+                    }
+                }
+
+                if (itemId && typeof getFormationById !== 'undefined') {
+                    const formation = getFormationById(itemId);
+                    if (formation) {
+                        const modal = document.getElementById('cert-modal');
+                        if (!modal || !modal.classList.contains('active')) {
+                            setTimeout(() => {
+                                showFormationModal(itemId);
                             }, 100);
                         }
                     }

@@ -30,7 +30,7 @@
         if (isIndexPage) {
             html += '<a href="#home" class="nav-brand">';
         } else {
-            html += '<a href="' + pathPrefix + 'index.html#home" class="nav-brand">';
+            html += '<a href="/#home" class="nav-brand">';
         }
         html += '<img src="' + pathPrefix + 'assets/img/logos/vidguicode-favicon.svg" alt="VidGuiCode" class="nav-brand-logo">';
         html += '<span>VIDGUICODE</span>';
@@ -42,7 +42,7 @@
             if (isSchoolPage) {
                 html += '<a href="#projects" data-i18n="nav.projects">School Projects</a>';
                 html += '<a href="#about" data-i18n="nav.about">About Me</a>';
-                html += '<a href="index.html" data-i18n="footer.backToMain">Back to Main Portfolio</a>';
+                html += '<a href="/" data-i18n="footer.backToMain">Back to Main Portfolio</a>';
             } else {
                 html += '<a href="#about" data-i18n="nav.about">About</a>';
                 html += '<a href="#skills" data-i18n="nav.skills">Skills</a>';

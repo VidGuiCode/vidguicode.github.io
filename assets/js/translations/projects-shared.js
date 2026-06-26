@@ -41,6 +41,13 @@
             de: "Alle",
             fr: "Tous"
         },
+        "projects.filter.recent": {
+            en: "Recent",
+            pt: "Recentes",
+            lu: "Rezent",
+            de: "Neueste",
+            fr: "Récents"
+        },
         "projects.empty": {
             en: "No projects found for this category.",
             pt: "Nenhum projeto encontrado para esta categoria.",

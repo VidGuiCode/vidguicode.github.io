@@ -371,11 +371,11 @@
             fr: "Système d'arrosage automatisé : Mécanisme de pompe à eau contrôlé par des capteurs d'humidité du sol"
         },
         "project.pif.images.network": {
-            en: "Network topology in Cisco Packet Tracer: Home office network (IoT nodes, PlantimeterAP) connected to company office (servers, VLANs) via ISR4331 router, with DNS routing to Google Public DNS.",
-            pt: "Topologia de rede no Cisco Packet Tracer: Rede de escritório doméstico (nós IoT, PlantimeterAP) conectada ao escritório da empresa (servidores, VLANs) via router ISR4331, com roteamento DNS para Google Public DNS.",
-            lu: "Netzwierk Topologie am Cisco Packet Tracer: Home Office Netzwierk (IoT Node, PlantimeterAP) verbonnen mat Firmen Büro (Server, VLANen) iwwer ISR4331 Router, mat DNS Routing zu Google Public DNS.",
-            de: "Netzwerktopologie in Cisco Packet Tracer: Home-Office-Netzwerk (IoT-Knoten, PlantimeterAP) verbunden mit Firmenbüro (Server, VLANs) über ISR4331-Router, mit DNS-Routing zu Google Public DNS.",
-            fr: "Topologie réseau dans Cisco Packet Tracer : Réseau de bureau à domicile (nœuds IoT, PlantimeterAP) connecté au bureau de l'entreprise (serveurs, VLANs) via routeur ISR4331, avec routage DNS vers Google Public DNS."
+            en: "The whole network — including the simulated internet/ISP side — designed and tested in Cisco Packet Tracer: the home network (IoT nodes, PlantimeterAP) connects to the company office (servers, VLANs) through an ISR4331 router, with DNS routing to Google Public DNS.",
+            pt: "Toda a rede — incluindo o lado simulado de internet/ISP — concebida e testada no Cisco Packet Tracer: a rede doméstica (nós IoT, PlantimeterAP) liga-se ao escritório da empresa (servidores, VLANs) através de um router ISR4331, com roteamento DNS para o Google Public DNS.",
+            lu: "Dat ganzt Netzwierk — inklusiv déi simuléiert Internet-/ISP-Säit — am Cisco Packet Tracer entworf an getest: d'Heemnetz (IoT-Noden, PlantimeterAP) verbënnt sech mam Firmebüro (Server, VLANen) iwwer en ISR4331-Router, mat DNS-Routing op de Google Public DNS.",
+            de: "Das gesamte Netzwerk — einschließlich der simulierten Internet-/ISP-Seite — in Cisco Packet Tracer entworfen und getestet: das Heimnetzwerk (IoT-Knoten, PlantimeterAP) verbindet sich über einen ISR4331-Router mit dem Firmenbüro (Server, VLANs), mit DNS-Routing zum Google Public DNS.",
+            fr: "L'ensemble du réseau — y compris le côté internet/FAI simulé — conçu et testé dans Cisco Packet Tracer : le réseau domestique (nœuds IoT, PlantimeterAP) se connecte au bureau de l'entreprise (serveurs, VLANs) via un routeur ISR4331, avec routage DNS vers Google Public DNS."
         },
         "project.pif.section.why.title": {
             en: "Why I Built It",
@@ -573,6 +573,290 @@
             de: "80°C Sicherheitsabschaltung",
             fr: "Arrêt de sécurité à 80°C"
         },
+
+        /* ---- Two-lens layout: at-a-glance metric chips ---- */
+        "project.pif.glance.machines.label": {
+            en: "networked machines",
+            pt: "máquinas em rede",
+            lu: "vernetzte Maschinnen",
+            de: "vernetzte Maschinen",
+            fr: "machines en réseau"
+        },
+        "project.pif.glance.sensors.label": {
+            en: "environmental sensors",
+            pt: "sensores ambientais",
+            lu: "Ëmweltsensoren",
+            de: "Umweltsensoren",
+            fr: "capteurs environnementaux"
+        },
+        "project.pif.glance.zones.label": {
+            en: "VLAN-segmented zones",
+            pt: "zonas segmentadas por VLAN",
+            lu: "VLAN-segmentéiert Zonen",
+            de: "VLAN-segmentierte Zonen",
+            fr: "zones segmentées par VLAN"
+        },
+        "project.pif.glance.docs.label": {
+            en: "pages of documentation",
+            pt: "páginas de documentação",
+            lu: "Säiten Dokumentatioun",
+            de: "Seiten Dokumentation",
+            fr: "pages de documentation"
+        },
+
+        /* ---- Architecture diagram ---- */
+        "project.pif.arch.title": {
+            en: "How the system fits together",
+            pt: "Como o sistema se encaixa",
+            lu: "Wéi de System zesummespillt",
+            de: "Wie das System zusammenpasst",
+            fr: "Comment le système s'articule"
+        },
+        "project.pif.arch.strip": {
+            en: "System & network flow",
+            pt: "Fluxo do sistema e da rede",
+            lu: "System- a Netzwierkfluss",
+            de: "System- und Netzwerkfluss",
+            fr: "Flux système et réseau"
+        },
+        "project.pif.arch.plant": {
+            en: "Plant + Sensors",
+            pt: "Planta + Sensores",
+            lu: "Planz + Sensoren",
+            de: "Pflanze + Sensoren",
+            fr: "Plante + Capteurs"
+        },
+        "project.pif.arch.wifi": {
+            en: "Wi-Fi (WPA2)",
+            pt: "Wi-Fi (WPA2)",
+            lu: "Wi-Fi (WPA2)",
+            de: "Wi-Fi (WPA2)",
+            fr: "Wi-Fi (WPA2)"
+        },
+        "project.pif.arch.cabinet": {
+            en: "Server & network cabinet",
+            pt: "Armário de servidores e rede",
+            lu: "Server- a Netzwierkschaf",
+            de: "Server- und Netzwerkschrank",
+            fr: "Armoire serveurs et réseau"
+        },
+        "project.pif.arch.router": {
+            en: "Router",
+            pt: "Router",
+            lu: "Router",
+            de: "Router",
+            fr: "Routeur"
+        },
+        "project.pif.arch.internet": {
+            en: "Internet (ISP)",
+            pt: "Internet (ISP)",
+            lu: "Internet (ISP)",
+            de: "Internet (ISP)",
+            fr: "Internet (FAI)"
+        },
+        "project.pif.arch.note": {
+            en: "Sensor nodes authenticate by MAC address and only reach the hub over the local Wi-Fi; web and FTP access from outside passes through the router's NAT and port-based ACLs.",
+            pt: "Os nós sensores autenticam-se por endereço MAC e só chegam ao hub pela Wi-Fi local; o acesso web e FTP do exterior passa pelo NAT do router e por ACLs baseadas em portas.",
+            lu: "Sensor-Noden authentifizéiere sech iwwer hir MAC-Adress an erreechen den Hub nëmmen iwwer dat lokaalt Wi-Fi; Web- a FTP-Zougang vu baussen leeft iwwer den NAT vum Router an iwwer port-baséiert ACLen.",
+            de: "Sensor-Nodes authentifizieren sich per MAC-Adresse und erreichen den Hub nur über das lokale Wi-Fi; Web- und FTP-Zugriff von außen läuft über das NAT des Routers und port-basierte ACLs.",
+            fr: "Les nœuds capteurs s'authentifient par adresse MAC et n'atteignent le hub que via le Wi-Fi local ; l'accès web et FTP depuis l'extérieur passe par le NAT du routeur et des ACL basées sur les ports."
+        },
+
+        /* ---- Overview "what it actually does" cards ---- */
+        "project.pif.does.title": {
+            en: "What it actually does",
+            pt: "O que faz na prática",
+            lu: "Wat et tatsächlech mécht",
+            de: "Was es tatsächlich macht",
+            fr: "Ce qu'il fait concrètement"
+        },
+        "project.pif.does.water.title": {
+            en: "Waters plants on its own",
+            pt: "Rega as plantas sozinho",
+            lu: "Begéisst d'Planzen vu selwer",
+            de: "Gießt Pflanzen von selbst",
+            fr: "Arrose les plantes tout seul"
+        },
+        "project.pif.does.water.desc": {
+            en: "It senses dry soil and runs the pump automatically, and switches on a grow light when the room gets too dark.",
+            pt: "Deteta o solo seco e liga a bomba automaticamente, e acende uma luz de crescimento quando o ambiente fica demasiado escuro.",
+            lu: "Et erkennt drëschene Buedem a leeft d'Pompel automatesch, an et mécht e Grow-Liicht un, wann et am Raum ze däischter gëtt.",
+            de: "Es erkennt trockene Erde und startet die Pumpe automatisch und schaltet ein Wachstumslicht ein, wenn es im Raum zu dunkel wird.",
+            fr: "Il détecte un sol sec et lance la pompe automatiquement, et allume une lampe de croissance quand la pièce devient trop sombre."
+        },
+        "project.pif.does.dashboard.title": {
+            en: "Live dashboard on a touchscreen",
+            pt: "Painel ao vivo num ecrã tátil",
+            lu: "Live-Dashboard op engem Touchscreen",
+            de: "Live-Dashboard auf einem Touchscreen",
+            fr: "Tableau de bord en direct sur écran tactile"
+        },
+        "project.pif.does.dashboard.desc": {
+            en: "Real-time charts for temperature, light and moisture — with schedules and history, on a small touchscreen and in any browser.",
+            pt: "Gráficos em tempo real de temperatura, luz e humidade — com agendamentos e histórico, num pequeno ecrã tátil e em qualquer navegador.",
+            lu: "Echtzäit-Diagrammer fir Temperatur, Liicht a Fiichtegkeet — mat Zäitpläng an Historik, op engem klengen Touchscreen an an all Browser.",
+            de: "Echtzeit-Diagramme für Temperatur, Licht und Feuchtigkeit — mit Zeitplänen und Verlauf, auf einem kleinen Touchscreen und in jedem Browser.",
+            fr: "Des graphiques en temps réel pour la température, la lumière et l'humidité — avec planifications et historique, sur un petit écran tactile et dans n'importe quel navigateur."
+        },
+        "project.pif.does.network.title": {
+            en: "An enterprise-style network",
+            pt: "Uma rede ao estilo empresarial",
+            lu: "E Netzwierk am Firmestil",
+            de: "Ein Netzwerk im Unternehmensstil",
+            fr: "Un réseau de type entreprise"
+        },
+        "project.pif.does.network.desc": {
+            en: "A complete company-style network — separate secured zones, proper routing and a simulated internet provider — designed and tested end to end in Cisco Packet Tracer.",
+            pt: "Uma rede completa ao estilo empresarial — zonas separadas e seguras, roteamento adequado e um fornecedor de internet simulado — concebida e testada de ponta a ponta no Cisco Packet Tracer.",
+            lu: "E komplett Netzwierk am Firmestil — getrennten, geséchertene Zonen, richtegt Routing an e simuléierten Internet-Provider — vun A bis Z am Cisco Packet Tracer entworf an getest.",
+            de: "Ein vollständiges Netzwerk im Unternehmensstil — getrennte, gesicherte Zonen, korrektes Routing und ein simulierter Internetanbieter — durchgängig in Cisco Packet Tracer entworfen und getestet.",
+            fr: "Un réseau complet de type entreprise — zones séparées et sécurisées, routage correct et un fournisseur internet simulé — conçu et testé de bout en bout dans Cisco Packet Tracer."
+        },
+        "project.pif.does.backup.title": {
+            en: "Backs itself up every night",
+            pt: "Faz backup de si próprio todas as noites",
+            lu: "Mécht all Nuecht selwer e Backup",
+            de: "Sichert sich jede Nacht selbst",
+            fr: "Se sauvegarde chaque nuit"
+        },
+        "project.pif.does.backup.desc": {
+            en: "Every night it copies all its data to a second, mirrored server, so nothing is ever lost.",
+            pt: "Todas as noites copia todos os seus dados para um segundo servidor espelhado, para que nada se perca.",
+            lu: "All Nuecht kopéiert et all seng Donnéeën op en zweete, gespigelte Server, sou datt ni eppes verluer geet.",
+            de: "Jede Nacht kopiert es alle Daten auf einen zweiten, gespiegelten Server, sodass nie etwas verloren geht.",
+            fr: "Chaque nuit, il copie toutes ses données sur un second serveur en miroir, pour que rien ne soit jamais perdu."
+        },
+
+        /* ---- Technical layer-stack ---- */
+        "project.pif.stack.title": {
+            en: "What Runs On It",
+            pt: "O que corre nele",
+            lu: "Wat doudrop leeft",
+            de: "Was darauf läuft",
+            fr: "Ce qui tourne dessus"
+        },
+        "project.pif.stack.body": {
+            en: "Four layers, built and wired together by hand: the sensor node and its firmware, the Raspberry Pi web platform, an automated backup server, and the enterprise network that ties them together.",
+            pt: "Quatro camadas, construídas e ligadas à mão: o nó sensor e o seu firmware, a plataforma web em Raspberry Pi, um servidor de backups automatizado e a rede empresarial que os une.",
+            lu: "Véier Schichten, mat der Hand gebaut a verbonnen: de Sensor-Node a säi Firmware, d'Raspberry-Pi-Web-Plattform, en automatiséierte Backup-Server, an d'Enterprise-Netzwierk dat se zesummebréngt.",
+            de: "Vier Schichten, von Hand gebaut und verdrahtet: der Sensor-Node und seine Firmware, die Raspberry-Pi-Webplattform, ein automatisierter Backup-Server und das Enterprise-Netzwerk, das sie verbindet.",
+            fr: "Quatre couches, construites et câblées à la main : le nœud capteur et son firmware, la plateforme web Raspberry Pi, un serveur de sauvegarde automatisé et le réseau d'entreprise qui les relie."
+        },
+        "project.pif.stack.node.title": {
+            en: "Sensor Node & Firmware",
+            pt: "Nó Sensor e Firmware",
+            lu: "Sensor-Node & Firmware",
+            de: "Sensor-Node & Firmware",
+            fr: "Nœud capteur et firmware"
+        },
+        "project.pif.stack.node.auth": {
+            en: "MAC-address auth & 80°C safety cutoff: each node identifies itself by MAC address before syncing, and the firmware force-stops the heater at 80°C.",
+            pt: "Autenticação por endereço MAC e corte de segurança a 80°C: cada nó identifica-se pelo endereço MAC antes de sincronizar, e o firmware força a paragem do aquecedor aos 80°C.",
+            lu: "Authentifikatioun iwwer MAC-Adress a 80°C Sécherheets-Cutoff: all Node identifizéiert sech iwwer seng MAC-Adress ier en synchroniséiert, an de Firmware stoppt d'Heizung forcéiert bei 80°C.",
+            de: "MAC-Adress-Authentifizierung & 80°C-Sicherheitsabschaltung: Jeder Node identifiziert sich vor dem Sync per MAC-Adresse, und die Firmware stoppt die Heizung bei 80°C zwangsweise.",
+            fr: "Authentification par adresse MAC et coupure de sécurité à 80°C : chaque nœud s'identifie par son adresse MAC avant de synchroniser, et le firmware arrête de force le chauffage à 80°C."
+        },
+        "project.pif.stack.hub.title": {
+            en: "Hub Server & Web Platform",
+            pt: "Servidor Hub e Plataforma Web",
+            lu: "Hub-Server & Web-Plattform",
+            de: "Hub-Server & Web-Plattform",
+            fr: "Serveur hub et plateforme web"
+        },
+        "project.pif.stack.backup.title": {
+            en: "Backup & Recovery",
+            pt: "Backup e Recuperação",
+            lu: "Backup & Erhuelung",
+            de: "Backup & Wiederherstellung",
+            fr: "Sauvegarde et restauration"
+        },
+        "project.pif.stack.backup.raid": {
+            en: "Mirrored RAID1 storage: two 30 GB disks mirror each other, so a single drive failure loses no data.",
+            pt: "Armazenamento RAID1 espelhado: dois discos de 30 GB espelham-se mutuamente, por isso a falha de um único disco não perde dados.",
+            lu: "Gespigelte RAID1-Späicher: zwee 30-GB-Disken spigelen sech géigesäiteg, sou datt den Ausfall vun engem eenzegen Disk keng Donnéeë verléiert.",
+            de: "Gespiegelter RAID1-Speicher: zwei 30-GB-Festplatten spiegeln sich gegenseitig, sodass der Ausfall einer einzelnen Platte keine Daten verliert.",
+            fr: "Stockage RAID1 en miroir : deux disques de 30 Go se reflètent mutuellement, de sorte que la panne d'un seul disque ne perd aucune donnée."
+        },
+        "project.pif.stack.backup.auto": {
+            en: "Fully automated: a scheduled Bash job runs every night, keeps a 30-day rotation, and logs every run.",
+            pt: "Totalmente automatizado: uma tarefa Bash agendada corre todas as noites, mantém uma rotação de 30 dias e regista cada execução.",
+            lu: "Komplett automatiséiert: e geplangte Bash-Job leeft all Nuecht, hält eng 30-Deeg-Rotatioun, a protokolléiert all Laf.",
+            de: "Vollautomatisch: ein geplanter Bash-Job läuft jede Nacht, hält eine 30-Tage-Rotation und protokolliert jeden Lauf.",
+            fr: "Entièrement automatisé : une tâche Bash planifiée s'exécute chaque nuit, conserve une rotation de 30 jours et journalise chaque exécution."
+        },
+        "project.pif.stack.net.title": {
+            en: "Enterprise Network & Security",
+            pt: "Rede Empresarial e Segurança",
+            lu: "Enterprise-Netzwierk & Sécherheet",
+            de: "Enterprise-Netzwerk & Sicherheit",
+            fr: "Réseau d'entreprise et sécurité"
+        },
+        "project.pif.stack.net.hardening": {
+            en: "Server hardening: SSL/TLS, Fail2Ban, a UFW firewall and prepared statements protect the hub against intrusion and SQL injection.",
+            pt: "Endurecimento do servidor: SSL/TLS, Fail2Ban, uma firewall UFW e prepared statements protegem o hub contra intrusões e injeção de SQL.",
+            lu: "Server-Härtung: SSL/TLS, Fail2Ban, eng UFW-Firewall a prepared Statements schützen den Hub géint Andréngen a SQL-Injektioun.",
+            de: "Server-Härtung: SSL/TLS, Fail2Ban, eine UFW-Firewall und Prepared Statements schützen den Hub vor Eindringen und SQL-Injection.",
+            fr: "Durcissement du serveur : SSL/TLS, Fail2Ban, un pare-feu UFW et des requêtes préparées protègent le hub contre les intrusions et l'injection SQL."
+        },
+
+        /* ---- Lessons cards (split title/desc) ---- */
+        "project.pif.lessons.hardware.title": {
+            en: "Hardware debugging is humbling",
+            pt: "Depurar hardware ensina humildade",
+            lu: "Hardware-Debugging mécht bescheiden",
+            de: "Hardware-Debugging macht demütig",
+            fr: "Le débogage matériel rend humble"
+        },
+        "project.pif.lessons.hardware.desc": {
+            en: "Swapped resistors, wrong-pin soldering and sensor calibration taught me patience and attention to detail.",
+            pt: "Resistores trocados, soldadura no pino errado e calibração de sensores ensinaram-me paciência e atenção ao detalhe.",
+            lu: "Verwiesselt Resistoren, falsch Pin-Lötungen a Sensor-Kalibratioun hu mech Gedold an Detailpräzisioun geléiert.",
+            de: "Vertauschte Widerstände, falsches Pin-Löten und Sensorkalibrierung lehrten mich Geduld und Liebe zum Detail.",
+            fr: "Des résistances échangées, des soudures sur le mauvais pin et la calibration des capteurs m'ont appris la patience et le souci du détail."
+        },
+        "project.pif.lessons.fullstack.title": {
+            en: "Full-stack means full responsibility",
+            pt: "Full-stack significa responsabilidade total",
+            lu: "Full-stack heescht voll Responsabilitéit",
+            de: "Full-Stack heißt volle Verantwortung",
+            fr: "Full-stack signifie pleine responsabilité"
+        },
+        "project.pif.lessons.fullstack.desc": {
+            en: "From PCB to PHP, every layer had to work together — one bug anywhere breaks everything.",
+            pt: "Do PCB ao PHP, cada camada tinha de funcionar em conjunto — um bug em qualquer ponto quebra tudo.",
+            lu: "Vum PCB bis PHP huet all Schicht missen zesummeschaffen — ee Bug iergendwou brécht alles.",
+            de: "Vom PCB bis PHP musste jede Schicht zusammenarbeiten — ein Bug irgendwo bricht alles.",
+            fr: "Du PCB au PHP, chaque couche devait fonctionner ensemble — un bug n'importe où casse tout."
+        },
+        "project.pif.lessons.docs.title": {
+            en: "Documentation is a skill",
+            pt: "Documentar é uma competência",
+            lu: "Dokumentatioun ass eng Fäegkeet",
+            de: "Dokumentation ist eine Fähigkeit",
+            fr: "La documentation est une compétence"
+        },
+        "project.pif.lessons.docs.desc": {
+            en: "Writing 100+ pages of structured documentation with user stories, diagrams and test results was as challenging as the code.",
+            pt: "Escrever mais de 100 páginas de documentação estruturada com user stories, diagramas e resultados de testes foi tão desafiante quanto o código.",
+            lu: "Méi wéi 100 Säiten strukturéiert Dokumentatioun mat User Stories, Diagrammer an Testresultater ze schreiwen war esou usprochsvoll wéi de Code.",
+            de: "Über 100 Seiten strukturierte Dokumentation mit User Stories, Diagrammen und Testergebnissen zu schreiben war so herausfordernd wie der Code.",
+            fr: "Rédiger plus de 100 pages de documentation structurée avec user stories, diagrammes et résultats de tests était aussi difficile que le code."
+        },
+        "project.pif.lessons.security.title": {
+            en: "Security matters from day one",
+            pt: "A segurança importa desde o primeiro dia",
+            lu: "Sécherheet zielt vum éischten Dag un",
+            de: "Sicherheit zählt von Tag eins an",
+            fr: "La sécurité compte dès le premier jour"
+        },
+        "project.pif.lessons.security.desc": {
+            en: "Fail2Ban, SSL, UFW and prepared statements taught me to think about security at every layer.",
+            pt: "Fail2Ban, SSL, UFW e prepared statements ensinaram-me a pensar em segurança em todas as camadas.",
+            lu: "Fail2Ban, SSL, UFW a prepared Statements hu mech geléiert, Sécherheet op all Schicht ze bedenken.",
+            de: "Fail2Ban, SSL, UFW und Prepared Statements lehrten mich, Sicherheit in jeder Schicht mitzudenken.",
+            fr: "Fail2Ban, SSL, UFW et les requêtes préparées m'ont appris à penser la sécurité à chaque couche."
+        },
+
         "project.pif.name": {
             en: "PIF - Personal Information Form",
             pt: "PIF - Formulário de Informações Pessoais",

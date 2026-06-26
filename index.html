@@ -113,7 +113,7 @@
             <div class="card hero-text">
                 <div class="badge" data-i18n="hero.badge">AVAILABLE FOR OPPORTUNITIES</div>
                 <h1>Guilherme<br>Videira Marques</h1>
-                <h2 class="subtitle" data-i18n="hero.subtitle">Cloud Computing Student focused on cloud infrastructure, automation, and practical systems.</h2>
+                <p class="subtitle" data-i18n="hero.subtitle">Cloud Computing Student focused on cloud infrastructure, automation, and practical systems.</p>
                 <p data-i18n="hero.description">Based in Luxembourg, I build reliable infrastructure, automate workflows, and turn ideas into polished software and web experiences.</p>
                 <div class="hero-actions">
                     <a href="#contact" class="btn primary" data-i18n="hero.cta.contact">Get in Touch</a>
@@ -254,12 +254,12 @@
             </div>
 
             <!-- Home Lab Project -->
-            <a href="projects/project-homelab.html" class="card project-card project-card-link">
+            <a href="projects/project-homelab" class="card project-card project-card-link">
                 <div class="project-icon">
                     <i data-lucide="server-cog"></i>
                 </div>
                 <h3 data-i18n="projects.homelab.title">Home Lab Personal Cloud</h3>
-                <p class="project-desc" data-i18n="projects.homelab.desc">A hybrid 3-node cluster combining Raspberry Pi, laptop, and Oracle Cloud VPS. Powers media streaming, tools, and secure remote access.</p>
+                <p class="project-desc" data-i18n="projects.homelab.desc">From March 2025 to today: a four-node self-hosted platform — cloud edge gateway, ARM home server, x86 offload node, and a ZFS NAS. It runs 10+ custom apps, five guardrailed AI agents, passwordless passkey login with an OIDC/OAuth provider, AI video generation, and a full media stack behind a self-operated WireGuard edge.</p>
                 <div class="tags">
                     <span>K3s</span>
                     <span>Docker</span>
@@ -268,12 +268,12 @@
                     <span>Cloudflare</span>
                 </div>
                 <div class="project-cta">
-                    <span data-i18n="projects.homelab.cta">View Case Study</span>
+                    <span data-i18n="projects.viewCaseStudy">View Case Study</span>
                     <i data-lucide="arrow-right"></i>
                 </div>
             </a>
 
-            <a href="projects/project-cylro.html" class="card project-card project-card-link">
+            <a href="projects/project-cylro" class="card project-card project-card-link">
                 <div class="project-icon">
                     <i data-lucide="layout"></i>
                 </div>
@@ -287,13 +287,13 @@
                     <span>EU Infrastructure</span>
                 </div>
                 <div class="project-cta">
-                    <span data-i18n="projects.homelab.cta">View Case Study</span>
+                    <span data-i18n="projects.viewCaseStudy">View Case Study</span>
                     <i data-lucide="arrow-right"></i>
                 </div>
             </a>
 
-            <a id="projects-view-more" href="projects.html" class="btn primary" style="grid-column: 1 / -1; justify-self: center; margin-top: 1rem;" data-i18n="projects.viewMore">
-                View All Projects <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            <a id="projects-view-more" href="projects" class="btn primary projects-view-more">
+                <span data-i18n="projects.viewMore">View All Projects</span> <i data-lucide="arrow-right"></i>
                 </a>
         </section>
 
@@ -306,7 +306,7 @@
 
             <!-- Cert and highlight cards will be inserted here by JS -->
 
-            <a id="cert-view-more" href="certifications.html" class="btn primary" style="grid-column: 1 / -1; justify-self: center; margin-top: 1rem;" data-i18n="certifications.viewMore">
+            <a id="cert-view-more" href="certifications" class="btn primary" style="grid-column: 1 / -1; justify-self: center; margin-top: 1rem;" data-i18n="certifications.viewMore">
                 View All Certifications <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
             </a>
         </section>
@@ -367,7 +367,7 @@
                         <i data-lucide="github" aria-hidden="true"></i>
                         <span>GitHub</span>
                     </a>
-                    <a href="links.html" class="contact-item" aria-label="All my links">
+                    <a href="links" class="contact-item" aria-label="All my links">
                         <i data-lucide="link" aria-hidden="true"></i>
                         <span data-i18n="contact.allLinks">All my links</span>
                     </a>

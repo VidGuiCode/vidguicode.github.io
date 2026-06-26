@@ -6,11 +6,11 @@
     <title>Projects | VidGuiCode</title>
     <meta name="description" content="Portfolio projects by Guilherme Videira Marques - Infrastructure, Web Development, IoT, and School Projects showcasing technical skills and real-world applications.">
     <meta name="keywords" content="Projects, Portfolio, Infrastructure, Web Development, IoT, Cloud Computing, Homelab, Projects Showcase">
-    <link rel="canonical" href="https://vidguicode.github.io/projects.html">
+    <link rel="canonical" href="https://vidguicode.github.io/projects">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vidguicode.github.io/projects.html">
+    <meta property="og:url" content="https://vidguicode.github.io/projects">
     <meta property="og:title" content="Projects | VidGuiCode">
     <meta property="og:description" content="Portfolio projects showcasing technical skills and real-world applications.">
     
@@ -50,7 +50,7 @@
     <div id="navbar-container"></div>
 
     <main class="container" style="padding-top: 100px;">
-        <a href="index.html#home" class="back-link">
+        <a href="/#home" class="back-link">
             <i data-lucide="arrow-left"></i>
             <span data-i18n="projects.back">Back to Portfolio</span>
         </a>
@@ -94,6 +94,10 @@
                 <button class="filter-btn" id="category-filter-btn">
                     <i data-lucide="filter" style="width: 16px; height: 16px;"></i>
                     <span data-i18n="projects.filter.label">Filter</span>
+                </button>
+                <button class="filter-btn" id="sort-recent-btn" aria-pressed="false">
+                    <i data-lucide="clock" style="width: 16px; height: 16px;"></i>
+                    <span data-i18n="projects.filter.recent">Recent</span>
                 </button>
             </div>
 
@@ -220,25 +224,8 @@
             document.getElementById('total-projects').textContent = allProjects.length;
             updateHeroStats(allProjects);
 
-            // Sort priority (all driven from projects-data.js — no hardcoded list):
-            //   1. Explicit priority (1 = strongest first impression)
-            //   2. Featured highlights
-            //   3. In-development projects
-            //   4. Newest first (by dateStarted, then dateCompleted as fallback)
-            projects = projects.slice().sort((a, b) => {
-                const ap = Number.isFinite(a.priority) ? a.priority : Number.POSITIVE_INFINITY;
-                const bp = Number.isFinite(b.priority) ? b.priority : Number.POSITIVE_INFINITY;
-                if (ap !== bp) return ap - bp;
-                const af = a.featured ? 1 : 0;
-                const bf = b.featured ? 1 : 0;
-                if (af !== bf) return bf - af;
-                const ai = a.status === 'in-development' ? 1 : 0;
-                const bi = b.status === 'in-development' ? 1 : 0;
-                if (ai !== bi) return bi - ai;
-                const ad = a.dateStarted || a.dateCompleted || '';
-                const bd = b.dateStarted || b.dateCompleted || '';
-                return bd.localeCompare(ad);
-            });
+            // Order the grid via the shared sorter (respects the Recent toggle).
+            projects = sortProjects(projects);
 
             // Render projects
             projects.forEach(project => {
@@ -555,7 +542,48 @@
         // Category filter state
         let selectedCategories = [];
         let allCategories = [];
-        
+        let currentSort = 'default'; // 'default' = curated priority order, 'recent' = newest activity first
+
+        // Most recent activity date for a project (completion if present, else start).
+        function projectRecencyDate(p) {
+            return p.dateCompleted || p.dateStarted || '';
+        }
+
+        // Single source of truth for ordering the project grid, in either sort mode.
+        function sortProjects(projects) {
+            return projects.slice().sort((a, b) => {
+                if (currentSort === 'recent') {
+                    const ad = projectRecencyDate(a);
+                    const bd = projectRecencyDate(b);
+                    if (ad !== bd) return bd.localeCompare(ad);
+                    // Tie-break: ongoing work first, then curated priority.
+                    const ai = a.status === 'in-development' ? 1 : 0;
+                    const bi = b.status === 'in-development' ? 1 : 0;
+                    if (ai !== bi) return bi - ai;
+                    const ap = Number.isFinite(a.priority) ? a.priority : Number.POSITIVE_INFINITY;
+                    const bp = Number.isFinite(b.priority) ? b.priority : Number.POSITIVE_INFINITY;
+                    return ap - bp;
+                }
+                // Default curated order:
+                //   1. Explicit priority (1 = strongest first impression)
+                //   2. Featured highlights
+                //   3. In-development projects
+                //   4. Newest first (by dateStarted, then dateCompleted as fallback)
+                const ap = Number.isFinite(a.priority) ? a.priority : Number.POSITIVE_INFINITY;
+                const bp = Number.isFinite(b.priority) ? b.priority : Number.POSITIVE_INFINITY;
+                if (ap !== bp) return ap - bp;
+                const af = a.featured ? 1 : 0;
+                const bf = b.featured ? 1 : 0;
+                if (af !== bf) return bf - af;
+                const ai = a.status === 'in-development' ? 1 : 0;
+                const bi = b.status === 'in-development' ? 1 : 0;
+                if (ai !== bi) return bi - ai;
+                const ad = a.dateStarted || a.dateCompleted || '';
+                const bd = b.dateStarted || b.dateCompleted || '';
+                return bd.localeCompare(ad);
+            });
+        }
+
         function setupCategoryFilterButton() {
             const filterBtn = document.getElementById('category-filter-btn');
             const allBtn = document.getElementById('category-all-btn');
@@ -573,7 +601,7 @@
                     updateFilterButtonState();
                     if (typeof updateChipActiveState === 'function') updateChipActiveState();
                     renderProjects('all');
-                    
+
                     // Update modal checkboxes if modal is open
                     const checkboxes = document.querySelectorAll('#category-filter-options input[type="checkbox"]');
                     checkboxes.forEach(checkbox => {
@@ -581,8 +609,28 @@
                     });
                 };
             }
-            
+
+            const sortBtn = document.getElementById('sort-recent-btn');
+            if (sortBtn) {
+                sortBtn.onclick = function() {
+                    currentSort = currentSort === 'recent' ? 'default' : 'recent';
+                    updateFilterButtonState();
+                    rerenderCurrentView();
+                };
+            }
+
             updateFilterButtonState();
+        }
+
+        // Re-render the grid honoring whatever category filter is currently active.
+        function rerenderCurrentView() {
+            if (selectedCategories.length === 0) {
+                renderProjects('all');
+            } else if (selectedCategories.length === 1) {
+                renderProjects(selectedCategories[0]);
+            } else {
+                renderProjectsByMultipleCategories(selectedCategories);
+            }
         }
         
         function setupCategoryFilterModal() {
@@ -767,21 +815,8 @@
             document.getElementById('total-projects').textContent = allProjects.length;
             updateHeroStats(allProjects);
             
-            // Same sort order as renderProjects
-            filteredProjects = filteredProjects.slice().sort((a, b) => {
-                const ap = Number.isFinite(a.priority) ? a.priority : Number.POSITIVE_INFINITY;
-                const bp = Number.isFinite(b.priority) ? b.priority : Number.POSITIVE_INFINITY;
-                if (ap !== bp) return ap - bp;
-                const af = a.featured ? 1 : 0;
-                const bf = b.featured ? 1 : 0;
-                if (af !== bf) return bf - af;
-                const ai = a.status === 'in-development' ? 1 : 0;
-                const bi = b.status === 'in-development' ? 1 : 0;
-                if (ai !== bi) return bi - ai;
-                const ad = a.dateStarted || a.dateCompleted || '';
-                const bd = b.dateStarted || b.dateCompleted || '';
-                return bd.localeCompare(ad);
-            });
+            // Same sort order as renderProjects (respects the Recent toggle).
+            filteredProjects = sortProjects(filteredProjects);
             
             filteredProjects.forEach(project => {
                 const card = createProjectCard(project);
@@ -818,6 +853,14 @@
                         filterText.textContent = `Filter (${selectedCategories.length})`;
                     }
                 }
+            }
+
+            // Reflect the Recent sort toggle state
+            const sortBtn = document.getElementById('sort-recent-btn');
+            if (sortBtn) {
+                const isRecent = currentSort === 'recent';
+                sortBtn.classList.toggle('active', isRecent);
+                sortBtn.setAttribute('aria-pressed', isRecent ? 'true' : 'false');
             }
         }
 

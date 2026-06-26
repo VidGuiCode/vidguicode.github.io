@@ -34,6 +34,21 @@
                     }
                 }
             });
+
+            const formationPlaceholders = section.querySelectorAll('.formation-badge-placeholder');
+
+            formationPlaceholders.forEach(placeholder => {
+                const formationId = placeholder.textContent.trim();
+
+                if (formationId && typeof getFormationById === 'function') {
+                    const formation = getFormationById(formationId);
+
+                    if (formation) {
+                        const badgeElement = createProjectFormationBadge(formation);
+                        placeholder.replaceWith(badgeElement);
+                    }
+                }
+            });
         });
 
         // Legacy: Handle tech stack list items (for backwards compatibility)
@@ -66,7 +81,7 @@
         const isInSubdirectory = window.location.pathname.includes('/projects/');
         const pathPrefix = isInSubdirectory ? '../' : '';
         
-        badge.href = `${pathPrefix}certifications.html#${cert.id}`;
+        badge.href = `${pathPrefix}certifications#${cert.id}`;
         badge.className = 'project-cert-badge';
         badge.title = cert.name;
         badge.setAttribute('data-cert-id', cert.id);
@@ -95,13 +110,55 @@
     }
 
     /**
+     * Create badge HTML element for project training sections.
+     * @param {object} formation - Formation/training object
+     * @returns {HTMLElement} Badge element
+     */
+    function createProjectFormationBadge(formation) {
+        const badge = document.createElement('a');
+
+        const isInSubdirectory = window.location.pathname.includes('/projects/');
+        const pathPrefix = isInSubdirectory ? '../' : '';
+
+        badge.href = `${pathPrefix}certifications#${formation.id}`;
+        badge.className = 'project-cert-badge project-training-badge';
+        badge.title = formation.name;
+        badge.setAttribute('data-formation-id', formation.id);
+
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        let logoToUse = formation.logo;
+
+        if (currentTheme === 'light' && formation.logoLight) {
+            logoToUse = formation.logoLight;
+        } else if (currentTheme === 'dark' && formation.logoDark) {
+            logoToUse = formation.logoDark;
+        }
+
+        if (logoToUse) {
+            const img = document.createElement('img');
+            img.src = pathPrefix + logoToUse;
+            img.alt = formation.name;
+            img.loading = 'lazy';
+            badge.appendChild(img);
+        }
+
+        const name = document.createElement('span');
+        name.className = 'project-cert-name';
+        name.textContent = formation.nameKey ? t(formation.nameKey, formation.name) : formation.name;
+
+        badge.appendChild(name);
+
+        return badge;
+    }
+
+    /**
      * Create badge HTML element (legacy - for tech stack)
      * @param {object} cert - Certification object
      * @returns {string} HTML string
      */
     function createBadgeElement(cert) {
         return `
-            <a href="certifications.html#${cert.id}" 
+            <a href="certifications#${cert.id}"
                class="cert-badge-link" 
                title="${cert.name}"
                data-cert-id="${cert.id}">

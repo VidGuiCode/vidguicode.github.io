@@ -29,6 +29,7 @@
     <script src="../assets/js/translations/project-unraid-nas.js"></script>
     <script src="../assets/js/i18n.js"></script>
     <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/project-view.js" defer></script>
     <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/certifications-data.js"></script>
     <script src="../assets/js/search.js"></script>
@@ -82,29 +83,83 @@
             transition: transform 0.2s ease, filter 0.2s ease;
         }
 
+        .project-image-caption {
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             .project-image {
                 max-width: 100%;
             }
         }
 
-        /* Material placeholder (asset not published yet) */
-        .asset-coming-soon {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            background: var(--card-bg);
-            border: 1px dashed var(--border-color);
-            color: var(--text-secondary);
-            border-radius: 6px;
-            font-weight: 500;
-            cursor: not-allowed;
+        /* Side-by-side intro (text + first hardware photo) */
+        .intro-with-image {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-top: 1rem;
         }
 
-        .asset-coming-soon i {
-            width: 18px;
-            height: 18px;
+        .intro-with-image .intro-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .intro-with-image .intro-text h2 {
+            margin-top: 0;
+        }
+
+        .intro-with-image .intro-image {
+            flex: 0 0 320px;
+            max-width: 320px;
+            margin: 0;
+        }
+
+        .intro-with-image .intro-image .project-image {
+            max-width: 320px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .intro-with-image {
+                flex-direction: column;
+                margin-top: 0;
+            }
+            .intro-with-image .intro-image {
+                flex: 1;
+                max-width: 100%;
+            }
+            .intro-with-image .intro-image .project-image {
+                max-width: 100%;
+            }
+        }
+
+        /* Two-up technical photo strip */
+        .unraid-photo-strip {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .unraid-photo-strip .project-image-container {
+            margin: 0;
+        }
+
+        .unraid-photo-strip .project-image {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .unraid-photo-strip {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
 
         .project-hero-eyebrow {
@@ -135,9 +190,74 @@
         .project-hero-eyebrow .badge {
             margin-bottom: 0;
         }
+
+        /* ===== Unraid brand theming (scoped to this page) =====
+           Unraid's identity is its orange → red gradient. Re-tint the
+           generic green "server-room" accents toward that palette. */
+        :root {
+            --unraid-orange: #ff8c2f;
+            --unraid-red: #e22826;
+            --unraid-gradient: linear-gradient(135deg, #ff8c2f 0%, #e22826 100%);
+        }
+
+        body {
+            --led-green: #ff8c2f;        /* status LEDs → Unraid orange */
+            --led-amber: #ff6a2f;        /* warm secondary → deeper orange */
+            --accent-primary: #ff8c2f;   /* icons keyed off the accent */
+            --accent-secondary: #e22826;
+        }
+
+        /* Hero logo plate gets a subtle Unraid glow */
+        .unraid-hero-logo {
+            border-color: rgba(255, 140, 47, 0.45);
+            box-shadow: 0 0 0 1px rgba(255, 140, 47, 0.12),
+                        0 8px 24px rgba(226, 40, 38, 0.12);
+        }
+
+        /* Live-status badge dot glow → orange */
+        .project-hero-eyebrow .badge::before {
+            box-shadow: 0 0 8px rgba(255, 140, 47, 0.6);
+        }
+
+        /* Module badge → Unraid orange/red (override the default blue) */
+        .lab-badge,
+        [data-theme="dark"] .lab-badge {
+            background: rgba(255, 140, 47, 0.15) !important;
+            border-color: rgba(255, 140, 47, 0.5) !important;
+            color: #ffb27a !important;
+        }
+
+        .lab-badge::before,
+        [data-theme="dark"] .lab-badge::before {
+            background-color: #ff8c2f !important;
+            box-shadow: 0 0 8px rgba(255, 140, 47, 0.6) !important;
+        }
+
+        /* Active view-toggle tab → Unraid gradient */
+        .view-toggle button.active {
+            background: var(--unraid-gradient);
+            color: #fff;
+        }
+
+        /* Headline metrics in Unraid orange */
+        .glance-num {
+            color: var(--unraid-orange);
+        }
+
+        /* "What this server does" icons → orange-tinted */
+        .does-card .does-icon {
+            background: rgba(255, 140, 47, 0.12);
+            color: var(--unraid-orange);
+        }
+
+        /* Stack layer headings → orange icons */
+        .stack-head svg,
+        .stack-head i {
+            color: var(--unraid-orange);
+        }
     </style>
 </head>
-<body>
+<body data-view="overview">
     <div class="grid-background"></div>
 
     <!-- Search Modal (generated by search.js) -->
@@ -147,7 +267,7 @@
     <div id="navbar-container"></div>
 
     <main class="container" style="padding-top: 100px;">
-        <a href="../index.html#projects" class="back-link">
+        <a href="/#projects" class="back-link">
             <i data-lucide="arrow-left"></i>
             <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
         </a>
@@ -166,101 +286,241 @@
             </div>
         </section>
 
+        <section class="project-glance">
+            <div class="view-switch-row">
+                <div class="view-toggle" role="group" aria-label="View mode">
+                    <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
+                    <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
+                </div>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
+            </div>
+
+            <div class="glance-grid">
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">2</div>
+                    <div class="glance-label" data-i18n="project.unraid.glance.raid.label">RAID arrays (hardware + software)</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">4</div>
+                    <div class="glance-label" data-i18n="project.unraid.glance.shares.label">multi-user SMB shares</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">440 GB</div>
+                    <div class="glance-label" data-i18n="project.unraid.glance.storage.label">usable storage</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">12</div>
+                    <div class="glance-label" data-i18n="project.unraid.glance.cores.label">CPU cores (dual Xeon)</div>
+                </div>
+            </div>
+
+            <h2 data-i18n="project.unraid.arch.title">How the storage stack fits together</h2>
+            <div class="arch-diagram">
+                <div class="arch-strip">
+                    <span class="led led-g"></span>
+                    <span class="led led-a"></span>
+                    <span class="led led-d"></span>
+                    <span class="arch-strip-label" data-i18n="project.unraid.arch.strip">Disks to clients</span>
+                </div>
+                <div class="arch-body">
+                    <div class="arch-flow">
+                        <div class="arch-col">
+                            <div class="arch-unit is-external">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.unraid.arch.sas">SAS disks</span></div>
+                                    <div class="u-meta">3 × 15K</div>
+                                </div>
+                                <div class="u-spec">&rarr; RAID 5</div>
+                            </div>
+                            <div class="arch-unit is-external">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.unraid.arch.sata">SATA disks</span></div>
+                                    <div class="u-meta">2 ×</div>
+                                </div>
+                                <div class="u-spec">&rarr; RAID 1 mirror</div>
+                            </div>
+                        </div>
+
+                        <div class="arch-conn">&#8594;</div>
+
+                        <div class="arch-rack">
+                            <div class="arch-rack-label" data-i18n="project.unraid.arch.rack">Intel SR2600 · UnRAID</div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.unraid.card.raid5.title">Hardware RAID 5</span></div>
+                                    <div class="u-meta">Areca ARC-1880</div>
+                                </div>
+                                <div class="u-spec">280 GB · XFS</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.unraid.card.raid1.title">Software RAID 1</span></div>
+                                    <div class="u-meta">Btrfs mirror</div>
+                                </div>
+                                <div class="u-spec">160 GB · backup pool</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.unraid.arch.shares">Shares &amp; target</span></div>
+                                    <div class="u-meta">UnRAID</div>
+                                </div>
+                                <div class="u-spec">4 SMB · 1 iSCSI LUN</div>
+                            </div>
+                        </div>
+
+                        <div class="arch-conn">&#8594;</div>
+
+                        <div class="arch-col">
+                            <div class="arch-unit is-internet">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.unraid.arch.clients">Family clients</span></div>
+                                    <div class="u-meta">SMB</div>
+                                </div>
+                                <div class="u-spec">Windows · Linux · macOS</div>
+                            </div>
+                            <div class="arch-unit is-internet">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.unraid.arch.initiator">iSCSI initiator</span></div>
+                                    <div class="u-meta">block</div>
+                                </div>
+                                <div class="u-spec">Windows disk</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch-note" data-i18n="project.unraid.arch.note">Per-user permissions gate every share — parents read/write, the child is read-only and can't touch Backup. RAID 5 parity lives in the Areca card, so UnRAID sees one disk; Intel RMM3 manages the box out-of-band even when the OS is down.</div>
+                </div>
+            </div>
+
+            <div class="plain-only">
+                <h2 data-i18n="project.unraid.does.title">What this server does</h2>
+                <div class="does-grid">
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="hard-drive"></i></div>
+                        <h3 data-i18n="project.unraid.does.drive.title">A shared family drive</h3>
+                        <p data-i18n="project.unraid.does.drive.desc">Photos, media and documents that everyone in the house can open from any computer.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="lock"></i></div>
+                        <h3 data-i18n="project.unraid.does.access.title">Everyone gets the right access</h3>
+                        <p data-i18n="project.unraid.does.access.desc">Parents can edit, the kid is read-only, and the backup folder is locked down — set per person.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="copy"></i></div>
+                        <h3 data-i18n="project.unraid.does.redundant.title">Survives a dead disk</h3>
+                        <p data-i18n="project.unraid.does.redundant.desc">Drives are mirrored and parity-protected, so if one disk fails, nothing is lost.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="network"></i></div>
+                        <h3 data-i18n="project.unraid.does.block.title">Acts like a local disk too</h3>
+                        <p data-i18n="project.unraid.does.block.desc">It can also hand a Windows PC raw storage over the network that shows up like a built-in drive (iSCSI).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="project-meta-grid">
             <!-- Main Content -->
             <article>
                 <div class="card">
-                    <i data-lucide="hard-drive" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
-                    <h2 data-i18n="project.unraid.section.overview.title">Overview</h2>
-                    <p data-i18n="project.unraid.section.overview.body">For the Cloud Infrastructure 2 module of my BTS Cloud Computing, my team of two was handed a bare Intel 2U rack server and told to turn it into a working storage box. We fitted the hardware, set up a hardware RAID controller, installed UnRAID, racked it, and built a full family file-sharing setup on top. To finish, we tested iSCSI block storage from a Windows machine.</p>
-
-                    <h2 data-i18n="project.unraid.section.hardware.title">The Hardware</h2>
-                    <p data-i18n="project.unraid.section.hardware.body" data-i18n-html="true">The machine we got is an <strong>Intel SR2600 2U rack server</strong> on an S5520UR board, with <strong>dual Intel Xeon X5650</strong> (12 cores total) and <strong>16 GB of DDR3 ECC</strong> across six channels. Staging meant fitting the RAM, the native SATA disks and the SAS disks, slotting the RAID controller into the PCIe riser, testing the redundant power supplies for failover, and going through the BIOS to make sure everything was detected before any OS touched the disks.</p>
-
-                    <div class="project-image-container">
-                        <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/unraid-nas/server-internals.webp', 'Open Intel SR2600 chassis showing the dual-CPU mainboard, DDR3 modules, and drive bays during staging')">
-                            <img src="../assets/img/projects/unraid-nas/server-internals.webp" alt="Open Intel SR2600 chassis showing the dual-CPU mainboard, DDR3 modules, and drive bays during staging" class="project-image" loading="lazy">
+                    <div class="intro-with-image">
+                        <div class="intro-text">
+                            <i data-lucide="hard-drive" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                            <h2 data-i18n="project.unraid.section.overview.title">Overview</h2>
+                            <p data-i18n="project.unraid.section.overview.body">For the Cloud Infrastructure 2 module of my BTS Cloud Computing, my team of two was handed a bare Intel 2U rack server and told to turn it into a working storage box. We fitted the hardware, set up a hardware RAID controller, installed UnRAID, racked it, and built a full family file-sharing setup on top. To finish, we tested iSCSI block storage from a Windows machine.</p>
                         </div>
-                        <p class="project-image-caption" data-i18n="project.unraid.image.server.caption">The Intel SR2600 opened up during staging, showing the dual-CPU mainboard, the DDR3 modules and the front drive bays.</p>
+                        <div class="intro-image project-image-container">
+                            <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/unraid-nas/server-internals.webp', 'Open Intel SR2600 chassis showing the dual-CPU mainboard, DDR3 modules, and drive bays during staging')">
+                                <img src="../assets/img/projects/unraid-nas/server-internals.webp" alt="Open Intel SR2600 chassis showing the dual-CPU mainboard, DDR3 modules, and drive bays during staging" class="project-image" loading="lazy">
+                            </div>
+                            <p class="project-image-caption" data-i18n="project.unraid.image.server.caption">The Intel SR2600 opened up during staging, showing the dual-CPU mainboard, the DDR3 modules and the front drive bays.</p>
+                        </div>
                     </div>
 
-                    <div class="hardware-showcase" style="margin: 1.5rem 0; display: grid; gap: 1.25rem;">
-                        <div class="node-card" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                            <div style="height: 4px; background: linear-gradient(90deg, #f97316, #ef4444);"></div>
-                            <div style="padding: 1.5rem;">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <div>
-                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.unraid.card.raid5.title">Hardware RAID 5</h3>
-                                        <div class="node-spec" style="color: #fb923c; margin-bottom: 0.75rem;" data-i18n="project.unraid.card.raid5.spec">Areca ARC-1880 · 3 × SAS</div>
-                                    </div>
-                                    <div class="node-detail" style="text-align: right; color: #888;">
-                                        <div data-i18n="project.unraid.card.raid5.detail1">280 GB usable</div>
-                                        <div style="font-weight: 600; color: #fb923c;" data-i18n="project.unraid.card.raid5.detail2">XFS</div>
-                                    </div>
+                    <div class="tech-only">
+                        <h2 data-i18n="project.unraid.stack.title">Inside the Server</h2>
+                        <div class="stack-diagram">
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="server"></i><h3 data-i18n="project.unraid.section.hardware.title">The Hardware</h3></div>
+                                <div class="stack-chips"><span>Intel SR2600 2U</span><span>Dual Xeon X5650</span><span>16 GB DDR3 ECC</span><span>Redundant PSU</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.unraid.section.hardware.body" data-i18n-html="true">The machine we got is an <strong>Intel SR2600 2U rack server</strong> on an S5520UR board, with <strong>dual Intel Xeon X5650</strong> (12 cores total) and <strong>16 GB of DDR3 ECC</strong> across six channels.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="layers"></i><h3 data-i18n="project.unraid.stack.raid.title">Storage &amp; RAID</h3></div>
+                                <div class="stack-chips"><span>Areca ARC-1880</span><span>RAID 5 / XFS</span><span>Btrfs RAID 1</span><span>SAS + SATA</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.unraid.card.raid5.body">Three enterprise 15K SAS disks that a dedicated RAID controller presents as one logical volume. All the redundancy happens in hardware, so UnRAID just sees a single disk.</li>
+                                    <li data-i18n="project.unraid.card.raid1.body">Two native SATA disks mirrored as a Btrfs RAID 1 pool. Each disk holds a full copy, so losing one drive loses no data. This is where the Backup share lives.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="box"></i><h3 data-i18n="project.unraid.section.os.title">The Software: UnRAID</h3></div>
+                                <div class="stack-chips"><span>UnRAID</span><span>Linux</span><span>Docker</span><span>Community Apps</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.unraid.section.os.body" data-i18n-html="true">A Linux-based NAS OS that is good at mixing disks of different sizes in one parity-protected array, with a friendly web UI, Docker, VMs and a plugin store. We also dug into how <strong>DAS, NAS and SAN</strong> differ and the trade-offs of UnRAID's paid licensing.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="folder-tree"></i><h3 data-i18n="project.unraid.section.sharing.title">File Sharing &amp; Permissions</h3></div>
+                                <div class="stack-chips"><span>SMB</span><span>4 shares</span><span>per-user ACL</span><span>Win / Linux / macOS</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.unraid.section.sharing.body" data-i18n-html="true">The setup was a family with three accounts and four SMB shares. <code>Photos</code>, <code>Media</code> and <code>Documents</code> live on the big RAID 5 array, and <code>Backup</code> sits on the mirrored RAID 1 pool. The two parent accounts get full read/write, while the child account is read-only on the libraries and can't touch Backup at all.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="network"></i><h3 data-i18n="project.unraid.section.iscsi.title">iSCSI Block Storage</h3></div>
+                                <div class="stack-chips"><span>iSCSI target</span><span>file-based LUN</span><span>IQN ACL</span><span>NTFS</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.unraid.section.iscsi.body" data-i18n-html="true">On top of file shares, we handed out <strong>block storage over iSCSI</strong>. We added a Community Apps plugin, created a file-based LUN on the hardware RAID 5 array, and published it as a target with an ACL locked to one approved Windows initiator (by IQN). On Windows the LUN turns up in Disk Management like a brand-new local disk.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="monitor-dot"></i><h3 data-i18n="project.unraid.section.management.title">Rack &amp; Remote Management</h3></div>
+                                <div class="stack-chips"><span>24U rack</span><span>Intel RMM3</span><span>IPMI 2.0</span><span>out-of-band</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.unraid.section.management.body" data-i18n-html="true">Once it was working on the bench, the server went onto rails in a 24U rack with tidy cabling. Remote management runs over <strong>Intel RMM3</strong> (IPMI 2.0), which gives remote KVM, power control and BIOS access even when the OS is down, next to the UnRAID web interface for everyday admin.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="unraid-photo-strip">
+                            <div class="project-image-container">
+                                <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/unraid-nas/areca-raid-controller.webp', 'Areca ARC-1880 RAID controller seated in the PCIe riser, with SAS cabling routed to the drive backplane')">
+                                    <img src="../assets/img/projects/unraid-nas/areca-raid-controller.webp" alt="Areca ARC-1880 RAID controller seated in the PCIe riser, with SAS cabling routed to the drive backplane" class="project-image" loading="lazy">
                                 </div>
-                                <p class="node-card p" style="color: #888; margin: 0;" data-i18n="project.unraid.card.raid5.body">
-                                    Three enterprise 15K SAS disks that a dedicated RAID controller presents as one logical volume. All the redundancy happens in hardware, so UnRAID just sees a single disk.
-                                </p>
+                                <p class="project-image-caption" data-i18n="project.unraid.image.areca.caption">The Areca ARC-1880 on its PCIe riser. This card is what builds and owns the RAID 5 array in hardware.</p>
                             </div>
-                            <div class="node-tags" style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; color: #555; flex-wrap: wrap;">
-                                <span>[ARC-1880]</span> <span>[RAID 5]</span> <span>[SAS 15K]</span> <span>[XFS]</span> <span>[HARDWARE PARITY]</span>
-                            </div>
-                        </div>
-
-                        <div class="node-card" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                            <div style="height: 4px; background: linear-gradient(90deg, #0ea5e9, #2563eb);"></div>
-                            <div style="padding: 1.5rem;">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <div>
-                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.unraid.card.raid1.title">Software RAID 1</h3>
-                                        <div class="node-spec" style="color: #7dd3fc; margin-bottom: 0.75rem;" data-i18n="project.unraid.card.raid1.spec">Btrfs mirror · 2 × SATA</div>
-                                    </div>
-                                    <div class="node-detail" style="text-align: right; color: #888;">
-                                        <div data-i18n="project.unraid.card.raid1.detail1">160 GB</div>
-                                        <div style="font-weight: 600; color: #7dd3fc;" data-i18n="project.unraid.card.raid1.detail2">Btrfs</div>
-                                    </div>
+                            <div class="project-image-container">
+                                <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/unraid-nas/iscsi-windows-disk.webp', 'Windows Disk Management showing the iSCSI LUN as a new unallocated local disk')">
+                                    <img src="../assets/img/projects/unraid-nas/iscsi-windows-disk.webp" alt="Windows Disk Management showing the iSCSI LUN as a new unallocated local disk" class="project-image" loading="lazy">
                                 </div>
-                                <p class="node-card p" style="color: #888; margin: 0;" data-i18n="project.unraid.card.raid1.body">
-                                    Two native SATA disks mirrored as a Btrfs RAID 1 pool. Each disk holds a full copy, so losing one drive loses no data. This is where the Backup share lives.
-                                </p>
-                            </div>
-                            <div class="node-tags" style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; color: #555; flex-wrap: wrap;">
-                                <span>[BTRFS]</span> <span>[RAID 1]</span> <span>[MIRROR]</span> <span>[SATA]</span> <span>[BACKUP POOL]</span>
+                                <p class="project-image-caption" data-i18n="project.unraid.image.iscsi.caption">The iSCSI LUN showing up on Windows as a fresh, unallocated local disk, ready to initialise and format.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="project-image-container">
-                        <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/unraid-nas/areca-raid-controller.webp', 'Areca ARC-1880 RAID controller seated in the PCIe riser, with SAS cabling routed to the drive backplane')">
-                            <img src="../assets/img/projects/unraid-nas/areca-raid-controller.webp" alt="Areca ARC-1880 RAID controller seated in the PCIe riser, with SAS cabling routed to the drive backplane" class="project-image" loading="lazy">
-                        </div>
-                        <p class="project-image-caption" data-i18n="project.unraid.image.areca.caption">The Areca ARC-1880 on its PCIe riser. This card is what builds and owns the RAID 5 array in hardware.</p>
-                    </div>
-
-                    <h2 data-i18n="project.unraid.section.os.title">The Software: UnRAID</h2>
-                    <p data-i18n="project.unraid.section.os.body" data-i18n-html="true">The module ran as a comparison across teams. Several NAS platforms were on the table and each team took a different one. Ours was <strong>UnRAID</strong> by Lime Technology, a Linux-based NAS OS that is good at mixing disks of different sizes in one parity-protected array, with a friendly web UI, Docker, VMs and a plugin store (Community Apps). Alongside the build we dug into where a NAS fits, how <strong>DAS, NAS and SAN</strong> differ, why compute and storage get separated in production, and the trade-offs of UnRAID's paid licensing.</p>
-
-                    <h2 data-i18n="project.unraid.section.sharing.title">File Sharing &amp; Permissions</h2>
-                    <p data-i18n="project.unraid.section.sharing.body" data-i18n-html="true">The setup was a family with three accounts and four SMB shares. <code>Photos</code>, <code>Media</code> and <code>Documents</code> live on the big RAID 5 array, and <code>Backup</code> sits on the mirrored RAID 1 pool. The two parent accounts get full read/write, while the child account is read-only on the libraries and can't touch Backup at all. Every share works straight from Windows, Linux and macOS, and we checked both the transfers and the permission limits with real test files.</p>
-
-                    <h2 data-i18n="project.unraid.section.iscsi.title">iSCSI Block Storage</h2>
-                    <p data-i18n="project.unraid.section.iscsi.body" data-i18n-html="true">On top of file shares, we handed out <strong>block storage over iSCSI</strong>. UnRAID has no target built in, so we added a Community Apps plugin, created a file-based LUN on the hardware RAID 5 array, and published it as a target with an ACL locked to one approved Windows initiator (by IQN). On Windows the LUN turns up in Disk Management like a brand-new local disk, so we initialised it, formatted it NTFS, and copied files over to prove the whole path works. The page also breaks down how <strong>iSCSI compares to NFS and SMB</strong>: block versus file, and who actually owns the filesystem.</p>
-
-                    <div class="project-image-container">
-                        <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/unraid-nas/iscsi-windows-disk.webp', 'Windows Disk Management showing the iSCSI LUN as a new unallocated local disk')">
-                            <img src="../assets/img/projects/unraid-nas/iscsi-windows-disk.webp" alt="Windows Disk Management showing the iSCSI LUN as a new unallocated local disk" class="project-image" style="max-width: 560px;" loading="lazy">
-                        </div>
-                        <p class="project-image-caption" data-i18n="project.unraid.image.iscsi.caption">The iSCSI LUN showing up on Windows as a fresh, unallocated local disk, ready to initialise and format.</p>
-                    </div>
-
-                    <h2 data-i18n="project.unraid.section.management.title">Rack &amp; Remote Management</h2>
-                    <p data-i18n="project.unraid.section.management.body" data-i18n-html="true">Once it was working on the bench, the server went onto rails in a 24U rack with tidy cabling for the data NIC, the RAID controller's management port and the out-of-band link. Remote management runs over <strong>Intel RMM3</strong> (IPMI 2.0), which gives remote KVM, power control and BIOS access even when the OS is down, next to the UnRAID web interface for everyday admin.</p>
+                    </div><!-- /.tech-only -->
 
                     <h2 data-i18n="project.unraid.section.troubleshooting.title">Problems Worth Remembering</h2>
-                    <p data-i18n="project.unraid.section.troubleshooting.body" data-i18n-html="true">Two problems taught us the most. After a config reset the web UI wouldn't load (nginx threw a 502 and PHP came back blank), so we restarted the services by hand (<code>nginx</code>, <code>php-fpm</code>, <code>emhttp</code>) and then made it stick by adding the daemon to UnRAID's startup <code>go</code> file. The Btrfs pool also refused to start with <em>"Too many wrong and/or missing disks"</em>. The fix was a fresh disk assignment (New Config, keeping the assignments) and then formatting the unmounted disks into a proper Btrfs filesystem.</p>
+                    <div class="does-grid">
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="terminal"></i></div>
+                            <h3 data-i18n="project.unraid.trouble.web.title">When the web UI died</h3>
+                            <p data-i18n="project.unraid.trouble.web.desc" data-i18n-html="true">After a config reset, nginx threw a 502 and PHP came back blank. Restarting <code>nginx</code>, <code>php-fpm</code> and <code>emhttp</code> by hand fixed it — and adding the daemon to UnRAID's startup <code>go</code> file made it stick.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="hard-drive"></i></div>
+                            <h3 data-i18n="project.unraid.trouble.btrfs.title">Reviving the Btrfs pool</h3>
+                            <p data-i18n="project.unraid.trouble.btrfs.desc">The mirror refused to start with "Too many wrong and/or missing disks." A fresh disk assignment (New Config, keeping the assignments) and reformatting the unmounted disks brought it back.</p>
+                        </div>
+                    </div>
 
                     <h2 data-i18n="project.unraid.section.assets.title">Deliverables &amp; Material</h2>
-                    <p data-i18n="project.unraid.section.assets.body">We produced full technical documentation and a presentation for this project. They hold lab-internal details (addresses, credentials, identifiers), so I'm preparing a redacted, shareable version before they go online.</p>
+                    <p data-i18n="project.unraid.section.assets.body">Public PDF exports of the technical documentation and presentation used for the module delivery.</p>
 
                     <div class="asset-card">
                         <h3>
@@ -268,10 +528,10 @@
                             <span data-i18n="project.unraid.asset.documentation.title">Technical Documentation</span>
                         </h3>
                         <p data-i18n="project.unraid.asset.documentation.desc">The full build documentation, covering research, hardware staging, RAID setup, UnRAID configuration, file sharing and the iSCSI test.</p>
-                        <span class="asset-coming-soon" aria-disabled="true">
-                            <i data-lucide="clock"></i>
-                            <span data-i18n="project.unraid.asset.comingSoon">Coming soon</span>
-                        </span>
+                        <a href="../assets/docs/projects/unraid-nas/unraid-documentation.pdf" target="_blank" rel="noopener" class="asset-download-button">
+                            <i data-lucide="download"></i>
+                            <span data-i18n="project.unraid.asset.documentation.button">Download Documentation (PDF)</span>
+                        </a>
                     </div>
 
                     <div class="asset-card">
@@ -280,10 +540,10 @@
                             <span data-i18n="project.unraid.asset.presentation.title">Presentation</span>
                         </h3>
                         <p data-i18n="project.unraid.asset.presentation.desc">The slide deck used to present and demonstrate the storage server at the end of the module.</p>
-                        <span class="asset-coming-soon" aria-disabled="true">
-                            <i data-lucide="clock"></i>
-                            <span data-i18n="project.unraid.asset.comingSoon">Coming soon</span>
-                        </span>
+                        <a href="../assets/docs/projects/unraid-nas/unraid-presentation.pdf" target="_blank" rel="noopener" class="asset-download-button">
+                            <i data-lucide="download"></i>
+                            <span data-i18n="project.unraid.asset.presentation.button">Download Presentation (PDF)</span>
+                        </a>
                     </div>
                 </div>
             </article>
@@ -329,6 +589,14 @@
                         <li data-i18n="project.unraid.sidebar.learned.rack">Rack mounting &amp; cabling</li>
                         <li data-i18n="project.unraid.sidebar.learned.troubleshoot">Linux service troubleshooting</li>
                     </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.certifications">Certifications Used</h3>
+                    <div class="line"></div>
+                    <p class="sidebar-description" style="margin-top: 0.5rem; margin-bottom: 0.75rem;" data-i18n="project.sidebar.certificationsDesc">These certifications helped enhance this project:</p>
+                    <div class="project-certifications" data-project="unraid-nas">
+                        <div class="cert-badge-placeholder">badge-Microsoft-PowerPoint-Associate</div>
+                        <div class="cert-badge-placeholder">badge-Microsoft-Word-Associate</div>
+                    </div>
                 </div>
             </aside>
         </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Lab Platform | VidGuiCode</title>
-    <meta name="description" content="Deep dive into my four-node homelab platform: edge gateway, ARM home server, x86 offload node, ZFS NAS, custom apps, agents, and secure self-hosting.">
+    <meta name="description" content="Deep dive into my four-node self-hosted homelab platform: 10+ custom apps, 5 guardrailed AI agents, passwordless passkeys, an OIDC/OAuth identity provider, AI video generation, and a hardware-accelerated media stack.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +29,7 @@
     <script src="../assets/js/translations/project-homelab.js"></script>
     <script src="../assets/js/i18n.js"></script>
     <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/project-view.js" defer></script>
     <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/certifications-data.js"></script>
     <script src="../assets/js/search.js"></script>
@@ -205,146 +206,9 @@
             }
         }
 
-        /* Hardware Showcase Node Cards */
-        .node-card {
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .node-card-body {
-            padding: 1.5rem;
-            position: relative;
-        }
-
-        .node-card h3 {
-            margin-top: 0;
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -0.5px;
-        }
-
-        .node-spec {
-            margin-bottom: 0.75rem;
-        }
-
-        .node-detail {
-            text-align: right;
-        }
-
-        .node-tags {
-            padding: 0.75rem 1.5rem;
-            display: flex;
-            gap: 1rem;
-            font-size: 0.85rem;
-        }
-
-        /* Node-specific profiles */
-        .pi-style {
-            background: #1a1a1a;
-            border: 1px solid #333;
-        }
-        .pi-style h3 {
-            color: #fff;
-        }
-        .pi-style .node-spec, .pi-style .node-detail div:last-child {
-            color: #ef4444;
-        }
-        .pi-style .node-detail, .pi-style p {
-            color: #888;
-        }
-        .pi-style .node-tags {
-            background: #111;
-            border-top: 1px solid #222;
-            color: #555;
-        }
-
-        .laptop-style {
-            background: linear-gradient(135deg, #9ca3af 0%, #d1d5db 100%);
-            border: 1px solid #6b7280;
-        }
-        .laptop-style h3 {
-            color: #111827;
-        }
-        .laptop-style .node-spec, .laptop-style .node-detail, .laptop-style p, .laptop-style .node-tags {
-            color: #374151;
-        }
-        .laptop-style .node-tags {
-            background: rgba(0, 0, 0, 0.08);
-            border-top: 1px solid #6b7280;
-        }
-
-        .cloud-style {
-            background: #141414;
-            border: 1px solid #3a1010;
-        }
-        .cloud-style h3 {
-            color: #fff;
-        }
-        .cloud-style .node-spec, .cloud-style .node-detail div:last-child {
-            color: #f87171;
-        }
-        .cloud-style .node-detail, .cloud-style p {
-            color: #888;
-        }
-        .cloud-style .node-tags {
-            background: #0e0e0e;
-            border-top: 1px solid #2a1010;
-            color: #555;
-        }
-
-        .storage-style {
-            background: #0d1f3c;
-            border: 1px solid #1e40af;
-        }
-        .storage-style h3 {
-            color: #f0f9ff;
-        }
-        .storage-style .node-spec, .storage-style .node-detail div:last-child {
-            color: #60a5fa;
-        }
-        .storage-style .node-detail, .storage-style p {
-            color: #94a3b8;
-        }
-        .storage-style .node-tags {
-            background: #071020;
-            border-top: 1px solid #1e3a8a;
-            color: #475569;
-        }
-
-        .switch-style {
-            background: #181e1e;
-            border: 1px solid #222e2e;
-        }
-        .switch-style h3 {
-            color: #e2f8f4;
-        }
-        .switch-style .node-spec, .switch-style .node-detail div:last-child {
-            color: #2dd4bf;
-        }
-        .switch-style .node-detail, .switch-style p {
-            color: #94a3b8;
-        }
-        .switch-style .node-tags {
-            background: #0e1616;
-            border-top: 1px solid #1a2828;
-            color: #4b5563;
-        }
-
-        .cloud-style .score-badge {
-            background: #0a1a0a !important;
-            color: #22c55e !important;
-            border: 1px solid #166534 !important;
-            margin-top: 0.5rem;
-            padding: 2px 8px;
-            border-radius: 10px;
-            display: inline-block;
-        }
     </style>
 </head>
-<body>
+<body data-view="overview">
     <div class="grid-background"></div>
 
     <!-- Search Modal (generated by search.js) -->
@@ -355,7 +219,7 @@
 
     <main class="container" style="padding-top: 100px;">
         
-        <a href="../index.html#projects" class="back-link">
+        <a href="/#projects" class="back-link">
             <i data-lucide="arrow-left"></i>
             <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
         </a>
@@ -367,8 +231,130 @@
                 <p class="subtitle" data-i18n="projects.homelab.desc">A four-node self-hosted platform spanning a cloud edge gateway, ARM home server, x86 compute offload node, and a dedicated ZFS NAS. It powers custom apps, agents, media services, and K3s behind a self-operated WireGuard edge.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
-                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>19/04/2026</span>
+                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>25/06/2026</span>
                 </p>
+            </div>
+        </section>
+
+        <section class="project-glance">
+            <div class="view-switch-row">
+                <div class="view-toggle" role="group" aria-label="View mode">
+                    <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
+                    <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
+                </div>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
+            </div>
+
+            <div class="glance-grid">
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">4</div>
+                    <div class="glance-label" data-i18n="project.homelab.glance.nodes.label">machines working as one</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">24/7</div>
+                    <div class="glance-label" data-i18n="project.homelab.glance.uptime.label">online since March 2025</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">10+</div>
+                    <div class="glance-label" data-i18n="project.homelab.glance.apps.label">custom web apps I built</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">5</div>
+                    <div class="glance-label" data-i18n="project.homelab.glance.agents.label">AI assistants with guardrails</div>
+                </div>
+            </div>
+
+            <h2 data-i18n="project.homelab.arch.title">How it fits together</h2>
+            <div class="arch-diagram">
+                <div class="arch-strip">
+                    <span class="led led-g"></span>
+                    <span class="led led-a"></span>
+                    <span class="led led-d"></span>
+                    <span class="arch-strip-label">Network topology</span>
+                </div>
+                <div class="arch-body">
+                    <div class="arch-flow">
+                        <div class="arch-col">
+                            <div class="arch-unit is-internet">
+                                <div class="u-name"><span class="arch-led"></span><span data-i18n="project.homelab.arch.internet">Internet</span></div>
+                            </div>
+                            <div class="arch-conn">&darr;</div>
+                            <div class="arch-unit is-external">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.homelab.nodes.gateway.title">Cloud Gateway</span></div>
+                                    <div class="u-meta"><span data-i18n="project.homelab.nodes.gateway.cores">4 cores</span> · <span data-i18n="project.homelab.nodes.gateway.ram">24GB RAM</span></div>
+                                </div>
+                                <div class="u-spec" data-i18n="project.homelab.nodes.gateway.spec">arm64 / oracle-ampere</div>
+                            </div>
+                        </div>
+
+                        <div class="arch-conn"><span data-i18n="project.homelab.arch.tunnel">WireGuard tunnel</span>&nbsp;&#8644;</div>
+
+                        <div class="arch-rack">
+                            <div class="arch-rack-label" data-i18n="project.homelab.arch.rack">Home rack (10U)</div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.homelab.nodes.primary.title">Primary Node</span></div>
+                                    <div class="u-meta"><span data-i18n="project.homelab.nodes.primary.cores">4 cores</span> · <span data-i18n="project.homelab.nodes.primary.ram">8GB RAM</span></div>
+                                </div>
+                                <div class="u-spec" data-i18n="project.homelab.nodes.primary.spec">arm64 / raspberry-pi-5</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.homelab.nodes.worker.title">Worker Node</span></div>
+                                    <div class="u-meta"><span data-i18n="project.homelab.nodes.worker.cores">6 cores</span> · <span data-i18n="project.homelab.nodes.worker.ram">16GB RAM</span></div>
+                                </div>
+                                <div class="u-spec" data-i18n="project.homelab.nodes.worker.spec">amd64 / ryzen-5-5600u</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.homelab.nodes.storage.title">Storage Node</span></div>
+                                    <div class="u-meta"><span data-i18n="project.homelab.nodes.storage.cores">2 x 16TB mirror</span> · <span data-i18n="project.homelab.nodes.storage.ram">32GB RAM</span></div>
+                                </div>
+                                <div class="u-spec" data-i18n="project.homelab.nodes.storage.spec">x86_64 / truenas-scale</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.homelab.nodes.switch.title">Network Switch</span></div>
+                                    <div class="u-meta" data-i18n="project.homelab.nodes.switch.ports">8 ports / 1 Gbps</div>
+                                </div>
+                                <div class="u-spec" data-i18n="project.homelab.nodes.switch.spec">TP-Link TL-SG608E / 8-Port Gigabit</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch-note" data-i18n="project.homelab.arch.note">A Tailscale mesh overlays every node for admin access — only the WireGuard tunnel ever carries public traffic.</div>
+                </div>
+            </div>
+
+            <div class="plain-only">
+                <h2 data-i18n="project.homelab.does.title">What it actually does</h2>
+                <div class="does-grid">
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="film"></i></div>
+                        <h3 data-i18n="project.homelab.does.media.title">Your own Netflix, Photos &amp; Drive</h3>
+                        <p data-i18n="project.homelab.does.media.desc">Stream films, back up phone photos, sync files and play music — self-hosted, no monthly subscriptions.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="layout"></i></div>
+                        <h3 data-i18n="project.homelab.does.apps.title">A suite of web apps I built</h3>
+                        <p data-i18n="project.homelab.does.apps.desc">Login, an app hub, a vault, a career workspace, voice/video rooms, even an AI video generator — all on one secure backend.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="bot"></i></div>
+                        <h3 data-i18n="project.homelab.does.agents.title">AI agents that do real work</h3>
+                        <p data-i18n="project.homelab.does.agents.desc">Research, study, security, governance and infrastructure helpers that run safely behind strict limits.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="shield"></i></div>
+                        <h3 data-i18n="project.homelab.does.secure.title">Locked down and passwordless</h3>
+                        <p data-i18n="project.homelab.does.secure.desc">Sign in with Face ID or a passkey, and nothing faces the internet directly — every request passes through a private, filtered tunnel.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -390,233 +376,144 @@
                         </div>
                     </div>
                     
-                    <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
-                        
-                        <!-- Pi Node: DeskPi Pro — matte black ABS plastic -->
-                        <div class="node-card pi-style">
-                            <div style="height: 12px; width: 100%; background: repeating-linear-gradient(90deg, #111, #111 4px, #222 4px, #222 8px);"></div>
-                            <div class="node-card-body">
-                                <div style="position: absolute; top: 0; right: 1.5rem; width: 40px; height: 4px; background: #ef4444; border-radius: 0 0 4px 4px;"></div>
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <div>
-                                        <h3 data-i18n="project.homelab.nodes.primary.title">Primary Node</h3>
-                                        <div class="node-spec" data-i18n="project.homelab.nodes.primary.spec">arm64 / raspberry-pi-5</div>
-                                    </div>
-                                    <div class="node-detail">
-                                        <div data-i18n="project.homelab.nodes.primary.cores">4 cores</div>
-                                        <div style="font-weight: 600;" data-i18n="project.homelab.nodes.primary.ram">8GB RAM</div>
-                                    </div>
-                                </div>
-                                <p data-i18n="project.homelab.nodes.primary.body">
-                                    The control plane. Runs the main Docker Compose stack, hosts the backend and custom apps, and acts as the K3s control node.
-                                </p>
-                            </div>
-                            <div class="node-tags">
-                                <span data-i18n="project.homelab.nodes.primary.tag.master">[MASTER]</span> <span data-i18n="project.homelab.nodes.primary.tag.arm64">[ARM64]</span> <span data-i18n="project.homelab.nodes.primary.tag.lowpower">[LOW-POWER]</span>
-                            </div>
-                        </div>
-
-                        <!-- Laptop Node: silver metallic chassis -->
-                        <div class="node-card laptop-style">
-                            <div style="height: 20px; background: linear-gradient(to bottom, #6b7280, #9ca3af); border-bottom: 1px solid #4b5563;"></div>
-                            <div class="node-card-body">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <div>
-                                        <h3 data-i18n="project.homelab.nodes.worker.title">Worker Node</h3>
-                                        <div class="node-spec" data-i18n="project.homelab.nodes.worker.spec">amd64 / ryzen-5-5600u</div>
-                                    </div>
-                                    <div class="node-detail">
-                                        <div data-i18n="project.homelab.nodes.worker.cores">6 cores</div>
-                                        <div style="font-weight: 600;" data-i18n="project.homelab.nodes.worker.ram">16GB RAM</div>
-                                    </div>
-                                </div>
-                                <p data-i18n="project.homelab.nodes.worker.body">
-                                    The offload node. Handles Playwright, Sharp/libvips, private search, and other heavier workloads that are faster on x86_64.
-                                </p>
-                            </div>
-                            <div class="node-tags">
-                                <span data-i18n="project.homelab.nodes.worker.tag.worker">[WORKER]</span> <span data-i18n="project.homelab.nodes.worker.tag.x86">[X86_64]</span> <span data-i18n="project.homelab.nodes.worker.tag.ups">[BATTERY-UPS]</span>
-                            </div>
-                        </div>
-
-                        <!-- Oracle Cloud VPS: Oracle red, 1U server front panel -->
-                        <div class="node-card cloud-style">
-                            <div style="height: 6px; background: #c74634; border-bottom: 1px solid #7f1d1d;"></div>
-                            <div style="height: 20px; background: #0e0e0e; border-bottom: 1px solid #2a1010; display: flex; align-items: center; padding: 0 1rem; gap: 8px;">
-                                <div style="width: 9px; height: 9px; background: #c74634; border-radius: 50%;"></div>
-                                <div style="width: 6px; height: 6px; background: #d97706; border-radius: 50%;"></div>
-                                <div style="width: 6px; height: 6px; background: #16a34a; border-radius: 50%;"></div>
-                                <div style="margin-left: auto; font-family: monospace; font-size: 9px; color: #b06060; letter-spacing: 1px;">ORACLE AMPERE A1</div>
-                            </div>
-                            <div class="node-card-body">
-                                <div style="position: absolute; top: 0; right: 1.5rem; width: 40px; height: 4px; background: #c74634; border-radius: 0 0 4px 4px;"></div>
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <div>
-                                        <h3 data-i18n="project.homelab.nodes.gateway.title">Cloud Gateway</h3>
-                                        <div class="node-spec" data-i18n="project.homelab.nodes.gateway.spec">arm64 / oracle-ampere</div>
-                                    </div>
-                                    <div style="text-align: right;">
-                                        <div class="node-detail">
-                                            <div data-i18n="project.homelab.nodes.gateway.cores">4 cores</div>
-                                            <div style="font-weight: 600;" data-i18n="project.homelab.nodes.gateway.ram">24GB RAM</div>
-                                        </div>
-                                        <div class="score-badge" data-i18n="project.homelab.nodes.gateway.badge">FREE TIER</div>
-                                    </div>
-                                </div>
-                                <p data-i18n="project.homelab.nodes.gateway.body">
-                                    The internet-facing edge. Terminates TLS, filters traffic with CrowdSec, exposes a VPN-only gateway API, and carries ingress over WireGuard.
-                                </p>
-                            </div>
-                            <div class="node-tags">
-                                <span data-i18n="project.homelab.nodes.gateway.tag.gateway">[GATEWAY]</span> <span data-i18n="project.homelab.nodes.gateway.tag.caddy">[CADDY]</span> <span data-i18n="project.homelab.nodes.gateway.tag.wireguard">[WIREGUARD]</span>
-                            </div>
-                        </div>
-
-                        <!-- Storage Node: custom 3D-printed royal blue PLA Mini-ITX case -->
-                        <div class="node-card storage-style">
-                            <div style="height: 12px; width: 100%; background: repeating-linear-gradient(180deg, #0d1f3c 0px, #0d1f3c 3px, #091628 3px, #091628 6px); border-bottom: 1px solid #1e3a8a;"></div>
-                            <div class="node-card-body">
-                                <div style="position: absolute; top: 0; right: 1.5rem; width: 9px; height: 9px; background: #2563eb; border-radius: 50%;"></div>
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
-                                    <div>
-                                        <h3 data-i18n="project.homelab.nodes.storage.title">Storage Node</h3>
-                                        <div class="node-spec" data-i18n="project.homelab.nodes.storage.spec">x86_64 / truenas-scale</div>
-                                    </div>
-                                    <div class="node-detail">
-                                        <div data-i18n="project.homelab.nodes.storage.cores">2 x 16TB mirror</div>
-                                        <div style="font-weight: 600;" data-i18n="project.homelab.nodes.storage.ram">32GB RAM</div>
-                                    </div>
-                                </div>
-                                <p data-i18n="project.homelab.nodes.storage.body">
-                                    The storage plane. Hosts ZFS pools, the media stack, photo backup, file sync, music services, and hot/cold S3-compatible object storage.
-                                </p>
-                            </div>
-                            <div class="node-tags">
-                                <span data-i18n="project.homelab.nodes.storage.tag.storage">[STORAGE]</span> <span data-i18n="project.homelab.nodes.storage.tag.zfs">[ZFS]</span> <span data-i18n="project.homelab.nodes.storage.tag.object">[OBJECT]</span>
-                            </div>
-                        </div>
-
-                        <!-- Network Switch: TP-Link TL-SG608E — dark matte plastic -->
-                        <div class="node-card switch-style">
-                            <div style="height: 22px; background: #0e1616; border-bottom: 1px solid #1a2828; display: flex; align-items: center; padding: 0 1rem; gap: 7px;">
-                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
-                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
-                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
-                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
-                                <div style="width: 8px; height: 8px; background: #0e1616; border-radius: 2px; border: 1px solid #1f2e2e;"></div>
-                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
-                                <div style="width: 8px; height: 8px; background: #16a34a; border-radius: 2px;"></div>
-                                <div style="width: 8px; height: 8px; background: #d97706; border-radius: 2px;"></div>
-                                <div style="margin-left: auto; font-family: monospace; font-size: 9px; color: #4a7a74; letter-spacing: 1px;">TL-SG608E</div>
-                            </div>
-                            <div class="node-card-body">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <div>
-                                        <h3 data-i18n="project.homelab.nodes.switch.title">Network Switch</h3>
-                                        <div class="node-spec" data-i18n="project.homelab.nodes.switch.spec">TP-Link TL-SG608E / 8-Port Gigabit</div>
-                                    </div>
-                                    <div class="node-detail">
-                                        <div data-i18n="project.homelab.nodes.switch.ports">8 ports / 1 Gbps</div>
-                                        <div style="font-weight: 600;" data-i18n="project.homelab.nodes.switch.type">Easy Smart Managed</div>
-                                    </div>
-                                </div>
-                                <p data-i18n="project.homelab.nodes.switch.body">
-                                    Connects the home server, compute node, and NAS on the local network. Managed switch with QoS and IGMP snooping — sits in the rack and links all on-site nodes to the home router.
-                                </p>
-                            </div>
-                            <div class="node-tags">
-                                <span data-i18n="project.homelab.nodes.switch.tag.managed">[MANAGED]</span> <span data-i18n="project.homelab.nodes.switch.tag.gigabit">[GIGABIT]</span> <span data-i18n="project.homelab.nodes.switch.tag.ports">[8-PORT]</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <p style="margin-top: 1rem; color: var(--text-secondary);" data-i18n="project.homelab.hardware.body">All on-site hardware is organized around the same real-world constraints that shaped the first version of the lab: quiet operation, low idle power, minimal cable mess, and hardware that earns its spot in the rack by solving an actual problem.</p>
-
+                    <div class="tech-only">
                     <h2 data-i18n="project.homelab.section.what.title">What Runs On It</h2>
                     <p data-i18n="project.homelab.section.what.body">The platform is now split across four complementary layers: the home-server control plane, an agent and worker layer, a dedicated storage/media plane, and a hardened edge gateway.</p>
                     
-                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.core.title">Core Platform (Home Server)</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="project.homelab.section.what.core.list" data-i18n-html><strong>Unified backend control plane</strong>: FastAPI + SQLAlchemy + Alembic + SQLite drive authentication, permissions, app registration, audit logs, AI orchestration, and cross-app state.</li>
-                        <li data-i18n="project.homelab.section.what.core.suite" data-i18n-html><strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery app, task log, career workspace, and a QR generator microservice.</li>
-                        <li data-i18n="project.homelab.section.what.core.compose" data-i18n-html><strong>Compose-first runtime</strong>: The home server still runs the main Docker Compose stack for day-to-day services and hot-reload development, while K3s is reserved for isolated microservices.</li>
-                        <li data-i18n="project.homelab.section.what.core.killswitch" data-i18n-html><strong>Hard application kill switch</strong>: Every custom frontend is registered centrally, so disabling an app immediately blocks access even on direct URL visits.</li>
-                        <li data-i18n="project.homelab.section.what.compose.cli" data-i18n-html><strong>Platform CLI</strong>: A Typer-based Python CLI wraps the backend API for terminal workflows over VPN. Supports auth, task management, security operations, and health checks via Personal Access Tokens. Distributed through a self-hosted private PyPI server.</li>
-                    </ul>
-                    
-                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.apps.title">Agent + Worker Layer</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="project.homelab.section.what.apps.retriever" data-i18n-html><strong>Retriever agent</strong>: Researches the web through a private meta-search backend and headless browsing, then returns structured briefs.</li>
-                        <li data-i18n="project.homelab.section.what.apps.term" data-i18n-html><strong>Term-mastery agent</strong>: Generates summaries, flashcards, and remediation workflows for learning content.</li>
-                        <li data-i18n="project.homelab.section.what.apps.security" data-i18n-html><strong>Security triage agent</strong>: Correlates edge alerts, access logs, sessions, and approval-gated write actions for admin review.</li>
-                        <li data-i18n="project.homelab.section.what.apps.offload" data-i18n-html><strong>Compute offload pattern</strong>: The laptop handles Playwright scraping, Sharp image optimization, SearXNG, and audio feature extraction, with local fallbacks on the home server.</li>
-                        <li data-i18n="project.homelab.section.what.apps.guardrails" data-i18n-html><strong>Shared guardrails</strong>: Every agent runs behind kill switches, token/cost/runtime budgets, tool allowlists, concurrency caps, and blocked-action logging.</li>
-                    </ul>
-                    
-                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.media.title">Storage + Media Plane (NAS)</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="project.homelab.section.what.media.truenas" data-i18n-html><strong>TrueNAS SCALE + ZFS</strong>: Separate storage node with mirrored HDD bulk storage, SSD hot tier, and service-specific datasets.</li>
-                        <li data-i18n="project.homelab.section.what.media.services" data-i18n-html><strong>Self-hosted media services</strong>: Jellyfin for streaming personal media libraries, Immich for photo backup with ML-powered organization, Nextcloud for file sync and collaboration, and Navidrome for music streaming.</li>
-                        <li data-i18n="project.homelab.section.what.media.object" data-i18n-html><strong>S3-compatible object storage</strong>: Dual MinIO tiers keep hot objects on SSD and move colder data to HDD through lifecycle rules.</li>
-                    </ul>
-                    
-                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.k3s.title">K3s Cluster</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="project.homelab.section.what.k3s.ingress" data-i18n-html><strong>Traefik ingress</strong>: Host-based routing and a clean path to declarative microservice deployments.</li>
-                        <li data-i18n="project.homelab.section.what.k3s.portainer" data-i18n-html><strong>Portainer</strong>: Cluster visibility and day-to-day Kubernetes management.</li>
-                        <li data-i18n="project.homelab.section.what.k3s.qr" data-i18n-html><strong>QR microservice</strong>: A React + Vite service running in K3s as the current reference workload for the cluster.</li>
-                        <li data-i18n="project.homelab.section.what.k3s.images" data-i18n-html><strong>Private multi-arch image flow</strong>: Images are prepared for ARM64 and x86_64 and distributed through a private registry workflow.</li>
-                    </ul>
-                    
-                    <h3 style="margin-top: 1.5rem; color: var(--accent-secondary);" data-i18n="project.homelab.section.what.gateway.title">Cloud Gateway (Oracle VPS)</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="project.homelab.section.what.gateway.caddy" data-i18n-html><strong>Caddy at the edge</strong>: Automatic TLS, strict security headers, structured logs, compression, and route-level rate limits.</li>
-                        <li data-i18n="project.homelab.section.what.gateway.crowdsec" data-i18n-html><strong>CrowdSec inline filtering</strong>: Suspicious traffic is blocked before it ever reaches the backend.</li>
-                        <li data-i18n="project.homelab.section.what.gateway.wireguard" data-i18n-html><strong>WireGuard backhaul</strong>: All public ingress crosses a self-operated VPN tunnel; the home server has zero direct internet exposure.</li>
-                        <li data-i18n="project.homelab.section.what.gateway.tailscale" data-i18n-html><strong>Tailscale admin mesh</strong>: A separate VPN for remote SSH and development access that never carries public request traffic.</li>
-                        <li data-i18n="project.homelab.section.what.gateway.api" data-i18n-html><strong>Gateway API</strong>: A VPN-only internal API exposes threat and access-log data to backend tooling and the security agent.</li>
-                    </ul>
+                    <div class="stack-diagram">
+                        <div class="stack-layer">
+                            <div class="stack-head"><i data-lucide="shield"></i><h3 data-i18n="project.homelab.section.what.gateway.title">Cloud Gateway (Oracle VPS)</h3></div>
+                            <div class="stack-chips"><span>Caddy</span><span>CrowdSec</span><span>WireGuard</span><span>Tailscale</span><span>TLS</span><span>Gateway API</span></div>
+                            <ul class="feature-list stack-detail">
+                                <li data-i18n="project.homelab.section.what.gateway.caddy" data-i18n-html><strong>Caddy at the edge</strong>: Automatic TLS, strict security headers, structured logs, compression, and route-level rate limits.</li>
+                                <li data-i18n="project.homelab.section.what.gateway.crowdsec" data-i18n-html><strong>CrowdSec inline filtering</strong>: Suspicious traffic is blocked before it ever reaches the backend.</li>
+                                <li data-i18n="project.homelab.section.what.gateway.wireguard" data-i18n-html><strong>WireGuard backhaul</strong>: All public ingress crosses a self-operated VPN tunnel; the home server has zero direct internet exposure.</li>
+                                <li data-i18n="project.homelab.section.what.gateway.tailscale" data-i18n-html><strong>Tailscale admin mesh</strong>: A separate VPN for remote SSH and development access that never carries public request traffic.</li>
+                                <li data-i18n="project.homelab.section.what.gateway.api" data-i18n-html><strong>Gateway API</strong>: A VPN-only internal API exposes threat and access-log data to backend tooling and the security agent.</li>
+                            </ul>
+                        </div>
+                        <div class="stack-layer">
+                            <div class="stack-head"><i data-lucide="server-cog"></i><h3 data-i18n="project.homelab.section.what.core.title">Core Platform (Home Server)</h3></div>
+                            <div class="stack-chips"><span>FastAPI</span><span>SQLAlchemy</span><span>SQLite</span><span>Passkeys</span><span>OIDC</span><span>OAuth2</span><span>JWT SSO</span><span>LiveKit</span><span>Typer CLI</span><span>Private PyPI</span></div>
+                            <ul class="feature-list stack-detail">
+                                <li data-i18n="project.homelab.section.what.core.list" data-i18n-html><strong>Unified backend control plane</strong>: FastAPI + SQLAlchemy + Alembic + SQLite drive authentication, permissions, app registration, audit logs, AI orchestration, and cross-app state.</li>
+                                <li data-i18n="project.homelab.section.what.core.auth" data-i18n-html><strong>Passwordless, federated login</strong>: passkeys (WebAuthn/FIDO2) are the primary sign-in, on top of a from-scratch OIDC provider and an OAuth 2.0 consent flow — so other apps and AI assistants can log in with the platform.</li>
+                                <li data-i18n="project.homelab.section.what.core.surfaces" data-i18n-html><strong>Real-time and generative surfaces</strong>: self-hosted voice/video rooms (LiveKit/WebRTC) and an AI keyframe video generator that turns a start and end frame into a short clip — both behind the same SSO and edge security.</li>
+                                <li data-i18n="project.homelab.section.what.core.suite" data-i18n-html><strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery, task log, career workspace, voice/video rooms, an AI video generator, a mail surface, and a QR generator microservice.</li>
+                                <li data-i18n="project.homelab.section.what.core.killswitch" data-i18n-html><strong>Hard application kill switch</strong>: Every custom frontend is registered centrally, so disabling an app immediately blocks access even on direct URL visits.</li>
+                                <li data-i18n="project.homelab.section.what.compose.cli" data-i18n-html><strong>Platform CLI</strong>: A Typer-based Python CLI wraps the backend API for terminal workflows over VPN. Supports auth, task management, security operations, and health checks via Personal Access Tokens. Distributed through a self-hosted private PyPI server.</li>
+                            </ul>
+                        </div>
+                        <div class="stack-layer">
+                            <div class="stack-head"><i data-lucide="bot"></i><h3 data-i18n="project.homelab.section.what.apps.title">Agent + Worker Layer</h3></div>
+                            <div class="stack-chips"><span>Retriever</span><span>Term-mastery</span><span>Security-triage</span><span>Governance-triage</span><span>Infra-monitoring</span><span>Playwright</span><span>Sharp</span><span>SearXNG</span><span>Mistral AI</span></div>
+                            <ul class="feature-list stack-detail">
+                                <li data-i18n="project.homelab.section.what.apps.retriever" data-i18n-html><strong>Retriever agent</strong>: Researches the web through a private meta-search backend and headless browsing, then returns structured briefs.</li>
+                                <li data-i18n="project.homelab.section.what.apps.term" data-i18n-html><strong>Term-mastery agent</strong>: Generates summaries, flashcards, and remediation workflows for learning content.</li>
+                                <li data-i18n="project.homelab.section.what.apps.security" data-i18n-html><strong>Security triage agent</strong>: Correlates edge alerts, access logs, sessions, and approval-gated write actions for admin review.</li>
+                                <li data-i18n="project.homelab.section.what.apps.governance" data-i18n-html><strong>Governance triage agent</strong>: watches internal session, permission, and account anomalies with a graded action policy — low-risk fixes auto-execute, high-blast-radius actions enter a human approval queue.</li>
+                                <li data-i18n="project.homelab.section.what.apps.infra" data-i18n-html><strong>Infrastructure monitoring agent</strong>: runs probes across nodes, containers, temperatures, and backup freshness, then an optional AI layer triages findings into a recovery-aware signal feed.</li>
+                                <li data-i18n="project.homelab.section.what.apps.modes" data-i18n-html><strong>Two run modes, tiered models</strong>: every agent runs as a cheap fixed pipeline or an adaptive LLM-driven loop; Mistral Small drives the decisions, Mistral Large the final synthesis.</li>
+                                <li data-i18n="project.homelab.section.what.apps.guardrails" data-i18n-html><strong>Shared guardrails</strong>: Every agent runs behind kill switches, token/cost/runtime budgets, tool allowlists, concurrency caps, and blocked-action logging.</li>
+                            </ul>
+                        </div>
+                        <div class="stack-layer">
+                            <div class="stack-head"><i data-lucide="route"></i><h3 data-i18n="project.homelab.section.what.k3s.title">K3s Cluster</h3></div>
+                            <div class="stack-chips"><span>Traefik</span><span>Portainer</span><span>React + Vite</span><span>Multi-arch images</span></div>
+                            <ul class="feature-list stack-detail">
+                                <li data-i18n="project.homelab.section.what.k3s.ingress" data-i18n-html><strong>Traefik ingress</strong>: Host-based routing and a clean path to declarative microservice deployments.</li>
+                                <li data-i18n="project.homelab.section.what.k3s.portainer" data-i18n-html><strong>Portainer</strong>: Cluster visibility and day-to-day Kubernetes management.</li>
+                                <li data-i18n="project.homelab.section.what.k3s.qr" data-i18n-html><strong>QR microservice</strong>: A React + Vite service running in K3s as the current reference workload for the cluster.</li>
+                                <li data-i18n="project.homelab.section.what.k3s.images" data-i18n-html><strong>Private multi-arch image flow</strong>: Images are prepared for ARM64 and x86_64 and distributed through a private registry workflow.</li>
+                            </ul>
+                        </div>
+                        <div class="stack-layer">
+                            <div class="stack-head"><i data-lucide="hard-drive"></i><h3 data-i18n="project.homelab.section.what.media.title">Storage + Media Plane (NAS)</h3></div>
+                            <div class="stack-chips"><span>TrueNAS</span><span>ZFS</span><span>Jellyfin</span><span>Radarr/Sonarr</span><span>Immich</span><span>Nextcloud</span><span>Navidrome</span><span>Lidarr</span><span>MinIO</span></div>
+                            <ul class="feature-list stack-detail">
+                                <li data-i18n="project.homelab.section.what.media.truenas" data-i18n-html><strong>TrueNAS SCALE + ZFS</strong>: Separate storage node with mirrored HDD bulk storage, SSD hot tier, and service-specific datasets.</li>
+                                <li data-i18n="project.homelab.section.what.media.services" data-i18n-html><strong>Full self-hosted media</strong>: Jellyfin with hardware transcoding, fed by a Radarr/Sonarr/Jellyseerr/Bazarr/Jackett acquisition pipeline with ClamAV scanning; Immich for photos; Nextcloud for files; Navidrome + Lidarr + AudioMuse-AI for music.</li>
+                                <li data-i18n="project.homelab.section.what.media.object" data-i18n-html><strong>S3-compatible object storage</strong>: Dual MinIO tiers keep hot objects on SSD and move colder data to HDD through lifecycle rules.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    </div><!-- /.tech-only -->
 
                     <h2 data-i18n="project.homelab.section.why.title">Why I Built It</h2>
-                    <p data-i18n="project.homelab.section.why.body1" data-i18n-html>I needed a sandbox to break things safely. This was my <strong>first real personal project</strong> that pushed me beyond tutorials and into actual problem-solving. What started with Jellyfin for media streaming grew into a full platform after I built a custom secure tunnel to replace third-party services.</p>
-                    <p data-i18n="project.homelab.section.why.body2" data-i18n-html>Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> — and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.</p>
-                    <p data-i18n="project.homelab.section.why.body3" data-i18n-html>Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 8+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.</p>
+                    <div class="journey">
+                        <div class="journey-step">
+                            <div class="journey-marker"><span class="journey-num">01</span></div>
+                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body1" data-i18n-html>I needed a sandbox to break things safely. This was my <strong>first real personal project</strong> that pushed me beyond tutorials and into actual problem-solving. What started with Jellyfin for media streaming grew into a full platform after I built a custom secure tunnel to replace third-party services.</p></div>
+                        </div>
+                        <div class="journey-step">
+                            <div class="journey-marker"><span class="journey-num">02</span></div>
+                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body2" data-i18n-html>Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> â€” and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.</p></div>
+                        </div>
+                        <div class="journey-step">
+                            <div class="journey-marker"><span class="journey-num">03</span></div>
+                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body3" data-i18n-html>Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 8+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.</p></div>
+                        </div>
+                    </div>
 
                     <h2 data-i18n="project.homelab.section.lessons.title">Lessons Learned</h2>
-                    <ul class="feature-list">
-                        <li>
-                            <strong data-i18n="project.homelab.section.lessons.arm.title">ARM has quirks</strong> —
-                            <span data-i18n="project.homelab.section.lessons.arm.body">Not all Docker images support ARM64. Finding compatible alternatives and tweaking configs taught me to read docs carefully.</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="project.homelab.section.lessons.dns.title">DNS is powerful</strong> —
-                            <span data-i18n="project.homelab.section.lessons.dns.body">Managing records in Cloudflare and understanding how traffic flows made the whole system click.</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="project.homelab.section.lessons.iterate.title">Start small, iterate fast</strong> —
-                            <span data-i18n="project.homelab.section.lessons.iterate.body">This setup grew organically. Each problem solved unlocked the next improvement.</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="project.homelab.section.lessons.cost.title">Cost-conscious infrastructure</strong> —
-                            <span data-i18n="project.homelab.section.lessons.cost.body">Running on low-power devices and free-tier cloud taught me to optimize before scaling.</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="project.homelab.section.lessons.security.title">Security is a journey</strong> —
-                            <span data-i18n="project.homelab.section.lessons.security.body">Implementing SSO, token blacklisting, and audit logging taught me that authentication is more than just passwords.</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="project.homelab.section.lessons.hybrid.title">Hybrid architecture complexity</strong> —
-                            <span data-i18n="project.homelab.section.lessons.hybrid.body">Coordinating Docker Compose and K3s on the same node, plus a remote VPS gateway, required careful port planning and network design.</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="project.homelab.section.lessons.environment.title">Environment matters</strong> —
-                            <span data-i18n="project.homelab.section.lessons.environment.body">With only one LAN outlet in the home, the cluster had to live in the living room. This constraint forced smart hardware choices: silent components, low-power ARM processors, and efficient cooling. Adapting to real-world limitations made me a better engineer.</span>
-                        </li>
-                    </ul>
-                    
+                    <div class="does-grid">
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="cpu"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.arm.title">ARM has quirks</h3>
+                            <p data-i18n="project.homelab.section.lessons.arm.body">Not all Docker images support ARM64. Finding compatible alternatives and tweaking configs taught me to read docs carefully.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="globe"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.dns.title">DNS is powerful</h3>
+                            <p data-i18n="project.homelab.section.lessons.dns.body">Managing records in Cloudflare and understanding how traffic flows made the whole system click.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="sprout"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.iterate.title">Start small, iterate fast</h3>
+                            <p data-i18n="project.homelab.section.lessons.iterate.body">This setup grew organically. Each problem solved unlocked the next improvement.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="zap"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.cost.title">Cost-conscious infrastructure</h3>
+                            <p data-i18n="project.homelab.section.lessons.cost.body">Running on low-power devices and free-tier cloud taught me to optimize before scaling.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="shield-check"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.security.title">Security is a journey</h3>
+                            <p data-i18n="project.homelab.section.lessons.security.body">Implementing SSO, token blacklisting, and audit logging taught me that authentication is more than just passwords.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="layers"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.hybrid.title">Hybrid architecture complexity</h3>
+                            <p data-i18n="project.homelab.section.lessons.hybrid.body">Coordinating Docker Compose and K3s on the same node, plus a remote VPS gateway, required careful port planning and network design.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="home"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.environment.title">Environment matters</h3>
+                            <p data-i18n="project.homelab.section.lessons.environment.body">With only one LAN outlet in the home, the cluster had to live in the living room. This constraint forced smart hardware choices: silent components, low-power ARM processors, and efficient cooling. Adapting to real-world limitations made me a better engineer.</p>
+                        </div>
+                    </div>
+
                     <h2 data-i18n="project.homelab.section.next.title">What's Next</h2>
-                    <p data-i18n="project.homelab.section.next.body">Next steps are deeper K3s adoption for selected microservices, more agent-driven workflows, continued hardening of the edge and auth stack, and expanding the platform with new internal tools only when they solve a real gap in my day-to-day workflows.</p>
+                    <div class="does-grid">
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="audio-waveform"></i></div>
+                            <h3 data-i18n="project.homelab.next.voice">Phone-first voice assistant (Hermes)</h3>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="clapperboard"></i></div>
+                            <h3 data-i18n="project.homelab.next.video">Longer, multi-segment AI video</h3>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="file-text"></i></div>
+                            <h3 data-i18n="project.homelab.next.career">Finish the career workspace &amp; mail inbox</h3>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="sparkles"></i></div>
+                            <h3 data-i18n="project.homelab.next.agents">More guardrailed agents: digest, scribe, hub</h3>
+                        </div>
+                    </div>
                 </div>
             </article>
 
@@ -641,11 +538,14 @@
                         <li><i data-lucide="route"></i> <span data-i18n="project.homelab.sidebar.tech.cluster">Traefik + Portainer</span></li>
                         <li><i data-lucide="zap"></i> <span data-i18n="project.homelab.sidebar.tech.backend">FastAPI + SQLAlchemy</span></li>
                         <li><i data-lucide="database"></i> <span data-i18n="project.homelab.sidebar.tech.data">SQLite + Alembic + MinIO</span></li>
-                        <li><i data-lucide="key"></i> <span data-i18n="project.homelab.sidebar.tech.auth">JWT + TOTP 2FA</span></li>
+                        <li><i data-lucide="key"></i> <span data-i18n="project.homelab.sidebar.tech.auth">Passkeys + JWT SSO + OIDC/OAuth</span></li>
                         <li><i data-lucide="code-2"></i> <span data-i18n="project.homelab.sidebar.tech.frontend">SvelteKit, React, TypeScript</span></li>
                         <li><i data-lucide="bot"></i> <span data-i18n="project.homelab.sidebar.tech.agents">Mistral AI + Guardrailed Agents</span></li>
                         <li><i data-lucide="search"></i> <span data-i18n="project.homelab.sidebar.tech.worker">Playwright + Sharp + SearXNG</span></li>
+                        <li><i data-lucide="radio"></i> <span data-i18n="project.homelab.sidebar.tech.rtc">LiveKit (WebRTC rooms)</span></li>
+                        <li><i data-lucide="clapperboard"></i> <span data-i18n="project.homelab.sidebar.tech.video">DashScope (image-to-video)</span></li>
                         <li><i data-lucide="film"></i> <span data-i18n="project.homelab.sidebar.tech.media">Jellyfin, Immich, Nextcloud, Navidrome</span></li>
+                        <li><i data-lucide="mail"></i> <span data-i18n="project.homelab.sidebar.tech.email">Resend (transactional email)</span></li>
                         <li><i data-lucide="terminal"></i> <span data-i18n="project.homelab.sidebar.tech.cli">Typer CLI + Private PyPI</span></li>
                     </ul>
 
@@ -655,10 +555,13 @@
                         <li data-i18n="project.homelab.sidebar.features.topology">Four-node hybrid topology</li>
                         <li data-i18n="project.homelab.sidebar.features.rack">Compact 10U rack with monitored power</li>
                         <li data-i18n="project.homelab.sidebar.features.exposure">Zero direct internet exposure for the home server</li>
-                        <li data-i18n="project.homelab.sidebar.features.auth">Custom JWT SSO + TOTP + trusted devices</li>
-                        <li data-i18n="project.homelab.sidebar.features.apps">8+ custom apps sharing one backend control plane</li>
+                        <li data-i18n="project.homelab.sidebar.features.auth">Passwordless passkeys + custom JWT SSO + 2FA</li>
+                        <li data-i18n="project.homelab.sidebar.features.federated">OIDC provider + OAuth 2.0 for AI connectors</li>
+                        <li data-i18n="project.homelab.sidebar.features.apps">10+ custom apps sharing one backend control plane</li>
                         <li data-i18n="project.homelab.sidebar.features.cli">Platform CLI for terminal workflows over VPN</li>
-                        <li data-i18n="project.homelab.sidebar.features.agents">Autonomous agents with hard guardrails</li>
+                        <li data-i18n="project.homelab.sidebar.features.agents">Five guardrailed AI agents with approval gates</li>
+                        <li data-i18n="project.homelab.sidebar.features.realtime">Self-hosted voice/video rooms (LiveKit)</li>
+                        <li data-i18n="project.homelab.sidebar.features.video">AI keyframe-to-video generation</li>
                         <li data-i18n="project.homelab.sidebar.features.nas">Dedicated NAS with hot/cold object storage</li>
                         <li data-i18n="project.homelab.sidebar.features.mediafull">Full media, photos, files, and music stack</li>
                         <li data-i18n="project.homelab.sidebar.features.compute">Compute offload for browser and image workloads</li>
@@ -675,7 +578,7 @@
 
     <!-- Image Modal -->
     <div id="image-modal" class="image-modal" onclick="closeImageModal()">
-        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">×</button>
+        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">Ã—</button>
         <img id="modal-image" class="image-modal-content" src="" alt="">
     </div>
 

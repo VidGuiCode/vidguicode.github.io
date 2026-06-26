@@ -2821,7 +2821,8 @@ article p, article li {
     gap: 0.75rem;
 }
 
-.project-card-link:hover .project-cta i {
+.project-card-link:hover .project-cta i,
+.project-card-link:hover .project-cta svg {
     transform: translateX(4px);
 }
 
@@ -2859,10 +2860,23 @@ article p, article li {
     transition: color 0.2s, gap 0.2s;
 }
 
-.project-cta i {
+.project-cta i,
+.project-cta svg {
     width: 18px;
     height: 18px;
     transition: transform 0.2s;
+}
+
+/* "View All Projects" button spanning the projects grid */
+.projects-view-more {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 1rem;
+}
+
+.projects-view-more svg {
+    width: 16px;
+    height: 16px;
 }
 
 .tags {
@@ -4751,4 +4765,406 @@ footer {
         grid-column: 1;
         justify-self: center;
     }
+}
+
+/* =====================================================================
+   Case-study "two-lens" layout — shared across project pages.
+   A body[data-view] attribute toggles Overview (plain-English, scannable)
+   vs Technical (full depth). Drives .plain-only / .tech-only visibility.
+   ===================================================================== */
+
+body[data-view="overview"] .tech-only { display: none; }
+body[data-view="technical"] .plain-only { display: none; }
+
+/* Audience toggle */
+.project-glance {
+    margin: 2rem 0 0.5rem;
+}
+
+.view-switch-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.view-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.view-toggle button {
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-size: var(--fs-small);
+    font-weight: 500;
+    padding: 0.5rem 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.view-toggle button.active {
+    background: var(--accent-color);
+    color: var(--accent-text);
+}
+
+.view-hint {
+    color: var(--text-secondary);
+    font-size: var(--fs-small);
+}
+
+/* At-a-glance metric chips */
+.glance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.glance-stat {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    padding: 1.25rem;
+}
+
+.glance-stat .glance-led {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--led-green);
+    box-shadow: 0 0 6px var(--led-green);
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+.glance-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.glance-label {
+    color: var(--text-secondary);
+    font-size: var(--fs-small);
+    margin-top: 0.35rem;
+}
+
+/* Architecture diagram — rack-style topology (sharp, industrial) */
+.arch-diagram {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    margin-bottom: 2rem;
+}
+
+/* LED header strip, echoing the hardware node-card aesthetic */
+.arch-strip {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 28px;
+    padding: 0 1rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.arch-strip .led { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.arch-strip .led-g { background: var(--led-green); box-shadow: 0 0 5px var(--led-green); }
+.arch-strip .led-a { background: var(--led-amber); }
+.arch-strip .led-d { background: var(--rack-rail); }
+
+.arch-strip-label {
+    margin-left: auto;
+    font-family: 'SF Mono', 'Roboto Mono', monospace;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.arch-body { padding: 1.5rem; }
+
+.arch-flow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.arch-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 210px;
+}
+
+/* A single rack-unit row */
+.arch-unit {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--led-green);
+    border-radius: 0;
+    padding: 0.55rem 0.75rem;
+}
+
+.arch-unit .u-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.arch-unit .u-name {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: var(--fs-small);
+    color: var(--text-primary);
+}
+
+.arch-unit .u-meta,
+.arch-unit .u-spec {
+    font-family: 'SF Mono', 'Roboto Mono', monospace;
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    letter-spacing: -0.02em;
+}
+
+.arch-unit .u-meta { white-space: nowrap; }
+.arch-unit .u-spec { margin-top: 0.2rem; }
+
+.arch-unit.is-external { border-left-color: var(--led-amber); }
+.arch-unit.is-internet { border-left-color: var(--rack-rail); }
+
+.arch-led {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--led-green);
+    box-shadow: 0 0 5px var(--led-green);
+    flex: none;
+}
+
+.arch-unit.is-external .arch-led { background: var(--led-amber); box-shadow: 0 0 5px var(--led-amber); }
+.arch-unit.is-internet .arch-led { background: var(--rack-rail); box-shadow: none; }
+
+.arch-conn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    font-family: 'SF Mono', 'Roboto Mono', monospace;
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    white-space: nowrap;
+    padding: 0.1rem 0.25rem;
+}
+
+/* The home rack: side rails (posts) evoke a real 19" frame */
+.arch-rack {
+    flex: 1;
+    min-width: 240px;
+    border: 1px solid var(--rack-rail);
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-radius: 0;
+    padding: 0.85rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.arch-rack-label {
+    font-family: 'SF Mono', 'Roboto Mono', monospace;
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+}
+
+.arch-note {
+    margin-top: 1.25rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+}
+
+/* Plain-English "what it does" cards */
+.does-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.does-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    padding: 1.25rem;
+}
+
+.does-card .does-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    margin-bottom: 0.85rem;
+}
+
+.does-card .does-icon svg { width: 18px; height: 18px; }
+
+.does-card h3 {
+    font-size: var(--fs-h3);
+    margin-bottom: 0.4rem;
+}
+
+.does-card p {
+    color: var(--text-secondary);
+    font-size: var(--fs-small);
+    margin: 0;
+}
+
+/* "What runs on it" — visual platform layer stack */
+.stack-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.stack-layer {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--led-green);
+    border-radius: 0;
+    padding: 1rem 1.25rem;
+}
+
+.stack-head {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.85rem;
+}
+
+.stack-head svg,
+.stack-head i {
+    width: 18px;
+    height: 18px;
+    color: var(--text-primary);
+    flex: none;
+}
+
+.stack-head h3 {
+    margin: 0;
+    font-size: var(--fs-h3);
+    color: var(--text-primary);
+}
+
+.stack-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.stack-chips span {
+    font-size: var(--fs-xs);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    padding: 0.2rem 0.55rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Per-layer technical detail (Technical view) */
+.stack-detail {
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.stack-detail li {
+    margin-bottom: 0.6rem;
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+}
+
+.stack-detail li:last-child { margin-bottom: 0; }
+.stack-detail strong { color: var(--text-primary); font-weight: 600; }
+
+/* "Why I built it" — numbered journey / timeline */
+.journey {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.journey-step {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.journey-marker {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.journey-num {
+    width: 38px;
+    height: 38px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--led-green);
+    border-radius: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.journey-step:not(:last-child) .journey-marker::after {
+    content: '';
+    width: 2px;
+    flex: 1;
+    min-height: 14px;
+    background: var(--border-color);
+    margin: 6px 0;
+}
+
+.journey-body { padding-bottom: 1.5rem; }
+.journey-step:last-child .journey-body { padding-bottom: 0; }
+.journey-body p { margin: 0; color: var(--text-secondary); }
+.journey-body strong { color: var(--text-primary); }
+
+@media (max-width: 768px) {
+    .arch-flow { flex-direction: column; align-items: stretch; }
+    .arch-col { min-width: 0; }
+    .arch-conn { padding: 0.25rem 0; }
+    .view-switch-row { margin-bottom: 1rem; }
 }

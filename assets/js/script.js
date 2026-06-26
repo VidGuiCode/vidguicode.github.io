@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // ignore
         }
 
-        window.location.href = pathPrefix + 'index.html#contact';
+        window.location.href = '/#contact';
     };
 
     if (cvDropdown && cvToggle && cvMenu) {
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Create category badge similar to certification badges
             const categoryBadge = document.createElement('a');
             const categorySlug = category.toLowerCase().replace(/\s+/g, '');
-            categoryBadge.href = pathPrefix + 'projects.html?category=' + encodeURIComponent(categorySlug);
+            categoryBadge.href = pathPrefix + 'projects?category=' + encodeURIComponent(categorySlug);
             categoryBadge.className = 'project-cert-badge';
             
             // Create badge text with translation

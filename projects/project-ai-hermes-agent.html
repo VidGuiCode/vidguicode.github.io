@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hermes AI Agent | VidGuiCode</title>
-    <meta name="description" content="Hermes AI Agent: a personal self-hosted AI agent running on its own VPS, connected to Matrix, ntfy, Groq transcription, Piper TTS, homelab APIs, email, calendar, transport lookups, git workflows, voice notes, and a markdown knowledge base.">
+    <meta name="description" content="Hermes AI Agent: a personal self-hosted AI agent running 24/7 on its own VPS — Matrix-first messaging, voice in/out, persistent memory, scheduled automation, deep research, homelab watchdogs, and an 80+ self-healing skill system.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,205 +22,128 @@
     <script src="../assets/js/translations/project-ai-hermes-agent.js"></script>
     <script src="../assets/js/i18n.js"></script>
     <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/project-view.js" defer></script>
     <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/certifications-data.js"></script>
     <script src="../assets/js/search.js"></script>
     <script src="../assets/js/certifications-techstack.js"></script>
     <style>
-        .hermes-flow {
-            display: grid;
-            gap: 1.25rem;
-            margin: 2rem 0;
+        /* ================================================================
+           Hermes / Nous flair — an amber-phosphor "terminal transmission"
+           identity layered on the shared two-lens base. Same sharp,
+           dark, mono server-room theme as the rest of the site; only the
+           accent shifts (amber instead of homelab green) plus a few
+           terminal motifs so Hermes reads as its own thing.
+           ================================================================ */
+        .hermes-page {
+            /* Recolours every shared accent (glance LED, arch/stack/journey
+               left-rails) from green to amber in one move. */
+            --led-green: #f0b429;
+            --h-amber: #f0b429;
+            --h-amber-soft: rgba(240, 180, 41, 0.30);
+            --h-cyan: #2dd4bf;
+            --h-cyan-soft: rgba(45, 212, 191, 0.28);
         }
 
-        .hermes-step {
-            --step-bg: linear-gradient(135deg, #111827 0%, #172033 100%);
-            --step-border: rgba(59, 130, 246, 0.35);
-            --step-accent-a: #38bdf8;
-            --step-accent-b: #22c55e;
-            --step-kicker: #7dd3fc;
-            background: var(--step-bg);
-            border: 1px solid var(--step-border);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+        /* Mono eyebrow + hero logo frame */
+        .hermes-eyebrow {
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            font-size: var(--fs-xs);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--h-amber);
+            margin-bottom: 0.6rem;
+        }
+
+        .hermes-logo {
+            width: 84px;
+            height: 84px;
+            flex-shrink: 0;
+            object-fit: contain;
+            background: #0c0c0e;
+            padding: 7px;
+            border: 1px solid var(--border-color);
+            border-bottom: 3px solid var(--h-amber);
+            border-radius: 0;
+        }
+
+        /* Live terminal status line under the hero (shared by both lenses) */
+        .hermes-console {
             display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .hermes-step.matrix {
-            --step-bg: linear-gradient(135deg, #132026 0%, #0f2f2f 100%);
-            --step-border: rgba(45, 212, 191, 0.42);
-            --step-accent-a: #2dd4bf;
-            --step-accent-b: #22c55e;
-            --step-kicker: #5eead4;
-        }
-
-        .hermes-step.daily {
-            --step-bg: linear-gradient(135deg, #241b12 0%, #3a260d 100%);
-            --step-border: rgba(245, 158, 11, 0.42);
-            --step-accent-a: #f59e0b;
-            --step-accent-b: #facc15;
-            --step-kicker: #fcd34d;
-        }
-
-        .hermes-step.research {
-            --step-bg: linear-gradient(135deg, #1f1b3d 0%, #31215f 100%);
-            --step-border: rgba(168, 85, 247, 0.42);
-            --step-accent-a: #a855f7;
-            --step-accent-b: #ec4899;
-            --step-kicker: #d8b4fe;
-        }
-
-        .hermes-step.personal {
-            --step-bg: linear-gradient(135deg, #1a2235 0%, #17325a 100%);
-            --step-border: rgba(96, 165, 250, 0.42);
-            --step-accent-a: #60a5fa;
-            --step-accent-b: #38bdf8;
-            --step-kicker: #93c5fd;
-        }
-
-        .hermes-step.homelab {
-            --step-bg: linear-gradient(135deg, #132319 0%, #143522 100%);
-            --step-border: rgba(34, 197, 94, 0.42);
-            --step-accent-a: #22c55e;
-            --step-accent-b: #84cc16;
-            --step-kicker: #86efac;
-        }
-
-        .hermes-step.git {
-            --step-bg: linear-gradient(135deg, #291b1b 0%, #3b1d2a 100%);
-            --step-border: rgba(244, 63, 94, 0.42);
-            --step-accent-a: #f43f5e;
-            --step-accent-b: #fb7185;
-            --step-kicker: #fda4af;
-        }
-
-        .hermes-step-bar {
-            height: 4px;
-            background: linear-gradient(90deg, var(--step-accent-a), var(--step-accent-b));
-        }
-
-        .hermes-step-body {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hermes-step-head {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            align-items: flex-start;
-            margin-bottom: 0.75rem;
-        }
-
-        .hermes-step h3 {
-            color: var(--text-primary);
-            margin: 0;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .hermes-step-kicker {
-            color: var(--step-kicker);
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-align: right;
-            white-space: nowrap;
-        }
-
-        .hermes-step p {
-            color: var(--text-secondary);
-            margin: 0;
-            flex: 1;
-        }
-
-        .hermes-tags {
-            display: flex;
-            gap: 1rem;
+            align-items: center;
+            gap: 0.55rem;
             flex-wrap: wrap;
-            padding: 0.75rem 1.5rem;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-            color: var(--step-kicker);
-            font-size: 0.8rem;
-            letter-spacing: 0.04em;
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            font-size: var(--fs-xs);
+            letter-spacing: 0.02em;
+            color: var(--text-secondary);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--h-amber);
+            padding: 0.6rem 0.85rem;
+            margin: 1.25rem 0 0;
         }
 
-        /* Light Theme Overrides */
-        [data-theme="light"] .hermes-step {
-            --step-bg: linear-gradient(135deg, #f4f4f5 0%, #e4e4e7 100%);
-            --step-border: rgba(59, 130, 246, 0.4);
-            --step-accent-a: #2563eb;
-            --step-accent-b: #16a34a;
-            --step-kicker: #1d4ed8;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        .hermes-console .hc-prompt { color: var(--h-amber); }
+        .hermes-console .hc-cursor {
+            width: 0.5rem;
+            height: 1em;
+            background: var(--h-amber);
+            display: inline-block;
+            transform: translateY(2px);
+            animation: hermesBlink 1.1s steps(1) infinite;
         }
-        [data-theme="light"] .hermes-step.matrix {
-            --step-bg: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            --step-border: rgba(13, 148, 136, 0.4);
-            --step-accent-a: #0d9488;
-            --step-accent-b: #15803d;
-            --step-kicker: #0f766e;
+        @keyframes hermesBlink { 50% { opacity: 0; } }
+
+        /* Diagram: terminal prompt in the LED strip + bracketed column heads */
+        .hermes-page .arch-strip .led-g { background: var(--h-amber); box-shadow: 0 0 5px var(--h-amber); }
+        .hermes-prompt {
+            margin-left: auto;
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            font-size: var(--fs-xs);
+            letter-spacing: 0.04em;
+            color: var(--h-amber);
         }
-        [data-theme="light"] .hermes-step.daily {
-            --step-bg: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-            --step-border: rgba(217, 119, 6, 0.4);
-            --step-accent-a: #d97706;
-            --step-accent-b: #a16207;
-            --step-kicker: #854d0e;
+
+        .arch-colhead {
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            font-size: var(--fs-xs);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.15rem;
         }
-        [data-theme="light"] .hermes-step.research {
-            --step-bg: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-            --step-border: rgba(147, 51, 234, 0.4);
-            --step-accent-a: #9333ea;
-            --step-accent-b: #be185d;
-            --step-kicker: #701a75;
+        .arch-colhead b { color: var(--h-amber); font-weight: 600; }
+
+        .hermes-page .arch-conn { color: var(--h-amber); }
+
+        /* The Hermes "core" — the focal cyan-accented agent loop enclosure */
+        .hermes-core {
+            border-color: var(--h-cyan-soft);
+            border-left-width: 5px;
+            border-right-width: 5px;
+            background-image: repeating-linear-gradient(
+                0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 3px);
         }
-        [data-theme="light"] .hermes-step.personal {
-            --step-bg: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            --step-border: rgba(37, 99, 235, 0.4);
-            --step-accent-a: #2563eb;
-            --step-accent-b: #0284c7;
-            --step-kicker: #1d4ed8;
-        }
-        [data-theme="light"] .hermes-step.homelab {
-            --step-bg: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            --step-border: rgba(22, 163, 74, 0.4);
-            --step-accent-a: #16a34a;
-            --step-accent-b: #4d7c0f;
-            --step-kicker: #15803d;
-        }
-        [data-theme="light"] .hermes-step.git {
-            --step-bg: linear-gradient(135deg, #fff5f5 0%, #ffe3e3 100%);
-            --step-border: rgba(225, 29, 72, 0.4);
-            --step-accent-a: #e11d48;
-            --step-accent-b: #be123c;
-            --step-kicker: #9f1239;
-        }
+        .hermes-core .arch-rack-label { color: var(--h-cyan); }
+        .hermes-core .arch-unit { border-left-color: var(--h-cyan); }
+        .hermes-core .arch-led { background: var(--h-cyan); box-shadow: 0 0 6px var(--h-cyan); }
+        .hermes-core .arch-led.is-live { animation: hermesPulse 1.6s ease-in-out infinite; }
+        @keyframes hermesPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 
         @media (max-width: 768px) {
-            .hermes-step-head {
-                flex-direction: column;
-            }
-
-            .hermes-step-kicker {
-                text-align: left;
-                white-space: normal;
-            }
+            .hermes-core { border-right-width: 1px; }
         }
     </style>
 </head>
-<body>
+<body class="hermes-page" data-view="overview">
     <div class="grid-background"></div>
 
     <div id="search-container"></div>
     <div id="navbar-container"></div>
 
     <main class="container" style="padding-top: 100px;">
-        <a href="../index.html#projects" class="back-link">
+        <a href="/#projects" class="back-link">
             <i data-lucide="arrow-left"></i>
             <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
         </a>
@@ -229,142 +152,330 @@
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.ai-hermes-agent.badge">AI AUTOMATION</div>
                 <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
-                    <img src="../assets/img/projects/hermes/hermes.webp" alt="Nous Research Logo" style="width: 80px; height: 80px; border-radius: 16px; object-fit: contain; flex-shrink: 0;">
-                    <div style="flex: 1; min-width: 200px; display: flex; align-items: center;">
-                        <h1 style="line-height: 1; margin-bottom: 0; display: flex; align-items: center;">
+                    <img src="../assets/img/projects/hermes/hermes.webp" alt="Nous Research Hermes artwork" class="hermes-logo">
+                    <div style="flex: 1; min-width: 220px;">
+                        <div class="hermes-eyebrow">NOUS · HERMES // SELF-HOSTED AGENT</div>
+                        <h1 style="line-height: 1; margin-bottom: 0;">
                             <span data-i18n="project.ai-hermes-agent.hero.title">Hermes AI Agent</span>
                         </h1>
                     </div>
                 </div>
-                <p class="subtitle" data-i18n="project.ai-hermes-agent.hero.subtitle">From May 2026 to today: my personal AI agent running on its own VPS, connected to my Matrix server, ntfy notifications, Groq transcription, Piper TTS, homelab endpoints, email, calendar, transport lookups, git server, voice notes, image generation, and a markdown knowledge base.</p>
+                <p class="subtitle" data-i18n="project.ai-hermes-agent.hero.subtitle">A self-hosted AI agent that runs 24/7 on its own VPS. It researches, monitors, automates and talks back — all from a single conversation that remembers what happened yesterday.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
                     <span data-i18n="project.lastUpdated">Last updated:</span> <span>15/06/2026</span>
                 </p>
+                <div class="hermes-console">
+                    <span class="hc-prompt">hermes@vps:~$</span>
+                    <span data-i18n="project.ai-hermes-agent.console">online since May 2026 · memory: persistent · channel: matrix</span>
+                    <span class="hc-cursor"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-glance">
+            <div class="view-switch-row">
+                <div class="view-toggle" role="group" aria-label="View mode">
+                    <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
+                    <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
+                </div>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
+            </div>
+
+            <div class="glance-grid">
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">24/7</div>
+                    <div class="glance-label" data-i18n="project.ai-hermes-agent.glance.uptime.label">always on, no prompt needed</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">80+</div>
+                    <div class="glance-label" data-i18n="project.ai-hermes-agent.glance.skills.label">self-healing skills it reuses</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">10+</div>
+                    <div class="glance-label" data-i18n="project.ai-hermes-agent.glance.services.label">services wired into one chat</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">6</div>
+                    <div class="glance-label" data-i18n="project.ai-hermes-agent.glance.domains.label">domains it runs day to day</div>
+                </div>
+            </div>
+
+            <h2 data-i18n="project.ai-hermes-agent.arch.title">How a message flows through Hermes</h2>
+            <div class="arch-diagram">
+                <div class="arch-strip">
+                    <span class="led led-g"></span>
+                    <span class="led led-g"></span>
+                    <span class="led led-d"></span>
+                    <span class="hermes-prompt">stream --live ●</span>
+                </div>
+                <div class="arch-body">
+                    <div class="arch-flow">
+                        <div class="arch-col">
+                            <div class="arch-colhead">[ <b>IN</b> · <span data-i18n="project.ai-hermes-agent.arch.col.in">channels</span> ]</div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.ai-hermes-agent.arch.you">You</span></div>
+                                </div>
+                                <div class="u-spec">matrix · synapse</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.ai-hermes-agent.arch.voice">Voice notes</span></div>
+                                </div>
+                                <div class="u-spec">groq stt → piper tts</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.ai-hermes-agent.arch.cron">Schedule</span></div>
+                                </div>
+                                <div class="u-spec">cron · chained jobs</div>
+                            </div>
+                        </div>
+
+                        <div class="arch-conn"><span data-i18n="project.ai-hermes-agent.arch.route">route</span>&nbsp;&#8644;</div>
+
+                        <div class="arch-rack hermes-core">
+                            <div class="arch-rack-label" data-i18n="project.ai-hermes-agent.arch.col.core">Hermes core — agent loop (vps / docker)</div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led is-live"></span><span data-i18n="project.ai-hermes-agent.arch.memory">Memory vault</span></div>
+                                    <div class="u-meta">git · markdown</div>
+                                </div>
+                                <div class="u-spec">persistent context</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.ai-hermes-agent.arch.skills">Skill system</span></div>
+                                    <div class="u-meta">80+ · self-healing</div>
+                                </div>
+                                <div class="u-spec">reusable procedures</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.ai-hermes-agent.arch.router">Model router</span></div>
+                                    <div class="u-meta">cost-aware</div>
+                                </div>
+                                <div class="u-spec">cheap → frontier</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span>MCP</span></div>
+                                    <div class="u-meta">tool bridge</div>
+                                </div>
+                                <div class="u-spec">private services</div>
+                            </div>
+                        </div>
+
+                        <div class="arch-conn"><span data-i18n="project.ai-hermes-agent.arch.call">call</span>&nbsp;&#8594;</div>
+
+                        <div class="arch-col">
+                            <div class="arch-colhead">[ <b>OUT</b> · <span data-i18n="project.ai-hermes-agent.arch.col.out">tools</span> ]</div>
+                            <div class="arch-unit">
+                                <div class="u-top"><div class="u-name"><span class="arch-led"></span><span data-i18n="project.ai-hermes-agent.arch.research">Research</span></div></div>
+                                <div class="u-spec">web · extractors · citations</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top"><div class="u-name"><span class="arch-led"></span><span data-i18n="project.ai-hermes-agent.arch.transport">Transport</span></div></div>
+                                <div class="u-spec">mobiliteit.lu</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top"><div class="u-name"><span class="arch-led"></span><span data-i18n="project.ai-hermes-agent.arch.personal">Email &amp; calendar</span></div></div>
+                                <div class="u-spec">triage · reminders</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top"><div class="u-name"><span class="arch-led"></span><span data-i18n="project.ai-hermes-agent.arch.infra">Server health</span></div></div>
+                                <div class="u-spec">homelab · crowdsec</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top"><div class="u-name"><span class="arch-led"></span><span data-i18n="project.ai-hermes-agent.arch.image">Image gen</span></div></div>
+                                <div class="u-spec">vision · routing</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch-note" data-i18n="project.ai-hermes-agent.arch.note">Answers stream back to the same chat — as a Matrix message, a Piper-spoken reply, or an ntfy push when it can't wait. Heavy jobs run in isolated subagents so the main conversation stays clean.</div>
+                </div>
+            </div>
+
+            <div class="plain-only">
+                <h2 data-i18n="project.ai-hermes-agent.does.title">What it actually does</h2>
+                <div class="does-grid">
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="message-circle"></i></div>
+                        <h3 data-i18n="project.ai-hermes-agent.does.talk.title">Talk to it like a person</h3>
+                        <p data-i18n="project.ai-hermes-agent.does.talk.desc">Type or send a voice note in a private chat. It understands the voice note and can even answer back out loud.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="brain"></i></div>
+                        <h3 data-i18n="project.ai-hermes-agent.does.memory.title">It actually remembers</h3>
+                        <p data-i18n="project.ai-hermes-agent.does.memory.desc">Hermes keeps notes in its own wiki, so it carries context across days instead of forgetting the moment you close the chat.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="clock"></i></div>
+                        <h3 data-i18n="project.ai-hermes-agent.does.schedule.title">It works on a schedule</h3>
+                        <p data-i18n="project.ai-hermes-agent.does.schedule.desc">Morning briefings, reminders and alerts arrive on their own — Hermes does the routine checks without being asked.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="sparkles"></i></div>
+                        <h3 data-i18n="project.ai-hermes-agent.does.many.title">One assistant, many jobs</h3>
+                        <p data-i18n="project.ai-hermes-agent.does.many.desc">Deep research, the next bus home, your inbox and your server's health — all handled in the same conversation.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <div class="project-meta-grid">
+            <!-- Main Content -->
             <article>
                 <div class="card">
                     <i data-lucide="sparkles" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <h2 data-i18n="project.ai-hermes-agent.idea.title">The idea</h2>
+                    <p data-i18n="project.ai-hermes-agent.idea.body" data-i18n-html>Hermes is my attempt at a <strong>JARVIS of my own</strong> — not a chatbot I open when I need help, but a personal AI layer I own end to end. It runs continuously on its own VPS, reachable through my own Matrix server, with ntfy delivering anything that can't wait straight to my devices.</p>
 
-                    <h2 data-i18n="project.ai-hermes-agent.context.title">The Idea</h2>
-                    <p data-i18n="project.ai-hermes-agent.context.body">Hermes is not just a chatbot I open when I need help. It is a personal AI workspace that runs continuously on its own VPS while the communication layer lives inside my infrastructure. I set up a local Synapse server so Hermes can talk to me mainly through Matrix, while ntfy handles push notifications for things that should not wait.</p>
+                    <div class="tech-only">
+                        <h2 data-i18n="project.ai-hermes-agent.what.title">What runs under the hood</h2>
+                        <p data-i18n="project.ai-hermes-agent.what.body">Six layers sit between a message and an answer: the messaging interface, the agent core that holds memory and skills, the scheduler, a research pipeline, personal-ops integrations, and the infrastructure layer that keeps the whole thing alive.</p>
 
-                    <h2 data-i18n="project.ai-hermes-agent.problem.title">Why I Built It</h2>
-                    <p data-i18n="project.ai-hermes-agent.problem.body">I wanted an assistant that could keep context across days, work with my own services, and handle small recurring tasks without me opening five different tools. The important part was not making a flashy bot. It was connecting AI to real daily workflows: voice notes, research, public transport, reminders, calendar events, email checks, homelab status, coding tasks, and personal knowledge.</p>
-
-                    <h2 data-i18n="project.ai-hermes-agent.solution.title">How I Use It</h2>
-                    <p data-i18n="project.ai-hermes-agent.solution.body">Most interaction happens through Matrix. I can write to Hermes, send voice notes, receive Groq-powered transcriptions back, ask for research on topics that matter to me, and get the final report delivered in the same place. When I am too lazy to read, Hermes can answer back with Piper TTS so the interaction feels more natural. When something is time-sensitive, Hermes can also push it through my self-hosted ntfy setup.</p>
-
-                    <h2 data-i18n="project.ai-hermes-agent.layers.title">Core Workflows</h2>
-                    <div class="hermes-flow">
-                        <div class="hermes-step matrix">
-                            <div class="hermes-step-bar"></div>
-                            <div class="hermes-step-body">
-                                <div class="hermes-step-head">
-                                    <h3 data-i18n="project.ai-hermes-agent.flow.matrix.title">Matrix & Platform Communication</h3>
-                                    <div class="hermes-step-kicker" data-i18n="project.ai-hermes-agent.flow.matrix.kicker">Synapse & ntfy integration</div>
-                                </div>
-                                <p data-i18n="project.ai-hermes-agent.flow.matrix.body">Hermes is controlled through Matrix, maintaining long-term session context. It processes links, transcribes voice notes with Groq STT, responds with Piper TTS, and alerts via ntfy. Subagent delegation runs isolated workers for heavy lifting.</p>
+                        <div class="stack-diagram">
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="message-square"></i><h3 data-i18n="project.ai-hermes-agent.stack.iface.title">Interface &amp; Messaging</h3></div>
+                                <div class="stack-chips"><span>Matrix</span><span>Synapse</span><span>ntfy</span><span>Groq STT</span><span>Piper TTS</span><span>Subagents</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.ai-hermes-agent.stack.iface.matrix" data-i18n-html><strong>Matrix-first control</strong>: A self-hosted Synapse server is the primary channel, holding long-term session context so the conversation never resets.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.iface.voice" data-i18n-html><strong>Voice in and out</strong>: Groq transcribes voice notes for free; Piper TTS speaks answers back when reading is inconvenient.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.iface.ntfy" data-i18n-html><strong>ntfy push</strong>: Time-sensitive alerts and attachments are pushed straight to my phone through a self-hosted ntfy instance.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.iface.subagents" data-i18n-html><strong>Subagent delegation</strong>: Heavy tasks run in isolated worker sessions, keeping the main conversation's context clean.</li>
+                                </ul>
                             </div>
-                            <div class="hermes-tags"><span>[MATRIX]</span><span>[NTFY]</span><span>[SUBAGENTS]</span></div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="brain"></i><h3 data-i18n="project.ai-hermes-agent.stack.core.title">Agent Core &amp; Memory</h3></div>
+                                <div class="stack-chips"><span>Markdown vault</span><span>Git server</span><span>YAML frontmatter</span><span>80+ skills</span><span>MCP</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.ai-hermes-agent.stack.core.memory" data-i18n-html><strong>Persistent memory vault</strong>: Searchable Markdown notes with YAML frontmatter are pushed to a personal git server — durable long-term memory, not just chat history.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.core.skills" data-i18n-html><strong>Self-healing skills</strong>: 80+ reusable procedure files that auto-patch when a step drifts, so a skill that breaks once gets fixed for good.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.core.mcp" data-i18n-html><strong>Model Context Protocol</strong>: MCP integrations bridge the agent to external tools and private homelab services behind a clean interface.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="timer"></i><h3 data-i18n="project.ai-hermes-agent.stack.auto.title">Scheduled Automation</h3></div>
+                                <div class="stack-chips"><span>Cron</span><span>Cost routing</span><span>Chained jobs</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.ai-hermes-agent.stack.auto.cron" data-i18n-html><strong>Isolated cron sessions</strong>: Each scheduled job runs in a clean session — collect, summarize, deliver — with no tangled state machines.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.auto.routing" data-i18n-html><strong>Cost-aware routing</strong>: Cheap models handle routine watchdog checks; frontier models are reserved strictly for deep synthesis.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.auto.chained" data-i18n-html><strong>Chained pipelines</strong>: A notifier job consumes the structured summary of a collector job, so workflows compose without rewrites.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="search"></i><h3 data-i18n="project.ai-hermes-agent.stack.research.title">Research &amp; Knowledge</h3></div>
+                                <div class="stack-chips"><span>Query rewrite</span><span>Page fetch</span><span>Transcript extractors</span><span>Citations</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.ai-hermes-agent.stack.research.rewrite" data-i18n-html><strong>Autonomous deep research</strong>: Hermes rewrites the query, fetches pages, and synthesizes a cited answer instead of dumping links.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.research.extract" data-i18n-html><strong>Beyond plain web</strong>: Extractors pull YouTube/TikTok transcripts and Twitter threads into the same analysis.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.research.vault" data-i18n-html><strong>Results that last</strong>: Every report lands in the structured Markdown vault, referenceable from any later session.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="route"></i><h3 data-i18n="project.ai-hermes-agent.stack.personal.title">Personal Operations</h3></div>
+                                <div class="stack-chips"><span>Email</span><span>Calendar</span><span>Mobiliteit.lu</span><span>Tasks</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.ai-hermes-agent.stack.personal.mailcal" data-i18n-html><strong>Inbox &amp; calendar</strong>: Hermes checks email, parses events, and turns natural-language requests into reminders and tasks.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.personal.transport" data-i18n-html><strong>Real transport, not a demo</strong>: Reverse-engineered Mobiliteit.lu endpoints return live route options for the commutes I actually take.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="shield"></i><h3 data-i18n="project.ai-hermes-agent.stack.infra.title">Infrastructure, Runtime &amp; Recovery</h3></div>
+                                <div class="stack-chips"><span>Docker</span><span>Persistent volumes</span><span>Homelab API</span><span>CrowdSec</span><span>Git revert</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.ai-hermes-agent.stack.infra.monitor" data-i18n-html><strong>Multi-node watchdog</strong>: Monitors CPU, RAM, temperature and container state, with deterministic health scoring so an LLM never invents an outage.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.infra.security" data-i18n-html><strong>Security triage</strong>: Correlates CrowdSec logs to surface what's worth my attention from the noise.</li>
+                                    <li data-i18n="project.ai-hermes-agent.stack.infra.docker" data-i18n-html><strong>Contained &amp; recoverable</strong>: Runs in Docker with persistent volumes and least-privilege tooling; git history makes any agent action inspectable and revertible.</li>
+                                </ul>
+                            </div>
                         </div>
+                    </div><!-- /.tech-only -->
 
-                        <div class="hermes-step daily">
-                            <div class="hermes-step-bar"></div>
-                            <div class="hermes-step-body">
-                                <div class="hermes-step-head">
-                                    <h3 data-i18n="project.ai-hermes-agent.flow.daily.title">Scheduled Automation</h3>
-                                    <div class="hermes-step-kicker" data-i18n="project.ai-hermes-agent.flow.daily.kicker">Cron scheduler & cost routing</div>
-                                </div>
-                                <p data-i18n="project.ai-hermes-agent.flow.daily.body">Jobs run in isolated sessions. Cost-aware routing targets cheap models for routine checks, reserving Claude for deep tasks. Chained jobs let a notifier consume summaries of structured data collected on schedule.</p>
-                            </div>
-                            <div class="hermes-tags"><span>[CRON]</span><span>[COST ROUTING]</span><span>[CHAINED JOBS]</span></div>
+                    <h2 data-i18n="project.ai-hermes-agent.why.title">Why I built it</h2>
+                    <div class="journey">
+                        <div class="journey-step">
+                            <div class="journey-marker"><span class="journey-num">01</span></div>
+                            <div class="journey-body"><p data-i18n="project.ai-hermes-agent.why.step1" data-i18n-html>Honestly, it started with curiosity and a sci-fi itch — I wanted a <strong>JARVIS of my own</strong>. Seeing a friend self-host his own agent was the nudge: the timing was right, so I rented a box and put Hermes on it to see how far I could take it.</p></div>
                         </div>
-
-                        <div class="hermes-step research">
-                            <div class="hermes-step-bar"></div>
-                            <div class="hermes-step-body">
-                                <div class="hermes-step-head">
-                                    <h3 data-i18n="project.ai-hermes-agent.flow.research.title">Research & Knowledge Vault</h3>
-                                    <div class="hermes-step-kicker" data-i18n="project.ai-hermes-agent.flow.research.kicker">Autonomous deep research</div>
-                                </div>
-                                <p data-i18n="project.ai-hermes-agent.flow.research.body">Hermes rewrites queries, fetches pages, extracts YouTube/TikTok transcripts and Twitter threads, and synthesizes answers with citations. Results land in a structured Markdown vault referenceable across sessions.</p>
-                            </div>
-                            <div class="hermes-tags"><span>[DEEP RESEARCH]</span><span>[EXTRACTORS]</span><span>[MARKDOWN VAULT]</span></div>
+                        <div class="journey-step">
+                            <div class="journey-marker"><span class="journey-num">02</span></div>
+                            <div class="journey-body"><p data-i18n="project.ai-hermes-agent.why.step2" data-i18n-html>Hermes isn't my coding setup — I have plenty of agents for that. It fills a different gap: instead of opening a throwaway ChatGPT tab that forgets me by tomorrow, I just ask Hermes. It <strong>remembers either way</strong>, holds context across days, and can act on my own services.</p></div>
                         </div>
-
-                        <div class="hermes-step personal">
-                            <div class="hermes-step-bar"></div>
-                            <div class="hermes-step-body">
-                                <div class="hermes-step-head">
-                                    <h3 data-i18n="project.ai-hermes-agent.flow.personal.title">Personal Operations</h3>
-                                    <div class="hermes-step-kicker" data-i18n="project.ai-hermes-agent.flow.personal.kicker">Email, calendar, tasks</div>
-                                </div>
-                                <p data-i18n="project.ai-hermes-agent.flow.personal.body">Hermes checks emails, parses calendar events, and schedules reminders. It links information together, allowing natural language scheduling and task generation to organize daily administrative routines.</p>
-                            </div>
-                            <div class="hermes-tags"><span>[EMAIL]</span><span>[CALENDAR]</span><span>[TASK MANAGER]</span></div>
+                        <div class="journey-step">
+                            <div class="journey-marker"><span class="journey-num">03</span></div>
+                            <div class="journey-body"><p data-i18n="project.ai-hermes-agent.why.step3" data-i18n-html>What matters most is that it's <strong>mine</strong> — not a rented product from Claude or any other provider. I own the data, the infrastructure and the skills, and I decide what it's allowed to do. The AI model is the only piece I can't self-host yet, and that doesn't change whose agent this is.</p></div>
                         </div>
-
-                        <div class="hermes-step homelab">
-                            <div class="hermes-step-bar"></div>
-                            <div class="hermes-step-body">
-                                <div class="hermes-step-head">
-                                    <h3 data-i18n="project.ai-hermes-agent.flow.homelab.title">Infrastructure & Security</h3>
-                                    <div class="hermes-step-kicker" data-i18n="project.ai-hermes-agent.flow.homelab.kicker">Multi-node health watchdog</div>
-                                </div>
-                                <p data-i18n="project.ai-hermes-agent.flow.homelab.body">Monitors CPU, RAM, temperature, and Docker container states. It performs security triage on CrowdSec logs, with deterministic health scoring to prevent LLM variance in critical infrastructure watchdogs.</p>
-                            </div>
-                            <div class="hermes-tags"><span>[MONITORING]</span><span>[CROWDSEC]</span><span>[CONTAINERS]</span></div>
-                        </div>
-
-                        <div class="hermes-step git">
-                            <div class="hermes-step-bar"></div>
-                            <div class="hermes-step-body">
-                                <div class="hermes-step-head">
-                                    <h3 data-i18n="project.ai-hermes-agent.flow.git.title">Skill System & MCP</h3>
-                                    <div class="hermes-step-kicker" data-i18n="project.ai-hermes-agent.flow.git.kicker">Model Context Protocol & self-healing</div>
-                                </div>
-                                <p data-i18n="project.ai-hermes-agent.flow.git.body">Powered by 80+ reusable procedure files (markdown skills) that self-heal and auto-patch when steps drift. Model Context Protocol (MCP) integrations connect the agent to external tools and private services.</p>
-                            </div>
-                            <div class="hermes-tags"><span>[MCP]</span><span>[SKILLS]</span><span>[SELF-HEALING]</span></div>
+                        <div class="journey-step">
+                            <div class="journey-marker"><span class="journey-num">04</span></div>
+                            <div class="journey-body"><p data-i18n="project.ai-hermes-agent.why.step4" data-i18n-html>Then one uncompacted session loop on pay-as-you-go cost me <strong>€107 in a single week</strong>. That bill taught me cost-routing and session hygiene the hard way — and turned model routing into a core discipline of the project.</p></div>
                         </div>
                     </div>
 
-                    <h2 data-i18n="project.ai-hermes-agent.features.title">What Makes It Interesting</h2>
-                    <ul class="feature-list">
-                        <li data-i18n="project.ai-hermes-agent.features.voice">Voice notes make the agent usable when typing is annoying: Groq handles free transcription, and Piper can speak answers back when I do not want to read.</li>
-                        <li data-i18n="project.ai-hermes-agent.features.transport">The transport lookup is not a generic API demo. It is connected to routes I actually use and can be extended with more predefined stations.</li>
-                        <li data-i18n="project.ai-hermes-agent.features.knowledge">The knowledge base works like a markdown/Obsidian-style wiki stored through my git server, so Hermes can retrieve durable context instead of relying only on chat memory.</li>
-                        <li data-i18n="project.ai-hermes-agent.features.images">Hermes can also generate images, which made model routing more important because text, vision, and image tasks benefit from different providers.</li>
-                        <li data-i18n="project.ai-hermes-agent.features.recovery">The agent runs in Docker with persistent folders and recovery tooling, so losing a session or breaking a tool does not mean losing everything.</li>
-                    </ul>
+                    <h2 data-i18n="project.ai-hermes-agent.lessons.title">What it taught me</h2>
+                    <div class="does-grid">
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="brain"></i></div>
+                            <h3 data-i18n="project.ai-hermes-agent.lessons.memory.title">Memory is the moat</h3>
+                            <p data-i18n="project.ai-hermes-agent.lessons.memory.body">A chatbot without memory is a search engine with extra steps. Persistent context is what makes Hermes feel like an assistant.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="zap"></i></div>
+                            <h3 data-i18n="project.ai-hermes-agent.lessons.cost.title">Cheap beats clever</h3>
+                            <p data-i18n="project.ai-hermes-agent.lessons.cost.body">Don't spend a frontier model on "is Docker up?". Cost control beats raw model quality for everyday work.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="sparkles"></i></div>
+                            <h3 data-i18n="project.ai-hermes-agent.lessons.skills.title">Skills compound</h3>
+                            <p data-i18n="project.ai-hermes-agent.lessons.skills.body">A one-shot prompt is disposable. A skill that gets patched when it breaks gets better every time it runs.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="server"></i></div>
+                            <h3 data-i18n="project.ai-hermes-agent.lessons.hosting.title">Own the whole stack</h3>
+                            <p data-i18n="project.ai-hermes-agent.lessons.hosting.body">Self-hosting means no managed service to blame — you learn the infrastructure, networking and secrets for real.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="boxes"></i></div>
+                            <h3 data-i18n="project.ai-hermes-agent.lessons.subagents.title">Isolate heavy work</h3>
+                            <p data-i18n="project.ai-hermes-agent.lessons.subagents.body">Pushing big tasks into worker subagents keeps the main conversation focused and stops context from flooding.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="timer"></i></div>
+                            <h3 data-i18n="project.ai-hermes-agent.lessons.cron.title">Keep cron boring</h3>
+                            <p data-i18n="project.ai-hermes-agent.lessons.cron.body">Collect, summarize, deliver. The most reliable automation pipelines are the ones with no clever state machine.</p>
+                        </div>
+                    </div>
 
-                    <h2 data-i18n="project.ai-hermes-agent.providers.title">Provider and Cost Lessons</h2>
-                    <p data-i18n="project.ai-hermes-agent.providers.body">This project taught me a lot about AI providers, subscriptions, pay-as-you-go pricing, and session hygiene. One expensive Alibaba PAYG week cost me 107 EUR because I did not understand the platform well enough and let context usage get out of control. That made the lesson very concrete: compacting, starting clean sessions, and choosing the right model for the task are not small optimizations. They decide whether an agent is affordable.</p>
-                    <p data-i18n="project.ai-hermes-agent.providers.body2">Because I do not have the hardware to run strong local models, I depend on external providers. Hermes helped me test many paid and free models, and the auxiliary model setup showed me a better pattern: use a cheaper text model as the main worker, route vision to a vision-focused model, and only use stronger models when the task actually needs them.</p>
-
-                    <h2 data-i18n="project.ai-hermes-agent.isolation.title">Isolation and Recovery</h2>
-                    <p data-i18n="project.ai-hermes-agent.isolation.body">Running Hermes in Docker instead of bare metal created extra problems at first, but it also forced a cleaner architecture. I had to think about persistent folders, what the agent is allowed to touch, how it can watch its own state, and how it can recover if a tool or session breaks. That made the system more reliable than a quick one-off install.</p>
-
-                    <h2 data-i18n="project.ai-hermes-agent.lessons.title">Lessons Learned</h2>
-                    <ul class="feature-list">
-                        <li data-i18n="project.ai-hermes-agent.lessons.memory">Memory is the differentiator: A chatbot without memory is a search engine with extra steps.</li>
-                        <li data-i18n="project.ai-hermes-agent.lessons.cost">Cost control beats model quality: Don't burn Claude on "is Docker up". Cheap models handle routine checks fine.</li>
-                        <li data-i18n="project.ai-hermes-agent.lessons.skills">Skills beat prompts: A one-shot prompt is disposable. A skill that gets patched when it breaks compounds over time.</li>
-                        <li data-i18n="project.ai-hermes-agent.lessons.hosting">Self-hosting teaches the stack: No managed service to blame — you own the infrastructure, networking, and secrets.</li>
-                        <li data-i18n="project.ai-hermes-agent.lessons.subagents">Subagents prevent context flooding: Isolating heavy tasks inside worker subagents keeps the main conversation clean.</li>
-                        <li data-i18n="project.ai-hermes-agent.lessons.cron">Cron jobs stay boring: Keep automation pipelines simple — collect data, summarize, and deliver. No complex state machines.</li>
-                        <li data-i18n="project.ai-hermes-agent.lessons.routing">Platform routing is invaluable: Sending to Matrix, ntfy, or local files without rewriting the job makes workflows modular.</li>
-                    </ul>
-
-                    <h2 data-i18n="project.ai-hermes-agent.next.title">Next Steps</h2>
-                    <p data-i18n="project.ai-hermes-agent.next.body">Next I want to expand the homelab integration carefully, add more useful transport destinations, improve the skills that Hermes uses for its own tooling, and continue tuning provider/model routing so the agent stays useful without becoming expensive.</p>
+                    <h2 data-i18n="project.ai-hermes-agent.next.title">What's next</h2>
+                    <div class="does-grid">
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="activity"></i></div>
+                            <h3 data-i18n="project.ai-hermes-agent.next.dashboard">Tighter homelab metrics in one dashboard</h3>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="map-pin"></i></div>
+                            <h3 data-i18n="project.ai-hermes-agent.next.transport">More public-transport destinations</h3>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="sparkles"></i></div>
+                            <h3 data-i18n="project.ai-hermes-agent.next.skills">Smarter skill self-healing</h3>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="trending-up"></i></div>
+                            <h3 data-i18n="project.ai-hermes-agent.next.cost">Continuous cost-routing tuning</h3>
+                        </div>
+                    </div>
                 </div>
             </article>
 
+            <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
                     <div id="category-section" style="display: none;">
@@ -386,21 +497,28 @@
                         <li><i data-lucide="git-branch"></i> <span data-i18n="project.ai-hermes-agent.sidebar.tech.git">Personal git server</span></li>
                         <li><i data-lucide="book-open"></i> <span data-i18n="project.ai-hermes-agent.sidebar.tech.vault">Markdown wiki vault</span></li>
                         <li><i data-lucide="box"></i> <span>Docker</span></li>
-                        <li><i data-lucide="puzzle"></i> <span>Model Context Protocol (MCP)</span></li>
+                        <li><i data-lucide="network"></i> <span>Model Context Protocol (MCP)</span></li>
                     </ul>
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
                     <div class="line"></div>
                     <ul class="skill-list" style="margin-top: 1rem;">
-                        <li data-i18n="project.ai-hermes-agent.sidebar.feature1">Matrix-first assistant</li>
-                        <li data-i18n="project.ai-hermes-agent.sidebar.feature2">Voice note transcription</li>
-                        <li data-i18n="project.ai-hermes-agent.sidebar.feature3">Morning weather updates</li>
-                        <li data-i18n="project.ai-hermes-agent.sidebar.feature4">Public transport lookup</li>
-                        <li data-i18n="project.ai-hermes-agent.sidebar.feature5">Email and calendar actions</li>
-                        <li data-i18n="project.ai-hermes-agent.sidebar.feature6">Scoped homelab endpoints</li>
-                        <li data-i18n="project.ai-hermes-agent.sidebar.feature7">Git-backed coding tools</li>
-                        <li data-i18n="project.ai-hermes-agent.sidebar.feature8">Provider-aware model routing</li>
+                        <li data-i18n="project.ai-hermes-agent.sidebar.feature1">Matrix-first communication</li>
+                        <li data-i18n="project.ai-hermes-agent.sidebar.feature2">Groq voice transcription</li>
+                        <li data-i18n="project.ai-hermes-agent.sidebar.feature3">Cost-aware model routing</li>
+                        <li data-i18n="project.ai-hermes-agent.sidebar.feature4">Chained scheduled automation</li>
+                        <li data-i18n="project.ai-hermes-agent.sidebar.feature5">Autonomous deep research</li>
+                        <li data-i18n="project.ai-hermes-agent.sidebar.feature6">Docker infrastructure watchdogs</li>
+                        <li data-i18n="project.ai-hermes-agent.sidebar.feature7">Self-healing markdown skills</li>
+                        <li data-i18n="project.ai-hermes-agent.sidebar.feature8">Model Context Protocol (MCP)</li>
                     </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.training">Related Training</h3>
+                    <div class="line"></div>
+                    <p class="sidebar-description" style="margin-top: 0.5rem; margin-bottom: 0.75rem;" data-i18n="project.sidebar.trainingDesc">Training and workshops connected to this project:</p>
+                    <div class="project-certifications" data-project-training="ai-hermes-agent">
+                        <div class="formation-badge-placeholder">aws-reinvent-recap-2026</div>
+                    </div>
                 </div>
             </aside>
         </div>

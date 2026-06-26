@@ -650,11 +650,11 @@ const translations = {
         fr: "Cloud Personnel Home Lab"
     },
     "projects.homelab.desc": {
-        en: "From March 2025 to today: I built this four-node homelab platform around a cloud edge gateway, an ARM home server, an x86 offload node, and a dedicated ZFS NAS. It runs my custom apps, agent workflows, media services, and K3s behind a self-operated WireGuard edge.",
-        pt: "De março de 2025 até hoje: Construí esta plataforma homelab de quatro nós à volta de um gateway cloud de edge, um home server ARM, um nó x86 de offload e uma NAS ZFS dedicada. Executa as minhas apps personalizadas, workflows com agentes, serviços multimédia e K3s por trás de um edge WireGuard operado por mim.",
-        lu: "Vum Mäerz 2025 bis haut: Ech hunn dës véier-Node Homelab Plattform ronderëm en Cloud Edge Gateway, en ARM Home Server, en x86 Offload Node an eng dedizéiert ZFS NAS gebaut. Si leeft meng custom Apps, Agent-Workflows, Media-Servicer an K3s hannert engem selwer bedriwwene WireGuard Edge.",
-        de: "Von März 2025 bis heute habe ich diese Homelab-Plattform mit vier Knoten aufgebaut: ein Cloud-Edge-Gateway, ein ARM-Home-Server, ein x86-Offload-Knoten und ein dediziertes ZFS-NAS. Darauf laufen meine eigenen Apps, Agent-Workflows, Mediendienste und K3s hinter einer selbst betriebenen WireGuard-Edge.",
-        fr: "De mars 2025 à aujourd'hui, j'ai construit cette plateforme homelab à quatre nœuds autour d'une passerelle edge cloud, d'un serveur maison ARM, d'un nœud x86 d'offload et d'un NAS ZFS dédié. Elle exécute mes apps maison, des workflows d'agents, des services média et K3s derrière une edge WireGuard opérée par moi-même."
+        en: "From March 2025 to today: a four-node self-hosted platform — cloud edge gateway, ARM home server, x86 offload node, and a ZFS NAS. It runs 10+ custom apps, five guardrailed AI agents, passwordless passkey login with an OIDC/OAuth provider, AI video generation, and a full media stack behind a self-operated WireGuard edge.",
+        pt: "De março de 2025 até hoje: uma plataforma self-hosted de quatro nós — gateway cloud de edge, home server ARM, nó x86 de offload e uma NAS ZFS. Executa 10+ apps personalizadas, cinco agentes de IA com guardrails, login sem palavra-passe com passkeys e um provedor OIDC/OAuth, geração de vídeo por IA e uma stack multimédia completa por trás de um edge WireGuard operado por mim.",
+        lu: "Vum Mäerz 2025 bis haut: eng self-hosted Plattform mat véier Noden — Cloud Edge Gateway, ARM Home Server, x86 Offload Node an eng ZFS NAS. Si leeft 10+ custom Apps, fënnef AI-Agenten mat Guardrails, Login ouni Passwuert mat Passkeys an engem OIDC/OAuth-Provider, AI-Videogeneréierung an e komplette Media-Stack hannert engem selwer bedriwwene WireGuard Edge.",
+        de: "Von März 2025 bis heute: eine Self-Hosted-Plattform mit vier Knoten — Cloud-Edge-Gateway, ARM-Home-Server, x86-Offload-Knoten und ein ZFS-NAS. Darauf laufen 10+ eigene Apps, fünf KI-Agenten mit Guardrails, passwortloses Login mit Passkeys und einem OIDC/OAuth-Provider, KI-Videogenerierung und ein kompletter Medien-Stack hinter einer selbst betriebenen WireGuard-Edge.",
+        fr: "De mars 2025 à aujourd'hui : une plateforme auto-hébergée à quatre nœuds — passerelle edge cloud, serveur maison ARM, nœud d'offload x86 et un NAS ZFS. Elle exécute 10+ apps maison, cinq agents IA avec guardrails, une connexion sans mot de passe par passkeys avec un fournisseur OIDC/OAuth, la génération vidéo par IA et une stack média complète derrière une edge WireGuard opérée par moi-même."
     },
     "projects.homelab.cta": {
         en: "View Case Study",
@@ -662,6 +662,41 @@ const translations = {
         lu: "Case Study kucken",
         de: "Fallstudie ansehen",
         fr: "Voir l'Étude de Cas"
+    },
+    "projects.viewCaseStudy": {
+        en: "View Case Study",
+        pt: "Ver Estudo de Caso",
+        lu: "Case Study kucken",
+        de: "Fallstudie ansehen",
+        fr: "Voir l'Étude de Cas"
+    },
+    "project.view.overview": {
+        en: "Overview",
+        pt: "Visão geral",
+        lu: "Iwwersiicht",
+        de: "Überblick",
+        fr: "Vue d'ensemble"
+    },
+    "project.view.technical": {
+        en: "Technical",
+        pt: "Técnico",
+        lu: "Technesch",
+        de: "Technisch",
+        fr: "Technique"
+    },
+    "project.view.hint.overview": {
+        en: "Plain-English view — built for everyone",
+        pt: "Visão simples — feita para todos",
+        lu: "Einfach Vue — fir jiddereen",
+        de: "Einfache Ansicht — für alle gemacht",
+        fr: "Vue simplifiée — pensée pour tous"
+    },
+    "project.view.hint.technical": {
+        en: "Full technical detail",
+        pt: "Detalhe técnico completo",
+        lu: "Komplett technesch Detailer",
+        de: "Volle technische Details",
+        fr: "Détail technique complet"
     },
     "projects.plant.title": {
         en: "Smart Plant Monitoring - Final Project",
@@ -699,11 +734,11 @@ const translations = {
         fr: "Hermes AI Agent"
     },
     "projects.hermes.desc": {
-        en: "From May 2026 to today: my personal AI agent running on its own VPS, connected to Matrix, ntfy, Groq voice transcription, Piper TTS replies, transport lookups, email, calendar, homelab endpoints, git workflows, and a markdown knowledge base.",
-        pt: "From May 2026 to today: my personal AI agent running on its own VPS, connected to Matrix, ntfy, Groq voice transcription, Piper TTS replies, transport lookups, email, calendar, homelab endpoints, git workflows, and a markdown knowledge base.",
-        lu: "From May 2026 to today: my personal AI agent running on its own VPS, connected to Matrix, ntfy, Groq voice transcription, Piper TTS replies, transport lookups, email, calendar, homelab endpoints, git workflows, and a markdown knowledge base.",
-        de: "From May 2026 to today: my personal AI agent running on its own VPS, connected to Matrix, ntfy, Groq voice transcription, Piper TTS replies, transport lookups, email, calendar, homelab endpoints, git workflows, and a markdown knowledge base.",
-        fr: "From May 2026 to today: my personal AI agent running on its own VPS, connected to Matrix, ntfy, Groq voice transcription, Piper TTS replies, transport lookups, email, calendar, homelab endpoints, git workflows, and a markdown knowledge base."
+        en: "A self-hosted AI agent running 24/7 on its own VPS — Matrix-first messaging, voice in and out, persistent memory, scheduled automation, deep research and homelab watchdogs, all in one conversation.",
+        pt: "Um agente de IA self-hosted a correr 24/7 no seu próprio VPS — mensagens Matrix-first, voz à entrada e à saída, memória persistente, automação agendada, pesquisa aprofundada e watchdogs do homelab, tudo numa só conversa.",
+        lu: "En self-hosted AI-Agent deen 24/7 op sengem eegene VPS leeft — Matrix-first Messaging, Stëmm eran an eraus, persistente Erënnerung, geplangten Automatisatioun, déif Recherche an Homelab-Watchdogs, alles an enger eenzeger Konversatioun.",
+        de: "Ein selbstgehosteter KI-Agent, der rund um die Uhr auf seinem eigenen VPS läuft — Matrix-first-Messaging, Sprache rein und raus, persistentes Gedächtnis, geplante Automatisierung, Tiefenrecherche und Homelab-Watchdogs, alles in einer Konversation.",
+        fr: "Un agent IA auto-hébergé qui tourne 24/7 sur son propre VPS — messagerie Matrix-first, voix en entrée et en sortie, mémoire persistante, automatisation planifiée, recherche approfondie et surveillances homelab, le tout dans une seule conversation."
     },
     "projects.gradingdino.title": {
         en: "GradingDino",
@@ -894,6 +929,13 @@ const translations = {
         de: "Wichtige Funktionen",
         fr: "Fonctionnalités clés"
     },
+    "project.sidebar.tags": {
+        en: "Tags",
+        pt: "Etiquetas",
+        lu: "Tags",
+        de: "Schlagwörter",
+        fr: "Mots-clés"
+    },
     "project.sidebar.certifications": {
         en: "Certifications Used",
         pt: "Certificações Utilizadas",
@@ -907,6 +949,20 @@ const translations = {
         lu: "Dës Zertifikater hunn dëst Projet verbessert:",
         de: "Diese Zertifizierungen haben dieses Projekt verbessert:",
         fr: "Ces certifications ont aidé à améliorer ce projet:"
+    },
+    "project.sidebar.training": {
+        en: "Related Training",
+        pt: "Formação relacionada",
+        lu: "Zesummenhangend Formatioun",
+        de: "Verwandte Schulungen",
+        fr: "Formations liées"
+    },
+    "project.sidebar.trainingDesc": {
+        en: "Training and workshops connected to this project:",
+        pt: "Formações e workshops ligados a este projeto:",
+        lu: "Formatiounen a Workshops mat Bezuch zu dësem Projet:",
+        de: "Schulungen und Workshops mit Bezug zu diesem Projekt:",
+        fr: "Formations et ateliers liés à ce projet:"
     },
     "project.lastUpdated": {
         en: "Last updated:",
@@ -1146,6 +1202,20 @@ const translations = {
         de: "Ein inoffizielles Open-Source-CLI für Dolibarr ERP mit vollständiger REST-API-Abdeckung im Terminal. Kunden, Rechnungen, Bankkonten, Produkte und mehr verwalten, ohne die Kommandozeile zu verlassen. Unterstützt Tabellen-, JSON- und CSV-Ausgabeformate sowie Dry-Run für sichere Mutationen. Dieselbe Philosophie wie meine anderen CLIs — gebaut für Terminal-first-Workflows und KI-Agent-Kompatibilität.",
         fr: "Un CLI non officiel et open source pour Dolibarr ERP avec une couverture complète de l'API REST depuis le terminal. Gérer clients, factures, comptes bancaires, produits et plus sans quitter la ligne de commande. Prend en charge les formats de sortie tableau, JSON et CSV, plus le dry-run pour des mutations sûres. Même philosophie que mes autres CLIs — construit pour des workflows terminal-first et la compatibilité avec les agents IA."
     },
+    "projects.infomaniakcli.title": {
+        en: "infomaniak-cli",
+        pt: "infomaniak-cli",
+        lu: "infomaniak-cli",
+        de: "infomaniak-cli",
+        fr: "infomaniak-cli"
+    },
+    "projects.infomaniakcli.desc": {
+        en: "An open-source unofficial CLI for Infomaniak that lets you manage your kSuite accounts, kDrive, mail, contacts, calendar, and kChat from any terminal. Built in Python with token-based auth (no browser session), it speaks IMAP, CardDAV/CalDAV, and the Infomaniak REST API, with JSON, table, and human-readable output. Same philosophy as my other CLIs — terminal-first and built so AI agents can use it directly through shell commands, no MCP server or protocol required.",
+        pt: "Um CLI não oficial e open-source para o Infomaniak que permite gerir as suas contas kSuite, kDrive, mail, contactos, calendário e kChat a partir de qualquer terminal. Construído em Python com autenticação por token (sem sessão de browser), fala IMAP, CardDAV/CalDAV e a REST API da Infomaniak, com saída em JSON, tabela e texto legível. A mesma filosofia dos meus outros CLIs — terminal-first e construído para que agentes de IA o possam usar diretamente através de comandos shell, sem servidor MCP nem protocolo.",
+        lu: "En Open-Source inoffiziellen CLI fir Infomaniak deen dech deng kSuite Konten, kDrive, Mail, Kontakter, Kalenner a kChat aus all Terminal verwalten léisst. Gebaut a Python mat Token-baséierter Authentifikatioun (keng Browser-Sessioun), schwätzt et IMAP, CardDAV/CalDAV an d'Infomaniak REST API, mat JSON-, Tabell- a liesbarer Textausgab. Selwecht Philosophie wéi meng aner CLIs — Terminal-éischt a gebaut fir datt KI-Agenten et direkt iwwer Shell-Befehle kënne benotzen, keen MCP Server oder Protokoll néideg.",
+        de: "Ein inoffizielles Open-Source-CLI für Infomaniak, mit dem du deine kSuite-Konten, kDrive, Mail, Kontakte, Kalender und kChat von jedem Terminal aus verwalten kannst. In Python mit Token-basierter Authentifizierung (keine Browser-Sitzung) gebaut, spricht es IMAP, CardDAV/CalDAV und die Infomaniak-REST-API, mit JSON-, Tabellen- und lesbarer Textausgabe. Dieselbe Philosophie wie meine anderen CLIs — Terminal-first und so gebaut, dass KI-Agenten es direkt über Shell-Befehle nutzen können, kein MCP-Server oder Protokoll erforderlich.",
+        fr: "Un CLI non officiel et open source pour Infomaniak qui permet de gérer vos comptes kSuite, kDrive, mail, contacts, calendrier et kChat depuis n'importe quel terminal. Construit en Python avec une authentification par token (pas de session navigateur), il parle IMAP, CardDAV/CalDAV et l'API REST d'Infomaniak, avec une sortie JSON, tableau et texte lisible. Même philosophie que mes autres CLIs — terminal-first et conçu pour que les agents IA puissent l'utiliser directement via des commandes shell, sans serveur MCP ni protocole."
+    },
     "projects.azwhere.title": {
         en: "az-where",
         pt: "az-where",
@@ -1159,6 +1229,20 @@ const translations = {
         lu: "En Open-Source inoffizielle CLI fir Azure Disponibilitéits-Discovery. Et kontrolléiert wou VM SKUs wierklech deployéiert kënne ginn andeems Azure Policy, SKU Disponibilitéit, Subscription-Restriktiounen a live Quota kombinéiert ginn, an ënnerstëtzt elo och generesch Resource-Disponibilitéits-Checks, VM Präis-Schätzungen, Output-Modi fir Scripts an Update-Checks.",
         de: "Ein inoffizielles Open-Source-CLI für Azure-Verfügbarkeitsprüfung. Es prüft, wo VM-SKUs tatsächlich bereitgestellt werden können, indem Azure Policy, SKU-Verfügbarkeit, Subscription-Einschränkungen und Live-Quota kombiniert werden, und unterstützt jetzt auch generische Ressourcenverfügbarkeitsprüfungen, VM-Preisschätzungen, Ausgabemodi für Skripte und Update-Checks.",
         fr: "Un CLI non officiel et open source pour la découverte de disponibilité Azure. Il vérifie où des SKUs de VM peuvent réellement être déployées en combinant Azure Policy, disponibilité des SKUs, restrictions de l'abonnement et quota en temps réel, et prend maintenant aussi en charge les vérifications génériques de disponibilité des ressources, les estimations de prix des VMs, les modes de sortie pour scripts et les vérifications de mise à jour."
+    },
+    "projects.minicfl-az104.title": {
+        en: "MiniCFL — Azure AZ-104 Demonstration",
+        pt: "MiniCFL — Demonstração Azure AZ-104",
+        lu: "MiniCFL — Azure AZ-104 Demonstratioun",
+        de: "MiniCFL — Azure AZ-104 Demonstration",
+        fr: "MiniCFL — Démonstration Azure AZ-104"
+    },
+    "projects.minicfl-az104.desc": {
+        en: "A three-person group project: an Azure AZ-104 administrator demonstration built around a CFL train simulator running Petange → Luxembourg. The train is just the scenario — the real deliverable is a full Azure environment: Entra ID + RBAC, a management-group hierarchy with Policy, tags and budgets, a containerised web app from ACR on App Service, a private PostgreSQL database VM, an Azure Function timer, a VNet with NSGs, and Azure Monitor — across dev and prod in two regions.",
+        pt: "Um projeto de grupo de três pessoas: uma demonstração de administrador Azure AZ-104 construída à volta de um simulador do comboio CFL no trajeto Petange → Luxemburgo. O comboio é apenas o cenário — a verdadeira entrega é um ambiente Azure completo: Entra ID + RBAC, uma hierarquia de grupos de gestão com Policy, tags e orçamentos, uma aplicação web em contentor a partir do ACR no App Service, uma VM de base de dados PostgreSQL privada, um timer com Azure Function, uma VNet com NSGs e o Azure Monitor — em dev e prod em duas regiões.",
+        lu: "E Grupp-Projet vun dräi Persounen: eng Azure AZ-104 Administrateur-Demonstratioun ronderëm ee CFL-Zuchsimulator op der Streck Petange → Lëtzebuerg. Den Zuch ass nëmmen de Szenario — déi richteg Liwwerung ass eng komplett Azure-Ëmgéigend: Entra ID + RBAC, eng Management-Group-Hierarchie mat Policy, Tags a Budgeten, eng containeriséiert Web-App aus dem ACR um App Service, eng privat PostgreSQL-Datebank-VM, en Azure-Function-Timer, eng VNet mat NSGen an den Azure Monitor — iwwer Dev a Prod an zwou Regiounen.",
+        de: "Ein Gruppenprojekt von drei Personen: eine Azure-AZ-104-Administrator-Demonstration rund um einen Simulator des CFL-Zuges auf der Strecke Petange → Luxemburg. Der Zug ist nur das Szenario — die eigentliche Leistung ist eine vollständige Azure-Umgebung: Entra ID + RBAC, eine Management-Group-Hierarchie mit Policy, Tags und Budgets, eine containerisierte Web-App aus der ACR im App Service, eine private PostgreSQL-Datenbank-VM, ein Azure-Function-Timer, ein VNet mit NSGs und Azure Monitor — über Dev und Prod in zwei Regionen.",
+        fr: "Un projet de groupe de trois personnes : une démonstration d'administrateur Azure AZ-104 construite autour d'un simulateur du train CFL sur la ligne Petange → Luxembourg. Le train n'est que le scénario — le vrai livrable est un environnement Azure complet : Entra ID + RBAC, une hiérarchie de groupes d'administration avec Policy, étiquettes et budgets, une application web conteneurisée depuis l'ACR sur App Service, une VM de base de données PostgreSQL privée, un minuteur Azure Function, un VNet avec NSGs et Azure Monitor — en dev et prod sur deux régions."
     },
     "projects.modal.relatedProjects": {
         en: "Related Projects",
@@ -1369,6 +1453,20 @@ const translations = {
         lu: "Fir de Modul Cloud Infrastructure 2 huet meng Zwee-Persounen-Equipe e blanke Intel 2U Rackserver geholl an en an e komplette NAS verwandelt: Hardware-RAID 5 op engem Areca ARC-1880 Controller, e Btrfs-RAID-1-Spigel, SMB-Deelunge mat Rechter pro Benotzer, Out-of-Band-Verwaltung an en iSCSI-Block-Späicher-Zil, getest vun engem Windows-Client.",
         de: "Für das Modul Cloud Infrastructure 2 nahm mein Zweier-Team einen blanken Intel-2U-Rackserver und machte daraus ein vollständiges NAS: Hardware-RAID 5 auf einem Areca-ARC-1880-Controller, ein Btrfs-RAID-1-Spiegel, SMB-Freigaben mit Rechten pro Benutzer, Out-of-Band-Verwaltung und ein iSCSI-Blockspeicher-Ziel, getestet von einem Windows-Client.",
         fr: "Pour le module Cloud Infrastructure 2, mon équipe de deux personnes a pris un serveur rack Intel 2U nu et en a fait un NAS complet : RAID 5 matériel sur un contrôleur Areca ARC-1880, un miroir Btrfs RAID 1, des partages SMB avec permissions par utilisateur, une gestion hors bande et une cible de stockage en bloc iSCSI testée depuis un client Windows."
+    },
+    "projects.vircl-virtualization.title": {
+        en: "Server Virtualization Systems",
+        pt: "Sistemas de Virtualização de Servidores",
+        lu: "Server-Virtualiséierungssystemer",
+        de: "Server-Virtualisierungssysteme",
+        fr: "Systèmes de virtualisation de serveurs"
+    },
+    "projects.vircl-virtualization.desc": {
+        en: "For the VIRCL module of the BTS in Cloud Computing, my two-person team deployed and compared VMware ESXi/vCenter and Proxmox VE across four HP servers — 17 virtualization features on both, from VM lifecycle and shared NFS/iSCSI storage to live migration and backups. Our Clustering specialisation nested a third node inside the opposite hypervisor on each side to build real three-node quorum with vSphere HA/DRS and Proxmox HA.",
+        pt: "Para o módulo VIRCL do BTS em Cloud Computing, a minha equipa de duas pessoas implementou e comparou o VMware ESXi/vCenter e o Proxmox VE em quatro servidores HP — 17 funcionalidades de virtualização em ambos, do ciclo de vida das VMs e armazenamento partilhado NFS/iSCSI à migração em tempo real e backups. A nossa especialização em Clustering aninhou um terceiro nó dentro do hipervisor oposto de cada lado para criar um quórum real de três nós com vSphere HA/DRS e HA do Proxmox.",
+        lu: "Fir de VIRCL-Modul vum BTS Cloud Computing huet meng Zwee-Persounen-Equipe de VMware ESXi/vCenter an de Proxmox VE op véier HP-Serveren installéiert a verglach — 17 Virtualiséierungsfunktiounen op béiden, vum VM-Liewenszyklus a gedeelten NFS/iSCSI-Späicher bis Live-Migratioun a Backups. Eis Clustering-Spezialisatioun huet op all Säit en drëtten Node am géigeniwwerleienden Hypervisor nestéiert fir e richtege Quorum mat dräi Noden mat vSphere HA/DRS a Proxmox HA opzebauen.",
+        de: "Für das VIRCL-Modul des BTS Cloud Computing setzte mein Zweier-Team VMware ESXi/vCenter und Proxmox VE auf vier HP-Servern ein und verglich sie — 17 Virtualisierungsfunktionen auf beiden, vom VM-Lebenszyklus und gemeinsamem NFS/iSCSI-Speicher bis zu Live-Migration und Backups. Unsere Clustering-Spezialisierung verschachtelte auf jeder Seite einen dritten Knoten im jeweils anderen Hypervisor, um ein echtes Drei-Knoten-Quorum mit vSphere HA/DRS und Proxmox HA aufzubauen.",
+        fr: "Pour le module VIRCL du BTS en Cloud Computing, mon équipe de deux personnes a déployé et comparé VMware ESXi/vCenter et Proxmox VE sur quatre serveurs HP — 17 fonctionnalités de virtualisation sur les deux, du cycle de vie des VM et du stockage partagé NFS/iSCSI à la migration à chaud et aux sauvegardes. Notre spécialisation Clustering a imbriqué un troisième nœud dans l'hyperviseur opposé de chaque côté pour bâtir un vrai quorum à trois nœuds avec vSphere HA/DRS et HA Proxmox."
     },
     "footer.copyright": {
         en: "© {year} Guilherme Videira Marques.",

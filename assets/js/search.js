@@ -117,7 +117,7 @@
                 // ignore
             }
 
-            window.location.href = pathPrefix + 'index.html#contact';
+            window.location.href = '/#contact';
         }, 0);
     }
 
@@ -237,6 +237,7 @@
                 const description = project.descriptionKey ? t(project.descriptionKey, project.description) : project.description;
                 const categories = project.categories || (project.category ? [project.category] : []);
                 const tags = project.tags || [];
+                const searchTerms = project.searchTerms || [];
 
                 searchData.push({
                     type: 'project',
@@ -246,6 +247,7 @@
                     description: description,
                     categories: categories.join(' '),
                     tags: tags.join(' '),
+                    searchTerms: searchTerms.join(' '),
                     allLangText: getAllLangText([project.nameKey, project.descriptionKey, ...(project.categoryKeys || [])]),
                     icon: project.icon || 'folder',
                     link: project.link,
@@ -299,6 +301,7 @@
                     provider: formation.provider,
                     category: formation.category,
                     skills: skills.join(' '),
+                    tags: (formation.tags || []).join(' '),
                     allLangText: getAllLangText([formation.nameKey, formation.descriptionKey]),
                     icon: 'book-open',
                     link: null,
@@ -317,6 +320,7 @@
                     { name: 'projectId', weight: 2 },
                     { name: 'description', weight: 1 },
                     { name: 'tags', weight: 1.5 },
+                    { name: 'searchTerms', weight: 1.5 },
                     { name: 'categories', weight: 1.5 },
                     { name: 'provider', weight: 0.8 },
                     { name: 'category', weight: 1 },
@@ -399,16 +403,17 @@
         html += '<div class="search-group-title">' + t('search.section.quickLinks', 'Quick Links') + '</div>';
 
         const quickLinks = [
-            { name: t('search.quicklink.allProjects', 'All Projects'), icon: 'layers', href: 'projects.html' },
-            { name: t('search.quicklink.allCertifications', 'All Certifications'), icon: 'award', href: 'certifications.html' },
-            { name: t('search.quicklink.contact', 'Contact'), icon: 'mail', href: 'index.html#contact' },
+            { name: t('search.quicklink.allProjects', 'All Projects'), icon: 'layers', href: 'projects' },
+            { name: t('projects.category.ai', 'AI & Automation'), icon: 'bot', href: 'projects?category=' + encodeURIComponent('ai&automation') },
+            { name: t('search.quicklink.allCertifications', 'All Certifications'), icon: 'award', href: 'certifications' },
+            { name: t('search.quicklink.contact', 'Contact'), icon: 'mail', href: '/#contact' },
             { name: t('search.quicklink.downloadCv', 'Download CV'), icon: 'file-text', href: '#', action: 'open-cv' }
         ];
 
         quickLinks.forEach((link, index) => {
             const isInSubdirectory = window.location.pathname.includes('/projects/') || window.location.pathname.includes('/certifications/');
             const pathPrefix = isInSubdirectory ? '../' : '';
-            const href = link.href.startsWith('http') ? link.href : pathPrefix + link.href;
+            const href = (link.href.startsWith('http') || link.href.startsWith('/')) ? link.href : pathPrefix + link.href;
 
             html += '<a href="' + href + '" class="search-result-item quick-link-item"' +
                     (link.download ? ' download' : '') +
@@ -448,6 +453,7 @@
             { name: 'Docker', icon: 'box' },
             { name: 'Kubernetes', icon: 'boxes' },
             { name: 'Azure', icon: 'cloud' },
+            { name: 'AI', icon: 'bot' },
             { name: 'Python', icon: 'code' },
             { name: 'JavaScript', icon: 'code-2' }
         ];
@@ -564,11 +570,27 @@
 	        const isDbTerm = Boolean(dbTerm);
 	        const isRpi = isRpiQuery(normalizedQuery);
 	        const isPyGroup = isPythonQuery(normalizedQuery);
+	        const isKube = isKubeQuery(normalizedQuery);
 
 	        // Perform search (with synonym expansion)
 	        let results = mergeSearchResults([query, ...getSynonymQueries(normalizedQuery)]);
-	        if (query.length <= 4 && !isJavaScriptQuery(normalizedQuery) && !isDbGroup && !isDbTerm && !isRpi && !isPyGroup) {
+	        const shouldUseExactQueryFilter =
+	            (query.length <= 4 || isExactTechnicalQuery(normalizedQuery)) &&
+	            !isJavaScriptQuery(normalizedQuery) &&
+	            !isDbGroup &&
+	            !isDbTerm &&
+	            !isRpi &&
+	            !isPyGroup &&
+	            !isKube;
+	        if (shouldUseExactQueryFilter) {
 	            results = results.filter(result => itemContainsQuery(result.item, normalizedQuery));
+	            results = mergeUniqueResults(results, directSearchBySubstring(normalizedQuery));
+	        }
+	        results = prioritizeExactSearchTermMatches(results, normalizedQuery);
+	        if (isKube) {
+	            const kubeMatchers = getKubeMatchers(normalizedQuery);
+	            const filtered = results.filter(result => itemMatchesAnyPattern(result.item, kubeMatchers));
+	            results = mergeUniqueResults(filtered, directSearchByPatterns(kubeMatchers));
 	        }
 	        if (isJavaScriptQuery(normalizedQuery)) {
 	            const jsMatchers = getJavaScriptMatchers();
@@ -858,6 +880,23 @@
         );
     }
 
+    function getKubeMatchers(normalizedQuery) {
+        if (/\bk3s\b/.test(normalizedQuery)) {
+            return [/\bk3s\b/i];
+        }
+
+        if (/\bk8s\b/.test(normalizedQuery)) {
+            return [/\bk8s\b/i, /\bkubernetes\b/i];
+        }
+
+        return [
+            /\bkubernetes\b/i,
+            /\bk8s\b/i,
+            /\bk3s\b/i,
+            /\bkube(?:rnetes)?\b/i
+        ];
+    }
+
 	    function isPythonQuery(normalizedQuery) {
 	        const compact = normalizedQuery.replace(/\s+/g, '');
 	        if (compact.includes('python')) return true;
@@ -869,6 +908,7 @@
         const compact = normalizedQuery.replace(/\s+/g, '');
         return (
             /\bdb\b/.test(normalizedQuery) ||
+            /\bsql\b/.test(normalizedQuery) ||
             normalizedQuery.includes('database') ||
             normalizedQuery.includes('databases') ||
             compact.startsWith('datab')
@@ -933,7 +973,7 @@
             normalizedQuery.includes('javascript') ||
             /\bjs\b/.test(normalizedQuery) ||
             normalizedQuery.includes('java script') ||
-            (compact.startsWith('jav') && compact.length >= 3)
+            (compact.startsWith('jav') && compact !== 'java' && compact.length >= 3)
         );
     }
 
@@ -1021,6 +1061,20 @@
             .map(item => ({ item, score: 0 }));
     }
 
+    function mergeUniqueResults(primary, secondary) {
+        const merged = Array.isArray(primary) ? primary.slice() : [];
+        const seen = new Set(merged.map(result => `${result.item.type}:${result.item.id}`));
+
+        (secondary || []).forEach(result => {
+            const key = `${result.item.type}:${result.item.id}`;
+            if (seen.has(key)) return;
+            seen.add(key);
+            merged.push(result);
+        });
+
+        return merged;
+    }
+
     function getRpiMatchers() {
         return [
             /\bras(pberry)?\s*pi\b/i,
@@ -1060,6 +1114,7 @@
             item.projectId,
             item.description,
             item.tags,
+            item.searchTerms,
             item.categories,
             item.provider,
             item.category,
@@ -1067,7 +1122,52 @@
             item.level
         ].filter(Boolean);
         const haystack = parts.join(' ').toLowerCase();
+
+        if (isExactTechnicalQuery(normalizedQuery)) {
+            return textContainsToken(haystack, normalizedQuery);
+        }
+
         return haystack.includes(normalizedQuery);
+    }
+
+    function isExactTechnicalQuery(normalizedQuery) {
+        const compact = normalizedQuery.replace(/[^a-z0-9+#]/g, '');
+        const exactTerms = [
+            '2fa', 'ai', 'api', 'aws', 'cli', 'cms', 'css', 'db', 'dns', 'erp',
+            'fido2', 'ia', 'iot', 'java', 'js', 'jwt', 'k3s', 'k8s', 'ki',
+            'kvm', 'lxc', 'mfa', 'nas', 'nfs', 'oidc', 'oauth', 'oauth2',
+            'pi', 'pypi', 'rbac', 'rds', 'rpi', 's3', 'smb', 'sql', 'ssl',
+            'sso', 'tls', 'totp', 'tui', 'vm', 'vmfs', 'vms', 'vpn', 'word',
+            'webauthn', 'zfs'
+        ];
+        return exactTerms.includes(compact);
+    }
+
+    function textContainsToken(haystack, token) {
+        const compactToken = token.replace(/[^a-z0-9+#]/g, '');
+        if (!compactToken) return false;
+        const regex = new RegExp('(^|[^a-z0-9])' + escapeRegExp(compactToken) + '([^a-z0-9]|$)', 'i');
+        return regex.test(haystack);
+    }
+
+    function prioritizeExactSearchTermMatches(results, normalizedQuery) {
+        if (!Array.isArray(results) || results.length === 0 || !normalizedQuery) return results;
+
+        return results.slice().sort((a, b) => {
+            const aHasExactTerm = itemHasExactSearchTerm(a.item, normalizedQuery);
+            const bHasExactTerm = itemHasExactSearchTerm(b.item, normalizedQuery);
+            if (aHasExactTerm === bHasExactTerm) return 0;
+            return aHasExactTerm ? -1 : 1;
+        });
+    }
+
+    function itemHasExactSearchTerm(item, normalizedQuery) {
+        const terms = item?.data?.searchTerms || [];
+        if (!Array.isArray(terms) || terms.length === 0) return false;
+        const haystack = terms.join(' ').toLowerCase();
+        return (isExactTechnicalQuery(normalizedQuery) || normalizedQuery.length <= 4)
+            ? textContainsToken(haystack, normalizedQuery)
+            : haystack.includes(normalizedQuery);
     }
 
     function itemContainsAnyTerm(item, terms) {
@@ -1076,6 +1176,7 @@
             item.name,
             item.description,
             item.tags,
+            item.searchTerms,
             item.categories,
             item.provider,
             item.category,
@@ -1092,6 +1193,7 @@
             item.name,
             item.description,
             item.tags,
+            item.searchTerms,
             item.categories,
             item.provider,
             item.category,
@@ -1100,6 +1202,36 @@
         ].filter(Boolean);
         const haystack = parts.join(' ');
         return patterns.some(pattern => pattern.test(haystack));
+    }
+
+    function getProjectResultTags(project, query) {
+        if (!project) return [];
+
+        const tags = project.tags || [];
+        const searchTerms = project.searchTerms || [];
+        const normalizedQuery = (query || '').toLowerCase();
+        const combined = [];
+        const seen = new Set();
+
+        const addTag = (tag) => {
+            if (!tag) return;
+            const key = tag.toLowerCase();
+            if (seen.has(key)) return;
+            seen.add(key);
+            combined.push(tag);
+        };
+
+        if (normalizedQuery) {
+            tags
+                .filter(tag => tag.toLowerCase().includes(normalizedQuery))
+                .forEach(addTag);
+            searchTerms
+                .filter(term => term.toLowerCase().includes(normalizedQuery))
+                .forEach(addTag);
+        }
+
+        tags.forEach(addTag);
+        return combined.slice(0, 6);
     }
 
     function renderResults(grouped, query) {
@@ -1150,7 +1282,7 @@
                     html += '<div class="search-subgroup-title">' + escapeHtml(category) + '</div>';
                 }
                 items.forEach(item => {
-                    const link = item.link ? pathPrefix + item.link : '#projects';
+                    const link = item.link ? ((item.link.startsWith('http') || item.link.startsWith('/')) ? item.link : pathPrefix + item.link) : '#projects';
 
                     html += '<a href="' + link + '" class="search-result-item">';
                     html += '<div class="search-result-header">';
@@ -1170,9 +1302,10 @@
                         html += '<div class="search-result-description">' + highlightMatch(item.description, query) + '</div>';
                     }
 
-                    if (item.data.tags && item.data.tags.length > 0) {
+                    const projectTags = getProjectResultTags(item.data, query);
+                    if (projectTags.length > 0) {
                         html += '<div class="search-result-tags">';
-                        item.data.tags.slice(0, 6).forEach(tag => {
+                        projectTags.forEach(tag => {
                             html += '<span class="search-result-tag">' + highlightMatch(tag, query) + '</span>';
                         });
                         html += '</div>';
@@ -1208,7 +1341,7 @@
                     if (isOnCertificationsPage) {
                         html += '<a href="#" class="search-result-item" data-type="certification" data-id="' + certId + '">';
                     } else {
-                        html += '<a href="' + pathPrefix + 'certifications.html#' + certId + '" class="search-result-item">';
+                        html += '<a href="' + pathPrefix + 'certifications#' + certId + '" class="search-result-item">';
                     }
 
                     html += '<div class="search-result-header">';
@@ -1256,7 +1389,7 @@
                     html += '<a href="#" class="search-result-item" data-type="formation" data-id="' + formationId + '">';
                 } else {
                     // Not on certifications page - navigate there with hash
-                    html += '<a href="' + pathPrefix + 'certifications.html#' + formationId + '" class="search-result-item">';
+                    html += '<a href="' + pathPrefix + 'certifications#' + formationId + '" class="search-result-item">';
                 }
 
                 html += '<div class="search-result-header">';
@@ -1342,9 +1475,9 @@
                     const isInSubdirectory = window.location.pathname.includes('/projects/') || window.location.pathname.includes('/certifications/');
                     const pathPrefix = isInSubdirectory ? '../' : '';
                     const target =
-                        action === 'go-projects' ? (pathPrefix + 'projects.html') :
-                        action === 'go-certifications' ? (pathPrefix + 'certifications.html') :
-                        (pathPrefix + 'index.html');
+                        action === 'go-projects' ? (pathPrefix + 'projects') :
+                        action === 'go-certifications' ? (pathPrefix + 'certifications') :
+                        '/';
                     window.location.href = target;
                 }
             });
@@ -1365,10 +1498,14 @@
             ? highlightTerms
             : [query];
         const pattern = terms
-            .map(term => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+            .map(escapeRegExp)
             .join('|');
         const regex = new RegExp('(' + pattern + ')', 'gi');
         return escapedText.replace(regex, '<mark>$1</mark>');
+    }
+
+    function escapeRegExp(text) {
+        return String(text).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 
 

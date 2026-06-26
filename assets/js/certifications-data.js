@@ -58,7 +58,7 @@ const CERTIFICATIONS = [
         examScore: 771, // Official exam score (pass 700)
         skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
         skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'], // Translation keys
-        relatedProjects: [], // No direct project linkage
+        relatedProjects: ['minicfl-az104'], // AZ-104 demo project used Azure Fundamentals knowledge
         relatedFormations: ['azure-fundamentals-training'], // IDs of related formations/trainings
         dateEarned: '2026-01-26', // January 26, 2026
         expiryDate: null,
@@ -83,7 +83,7 @@ const CERTIFICATIONS = [
         examScore: 850, // Official exam score
         skills: ['Presentation Design', 'Slide Management', 'Graphics & Media', 'Transitions & Animations'],
         skillsKeys: ['cert.powerpoint.associate.skills.design', 'cert.powerpoint.associate.skills.management', 'cert.powerpoint.associate.skills.graphics', 'cert.powerpoint.associate.skills.transitions'], // Translation keys
-        relatedProjects: ['pif', 'gradingdino'], // Used in PIF and GradingDino projects for documentation
+        relatedProjects: ['pif', 'gradingdino', 'unraid-nas'], // Used in project documentation and presentations
         relatedFormations: [], // IDs of related formations/trainings
         dateEarned: '2025-10-20', // October 20, 2025
         expiryDate: null,
@@ -108,7 +108,7 @@ const CERTIFICATIONS = [
         examScore: 960, // Official exam score
         skills: ['Document Management', 'Formatting', 'Tables & Lists', 'References & Collaboration'],
         skillsKeys: ['cert.word.associate.skills.management', 'cert.word.associate.skills.formatting', 'cert.word.associate.skills.tables', 'cert.word.associate.skills.references'], // Translation keys
-        relatedProjects: ['pif', 'gradingdino'], // Used in PIF and GradingDino projects for documentation
+        relatedProjects: ['pif', 'gradingdino', 'unraid-nas'], // Used in project documentation
         relatedFormations: [], // IDs of related formations/trainings
         dateEarned: '2025-11-17', // November 17, 2025
         expiryDate: null,
@@ -133,7 +133,7 @@ const CERTIFICATIONS = [
         examScore: 790, // Official exam score
         skills: ['Advanced Formatting', 'Custom Document Elements', 'Macros & Automation', 'Advanced Word Features'],
         skillsKeys: ['cert.word.expert.skills.formatting', 'cert.word.expert.skills.elements', 'cert.word.expert.skills.macros', 'cert.word.expert.skills.features'], // Translation keys
-        relatedProjects: ['pif', 'gradingdino'], // Used in PIF and GradingDino projects for documentation
+        relatedProjects: ['pif', 'gradingdino', 'vircl-virtualization'], // Used in PIF, GradingDino, and VIRCL project documentation
         relatedFormations: [], // IDs of related formations/trainings
         dateEarned: '2026-01-19', // January 19, 2026
         expiryDate: null,
@@ -161,9 +161,11 @@ const FORMATIONS = [
         format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
         location: 'Lycée Guillaume Kroll (LGK)', // Location/context
         relatedCertifications: ['azure-az900'], // Linked to AZ-900 certification
+        relatedProjects: ['minicfl-az104'], // Azure Fundamentals knowledge applied in AZ-104 demo
         skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
         skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'],
         logo: 'assets/img/logos/azure-logo.webp', // Azure logo (certification issuer)
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'pluralsight-az900',
@@ -178,6 +180,7 @@ const FORMATIONS = [
         format: 'Online',
         location: 'Pluralsight',
         relatedCertifications: ['azure-az900'],
+        relatedProjects: ['minicfl-az104'], // Azure Fundamentals prep applied in AZ-104 demo
         skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
         skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'],
         logo: 'assets/img/logos/pluralsight-logo.webp',
@@ -195,9 +198,11 @@ const FORMATIONS = [
         format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
         location: 'Lycée Guillaume Kroll (LGK)', // Location/context
         relatedCertifications: [], // IDs of related certifications (empty - certification not yet decided)
+        relatedProjects: ['teams-broadcast'], // Power Platform knowledge applied in Teams Broadcast tool
         skills: ['Power Platform', 'Power Apps', 'Power Automate', 'Power BI'],
         skillsKeys: ['formation.pl900.skills.platform', 'formation.pl900.skills.apps', 'formation.pl900.skills.automate', 'formation.pl900.skills.bi'],
         logo: 'assets/img/logos/power-platform-logo.webp', // Power Platform logo (certification issuer)
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'sustainable-cloud-workshop',
@@ -217,6 +222,7 @@ const FORMATIONS = [
         logo: 'assets/img/logos/arns-group-logo-white.webp', // Arηs Group logo - white version for dark mode
         logoLight: null, // No light version available - will need dark version or CSS filter
         logoDark: 'assets/img/logos/arns-group-logo-white.webp', // White logo for dark backgrounds
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'luxconnect-datacenter-visit',
@@ -241,9 +247,11 @@ const FORMATIONS = [
         format: 'In-person', // Format: 'In-person', 'Online', 'Hybrid'
         location: 'LuxConnect, Bettembourg', // Location/context
         relatedCertifications: [], // No related certification
+        relatedProjects: ['vircl-virtualization'], // Infrastructure redundancy and operations context applied to VIRCL clustering/HA work
         skills: ['Tier IV Data Center', 'Infrastructure Redundancy', 'Power Systems', 'Cooling Efficiency', 'Data Center Operations'],
         skillsKeys: ['formation.luxconnect.skills.tier4', 'formation.luxconnect.skills.redundancy', 'formation.luxconnect.skills.power', 'formation.luxconnect.skills.cooling', 'formation.luxconnect.skills.operations'],
         logo: 'assets/img/logos/luxconnect-icon.webp', // LuxConnect logo
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'restena-phishing-training',
@@ -261,6 +269,7 @@ const FORMATIONS = [
         skills: ['Phishing Methods', 'Social Engineering', 'Security Awareness', 'Prevention Techniques'],
         skillsKeys: ['formation.restena.phishing.skills.methods', 'formation.restena.phishing.skills.social', 'formation.restena.phishing.skills.awareness', 'formation.restena.phishing.skills.prevention'],
         logo: 'assets/img/logos/restena-logo.webp', // Restena logo
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'blockchain-introduction-training',
@@ -278,6 +287,7 @@ const FORMATIONS = [
         skills: ['Blockchain Fundamentals', 'Distributed Ledger Technology', 'Cryptocurrency Concepts', 'Blockchain Applications'],
         skillsKeys: ['formation.blockchain.intro.skills.fundamentals', 'formation.blockchain.intro.skills.dlt', 'formation.blockchain.intro.skills.crypto', 'formation.blockchain.intro.skills.applications'],
         logo: 'assets/img/logos/blockchain-academy-logo.webp', // The Blockchain Academy logo
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'aws-reinvent-recap-2026',
@@ -293,9 +303,11 @@ const FORMATIONS = [
         location: 'Belval, Luxembourg', // Location/context
         externalUrl: 'https://aws-recap-2025.arhs-group.com/',
         relatedCertifications: [], // No related certification
+        relatedProjects: ['ai-hermes-agent'], // MCP and enterprise AI model content mapped to the personal agent work
         skills: ['Amazon Connect', 'Cloud Security', 'Kiro IDE', 'Model Context Protocol', 'Enterprise AI Models'],
         skillsKeys: ['formation.awsrecap2026.skills.connect', 'formation.awsrecap2026.skills.security', 'formation.awsrecap2026.skills.kiro', 'formation.awsrecap2026.skills.mcp', 'formation.awsrecap2026.skills.models'],
         logo: 'assets/img/logos/aws-logo.webp', // AWS logo
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'aws-architecture-workshop',
@@ -313,6 +325,7 @@ const FORMATIONS = [
         skills: ['AWS Architecture', 'AWS Services', 'Cloud Fundamentals', 'Hands-on Labs'],
         skillsKeys: ['formation.awsarchitecture.skills.architecture', 'formation.awsarchitecture.skills.services', 'formation.awsarchitecture.skills.fundamentals', 'formation.awsarchitecture.skills.labs'],
         logo: 'assets/img/logos/aws-logo.webp',
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'luxembourg-army-visit',
@@ -330,6 +343,7 @@ const FORMATIONS = [
         skills: ['Defense IT Infrastructure', 'Satellite Communications', 'Cybersecurity Operations', 'National Security Systems'],
         skillsKeys: ['formation.luxembourgarmy.skills.infrastructure', 'formation.luxembourgarmy.skills.satellite', 'formation.luxembourgarmy.skills.cybersecurity', 'formation.luxembourgarmy.skills.security'],
         logo: 'assets/img/logos/luxembourg-army-logo.webp',
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'az040-powershell-training',
@@ -344,9 +358,11 @@ const FORMATIONS = [
         format: 'In-person',
         location: 'Lycée Guillaume Kroll (LGK)',
         relatedCertifications: [],
+        relatedProjects: ['rds-documentation', 'vircl-virtualization'], // PowerShell/PowerCLI automation used across RDS and VIRCL administration
         skills: ['PowerShell Scripting', 'Task Automation', 'Remote Administration', 'Azure PowerShell'],
         skillsKeys: ['formation.az040.skills.scripting', 'formation.az040.skills.automation', 'formation.az040.skills.remote', 'formation.az040.skills.azure'],
         logo: 'assets/img/logos/powershell-logo.webp',
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'quantum-computing-intro',
@@ -365,6 +381,7 @@ const FORMATIONS = [
         skillsKeys: ['formation.quantum.skills.fundamentals', 'formation.quantum.skills.comparison', 'formation.quantum.skills.emerging'],
         logo: 'assets/img/logos/deep-logo.webp',
         logoDark: 'assets/img/logos/deep-logo-white.webp',
+        tags: ['EXTEX'], // External extravenant (external company presenter)
     },
     {
         id: 'lgk-open-day-bts-cloud-computing',
@@ -390,16 +407,28 @@ const FORMATIONS = [
 // Project name translations for modal display
 const PROJECT_NAMES = {
     'homelab': {
-        key: 'project.homelab.name',
+        key: 'projects.homelab.title',
         fallback: 'SyntraLab Personal Cloud'
     },
     'gradingdino': {
-        key: 'project.gradingdino.name',
+        key: 'projects.gradingdino.title',
         fallback: 'GradingDino'
     },
     'pif': {
-        key: 'project.pif.name',
-        fallback: 'PIF - Personal Information Form'
+        key: 'projects.plant.title',
+        fallback: 'Smart Plant Monitoring - Final Project'
+    },
+    'minicfl-az104': {
+        key: 'projects.minicfl-az104.title',
+        fallback: 'MiniCFL — Azure AZ-104 Demonstration'
+    },
+    'teams-broadcast': {
+        key: 'projects.teamsbroadcast.title',
+        fallback: 'Teams Broadcast System'
+    },
+    'rds-documentation': {
+        key: 'projects.rds.title',
+        fallback: 'Remote Desktop Services (RDS) Documentation'
     }
 };
 

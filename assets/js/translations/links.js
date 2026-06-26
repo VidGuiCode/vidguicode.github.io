@@ -131,11 +131,11 @@
 
         // Footer
         "links.footer": {
-            en: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"index.html\">vidguicode.github.io</a>",
-            pt: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"index.html\">vidguicode.github.io</a>",
-            lu: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"index.html\">vidguicode.github.io</a>",
-            de: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"index.html\">vidguicode.github.io</a>",
-            fr: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"index.html\">vidguicode.github.io</a>"
+            en: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
+            pt: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
+            lu: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
+            de: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
+            fr: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>"
         }
     });
 })();

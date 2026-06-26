@@ -9,6 +9,212 @@
 (function () {
     'use strict';
     const extra = {
+        /* ---- Two-lens layout: at-a-glance metric chips ---- */
+        "project.unraid.glance.raid.label": {
+            en: "RAID arrays (hardware + software)",
+            pt: "arrays RAID (hardware + software)",
+            lu: "RAID-Arrays (Hardware + Software)",
+            de: "RAID-Arrays (Hardware + Software)",
+            fr: "arrays RAID (matériel + logiciel)"
+        },
+        "project.unraid.glance.shares.label": {
+            en: "multi-user SMB shares",
+            pt: "partilhas SMB multiutilizador",
+            lu: "Multi-User-SMB-Deelungen",
+            de: "Mehrbenutzer-SMB-Freigaben",
+            fr: "partages SMB multi-utilisateurs"
+        },
+        "project.unraid.glance.storage.label": {
+            en: "usable storage",
+            pt: "armazenamento utilizável",
+            lu: "notzbare Späicher",
+            de: "nutzbarer Speicher",
+            fr: "stockage utilisable"
+        },
+        "project.unraid.glance.cores.label": {
+            en: "CPU cores (dual Xeon)",
+            pt: "núcleos de CPU (dois Xeon)",
+            lu: "CPU-Cores (zwee Xeon)",
+            de: "CPU-Kerne (zwei Xeon)",
+            fr: "cœurs CPU (deux Xeon)"
+        },
+
+        /* ---- Architecture diagram (storage stack) ---- */
+        "project.unraid.arch.title": {
+            en: "How the storage stack fits together",
+            pt: "Como a stack de armazenamento se encaixa",
+            lu: "Wéi de Späicher-Stack zesummespillt",
+            de: "Wie der Speicher-Stack zusammenpasst",
+            fr: "Comment s'articule la pile de stockage"
+        },
+        "project.unraid.arch.strip": {
+            en: "Disks to clients",
+            pt: "Dos discos aos clientes",
+            lu: "Vun den Disken bis bei d'Clienten",
+            de: "Von den Disks zu den Clients",
+            fr: "Des disques aux clients"
+        },
+        "project.unraid.arch.sas": {
+            en: "SAS disks",
+            pt: "Discos SAS",
+            lu: "SAS-Disken",
+            de: "SAS-Disks",
+            fr: "Disques SAS"
+        },
+        "project.unraid.arch.sata": {
+            en: "SATA disks",
+            pt: "Discos SATA",
+            lu: "SATA-Disken",
+            de: "SATA-Disks",
+            fr: "Disques SATA"
+        },
+        "project.unraid.arch.rack": {
+            en: "Intel SR2600 · UnRAID",
+            pt: "Intel SR2600 · UnRAID",
+            lu: "Intel SR2600 · UnRAID",
+            de: "Intel SR2600 · UnRAID",
+            fr: "Intel SR2600 · UnRAID"
+        },
+        "project.unraid.arch.shares": {
+            en: "Shares & target",
+            pt: "Partilhas e alvo",
+            lu: "Deelungen & Zil",
+            de: "Freigaben & Ziel",
+            fr: "Partages & cible"
+        },
+        "project.unraid.arch.clients": {
+            en: "Family clients",
+            pt: "Clientes da família",
+            lu: "Famill-Clienten",
+            de: "Familien-Clients",
+            fr: "Clients de la famille"
+        },
+        "project.unraid.arch.initiator": {
+            en: "iSCSI initiator",
+            pt: "Iniciador iSCSI",
+            lu: "iSCSI-Initiator",
+            de: "iSCSI-Initiator",
+            fr: "Initiateur iSCSI"
+        },
+        "project.unraid.arch.note": {
+            en: "Per-user permissions gate every share — parents read/write, the child is read-only and can't touch Backup. RAID 5 parity lives in the Areca card, so UnRAID sees one disk; Intel RMM3 manages the box out-of-band even when the OS is down.",
+            pt: "As permissões por utilizador controlam cada partilha — os pais leem/escrevem, a criança é só de leitura e não pode tocar no Backup. A paridade do RAID 5 vive na placa Areca, por isso o UnRAID vê um único disco; o Intel RMM3 gere o servidor out-of-band mesmo com o SO desligado.",
+            lu: "Rechter pro Benotzer kontrolléieren all Deelung — d'Elteren liesen/schreiwen, d'Kand ass nëmme-liesen a kann de Backup net beréieren. D'RAID-5-Paritéit läit op der Areca-Kaart, also gesäit UnRAID eng eenzeg Disk; Intel RMM3 verwalt de Server out-of-band, och wann den OS ënnen ass.",
+            de: "Rechte pro Benutzer steuern jede Freigabe — Eltern lesen/schreiben, das Kind ist nur lesend und kann Backup nicht anfassen. Die RAID-5-Parität liegt auf der Areca-Karte, also sieht UnRAID eine einzige Disk; Intel RMM3 verwaltet den Server out-of-band, selbst wenn das OS aus ist.",
+            fr: "Les permissions par utilisateur contrôlent chaque partage — les parents lisent/écrivent, l'enfant est en lecture seule et ne peut pas toucher à Backup. La parité RAID 5 vit sur la carte Areca, donc UnRAID voit un seul disque ; l'Intel RMM3 gère le serveur hors bande même quand l'OS est éteint."
+        },
+
+        /* ---- Overview "what this server does" cards ---- */
+        "project.unraid.does.title": {
+            en: "What this server does",
+            pt: "O que este servidor faz",
+            lu: "Wat dëse Server mécht",
+            de: "Was dieser Server macht",
+            fr: "Ce que fait ce serveur"
+        },
+        "project.unraid.does.drive.title": {
+            en: "A shared family drive",
+            pt: "Um disco partilhado da família",
+            lu: "E gedeelten Famill-Drive",
+            de: "Ein geteiltes Familienlaufwerk",
+            fr: "Un disque familial partagé"
+        },
+        "project.unraid.does.drive.desc": {
+            en: "Photos, media and documents that everyone in the house can open from any computer.",
+            pt: "Fotos, media e documentos que todos em casa podem abrir a partir de qualquer computador.",
+            lu: "Fotoen, Medien an Dokumenter, déi jiddereen am Haus vun all Computer aus opmaache kann.",
+            de: "Fotos, Medien und Dokumente, die jeder im Haus von jedem Computer aus öffnen kann.",
+            fr: "Photos, médias et documents que tout le monde à la maison peut ouvrir depuis n'importe quel ordinateur."
+        },
+        "project.unraid.does.access.title": {
+            en: "Everyone gets the right access",
+            pt: "Cada um tem o acesso certo",
+            lu: "Jiddereen kritt de richtegen Zougang",
+            de: "Jeder bekommt den richtigen Zugriff",
+            fr: "Chacun a le bon accès"
+        },
+        "project.unraid.does.access.desc": {
+            en: "Parents can edit, the kid is read-only, and the backup folder is locked down — set per person.",
+            pt: "Os pais podem editar, a criança é só de leitura e a pasta de backup está bloqueada — definido por pessoa.",
+            lu: "D'Elteren kënnen änneren, d'Kand ass nëmme-liesen, an den Backup-Dossier ass gespaart — pro Persoun agestallt.",
+            de: "Eltern können bearbeiten, das Kind ist nur lesend, und der Backup-Ordner ist gesperrt — pro Person festgelegt.",
+            fr: "Les parents peuvent éditer, l'enfant est en lecture seule et le dossier de sauvegarde est verrouillé — réglé par personne."
+        },
+        "project.unraid.does.redundant.title": {
+            en: "Survives a dead disk",
+            pt: "Sobrevive a um disco avariado",
+            lu: "Iwwerlieft eng futti Disk",
+            de: "Übersteht eine defekte Disk",
+            fr: "Survit à un disque mort"
+        },
+        "project.unraid.does.redundant.desc": {
+            en: "Drives are mirrored and parity-protected, so if one disk fails, nothing is lost.",
+            pt: "Os discos são espelhados e protegidos por paridade, por isso se um disco falhar, nada se perde.",
+            lu: "D'Disken si gespigelt a paritéits-geschützt, also wann eng Disk ausfält, geet näischt verluer.",
+            de: "Die Disks sind gespiegelt und paritätsgeschützt, also geht beim Ausfall einer Disk nichts verloren.",
+            fr: "Les disques sont en miroir et protégés par parité, donc si un disque tombe en panne, rien n'est perdu."
+        },
+        "project.unraid.does.block.title": {
+            en: "Acts like a local disk too",
+            pt: "Também age como um disco local",
+            lu: "Wierkt och wéi eng lokal Disk",
+            de: "Verhält sich auch wie eine lokale Disk",
+            fr: "Se comporte aussi comme un disque local"
+        },
+        "project.unraid.does.block.desc": {
+            en: "It can also hand a Windows PC raw storage over the network that shows up like a built-in drive (iSCSI).",
+            pt: "Também pode dar a um PC Windows armazenamento bruto pela rede que aparece como um disco interno (iSCSI).",
+            lu: "Et kann engem Windows-PC och réi Späicher iwwer d'Netz ginn, deen wéi eng agebaute Disk erschéngt (iSCSI).",
+            de: "Es kann einem Windows-PC auch rohen Speicher über das Netzwerk geben, der wie ein eingebautes Laufwerk erscheint (iSCSI).",
+            fr: "Il peut aussi fournir à un PC Windows du stockage brut sur le réseau qui apparaît comme un disque interne (iSCSI)."
+        },
+
+        /* ---- Technical layer-stack titles ---- */
+        "project.unraid.stack.title": {
+            en: "Inside the Server",
+            pt: "Por Dentro do Servidor",
+            lu: "Am Server",
+            de: "Im Server",
+            fr: "Dans le serveur"
+        },
+        "project.unraid.stack.raid.title": {
+            en: "Storage & RAID",
+            pt: "Armazenamento e RAID",
+            lu: "Späicher & RAID",
+            de: "Speicher & RAID",
+            fr: "Stockage & RAID"
+        },
+
+        /* ---- Troubleshooting cards (split title/desc) ---- */
+        "project.unraid.trouble.web.title": {
+            en: "When the web UI died",
+            pt: "Quando a interface web morreu",
+            lu: "Wéi d'Web-UI ofgestuerwen ass",
+            de: "Als die Web-UI starb",
+            fr: "Quand l'interface web est tombée"
+        },
+        "project.unraid.trouble.web.desc": {
+            en: "After a config reset, nginx threw a 502 and PHP came back blank. Restarting <code>nginx</code>, <code>php-fpm</code> and <code>emhttp</code> by hand fixed it — and adding the daemon to UnRAID's startup <code>go</code> file made it stick.",
+            pt: "Após um reset de configuração, o nginx dava um 502 e o PHP vinha em branco. Reiniciar <code>nginx</code>, <code>php-fpm</code> e <code>emhttp</code> à mão resolveu — e adicionar o daemon ao ficheiro de arranque <code>go</code> do UnRAID tornou-o permanente.",
+            lu: "No engem Konfig-Reset huet nginx e 502 ginn an PHP koum eidel zréck. <code>nginx</code>, <code>php-fpm</code> an <code>emhttp</code> mat der Hand nei ze starten huet et geléist — an den Daemon an d'Startfichier <code>go</code> vun UnRAID derbäizesetzen huet et permanent gemaach.",
+            de: "Nach einem Konfig-Reset warf nginx einen 502 und PHP kam leer zurück. <code>nginx</code>, <code>php-fpm</code> und <code>emhttp</code> von Hand neu zu starten behob es — und den Daemon zur Startdatei <code>go</code> von UnRAID hinzuzufügen machte es dauerhaft.",
+            fr: "Après une réinitialisation de la config, nginx renvoyait une 502 et PHP revenait vide. Redémarrer <code>nginx</code>, <code>php-fpm</code> et <code>emhttp</code> à la main l'a corrigé — et ajouter le démon au fichier de démarrage <code>go</code> d'UnRAID l'a rendu permanent."
+        },
+        "project.unraid.trouble.btrfs.title": {
+            en: "Reviving the Btrfs pool",
+            pt: "Reanimar o pool Btrfs",
+            lu: "De Btrfs-Pool erëm zum Liewen erwächen",
+            de: "Den Btrfs-Pool wiederbeleben",
+            fr: "Réanimer le pool Btrfs"
+        },
+        "project.unraid.trouble.btrfs.desc": {
+            en: "The mirror refused to start with \"Too many wrong and/or missing disks.\" A fresh disk assignment (New Config, keeping the assignments) and reformatting the unmounted disks brought it back.",
+            pt: "O espelho recusava-se a arrancar com \"Too many wrong and/or missing disks.\" Uma nova atribuição de discos (New Config, mantendo as atribuições) e a reformatação dos discos não montados trouxe-o de volta.",
+            lu: "De Spigel huet refuséiert ze starten mat \"Too many wrong and/or missing disks.\" Eng nei Disk-Zouweisung (New Config, mat den Zouweisungen behalen) an d'Nei-Formatéiere vun den net gemounten Disken huet en zréckbruecht.",
+            de: "Der Spiegel weigerte sich zu starten mit \"Too many wrong and/or missing disks.\" Eine neue Disk-Zuweisung (New Config, unter Beibehaltung der Zuweisungen) und das Neuformatieren der nicht eingehängten Disks brachte ihn zurück.",
+            fr: "Le miroir refusait de démarrer avec \"Too many wrong and/or missing disks.\" Une nouvelle affectation des disques (New Config, en gardant les affectations) et le reformatage des disques non montés l'ont ramené."
+        },
+
         "project.unraid.meta.title": {
             en: "UnRAID Storage Server (NAS) | VidGuiCode",
             pt: "Servidor de Armazenamento UnRAID (NAS) | VidGuiCode",
@@ -388,11 +594,11 @@
             fr: "Livrables et matériel"
         },
         "project.unraid.section.assets.body": {
-            en: "We produced full technical documentation and a presentation for this project. They hold lab-internal details (addresses, credentials, identifiers), so I'm preparing a redacted, shareable version before they go online.",
-            pt: "Produzimos documentação técnica completa e uma apresentação para este projeto. Contêm detalhes internos do laboratório (endereços, credenciais, identificadores), por isso estou a preparar uma versão censurada e partilhável antes de ficarem online.",
-            lu: "Mir hunn eng komplett technesch Dokumentatioun an eng Presentatioun fir dëse Projet gemaach. Si enthalen Labo-intern Detailer (Adressen, Umeldedaten, Identifizéierer), also bereede ech eng zenséiert, deelbar Versioun vir, ier se online ginn.",
-            de: "Wir haben für dieses Projekt eine vollständige technische Dokumentation und eine Präsentation erstellt. Sie enthalten laborinterne Details (Adressen, Zugangsdaten, Kennungen), deshalb bereite ich eine geschwärzte, teilbare Version vor, bevor sie online gehen.",
-            fr: "Nous avons produit une documentation technique complète et une présentation pour ce projet. Elles contiennent des détails internes au laboratoire (adresses, identifiants, références), je prépare donc une version expurgée et partageable avant leur mise en ligne."
+            en: "Public PDF exports of the technical documentation and presentation used for the module delivery.",
+            pt: "Exportações PDF públicas da documentação técnica e da apresentação usadas para a entrega do módulo.",
+            lu: "Ëffentlech PDF-Exporter vun der technescher Dokumentatioun an der Presentatioun, déi fir d'Ofgab vum Modul benotzt goufen.",
+            de: "Öffentliche PDF-Exporte der technischen Dokumentation und der Präsentation, die für die Modulabgabe verwendet wurden.",
+            fr: "Exports PDF publics de la documentation technique et de la présentation utilisées pour la remise du module."
         },
         "project.unraid.asset.documentation.title": {
             en: "Technical Documentation",
@@ -408,6 +614,13 @@
             de: "Die vollständige Build-Dokumentation, mit Recherche, Hardware-Staging, RAID-Einrichtung, UnRAID-Konfiguration, Dateifreigabe und dem iSCSI-Test.",
             fr: "La documentation complète de la construction, couvrant la recherche, la préparation du matériel, la configuration RAID, la configuration UnRAID, le partage de fichiers et le test iSCSI."
         },
+        "project.unraid.asset.documentation.button": {
+            en: "Download Documentation (PDF)",
+            pt: "Descarregar Documentação (PDF)",
+            lu: "Dokumentatioun eroflueden (PDF)",
+            de: "Dokumentation herunterladen (PDF)",
+            fr: "Télécharger la documentation (PDF)"
+        },
         "project.unraid.asset.presentation.title": {
             en: "Presentation",
             pt: "Apresentação",
@@ -422,12 +635,12 @@
             de: "Die Foliensammlung, mit der der Speicherserver am Ende des Moduls vorgestellt und demonstriert wurde.",
             fr: "Le jeu de diapositives utilisé pour présenter et démontrer le serveur de stockage à la fin du module."
         },
-        "project.unraid.asset.comingSoon": {
-            en: "Coming soon",
-            pt: "Em breve",
-            lu: "Kënnt geschwënn",
-            de: "Demnächst",
-            fr: "Bientôt disponible"
+        "project.unraid.asset.presentation.button": {
+            en: "Download Presentation (PDF)",
+            pt: "Descarregar Apresentação (PDF)",
+            lu: "Presentatioun eroflueden (PDF)",
+            de: "Präsentation herunterladen (PDF)",
+            fr: "Télécharger la présentation (PDF)"
         }
     };
 

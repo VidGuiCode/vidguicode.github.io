@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Plant Monitoring (PIF) | VidGuiCode</title>
-    <meta name="description" content="Deep dive into my PIF Final Project - IoT plant monitoring system with ESP8266, Raspberry Pi, and full-stack web development.">
-    
+    <meta name="description" content="Deep dive into my PIF Final Project - a full IoT plant monitoring system: ESP8266 sensor nodes, a Raspberry Pi LAMP hub, enterprise networking, a RAID1 backup server, and a real-time web dashboard.">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+
     <!-- Icons - Load locally (version 0.555.0) -->
     <script src="../assets/js/icons.js" defer></script>
 
@@ -19,7 +19,7 @@
 
     <!-- Fuse.js for fuzzy search -->
     <script src="../assets/js/fuse.min.js"></script>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../assets/img/logos/vidguicode-favicon.svg">
     <link rel="apple-touch-icon" href="../assets/img/logos/vidguicode-favicon.svg">
@@ -29,6 +29,7 @@
     <script src="../assets/js/translations/project-pif.js"></script>
     <script src="../assets/js/i18n.js"></script>
     <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/project-view.js" defer></script>
     <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/certifications-data.js"></script>
     <script src="../assets/js/search.js"></script>
@@ -41,12 +42,13 @@
             gap: 0.5rem;
             background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
             color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
             font-weight: 600;
+            font-size: 1.25rem;
             margin-left: 1rem;
+            vertical-align: middle;
         }
-        
 
         /* Mobile: Category filter button */
         @media (max-width: 768px) {
@@ -55,13 +57,74 @@
             }
         }
 
-        /* Project Images */
-        .project-image-container {
-            margin: 2rem 0;
-            padding: 0;
-            text-align: center;
+        /* Side-by-side layout for intro section (mirrors homelab) */
+        .intro-with-image {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-top: 1rem;
         }
 
+        .intro-with-image .intro-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .intro-with-image .intro-text h2 {
+            margin-top: 0;
+        }
+
+        .intro-with-image .intro-image {
+            flex: 0 0 300px;
+            max-width: 300px;
+            margin-top: calc(48px + 1rem);
+        }
+
+        .intro-with-image .intro-image .project-image-wrapper img {
+            max-height: 300px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Tablet: collapse the article/sidebar grid to a single column.
+           At 769–1024px the 2-col grid couldn't shrink to fit, so the sidebar
+           overflowed the viewport and squeezed the intro text into a sliver. */
+        @media (max-width: 1024px) {
+            .project-meta-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .project-sidebar .card {
+                position: static;
+                top: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .intro-with-image {
+                flex-direction: column;
+                margin-top: 0;
+            }
+            .intro-with-image .intro-image {
+                flex: 1;
+                max-width: 100%;
+                margin-top: 1.5rem;
+                text-align: center;
+            }
+            /* Wrapper is inline-block by default, which collapses to the image's
+               intrinsic width and hugs the left edge. Make it block so the image
+               fills (and is centered in) the stacked column. */
+            .intro-with-image .intro-image .project-image-wrapper {
+                display: block;
+                width: 100%;
+            }
+            .intro-with-image .intro-image .project-image-wrapper img {
+                max-height: 280px;
+            }
+        }
+
+        /* Project Images */
         .project-image-wrapper {
             position: relative;
             display: inline-block;
@@ -108,21 +171,8 @@
             }
         }
 
-
         .project-image {
-            width: auto;
-            max-width: 260px;
-            height: auto;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 6px;
-            border: none;
-            margin: 0 auto;
-            display: inline-block;
-            box-shadow: none;
             transition: transform 0.2s ease, opacity 0.2s ease;
-            opacity: 0.75;
-            cursor: pointer;
         }
 
         @media (min-width: 769px) {
@@ -133,134 +183,112 @@
             }
         }
 
-        /* Node image - adjust crop to show the light better, make it slightly wider */
-        .project-image.node-image {
-            max-width: 320px;
-            aspect-ratio: 4 / 3;
-            object-position: center 25%;
-        }
-
-        /* Display image - keep square */
-        .project-image.display-image {
-            max-width: 280px;
-            aspect-ratio: 1 / 1;
-        }
-        
-        @media (max-width: 768px) {
-            .project-image.node-image,
-            .project-image.display-image {
-                max-width: 100%;
-            }
-        }
-        
-        /* Image section container - seamlessly integrated */
-        .hardware-image-section {
-            padding: 1.5rem;
-            border-top: none;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        
-        .hardware-image-section .section-label {
-            display: none;
-        }
-        
-        .hardware-image-section .project-image-wrapper {
-            position: relative;
-            display: block;
-            flex-shrink: 0;
+        .project-image-caption {
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
             text-align: center;
         }
-        
-        
-        .hardware-image-section .project-image-wrapper:hover .project-image {
-            opacity: 0.95;
-            transform: scale(1.02);
-        }
-        
-        /* Typography uses centralized scale - see styles.css */
 
-        /* Water image - keep square */
-        .project-image.water-image {
-            max-width: 300px;
-        }
-
-        /* Packet tracer - keep full width, not square */
-        .project-image.network-image {
-            max-width: 100%;
-            width: 100%;
-            aspect-ratio: auto;
-            height: auto;
-            object-fit: contain;
-            background: #fff;
-        }
-        
-        /* Network image section - full width, left aligned */
-        .hardware-image-section:has(.network-image) {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1.5rem;
-        }
-        
-        .hardware-image-section:has(.network-image) .project-image-wrapper {
-            width: 100%;
-            text-align: left;
-        }
-        
-        .hardware-image-section:has(.network-image) .hardware-image-caption {
-            text-align: left;
-            margin-top: 0.75rem;
-        }
-
-
-        /* Typography uses centralized scale - see styles.css */
-
-        .project-image-grid {
+        /* Two-up "in action" photo strip */
+        .pif-photo-strip {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
             margin: 2rem 0;
         }
-        
+
+        .pif-photo-strip .project-image-container {
+            margin: 0;
+            text-align: center;
+        }
+
+        .pif-photo-strip .project-image {
+            width: 100%;
+            max-height: 240px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
         @media (max-width: 768px) {
-            .project-image-grid {
+            .pif-photo-strip {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
         }
 
-        .project-image-grid .project-image {
-            margin: 0;
+        /* Packet-tracer figure (technical) — full width, light backdrop for the diagram */
+        .pif-network-figure {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0 0.5rem;
         }
 
+        .pif-network-figure .project-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        .pif-network-figure .project-image-caption {
+            text-align: left;
+        }
+
+        /* Image Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            line-height: 1;
+        }
 
         @media (max-width: 768px) {
-            
-            .project-image {
+            .image-modal {
+                padding: 1rem;
+            }
+            .image-modal-content {
                 max-width: 100%;
-                width: 100%;
+                max-height: 90vh;
             }
-            .project-image-wrapper {
-                cursor: pointer;
-                -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
-                max-width: 100%;
-            }
-            .project-image-wrapper::after,
-            .project-image-wrapper::before {
-                display: none;
-            }
-            
-            /* Make images more tappable on mobile */
-            .project-image-wrapper {
-                touch-action: manipulation;
-            }
-
         }
-
     </style>
 </head>
-<body>
+<body data-view="overview">
     <div class="grid-background"></div>
 
     <!-- Search Modal (generated by search.js) -->
@@ -270,8 +298,8 @@
     <div id="navbar-container"></div>
 
     <main class="container" style="padding-top: 100px;">
-        
-        <a href="../index.html#projects" class="back-link">
+
+        <a href="/#projects" class="back-link">
             <i data-lucide="arrow-left"></i>
             <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
         </a>
@@ -280,10 +308,138 @@
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.pif.badge">FINAL PROJECT</div>
                 <h1>
-                    <span data-i18n="project.pif.title">Smart Plant Monitoring (PIF)</span>
+                    <span data-i18n="project.pif.title">Smart Plant Monitoring</span>
                     <span class="score-badge" data-i18n="project.pif.score">59/60</span>
                 </h1>
-                <p class="subtitle" data-i18n="project.pif.subtitle">Final project: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.</p>
+                <p class="subtitle" data-i18n="project.pif.subtitle">Final project from September 2024 to June 2025: a full IoT system with ESP8266 nodes, a Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.</p>
+            </div>
+        </section>
+
+        <section class="project-glance">
+            <div class="view-switch-row">
+                <div class="view-toggle" role="group" aria-label="View mode">
+                    <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
+                    <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
+                </div>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
+            </div>
+
+            <div class="glance-grid">
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">3</div>
+                    <div class="glance-label" data-i18n="project.pif.glance.machines.label">networked machines</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">4</div>
+                    <div class="glance-label" data-i18n="project.pif.glance.sensors.label">environmental sensors</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">2</div>
+                    <div class="glance-label" data-i18n="project.pif.glance.zones.label">VLAN-segmented zones</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">100+</div>
+                    <div class="glance-label" data-i18n="project.pif.glance.docs.label">pages of documentation</div>
+                </div>
+            </div>
+
+            <h2 data-i18n="project.pif.arch.title">How the system fits together</h2>
+            <div class="arch-diagram">
+                <div class="arch-strip">
+                    <span class="led led-g"></span>
+                    <span class="led led-a"></span>
+                    <span class="led led-d"></span>
+                    <span class="arch-strip-label" data-i18n="project.pif.arch.strip">System &amp; network flow</span>
+                </div>
+                <div class="arch-body">
+                    <div class="arch-flow">
+                        <div class="arch-col">
+                            <div class="arch-unit is-external">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.pif.arch.plant">Plant + Sensors</span></div>
+                                    <div class="u-meta">4 sensors</div>
+                                </div>
+                                <div class="u-spec">soil · temp · humidity · light</div>
+                            </div>
+                            <div class="arch-conn">&darr;</div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.pif.nodes.sensor.title">Sensor Node</span></div>
+                                    <div class="u-meta">ESP8266</div>
+                                </div>
+                                <div class="u-spec">pump + grow LED · MAC auth</div>
+                            </div>
+                        </div>
+
+                        <div class="arch-conn"><span data-i18n="project.pif.arch.wifi">Wi-Fi (WPA2)</span>&nbsp;&#8644;</div>
+
+                        <div class="arch-rack">
+                            <div class="arch-rack-label" data-i18n="project.pif.arch.cabinet">Server &amp; network cabinet</div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.pif.nodes.hub.title">Hub Server</span></div>
+                                    <div class="u-meta">Raspberry Pi 4</div>
+                                </div>
+                                <div class="u-spec">Apache · PHP · MariaDB</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.pif.nodes.backup.title">Backup Server</span></div>
+                                    <div class="u-meta">Ubuntu VM</div>
+                                </div>
+                                <div class="u-spec">RAID1 · rsync / SSH</div>
+                            </div>
+                            <div class="arch-unit">
+                                <div class="u-top">
+                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.pif.arch.router">Router</span></div>
+                                    <div class="u-meta">Cisco ISR4331</div>
+                                </div>
+                                <div class="u-spec">NAT/PAT · VLAN 10/20 · ACLs</div>
+                            </div>
+                        </div>
+
+                        <div class="arch-conn">&#8644;</div>
+
+                        <div class="arch-col">
+                            <div class="arch-unit is-internet">
+                                <div class="u-name"><span class="arch-led"></span><span data-i18n="project.pif.arch.internet">Internet (ISP)</span></div>
+                                <div class="u-spec">DNS 8.8.8.8 · fiber uplink</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch-note" data-i18n="project.pif.arch.note">Sensor nodes authenticate by MAC address and only reach the hub over the local Wi-Fi; web and FTP access from outside passes through the router's NAT and port-based ACLs.</div>
+                </div>
+            </div>
+
+            <div class="plain-only">
+                <h2 data-i18n="project.pif.does.title">What it actually does</h2>
+                <div class="does-grid">
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="sprout"></i></div>
+                        <h3 data-i18n="project.pif.does.water.title">Waters plants on its own</h3>
+                        <p data-i18n="project.pif.does.water.desc">It senses dry soil and runs the pump automatically, and switches on a grow light when the room gets too dark.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="monitor"></i></div>
+                        <h3 data-i18n="project.pif.does.dashboard.title">Live dashboard on a touchscreen</h3>
+                        <p data-i18n="project.pif.does.dashboard.desc">Real-time charts for temperature, light and moisture — with schedules and history, on a small touchscreen and in any browser.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="network"></i></div>
+                        <h3 data-i18n="project.pif.does.network.title">An enterprise-style network</h3>
+                        <p data-i18n="project.pif.does.network.desc">A complete company-style network — separate secured zones, proper routing and a simulated internet provider — designed and tested end to end in Cisco Packet Tracer.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="hard-drive"></i></div>
+                        <h3 data-i18n="project.pif.does.backup.title">Backs itself up every night</h3>
+                        <p data-i18n="project.pif.does.backup.desc">Every night it copies all its data to a second, mirrored server, so nothing is ever lost.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -291,155 +447,134 @@
             <!-- Main Content -->
             <article>
                 <div class="card">
-                    <i data-lucide="sprout" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
-                    <h2 data-i18n="project.pif.section.system.title">The "Plantimeter" System</h2>
-                    <p data-i18n="project.pif.section.system.body" data-i18n-html="true">This was my <strong>PIF (Projet Intégré Final)</strong> — the capstone project for my Computer Technician diploma. I built a complete IoT plant monitoring and automation system from scratch: hardware nodes, firmware, backend server, web dashboard, and enterprise networking.</p>
-                    
-                    <div class="hardware-showcase" style="margin: 2rem 0; display: grid; gap: 1.25rem;">
-                        
-                        <!-- Node Card: ESP8266 -->
-                        <div class="node-card" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                            <div style="height: 4px; background: linear-gradient(90deg, #22c55e, #16a34a);"></div>
-                            
-                            <div style="padding: 1.5rem;">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <div>
-                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.pif.nodes.sensor.title">Sensor Node</h3>
-                                        <div class="node-spec" style="color: #22c55e; margin-bottom: 0.75rem;" data-i18n="project.pif.nodes.sensor.spec">ESP8266 / Wemos D1 Mini</div>
-                                    </div>
-                                    <div class="node-detail" style="text-align: right; color: #888;">
-                                        <div data-i18n="project.pif.nodes.sensor.detail1">Custom PCB</div>
-                                        <div style="font-weight: 600; color: #22c55e;" data-i18n="project.pif.nodes.sensor.detail2">Wi-Fi + SQL</div>
-                                    </div>
-                                </div>
-                                <p class="node-card p" style="color: #888; margin: 0;" data-i18n="project.pif.nodes.sensor.body">
-                                    Measures soil moisture, temperature, humidity, and light. Controls water pump and grow LED. Authenticates via MAC address and syncs with the hub.
-                                </p>
-                            </div>
-                            <div class="node-tags" style="background: #111; padding: 0.75rem 1.5rem; border-top: 1px solid #222; display: flex; gap: 1rem; color: #555;">
-                                <span data-i18n="project.pif.nodes.sensor.tag.dht22">[DHT22]</span> <span data-i18n="project.pif.nodes.sensor.tag.bh1750">[BH1750]</span> <span data-i18n="project.pif.nodes.sensor.tag.sen0193">[SEN0193]</span> <span data-i18n="project.pif.nodes.sensor.tag.uln2803">[ULN2803]</span>
-                            </div>
-                            
-                            <!-- Hardware Image Section -->
-                            <div class="hardware-image-section" style="background: #1a1a1a;">
-                                <div class="section-label">Hardware Photo</div>
-                                <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/sensor-wemos-lightstandbulb.webp', 'ESP8266 Sensor Node with Wemos D1 Mini, sensors, and LED light stand')" style="cursor: pointer;">
-                                    <img src="../assets/img/projects/pif/sensor-wemos-lightstandbulb.webp" alt="ESP8266 Sensor Node with Wemos D1 Mini, sensors, and LED light stand" class="project-image node-image" loading="lazy">
-                                </div>
-                                <p class="hardware-image-caption" data-i18n="project.pif.images.sensor">ESP8266 Sensor Node: Wemos D1 Mini with DHT22, BH1750, SEN0193 sensors and LED grow light</p>
-                            </div>
+                    <div class="intro-with-image">
+                        <div class="intro-text">
+                            <i data-lucide="sprout" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                            <h2 data-i18n="project.pif.section.system.title">The "Plantimeter" System</h2>
+                            <p data-i18n="project.pif.section.system.body" data-i18n-html="true">This was my <strong>PIF (Projet Intégré Final)</strong> — the capstone project for my Computer Technician diploma. I built a complete IoT plant monitoring and automation system from scratch: hardware nodes, firmware, backend server, web dashboard, and enterprise networking.</p>
                         </div>
-
-                        <!-- Hub Card: Raspberry Pi -->
-                        <div class="node-card" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); border-radius: 12px; overflow: hidden; border: 1px solid #3b82f6; position: relative; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
-                            <div style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6);"></div>
-                            
-                            <div style="padding: 1.5rem;">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <div>
-                                        <h3 style="color: #fff; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.pif.nodes.hub.title">Hub Server</h3>
-                                        <div class="node-spec" style="color: #60a5fa; margin-bottom: 0.75rem;" data-i18n="project.pif.nodes.hub.spec">Raspberry Pi 4 / FullpageOS</div>
-                                    </div>
-                                    <div class="node-detail" style="text-align: right; color: #94a3b8;">
-                                        <div data-i18n="project.pif.nodes.hub.detail1">Touchscreen</div>
-                                        <div style="font-weight: 600; color: #60a5fa;" data-i18n="project.pif.nodes.hub.detail2">LAMP Stack</div>
-                                    </div>
-                                </div>
-                                <p class="node-card p" style="color: #94a3b8; margin: 0;" data-i18n="project.pif.nodes.hub.body">
-                                    Runs Apache, PHP, MariaDB. Hosts admin dashboard, touch UI for kiosk mode, and log API. Handles task scheduling and node management.
-                                </p>
+                        <div class="intro-image project-image-container">
+                            <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/sensor-wemos-lightstandbulb.webp', 'ESP8266 Sensor Node with Wemos D1 Mini, sensors, and LED light stand')">
+                                <img src="../assets/img/projects/pif/sensor-wemos-lightstandbulb.webp" alt="ESP8266 Sensor Node with Wemos D1 Mini, sensors, and LED light stand" class="project-image" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border-color);">
                             </div>
-                            <div class="node-tags" style="background: rgba(0,0,0,0.3); padding: 0.75rem 1.5rem; border-top: 1px solid #1e3a5f; display: flex; gap: 1rem; color: #64748b;">
-                                <span data-i18n="project.pif.nodes.hub.tag.apache">[APACHE]</span> <span data-i18n="project.pif.nodes.hub.tag.mariadb">[MARIADB]</span> <span data-i18n="project.pif.nodes.hub.tag.php">[PHP]</span> <span data-i18n="project.pif.nodes.hub.tag.ssl">[SSL]</span>
-                            </div>
-                            
-                            <!-- Hardware Image Section -->
-                            <div class="hardware-image-section" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);">
-                                <div class="section-label">Hardware Photo</div>
-                                <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/display-pi4.webp', 'Raspberry Pi 4 with touchscreen display showing the Plantimeter dashboard')" style="cursor: pointer;">
-                                    <img src="../assets/img/projects/pif/display-pi4.webp" alt="Raspberry Pi 4 with touchscreen display showing the Plantimeter dashboard" class="project-image display-image" loading="lazy">
-                                </div>
-                                <p class="hardware-image-caption" data-i18n="project.pif.images.display">Raspberry Pi 4 Hub Server with touchscreen display running the kiosk mode interface</p>
-                            </div>
+                            <p class="project-image-caption" data-i18n="project.pif.images.sensor">ESP8266 sensor node: Wemos D1 Mini with DHT22, BH1750, SEN0193 sensors and a grow light</p>
                         </div>
-
-                        <!-- Backup Server Card -->
-                        <div class="node-card" style="background: linear-gradient(135deg, #9ca3af 0%, #d1d5db 100%); border-radius: 12px; overflow: hidden; border: 1px solid #6b7280; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); color: #1f2937;">
-                            <div style="height: 4px; background: linear-gradient(90deg, #6b7280, #9ca3af);"></div>
-                            
-                            <div style="padding: 1.5rem;">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <div>
-                                        <h3 style="color: #111827; margin-top: 0; font-family: 'Space Grotesk', sans-serif;" data-i18n="project.pif.nodes.backup.title">Backup Server</h3>
-                                        <div class="node-spec" style="color: #374151; margin-bottom: 0.75rem;" data-i18n="project.pif.nodes.backup.spec">Ubuntu Server VM / RAID1</div>
-                                    </div>
-                                    <div class="node-detail" style="text-align: right; color: #374151;">
-                                        <div data-i18n="project.pif.nodes.backup.detail1">2× 30GB</div>
-                                        <div style="font-weight: 600;" data-i18n="project.pif.nodes.backup.detail2">Mirrored</div>
-                                    </div>
-                                </div>
-                                <p class="node-card p" style="color: #374151; margin: 0;" data-i18n="project.pif.nodes.backup.body">
-                                    Receives daily backups via rsync over SSH. Stores database dumps, logs, and web content with 30-day rotation.
-                                </p>
-                            </div>
-                            <div class="node-tags" style="background: rgba(0,0,0,0.08); padding: 0.75rem 1.5rem; border-top: 1px solid #6b7280; display: flex; gap: 1rem; color: #374151;">
-                                <span data-i18n="project.pif.nodes.backup.tag.raid1">[RAID1]</span> <span data-i18n="project.pif.nodes.backup.tag.rsync">[RSYNC]</span> <span data-i18n="project.pif.nodes.backup.tag.cron">[CRON]</span> <span data-i18n="project.pif.nodes.backup.tag.ufw">[UFW]</span>
-                            </div>
-                        </div>
-                        
                     </div>
 
-                    <h2 data-i18n="project.pif.section.what.title">What It Does</h2>
-                    <p data-i18n="project.pif.section.what.body">The system automates plant care and provides real-time monitoring:</p>
-                    <ul class="feature-list">
-                        <li data-i18n="project.pif.section.what.env">Environmental Sensing: Measures soil moisture, air temperature, humidity, and ambient light using calibrated sensors.</li>
-                        <li data-i18n="project.pif.section.what.watering">Automated Watering: Triggers the water pump based on soil moisture thresholds or scheduled tasks.</li>
-                    </ul>
-
-                    <div class="hardware-image-section" style="background: var(--card-bg); border-top: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
-                        <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/water-dropping-mechanism.webp', 'Automated water dropping mechanism for plant irrigation')" style="cursor: pointer;">
-                            <img src="../assets/img/projects/pif/water-dropping-mechanism.webp" alt="Automated water dropping mechanism for plant irrigation" class="project-image water-image" loading="lazy">
+                    <!-- The build in action — real photos (both lenses) -->
+                    <div class="pif-photo-strip">
+                        <div class="project-image-container">
+                            <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/display-pi4.webp', 'Raspberry Pi 4 with touchscreen display showing the Plantimeter dashboard')">
+                                <img src="../assets/img/projects/pif/display-pi4.webp" alt="Raspberry Pi 4 with touchscreen display showing the Plantimeter dashboard" class="project-image" loading="lazy">
+                            </div>
+                            <p class="project-image-caption" data-i18n="project.pif.images.display">The Raspberry Pi 4 hub running the touchscreen kiosk interface</p>
                         </div>
-                        <p class="hardware-image-caption" data-i18n="project.pif.images.water">Automated watering system: Water pump mechanism controlled by soil moisture sensors</p>
+                        <div class="project-image-container">
+                            <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/water-dropping-mechanism.webp', 'Automated water dropping mechanism for plant irrigation')">
+                                <img src="../assets/img/projects/pif/water-dropping-mechanism.webp" alt="Automated water dropping mechanism for plant irrigation" class="project-image" loading="lazy">
+                            </div>
+                            <p class="project-image-caption" data-i18n="project.pif.images.water">The automated watering mechanism, driven by the soil-moisture sensor</p>
+                        </div>
                     </div>
 
-                    <ul class="feature-list">
-                        <li data-i18n="project.pif.section.what.light">Grow Light Control: Activates 1W LED when light levels drop below optimal range.</li>
-                        <li data-i18n="project.pif.section.what.dashboard">Web Dashboard: Admin panel with real-time charts (ApexCharts), task scheduling, user management, and plant variations.</li>
-                        <li data-i18n="project.pif.section.what.backend">Dynamic Backend: PHP API-driven architecture for real-time updates, log history viewer, and seamless data management.</li>
-                        <li data-i18n="project.pif.section.what.ux">User Experience: Login security, separated user/admin views, fuzzy search throughout, and modals for improved workflow.</li>
-                        <li data-i18n="project.pif.section.what.kiosk">Touch Kiosk UI: Optimized interface for the Raspberry Pi touchscreen display, designed for better usability despite the small screen size.</li>
-                    </ul>
-
-                    <h2 data-i18n="project.pif.section.network.title">The Network</h2>
-                    <p data-i18n="project.pif.section.network.body">I designed and configured a complete enterprise-style network in Cisco Packet Tracer:</p>
-                    
-                    <div class="hardware-image-section" style="background: var(--card-bg); border-top: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
-                        <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/packet-tracer-example.webp', 'Cisco Packet Tracer network topology showing VLANs, routers, and network architecture')" style="cursor: pointer;">
-                            <img src="../assets/img/projects/pif/packet-tracer-example.webp" alt="Cisco Packet Tracer network topology showing VLANs, routers, and network architecture" class="project-image network-image" loading="lazy">
+                    <div class="pif-network-figure plain-only">
+                        <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/packet-tracer-example.webp', 'Cisco Packet Tracer network topology showing VLANs, routers, and network architecture')">
+                            <img src="../assets/img/projects/pif/packet-tracer-example.webp" alt="Cisco Packet Tracer network topology showing VLANs, routers, and network architecture" class="project-image" loading="lazy">
                         </div>
-                        <p class="hardware-image-caption" data-i18n="project.pif.images.network">Network topology in Cisco Packet Tracer: Enterprise network with VLANs, routers, and security configurations</p>
+                        <p class="project-image-caption" data-i18n="project.pif.images.network">The whole network — including the simulated internet/ISP side — designed and tested in Cisco Packet Tracer: the home network (IoT nodes, PlantimeterAP) connects to the company office (servers, VLANs) through an ISR4331 router, with DNS routing to Google Public DNS.</p>
                     </div>
 
-                    <ul class="feature-list">
-                        <li data-i18n="project.pif.section.network.firm">Firmennetzwerk: VLANs (10/20), DHCP server, ISR4331 router with NAT/PAT and ACLs.</li>
-                        <li data-i18n="project.pif.section.network.home">Heimnetzwerk: Separate WLAN for nodes (PlantimeterAP) with WPA2-PSK, routed to the firm network.</li>
-                        <li data-i18n="project.pif.section.network.isp">ISP Simulation: Dedicated router simulating internet provider with DNS (Google 8.8.8.8) and fiber link.</li>
-                        <li data-i18n="project.pif.section.network.security">Security: Port-based ACLs, NAT for web/FTP access, proper routing tables.</li>
-                        <li data-i18n="project.pif.section.network.gigabit">Gigabit Architecture: Designed the entire network for Gigabit speeds. When a required router couldn't connect directly to the correct interface, I implemented a copper-to-fiber converter bridge to maintain full Gigabit throughput, demonstrating problem-solving and understanding of network speed requirements.</li>
-                    </ul>
+                    <div class="tech-only">
+                        <h2 data-i18n="project.pif.stack.title">What Runs On It</h2>
+                        <p data-i18n="project.pif.stack.body">Four layers, built and wired together by hand: the sensor node and its firmware, the Raspberry Pi web platform, an automated backup server, and the enterprise network that ties them together.</p>
+
+                        <div class="stack-diagram">
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="cpu"></i><h3 data-i18n="project.pif.stack.node.title">Sensor Node &amp; Firmware</h3></div>
+                                <div class="stack-chips"><span>ESP8266</span><span>Arduino C++</span><span>Custom PCB</span><span>DHT22</span><span>BH1750</span><span>SEN0193</span><span>ULN2803</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.pif.section.what.env">Environmental Sensing: Measures soil moisture, air temperature, humidity, and ambient light using calibrated sensors.</li>
+                                    <li data-i18n="project.pif.section.what.watering">Automated Watering: Triggers the water pump based on soil moisture thresholds or scheduled tasks.</li>
+                                    <li data-i18n="project.pif.section.what.light">Grow Light Control: Activates 1W LED when light levels drop below optimal range.</li>
+                                    <li data-i18n="project.pif.stack.node.auth">MAC-address auth &amp; 80°C safety cutoff: each node identifies itself by MAC address before syncing, and the firmware force-stops the heater at 80°C.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="server"></i><h3 data-i18n="project.pif.stack.hub.title">Hub Server &amp; Web Platform</h3></div>
+                                <div class="stack-chips"><span>Raspberry Pi 4</span><span>Apache</span><span>PHP</span><span>MariaDB</span><span>ApexCharts</span><span>FullpageOS</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.pif.section.what.dashboard">Web Dashboard: Admin panel with real-time charts (ApexCharts), task scheduling, user management, and plant variations.</li>
+                                    <li data-i18n="project.pif.section.what.backend">Dynamic Backend: PHP API-driven architecture for real-time updates, log history viewer, and seamless data management.</li>
+                                    <li data-i18n="project.pif.section.what.ux">User Experience: Login security, separated user/admin views, fuzzy search throughout, and modals for improved workflow.</li>
+                                    <li data-i18n="project.pif.section.what.kiosk">Touch Kiosk UI: Optimized interface for the Raspberry Pi touchscreen display, designed for better usability despite the small screen size.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="hard-drive"></i><h3 data-i18n="project.pif.stack.backup.title">Backup &amp; Recovery</h3></div>
+                                <div class="stack-chips"><span>Ubuntu Server</span><span>RAID1</span><span>rsync</span><span>SSH</span><span>cron</span><span>UFW</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.pif.nodes.backup.body">Receives daily backups via rsync over SSH. Stores database dumps, logs, and web content with 30-day rotation.</li>
+                                    <li data-i18n="project.pif.stack.backup.raid">Mirrored RAID1 storage: two 30 GB disks mirror each other, so a single drive failure loses no data.</li>
+                                    <li data-i18n="project.pif.stack.backup.auto">Fully automated: a scheduled Bash job runs every night, keeps a 30-day rotation, and logs every run.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="network"></i><h3 data-i18n="project.pif.stack.net.title">Enterprise Network &amp; Security</h3></div>
+                                <div class="stack-chips"><span>Cisco ISR4331</span><span>VLAN 10/20</span><span>DHCP</span><span>NAT/PAT</span><span>ACLs</span><span>WPA2-PSK</span><span>SSL</span><span>Fail2Ban</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.pif.section.network.firm">Company Network: VLANs (10/20), DHCP server, ISR4331 router with NAT/PAT and ACLs.</li>
+                                    <li data-i18n="project.pif.section.network.home">Home Network: Separate WLAN for nodes (PlantimeterAP) with WPA2-PSK, routed to the company network.</li>
+                                    <li data-i18n="project.pif.section.network.isp">ISP Simulation: Dedicated router simulating internet provider with DNS (Google 8.8.8.8) and fiber link.</li>
+                                    <li data-i18n="project.pif.section.network.security">Security: Port-based ACLs, NAT for web/FTP access, proper routing tables.</li>
+                                    <li data-i18n="project.pif.section.network.gigabit">Gigabit Architecture: Full Gigabit speeds throughout. Implemented copper-to-fiber converter bridge where router interfaces couldn't connect directly, maintaining performance.</li>
+                                    <li data-i18n="project.pif.stack.net.hardening">Server hardening: SSL/TLS, Fail2Ban, a UFW firewall and prepared statements protect the hub against intrusion and SQL injection.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pif-network-figure">
+                            <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/packet-tracer-example.webp', 'Cisco Packet Tracer network topology showing VLANs, routers, and network architecture')">
+                                <img src="../assets/img/projects/pif/packet-tracer-example.webp" alt="Cisco Packet Tracer network topology showing VLANs, routers, and network architecture" class="project-image" loading="lazy">
+                            </div>
+                            <p class="project-image-caption" data-i18n="project.pif.images.network">The whole network — including the simulated internet/ISP side — designed and tested in Cisco Packet Tracer: the home network (IoT nodes, PlantimeterAP) connects to the company office (servers, VLANs) through an ISR4331 router, with DNS routing to Google Public DNS.</p>
+                        </div>
+                    </div><!-- /.tech-only -->
 
                     <h2 data-i18n="project.pif.section.why.title">Why I Built It</h2>
-                    <p data-i18n="project.pif.section.why.body1" data-i18n-html="true">This was my <strong>final exam project</strong> for the Computer Technician diploma. It had to demonstrate skills across hardware, software, networking, and documentation. I chose to go beyond the requirements — implementing "Should" and "Could" features, plus my own innovations like fuzzy search and a 80°C safety cutoff.</p>
-                    <p data-i18n="project.pif.section.why.body2">The project was developed in sprints (A1–A7 for hardware/firmware, L1–L7 for server/network), each with clear goals, tests, and documented difficulties. The final documentation was over 100 pages.</p>
+                    <div class="journey">
+                        <div class="journey-step">
+                            <div class="journey-marker"><span class="journey-num">01</span></div>
+                            <div class="journey-body"><p data-i18n="project.pif.section.why.body1" data-i18n-html="true">This was my <strong>final exam project</strong> for the Computer Technician diploma. It had to demonstrate skills across hardware, software, networking, and documentation. I chose to go beyond the requirements — implementing "Should" and "Could" features, plus my own innovations like fuzzy search and an 80°C safety cutoff.</p></div>
+                        </div>
+                        <div class="journey-step">
+                            <div class="journey-marker"><span class="journey-num">02</span></div>
+                            <div class="journey-body"><p data-i18n="project.pif.section.why.body2" data-i18n-html="true">The project was developed in sprints (A1–A7 for hardware/firmware, L1–L7 for server/network), each with clear goals, tests, and documented difficulties. The final documentation was over 100 pages.</p></div>
+                        </div>
+                    </div>
 
                     <h2 data-i18n="project.pif.section.lessons.title">Lessons Learned</h2>
-                    <ul class="feature-list">
-                        <li data-i18n="project.pif.section.lessons.hardware" data-i18n-html="true"><strong>Hardware debugging is humbling</strong> — Swapped resistors, wrong pin soldering, and sensor calibration taught me patience and attention to detail.</li>
-                        <li data-i18n="project.pif.section.lessons.fullstack" data-i18n-html="true"><strong>Full-stack means full responsibility</strong> — From PCB to PHP, every layer had to work together. One bug anywhere breaks everything.</li>
-                        <li data-i18n="project.pif.section.lessons.docs" data-i18n-html="true"><strong>Documentation is a skill</strong> — Writing 100+ pages of structured documentation with user stories, diagrams, and test results was as challenging as the code.</li>
-                        <li data-i18n="project.pif.section.lessons.security" data-i18n-html="true"><strong>Security matters from day one</strong> — Fail2Ban, SSL, UFW, prepared statements — I learned to think about security at every layer.</li>
-                    </ul>
+                    <div class="does-grid">
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="cpu"></i></div>
+                            <h3 data-i18n="project.pif.lessons.hardware.title">Hardware debugging is humbling</h3>
+                            <p data-i18n="project.pif.lessons.hardware.desc">Swapped resistors, wrong-pin soldering and sensor calibration taught me patience and attention to detail.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="layout"></i></div>
+                            <h3 data-i18n="project.pif.lessons.fullstack.title">Full-stack means full responsibility</h3>
+                            <p data-i18n="project.pif.lessons.fullstack.desc">From PCB to PHP, every layer had to work together — one bug anywhere breaks everything.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="file-text"></i></div>
+                            <h3 data-i18n="project.pif.lessons.docs.title">Documentation is a skill</h3>
+                            <p data-i18n="project.pif.lessons.docs.desc">Writing 100+ pages of structured documentation with user stories, diagrams and test results was as challenging as the code.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="shield-check"></i></div>
+                            <h3 data-i18n="project.pif.lessons.security.title">Security matters from day one</h3>
+                            <p data-i18n="project.pif.lessons.security.desc">Fail2Ban, SSL, UFW and prepared statements taught me to think about security at every layer.</p>
+                        </div>
+                    </div>
                 </div>
             </article>
 
@@ -465,7 +600,7 @@
                         <li><i data-lucide="terminal"></i> <span data-i18n="project.pif.sidebar.tech.bash">Bash Automation</span></li>
                     </ul>
 
-                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.sensors">Sensors & Actuators</h3>
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.sensors">Sensors &amp; Actuators</h3>
                     <div class="line"></div>
                     <ul class="skill-list" style="margin-top: 1rem;">
                         <li data-i18n="project.pif.sidebar.sensors.dht22">DHT22 (Temp/Humidity)</li>
@@ -493,6 +628,7 @@
                     <div class="project-certifications" data-project="pif">
                         <div class="cert-badge-placeholder">badge-Microsoft-PowerPoint-Associate</div>
                         <div class="cert-badge-placeholder">badge-Microsoft-Word-Associate</div>
+                        <div class="cert-badge-placeholder">badge-Microsoft-Word-Expert</div>
                     </div>
                 </div>
             </aside>
@@ -505,11 +641,9 @@
 
     <!-- Image Modal -->
     <div id="image-modal" class="image-modal" onclick="closeImageModal()">
-        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">×</button>
+        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">&times;</button>
         <img id="modal-image" class="image-modal-content" src="" alt="">
     </div>
-
-    <!-- Category Filter Modal -->
 
     <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/script.js"></script>
@@ -524,7 +658,7 @@
                 setTimeout(initProjectCategories, 100);
             }
         }
-        
+
         // Initialize Lucide icons (wait for it to load)
         function initLucideIcons() {
             if (typeof renderIcons !== 'undefined') {
@@ -533,7 +667,7 @@
                 setTimeout(initLucideIcons, 100);
             }
         }
-        
+
         // Wait for DOMContentLoaded - script.js initializes on DOMContentLoaded
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize categories
@@ -541,7 +675,7 @@
             // Initialize Lucide icons
             initLucideIcons();
         });
-        
+
         // Also try if DOM is already loaded (fallback)
         if (document.readyState !== 'loading') {
             setTimeout(initProjectCategories, 300);
@@ -556,11 +690,11 @@
                 // Set image source and alt
                 modalImage.src = imageSrc;
                 modalImage.alt = imageAlt || '';
-                
+
                 // Show modal
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                
+
                 // Handle image load error
                 modalImage.onerror = function() {
                     console.error('Failed to load image:', imageSrc);
