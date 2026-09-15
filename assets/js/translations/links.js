@@ -13,20 +13,20 @@
     Object.assign(translations, {
         // Header
         "links.status": {
-            en: "Available for opportunities",
-            pt: "Disponível para oportunidades",
-            lu: "Disponibel fir Opportunitéiten",
-            de: "Offen für Möglichkeiten",
-            fr: "Disponible pour opportunités"
+            en: "Student · Co-founder",
+            pt: "Estudante · Cofundador",
+            lu: "Student · Co-Grënner",
+            de: "Student · Mitgründer",
+            fr: "Étudiant · Cofondateur"
         },
 
         // Bio
         "links.bio": {
-            en: "Cloud Computing student in Luxembourg, interested in AI, self-hosting and fitness.",
-            pt: "Estudante de Cloud Computing no Luxemburgo, interessado em IA, self-hosting e fitness.",
-            lu: "Cloud Computing Student zu Lëtzebuerg, interesséiert un KI, self-hosting a Fitness.",
-            de: "Cloud-Computing-Student in Luxemburg, interessiert an KI, Self-Hosting und Fitness.",
-            fr: "Étudiant en Cloud Computing au Luxembourg, intéressé par l'IA, l'auto-hébergement et le fitness."
+            en: "<strong>Cloud Computing student and Cylro co-founder</strong> in Luxembourg. I build tools, work with AI agents, and run my own infrastructure.",
+            pt: "<strong>Estudante de Cloud Computing e cofundador da Cylro</strong> no Luxemburgo. Construo ferramentas, trabalho com agentes de IA e mantenho a minha própria infraestrutura.",
+            lu: "<strong>Cloud-Computing-Student a Co-Grënner vu Cylro</strong> zu Lëtzebuerg. Ech bauen Tools, schaffen mat KI-Agenten a bedreiwen meng eegen Infrastruktur.",
+            de: "<strong>Cloud-Computing-Student und Mitgründer von Cylro</strong> in Luxemburg. Ich baue Tools, arbeite mit KI-Agenten und betreibe meine eigene Infrastruktur.",
+            fr: "<strong>Étudiant en Cloud Computing et cofondateur de Cylro</strong> au Luxembourg. Je construis des outils, travaille avec des agents IA et gère ma propre infrastructure."
         },
 
         // Links
@@ -45,25 +45,25 @@
             fr: "Mon site complet et mon parcours"
         },
         "links.cvfr.title": {
-            en: "CV — Français",
-            pt: "CV — Francês",
-            lu: "CV — Franséisch",
-            de: "CV — Französisch",
-            fr: "CV — Français"
+            en: "CV - Français",
+            pt: "CV - Francês",
+            lu: "CV - Franséisch",
+            de: "CV - Französisch",
+            fr: "CV - Français"
         },
         "links.cvfr.sub": {
-            en: "Télécharger le CV complet (PDF)",
+            en: "Download the full CV (PDF)",
             pt: "Transferir o CV completo (PDF)",
             lu: "De ganzen CV eroflueden (PDF)",
             de: "Vollständigen Lebenslauf herunterladen (PDF)",
             fr: "Télécharger le CV complet (PDF)"
         },
         "links.cven.title": {
-            en: "CV — English",
-            pt: "CV — Inglês",
-            lu: "CV — Englesch",
-            de: "CV — Englisch",
-            fr: "CV — Anglais"
+            en: "CV - English",
+            pt: "CV - Inglês",
+            lu: "CV - Englesch",
+            de: "CV - Englisch",
+            fr: "CV - Anglais"
         },
         "links.cven.sub": {
             en: "Download full résumé (PDF)",
@@ -94,11 +94,25 @@
             fr: "Projets"
         },
         "links.projects.sub": {
-            en: "Homelab, Cylro, case studies",
-            pt: "Homelab, Cylro, estudos de caso",
-            lu: "Homelab, Cylro, Fallstudien",
-            de: "Homelab, Cylro, Fallstudien",
-            fr: "Homelab, Cylro, études de cas"
+            en: "Assemblash, Cylro, Homelab",
+            pt: "Assemblash, Cylro, Homelab",
+            lu: "Assemblash, Cylro, Homelab",
+            de: "Assemblash, Cylro, Homelab",
+            fr: "Assemblash, Cylro, Homelab"
+        },
+        "links.github.title": {
+            en: "GitHub",
+            pt: "GitHub",
+            lu: "GitHub",
+            de: "GitHub",
+            fr: "GitHub"
+        },
+        "links.github.sub": {
+            en: "Open source tools and CLIs",
+            pt: "Ferramentas open source e CLIs",
+            lu: "Open-Source-Tools a CLIs",
+            de: "Open-Source-Tools und CLIs",
+            fr: "Outils open source et CLI"
         },
         "links.certifications.title": {
             en: "Certifications",
@@ -108,21 +122,21 @@
             fr: "Certifications"
         },
         "links.certifications.sub": {
-            en: "AWS, Azure, CCNA & more",
-            pt: "AWS, Azure, CCNA e mais",
-            lu: "AWS, Azure, CCNA a méi",
-            de: "AWS, Azure, CCNA & mehr",
-            fr: "AWS, Azure, CCNA et plus"
+            en: "Azure, Microsoft Office and training",
+            pt: "Azure, Microsoft Office e formações",
+            lu: "Azure, Microsoft Office a Formatiounen",
+            de: "Azure, Microsoft Office und Schulungen",
+            fr: "Azure, Microsoft Office et formations"
         },
         "links.email.title": {
-            en: "Email Me",
-            pt: "Enviar Email",
-            lu: "Schreift mech",
-            de: "E-Mail senden",
-            fr: "M'envoyer un email"
+            en: "Email",
+            pt: "Email",
+            lu: "Email",
+            de: "E-Mail",
+            fr: "Email"
         },
         "links.email.sub": {
-            en: "Send an email",
+            en: "Send me an email",
             pt: "Enviar um email",
             lu: "Eng Email schécken",
             de: "Eine E-Mail senden",
@@ -131,11 +145,11 @@
 
         // Footer
         "links.footer": {
-            en: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
-            pt: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
-            lu: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
-            de: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
-            fr: "© <span id=\"year\"></span> Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>"
+            en: "© {year} Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
+            pt: "© {year} Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
+            lu: "© {year} Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
+            de: "© {year} Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>",
+            fr: "© {year} Guilherme Videira Marques · <a href=\"/\">vidguicode.github.io</a>"
         }
     });
 })();

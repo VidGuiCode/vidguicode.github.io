@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
     <title>Home Lab Platform | VidGuiCode</title>
-    <meta name="description" content="Deep dive into my four-node self-hosted homelab platform: 10+ custom apps, 5 guardrailed AI agents, passwordless passkeys, an OIDC/OAuth identity provider, AI video generation, and a hardware-accelerated media stack.">
+    <meta name="description" content="A four-node self-hosted homelab platform: 10+ custom apps, 5 guardrailed AI agents, passwordless passkeys, an OIDC identity provider, and a media stack.">
+    <link rel="canonical" href="https://vidguicode.github.io/projects/project-homelab">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vidguicode.github.io/projects/project-homelab">
+    <meta property="og:title" content="Home Lab Platform | VidGuiCode">
+    <meta property="og:description" content="A four-node self-hosted homelab platform: 10+ custom apps, 5 guardrailed AI agents, passwordless passkeys, an OIDC identity provider, and a media stack.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/homelab/homelab-rack.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/projects/project-homelab">
+    <meta name="twitter:title" content="Home Lab Platform | VidGuiCode">
+    <meta name="twitter:description" content="A four-node self-hosted homelab platform: 10+ custom apps, 5 guardrailed AI agents, passwordless passkeys, an OIDC identity provider, and a media stack.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/projects/homelab/homelab-rack.webp">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -228,7 +244,7 @@
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.homelab.badge">INFRASTRUCTURE</div>
                 <h1 data-i18n="projects.homelab.title">Home Lab Personal Cloud</h1>
-                <p class="subtitle" data-i18n="projects.homelab.desc">A four-node self-hosted platform spanning a cloud edge gateway, ARM home server, x86 compute offload node, and a dedicated ZFS NAS. It powers custom apps, agents, media services, and K3s behind a self-operated WireGuard edge.</p>
+                <p class="subtitle" data-i18n="projects.homelab.desc">My own platform for files, media, custom apps, and AI agents, spread across four connected nodes.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
                     <span data-i18n="project.lastUpdated">Last updated:</span> <span>25/06/2026</span>
@@ -242,7 +258,7 @@
                     <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
                     <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
                 </div>
-                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view, built for everyone</span>
                 <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
             </div>
 
@@ -254,8 +270,8 @@
                 </div>
                 <div class="glance-stat">
                     <span class="glance-led"></span>
-                    <div class="glance-num">24/7</div>
-                    <div class="glance-label" data-i18n="project.homelab.glance.uptime.label">online since March 2025</div>
+                    <div class="glance-num" data-i18n="project.homelab.glance.status.value">Active</div>
+                    <div class="glance-label" data-i18n="project.homelab.glance.uptime.label">maintained since March 2025</div>
                 </div>
                 <div class="glance-stat">
                     <span class="glance-led"></span>
@@ -327,7 +343,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="arch-note" data-i18n="project.homelab.arch.note">A Tailscale mesh overlays every node for admin access — only the WireGuard tunnel ever carries public traffic.</div>
+                    <div class="arch-note" data-i18n="project.homelab.arch.note">A Tailscale mesh overlays every node for admin access - only the WireGuard tunnel ever carries public traffic.</div>
                 </div>
             </div>
 
@@ -337,12 +353,12 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="film"></i></div>
                         <h3 data-i18n="project.homelab.does.media.title">Your own Netflix, Photos &amp; Drive</h3>
-                        <p data-i18n="project.homelab.does.media.desc">Stream films, back up phone photos, sync files and play music — self-hosted, no monthly subscriptions.</p>
+                        <p data-i18n="project.homelab.does.media.desc">Stream films, back up phone photos, sync files and play music - self-hosted, no monthly subscriptions.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="layout"></i></div>
                         <h3 data-i18n="project.homelab.does.apps.title">A suite of web apps I built</h3>
-                        <p data-i18n="project.homelab.does.apps.desc">Login, an app hub, a vault, a career workspace, voice/video rooms, even an AI video generator — all on one secure backend.</p>
+                        <p data-i18n="project.homelab.does.apps.desc">Login, an app hub, a vault, a career workspace, voice/video rooms, even an AI video generator - all on one secure backend.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="bot"></i></div>
@@ -352,7 +368,7 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="shield"></i></div>
                         <h3 data-i18n="project.homelab.does.secure.title">Locked down and passwordless</h3>
-                        <p data-i18n="project.homelab.does.secure.desc">Sign in with Face ID or a passkey, and nothing faces the internet directly — every request passes through a private, filtered tunnel.</p>
+                        <p data-i18n="project.homelab.does.secure.desc">Sign in with Face ID or a passkey, and nothing faces the internet directly - every request passes through a private, filtered tunnel.</p>
                     </div>
                 </div>
             </div>
@@ -362,6 +378,7 @@
             <!-- Main Content -->
             <article>
                 <div class="card">
+                    <div class="plain-only">
                     <div class="intro-with-image">
                         <div class="intro-text">
                             <i data-lucide="server" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
@@ -375,8 +392,11 @@
                             <p class="project-image-caption" data-i18n="project.homelab.image.caption">Current physical layout: a compact 10U rack</p>
                         </div>
                     </div>
+                    </div>
                     
                     <div class="tech-only">
+                    <h2 data-i18n="project.homelab.technical.goal.title">Technical design goal</h2>
+                    <p data-i18n="project.homelab.technical.goal.body">I designed this as a real-world learning environment, not a lab that only works on paper. The architecture separates public entry, compute and storage so I can experiment safely, keep services recoverable and work within the limits of quiet, low-power hardware at home.</p>
                     <h2 data-i18n="project.homelab.section.what.title">What Runs On It</h2>
                     <p data-i18n="project.homelab.section.what.body">The platform is now split across four complementary layers: the home-server control plane, an agent and worker layer, a dedicated storage/media plane, and a hardened edge gateway.</p>
                     
@@ -397,8 +417,8 @@
                             <div class="stack-chips"><span>FastAPI</span><span>SQLAlchemy</span><span>SQLite</span><span>Passkeys</span><span>OIDC</span><span>OAuth2</span><span>JWT SSO</span><span>LiveKit</span><span>Typer CLI</span><span>Private PyPI</span></div>
                             <ul class="feature-list stack-detail">
                                 <li data-i18n="project.homelab.section.what.core.list" data-i18n-html><strong>Unified backend control plane</strong>: FastAPI + SQLAlchemy + Alembic + SQLite drive authentication, permissions, app registration, audit logs, AI orchestration, and cross-app state.</li>
-                                <li data-i18n="project.homelab.section.what.core.auth" data-i18n-html><strong>Passwordless, federated login</strong>: passkeys (WebAuthn/FIDO2) are the primary sign-in, on top of a from-scratch OIDC provider and an OAuth 2.0 consent flow — so other apps and AI assistants can log in with the platform.</li>
-                                <li data-i18n="project.homelab.section.what.core.surfaces" data-i18n-html><strong>Real-time and generative surfaces</strong>: self-hosted voice/video rooms (LiveKit/WebRTC) and an AI keyframe video generator that turns a start and end frame into a short clip — both behind the same SSO and edge security.</li>
+                                <li data-i18n="project.homelab.section.what.core.auth" data-i18n-html><strong>Passwordless, federated login</strong>: passkeys (WebAuthn/FIDO2) are the primary sign-in, on top of a from-scratch OIDC provider and an OAuth 2.0 consent flow - so other apps and AI assistants can log in with the platform.</li>
+                                <li data-i18n="project.homelab.section.what.core.surfaces" data-i18n-html><strong>Real-time and generative surfaces</strong>: self-hosted voice/video rooms (LiveKit/WebRTC) and an AI keyframe video generator that turns a start and end frame into a short clip - both behind the same SSO and edge security.</li>
                                 <li data-i18n="project.homelab.section.what.core.suite" data-i18n-html><strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery, task log, career workspace, voice/video rooms, an AI video generator, a mail surface, and a QR generator microservice.</li>
                                 <li data-i18n="project.homelab.section.what.core.killswitch" data-i18n-html><strong>Hard application kill switch</strong>: Every custom frontend is registered centrally, so disabling an app immediately blocks access even on direct URL visits.</li>
                                 <li data-i18n="project.homelab.section.what.compose.cli" data-i18n-html><strong>Platform CLI</strong>: A Typer-based Python CLI wraps the backend API for terminal workflows over VPN. Supports auth, task management, security operations, and health checks via Personal Access Tokens. Distributed through a self-hosted private PyPI server.</li>
@@ -411,7 +431,7 @@
                                 <li data-i18n="project.homelab.section.what.apps.retriever" data-i18n-html><strong>Retriever agent</strong>: Researches the web through a private meta-search backend and headless browsing, then returns structured briefs.</li>
                                 <li data-i18n="project.homelab.section.what.apps.term" data-i18n-html><strong>Term-mastery agent</strong>: Generates summaries, flashcards, and remediation workflows for learning content.</li>
                                 <li data-i18n="project.homelab.section.what.apps.security" data-i18n-html><strong>Security triage agent</strong>: Correlates edge alerts, access logs, sessions, and approval-gated write actions for admin review.</li>
-                                <li data-i18n="project.homelab.section.what.apps.governance" data-i18n-html><strong>Governance triage agent</strong>: watches internal session, permission, and account anomalies with a graded action policy — low-risk fixes auto-execute, high-blast-radius actions enter a human approval queue.</li>
+                                <li data-i18n="project.homelab.section.what.apps.governance" data-i18n-html><strong>Governance triage agent</strong>: watches internal session, permission, and account anomalies with a graded action policy - low-risk fixes auto-execute, high-blast-radius actions enter a human approval queue.</li>
                                 <li data-i18n="project.homelab.section.what.apps.infra" data-i18n-html><strong>Infrastructure monitoring agent</strong>: runs probes across nodes, containers, temperatures, and backup freshness, then an optional AI layer triages findings into a recovery-aware signal feed.</li>
                                 <li data-i18n="project.homelab.section.what.apps.modes" data-i18n-html><strong>Two run modes, tiered models</strong>: every agent runs as a cheap fixed pipeline or an adaptive LLM-driven loop; Mistral Small drives the decisions, Mistral Large the final synthesis.</li>
                                 <li data-i18n="project.homelab.section.what.apps.guardrails" data-i18n-html><strong>Shared guardrails</strong>: Every agent runs behind kill switches, token/cost/runtime budgets, tool allowlists, concurrency caps, and blocked-action logging.</li>
@@ -440,6 +460,7 @@
 
                     </div><!-- /.tech-only -->
 
+                    <div class="plain-only">
                     <h2 data-i18n="project.homelab.section.why.title">Why I Built It</h2>
                     <div class="journey">
                         <div class="journey-step">
@@ -448,14 +469,16 @@
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">02</span></div>
-                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body2" data-i18n-html>Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> â€” and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.</p></div>
+                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body2" data-i18n-html>Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> - and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">03</span></div>
-                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body3" data-i18n-html>Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 8+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.</p></div>
+                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body3" data-i18n-html>Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 10+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.</p></div>
                         </div>
                     </div>
+                    </div>
 
+                    <div class="tech-only">
                     <h2 data-i18n="project.homelab.section.lessons.title">Lessons Learned</h2>
                     <div class="does-grid">
                         <div class="does-card">
@@ -494,7 +517,9 @@
                             <p data-i18n="project.homelab.section.lessons.environment.body">With only one LAN outlet in the home, the cluster had to live in the living room. This constraint forced smart hardware choices: silent components, low-power ARM processors, and efficient cooling. Adapting to real-world limitations made me a better engineer.</p>
                         </div>
                     </div>
+                    </div>
 
+                    <div class="plain-only">
                     <h2 data-i18n="project.homelab.section.next.title">What's Next</h2>
                     <div class="does-grid">
                         <div class="does-card">
@@ -514,13 +539,14 @@
                             <h3 data-i18n="project.homelab.next.agents">More guardrailed agents: digest, scribe, hub</h3>
                         </div>
                     </div>
+                    </div>
                 </div>
             </article>
 
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <div id="category-section" style="display: none;">
+                    <div id="category-section" data-project-id="homelab" style="display: none;">
                         <h3 data-i18n="project.sidebar.category">Category</h3>
                         <div class="line"></div>
                         <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
@@ -572,89 +598,17 @@
         </div>
 
         <footer style="margin-top: 4rem;">
-            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
         </footer>
     </main>
 
     <!-- Image Modal -->
     <div id="image-modal" class="image-modal" onclick="closeImageModal()">
-        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">Ã—</button>
+        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">×</button>
         <img id="modal-image" class="image-modal-content" src="" alt="">
     </div>
 
-    <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        // Use centralized category display function (updates dynamically on language change)
-        // Must wait for DOMContentLoaded since script.js wraps everything in DOMContentLoaded
-        function initProjectCategories() {
-            if (typeof window.updateProjectCategories === 'function' && typeof getProjectById !== 'undefined') {
-                window.updateProjectCategories('homelab');
-            } else {
-                // Retry if dependencies haven't loaded yet
-                setTimeout(initProjectCategories, 100);
-            }
-        }
-        
-        // Initialize Lucide icons (wait for it to load)
-        function initLucideIcons() {
-            if (typeof renderIcons !== 'undefined') {
-                renderIcons();
-            } else {
-                setTimeout(initLucideIcons, 100);
-            }
-        }
-        
-        // Wait for DOMContentLoaded - script.js initializes on DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize categories
-            setTimeout(initProjectCategories, 200);
-            // Initialize Lucide icons
-            initLucideIcons();
-        });
-        
-        // Also try if DOM is already loaded (fallback)
-        if (document.readyState !== 'loading') {
-            setTimeout(initProjectCategories, 300);
-            initLucideIcons();
-        }
-
-        // Image Modal Functions
-        function openImageModal(imageSrc, imageAlt) {
-            const modal = document.getElementById('image-modal');
-            const modalImage = document.getElementById('modal-image');
-            if (modal && modalImage) {
-                modalImage.src = imageSrc;
-                modalImage.alt = imageAlt || '';
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                modalImage.onerror = function() {
-                    console.error('Failed to load image:', imageSrc);
-                    modalImage.alt = 'Image failed to load';
-                };
-            }
-        }
-
-        function closeImageModal(event) {
-            if (event) {
-                event.stopPropagation();
-            }
-            const modal = document.getElementById('image-modal');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-
-        // Close modal on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const modal = document.getElementById('image-modal');
-                if (modal && modal.classList.contains('active')) {
-                    closeImageModal();
-                }
-            }
-        });
-    </script>
+    <script src="../assets/js/project-page-init.js" defer></script>
 </body>
 </html>

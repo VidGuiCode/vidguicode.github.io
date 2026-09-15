@@ -21,11 +21,11 @@
             fr: "Système de Diffusion Teams"
         },
         "project.teamsbroadcast.hero.subtitle": {
-            en: "Power Platform solution that eliminates the manual hassle of broadcasting messages to 20+ Microsoft Teams channels. Built for teachers, students, and organizational leaders.",
-            pt: "Solução Power Platform que elimina o trabalho manual de transmitir mensagens para mais de 20 canais do Microsoft Teams. Construído para professores, estudantes e líderes organizacionais.",
-            lu: "Power Platform Léisung déi d'manuell Aarbecht ewechhuelt fir Messagen op 20+ Microsoft Teams Kanäl ze schécken. Gebaut fir Enseignanten, Schüler a Leaderen.",
-            de: "Power Platform-Lösung, die die manuelle Arbeit beim Broadcasting von Nachrichten an 20+ Microsoft Teams-Kanäle eliminiert. Für Lehrer, Studenten und Organisationsleiter.",
-            fr: "Solution Power Platform qui élimine le travail manuel de diffusion de messages vers 20+ canaux Microsoft Teams. Conçu pour les enseignants, étudiants et responsables."
+            en: "I built this Power Platform tool to help teachers, students, and organizational leaders send one announcement to 20+ Microsoft Teams channels at once, with a clear record of where it went.",
+            pt: "Construí esta ferramenta Power Platform para ajudar professores, estudantes e líderes organizacionais a enviar um anúncio para mais de 20 canais do Microsoft Teams de uma vez, com um registo claro do destino.",
+            lu: "Ech hunn dëst Power Platform Tool gebaut fir Enseignanten, Schüler a Leaderen ze hëllefen eng Ukënnegung gläichzäiteg op 20+ Microsoft Teams Kanäl ze schécken, mat engem kloere Beweis wou se ukomm ass.",
+            de: "Ich habe dieses Power Platform Tool gebaut, damit Lehrer, Studenten und Organisationsleiter eine Ankündigung gleichzeitig an 20+ Microsoft Teams-Kanäle senden können, mit einem klaren Nachweis ihres Ziels.",
+            fr: "J'ai construit cet outil Power Platform pour aider les enseignants, les étudiants et les responsables à envoyer une annonce à 20+ canaux Microsoft Teams en une fois, avec une trace claire de sa destination."
         },
 
         "project.teamsbroadcast.glance.channels.label": {
@@ -64,6 +64,13 @@
             de: "Wie ein Broadcast abläuft",
             fr: "Comment circule une diffusion"
         },
+        "project.teamsbroadcast.arch.strip": {
+            en: "Broadcast pipeline",
+            pt: "Pipeline de transmissão",
+            lu: "Broadcast-Pipeline",
+            de: "Broadcast-Pipeline",
+            fr: "Pipeline de diffusion"
+        },
         "project.teamsbroadcast.arch.user": {
             en: "User",
             pt: "Utilizador",
@@ -71,19 +78,12 @@
             de: "Benutzer",
             fr: "Utilisateur"
         },
-        "project.teamsbroadcast.arch.user.meta": {
-            en: "any device",
-            pt: "qualquer dispositivo",
-            lu: "all Apparat",
-            de: "beliebiges Gerät",
-            fr: "tout appareil"
-        },
         "project.teamsbroadcast.arch.user.spec": {
-            en: "teacher · student · director",
-            pt: "professor · estudante · diretor",
-            lu: "Enseignant · Schüler · Direkter",
-            de: "Lehrer · Student · Direktor",
-            fr: "enseignant · étudiant · directeur"
+            en: "a teacher, student or director, on any device",
+            pt: "um professor, estudante ou diretor, em qualquer dispositivo",
+            lu: "en Enseignant, Schüler oder Direkter, op all Apparat",
+            de: "ein Lehrer, Student oder Direktor, auf jedem Gerät",
+            fr: "un enseignant, étudiant ou directeur, sur tout appareil"
         },
         "project.teamsbroadcast.arch.apps.title": {
             en: "Power Apps",
@@ -92,33 +92,12 @@
             de: "Power Apps",
             fr: "Power Apps"
         },
-        "project.teamsbroadcast.arch.apps.meta": {
-            en: "canvas app",
-            pt: "canvas app",
-            lu: "Canvas App",
-            de: "Canvas-App",
-            fr: "application canvas"
-        },
         "project.teamsbroadcast.arch.apps.spec": {
-            en: "select channels · compose · state guard",
-            pt: "selecionar canais · compor · proteção de estado",
-            lu: "Kanäl auswielen · schreiwen · State-Schutz",
-            de: "Kanäle wählen · verfassen · State-Schutz",
-            fr: "choisir les canaux · composer · garde d'état"
-        },
-        "project.teamsbroadcast.arch.trigger": {
-            en: "selection + message",
-            pt: "seleção + mensagem",
-            lu: "Auswiel + Message",
-            de: "Auswahl + Nachricht",
-            fr: "sélection + message"
-        },
-        "project.teamsbroadcast.arch.tenant": {
-            en: "Power Platform · Microsoft 365 tenant",
-            pt: "Power Platform · tenant Microsoft 365",
-            lu: "Power Platform · Microsoft 365 Tenant",
-            de: "Power Platform · Microsoft 365-Tenant",
-            fr: "Power Platform · tenant Microsoft 365"
+            en: "select channels, compose, and a guard against double sends",
+            pt: "selecionar canais, compor, e uma proteção contra envios duplicados",
+            lu: "Kanäl auswielen, schreiwen, an e Schutz géint duebel Sendungen",
+            de: "Kanäle wählen, verfassen, und ein Schutz gegen doppelte Sendungen",
+            fr: "choisir les canaux, composer, et une garde contre les envois en double"
         },
         "project.teamsbroadcast.arch.fetch.title": {
             en: "Fetch flow",
@@ -127,19 +106,12 @@
             de: "Abruf-Flow",
             fr: "Flux de récupération"
         },
-        "project.teamsbroadcast.arch.fetch.meta": {
-            en: "on app open",
-            pt: "ao abrir a app",
-            lu: "beim App-Opmaachen",
-            de: "beim App-Start",
-            fr: "à l'ouverture de l'app"
-        },
         "project.teamsbroadcast.arch.fetch.spec": {
-            en: "lists every Team and channel",
-            pt: "lista todas as Teams e canais",
-            lu: "lëscht all Team a Kanal",
-            de: "listet alle Teams und Kanäle",
-            fr: "liste chaque Team et canal"
+            en: "on app open, lists every Team and channel",
+            pt: "ao abrir a app, lista todas as Teams e canais",
+            lu: "beim App-Opmaachen lëscht et all Team a Kanal",
+            de: "beim App-Start listet er alle Teams und Kanäle",
+            fr: "à l'ouverture de l'app, liste chaque Team et canal"
         },
         "project.teamsbroadcast.arch.broadcast.title": {
             en: "Broadcast flow",
@@ -147,13 +119,6 @@
             lu: "Broadcast-Flow",
             de: "Broadcast-Flow",
             fr: "Flux de diffusion"
-        },
-        "project.teamsbroadcast.arch.broadcast.meta": {
-            en: "apply to each",
-            pt: "aplicar a cada",
-            lu: "op jiddereen uwenden",
-            de: "auf jeden anwenden",
-            fr: "appliquer à chacun"
         },
         "project.teamsbroadcast.arch.broadcast.spec": {
             en: "posts the message per channel",
@@ -169,26 +134,12 @@
             de: "Dataverse",
             fr: "Dataverse"
         },
-        "project.teamsbroadcast.arch.log.meta": {
-            en: "audit table",
-            pt: "tabela de auditoria",
-            lu: "Audit-Tabell",
-            de: "Audit-Tabelle",
-            fr: "table d'audit"
-        },
         "project.teamsbroadcast.arch.log.spec": {
             en: "per-channel delivery status",
             pt: "estado de entrega por canal",
             lu: "Liwwerstatus pro Kanal",
             de: "Zustellstatus pro Kanal",
             fr: "statut de livraison par canal"
-        },
-        "project.teamsbroadcast.arch.connector": {
-            en: "Teams connector",
-            pt: "conector Teams",
-            lu: "Teams-Connector",
-            de: "Teams-Connector",
-            fr: "connecteur Teams"
         },
         "project.teamsbroadcast.arch.teams.title": {
             en: "Microsoft Teams",
@@ -197,26 +148,19 @@
             de: "Microsoft Teams",
             fr: "Microsoft Teams"
         },
-        "project.teamsbroadcast.arch.teams.meta": {
-            en: "20+ channels",
-            pt: "20+ canais",
-            lu: "20+ Kanäl",
-            de: "20+ Kanäle",
-            fr: "20+ canaux"
-        },
         "project.teamsbroadcast.arch.teams.spec": {
-            en: "message delivered and confirmed",
-            pt: "mensagem entregue e confirmada",
-            lu: "Message geliwwert a bestätegt",
-            de: "Nachricht zugestellt und bestätigt",
-            fr: "message livré et confirmé"
+            en: "message delivered and confirmed in over 20 channels",
+            pt: "mensagem entregue e confirmada em mais de 20 canais",
+            lu: "Message geliwwert a bestätegt a méi wéi 20 Kanäl",
+            de: "Nachricht zugestellt und bestätigt in über 20 Kanälen",
+            fr: "message livré et confirmé dans plus de 20 canaux"
         },
         "project.teamsbroadcast.arch.note": {
-            en: "Each send returns success or failure per channel, so a failed post is visible instead of silently lost. During development it runs against real Teams with dedicated test channels — no school channel ever gets spammed.",
-            pt: "Cada envio devolve sucesso ou falha por canal, por isso uma publicação falhada fica visível em vez de se perder em silêncio. Durante o desenvolvimento corre contra Teams reais com canais de teste dedicados — nenhum canal da escola é incomodado.",
-            lu: "All Sendung gëtt Erfolleg oder Feelschlag pro Kanal zréck, sou datt e verflüchtene Post sichtbar ass amplaz roueg verluer ze goen. Während der Entwécklung leeft et géint richteg Teams mat spezielle Test-Kanäl — kee Schoulkanal gëtt jeemools gespamt.",
-            de: "Jede Sendung gibt Erfolg oder Fehler pro Kanal zurück, sodass ein fehlgeschlagener Post sichtbar ist, statt still verloren zu gehen. Während der Entwicklung läuft es gegen echte Teams mit dedizierten Testkanälen — kein Schulkanal wird je zugespammt.",
-            fr: "Chaque envoi renvoie un succès ou un échec par canal, donc une publication ratée est visible au lieu d'être silencieusement perdue. Pendant le développement, il tourne sur de vrais Teams avec des canaux de test dédiés — aucun canal scolaire n'est jamais spammé."
+            en: "Each send returns success or failure per channel, so a failed post is visible instead of silently lost. During development it runs against real Teams with dedicated test channels - no school channel ever gets spammed.",
+            pt: "Cada envio devolve sucesso ou falha por canal, por isso uma publicação falhada fica visível em vez de se perder em silêncio. Durante o desenvolvimento corre contra Teams reais com canais de teste dedicados - nenhum canal da escola é incomodado.",
+            lu: "All Sendung gëtt Erfolleg oder Feelschlag pro Kanal zréck, sou datt e verflüchtene Post sichtbar ass amplaz roueg verluer ze goen. Während der Entwécklung leeft et géint richteg Teams mat spezielle Test-Kanäl - kee Schoulkanal gëtt jeemools gespamt.",
+            de: "Jede Sendung gibt Erfolg oder Fehler pro Kanal zurück, sodass ein fehlgeschlagener Post sichtbar ist, statt still verloren zu gehen. Während der Entwicklung läuft es gegen echte Teams mit dedizierten Testkanälen - kein Schulkanal wird je zugespammt.",
+            fr: "Chaque envoi renvoie un succès ou un échec par canal, donc une publication ratée est visible au lieu d'être silencieusement perdue. Pendant le développement, il tourne sur de vrais Teams avec des canaux de test dédiés - aucun canal scolaire n'est jamais spammé."
         },
 
         "project.teamsbroadcast.does.title": {
@@ -276,11 +220,11 @@
             fr: "Garde un historique consultable"
         },
         "project.teamsbroadcast.does.history.desc": {
-            en: "Every broadcast is logged with who sent what, when, and where — searchable any time you need proof.",
-            pt: "Cada transmissão é registada com quem enviou o quê, quando e onde — pesquisável sempre que precises de prova.",
-            lu: "All Broadcast gëtt geloggt mat wien wat, wéini a wou geschéckt huet — sichbar wann s de e Beweis brauchs.",
-            de: "Jeder Broadcast wird protokolliert mit wer was, wann und wohin gesendet hat — durchsuchbar, wann immer du einen Nachweis brauchst.",
-            fr: "Chaque diffusion est journalisée avec qui a envoyé quoi, quand et où — consultable dès que tu as besoin d'une preuve."
+            en: "Every broadcast is logged with who sent what, when, and where - searchable any time you need proof.",
+            pt: "Cada transmissão é registada com quem enviou o quê, quando e onde - pesquisável sempre que precises de prova.",
+            lu: "All Broadcast gëtt geloggt mat wien wat, wéini a wou geschéckt huet - sichbar wann s de e Beweis brauchs.",
+            de: "Jeder Broadcast wird protokolliert mit wer was, wann und wohin gesendet hat - durchsuchbar, wann immer du einen Nachweis brauchst.",
+            fr: "Chaque diffusion est journalisée avec qui a envoyé quoi, quand et où - consultable dès que tu as besoin d'une preuve."
         },
 
         "project.teamsbroadcast.problem.title": {
@@ -298,11 +242,11 @@
             fr: "Envoyer le même message à 20+ canaux Teams manuellement est fastidieux. Il faut ouvrir chacun, copier-coller, et espérer n'en avoir oublié aucun. Il n'y a aucun moyen de suivre ce qui a été envoyé où."
         },
         "project.teamsbroadcast.problem.solution": {
-            en: "This tool flips that around: select all channels at once, write your message once, and broadcast everywhere with one click — with full logs of exactly what was sent where.",
-            pt: "Esta ferramenta inverte isso: seleciona todos os canais de uma vez, escreve a mensagem uma vez e transmite para todos com um clique — com registos completos do que foi exatamente enviado para onde.",
-            lu: "Dëst Tool dréit dat ëm: wiel all Kanäl op eemol, schreif däi Message eemol, a verbreet iwwerall mat engem Klick — mat komplette Logge vu genee wat wou geschéckt gouf.",
-            de: "Dieses Tool dreht das um: alle Kanäle auf einmal auswählen, die Nachricht einmal schreiben und mit einem Klick überall senden — mit vollständigen Logs, was genau wohin gesendet wurde.",
-            fr: "Cet outil inverse la situation : sélectionne tous les canaux d'un coup, écris ton message une fois et diffuse partout en un clic — avec des logs complets de ce qui a été envoyé exactement où."
+            en: "I flipped that around: select all channels at once, write the message once, and send it everywhere with one click, while keeping a complete log of each destination.",
+            pt: "Invertemos isso: selecionamos todos os canais de uma vez, escrevemos a mensagem uma vez e enviamo-la para todos com um clique, mantendo um registo completo de cada destino.",
+            lu: "Ech hunn dat ëmgedréit: all Kanäl op eemol auswielen, de Message eemol schreiwen an en iwwerall mat engem Klick schécken, mat engem komplette Log vun all Destinatioun.",
+            de: "Ich habe das umgedreht: alle Kanäle auf einmal auswählen, die Nachricht einmal schreiben und sie mit einem Klick überall senden, mit einem vollständigen Protokoll jedes Ziels.",
+            fr: "J'ai inversé le processus : sélectionner tous les canaux d'un coup, écrire le message une fois et l'envoyer partout en un clic, tout en gardant un journal complet de chaque destination."
         },
         "project.teamsbroadcast.imagecaption1": {
             en: "Main broadcast interface: channel selection, message composition, and real-time sending status. Uses real Teams with test channels to avoid spamming school channels during development.",
@@ -320,18 +264,18 @@
             fr: "Sous le capot"
         },
         "project.teamsbroadcast.stack.intro": {
-            en: "Three Power Platform services, cleanly split into UI, logic, and data layers — plus the native Teams connector for delivery.",
-            pt: "Três serviços Power Platform, claramente divididos em camadas de UI, lógica e dados — mais o conector nativo do Teams para a entrega.",
-            lu: "Dräi Power Platform Servicer, propper opgedeelt an UI-, Logik- an Date-Schichten — plus den nativen Teams-Connector fir d'Liwwerung.",
-            de: "Drei Power Platform-Dienste, sauber in UI-, Logik- und Datenschichten getrennt — plus der native Teams-Connector für die Zustellung.",
-            fr: "Trois services Power Platform, proprement répartis en couches UI, logique et données — plus le connecteur Teams natif pour la livraison."
+            en: "Three Power Platform services, cleanly split into UI, logic, and data layers - plus the native Teams connector for delivery.",
+            pt: "Três serviços Power Platform, claramente divididos em camadas de UI, lógica e dados - mais o conector nativo do Teams para a entrega.",
+            lu: "Dräi Power Platform Servicer, propper opgedeelt an UI-, Logik- an Date-Schichten - plus den nativen Teams-Connector fir d'Liwwerung.",
+            de: "Drei Power Platform-Dienste, sauber in UI-, Logik- und Datenschichten getrennt - plus der native Teams-Connector für die Zustellung.",
+            fr: "Trois services Power Platform, proprement répartis en couches UI, logique et données - plus le connecteur Teams natif pour la livraison."
         },
         "project.teamsbroadcast.stack.apps.title": {
-            en: "Power Apps — Canvas frontend",
-            pt: "Power Apps — Frontend canvas",
-            lu: "Power Apps — Canvas-Frontend",
-            de: "Power Apps — Canvas-Frontend",
-            fr: "Power Apps — Frontend canvas"
+            en: "Power Apps - Canvas frontend",
+            pt: "Power Apps - Frontend canvas",
+            lu: "Power Apps - Canvas-Frontend",
+            de: "Power Apps - Canvas-Frontend",
+            fr: "Power Apps - Frontend canvas"
         },
         "project.teamsbroadcast.stack.apps.ui": {
             en: "<strong>Single-screen UX</strong>: channel multi-select, a subject line, and a rich message body live on one canvas, with input validation before anything can be sent.",
@@ -355,11 +299,11 @@
             fr: "<strong>Garde anti-doublon</strong> : le bouton d'envoi se verrouille pendant une diffusion en cours, évitant le classique double-clic qui publierait tout en double."
         },
         "project.teamsbroadcast.stack.automate.title": {
-            en: "Power Automate — Two cloud flows",
-            pt: "Power Automate — Dois fluxos na cloud",
-            lu: "Power Automate — Zwee Cloud-Flows",
-            de: "Power Automate — Zwei Cloud-Flows",
-            fr: "Power Automate — Deux flux cloud"
+            en: "Power Automate - Two cloud flows",
+            pt: "Power Automate - Dois fluxos na cloud",
+            lu: "Power Automate - Zwee Cloud-Flows",
+            de: "Power Automate - Zwei Cloud-Flows",
+            fr: "Power Automate - Deux flux cloud"
         },
         "project.teamsbroadcast.stack.automate.fetch": {
             en: "<strong>Fetch flow</strong>: on app open (or \"Refresh channels\") it pulls every Team and channel the user can access and hands the list back to Power Apps.",
@@ -383,11 +327,11 @@
             fr: "<strong>Résultats par canal</strong> : chaque publication renvoie un succès ou un échec individuellement, donc un seul canal en échec ne bloque jamais le reste de la diffusion."
         },
         "project.teamsbroadcast.stack.data.title": {
-            en: "Dataverse — Audit store",
-            pt: "Dataverse — Repositório de auditoria",
-            lu: "Dataverse — Audit-Späicher",
-            de: "Dataverse — Audit-Speicher",
-            fr: "Dataverse — Stockage d'audit"
+            en: "Dataverse - Audit store",
+            pt: "Dataverse - Repositório de auditoria",
+            lu: "Dataverse - Audit-Späicher",
+            de: "Dataverse - Audit-Speicher",
+            fr: "Dataverse - Stockage d'audit"
         },
         "project.teamsbroadcast.stack.data.store": {
             en: "<strong>Every broadcast recorded</strong>: subject, body, sender, timestamp, target channels, and the per-channel delivery status are written on each send.",
@@ -404,11 +348,11 @@
             fr: "<strong>Historique consultable</strong> : l'écran de logs permet de rechercher et filtrer les diffusions passées, transformant « est-ce vraiment parti ? » en une recherche d'une seconde."
         },
         "project.teamsbroadcast.stack.teams.title": {
-            en: "Microsoft Teams — Delivery",
-            pt: "Microsoft Teams — Entrega",
-            lu: "Microsoft Teams — Liwwerung",
-            de: "Microsoft Teams — Zustellung",
-            fr: "Microsoft Teams — Livraison"
+            en: "Microsoft Teams - Delivery",
+            pt: "Microsoft Teams - Entrega",
+            lu: "Microsoft Teams - Liwwerung",
+            de: "Microsoft Teams - Zustellung",
+            fr: "Microsoft Teams - Livraison"
         },
         "project.teamsbroadcast.stack.teams.connector": {
             en: "<strong>Native connector, no custom code</strong>: messages are posted through Microsoft's own Teams connector, so delivery and permissions follow the tenant's existing rules.",
@@ -433,25 +377,25 @@
             fr: "Pourquoi je l'ai construit"
         },
         "project.teamsbroadcast.why.body1": {
-            en: "A teacher mentioned how much of a chore it was to send the same announcement to 20+ Teams channels by hand — open each one, copy, paste, repeat, and still wonder if one got missed. It was a <strong>real, boring problem</strong> begging for automation.",
-            pt: "Um professor mencionou como era uma chatice enviar o mesmo anúncio para mais de 20 canais do Teams à mão — abrir cada um, copiar, colar, repetir, e ainda assim ficar na dúvida se faltou algum. Era um <strong>problema real e aborrecido</strong> a pedir automação.",
-            lu: "En Enseignant huet ernimmt wéi vill Aarbecht et war déiselwecht Ukënnegung op 20+ Teams Kanäl mat der Hand ze schécken — jiddereen opmaachen, kopéieren, pasten, widderhuelen, an sech nach froen ob ee vergiess gouf. Et war e <strong>richtegen, langweilege Problem</strong> deen no Automatisatioun gefrot huet.",
-            de: "Ein Lehrer erwähnte, was für eine Plackerei es war, dieselbe Ankündigung von Hand an 20+ Teams-Kanäle zu senden — jeden öffnen, kopieren, einfügen, wiederholen und sich trotzdem fragen, ob einer vergessen wurde. Es war ein <strong>echtes, langweiliges Problem</strong>, das nach Automatisierung schrie.",
-            fr: "Un enseignant a évoqué la corvée d'envoyer la même annonce à 20+ canaux Teams à la main — ouvrir chacun, copier, coller, recommencer, et se demander quand même si l'on en avait oublié un. C'était un <strong>vrai problème ennuyeux</strong> qui appelait l'automatisation."
+            en: "A teacher mentioned how much of a chore it was to send the same announcement to 20+ Teams channels by hand - open each one, copy, paste, repeat, and still wonder if one got missed. It was a <strong>real, boring problem</strong> begging for automation.",
+            pt: "Um professor mencionou como era uma chatice enviar o mesmo anúncio para mais de 20 canais do Teams à mão - abrir cada um, copiar, colar, repetir, e ainda assim ficar na dúvida se faltou algum. Era um <strong>problema real e aborrecido</strong> a pedir automação.",
+            lu: "En Enseignant huet ernimmt wéi vill Aarbecht et war déiselwecht Ukënnegung op 20+ Teams Kanäl mat der Hand ze schécken - jiddereen opmaachen, kopéieren, pasten, widderhuelen, an sech nach froen ob ee vergiess gouf. Et war e <strong>richtegen, langweilege Problem</strong> deen no Automatisatioun gefrot huet.",
+            de: "Ein Lehrer erwähnte, was für eine Plackerei es war, dieselbe Ankündigung von Hand an 20+ Teams-Kanäle zu senden - jeden öffnen, kopieren, einfügen, wiederholen und sich trotzdem fragen, ob einer vergessen wurde. Es war ein <strong>echtes, langweiliges Problem</strong>, das nach Automatisierung schrie.",
+            fr: "Un enseignant a évoqué la corvée d'envoyer la même annonce à 20+ canaux Teams à la main - ouvrir chacun, copier, coller, recommencer, et se demander quand même si l'on en avait oublié un. C'était un <strong>vrai problème ennuyeux</strong> qui appelait l'automatisation."
         },
         "project.teamsbroadcast.why.body2": {
-            en: "I chose Power Platform on purpose: it's the low-code stack the school and many organizations already run on. The challenge was to treat it like real engineering — <strong>separate UI, logic, and data layers</strong>, proper state management, and an audit trail from day one.",
-            pt: "Escolhi Power Platform de propósito: é a stack low-code que a escola e muitas organizações já usam. O desafio foi tratá-la como engenharia a sério — <strong>camadas separadas de UI, lógica e dados</strong>, gestão de estado adequada e uma trilha de auditoria desde o primeiro dia.",
-            lu: "Ech hunn Power Platform mat Absicht gewielt: et ass de Low-Code-Stack op deem d'Schoul a vill Organisatiounen scho lafen. D'Erausfuerderung war et wéi richteg Ingenieurskonscht ze behandelen — <strong>getrennten UI-, Logik- an Date-Schichten</strong>, korrekt State-Management, an en Audit-Trail vum éischten Dag un.",
-            de: "Ich habe Power Platform bewusst gewählt: es ist der Low-Code-Stack, auf dem die Schule und viele Organisationen bereits laufen. Die Herausforderung war, es wie echtes Engineering zu behandeln — <strong>getrennte UI-, Logik- und Datenschichten</strong>, ordentliches State-Management und ein Audit-Trail vom ersten Tag an.",
-            fr: "J'ai choisi Power Platform à dessein : c'est la stack low-code que l'école et de nombreuses organisations utilisent déjà. Le défi était de la traiter comme de la vraie ingénierie — <strong>couches UI, logique et données séparées</strong>, une gestion d'état correcte et une piste d'audit dès le premier jour."
+            en: "I chose Power Platform on purpose: it's the low-code stack the school and many organizations already run on. The challenge was to treat it like real engineering - <strong>separate UI, logic, and data layers</strong>, proper state management, and an audit trail from day one.",
+            pt: "Escolhi Power Platform de propósito: é a stack low-code que a escola e muitas organizações já usam. O desafio foi tratá-la como engenharia a sério - <strong>camadas separadas de UI, lógica e dados</strong>, gestão de estado adequada e uma trilha de auditoria desde o primeiro dia.",
+            lu: "Ech hunn Power Platform mat Absicht gewielt: et ass de Low-Code-Stack op deem d'Schoul a vill Organisatiounen scho lafen. D'Erausfuerderung war et wéi richteg Ingenieurskonscht ze behandelen - <strong>getrennten UI-, Logik- an Date-Schichten</strong>, korrekt State-Management, an en Audit-Trail vum éischten Dag un.",
+            de: "Ich habe Power Platform bewusst gewählt: es ist der Low-Code-Stack, auf dem die Schule und viele Organisationen bereits laufen. Die Herausforderung war, es wie echtes Engineering zu behandeln - <strong>getrennte UI-, Logik- und Datenschichten</strong>, ordentliches State-Management und ein Audit-Trail vom ersten Tag an.",
+            fr: "J'ai choisi Power Platform à dessein : c'est la stack low-code que l'école et de nombreuses organisations utilisent déjà. Le défi était de la traiter comme de la vraie ingénierie - <strong>couches UI, logique et données séparées</strong>, une gestion d'état correcte et une piste d'audit dès le premier jour."
         },
         "project.teamsbroadcast.why.body3": {
-            en: "The result is a tool teachers, students, project leads, and directors can all use to push consistent messaging across many channels — and a graded project that proves <strong>low-code can still be built like a product</strong>.",
-            pt: "O resultado é uma ferramenta que professores, estudantes, líderes de projeto e diretores podem usar para enviar mensagens consistentes por muitos canais — e um projeto avaliado que prova que <strong>low-code também pode ser construído como um produto</strong>.",
-            lu: "D'Resultat ass en Tool deen Enseignanten, Schüler, Projet-Leaderen an Direkteren all benotze kënne fir konsequent Messagen iwwer vill Kanäl ze schécken — an e bewäerte Projet deen beweist datt <strong>Low-Code och wéi e Produkt gebaut ka ginn</strong>.",
-            de: "Das Ergebnis ist ein Werkzeug, das Lehrer, Studenten, Projektleiter und Direktoren alle nutzen können, um konsistente Nachrichten über viele Kanäle zu senden — und ein benotetes Projekt, das beweist, dass <strong>Low-Code trotzdem wie ein Produkt gebaut werden kann</strong>.",
-            fr: "Le résultat est un outil que les enseignants, étudiants, chefs de projet et directeurs peuvent tous utiliser pour diffuser des messages cohérents sur de nombreux canaux — et un projet noté qui prouve que <strong>le low-code peut quand même se construire comme un produit</strong>."
+            en: "The result is a tool teachers, students, project leads, and directors can all use to push consistent messaging across many channels - and a graded project that proves <strong>low-code can still be built like a product</strong>.",
+            pt: "O resultado é uma ferramenta que professores, estudantes, líderes de projeto e diretores podem usar para enviar mensagens consistentes por muitos canais - e um projeto avaliado que prova que <strong>low-code também pode ser construído como um produto</strong>.",
+            lu: "D'Resultat ass en Tool deen Enseignanten, Schüler, Projet-Leaderen an Direkteren all benotze kënne fir konsequent Messagen iwwer vill Kanäl ze schécken - an e bewäerte Projet deen beweist datt <strong>Low-Code och wéi e Produkt gebaut ka ginn</strong>.",
+            de: "Das Ergebnis ist ein Werkzeug, das Lehrer, Studenten, Projektleiter und Direktoren alle nutzen können, um konsistente Nachrichten über viele Kanäle zu senden - und ein benotetes Projekt, das beweist, dass <strong>Low-Code trotzdem wie ein Produkt gebaut werden kann</strong>.",
+            fr: "Le résultat est un outil que les enseignants, étudiants, chefs de projet et directeurs peuvent tous utiliser pour diffuser des messages cohérents sur de nombreux canaux - et un projet noté qui prouve que <strong>le low-code peut quand même se construire comme un produit</strong>."
         },
         "project.teamsbroadcast.imagecaption2": {
             en: "Broadcast logs: complete history with search, filters, and per-channel delivery status",
@@ -476,11 +420,11 @@
             fr: "Low-code ≠ basse qualité"
         },
         "project.teamsbroadcast.lessons.lowcode.desc": {
-            en: "With real design patterns — layered architecture and clean state — low-code tools can absolutely be production-grade.",
-            pt: "Com padrões de design a sério — arquitetura em camadas e estado limpo — as ferramentas low-code podem perfeitamente ter qualidade de produção.",
-            lu: "Mat richtegen Design-Patternen — geschichtener Architektur a propperem State — kënnen Low-Code-Tools absolut Produktiounsqualitéit hunn.",
-            de: "Mit echten Design-Patterns — geschichteter Architektur und sauberem State — können Low-Code-Tools absolut produktionsreif sein.",
-            fr: "Avec de vrais patterns de conception — architecture en couches et état propre — les outils low-code peuvent tout à fait être de qualité production."
+            en: "With real design patterns - layered architecture and clean state - low-code tools can absolutely be production-grade.",
+            pt: "Com padrões de design a sério - arquitetura em camadas e estado limpo - as ferramentas low-code podem perfeitamente ter qualidade de produção.",
+            lu: "Mat richtegen Design-Patternen - geschichtener Architektur a propperem State - kënnen Low-Code-Tools absolut Produktiounsqualitéit hunn.",
+            de: "Mit echten Design-Patterns - geschichteter Architektur und sauberem State - können Low-Code-Tools absolut produktionsreif sein.",
+            fr: "Avec de vrais patterns de conception - architecture en couches et état propre - les outils low-code peuvent tout à fait être de qualité production."
         },
         "project.teamsbroadcast.lessons.state.title": {
             en: "State management is everything",

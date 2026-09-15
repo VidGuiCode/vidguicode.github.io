@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
     <title>Cylro - Website Operations Platform | VidGuiCode</title>
-    <meta name="description" content="Cylro: Website operations platform for EU teams. Manage many websites from one secure Space with scoped access, safe publishing, and EU-managed infrastructure.">
+    <meta name="description" content="Cylro is a website operations platform in development for teams managing multiple websites from one organised Space.">
+    <link rel="canonical" href="https://vidguicode.github.io/projects/project-cylro">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Cylro - Website Operations Platform">
-    <meta property="og:description" content="Website operations platform for EU teams. Many websites, one secure Space, scoped access, and safe publishing.">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vidguicode.github.io/projects/project-cylro">
+    <meta property="og:title" content="Cylro - Website Operations Platform | VidGuiCode">
+    <meta property="og:description" content="Cylro is a website operations platform in development for teams managing multiple websites from one organised Space.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/cylro/thumbnail.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/projects/project-cylro">
+    <meta name="twitter:title" content="Cylro - Website Operations Platform | VidGuiCode">
+    <meta name="twitter:description" content="Cylro is a website operations platform in development for teams managing multiple websites from one organised Space.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/projects/cylro/thumbnail.webp">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +54,7 @@
         /* Typography uses centralized scale - see styles.css */
 
         /* ── Cylro brand accent (purple) ──────────────────────────────
-           Palette from submark.svg: #9476d1 / #a890da / #c0aee4.
+           Current Cylro brand violet: #6F5CFF.
            Luminous purple in dark mode (LED energy), a deeper purple in
            light mode for contrast. This token drives every accent on the
            page so the look stays Cylro-branded instead of the default green. */
@@ -54,6 +65,14 @@
         [data-theme="dark"] {
             --cy-accent: #9c7dff;                        /* dark mode (default) */
             --cy-accent-soft: rgba(156, 125, 255, 0.16);
+        }
+
+        /* The shared blueprint component reads --accent-brand, so point that
+           at the Cylro violet and the opening visualisation is branded like
+           the rest of the page. Scoped to <main> so the navbar and search
+           keep the site-wide palette. */
+        main {
+            --accent-brand: var(--cy-accent);
         }
 
         .title-accent {
@@ -76,9 +95,12 @@
             display: block;
         }
 
-        /* Cylro title layout - logo as inline text element */
+        /* Cylro title layout: the current standalone mark, not the old wordmark. */
         .cylro-title-inline {
-            display: inline;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.25rem;
             line-height: 1.2;
         }
 
@@ -88,31 +110,20 @@
         }
 
         .cylro-logo-inline {
-            display: inline-block;
-            vertical-align: baseline;
-            width: 160px;
-            height: 80px;
-            overflow: visible;
+            display: inline-grid;
+            place-items: center;
+            flex: 0 0 96px;
+            width: 96px;
+            height: 96px;
             line-height: 1;
-            margin-right: -0.25rem;
-            position: relative;
-            z-index: 0;
             pointer-events: none;
         }
 
         .cylro-logo-inline img {
-            height: 120px;
-            width: auto;
-            display: inline-block;
+            width: 100%;
+            height: 100%;
+            display: block;
             object-fit: contain;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-38%) scale(2.5);
-            transform-origin: left center;
-            margin-left: -70px;
-            margin-top: 5px;
-            z-index: 0;
             pointer-events: none;
         }
 
@@ -133,23 +144,20 @@
         /* Mobile: adjust logo size and ensure text wraps naturally */
         @media (max-width: 768px) {
             .cylro-title-inline {
-                display: inline;
+                display: flex;
                 max-width: 100%;
+                gap: 0.85rem;
             }
 
             .cylro-logo-inline {
-                width: 95px;
-                height: 60px;
-                margin-right: -0.5rem;
+                flex-basis: 64px;
+                width: 64px;
+                height: 64px;
             }
 
             .cylro-logo-inline img {
-                height: 90px;
-                top: 50%;
-                transform: translateY(-38%) scale(2);
-                transform-origin: left center;
-                margin-left: -50px;
-                margin-top: 4px;
+                width: 100%;
+                height: 100%;
             }
 
             .cylro-title-wrapper h1 {
@@ -219,6 +227,58 @@
             background: var(--cy-accent);
         }
 
+        /* Three-card rows inside the narrower article column stay on one row */
+        @media (min-width: 1024px) {
+            .does-grid.cy-three { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* Honest-scope note under claim-sensitive sections */
+        .cy-note {
+            margin-top: 0.85rem;
+            padding-left: 0.85rem;
+            border-left: 2px solid var(--border-color);
+            font-size: var(--fs-small);
+            color: var(--text-secondary);
+        }
+
+        /* Compact jump links for the longer technical view */
+        .cylro-tech-nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.45rem;
+            margin: 1.25rem 0 1.5rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--cy-accent);
+            border-radius: 8px;
+            background: var(--bg-secondary);
+            font-size: var(--fs-small);
+        }
+        .cylro-tech-nav-label {
+            color: var(--text-secondary);
+            margin-right: 0.15rem;
+        }
+        .cylro-tech-nav a {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: var(--text-primary);
+            text-decoration: none;
+            background: var(--bg-tertiary);
+        }
+        .cylro-tech-nav a:hover,
+        .cylro-tech-nav a:focus-visible {
+            color: var(--bg-primary);
+            background: var(--cy-accent);
+            outline: none;
+        }
+        .stack-layer { scroll-margin-top: 6rem; }
+
+        @media (max-width: 640px) {
+            .cylro-tech-nav { align-items: flex-start; }
+            .cylro-tech-nav-label { width: 100%; }
+        }
+
         /* Keep custom styles minimal for consistency with other project pages */
     </style>
 </head>
@@ -244,24 +304,24 @@
                 <div class="cylro-title-wrapper" style="margin-bottom: 1rem;">
                     <h1 class="cylro-title-inline" style="margin: 0;">
                         <span class="cylro-logo-inline">
-                            <img src="../assets/img/projects/cylro/primary-w.svg" alt="Cylro Logo" class="cylro-logo-dark">
-                            <img src="../assets/img/projects/cylro/primary-b.svg" alt="Cylro Logo" class="cylro-logo-light">
+                            <img src="../assets/img/projects/cylro/cylro-mark-polished-white.svg" alt="Cylro Logo" class="cylro-logo-dark">
+                            <img src="../assets/img/projects/cylro/cylro-mark-polished-black.svg" alt="Cylro Logo" class="cylro-logo-light">
                         </span>
                         <span class="title-accent">
                             <span class="cylro-title-line1" data-i18n="project.cylro.hero.accent.line1">Website Operations</span>
-                            <span class="cylro-title-line2" data-i18n="project.cylro.hero.accent.line2"> Platform</span>
+                            <span class="cylro-title-line2" data-i18n="project.cylro.hero.accent.line2">Platform</span>
                             <span class="cylro-title-mobile-line1" data-i18n="project.cylro.hero.accent.mobile.line1" style="display: none;">Website Operations</span>
                             <span class="cylro-title-mobile-line2" data-i18n="project.cylro.hero.accent.mobile.line2" style="display: none;">Platform</span>
                         </span>
                     </h1>
                 </div>
-                <p class="subtitle" data-i18n="project.cylro.hero.subtitle">Many websites, one secure Space. Built in Luxembourg for EU teams.</p>
+                <p class="subtitle" data-i18n="project.cylro.hero.subtitle">The website operations platform we're building for teams that create and manage multiple public-facing websites.</p>
                 <p class="cylro-project-link" style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
                     <a href="https://cylro.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">cylro.com</a>
                 </p>
                 <p class="cylro-project-updated" style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
-                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>22/05/2026</span>
+                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>09/09/2026</span>
                 </p>
             </div>
         </section>
@@ -272,130 +332,132 @@
                     <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
                     <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
                 </div>
-                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view, built for everyone</span>
                 <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
             </div>
 
             <div class="glance-grid">
                 <div class="glance-stat">
                     <span class="glance-led"></span>
+                    <div class="glance-num" data-i18n="project.cylro.glance.status.value">Pre-release</div>
+                    <div class="glance-label" data-i18n="project.cylro.glance.status.label">private alpha we're targeting for around November 2026</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
                     <div class="glance-num">1</div>
-                    <div class="glance-label" data-i18n="project.cylro.glance.space.label">one Space for every website</div>
+                    <div class="glance-label" data-i18n="project.cylro.glance.space.label">Space holding an organisation's sites, people, access, and publishing</div>
                 </div>
                 <div class="glance-stat">
                     <span class="glance-led"></span>
-                    <div class="glance-num">4</div>
-                    <div class="glance-label" data-i18n="project.cylro.glance.roles.label">access roles per Space</div>
+                    <div class="glance-num" data-i18n="project.cylro.glance.output.value">Static</div>
+                    <div class="glance-label" data-i18n="project.cylro.glance.output.label">output we publish into object storage, instead of a container per site</div>
                 </div>
                 <div class="glance-stat">
                     <span class="glance-led"></span>
-                    <div class="glance-num">100%</div>
-                    <div class="glance-label" data-i18n="project.cylro.glance.eu.label">EU-managed infrastructure</div>
-                </div>
-                <div class="glance-stat">
-                    <span class="glance-led"></span>
-                    <div class="glance-num">2026</div>
-                    <div class="glance-label" data-i18n="project.cylro.glance.alpha.label">private alpha</div>
+                    <div class="glance-num">2</div>
+                    <div class="glance-label" data-i18n="project.cylro.glance.founders.label">of us building the product and running the company</div>
                 </div>
             </div>
 
-            <h2 data-i18n="project.cylro.arch.title">How Cylro fits together</h2>
-            <div class="arch-diagram">
-                <div class="arch-strip">
-                    <span class="led led-g"></span>
-                    <span class="led led-a"></span>
-                    <span class="led led-d"></span>
-                    <span class="arch-strip-label" data-i18n="project.cylro.arch.strip">Platform architecture</span>
-                </div>
-                <div class="arch-body">
-                    <div class="arch-flow">
-                        <div class="arch-col">
-                            <div class="arch-unit is-external">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.cylro.arch.operator">Operator</span></div>
-                                    <div class="u-meta">agency · dev</div>
-                                </div>
-                                <div class="u-spec">builds &amp; operates sites</div>
-                            </div>
-                            <div class="arch-conn">&darr;</div>
-                            <div class="arch-unit is-external">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.cylro.arch.client">Client</span></div>
-                                    <div class="u-meta">scoped</div>
-                                </div>
-                                <div class="u-spec">white-labeled portal</div>
-                            </div>
+            <h2 data-i18n="project.cylro.arch.title">How it fits together</h2>
+            <div class="bp bp--stack">
+                <span class="bp-kicker" data-i18n="project.cylro.arch.kicker">One Space, many sites</span>
+
+                <div class="bp-tiers">
+                    <div class="bp-tier">
+                        <span class="bp-tier-name"><i data-lucide="layout" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.cylro.arch.layer.work">Studio and modules</span></span>
+                        <div class="bp-tier-items">
+                            <span class="bp-chip">Nuxt 4 · SSR</span>
+                            <span class="bp-chip">Blog</span>
+                            <span class="bp-chip">FAQ</span>
+                            <span class="bp-chip">Collections</span>
+                            <span class="bp-chip">Forms</span>
                         </div>
-
-                        <div class="arch-conn"><span>Keycloak SSO</span>&nbsp;&#8644;</div>
-
-                        <div class="arch-rack">
-                            <div class="arch-rack-label" data-i18n="project.cylro.arch.platform">Cylro platform — one Space</div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span>Studio</span></div>
-                                    <div class="u-meta">Nuxt · Vue</div>
-                                </div>
-                                <div class="u-spec">page &amp; content builder</div>
-                            </div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span>Website Management</span></div>
-                                    <div class="u-meta">domains · SEO</div>
-                                </div>
-                                <div class="u-spec">publish · rollback · modules</div>
-                            </div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.cylro.arch.api">Backend API</span></div>
-                                    <div class="u-meta">Node · Express</div>
-                                </div>
-                                <div class="u-spec">roles enforced per Space</div>
-                            </div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.cylro.arch.dataai">Data &amp; AI</span></div>
-                                    <div class="u-meta">Postgres · Redis</div>
-                                </div>
-                                <div class="u-spec">pgvector · Mistral</div>
-                            </div>
-                        </div>
-
-                        <div class="arch-conn">&#8644;</div>
-
-                        <div class="arch-col">
-                            <div class="arch-unit is-internet">
-                                <div class="u-name"><span class="arch-led"></span><span data-i18n="project.cylro.arch.infra">EU Infrastructure</span></div>
-                                <div class="u-spec">Hetzner DE · Infomaniak CH · Mollie NL</div>
-                            </div>
-                        </div>
+                        <span class="bp-tier-spec" data-i18n="project.cylro.arch.studio.spec">page structure, blocks, content and media, per website</span>
                     </div>
-                    <div class="arch-note" data-i18n="project.cylro.arch.note">Each Space is isolated and roles (Owner, Admin, Editor, Client) are enforced per Space. Published sites are immutable snapshots that roll back automatically — and all data stays on EU-managed infrastructure.</div>
+
+                    <div class="bp-tier">
+                        <span class="bp-tier-name"><i data-lucide="server" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.cylro.arch.core">Cylro backend</span></span>
+                        <div class="bp-tier-items">
+                            <span class="bp-chip">Node.js</span>
+                            <span class="bp-chip">Express</span>
+                            <span class="bp-chip">SuperTokens</span>
+                        </div>
+                        <span class="bp-tier-spec" data-i18n="project.cylro.arch.part.perm.desc">Spaces, roles, Crews and website scopes</span>
+                    </div>
+
+                    <div class="bp-tier">
+                        <span class="bp-tier-name"><i data-lucide="database" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.cylro.arch.part.data">Data</span></span>
+                        <div class="bp-tier-items">
+                            <span class="bp-chip">PostgreSQL</span>
+                            <span class="bp-chip">pgvector</span>
+                            <span class="bp-chip">Redis</span>
+                        </div>
+                        <span class="bp-tier-spec" data-i18n="project.cylro.arch.part.data.desc">PostgreSQL with pgvector, and Redis for cache</span>
+                    </div>
+
+                    <div class="bp-tier">
+                        <span class="bp-tier-name"><i data-lucide="globe" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.cylro.arch.layer.delivery">Static delivery</span></span>
+                        <div class="bp-tier-items">
+                            <span class="bp-chip">S3 compatible</span>
+                            <span class="bp-chip">custom domain</span>
+                            <span class="bp-chip">CDN next</span>
+                        </div>
+                        <span class="bp-tier-spec" data-i18n="project.cylro.arch.domain.spec">served straight from storage, with no container per site</span>
+                    </div>
                 </div>
+
+                <p class="bp-note" data-i18n="project.cylro.arch.note">No client ever reaches the database, the storage or the identity service on its own. Studio, the modules and every permission check go through the one backend, and what a visitor finally loads is plain static files rather than a running container for each site.</p>
             </div>
 
             <div class="plain-only">
-                <h2 data-i18n="project.cylro.does.title">What Cylro does</h2>
+                <h2 data-i18n="project.cylro.does.title">What we're building Cylro to do</h2>
                 <div class="does-grid">
                     <div class="does-card">
-                        <div class="does-icon"><i data-lucide="layout"></i></div>
-                        <h3 data-i18n="project.cylro.does.studio.title">Build sites in one Studio</h3>
-                        <p data-i18n="project.cylro.does.studio.desc">Create pages, content and media in a visual builder — no plugins to juggle and no separate CMS.</p>
+                        <div class="does-icon"><i data-lucide="layers"></i></div>
+                        <h3 data-i18n="project.cylro.does.spaces.title">Run many sites from one Space</h3>
+                        <p data-i18n="project.cylro.does.spaces.desc">A Space brings your websites, people, access, teams, and operational context together, instead of one isolated installation per site.</p>
                     </div>
                     <div class="does-card">
-                        <div class="does-icon"><i data-lucide="layers"></i></div>
-                        <h3 data-i18n="project.cylro.does.spaces.title">Many websites, one Space</h3>
-                        <p data-i18n="project.cylro.does.spaces.desc">Agencies and teams run every client, brand or campaign site from a single secure place, with clear ownership and scoped client portals.</p>
+                        <div class="does-icon"><i data-lucide="layout"></i></div>
+                        <h3 data-i18n="project.cylro.does.studio.title">Give editing one workspace</h3>
+                        <p data-i18n="project.cylro.does.studio.desc">We're building Studio for page structure, visual design, reusable blocks, content, media, and themes, per website.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="boxes"></i></div>
+                        <h3 data-i18n="project.cylro.does.modules.title">Add only what a site needs</h3>
+                        <p data-i18n="project.cylro.does.modules.desc">You enable modules such as Blog, FAQ, Collections, and Forms per website, instead of stacking plugins on every site.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="git-branch"></i></div>
-                        <h3 data-i18n="project.cylro.does.publish.title">Publish safely, undo instantly</h3>
-                        <p data-i18n="project.cylro.does.publish.desc">Every publish is a snapshot that's tested first and rolls back automatically if something breaks.</p>
+                        <h3 data-i18n="project.cylro.does.publish.title">Publish with a way back</h3>
+                        <p data-i18n="project.cylro.does.publish.desc">Sites publish as static output, and we're building versioned publishing so you can restore an earlier version or take a site offline.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-only">
+                <h2 data-i18n="project.cylro.tech.title">Technical foundations</h2>
+                <div class="does-grid">
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="monitor"></i></div>
+                        <h3 data-i18n="project.cylro.tech.frontend.title">Server-rendered Nuxt frontend</h3>
+                        <p data-i18n="project.cylro.tech.frontend.desc">Nuxt 4 with SSR, Vue 3, Pinia, and Tailwind CSS. I keep it as a separate layer that only reaches the product through our backend API.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="server"></i></div>
+                        <h3 data-i18n="project.cylro.tech.backend.title">One backend as the controller</h3>
+                        <p data-i18n="project.cylro.tech.backend.desc">I run API access, authentication, permission checks, rate limiting, publishing, and deployment workflows through one Node.js and Express layer.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="database"></i></div>
+                        <h3 data-i18n="project.cylro.tech.data.title">PostgreSQL, pgvector, Redis</h3>
+                        <p data-i18n="project.cylro.tech.data.desc">PostgreSQL holds our structured application data, pgvector is in place for where we're heading with AI, and Redis is the caching layer.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="globe"></i></div>
-                        <h3 data-i18n="project.cylro.does.eu.title">Your data stays in Europe</h3>
-                        <p data-i18n="project.cylro.does.eu.desc">Hosting, email, payments and AI all run on European providers — EU-first and GDPR-friendly by design.</p>
+                        <h3 data-i18n="project.cylro.tech.delivery.title">Static delivery from object storage</h3>
+                        <p data-i18n="project.cylro.tech.delivery.desc">We export sites as HTML and assets into S3-compatible storage and serve them over a custom domain, with CDN delivery as the next step.</p>
                     </div>
                 </div>
             </div>
@@ -407,110 +469,234 @@
                 <div class="card">
                     <i data-lucide="layout" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
 
+                    <div class="plain-only">
                     <h2 data-i18n="project.cylro.section.idea.title">The Idea</h2>
-                    <p data-i18n="project.cylro.section.idea.p1">Cylro is a platform I'm co-founding with a partner. It's built for EU agencies, freelancers, developers, and businesses that manage many websites across clients, brands, teams, divisions, campaigns, or locations. The goal is to make website operations feel controlled instead of fragmented.</p>
-                    <p data-i18n="project.cylro.section.idea.p2">Instead of spreading CMS, hosting, domains, SEO, publishing, rollback, access control, and AI help across separate tools, Cylro brings building and operating websites into one secure Space.</p>
-                    <p data-i18n="project.cylro.section.idea.p3">We started researching the idea in June 2025, during the final months of my Computer Technician diploma at Lycée Guillaume Kroll. That time helped us shape the vision and figure out the architecture we'd need. Development kicked off in August 2025, and we've been building steadily since then.</p>
-                    <p data-i18n="project.cylro.section.idea.p4">The platform combines Studio for page building with Website Management for domains, SEO, publishing, rollback, modules, and access. Public API access is planned for the broader release.</p>
-
-                    <div class="tech-only">
-                        <h2 data-i18n="project.cylro.section.underTheHood.title">Under the Hood</h2>
-                        <div class="stack-diagram">
-                            <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="code-2"></i><h3 data-i18n="project.cylro.section.underTheHood.frontend.title">Frontend</h3></div>
-                                <div class="stack-chips"><span>Nuxt 4</span><span>Vue 3</span><span>Pinia</span><span>Nuxt i18n</span><span>Custom CSS</span></div>
-                                <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.cylro.section.underTheHood.frontend.body">The client app is built with Nuxt 4 and Vue 3, using Pinia to manage state. We write most of the CSS by hand and use Nuxt i18n for multi-language support.</li>
-                                </ul>
-                            </div>
-                            <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="server"></i><h3 data-i18n="project.cylro.section.underTheHood.backend.title">Backend</h3></div>
-                                <div class="stack-chips"><span>Node.js</span><span>Express.js</span><span>PostgreSQL 16</span><span>pgvector</span><span>Redis</span></div>
-                                <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.cylro.section.underTheHood.backend.body">On the backend we're running Node.js with Express.js. PostgreSQL 16 with pgvector powers the database and AI context, while Redis takes care of caching and sessions.</li>
-                                </ul>
-                            </div>
-                            <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="lock"></i><h3 data-i18n="project.cylro.stack.access.title">Spaces &amp; Access</h3></div>
-                                <div class="stack-chips"><span>Keycloak SSO</span><span>Multi-tenant</span><span>Owner / Admin / Editor / Client</span><span>Client portal</span></div>
-                                <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.cylro.section.underTheHood.auth.body">We use Keycloak for SSO, but it sits behind our backend so we can add our own protection on top. Roles are kept simple for now: Owner, Admin, Editor, and Client, all enforced per Space.</li>
-                                    <li data-i18n="project.cylro.cards.spaces.body">One Space can run many client, brand, division, campaign, or location websites while keeping ownership and access clear.</li>
-                                    <li data-i18n="project.cylro.cards.clientPortal.body">Clients get a scoped, white-labeled portal for their website content while operators keep control of structure, publishing, domains, and risk.</li>
-                                </ul>
-                            </div>
-                            <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="git-branch"></i><h3 data-i18n="project.cylro.stack.publishing.title">Versioned Publishing</h3></div>
-                                <div class="stack-chips"><span>Immutable snapshots</span><span>Approval-first</span><span>Auto-rollback</span></div>
-                                <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.cylro.cards.studioPublishing.body">Published sites are immutable snapshots. Changes are tested first, published intentionally, and rolled back automatically if something goes wrong.</li>
-                                    <li data-i18n="project.cylro.section.features.item5">Immutable published snapshots with approval-first changes</li>
-                                </ul>
-                            </div>
-                            <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="brain"></i><h3 data-i18n="project.cylro.section.underTheHood.ai.title">Permission-Aware AI</h3></div>
-                                <div class="stack-chips"><span>Mistral AI</span><span>SEO checks</span><span>Drafts</span><span>Translations</span><span>Launch readiness</span></div>
-                                <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.cylro.section.underTheHood.ai.body">AI is embedded as assistance, not the product identity. It can help with SEO checks, content drafts, translations, launch readiness, and operational guidance while respecting each user's role and access scope.</li>
-                                </ul>
-                            </div>
-                            <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="server-cog"></i><h3 data-i18n="project.cylro.section.underTheHood.infrastructure.title">Infrastructure</h3></div>
-                                <div class="stack-chips"><span>Docker Compose</span><span>K3s</span><span>Hetzner</span><span>Infomaniak</span><span>Mollie</span><span>S3-compatible</span></div>
-                                <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.cylro.section.underTheHood.infrastructure.body">Development runs locally on Docker Compose with the full stack in containers. The production direction is EU-managed infrastructure: Hetzner in Germany, Infomaniak in Switzerland for email operations, Mollie in the Netherlands for payments, Mistral in France for AI, and S3-compatible storage by design.</li>
-                                    <li data-i18n="project.cylro.cards.euInfra.body">Core infrastructure runs on Hetzner in Germany, with Infomaniak for email, Mistral for AI, and Mollie for payments.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!-- /.tech-only -->
+                    <p data-i18n="project.cylro.section.idea.p1">We're building Cylro for organisations that create and manage multiple public-facing websites across clients, brands, and internal teams.</p>
+                    <p data-i18n="project.cylro.section.idea.p2">We want websites to be easier to create, organise, publish, and maintain, without every organisation having to assemble its own separate CMS, hosting, domain, media, access, and publishing systems.</p>
+                    <p data-i18n="project.cylro.section.idea.p3">We keep the focus deliberately narrow: company websites, landing pages, portfolios, blogs, and content hubs. Cylro isn't a general application-hosting platform, and it isn't a build-anything-with-AI product.</p>
 
                     <h2 data-i18n="project.cylro.section.why.title">Why This Exists</h2>
                     <div class="journey">
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">01</span></div>
-                            <div class="journey-body"><p data-i18n="project.cylro.section.why.p1">When one team manages many websites, small tasks become operational risk: too many dashboards, unclear ownership, plugin or platform changes, separate logins, scattered backups, and hard questions about where data lives.</p></div>
+                            <div class="journey-body"><p data-i18n="project.cylro.section.why.p1">It started with my own frustration: separate CMS installations, plugins, hosting dashboards, domains, and the same setup work repeated for every new website.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">02</span></div>
-                            <div class="journey-body"><p data-i18n="project.cylro.section.why.p2">Cylro is our attempt to build a proper EU-first alternative: one managed SaaS Space where agencies and website operators can build, publish, roll back, assign access, answer trust questions, and treat websites like stable infrastructure instead of isolated installs.</p></div>
+                            <div class="journey-body"><p data-i18n="project.cylro.section.why.p2">Our first idea was an open-source CMS that organisations could self-host or run as a managed service. Working through it, we found the harder problem was operations rather than the editor: who's allowed to change what, how a change goes live, and how you get back when it shouldn't have.</p></div>
+                        </div>
+                        <div class="journey-step">
+                            <div class="journey-marker"><span class="journey-num">03</span></div>
+                            <div class="journey-body"><p data-i18n="project.cylro.section.why.p3">That turned into one website operations platform for many sites: Spaces, Studio, structured editing, design systems, access boundaries, controlled publishing, and lightweight static delivery. We're reimagining website operations, not claiming to have invented a category.</p></div>
                         </div>
                     </div>
 
-                    <h2 data-i18n="project.cylro.section.next.title">What's Next</h2>
+                    <h2 data-i18n="project.cylro.section.inside.title">Inside a Space</h2>
                     <div class="does-grid">
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="layers"></i></div>
-                            <h3 data-i18n="project.cylro.next.core.title">Core Architecture</h3>
-                            <div class="does-meta"><span data-i18n="project.cylro.timeline.since">Since</span> · <span data-i18n="project.cylro.timeline.aug2025">Aug 2025</span></div>
-                            <p data-i18n="project.cylro.next.core.body">Finalizing Studio, Website Management, publishing, rollback, module foundations, and permission-aware AI assistance.</p>
+                            <h3 data-i18n="project.cylro.inside.spaces.title">Spaces</h3>
+                            <p data-i18n="project.cylro.inside.spaces.desc">A Space is your organisation's working environment and ownership boundary: your people, access, websites, teams, and the responsibility for keeping those sites maintained.</p>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="users"></i></div>
-                            <h3 data-i18n="project.cylro.next.beta.title">Private Alpha</h3>
-                            <div class="does-meta"><span data-i18n="project.cylro.timeline.target">Target</span> · 2026</div>
-                            <p data-i18n="project.cylro.next.beta.body">Onboarding selected agencies, freelancers, developers, and business website operators to refine multi-site operations and the developer experience.</p>
+                            <h3 data-i18n="project.cylro.inside.crews.title">Crews and roles</h3>
+                            <p data-i18n="project.cylro.inside.crews.desc">We built Crews for agencies and larger teams with specialised people on different clients. Roles and scoped permissions decide who can view, edit, publish, or manage. We'll settle the exact vocabulary during the alpha.</p>
                         </div>
                         <div class="does-card">
-                            <div class="does-icon"><i data-lucide="shield-check"></i></div>
-                            <h3 data-i18n="project.cylro.next.hardening.title">Release Hardening</h3>
-                            <div class="does-meta"><span data-i18n="project.cylro.timeline.target">Target</span> · 2026</div>
-                            <p data-i18n="project.cylro.next.hardening.body">Preparing the public release with stable modules, API V1 access, monitoring, scaling, and a vetted path for future ecosystem growth.</p>
+                            <div class="does-icon"><i data-lucide="layout"></i></div>
+                            <h3 data-i18n="project.cylro.inside.studio.title">Studio</h3>
+                            <p data-i18n="project.cylro.inside.studio.desc">The website workspace: settings, page structure, visual design, reusable blocks, content, media, and themes for one site, wired into the operational controls of the wider Space.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="palette"></i></div>
+                            <h3 data-i18n="project.cylro.inside.design.title">Design system</h3>
+                            <p data-i18n="project.cylro.inside.design.desc">A design layer for components, structural rules, colours, themes, fonts, icons, and brand guidelines. Shared styling applies consistently across a site, or a designer can switch it off when they want direct control.</p>
+                        </div>
+                    </div>
+                    <p data-i18n="project.cylro.section.inside.modules">On top of that, modules add specialised capability only where a site needs it. Turn on the blog module and that website gets an area for writing articles, editing them, adding images, and managing related content. Collections and the modules we add later follow the same principle, because we don't want to end up with an unstructured plugin collection. Settings, domains, SEO, forms, client-facing access, and analytics are things we're still shaping.</p>
+
+                    <h2 data-i18n="project.cylro.section.publish.title">Publishing and Recovery</h2>
+                    <div class="does-grid cy-three">
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="layout"></i></div>
+                            <div class="does-meta">STEP 01</div>
+                            <h3 data-i18n="project.cylro.publish.build.title">Build it in Studio</h3>
+                            <p data-i18n="project.cylro.publish.build.desc">You put a website together in Studio, then our backend runs the build and publishing workflow for it.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="cloud"></i></div>
+                            <div class="does-meta">STEP 02</div>
+                            <h3 data-i18n="project.cylro.publish.export.title">Publish as static output</h3>
+                            <p data-i18n="project.cylro.publish.export.desc">We export the result as HTML and static assets into object storage, where a custom domain, and CDN delivery, can serve it to your visitors.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="archive"></i></div>
+                            <div class="does-meta">STEP 03</div>
+                            <h3 data-i18n="project.cylro.publish.recover.title">Keep a way back</h3>
+                            <p data-i18n="project.cylro.publish.recover.desc">We're making publishing versioned, so you can go back to a previous published version, restore it, or take a website offline.</p>
+                        </div>
+                    </div>
+                    <p class="cy-note" data-i18n="project.cylro.publish.note">These are controls you trigger yourself. We don't promise automatic rollback, automatic failover, or guaranteed recovery times.</p>
+
+                    <h2 data-i18n="project.cylro.section.role.title">My Role</h2>
+                    <p data-i18n="project.cylro.section.role.p1">I co-founded Cylro with Jim and I'm its technical lead and CTO. I set the technical direction and work hands-on across backend architecture, infrastructure, deployment, security, data flow, service boundaries, and how we design the AI integration.</p>
+                    <p data-i18n="project.cylro.section.role.p2">Jim leads the visual, frontend, and product-vision side. We share the product decisions, the company administration, and the business direction, and we run the whole thing as a two-founder team.</p>
+
+                    <h2 data-i18n="project.cylro.section.timeline.title">Company Timeline</h2>
+                    <div class="does-grid cy-three">
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="sprout"></i></div>
+                            <div class="does-meta">2025</div>
+                            <h3 data-i18n="project.cylro.timeline.founded.title">We start Cylro</h3>
+                            <p data-i18n="project.cylro.timeline.founded.desc">Jim and I start Cylro in Luxembourg, moving from an open-source CMS idea to one platform for website operations.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="monitor"></i></div>
+                            <div class="does-meta">2026</div>
+                            <h3 data-i18n="project.cylro.timeline.building.title">Landing page live, product in build</h3>
+                            <p data-i18n="project.cylro.timeline.building.desc">cylro.com is public and people can request early access, while we keep building the platform itself.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="target"></i></div>
+                            <div class="does-meta" data-i18n="project.cylro.timeline.alpha.meta">NOV 2026 · TARGET</div>
+                            <h3 data-i18n="project.cylro.timeline.alpha.title">Private alpha</h3>
+                            <p data-i18n="project.cylro.timeline.alpha.desc">We're targeting a private alpha for around November 2026, if we're ready, to see how deployment, updates, failures, recovery, and the gaps in the product hold up in real conditions.</p>
                         </div>
                     </div>
 
-                    <h2 data-i18n="project.cylro.section.lessons.title">Lessons So Far</h2>
-                    <p data-i18n="project.cylro.section.lessons.p1">Building a SaaS is more than code. Product positioning, onboarding, GDPR, providers, payments, access rules, and infrastructure shape the platform as much as the codebase. The biggest lesson so far is that multi-site operations need to be designed as one system from the start: publishing, rollback, permissions, AI assistance, and data sovereignty all affect each other.</p>
+                    <h2 data-i18n="project.cylro.section.now.title">Current Status</h2>
+                    <p data-i18n="project.cylro.section.now.p1">Cylro is pre-release and we're still building it. Our landing page is live and you can request early access through cylro.com, but the product isn't open for general use. We're not making any availability, pricing, or service commitments yet.</p>
+                    </div>
 
-                    <h2 data-i18n="project.cylro.section.now.title">Right Now</h2>
-                    <p data-i18n="project.cylro.section.now.p1">Cylro is actively being built and the private alpha is planned for 2026. Right now the focus is finalizing the website operations core, safe publishing, scoped access, EU provider integration, and permission-aware AI assistance.</p>
+                    <div class="tech-only">
+                        <h2 data-i18n="project.cylro.technical.goal.title">How I built it</h2>
+                        <p data-i18n="project.cylro.technical.goal.body">I built Cylro as one multi-website application rather than a collection of isolated site installs. A Space gives websites, people, and access their organisational context; I keep the Nuxt frontend as its own layer; and the Node.js backend is the single controlled path to data, permissions, publishing, and service coordination. We publish the websites themselves as static output, which keeps a live site independent of the application that produced it.</p>
+
+                        <nav class="cylro-tech-nav" aria-label="Technical section navigation">
+                            <span class="cylro-tech-nav-label" data-i18n="project.cylro.techNav.label">Jump to</span>
+                            <a href="#cylro-tech-frontend" data-i18n="project.cylro.techNav.frontend">Frontend</a>
+                            <a href="#cylro-tech-backend" data-i18n="project.cylro.techNav.backend">Backend</a>
+                            <a href="#cylro-tech-data" data-i18n="project.cylro.techNav.data">Data</a>
+                            <a href="#cylro-tech-publishing" data-i18n="project.cylro.techNav.publishing">Publishing</a>
+                            <a href="#cylro-tech-infrastructure" data-i18n="project.cylro.techNav.infrastructure">Infrastructure</a>
+                            <a href="#cylro-tech-ai" data-i18n="project.cylro.techNav.ai">AI</a>
+                            <a href="#cylro-tech-security" data-i18n="project.cylro.techNav.security">Security</a>
+                        </nav>
+
+                        <div class="stack-diagram">
+                            <div class="stack-layer" id="cylro-tech-frontend">
+                                <div class="stack-head"><i data-lucide="monitor"></i><h3 data-i18n="project.cylro.stack.frontend.title">Frontend: Nuxt 4, server-rendered</h3></div>
+                                <div class="stack-chips"><span>Nuxt 4</span><span>Vue 3</span><span>Pinia</span><span>Tailwind CSS</span><span>SSR</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.cylro.stack.frontend.b1" data-i18n-html><strong>A layer of its own</strong>: I keep the frontend separate from the backend so it can evolve on its own and stay easier to maintain.</li>
+                                    <li data-i18n="project.cylro.stack.frontend.b2" data-i18n-html><strong>API-only access</strong>: Nuxt talks to the backend through an API. The client never queries the database directly.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer" id="cylro-tech-backend">
+                                <div class="stack-head"><i data-lucide="server"></i><h3 data-i18n="project.cylro.stack.backend.title">Application layer: Node.js and Express</h3></div>
+                                <div class="stack-chips"><span>Node.js</span><span>Express</span><span>REST API</span><span>Rate limiting</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.cylro.stack.backend.b1" data-i18n-html><strong>One controller for the product</strong>: I route API communication, data access, authentication, permission checks, rate limiting, publishing, deployment workflows, and service coordination through the backend.</li>
+                                    <li data-i18n="project.cylro.stack.backend.b2" data-i18n-html><strong>Rules in one place</strong>: I enforce our product rules at the backend boundary instead of re-implementing them per client or per service.</li>
+                                    <li data-i18n="project.cylro.stack.backend.b3" data-i18n-html><strong>The path for future AI actions</strong>: I'm designing the AI capabilities we plan to act through this same backend, not around it.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer" id="cylro-tech-data">
+                                <div class="stack-head"><i data-lucide="database"></i><h3 data-i18n="project.cylro.stack.data.title">Data and caching</h3></div>
+                                <div class="stack-chips"><span>PostgreSQL</span><span>pgvector</span><span>Redis</span><span>JSON columns</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.cylro.stack.data.b1" data-i18n-html><strong>PostgreSQL as our system of record</strong>: open source, widely supported, and flexible enough for our structured application data, with JSON where that helps.</li>
+                                    <li data-i18n="project.cylro.stack.data.b2" data-i18n-html><strong>pgvector for where we're heading with AI</strong>: I've made room for vector search, contextual retrieval, and semantic lookup. That's direction, not a public feature we've shipped.</li>
+                                    <li data-i18n="project.cylro.stack.data.b3" data-i18n-html><strong>Redis as the caching layer</strong>: the backend reads frequently requested and short-lived data from Redis first, which cuts repeated reads against PostgreSQL.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="lock"></i><h3 data-i18n="project.cylro.stack.identity.title">Identity and access</h3></div>
+                                <div class="stack-chips"><span>SuperTokens</span><span>Roles</span><span>Crews</span><span>Scoped permissions</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.cylro.stack.identity.b1" data-i18n-html><strong>SuperTokens behind the backend</strong>: I chose it over our earlier Keycloak direction because it fit our authentication and backend-connection requirements better. Keycloak is no longer part of the stack.</li>
+                                    <li data-i18n="project.cylro.stack.identity.b2" data-i18n-html><strong>Identity isn't the permission model</strong>: SuperTokens establishes who someone is. Our backend connects that identity to Spaces, roles, Crews, website scopes, product actions, and publishing rights.</li>
+                                    <li data-i18n="project.cylro.stack.identity.b3" data-i18n-html><strong>Room for separate identity contexts</strong>: I designed the architecture so we can later handle external website visitors separately from the people operating a Space.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer" id="cylro-tech-publishing">
+                                <div class="stack-head"><i data-lucide="globe"></i><h3 data-i18n="project.cylro.stack.publishing.title">Publishing and delivery</h3></div>
+                                <div class="stack-chips"><span>Static export</span><span>S3-compatible storage</span><span>Custom domains</span><span>CDN</span><span>Versioned publishing</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.cylro.stack.publishing.b1" data-i18n-html><strong>Static output instead of a container per site</strong>: a build produces HTML and static assets, so I don't run a dedicated application container for every customer website.</li>
+                                    <li data-i18n="project.cylro.stack.publishing.b2" data-i18n-html><strong>Object storage as the origin</strong>: we store the published output in S3-compatible storage and point a custom domain at it, with CDN delivery for reach and to keep pressure off our application servers.</li>
+                                    <li data-i18n="project.cylro.stack.publishing.b3" data-i18n-html><strong>Rollback and recovery you trigger yourself</strong>: going back to a previous published version, restoring it, or taking a site offline are your actions. We don't promise automatic rollback, automatic failover, or guaranteed recovery times.</li>
+                                    <li data-i18n="project.cylro.stack.publishing.b4" data-i18n-html><strong>Dynamic behaviour in the browser</strong>: client-side JavaScript covers what a static site needs, so we don't have to server-render every page permanently. E-commerce and heavier dynamic cases are future work.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer" id="cylro-tech-infrastructure">
+                                <div class="stack-head"><i data-lucide="container"></i><h3 data-i18n="project.cylro.stack.infra.title">Containers and infrastructure</h3></div>
+                                <div class="stack-chips"><span>Docker</span><span>Docker Compose</span><span>Service boundaries</span><span>Hetzner (direction)</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.cylro.stack.infra.b1" data-i18n-html><strong>Separate services, separate responsibilities</strong>: I designed the Nuxt frontend, Node.js backend, PostgreSQL, Redis, the authentication service, and the supporting services as distinct container boundaries.</li>
+                                    <li data-i18n="project.cylro.stack.infra.b2" data-i18n-html><strong>Docker for development and delivery images</strong>: Compose covers our local development and delivery-image workflows. It isn't what I intend to run in production.</li>
+                                    <li data-i18n="project.cylro.stack.infra.b3" data-i18n-html><strong>Hetzner as our first production provider</strong>: affordable compute, suitable storage, and good S3 pricing for a company at our stage. We may look at Scaleway, OVH, and other European providers later.</li>
+                                    <li data-i18n="project.cylro.stack.infra.b4" data-i18n-html><strong>Deployment platform still being decided</strong>: I'm evaluating a visual container-deployment platform for releases, updates, service health, and operational visibility during the alpha. I haven't fixed the final choice or the multi-server approach.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer" id="cylro-tech-ai">
+                                <div class="stack-head"><i data-lucide="brain"></i><h3 data-i18n="project.cylro.stack.ai.title">AI orchestration direction</h3></div>
+                                <div class="stack-chips"><span>Umbrella agent</span><span>Bounded capabilities</span><span>Backend-enforced</span><span>Human approval</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.cylro.stack.ai.b1" data-i18n-html><strong>Assistance, not our identity</strong>: optional help with content drafting, SEO suggestions, review, layout ideas, and routine website or access tasks. We're not trying to replace the people running the websites.</li>
+                                    <li data-i18n="project.cylro.stack.ai.b2" data-i18n-html><strong>The orchestration model I'm planning</strong>: you'd talk to an umbrella agent that understands the request and delegates bounded work to specialised capabilities.</li>
+                                    <li data-i18n="project.cylro.stack.ai.b3" data-i18n-html><strong>No unrestricted authority</strong>: I'm designing every consequential action to go through the backend, get checked against our product rules and your permissions, be explained back to you, wait for your approval, and only then run.</li>
+                                    <li data-i18n="project.cylro.stack.ai.b4" data-i18n-html><strong>We choose the provider, you don't bring your own model</strong>: we provide the AI experience, and we can change model and provider on quality, cost, availability, performance, and European hosting options. The orchestration harness isn't finished, and we have no live public AI features.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer" id="cylro-tech-security">
+                                <div class="stack-head"><i data-lucide="shield-check"></i><h3 data-i18n="project.cylro.stack.security.title">Security and operational validation</h3></div>
+                                <div class="stack-chips"><span>Backend enforcement</span><span>Container health</span><span>Operations view</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.cylro.stack.security.b1" data-i18n-html><strong>No direct client access to core services</strong>: sensitive product actions go through the backend, where I enforce permissions, product rules, rate limits, authentication checks, publishing, and operational requests.</li>
+                                    <li data-i18n="project.cylro.stack.security.b3" data-i18n-html><strong>Monitoring is still evolving</strong>: I'm building an internal operations view to bring service status and operational signals together, alongside the baseline container logs and health the deployment platform gives us.</li>
+                                    <li data-i18n="project.cylro.stack.security.b4" data-i18n-html><strong>What the alpha has to prove</strong>: failures, redeployments, restoration paths, backup behaviour, recovery of published site versions, and re-upload and service recovery. Until it has, I'm not claiming uptime, recovery targets, complete monitoring coverage, or production-proven backups.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="git-branch"></i><h3 data-i18n="project.cylro.stack.workflow.title">How we work</h3></div>
+                                <div class="stack-chips"><span>GitHub</span><span>Branches</span><span>AI-assisted</span><span>Human-reviewed</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.cylro.stack.workflow.b1" data-i18n-html><strong>AI-supported, human-reviewed</strong>: AI speeds up exploration, implementation, debugging, and code investigation. We keep the product decisions, the technical direction, the review, and the call on what actually enters the product.</li>
+                                    <li data-i18n="project.cylro.stack.workflow.b2" data-i18n-html><strong>Validated through hands-on local use</strong>: I test changes locally by actually operating the product, not only in isolation.</li>
+                                    <li data-i18n="project.cylro.stack.workflow.b3" data-i18n-html><strong>Branch-based work in GitHub</strong>: we keep parallel work separate to reduce conflicts while we build.</li>
+                                    <li data-i18n="project.cylro.stack.workflow.b4" data-i18n-html><strong>What we don't have yet</strong>: a complete CI/CD pipeline, a formal staging environment, and comprehensive automated testing. Those are what I want to strengthen as the alpha forces real release discipline on us.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 data-i18n="project.cylro.section.next.title">What I'm Working On</h2>
+                    <div class="does-grid cy-three">
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="boxes"></i></div>
+                            <h3 data-i18n="project.cylro.next.core.title">Core product</h3>
+                            <p data-i18n="project.cylro.next.core.body">Getting Spaces, Crews, Studio, the design layer, modules, publishing, and recovery to work as one coherent system rather than separate features.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="server-cog"></i></div>
+                            <h3 data-i18n="project.cylro.next.ops.title">Deployment and operations</h3>
+                            <p data-i18n="project.cylro.next.ops.body">Settling the deployment platform, the operations view, and the backup and restoration paths I want the alpha to put under real pressure.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="target"></i></div>
+                            <h3 data-i18n="project.cylro.next.alpha.title">Private alpha</h3>
+                            <p data-i18n="project.cylro.next.alpha.body">Preparing a small, closely supported alpha for around November 2026, and being clear about what's ready before anyone starts.</p>
+                        </div>
+                    </div>
                 </div>
             </article>
 
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <div id="category-section" style="display: none;">
+                    <div id="category-section" data-project-id="cylro" style="display: none;">
                         <h3 data-i18n="project.sidebar.category">Category</h3>
                         <div class="line"></div>
                         <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
@@ -519,76 +705,47 @@
                     <h3 data-i18n="project.sidebar.techStack">Tech Stack</h3>
                     <div class="line"></div>
                     <ul class="tech-stack-list">
-                        <li><i data-lucide="code-2"></i> <span data-i18n="project.cylro.sidebar.tech.nuxt">Nuxt 4 + Vue 3</span></li>
-                        <li><i data-lucide="palette"></i> <span data-i18n="project.cylro.sidebar.tech.css">Custom CSS</span></li>
-                        <li><i data-lucide="server"></i> <span data-i18n="project.cylro.sidebar.tech.node">Node.js + Express.js</span></li>
-                        <li><i data-lucide="database"></i> <span data-i18n="project.cylro.sidebar.tech.db">PostgreSQL 16 + pgvector</span></li>
-                        <li><i data-lucide="activity"></i> <span data-i18n="project.cylro.sidebar.tech.redis">Redis</span></li>
-                        <li><i data-lucide="shield"></i> <span data-i18n="project.cylro.sidebar.tech.keycloak">Keycloak SSO</span></li>
-                        <li><i data-lucide="brain"></i> <span data-i18n="project.cylro.sidebar.tech.mistral">Mistral AI</span></li>
-                        <li><i data-lucide="credit-card"></i> <span data-i18n="project.cylro.sidebar.tech.mollie">Mollie (EU payments)</span></li>
-                        <li><i data-lucide="server-cog"></i> <span data-i18n="project.cylro.sidebar.tech.euProviders">Hetzner + Infomaniak</span></li>
-                        <li><i data-lucide="cloud"></i> <span data-i18n="project.cylro.sidebar.tech.s3">S3-compatible storage</span></li>
-                        <li><i data-lucide="box"></i> <span data-i18n="project.cylro.sidebar.tech.docker">Docker + K3s</span></li>
+                        <li><i data-lucide="code-2"></i> <span data-i18n="project.cylro.sidebar.tech.nuxt">Nuxt 4 + Vue 3 (SSR)</span></li>
+                        <li><i data-lucide="palette"></i> <span>Pinia + Tailwind CSS</span></li>
+                        <li><i data-lucide="server"></i> <span data-i18n="project.cylro.sidebar.tech.node">Node.js + Express</span></li>
+                        <li><i data-lucide="database"></i> <span data-i18n="project.cylro.sidebar.tech.db">PostgreSQL + pgvector</span></li>
+                        <li><i data-lucide="activity"></i> <span>Redis</span></li>
+                        <li><i data-lucide="lock"></i> <span data-i18n="project.cylro.sidebar.tech.supertokens">SuperTokens</span></li>
+                        <li><i data-lucide="cloud"></i> <span data-i18n="project.cylro.sidebar.tech.s3">S3-compatible object storage</span></li>
+                        <li><i data-lucide="box"></i> <span data-i18n="project.cylro.sidebar.tech.docker">Docker + Docker Compose</span></li>
                     </ul>
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
                     <div class="line"></div>
                     <ul class="skill-list" style="margin-top: 1rem;">
-                        <li data-i18n="project.cylro.sidebar.features.euHosted">EU-managed infrastructure</li>
-                        <li data-i18n="project.cylro.sidebar.features.isolation">One Space for many websites</li>
-                        <li data-i18n="project.cylro.sidebar.features.builder">Studio + Website Management</li>
-                        <li data-i18n="project.cylro.sidebar.features.cmsSeo">SEO and launch checks</li>
-                        <li data-i18n="project.cylro.sidebar.features.domainsSsl">Custom domains + SSL</li>
-                        <li data-i18n="project.cylro.sidebar.features.rollback">Safe publishing with rollback</li>
-                        <li data-i18n="project.cylro.sidebar.features.clientPortal">Client content portal</li>
-                        <li data-i18n="project.cylro.sidebar.features.permissionAi">Permission-aware AI</li>
+                        <li data-i18n="project.cylro.sidebar.features.spaces">Multi-site Spaces with Crews and roles</li>
+                        <li data-i18n="project.cylro.sidebar.features.studio">Studio workspace and design layer</li>
+                        <li data-i18n="project.cylro.sidebar.features.modules">Per-site modules</li>
+                        <li data-i18n="project.cylro.sidebar.features.static">Static publishing to object storage</li>
+                        <li data-i18n="project.cylro.sidebar.features.rollback">Versioned publishing with rollback you trigger</li>
+                        <li data-i18n="project.cylro.sidebar.features.backend">Backend-enforced permissions</li>
+                        <li data-i18n="project.cylro.sidebar.features.ai">Optional AI assistance, in development</li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.cylro.sidebar.role.title">My Role</h3>
+                    <div class="line"></div>
+                    <ul class="skill-list" style="margin-top: 1rem;">
+                        <li data-i18n="project.cylro.sidebar.role.item1">Co-founder, technical lead / CTO</li>
+                        <li data-i18n="project.cylro.sidebar.role.item2">Backend and data architecture</li>
+                        <li data-i18n="project.cylro.sidebar.role.item3">Infrastructure and deployment direction</li>
+                        <li data-i18n="project.cylro.sidebar.role.item4">Security approach and service boundaries</li>
+                        <li data-i18n="project.cylro.sidebar.role.item5">AI integration design</li>
                     </ul>
                 </div>
             </aside>
         </div>
 
         <footer style="margin-top: 4rem;">
-            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
         </footer>
     </main>
 
-    <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        // Use centralized category display function (updates dynamically on language change)
-        // Must wait for DOMContentLoaded since script.js wraps everything in DOMContentLoaded
-        function initProjectCategories() {
-            if (typeof window.updateProjectCategories === 'function' && typeof getProjectById !== 'undefined') {
-                window.updateProjectCategories('cylro');
-            } else {
-                // Retry if dependencies haven't loaded yet
-                setTimeout(initProjectCategories, 100);
-            }
-        }
-
-        // Initialize Lucide icons (wait for it to load)
-        function initLucideIcons() {
-            if (typeof renderIcons !== 'undefined') {
-                renderIcons();
-            } else {
-                setTimeout(initLucideIcons, 100);
-            }
-        }
-
-        // Wait for DOMContentLoaded - script.js initializes on DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize categories
-            setTimeout(initProjectCategories, 200);
-            // Initialize Lucide icons
-            initLucideIcons();
-        });
-
-        // Also try if DOM is already loaded (fallback)
-        if (document.readyState !== 'loading') {
-            setTimeout(initProjectCategories, 300);
-            initLucideIcons();
-        }
-    </script>
+    <script src="../assets/js/project-page-init.js" defer></script>
 </body>
 </html>

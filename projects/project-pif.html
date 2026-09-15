@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
     <title>Smart Plant Monitoring (PIF) | VidGuiCode</title>
-    <meta name="description" content="Deep dive into my PIF Final Project - a full IoT plant monitoring system: ESP8266 sensor nodes, a Raspberry Pi LAMP hub, enterprise networking, a RAID1 backup server, and a real-time web dashboard.">
+    <meta name="description" content="PIF final project: a full IoT plant monitoring system with ESP8266 sensor nodes, a Raspberry Pi LAMP hub, enterprise networking, and a live web dashboard.">
+    <link rel="canonical" href="https://vidguicode.github.io/projects/project-pif">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vidguicode.github.io/projects/project-pif">
+    <meta property="og:title" content="Smart Plant Monitoring (PIF) | VidGuiCode">
+    <meta property="og:description" content="PIF final project: a full IoT plant monitoring system with ESP8266 sensor nodes, a Raspberry Pi LAMP hub, enterprise networking, and a live web dashboard.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/pif/sensor-wemos-lightstandbulb.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/projects/project-pif">
+    <meta name="twitter:title" content="Smart Plant Monitoring (PIF) | VidGuiCode">
+    <meta name="twitter:description" content="PIF final project: a full IoT plant monitoring system with ESP8266 sensor nodes, a Raspberry Pi LAMP hub, enterprise networking, and a live web dashboard.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/projects/pif/sensor-wemos-lightstandbulb.webp">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,7 +234,7 @@
             }
         }
 
-        /* Packet-tracer figure (technical) — full width, light backdrop for the diagram */
+        /* Packet-tracer figure (technical) - full width, light backdrop for the diagram */
         .pif-network-figure {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -308,10 +324,10 @@
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.pif.badge">FINAL PROJECT</div>
                 <h1>
-                    <span data-i18n="project.pif.title">Smart Plant Monitoring</span>
+                    <span data-i18n="project.pif.title">Smart Plant Monitoring - Final Project</span>
                     <span class="score-badge" data-i18n="project.pif.score">59/60</span>
                 </h1>
-                <p class="subtitle" data-i18n="project.pif.subtitle">Final project from September 2024 to June 2025: a full IoT system with ESP8266 nodes, a Raspberry Pi hub, web dashboard, enterprise networking, and automated backups.</p>
+                <p class="subtitle" data-i18n="project.pif.subtitle">My final Computer Technician diploma project, developed from September 2024 to June 2025: a self-watering plant system that measures conditions, shows them clearly, and protects its data with nightly backups. I built every layer, from the physical device to the software and network, to make everyday plant care more reliable.</p>
             </div>
         </section>
 
@@ -321,7 +337,7 @@
                     <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
                     <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
                 </div>
-                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view, built for everyone</span>
                 <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
             </div>
 
@@ -427,12 +443,12 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="monitor"></i></div>
                         <h3 data-i18n="project.pif.does.dashboard.title">Live dashboard on a touchscreen</h3>
-                        <p data-i18n="project.pif.does.dashboard.desc">Real-time charts for temperature, light and moisture — with schedules and history, on a small touchscreen and in any browser.</p>
+                        <p data-i18n="project.pif.does.dashboard.desc">Real-time charts for temperature, light and moisture - with schedules and history, on a small touchscreen and in any browser.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="network"></i></div>
                         <h3 data-i18n="project.pif.does.network.title">An enterprise-style network</h3>
-                        <p data-i18n="project.pif.does.network.desc">A complete company-style network — separate secured zones, proper routing and a simulated internet provider — designed and tested end to end in Cisco Packet Tracer.</p>
+                        <p data-i18n="project.pif.does.network.desc">A complete company-style network - separate secured zones, proper routing and a simulated internet provider - designed and tested end to end in Cisco Packet Tracer.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="hard-drive"></i></div>
@@ -451,29 +467,29 @@
                         <div class="intro-text">
                             <i data-lucide="sprout" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
                             <h2 data-i18n="project.pif.section.system.title">The "Plantimeter" System</h2>
-                            <p data-i18n="project.pif.section.system.body" data-i18n-html="true">This was my <strong>PIF (Projet Intégré Final)</strong> — the capstone project for my Computer Technician diploma. I built a complete IoT plant monitoring and automation system from scratch: hardware nodes, firmware, backend server, web dashboard, and enterprise networking.</p>
+                            <p data-i18n="project.pif.section.system.body" data-i18n-html="true">This was my <strong>PIF (Projet Intégré Final)</strong> - the capstone project for my Computer Technician diploma. I built a complete IoT plant monitoring and automation system from scratch: hardware nodes, firmware, backend server, web dashboard, and enterprise networking.</p>
                         </div>
                         <div class="intro-image project-image-container">
                             <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/sensor-wemos-lightstandbulb.webp', 'ESP8266 Sensor Node with Wemos D1 Mini, sensors, and LED light stand')">
                                 <img src="../assets/img/projects/pif/sensor-wemos-lightstandbulb.webp" alt="ESP8266 Sensor Node with Wemos D1 Mini, sensors, and LED light stand" class="project-image" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border-color);">
                             </div>
-                            <p class="project-image-caption" data-i18n="project.pif.images.sensor">ESP8266 sensor node: Wemos D1 Mini with DHT22, BH1750, SEN0193 sensors and a grow light</p>
+                            <p class="project-image-caption" data-i18n="project.pif.images.sensor">ESP8266 Sensor Node: Wemos D1 Mini with DHT22, BH1750, SEN0193 sensors and LED grow light</p>
                         </div>
                     </div>
 
-                    <!-- The build in action — real photos (both lenses) -->
+                    <!-- The build in action - real photos (both lenses) -->
                     <div class="pif-photo-strip">
                         <div class="project-image-container">
                             <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/display-pi4.webp', 'Raspberry Pi 4 with touchscreen display showing the Plantimeter dashboard')">
                                 <img src="../assets/img/projects/pif/display-pi4.webp" alt="Raspberry Pi 4 with touchscreen display showing the Plantimeter dashboard" class="project-image" loading="lazy">
                             </div>
-                            <p class="project-image-caption" data-i18n="project.pif.images.display">The Raspberry Pi 4 hub running the touchscreen kiosk interface</p>
+                            <p class="project-image-caption" data-i18n="project.pif.images.display">Raspberry Pi 4 Hub Server with touchscreen display running the kiosk mode interface</p>
                         </div>
                         <div class="project-image-container">
                             <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/water-dropping-mechanism.webp', 'Automated water dropping mechanism for plant irrigation')">
                                 <img src="../assets/img/projects/pif/water-dropping-mechanism.webp" alt="Automated water dropping mechanism for plant irrigation" class="project-image" loading="lazy">
                             </div>
-                            <p class="project-image-caption" data-i18n="project.pif.images.water">The automated watering mechanism, driven by the soil-moisture sensor</p>
+                            <p class="project-image-caption" data-i18n="project.pif.images.water">Automated watering system: Water pump mechanism controlled by soil moisture sensors</p>
                         </div>
                     </div>
 
@@ -481,7 +497,7 @@
                         <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/packet-tracer-example.webp', 'Cisco Packet Tracer network topology showing VLANs, routers, and network architecture')">
                             <img src="../assets/img/projects/pif/packet-tracer-example.webp" alt="Cisco Packet Tracer network topology showing VLANs, routers, and network architecture" class="project-image" loading="lazy">
                         </div>
-                        <p class="project-image-caption" data-i18n="project.pif.images.network">The whole network — including the simulated internet/ISP side — designed and tested in Cisco Packet Tracer: the home network (IoT nodes, PlantimeterAP) connects to the company office (servers, VLANs) through an ISR4331 router, with DNS routing to Google Public DNS.</p>
+                        <p class="project-image-caption" data-i18n="project.pif.images.network.overview">The full test network shows the plant system, office services, and a simulated internet connection working together. I designed and tested it to make sure information could move safely between the separate parts of the system.</p>
                     </div>
 
                     <div class="tech-only">
@@ -536,7 +552,7 @@
                             <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/pif/packet-tracer-example.webp', 'Cisco Packet Tracer network topology showing VLANs, routers, and network architecture')">
                                 <img src="../assets/img/projects/pif/packet-tracer-example.webp" alt="Cisco Packet Tracer network topology showing VLANs, routers, and network architecture" class="project-image" loading="lazy">
                             </div>
-                            <p class="project-image-caption" data-i18n="project.pif.images.network">The whole network — including the simulated internet/ISP side — designed and tested in Cisco Packet Tracer: the home network (IoT nodes, PlantimeterAP) connects to the company office (servers, VLANs) through an ISR4331 router, with DNS routing to Google Public DNS.</p>
+                            <p class="project-image-caption" data-i18n="project.pif.images.network">The whole network - including the simulated internet/ISP side - designed and tested in Cisco Packet Tracer: the home network (IoT nodes, PlantimeterAP) connects to the company office (servers, VLANs) through an ISR4331 router, with DNS routing to Google Public DNS.</p>
                         </div>
                     </div><!-- /.tech-only -->
 
@@ -544,7 +560,7 @@
                     <div class="journey">
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">01</span></div>
-                            <div class="journey-body"><p data-i18n="project.pif.section.why.body1" data-i18n-html="true">This was my <strong>final exam project</strong> for the Computer Technician diploma. It had to demonstrate skills across hardware, software, networking, and documentation. I chose to go beyond the requirements — implementing "Should" and "Could" features, plus my own innovations like fuzzy search and an 80°C safety cutoff.</p></div>
+                            <div class="journey-body"><p data-i18n="project.pif.section.why.body1" data-i18n-html="true">This was my <strong>final exam project</strong> for the Computer Technician diploma. It had to demonstrate skills across hardware, software, networking, and documentation. I chose to go beyond the requirements - implementing "Should" and "Could" features, plus my own innovations like fuzzy search and an 80°C safety cutoff.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">02</span></div>
@@ -562,7 +578,7 @@
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="layout"></i></div>
                             <h3 data-i18n="project.pif.lessons.fullstack.title">Full-stack means full responsibility</h3>
-                            <p data-i18n="project.pif.lessons.fullstack.desc">From PCB to PHP, every layer had to work together — one bug anywhere breaks everything.</p>
+                            <p data-i18n="project.pif.lessons.fullstack.desc">From PCB to PHP, every layer had to work together - one bug anywhere breaks everything.</p>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="file-text"></i></div>
@@ -581,7 +597,7 @@
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <div id="category-section" style="display: none;">
+                    <div id="category-section" data-project-id="pif" style="display: none;">
                         <h3 data-i18n="project.sidebar.category">Category</h3>
                         <div class="line"></div>
                         <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
@@ -635,7 +651,7 @@
         </div>
 
         <footer style="margin-top: 4rem;">
-            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
         </footer>
     </main>
 
@@ -645,94 +661,7 @@
         <img id="modal-image" class="image-modal-content" src="" alt="">
     </div>
 
-    <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        // Use centralized category display function (updates dynamically on language change)
-        // Must wait for DOMContentLoaded since script.js wraps everything in DOMContentLoaded
-        function initProjectCategories() {
-            if (typeof window.updateProjectCategories === 'function' && typeof getProjectById !== 'undefined') {
-                window.updateProjectCategories('pif');
-            } else {
-                // Retry if dependencies haven't loaded yet
-                setTimeout(initProjectCategories, 100);
-            }
-        }
-
-        // Initialize Lucide icons (wait for it to load)
-        function initLucideIcons() {
-            if (typeof renderIcons !== 'undefined') {
-                renderIcons();
-            } else {
-                setTimeout(initLucideIcons, 100);
-            }
-        }
-
-        // Wait for DOMContentLoaded - script.js initializes on DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize categories
-            setTimeout(initProjectCategories, 200);
-            // Initialize Lucide icons
-            initLucideIcons();
-        });
-
-        // Also try if DOM is already loaded (fallback)
-        if (document.readyState !== 'loading') {
-            setTimeout(initProjectCategories, 300);
-            initLucideIcons();
-        }
-
-        // Image Modal Functions
-        function openImageModal(imageSrc, imageAlt) {
-            const modal = document.getElementById('image-modal');
-            const modalImage = document.getElementById('modal-image');
-            if (modal && modalImage) {
-                // Set image source and alt
-                modalImage.src = imageSrc;
-                modalImage.alt = imageAlt || '';
-
-                // Show modal
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-
-                // Handle image load error
-                modalImage.onerror = function() {
-                    console.error('Failed to load image:', imageSrc);
-                    modalImage.alt = 'Image failed to load';
-                };
-            }
-        }
-
-        function closeImageModal(event) {
-            if (event) {
-                event.stopPropagation();
-            }
-            const modal = document.getElementById('image-modal');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = ''; // Restore scrolling
-            }
-        }
-
-        // Close modal on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const modal = document.getElementById('image-modal');
-                if (modal && modal.classList.contains('active')) {
-                    closeImageModal();
-                }
-            }
-        });
-
-        // Prevent modal from closing when clicking on the image itself
-        document.addEventListener('DOMContentLoaded', function() {
-            const modalImage = document.getElementById('modal-image');
-            if (modalImage) {
-                modalImage.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-            }
-        });
-    </script>
+    <script src="../assets/js/project-page-init.js" defer></script>
 </body>
 </html>

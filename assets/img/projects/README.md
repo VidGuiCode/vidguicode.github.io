@@ -6,7 +6,7 @@ This directory contains images for each project. Each project has its own folder
 
 - `homelab/` - Images for Home Lab Personal Cloud project
 - `pif/` - Images for Smart Plant Monitoring (Final Project)
-- `cylro/` - Images for Cylro CMS project
+- `cylro/` - Approved icon and images for the Cylro website operations project
 - `gradingdino/` - Images for GradingDino project
 - `portfolio/` - Images for Portfolio Website project
 

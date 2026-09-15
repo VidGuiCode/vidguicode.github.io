@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiniCFL — Azure AZ-104 Demonstration | VidGuiCode</title>
-    <meta name="description" content="An Azure AZ-104 administrator demonstration built around a CFL train simulator: Entra ID and RBAC, a management-group hierarchy with Policy and budgets, a containerised web app on App Service, a private PostgreSQL database VM, an Azure Function timer, a VNet with NSGs, and Azure Monitor — across dev and prod in two regions.">
+    <meta name="theme-color" content="#0a0a0c">
+    <title>MiniCFL - Azure AZ-104 Demonstration | VidGuiCode</title>
+    <meta name="description" content="An Azure AZ-104 administrator demonstration built on a CFL train simulator: Entra ID and RBAC, management groups with Policy, App Service, VNet, and Monitor.">
+    <link rel="canonical" href="https://vidguicode.github.io/projects/project-minicfl-az104">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vidguicode.github.io/projects/project-minicfl-az104">
+    <meta property="og:title" content="MiniCFL - Azure AZ-104 Demonstration | VidGuiCode">
+    <meta property="og:description" content="An Azure AZ-104 administrator demonstration built on a CFL train simulator: Entra ID and RBAC, management groups with Policy, App Service, VNet, and Monitor.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/minicfl-az104/minicfl-simulator.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/projects/project-minicfl-az104">
+    <meta name="twitter:title" content="MiniCFL - Azure AZ-104 Demonstration | VidGuiCode">
+    <meta name="twitter:description" content="An Azure AZ-104 administrator demonstration built on a CFL train simulator: Entra ID and RBAC, management groups with Policy, App Service, VNet, and Monitor.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/projects/minicfl-az104/minicfl-simulator.webp">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,8 +103,8 @@
         <section class="project-hero">
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.minicfl-az104.badge">CLOUD · AZ-104</div>
-                <h1 data-i18n="projects.minicfl-az104.title">MiniCFL — Azure AZ-104 Demonstration</h1>
-                <p class="subtitle" data-i18n="projects.minicfl-az104.desc">A CFL train simulator running Petange → Luxembourg, wrapped in a full Azure administrator environment: identity and governance, compute, networking, and monitoring. The train is the scenario; managing Azure the right way is the point.</p>
+                <h1 data-i18n="projects.minicfl-az104.title">MiniCFL - Azure AZ-104 Demonstration</h1>
+                <p class="subtitle" data-i18n="project.minicfl-az104.subtitle">A familiar CFL train journey turned into a real cloud-administration project. Our three-person team built a live tracker and the secure, monitored Azure environment behind it, showing how a service is managed from access and cost control to daily operation.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
                     <span data-i18n="project.lastUpdated">Last updated:</span> <span>26/06/2026</span>
@@ -102,7 +118,7 @@
                     <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
                     <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
                 </div>
-                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view, built for everyone</span>
                 <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
             </div>
 
@@ -190,12 +206,12 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="route"></i></div>
                         <h3 data-i18n="project.minicfl-az104.does.track.title">A live train tracker</h3>
-                        <p data-i18n="project.minicfl-az104.does.track.desc">A web page shows one CFL train moving between Petange and Luxembourg — where it is, the next stop, planned vs. real arrival, and how late it is.</p>
+                        <p data-i18n="project.minicfl-az104.does.track.desc">A web page shows one CFL train moving between Petange and Luxembourg - where it is, the next stop, planned vs. real arrival, and how late it is.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="cloud-cog"></i></div>
                         <h3 data-i18n="project.minicfl-az104.does.admin.title">Built like a cloud admin</h3>
-                        <p data-i18n="project.minicfl-az104.does.admin.desc">Real users, groups and permissions, organised subscriptions, and rules that decide who can change what — the everyday job of an Azure administrator.</p>
+                        <p data-i18n="project.minicfl-az104.does.admin.desc">Real users, groups and permissions, organised subscriptions, and rules that decide who can change what - the everyday job of an Azure administrator.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="shield"></i></div>
@@ -219,7 +235,7 @@
                         <div class="intro-text">
                             <i data-lucide="cloud" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
                             <h2 data-i18n="project.minicfl-az104.section.intro.title">A train you can see, an environment you can administer</h2>
-                            <p data-i18n="project.minicfl-az104.section.intro.body">MiniCFL is my AZ-104 (Azure Administrator) demonstration project for the BTS Cloud Computing course. The visible part is deliberately small: a simulator that moves one CFL train along the real Petange → Luxembourg line and shows its live position, next stop, delay and timetable. The train exists to give every Azure resource a concrete reason to be there. Around it I built — and administer — a complete environment covering the five AZ-104 skill areas, deployed across a development and a production environment in two different Azure regions.</p>
+                            <p data-i18n="project.minicfl-az104.section.intro.body">MiniCFL is a three-person AZ-104 (Azure Administrator) demonstration project we built for the BTS Cloud Computing course. The visible part is deliberately small: a simulator that moves one CFL train along the real Petange → Luxembourg line and shows its live position, next stop, delay and timetable. The train exists to give every Azure resource a concrete reason to be there. Around it our team built and administered a complete environment covering the five AZ-104 skill areas, deployed across a development and a production environment in two different Azure regions.</p>
                         </div>
                         <div class="intro-image project-image-container">
                             <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/minicfl-az104/minicfl-simulator.webp', 'The MiniCFL train simulator web app showing the train lane, stations, status panel and timetable')">
@@ -235,17 +251,17 @@
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="users"></i></div>
                             <h3>Donnny</h3>
-                            <p data-i18n="project.minicfl-az104.team.donnny.role">Identity &amp; governance — the management-group hierarchy, RBAC role assignments, users and groups, and budgets.</p>
+                            <p data-i18n="project.minicfl-az104.team.donnny.role">Identity &amp; governance - the management-group hierarchy, RBAC role assignments, users and groups, and budgets.</p>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="network"></i></div>
                             <h3>Marios</h3>
-                            <p data-i18n="project.minicfl-az104.team.marios.role">Networking &amp; database — the NSGs, the VNet, and the VM running the PostgreSQL database.</p>
+                            <p data-i18n="project.minicfl-az104.team.marios.role">Networking &amp; database - the NSGs, the VNet, and the VM running the PostgreSQL database.</p>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="cloud-cog"></i></div>
                             <h3 data-i18n="project.minicfl-az104.team.me.name">Guilherme (me)</h3>
-                            <p data-i18n="project.minicfl-az104.team.me.role">Compute, app &amp; monitoring — the containerised web app on App Service, ACR, the Azure Function timer, and Azure Monitor.</p>
+                            <p data-i18n="project.minicfl-az104.team.me.role">Compute, app &amp; monitoring - the containerised web app on App Service, ACR, the Azure Function timer, and Azure Monitor.</p>
                         </div>
                     </div>
 
@@ -258,7 +274,7 @@
                             <div class="stack-head"><i data-lucide="users"></i><h3 data-i18n="project.minicfl-az104.section.what.identity.title">Identity &amp; Governance</h3></div>
                             <div class="stack-chips"><span>Microsoft Entra ID</span><span>RBAC</span><span>Management Groups</span><span>Azure Policy</span><span>Tags</span><span>Budgets</span></div>
                             <ul class="feature-list stack-detail">
-                                <li data-i18n="project.minicfl-az104.section.what.identity.hierarchy" data-i18n-html><strong>Management-group hierarchy</strong>: Tenant Root → Students → B1CLC → b1clc-beelen, with two student subscriptions (GloDo, VidGu) underneath — a real governance scope above the resource-group level.</li>
+                                <li data-i18n="project.minicfl-az104.section.what.identity.hierarchy" data-i18n-html><strong>Management-group hierarchy</strong>: Tenant Root → Students → B1CLC → b1clc-beelen, with two student subscriptions (GloDo, VidGu) underneath - a real governance scope above the resource-group level.</li>
                                 <li data-i18n="project.minicfl-az104.section.what.identity.rbac" data-i18n-html><strong>Least-privilege RBAC</strong>: Entra ID users and groups for admins, developers and readers, with roles assigned at resource-group scope (Contributor / Reader) instead of handing out Owner.</li>
                                 <li data-i18n="project.minicfl-az104.section.what.identity.policy" data-i18n-html><strong>Policy, tags &amp; budgets</strong>: Azure Policy enforces allowed regions and required tags; budget alerts protect the student credit before it runs out.</li>
                             </ul>
@@ -267,9 +283,9 @@
                             <div class="stack-head"><i data-lucide="container"></i><h3 data-i18n="project.minicfl-az104.section.what.compute.title">Compute</h3></div>
                             <div class="stack-chips"><span>Azure Container Registry</span><span>App Service</span><span>Web App for Containers</span><span>Azure VM</span><span>Managed Disks</span><span>PostgreSQL</span><span>Azure Functions</span><span>Managed Identity</span><span>Storage Account</span><span>Docker</span></div>
                             <ul class="feature-list stack-detail">
-                                <li data-i18n="project.minicfl-az104.section.what.compute.web" data-i18n-html><strong>Containerised web UI</strong>: the simulator is built as a Docker image, pushed to Azure Container Registry, and run on App Service (Web App for Containers) — the live <code>app-minicfl-web-dev</code> site.</li>
+                                <li data-i18n="project.minicfl-az104.section.what.compute.web" data-i18n-html><strong>Containerised web UI</strong>: the simulator is built as a Docker image, pushed to Azure Container Registry, and run on App Service (Web App for Containers) - the live <code>app-minicfl-web-dev</code> site.</li>
                                 <li data-i18n="project.minicfl-az104.section.what.compute.vm" data-i18n-html><strong>Database VM (IaaS)</strong>: a small Azure VM with a managed disk hosts the PostgreSQL database that stores the route, stops, train state and update history.</li>
-                                <li data-i18n="project.minicfl-az104.section.what.compute.fn" data-i18n-html><strong>Azure Function timer</strong>: a timer-triggered function fires every minute, recalculates the train's position, segment progress and delay, writes the new state to the database, and logs each run.</li>
+                                <li data-i18n="project.minicfl-az104.section.what.compute.fn" data-i18n-html><strong>Azure Function timer</strong>: a timer-triggered function fires every minute, recalculates the train's position, segment progress and delay, writes the new state to the database, and logs each run. It is backed by a storage account (<code>stminicfl001</code>) and authenticates with a managed identity.</li>
                             </ul>
                         </div>
                         <div class="stack-layer">
@@ -277,7 +293,7 @@
                             <div class="stack-chips"><span>Virtual Network</span><span>Subnets</span><span>NSGs</span><span>Network Watcher</span></div>
                             <ul class="feature-list stack-detail">
                                 <li data-i18n="project.minicfl-az104.section.what.network.vnet" data-i18n-html><strong>Segmented VNet</strong>: <code>vnet-minicfl-dev</code> splits a web subnet (<code>snet-web-dev</code>) from a database subnet (<code>snet-db-dev</code>) so the two tiers are isolated.</li>
-                                <li data-i18n="project.minicfl-az104.section.what.network.nsg" data-i18n-html><strong>NSG rules</strong>: <code>nsg-web-dev</code> allows HTTP/HTTPS and restricts admin access; <code>nsg-db-dev</code> allows the app/function to reach the DB but denies all inbound public database access — proven with connectivity tests.</li>
+                                <li data-i18n="project.minicfl-az104.section.what.network.nsg" data-i18n-html><strong>NSG rules</strong>: <code>nsg-web-dev</code> allows HTTP/HTTPS and restricts admin access; <code>nsg_db_dev</code> allows the app/function to reach the DB but denies all inbound public database access - proven with connectivity tests.</li>
                                 <li data-i18n="project.minicfl-az104.section.what.network.watcher" data-i18n-html><strong>Network Watcher</strong>: connectivity checks confirm the web tier is reachable while the database stays private inside the VNet.</li>
                             </ul>
                         </div>
@@ -285,8 +301,8 @@
                             <div class="stack-head"><i data-lucide="activity"></i><h3 data-i18n="project.minicfl-az104.section.what.ops.title">Monitoring &amp; Operations</h3></div>
                             <div class="stack-chips"><span>Azure Monitor</span><span>Application Insights</span><span>Log Analytics</span><span>Alerts</span><span>Action Groups</span><span>Budgets</span></div>
                             <ul class="feature-list stack-detail">
-                                <li data-i18n="project.minicfl-az104.section.what.ops.dash" data-i18n-html><strong>One dashboard</strong>: Azure Monitor collects metrics for the VM, the App Service and the Function in a single view of platform health.</li>
-                                <li data-i18n="project.minicfl-az104.section.what.ops.alerts" data-i18n-html><strong>Alerts &amp; action groups</strong>: alert rules wired to an action group fire when the app is unavailable or the timer stops updating the train.</li>
+                                <li data-i18n="project.minicfl-az104.section.what.ops.dash" data-i18n-html><strong>One dashboard</strong>: a shared Azure Monitor dashboard, backed by Application Insights and a Log Analytics workspace, collects metrics for the VM, the App Service and the Function in a single view of platform health.</li>
+                                <li data-i18n="project.minicfl-az104.section.what.ops.alerts" data-i18n-html><strong>Alerts &amp; smart detection</strong>: a Failure Anomalies smart detector and alert rules wired to an action group fire when the app is unavailable or the timer stops updating the train.</li>
                                 <li data-i18n="project.minicfl-az104.section.what.ops.logs" data-i18n-html><strong>Logs &amp; cost</strong>: Log Analytics queries trace each simulation update, while budget alerts track spend against the project's total cost.</li>
                             </ul>
                         </div>
@@ -315,15 +331,15 @@
                     <div class="journey">
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">01</span></div>
-                            <div class="journey-body"><p data-i18n="project.minicfl-az104.section.why.body1" data-i18n-html>The AZ-104 course needed a demonstration, not just notes. I wanted a scenario that was <strong>small enough to finish but real enough to administer properly</strong>, so I picked something familiar: the CFL train I actually take, running the Petange → Luxembourg line.</p></div>
+                            <div class="journey-body"><p data-i18n="project.minicfl-az104.section.why.body1" data-i18n-html>The AZ-104 course needed a demonstration, not just notes. We wanted a scenario that was <strong>small enough to finish but real enough to administer properly</strong>, so we picked something familiar: the CFL train that runs the Petange → Luxembourg line.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">02</span></div>
-                            <div class="journey-body"><p data-i18n="project.minicfl-az104.section.why.body2" data-i18n-html>The train is only the excuse. The point is the <strong>Azure environment around it</strong>: identity and access, governance, compute, networking, monitoring and cost control. Every resource exists because the simulator needs it — the Function updates the train, the VM stores it, the network protects it, monitoring watches it.</p></div>
+                            <div class="journey-body"><p data-i18n="project.minicfl-az104.section.why.body2" data-i18n-html>The train is only the excuse. The point is the <strong>Azure environment around it</strong>: identity and access, governance, compute, networking, monitoring and cost control. Every resource exists because the simulator needs it - the Function updates the train, the VM stores it, the network protects it, monitoring watches it.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">03</span></div>
-                            <div class="journey-body"><p data-i18n="project.minicfl-az104.section.why.body3" data-i18n-html>I deployed it twice — <strong>dev in France Central and prod in Sweden Central</strong>, across two student subscriptions — and mapped each resource back to an AZ-104 skill area with screenshots in the report. The goal isn't only that the app works, but that I can explain why every piece is there.</p></div>
+                            <div class="journey-body"><p data-i18n="project.minicfl-az104.section.why.body3" data-i18n-html>We deployed it twice - <strong>dev in France Central and prod in Sweden Central</strong>, across two student subscriptions - and mapped each resource back to an AZ-104 skill area with screenshots in the report. The goal isn't only that the app works, but that we can explain why every piece is there.</p></div>
                         </div>
                     </div>
 
@@ -342,12 +358,12 @@
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="credit-card"></i></div>
                             <h3 data-i18n="project.minicfl-az104.lessons.cost.title">Tag and budget everything</h3>
-                            <p data-i18n="project.minicfl-az104.lessons.cost.body">On student credit, budget alerts and consistent tags are not optional — they are how you avoid waking up to an empty subscription.</p>
+                            <p data-i18n="project.minicfl-az104.lessons.cost.body">On student credit, budget alerts and consistent tags are not optional - they are how you avoid waking up to an empty subscription.</p>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="clock"></i></div>
                             <h3 data-i18n="project.minicfl-az104.lessons.pressure.title">Scope under pressure</h3>
-                            <p data-i18n="project.minicfl-az104.lessons.pressure.body">We built this under real time pressure, so we cut what didn't fit — a planned Load Balancer demo stayed on the backlog. Knowing what to drop to still ship a coherent environment is its own skill.</p>
+                            <p data-i18n="project.minicfl-az104.lessons.pressure.body">We built this under real time pressure, so we cut what didn't fit - a planned Load Balancer demo stayed on the backlog. Knowing what to drop to still ship a coherent environment is its own skill.</p>
                         </div>
                     </div>
 
@@ -376,7 +392,7 @@
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <div id="category-section" style="display: none;">
+                    <div id="category-section" data-project-id="minicfl-az104" style="display: none;">
                         <h3 data-i18n="project.sidebar.category">Category</h3>
                         <div class="line"></div>
                         <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
@@ -394,7 +410,7 @@
                         <li><i data-lucide="hard-drive"></i> <span data-i18n="project.minicfl-az104.sidebar.tech.storage">Storage account (stminicfl001)</span></li>
                         <li><i data-lucide="timer"></i> <span data-i18n="project.minicfl-az104.sidebar.tech.fn">Azure Functions (timer trigger)</span></li>
                         <li><i data-lucide="network"></i> <span data-i18n="project.minicfl-az104.sidebar.tech.network">VNet + Subnets + NSGs</span></li>
-                        <li><i data-lucide="activity"></i> <span data-i18n="project.minicfl-az104.sidebar.tech.monitor">Azure Monitor + Log Analytics</span></li>
+                        <li><i data-lucide="activity"></i> <span data-i18n="project.minicfl-az104.sidebar.tech.monitor">Azure Monitor + Application Insights + Log Analytics</span></li>
                         <li><i data-lucide="map-pin"></i> <span data-i18n="project.minicfl-az104.sidebar.tech.watcher">Network Watcher</span></li>
                         <li><i data-lucide="box"></i> <span data-i18n="project.minicfl-az104.sidebar.tech.docker">Docker</span></li>
                     </ul>
@@ -407,7 +423,7 @@
                         <li data-i18n="project.minicfl-az104.sidebar.features.envs">Dev + prod across two Azure regions</li>
                         <li data-i18n="project.minicfl-az104.sidebar.features.rbac">Least-privilege RBAC at resource-group scope</li>
                         <li data-i18n="project.minicfl-az104.sidebar.features.container">Containerised web UI from ACR on App Service</li>
-                        <li data-i18n="project.minicfl-az104.sidebar.features.private">PostgreSQL VM kept off the public internet by NSGs</li>
+                        <li data-i18n="project.minicfl-az104.sidebar.features.private">Public access to the PostgreSQL DB denied by NSGs</li>
                         <li data-i18n="project.minicfl-az104.sidebar.features.timer">Function recalculates train state every minute</li>
                         <li data-i18n="project.minicfl-az104.sidebar.features.monitor">Azure Monitor dashboard, alerts and action groups</li>
                         <li data-i18n="project.minicfl-az104.sidebar.features.governance">Azure Policy, tags and budget alerts</li>
@@ -432,7 +448,7 @@
         </div>
 
         <footer style="margin-top: 4rem;">
-            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
         </footer>
     </main>
 
@@ -442,64 +458,7 @@
         <img id="modal-image" class="image-modal-content" src="" alt="">
     </div>
 
-    <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        // Use centralized category display function (updates dynamically on language change)
-        function initProjectCategories() {
-            if (typeof window.updateProjectCategories === 'function' && typeof getProjectById !== 'undefined') {
-                window.updateProjectCategories('minicfl-az104');
-            } else {
-                setTimeout(initProjectCategories, 100);
-            }
-        }
-
-        // Initialize Lucide icons (wait for it to load)
-        function initLucideIcons() {
-            if (typeof renderIcons !== 'undefined') {
-                renderIcons();
-            } else {
-                setTimeout(initLucideIcons, 100);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(initProjectCategories, 200);
-            initLucideIcons();
-        });
-
-        if (document.readyState !== 'loading') {
-            setTimeout(initProjectCategories, 300);
-            initLucideIcons();
-        }
-
-        // Image Modal Functions
-        function openImageModal(imageSrc, imageAlt) {
-            const modal = document.getElementById('image-modal');
-            const modalImage = document.getElementById('modal-image');
-            if (modal && modalImage) {
-                modalImage.src = imageSrc;
-                modalImage.alt = imageAlt || '';
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeImageModal(event) {
-            if (event) event.stopPropagation();
-            const modal = document.getElementById('image-modal');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const modal = document.getElementById('image-modal');
-                if (modal && modal.classList.contains('active')) closeImageModal();
-            }
-        });
-    </script>
+    <script src="../assets/js/project-page-init.js" defer></script>
 </body>
 </html>

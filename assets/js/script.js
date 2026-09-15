@@ -16,21 +16,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     
+    /**
+     * Keep <meta name="theme-color"> in step with the active theme, so the
+     * mobile browser chrome matches the page instead of staying default.
+     * The links page did this on its own; every other page had no tag at all.
+     * Safe to call where the tag is absent: it simply does nothing.
+     */
+    function syncThemeColor(theme) {
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+        meta.setAttribute('content', theme === 'dark' ? '#0a0a0c' : '#f0f0f2');
+    }
+
     // Apply initial theme
     if (savedTheme) {
         htmlElement.setAttribute('data-theme', savedTheme);
     } else {
         htmlElement.setAttribute('data-theme', systemTheme);
     }
+    syncThemeColor(htmlElement.getAttribute('data-theme'));
 
     // Toggle Theme Function
     themeToggle.addEventListener('click', () => {
         const currentTheme = htmlElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
+
         htmlElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        
+        syncThemeColor(newTheme);
+
         // Add a small animation effect to the button
         themeToggle.style.transform = 'scale(0.95)';
         setTimeout(() => {
@@ -317,16 +331,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (categorySection && categorySection.dataset.projectId) {
                 projectId = categorySection.dataset.projectId;
             } else {
-                // Fallback: try to detect from URL or page context
-                const path = window.location.pathname;
-                if (path.includes('project-homelab')) projectId = 'homelab';
-                else if (path.includes('project-pif')) projectId = 'pif';
-                else if (path.includes('project-cylro')) projectId = 'cylro';
-                else if (path.includes('project-gradingdino')) projectId = 'gradingdino';
-                else {
-                    // If we can't determine project, don't hide the section - just return
-                    return;
-                }
+                // No project id declared on the page - don't hide the section, just return
+                return;
             }
         }
         

@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
     <title>WhispFlow | VidGuiCode</title>
-    <meta name="description" content="WhispFlow: A desktop application that records meetings, transcribes audio locally with faster-whisper, and generates AI-powered summaries with key points, decisions, and action items.">
+    <meta name="description" content="WhispFlow: a desktop app that records meetings, transcribes them locally or through a transcription API, and generates AI summaries with decisions and action items.">
+    <link rel="canonical" href="https://vidguicode.github.io/projects/project-whispflow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vidguicode.github.io/projects/project-whispflow">
+    <meta property="og:title" content="WhispFlow | VidGuiCode">
+    <meta property="og:description" content="WhispFlow: a desktop app that records meetings, transcribes them locally or through a transcription API, and generates AI summaries with decisions and action items.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/whispflow/whispflow-transparent.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/projects/project-whispflow">
+    <meta name="twitter:title" content="WhispFlow | VidGuiCode">
+    <meta name="twitter:description" content="WhispFlow: a desktop app that records meetings, transcribes them locally or through a transcription API, and generates AI summaries with decisions and action items.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/projects/whispflow/whispflow-transparent.webp">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +54,7 @@
         /* Typography uses centralized scale - see styles.css */
 
         /* ================================================================
-           WhispFlow — OpenAI theming
+           WhispFlow - OpenAI theming
            Recolours every shared accent (badge dot, glance LEDs, arch /
            stack / journey left-rails, accent icons, back-link hover) from
            the site's default green to OpenAI's signature green palette in
@@ -58,7 +74,7 @@
             --accent-secondary: var(--oai-green-bright);
         }
 
-        /* Badge dot glow is a hard-coded green rgba in styles.css — retint it */
+        /* Badge dot glow is a hard-coded green rgba in styles.css - retint it */
         .whispflow-page .badge::before {
             background-color: var(--oai-green);
             box-shadow: 0 0 8px var(--oai-green-soft);
@@ -89,7 +105,7 @@
 
         <section class="project-hero">
             <div class="project-title-group">
-                <div class="badge" data-i18n="project.whispflow.badge">TALENT EXHIBITION — PROMA2</div>
+                <div class="badge" data-i18n="project.whispflow.badge">TALENT EXHIBITION - PROMA2</div>
                 <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
                     <img src="../assets/img/projects/whispflow/whispflow-submark-white.svg" alt="WhispFlow Icon" style="width: 80px; height: 80px; border-radius: 16px; object-fit: contain; flex-shrink: 0;">
                     <div style="flex: 1; min-width: 200px; display: flex; align-items: center;">
@@ -98,7 +114,7 @@
                         </h1>
                     </div>
                 </div>
-                <p class="subtitle" data-i18n="project.whispflow.hero.subtitle">A desktop application that records audio, transcribes it locally using faster-whisper, and generates structured AI summaries — built for the PROMA2 Talent Exhibition.</p>
+                <p class="subtitle" data-i18n="project.whispflow.hero.subtitle">I built WhispFlow as a desktop app that records meetings, turns speech into searchable notes, and creates structured summaries. It runs locally by default, and you can plug in cloud or self-hosted engines for transcription and AI. It was my PROMA2 Talent Exhibition project.</p>
             </div>
         </section>
 
@@ -108,94 +124,71 @@
                     <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
                     <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
                 </div>
-                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view, built for everyone</span>
                 <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
             </div>
 
             <div class="glance-grid">
                 <div class="glance-stat">
                     <span class="glance-led"></span>
-                    <div class="glance-num">4</div>
-                    <div class="glance-label" data-i18n="project.whispflow.glance.steps.label">steps, record to notes</div>
+                    <div class="glance-num">2</div>
+                    <div class="glance-label" data-i18n="project.whispflow.glance.engines.label">ways to transcribe: local engine or an API</div>
                 </div>
                 <div class="glance-stat">
                     <span class="glance-led"></span>
-                    <div class="glance-num">3</div>
-                    <div class="glance-label" data-i18n="project.whispflow.glance.providers.label">interchangeable AI providers</div>
+                    <div class="glance-num">8</div>
+                    <div class="glance-label" data-i18n="project.whispflow.glance.providers.label">AI providers, from cloud to fully local</div>
                 </div>
                 <div class="glance-stat">
                     <span class="glance-led"></span>
-                    <div class="glance-num">100%</div>
-                    <div class="glance-label" data-i18n="project.whispflow.glance.local.label">on-device transcription</div>
+                    <div class="glance-num" data-i18n="project.whispflow.glance.separate.value">Separate</div>
+                    <div class="glance-label" data-i18n="project.whispflow.glance.separate.label">setups for live captions and full transcripts</div>
                 </div>
                 <div class="glance-stat">
                     <span class="glance-led"></span>
-                    <div class="glance-num">0</div>
-                    <div class="glance-label" data-i18n="project.whispflow.glance.private.label">audio files leave your device</div>
+                    <div class="glance-num" data-i18n="project.whispflow.glance.local.value">Local</div>
+                    <div class="glance-label" data-i18n="project.whispflow.glance.local.label">by default: audio leaves only if you choose an API</div>
                 </div>
             </div>
 
             <h2 data-i18n="project.whispflow.arch.title">How WhispFlow works</h2>
-            <div class="arch-diagram">
-                <div class="arch-strip">
-                    <span class="led led-g"></span>
-                    <span class="led led-a"></span>
-                    <span class="led led-d"></span>
-                    <span class="arch-strip-label" data-i18n="project.whispflow.arch.strip">Record-to-notes pipeline</span>
-                </div>
-                <div class="arch-body">
-                    <div class="arch-flow">
-                        <div class="arch-col">
-                            <div class="arch-unit is-external">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.whispflow.arch.audio">Audio in</span></div>
-                                    <div class="u-meta">3 modes</div>
-                                </div>
-                                <div class="u-spec">mic · system · hybrid</div>
-                            </div>
-                        </div>
+            <div class="bp bp--flow">
+                <span class="bp-kicker" data-i18n="project.whispflow.arch.strip">Record-to-notes pipeline</span>
 
-                        <div class="arch-conn">&#8594;</div>
-
-                        <div class="arch-rack">
-                            <div class="arch-rack-label" data-i18n="project.whispflow.arch.device">Your device — offline</div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.whispflow.arch.record">Record</span></div>
-                                    <div class="u-meta">Electron</div>
-                                </div>
-                                <div class="u-spec">MediaRecorder · waveform</div>
-                            </div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.whispflow.arch.transcribe">Transcribe</span></div>
-                                    <div class="u-meta">faster-whisper</div>
-                                </div>
-                                <div class="u-spec">local · multi-language</div>
-                            </div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.whispflow.arch.export">Export</span></div>
-                                    <div class="u-meta">local</div>
-                                </div>
-                                <div class="u-spec">clipboard · file · folder</div>
-                            </div>
-                        </div>
-
-                        <div class="arch-conn"><span>transcript</span>&nbsp;&#8644;</div>
-
-                        <div class="arch-col">
-                            <div class="arch-unit is-internet">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.whispflow.arch.summary">AI Summary</span></div>
-                                    <div class="u-meta">cloud</div>
-                                </div>
-                                <div class="u-spec">OpenAI · Mistral · Anthropic</div>
-                            </div>
-                        </div>
+                <div class="bp-stages">
+                    <div class="bp-stage">
+                        <span class="bp-step">1</span>
+                        <span class="bp-card-name"><i data-lucide="audio-waveform" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.whispflow.arch.capture">Capture</span></span>
+                        <span class="bp-mono">mic · system · hybrid · file</span>
+                        <span class="bp-spec" data-i18n="project.whispflow.arch.capture.spec">record live, or import an audio file</span>
                     </div>
-                    <div class="arch-note" data-i18n="project.whispflow.arch.note">Recording, transcription and storage all run on your device — only the transcript text is sent to a cloud AI for the summary. Your audio never leaves.</div>
+                    <div class="bp-stage">
+                        <span class="bp-step">2</span>
+                        <span class="bp-card-name"><i data-lucide="file-text" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.whispflow.arch.transcribe">Transcribe</span></span>
+                        <span class="bp-mono">local engine · API</span>
+                        <span class="bp-spec" data-i18n="project.whispflow.arch.transcribe.spec">on your machine, or through Groq, OpenAI or your own server, chosen per run</span>
+                    </div>
+                    <div class="bp-stage">
+                        <span class="bp-step">3</span>
+                        <span class="bp-card-name"><i data-lucide="brain" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.whispflow.arch.summarize">Summarize</span></span>
+                        <span class="bp-mono">8 providers · cloud or local</span>
+                        <span class="bp-spec" data-i18n="project.whispflow.arch.summarize.spec">summaries, action items and cleanup, from the transcript text only</span>
+                    </div>
+                    <div class="bp-stage">
+                        <span class="bp-step">4</span>
+                        <span class="bp-card-name"><i data-lucide="download" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.whispflow.arch.export">Export</span></span>
+                        <span class="bp-mono">PDF · DOCX · TXT</span>
+                        <span class="bp-spec" data-i18n="project.whispflow.arch.export.spec">take the transcript, summary and action items with you</span>
+                    </div>
                 </div>
+
+                <div class="bp-branch">
+                    <span class="bp-card-name"><i data-lucide="radio" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.whispflow.arch.live">Live captions</span></span>
+                    <span class="bp-mono">local or API</span>
+                    <span class="bp-spec" data-i18n="project.whispflow.arch.live.spec">set up separately from full transcripts, shown while you record</span>
+                </div>
+
+                <p class="bp-note" data-i18n="project.whispflow.arch.note">Everything runs locally by default. Audio leaves your machine only if you pick a transcription API, and AI features only ever send the transcript text, never the audio.</p>
             </div>
 
             <div class="plain-only">
@@ -204,12 +197,12 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="audio-waveform"></i></div>
                         <h3 data-i18n="project.whispflow.does.record.title">Records any meeting or lecture</h3>
-                        <p data-i18n="project.whispflow.does.record.desc">One click captures your microphone, the system sound, or both — with a live waveform so you know it's working.</p>
+                        <p data-i18n="project.whispflow.does.record.desc">One click captures your microphone, the system sound, or both, and you can also import an audio file.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="file-text"></i></div>
-                        <h3 data-i18n="project.whispflow.does.transcribe.title">Turns speech into text, offline</h3>
-                        <p data-i18n="project.whispflow.does.transcribe.desc">Your words become text right on your computer using Whisper — no internet required and nothing uploaded.</p>
+                        <h3 data-i18n="project.whispflow.does.transcribe.title">Turns speech into text, your way</h3>
+                        <p data-i18n="project.whispflow.does.transcribe.desc">On your own computer with no internet needed, or through a transcription service when you want more speed. You choose for each recording.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="sparkles"></i></div>
@@ -218,8 +211,8 @@
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="shield"></i></div>
-                        <h3 data-i18n="project.whispflow.does.private.title">Your audio stays private</h3>
-                        <p data-i18n="project.whispflow.does.private.desc">Recordings and notes live on your machine. Only the transcript text is ever sent away — just for the summary.</p>
+                        <h3 data-i18n="project.whispflow.does.private.title">Private by default</h3>
+                        <p data-i18n="project.whispflow.does.private.desc">Everything stays on your machine unless you pick an online service. Live captions and full transcripts are set up separately, so you decide what goes where.</p>
                     </div>
                 </div>
             </div>
@@ -232,13 +225,13 @@
                     <i data-lucide="audio-waveform" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
 
                     <h2 data-i18n="project.whispflow.context.title">About This Project</h2>
-                    <p data-i18n="project.whispflow.context.body" data-i18n-html="true">Built for the <strong>Talent Exhibition</strong> (PROMA2 course) in the BTS Cloud Computing programme at Lycée Guillaume Kroll. The goal: pick a real problem, design a technical solution, and deliver a working prototype that applies cloud and AI concepts from the semester.</p>
+                    <p data-i18n="project.whispflow.context.body" data-i18n-html="true">I built WhispFlow for the <strong>Talent Exhibition</strong> (PROMA2 course) in the BTS Cloud Computing programme at Lycée Guillaume Kroll. I chose a real documentation problem, designed a working solution, and applied the cloud and AI concepts from the semester.</p>
 
                     <h2 data-i18n="project.whispflow.problem.title">The Problem</h2>
-                    <p data-i18n="project.whispflow.problem.body">During meetings and lectures, important information often gets lost. Taking notes manually splits attention between listening and writing, and reviewing long recordings afterward is time-consuming. This project explores how local AI and cloud services can automate the documentation workflow.</p>
+                    <p data-i18n="project.whispflow.problem.body">During meetings and lectures, important information often gets lost. Taking notes manually splits attention between listening and writing, and reviewing long recordings afterward is time-consuming. I wanted a simple way to leave each session with useful notes instead of another recording to search through.</p>
 
                     <h2 data-i18n="project.whispflow.solution.title">The Solution</h2>
-                    <p data-i18n="project.whispflow.solution.body">WhispFlow combines local speech-to-text with cloud-based AI summarization. It records audio, transcribes it on-device using faster-whisper, then sends the transcript to a cloud AI provider for structured output — key points, decisions, and action items. The entire workflow runs from a single desktop application, from recording to organized notes ready to share.</p>
+                    <p data-i18n="project.whispflow.solution.body">I built WhispFlow to turn a meeting or lecture into organized notes: record once, get a transcript, then receive key points, decisions, and action items ready to share. Everything runs on the computer by default, and you choose whether transcription or summaries use an online service.</p>
 
                     <div class="tech-only">
                         <h2 data-i18n="project.whispflow.stack.title">Under the Hood</h2>
@@ -252,19 +245,19 @@
                                 </ul>
                             </div>
                             <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="file-text"></i><h3 data-i18n="project.whispflow.stack.whisper.title">Local Transcription</h3></div>
-                                <div class="stack-chips"><span>Python</span><span>faster-whisper</span><span>FFmpeg</span><span>offline</span></div>
+                                <div class="stack-head"><i data-lucide="file-text"></i><h3 data-i18n="project.whispflow.stack.whisper.title">Transcription Engines</h3></div>
+                                <div class="stack-chips"><span>faster-whisper</span><span>whisper.cpp</span><span>Groq / OpenAI</span><span>self-hosted</span></div>
                                 <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.whispflow.stack.whisper.body">Local transcription with multiple Whisper models (tiny → large), multi-language with auto-detection. Works fully offline — no data leaves your device.</li>
-                                    <li data-i18n="project.whispflow.features.transcription">Local transcription with multiple Whisper models — works offline</li>
+                                    <li data-i18n="project.whispflow.stack.whisper.body">A built-in local engine (faster-whisper or whisper.cpp, models from tiny to large) or any OpenAI-compatible transcription API: Groq, OpenAI, or a self-hosted server. Chosen per run, with a fallback to the local engine if an API fails.</li>
+                                    <li data-i18n="project.whispflow.features.transcription">Local or API transcription, chosen per run</li>
                                 </ul>
                             </div>
                             <div class="stack-layer">
                                 <div class="stack-head"><i data-lucide="brain"></i><h3 data-i18n="project.whispflow.stack.ai.title">AI Summarization</h3></div>
-                                <div class="stack-chips"><span>OpenAI</span><span>Mistral</span><span>Anthropic</span><span>cached</span></div>
+                                <div class="stack-chips"><span>OpenAI-compatible</span><span>Ollama</span><span>LM Studio</span><span>cached</span></div>
                                 <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.whispflow.stack.ai.body">Structured output — key points, decisions, action items — from OpenAI, Mistral, or Anthropic. Multi-language summaries, cached to save cost.</li>
-                                    <li data-i18n="project.whispflow.features.summaries">AI summaries from 3 providers with multi-language support</li>
+                                    <li data-i18n="project.whispflow.stack.ai.body">One AI gateway for summaries in four styles, action items and transcript cleanup. Works with OpenAI, Mistral, Anthropic, Groq, Cohere, Ollama, LM Studio or any OpenAI-compatible endpoint, with model discovery. Only the transcript text is sent.</li>
+                                    <li data-i18n="project.whispflow.features.summaries">AI summaries from eight providers, cloud or local</li>
                                 </ul>
                             </div>
                             <div class="stack-layer">
@@ -272,38 +265,39 @@
                                 <div class="stack-chips"><span>Filesystem</span><span>JSON</span><span>WebM/Opus</span><span>versioned</span></div>
                                 <ul class="feature-list stack-detail">
                                     <li data-i18n="project.whispflow.stack.storage.body">Session folders hold the audio, versioned transcripts, and cached summaries. Everything stays on your device in an organized structure that's easy to back up and export.</li>
-                                    <li data-i18n="project.whispflow.versioning.body">Re-transcribe with a different model or language — no data is overwritten. Switch between transcript versions (v1, v2, v3...) via dropdown. Each version tracks the model, language, and timestamp. Summaries are keyed by transcript version and language (e.g. v1_en, v2_fr).</li>
+                                    <li data-i18n="project.whispflow.versioning.body">Re-transcribe with a different model or language - no data is overwritten. Switch between transcript versions (v1, v2, v3...) via dropdown. Each version tracks the model, language, and timestamp. Summaries are keyed by transcript version and language (e.g. v1_en, v2_fr).</li>
                                 </ul>
                             </div>
                         </div>
                     </div><!-- /.tech-only -->
 
-                    <h2 data-i18n="project.whispflow.workflow.title">Core Workflow</h2>
-                    <div class="journey">
+                    <div class="tech-only">
+                        <h2 data-i18n="project.whispflow.workflow.title">Core Workflow</h2>
+                        <div class="journey">
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">01</span></div>
-                            <div class="journey-body"><p data-i18n="project.whispflow.workflow.body1" data-i18n-html="true"><strong>Record</strong> — One-click recording or keyboard shortcut (Ctrl+R). Three modes: Microphone, System Audio, or Hybrid. Live waveform and timer during recording.</p></div>
+                            <div class="journey-body"><p data-i18n="project.whispflow.workflow.body1" data-i18n-html="true"><strong>Record</strong> - One-click recording or keyboard shortcut (Ctrl+R). Three modes: Microphone, System Audio, or Hybrid. Audio files can also be imported. Live waveform and timer during recording.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">02</span></div>
-                            <div class="journey-body"><p data-i18n="project.whispflow.workflow.body2" data-i18n-html="true"><strong>Transcribe</strong> — Local transcription using faster-whisper. Choose your model (tiny to large) based on speed vs. accuracy. Multi-language with auto-detection. Live transcription available during recording.</p></div>
+                            <div class="journey-body"><p data-i18n="project.whispflow.workflow.body2" data-i18n-html="true"><strong>Transcribe</strong> - Pick the engine for each run: the local engine (faster-whisper or whisper.cpp, tiny to large models) or a transcription API such as Groq, OpenAI or a self-hosted server. Live captions have their own setting, so they can use a different engine than full transcripts.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">03</span></div>
-                            <div class="journey-body"><p data-i18n="project.whispflow.workflow.body3" data-i18n-html="true"><strong>Summarize</strong> — AI generates structured output: key points, decisions, action items, and a full summary. Pick from 3 providers. Generate in any language. Results are cached to save API costs.</p></div>
+                            <div class="journey-body"><p data-i18n="project.whispflow.workflow.body3" data-i18n-html="true"><strong>Summarize</strong> - AI generates key points, decisions, action items and a full summary in four styles. Choose from eight providers, cloud or fully local, or add any OpenAI-compatible endpoint. Generate in any language.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">04</span></div>
-                            <div class="journey-body"><p data-i18n="project.whispflow.workflow.body4" data-i18n-html="true"><strong>Export</strong> — Copy to clipboard or export to file. Open session folders directly in file explorer. Share with colleagues or classmates.</p></div>
+                            <div class="journey-body"><p data-i18n="project.whispflow.workflow.body4" data-i18n-html="true"><strong>Export</strong> - Export to PDF, DOCX or TXT with the transcript, summary and action items. Share with colleagues or classmates.</p></div>
                         </div>
-                    </div>
+                        </div>
 
-                    <h2 data-i18n="project.whispflow.learned.title">Lessons Learned</h2>
-                    <div class="does-grid">
+                        <h2 data-i18n="project.whispflow.learned.title">Lessons Learned</h2>
+                        <div class="does-grid">
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="layers"></i></div>
                             <h3 data-i18n="project.whispflow.lessons.hybrid.title">Hybrid architecture works</h3>
-                            <p data-i18n="project.whispflow.lessons.hybrid.desc">Local-first for privacy and offline use, cloud for intelligence — users get the best of both worlds.</p>
+                            <p data-i18n="project.whispflow.lessons.hybrid.desc">Local by default for privacy and offline use, with cloud engines as an option, so each user picks their own balance of speed, cost and privacy.</p>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="cpu"></i></div>
@@ -320,18 +314,19 @@
                             <h3 data-i18n="project.whispflow.lessons.caching.title">Cache everything expensive</h3>
                             <p data-i18n="project.whispflow.lessons.caching.desc">Caching AI summaries by transcript version and language prevents needless API calls and keeps costs under control.</p>
                         </div>
-                    </div>
+                        </div>
 
-                    <h2 data-i18n="project.whispflow.phases.title">Project Phases</h2>
-                    <p data-i18n="project.whispflow.phases.body1" data-i18n-html="true"><strong>Phase 1 (Current) — Local-First:</strong> All core features are implemented and working. Desktop recording, local transcription, AI summaries, versioning, session management, and export.</p>
-                    <p data-i18n="project.whispflow.phases.body2" data-i18n-html="true"><strong>Phase 2 (Planned) — Cloud-First:</strong> Cloud storage, remote transcription, cross-device sync, user accounts, collaboration, and offline fallback mode.</p>
+                        <h2 data-i18n="project.whispflow.phases.title">Project Phases</h2>
+                        <p data-i18n="project.whispflow.phases.body1" data-i18n-html="true"><strong>Phase 1 (Done) - Local-First:</strong> Desktop recording, local transcription, AI summaries, versioning, session management and export.</p>
+                        <p data-i18n="project.whispflow.phases.body2" data-i18n-html="true"><strong>Phase 2 (In progress) - Open Engines:</strong> Transcription APIs (Groq, OpenAI, self-hosted), separate live captions, a local fallback when an API fails, and one provider list shared by transcription and AI are working. Cloud storage, sync, accounts and collaboration are still planned.</p>
+                    </div><!-- /.tech-only -->
                 </div>
             </article>
 
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <div id="category-section" style="display: none;">
+                    <div id="category-section" data-project-id="whispflow" style="display: none;">
                         <h3 data-i18n="project.sidebar.category">Category</h3>
                         <div class="line"></div>
                         <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
@@ -341,8 +336,10 @@
                     <div class="line"></div>
                     <ul class="tech-stack-list">
                         <li><i data-lucide="monitor"></i> <span>Electron (Node.js)</span></li>
-                        <li><i data-lucide="file-code-2"></i> <span>Python + faster-whisper</span></li>
-                        <li><i data-lucide="brain"></i> <span>OpenAI / Mistral / Anthropic</span></li>
+                        <li><i data-lucide="file-code-2"></i> <span>faster-whisper / whisper.cpp</span></li>
+                        <li><i data-lucide="cloud"></i> <span>Groq / OpenAI / self-hosted APIs</span></li>
+                        <li><i data-lucide="brain"></i> <span>OpenAI-compatible AI gateway</span></li>
+                        <li><i data-lucide="server"></i> <span>Ollama / LM Studio (local AI)</span></li>
                         <li><i data-lucide="clapperboard"></i> <span>FFmpeg</span></li>
                         <li><i data-lucide="hard-drive"></i> <span>Local Filesystem + JSON</span></li>
                     </ul>
@@ -351,12 +348,13 @@
                     <div class="line"></div>
                     <ul class="skill-list" style="margin-top: 1rem;">
                         <li data-i18n="project.whispflow.sidebar.feature1">One-click audio recording</li>
-                        <li data-i18n="project.whispflow.sidebar.feature2">Local AI transcription</li>
-                        <li data-i18n="project.whispflow.sidebar.feature3">3 AI summary providers</li>
+                        <li data-i18n="project.whispflow.sidebar.feature2">Local or API transcription</li>
+                        <li data-i18n="project.whispflow.sidebar.feature3">8 AI providers, cloud or local</li>
+                        <li data-i18n="project.whispflow.sidebar.feature9">Separate live captions</li>
                         <li data-i18n="project.whispflow.sidebar.feature4">Versioned transcripts</li>
                         <li data-i18n="project.whispflow.sidebar.feature5">Multi-language support</li>
                         <li data-i18n="project.whispflow.sidebar.feature6">Session management</li>
-                        <li data-i18n="project.whispflow.sidebar.feature7">Privacy-first architecture</li>
+                        <li data-i18n="project.whispflow.sidebar.feature7">Private by default</li>
                         <li data-i18n="project.whispflow.sidebar.feature8">Export & sharing</li>
                     </ul>
 
@@ -377,9 +375,12 @@
                         <span>Node.js</span>
                         <span>Python</span>
                         <span>faster-whisper</span>
+                        <span>whisper.cpp</span>
+                        <span>Groq</span>
                         <span>OpenAI</span>
                         <span>Mistral</span>
                         <span>Anthropic</span>
+                        <span>Ollama</span>
                         <span>FFmpeg</span>
                         <span>Transcription</span>
                         <span>Speech-to-Text</span>
@@ -390,25 +391,11 @@
         </div>
 
         <footer style="margin-top: 4rem;">
-            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
         </footer>
     </main>
 
-    <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        // Re-init Lucide icons after navbar loads
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof renderIcons !== 'undefined') {
-                renderIcons();
-            }
-        });
-
-        function initLucideIcons() {
-            if (typeof renderIcons !== 'undefined') {
-                renderIcons();
-            }
-        }
-    </script>
+    <script src="../assets/js/project-page-init.js" defer></script>
 </body>
 </html>

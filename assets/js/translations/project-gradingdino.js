@@ -26,11 +26,11 @@
             fr: "GradingDino"
         },
         "project.gradingdino.subtitle": {
-            en: "A grade management system built with Django. Teachers create classrooms and manage student grades, while students track their progress. Group project MVP — learned valuable lessons about framework selection.",
-            pt: "Um sistema de gestão de notas construído com Django. Os professores criam turmas e gerem as notas dos alunos, enquanto os alunos acompanham o seu progresso. MVP de projeto de grupo — lições valiosas sobre a escolha de frameworks.",
-            lu: "E Noteverwaltungssystem mat Django gebaut. D'Enseignanten kreéieren Klassen a verwalten d'Noten, an d'Schüler suivéieren hire Fortschrëtt. Grupp-Projet MVP — wäertvoll Lektiounen iwwer Framework-Auswiel.",
-            de: "Ein Notenverwaltungssystem mit Django. Lehrer erstellen Klassen und verwalten Noten, Schüler verfolgen ihren Fortschritt. Gruppenprojekt MVP — wertvolle Lektionen über Framework-Auswahl.",
-            fr: "Un système de gestion des notes construit avec Django. Les enseignants créent des classes et gèrent les notes, les étudiants suivent leur progression. MVP de projet de groupe — leçons précieuses sur le choix des frameworks."
+            en: "I built GradingDino with a team of four for a BTS Cloud Computing project. It gives teachers a simpler way to grade their courses, while students can follow their progress. We delivered a working MVP and learned how planning and framework choice shape a product.",
+            pt: "Construí o GradingDino com uma equipa de quatro pessoas para um projeto de BTS Cloud Computing. Dá aos professores uma forma mais simples de lançar notas nos seus cursos, enquanto os alunos acompanham o seu progresso. Entregámos um MVP funcional e aprendemos como o planeamento e a escolha do framework moldam um produto.",
+            lu: "Ech hunn de GradingDino mat enger Equipe vu véier fir e BTS Cloud Computing Projet gebaut. En mécht et Enseignanten méi einfach hir Coursen ze bewäerten, während d'Schüler hire Fortschrëtt suivéiere kënnen. Mir hunn e funktionnéierende MVP geliwwert a geléiert wéi Planung a Framework-Auswiel e Produkt formen.",
+            de: "Ich habe GradingDino mit einem Viererteam für ein BTS Cloud Computing Projekt gebaut. Lehrer können damit ihre Kurse einfacher benoten, während Schüler ihren Fortschritt verfolgen. Wir lieferten ein funktionierendes MVP und lernten, wie Planung und Framework-Auswahl ein Produkt prägen.",
+            fr: "J'ai construit GradingDino avec une équipe de quatre pour un projet de BTS Cloud Computing. Il donne aux enseignants un moyen plus simple de noter leurs cours, tandis que les étudiants suivent leur progression. Nous avons livré un MVP fonctionnel et appris comment la planification et le choix du framework façonnent un produit."
         },
         "project.gradingdino.mvp": {
             en: "MVP",
@@ -78,6 +78,13 @@
             de: "Wie eine Anfrage fließt",
             fr: "Le parcours d'une requête"
         },
+        "project.gradingdino.arch.strip": {
+            en: "Container stack",
+            pt: "Stack de contentores",
+            lu: "Container-Stack",
+            de: "Container-Stack",
+            fr: "Stack de conteneurs"
+        },
         "project.gradingdino.arch.browser": {
             en: "Browser",
             pt: "Navegador",
@@ -100,11 +107,11 @@
             fr: "étudiant · enseignant · admin"
         },
         "project.gradingdino.arch.http": {
-            en: "HTTPS form POST",
-            pt: "HTTPS form POST",
-            lu: "HTTPS form POST",
-            de: "HTTPS form POST",
-            fr: "HTTPS form POST"
+            en: "HTTP form POST",
+            pt: "HTTP form POST",
+            lu: "HTTP form POST",
+            de: "HTTP form POST",
+            fr: "HTTP form POST"
         },
         "project.gradingdino.arch.compose": {
             en: "docker compose · one host",
@@ -156,11 +163,11 @@
             fr: "postgresql 16 · named volume"
         },
         "project.gradingdino.arch.note": {
-            en: "One <code>docker compose up</code> boots both containers. Django waits for PostgreSQL's health check, applies migrations, then seeds the admin user automatically — no manual setup.",
-            pt: "Um <code>docker compose up</code> arranca os dois contentores. O Django espera pelo health check do PostgreSQL, aplica as migrações e cria automaticamente o utilizador admin — sem configuração manual.",
-            lu: "Ee <code>docker compose up</code> start déi zwee Container. Django waart op de Health Check vu PostgreSQL, mécht d'Migratiounen an erstellt automatesch den Admin-Benotzer — keng manuell Konfiguratioun.",
-            de: "Ein <code>docker compose up</code> startet beide Container. Django wartet auf den Health-Check von PostgreSQL, wendet die Migrationen an und legt den Admin-Benutzer automatisch an — keine manuelle Einrichtung.",
-            fr: "Un seul <code>docker compose up</code> démarre les deux conteneurs. Django attend le health check de PostgreSQL, applique les migrations, puis crée automatiquement l'utilisateur admin — sans configuration manuelle."
+            en: "One <code>docker compose up</code> boots both containers. Django waits for PostgreSQL's health check, applies migrations, then seeds the admin user automatically - no manual setup.",
+            pt: "Um <code>docker compose up</code> arranca os dois contentores. O Django espera pelo health check do PostgreSQL, aplica as migrações e cria automaticamente o utilizador admin - sem configuração manual.",
+            lu: "Ee <code>docker compose up</code> start déi zwee Container. Django waart op de Health Check vu PostgreSQL, mécht d'Migratiounen an erstellt automatesch den Admin-Benotzer - keng manuell Konfiguratioun.",
+            de: "Ein <code>docker compose up</code> startet beide Container. Django wartet auf den Health-Check von PostgreSQL, wendet die Migrationen an und legt den Admin-Benutzer automatisch an - keine manuelle Einrichtung.",
+            fr: "Un seul <code>docker compose up</code> démarre les deux conteneurs. Django attend le health check de PostgreSQL, applique les migrations, puis crée automatiquement l'utilisateur admin - sans configuration manuelle."
         },
 
         /* ---- Overview: "What it does" cards ---- */
@@ -172,18 +179,18 @@
             fr: "Ce qu'il fait"
         },
         "project.gradingdino.does.teacher.title": {
-            en: "Teachers run the classroom",
-            pt: "Os professores gerem a turma",
-            lu: "D'Enseignante féieren d'Klass",
-            de: "Lehrer führen die Klasse",
-            fr: "Les enseignants gèrent la classe"
+            en: "Teachers grade their courses",
+            pt: "Os professores avaliam os seus cursos",
+            lu: "D'Enseignante bewäerten hir Coursen",
+            de: "Lehrer benoten ihre Kurse",
+            fr: "Les enseignants notent leurs cours"
         },
         "project.gradingdino.does.teacher.desc": {
-            en: "Create classes, enroll students, and enter grades with comments — plus private observations only staff can see.",
-            pt: "Criar turmas, inscrever alunos e lançar notas com comentários — além de observações privadas que só o pessoal vê.",
-            lu: "Klassen erstellen, Schüler aschreiwen an Noten mat Kommentaren aginn — plus privat Observatiounen déi nëmmen de Personal gesäit.",
-            de: "Klassen erstellen, Schüler einschreiben und Noten mit Kommentaren eintragen — plus private Beobachtungen, die nur das Personal sieht.",
-            fr: "Créer des classes, inscrire des étudiants et saisir des notes avec commentaires — plus des observations privées visibles uniquement par le personnel."
+            en: "See and filter only their own courses, and enter grades with comments. Classes and enrollments are set up by the admin.",
+            pt: "Ver e filtrar apenas os seus próprios cursos e lançar notas com comentários. As turmas e as inscrições são configuradas pelo administrador.",
+            lu: "Nëmmen hir eege Coursen gesinn a filteren, an Noten mat Kommentaren aginn. Klassen an Aschreiwunge setzt den Admin op.",
+            de: "Nur die eigenen Kurse sehen und filtern und Noten mit Kommentaren eintragen. Klassen und Einschreibungen richtet der Admin ein.",
+            fr: "Voir et filtrer uniquement leurs propres cours et saisir des notes avec commentaires. Les classes et les inscriptions sont configurées par l'admin."
         },
         "project.gradingdino.does.student.title": {
             en: "Students track their progress",
@@ -193,11 +200,11 @@
             fr: "Les étudiants suivent leur progression"
         },
         "project.gradingdino.does.student.desc": {
-            en: "Sign in to see grades by subject and semester, watch progress build over the year, and jot personal notes.",
-            pt: "Iniciar sessão para ver as notas por disciplina e semestre, acompanhar a evolução ao longo do ano e escrever notas pessoais.",
-            lu: "Aloggen fir d'Noten pro Fach a Semester ze gesinn, de Fortschrëtt iwwer d'Joer ze verfolgen a perséinlech Notizen ze schreiwen.",
-            de: "Anmelden, um Noten nach Fach und Semester zu sehen, den Fortschritt übers Jahr zu verfolgen und persönliche Notizen zu schreiben.",
-            fr: "Se connecter pour voir les notes par matière et semestre, suivre la progression sur l'année et noter des remarques personnelles."
+            en: "Sign in to see grades per course with semester, school year and averages, and watch progress build over the year.",
+            pt: "Iniciar sessão para ver as notas por curso com semestre, ano letivo e médias, e acompanhar a evolução ao longo do ano.",
+            lu: "Aloggen fir d'Noten pro Cours mat Semester, Schouljoer an Duerchschnëtter ze gesinn, an de Fortschrëtt iwwer d'Joer ze verfolgen.",
+            de: "Anmelden, um Noten pro Kurs mit Semester, Schuljahr und Durchschnitten zu sehen und den Fortschritt übers Jahr zu verfolgen.",
+            fr: "Se connecter pour voir les notes par cours avec semestre, année scolaire et moyennes, et suivre la progression sur l'année."
         },
         "project.gradingdino.does.roles.title": {
             en: "Everyone in their lane",
@@ -207,11 +214,11 @@
             fr: "Chacun à sa place"
         },
         "project.gradingdino.does.roles.desc": {
-            en: "Students, teachers and admins each get their own view — nobody sees more than they should.",
-            pt: "Alunos, professores e administradores têm cada um a sua vista — ninguém vê mais do que deve.",
-            lu: "Schüler, Enseignanten an Admins hu jeeweils hir eege Vue — keen gesäit méi wéi hien soll.",
-            de: "Schüler, Lehrer und Admins haben jeweils ihre eigene Ansicht — niemand sieht mehr als nötig.",
-            fr: "Étudiants, enseignants et admins ont chacun leur propre vue — personne n'en voit plus qu'il ne le doit."
+            en: "Students, teachers and admins each get their own view - nobody sees more than they should.",
+            pt: "Alunos, professores e administradores têm cada um a sua vista - ninguém vê mais do que deve.",
+            lu: "Schüler, Enseignanten an Admins hu jeeweils hir eege Vue - keen gesäit méi wéi hien soll.",
+            de: "Schüler, Lehrer und Admins haben jeweils ihre eigene Ansicht - niemand sieht mehr als nötig.",
+            fr: "Étudiants, enseignants et admins ont chacun leur propre vue - personne n'en voit plus qu'il ne le doit."
         },
         "project.gradingdino.does.oneCommand.title": {
             en: "Starts with one command",
@@ -221,11 +228,11 @@
             fr: "Démarre en une commande"
         },
         "project.gradingdino.does.oneCommand.desc": {
-            en: "The whole app and its database boot together — it runs the same on any machine with Docker installed.",
-            pt: "A aplicação e a sua base de dados arrancam em conjunto — funciona igual em qualquer máquina com Docker.",
-            lu: "Déi ganz App an hir Datebank starten zesummen — et leeft d'selwecht op all Maschinn mat Docker.",
-            de: "Die ganze App und ihre Datenbank starten zusammen — sie läuft auf jeder Maschine mit Docker gleich.",
-            fr: "L'application et sa base de données démarrent ensemble — ça tourne pareil sur n'importe quelle machine avec Docker."
+            en: "The whole app and its database boot together - it runs the same on any machine with Docker installed.",
+            pt: "A aplicação e a sua base de dados arrancam em conjunto - funciona igual em qualquer máquina com Docker.",
+            lu: "Déi ganz App an hir Datebank starten zesummen - et leeft d'selwecht op all Maschinn mat Docker.",
+            de: "Die ganze App und ihre Datenbank starten zusammen - sie läuft auf jeder Maschine mit Docker gleich.",
+            fr: "L'application et sa base de données démarrent ensemble - ça tourne pareil sur n'importe quelle machine avec Docker."
         },
 
         /* ---- The Project (intro) ---- */
@@ -237,11 +244,11 @@
             fr: "Le Projet"
         },
         "project.gradingdino.intro1": {
-            en: "GradingDino was a <strong>BTS Cloud Computing group project</strong> focused on project management methodology. A team of four worked together to build a grade management web application where teachers can create classrooms, add students, and manage grades — while students can log in to view their progress and leave personal notes.",
-            pt: "O GradingDino foi um <strong>projeto de grupo do BTS Cloud Computing</strong> focado em metodologia de gestão de projetos. Uma equipa de quatro pessoas trabalhou em conjunto para construir uma aplicação web de gestão de notas onde os professores podem criar turmas, adicionar alunos e gerir notas — enquanto os alunos podem iniciar sessão para ver o seu progresso e deixar notas pessoais.",
-            lu: "GradingDino war e <strong>BTS Cloud Computing Grupp-Projet</strong> fokusséiert op Projet-Management Methodologie. Eng Equipe vu véier huet zesummegeschafft fir eng Noten-Verwaltungs-Webapp ze bauen wou Enseignanten Klassen kreéieren, Schüler derbäisetzen an Noten verwalten — während d'Schüler sech aloggen kënnen fir hire Fortschrëtt ze gesinn an perséinlech Notizen ze schreiwen.",
-            de: "GradingDino war ein <strong>BTS Cloud Computing Gruppenprojekt</strong> mit Fokus auf Projektmanagement-Methodik. Ein Team von vier arbeitete zusammen, um eine Notenverwaltungs-Webanwendung zu erstellen, in der Lehrer Klassen erstellen, Schüler hinzufügen und Noten verwalten können — während Schüler sich anmelden können, um ihren Fortschritt zu sehen und persönliche Notizen zu hinterlassen.",
-            fr: "GradingDino était un <strong>projet de groupe BTS Cloud Computing</strong> axé sur la méthodologie de gestion de projet. Une équipe de quatre a travaillé ensemble pour créer une application web de gestion des notes où les enseignants peuvent créer des classes, ajouter des étudiants et gérer les notes — tandis que les étudiants peuvent se connecter pour voir leur progression et laisser des notes personnelles."
+            en: "For my <strong>BTS Cloud Computing group project</strong>, I worked with three teammates on GradingDino, a grade management web app. We used project-management methods to turn teacher and student needs into a working MVP.",
+            pt: "No meu <strong>projeto de grupo de BTS Cloud Computing</strong>, trabalhei com três colegas no GradingDino, uma aplicação web de gestão de notas. Usámos métodos de gestão de projetos para transformar as necessidades de professores e alunos num MVP funcional.",
+            lu: "Fir mäi <strong>BTS Cloud Computing Grupp-Projet</strong> hunn ech mat dräi Teammemberen um GradingDino geschafft, enger Webapp fir Noten ze verwalten. Mir hunn Projet-Management-Methoden benotzt fir d'Besoine vun Enseignanten a Schüler an e funktionnéierende MVP ze verwandelen.",
+            de: "Für mein <strong>BTS Cloud Computing Gruppenprojekt</strong> arbeitete ich mit drei Teammitgliedern an GradingDino, einer Webanwendung zur Notenverwaltung. Wir nutzten Projektmanagement-Methoden, um die Bedürfnisse von Lehrern und Schülern in ein funktionierendes MVP zu übersetzen.",
+            fr: "Pour mon <strong>projet de groupe BTS Cloud Computing</strong>, j'ai travaillé avec trois coéquipiers sur GradingDino, une application web de gestion des notes. Nous avons utilisé des méthodes de gestion de projet pour transformer les besoins des enseignants et des étudiants en un MVP fonctionnel."
         },
 
         /* ---- Team structure ---- */
@@ -260,25 +267,25 @@
             fr: "Nous avons travaillé en équipe de quatre avec des responsabilités clairement réparties :"
         },
         "project.gradingdino.myRole": {
-            en: "<strong>My Role (Lead Developer)</strong>: I handled most of the coding — Django models, views, templates, and Docker configuration. I also collaborated on database design and helped structure the documentation.",
-            pt: "<strong>O Meu Papel (Programador Principal)</strong>: Tratei da maior parte da programação — modelos Django, views, templates e configuração Docker. Também colaborei no design da base de dados e ajudei a estruturar a documentação.",
-            lu: "<strong>Meng Roll (Lead Developer)</strong>: Ech hunn de gréissten Deel vum Coding gemaach — Django Modeller, Views, Templates, an Docker Konfiguratioun. Ech hunn och um Datebank-Design matgeschafft an d'Dokumentatioun strukturéiert.",
-            de: "<strong>Meine Rolle (Lead Developer)</strong>: Ich habe den Großteil der Programmierung übernommen — Django-Modelle, Views, Templates und Docker-Konfiguration. Ich habe auch am Datenbankdesign mitgearbeitet und die Dokumentation strukturiert.",
-            fr: "<strong>Mon rôle (Développeur principal)</strong> : J'ai géré la majeure partie du code — modèles Django, vues, templates et configuration Docker. J'ai également collaboré à la conception de la base de données et aidé à structurer la documentation."
+            en: "<strong>My Role (Co-Developer)</strong>: I built the application together with one teammate - Django models, views, templates, database design and Docker configuration.",
+            pt: "<strong>O Meu Papel (Co-Programador)</strong>: Construí a aplicação em conjunto com um colega - modelos Django, views, templates, design da base de dados e configuração Docker.",
+            lu: "<strong>Meng Roll (Co-Developer)</strong>: Ech hunn d'Applikatioun zesumme mat engem Teammember gebaut - Django Modeller, Views, Templates, Datebank-Design an Docker Konfiguratioun.",
+            de: "<strong>Meine Rolle (Co-Developer)</strong>: Ich habe die Anwendung zusammen mit einem Teammitglied gebaut - Django-Modelle, Views, Templates, Datenbankdesign und Docker-Konfiguration.",
+            fr: "<strong>Mon rôle (Co-développeur)</strong> : J'ai construit l'application avec un coéquipier - modèles Django, vues, templates, conception de la base de données et configuration Docker."
         },
-        "project.gradingdino.colleagueDB": {
-            en: "<strong>Colleague (Database & Docs)</strong>: Worked with me on database schema design and took ownership of technical documentation.",
-            pt: "<strong>Colega (Base de Dados e Documentação)</strong>: Trabalhou comigo no design do esquema da base de dados e assumiu a responsabilidade pela documentação técnica.",
-            lu: "<strong>Kolleg (Datebank & Docs)</strong>: Huet mat mir um Datebank-Schema Design geschafft an d'technesch Dokumentatioun iwwerholl.",
-            de: "<strong>Kollege (Datenbank & Docs)</strong>: Arbeitete mit mir am Datenbankschema-Design und übernahm die technische Dokumentation.",
-            fr: "<strong>Collègue (Base de données & Docs)</strong> : A travaillé avec moi sur la conception du schéma de base de données et a pris en charge la documentation technique."
+        "project.gradingdino.colleagueDev": {
+            en: "<strong>Teammate (Development)</strong>: Built the application with me, from the Django code to the database schema.",
+            pt: "<strong>Colega (Desenvolvimento)</strong>: Construiu a aplicação comigo, do código Django ao esquema da base de dados.",
+            lu: "<strong>Teammember (Entwécklung)</strong>: Huet d'Applikatioun mat mir gebaut, vum Django-Code bis zum Datebank-Schema.",
+            de: "<strong>Teammitglied (Entwicklung)</strong>: Hat die Anwendung mit mir gebaut, vom Django-Code bis zum Datenbankschema.",
+            fr: "<strong>Coéquipier (Développement)</strong> : A construit l'application avec moi, du code Django au schéma de la base de données."
         },
-        "project.gradingdino.colleaguesPlanning": {
-            en: "<strong>Two Colleagues (Planning)</strong>: Created personas, wrote all 12+ user stories with acceptance criteria, performed MoSCoW prioritization, and managed the MS Planner board.",
-            pt: "<strong>Dois Colegas (Planeamento)</strong>: Criaram personas, escreveram todas as 12+ user stories com critérios de aceitação, realizaram a priorização MoSCoW e geriram o quadro MS Planner.",
-            lu: "<strong>Zwee Kollegen (Planung)</strong>: Hunn Personas erstallt, all 12+ User Stories mat Akzeptanzkriterien geschriwwen, MoSCoW Prioriséierung gemaach, an de MS Planner Board geréiert.",
-            de: "<strong>Zwei Kollegen (Planung)</strong>: Erstellten Personas, schrieben alle 12+ User Stories mit Akzeptanzkriterien, führten MoSCoW-Priorisierung durch und verwalteten das MS Planner Board.",
-            fr: "<strong>Deux collègues (Planification)</strong> : Ont créé les personas, écrit toutes les 12+ user stories avec critères d'acceptation, effectué la priorisation MoSCoW et géré le tableau MS Planner."
+        "project.gradingdino.colleaguesDocs": {
+            en: "<strong>Two Teammates (Documentation)</strong>: Handled the documentation - created personas, wrote all 12+ user stories with acceptance criteria, performed MoSCoW prioritization, and managed the MS Planner board.",
+            pt: "<strong>Dois Colegas (Documentação)</strong>: Trataram da documentação - criaram personas, escreveram todas as 12+ user stories com critérios de aceitação, realizaram a priorização MoSCoW e geriram o quadro MS Planner.",
+            lu: "<strong>Zwee Teammemberen (Dokumentatioun)</strong>: Hunn sech ëm d'Dokumentatioun gekëmmert - Personas erstallt, all 12+ User Stories mat Akzeptanzkriterien geschriwwen, MoSCoW Prioriséierung gemaach, an de MS Planner Board geréiert.",
+            de: "<strong>Zwei Teammitglieder (Dokumentation)</strong>: Übernahmen die Dokumentation - erstellten Personas, schrieben alle 12+ User Stories mit Akzeptanzkriterien, führten MoSCoW-Priorisierung durch und verwalteten das MS Planner Board.",
+            fr: "<strong>Deux coéquipiers (Documentation)</strong> : Ont pris en charge la documentation - création des personas, rédaction de toutes les 12+ user stories avec critères d'acceptation, priorisation MoSCoW et gestion du tableau MS Planner."
         },
 
         /* ---- Technical: layer stack ---- */
@@ -290,11 +297,11 @@
             fr: "Sous le capot"
         },
         "project.gradingdino.stack.intro": {
-            en: "Five containerized layers, all booted together by a single Compose file:",
-            pt: "Cinco camadas em contentores, todas arrancadas por um único ficheiro Compose:",
-            lu: "Fënnef containeriséiert Schichten, all duerch eng eenzeg Compose-Datei zesumme gestart:",
-            de: "Fünf containerisierte Schichten, alle durch eine einzige Compose-Datei gestartet:",
-            fr: "Cinq couches conteneurisées, toutes démarrées par un seul fichier Compose :"
+            en: "Five layers, two containers (web and database), all booted together by a single Compose file:",
+            pt: "Cinco camadas, dois contentores (web e base de dados), todos arrancados por um único ficheiro Compose:",
+            lu: "Fënnef Schichten, zwee Container (Web an Datebank), all duerch eng eenzeg Compose-Datei zesumme gestart:",
+            de: "Fünf Schichten, zwei Container (Web und Datenbank), alle durch eine einzige Compose-Datei gestartet:",
+            fr: "Cinq couches, deux conteneurs (web et base de données), le tout démarré par un seul fichier Compose :"
         },
         "project.gradingdino.stack.frontend.title": {
             en: "Presentation",
@@ -304,11 +311,11 @@
             fr: "Présentation"
         },
         "project.gradingdino.stack.frontend.pico": {
-            en: "<strong>Pico.css</strong>: a ~10KB single-file framework that styles semantic HTML5 automatically — no build step, no learning curve, just write HTML.",
-            pt: "<strong>Pico.css</strong>: um framework de ficheiro único (~10KB) que estiliza HTML5 semântico automaticamente — sem build, sem curva de aprendizagem, basta escrever HTML.",
-            lu: "<strong>Pico.css</strong>: e Single-File Framework (~10KB) dat semantescht HTML5 automatesch stylt — kee Build, keng Léierkurve, just HTML schreiwen.",
-            de: "<strong>Pico.css</strong>: ein ~10KB Single-File-Framework, das semantisches HTML5 automatisch stylt — kein Build-Schritt, keine Lernkurve, einfach HTML schreiben.",
-            fr: "<strong>Pico.css</strong> : un framework en fichier unique (~10KB) qui stylise automatiquement le HTML5 sémantique — pas de build, pas de courbe d'apprentissage, il suffit d'écrire du HTML."
+            en: "<strong>Pico.css</strong>: a single-file framework that styles semantic HTML5 automatically - no build step, no learning curve, just write HTML.",
+            pt: "<strong>Pico.css</strong>: um framework de ficheiro único que estiliza HTML5 semântico automaticamente - sem build, sem curva de aprendizagem, basta escrever HTML.",
+            lu: "<strong>Pico.css</strong>: e Single-File Framework dat semantescht HTML5 automatesch stylt - kee Build, keng Léierkurve, just HTML schreiwen.",
+            de: "<strong>Pico.css</strong>: ein Single-File-Framework, das semantisches HTML5 automatisch stylt - kein Build-Schritt, keine Lernkurve, einfach HTML schreiben.",
+            fr: "<strong>Pico.css</strong> : un framework en fichier unique qui stylise automatiquement le HTML5 sémantique - pas de build, pas de courbe d'apprentissage, il suffit d'écrire du HTML."
         },
         "project.gradingdino.stack.frontend.ssr": {
             en: "<strong>Server-side rendering</strong>: Django renders every page and the browser posts back over a standard HTTP cycle, keeping all validation and CSRF protection on the server.",
@@ -332,18 +339,18 @@
             fr: "<strong>Batteries incluses</strong> : Django 5.0 sur Python 3.11-slim fournit l'authentification, les formulaires, un ORM et un admin clés en main, permettant à une petite équipe de construire des fonctionnalités plutôt que de la tuyauterie."
         },
         "project.gradingdino.stack.backend.admin": {
-            en: "<strong>Built-in admin</strong>: the Django admin manages users, subjects and grading scales (20-point, 60-point and letter grades) with no extra code.",
-            pt: "<strong>Admin integrado</strong>: o admin do Django gere utilizadores, disciplinas e escalas de avaliação (20 pontos, 60 pontos e notas por letras) sem código adicional.",
-            lu: "<strong>Agebauten Admin</strong>: den Django-Admin verwalt Benotzer, Fächer a Bewäertungsskalen (20-Punkten, 60-Punkten a Buschtaw-Noten) ouni zousätzleche Code.",
-            de: "<strong>Eingebautes Admin</strong>: das Django-Admin verwaltet Benutzer, Fächer und Notenskalen (20-Punkte, 60-Punkte und Buchstabennoten) ohne zusätzlichen Code.",
-            fr: "<strong>Admin intégré</strong> : l'admin Django gère les utilisateurs, les matières et les barèmes (20 points, 60 points et notes en lettres) sans code supplémentaire."
+            en: "<strong>Built-in admin</strong>: a customised Django admin manages users, subjects, classes and enrollments; the grading scales (20-point, 60-point and letter grades) come from seed data.",
+            pt: "<strong>Admin integrado</strong>: um admin do Django personalizado gere utilizadores, disciplinas, turmas e inscrições; as escalas de avaliação (20 pontos, 60 pontos e notas por letras) vêm de dados iniciais.",
+            lu: "<strong>Agebauten Admin</strong>: en ugepassten Django-Admin verwalt Benotzer, Fächer, Klassen an Aschreiwungen; d'Bewäertungsskalen (20-Punkten, 60-Punkten a Buschtaw-Noten) kommen aus Seed-Donnéeën.",
+            de: "<strong>Eingebautes Admin</strong>: ein angepasstes Django-Admin verwaltet Benutzer, Fächer, Klassen und Einschreibungen; die Notenskalen (20-Punkte, 60-Punkte und Buchstabennoten) stammen aus Seed-Daten.",
+            fr: "<strong>Admin intégré</strong> : un admin Django personnalisé gère les utilisateurs, les matières, les classes et les inscriptions ; les barèmes (20 points, 60 points et notes en lettres) proviennent des données initiales."
         },
         "project.gradingdino.stack.backend.orm": {
-            en: "<strong>ORM models</strong>: classrooms, enrolments, grades and notes are plain Python models; migrations are generated and applied automatically.",
-            pt: "<strong>Modelos ORM</strong>: turmas, inscrições, notas e anotações são modelos Python simples; as migrações são geradas e aplicadas automaticamente.",
-            lu: "<strong>ORM-Modeller</strong>: Klassen, Aschreiwungen, Noten an Notizen sinn einfach Python-Modeller; Migratiounen ginn automatesch generéiert an applizéiert.",
-            de: "<strong>ORM-Modelle</strong>: Klassen, Einschreibungen, Noten und Notizen sind einfache Python-Modelle; Migrationen werden automatisch generiert und angewendet.",
-            fr: "<strong>Modèles ORM</strong> : classes, inscriptions, notes et remarques sont de simples modèles Python ; les migrations sont générées et appliquées automatiquement."
+            en: "<strong>ORM models</strong>: classes, courses, enrollments and grades are plain Python models; committed migrations are applied automatically on startup.",
+            pt: "<strong>Modelos ORM</strong>: turmas, cursos, inscrições e notas são modelos Python simples; as migrações versionadas são aplicadas automaticamente no arranque.",
+            lu: "<strong>ORM-Modeller</strong>: Klassen, Coursen, Aschreiwungen an Noten sinn einfach Python-Modeller; déi versionéiert Migratiounen ginn beim Start automatesch applizéiert.",
+            de: "<strong>ORM-Modelle</strong>: Klassen, Kurse, Einschreibungen und Noten sind einfache Python-Modelle; die eingecheckten Migrationen werden beim Start automatisch angewendet.",
+            fr: "<strong>Modèles ORM</strong> : classes, cours, inscriptions et notes sont de simples modèles Python ; les migrations versionnées sont appliquées automatiquement au démarrage."
         },
         "project.gradingdino.stack.db.title": {
             en: "Data",
@@ -360,11 +367,11 @@
             fr: "<strong>PostgreSQL 16</strong> : un stockage relationnel compatible ACID qui survit aux redémarrages de conteneur grâce à un volume Docker nommé."
         },
         "project.gradingdino.stack.db.concurrent": {
-            en: "<strong>Concurrent writes</strong>: several teachers can grade at the same time without locking each other out — and the same engine scales to a production deployment.",
-            pt: "<strong>Escritas concorrentes</strong>: vários professores podem classificar ao mesmo tempo sem se bloquearem — e o mesmo motor escala para um deploy em produção.",
-            lu: "<strong>Konkurréiert Schreifvirgäng</strong>: méi Enseignanten kënnen zur selwechter Zäit noten ouni sech géigesäiteg ze blockéieren — an déiselwecht Engine skaléiert bis op e Produktiouns-Deployment.",
-            de: "<strong>Gleichzeitige Schreibvorgänge</strong>: mehrere Lehrer können gleichzeitig benoten, ohne sich gegenseitig zu blockieren — und dieselbe Engine skaliert bis zu einem Produktions-Deployment.",
-            fr: "<strong>Écritures concurrentes</strong> : plusieurs enseignants peuvent corriger en même temps sans se bloquer — et le même moteur passe à l'échelle d'un déploiement en production."
+            en: "<strong>Concurrent writes</strong>: several teachers can grade at the same time without locking each other out - and the same engine scales to a production deployment.",
+            pt: "<strong>Escritas concorrentes</strong>: vários professores podem classificar ao mesmo tempo sem se bloquearem - e o mesmo motor escala para um deploy em produção.",
+            lu: "<strong>Konkurréiert Schreifvirgäng</strong>: méi Enseignanten kënnen zur selwechter Zäit noten ouni sech géigesäiteg ze blockéieren - an déiselwecht Engine skaléiert bis op e Produktiouns-Deployment.",
+            de: "<strong>Gleichzeitige Schreibvorgänge</strong>: mehrere Lehrer können gleichzeitig benoten, ohne sich gegenseitig zu blockieren - und dieselbe Engine skaliert bis zu einem Produktions-Deployment.",
+            fr: "<strong>Écritures concurrentes</strong> : plusieurs enseignants peuvent corriger en même temps sans se bloquer - et le même moteur passe à l'échelle d'un déploiement en production."
         },
         "project.gradingdino.stack.security.title": {
             en: "Security",
@@ -374,11 +381,11 @@
             fr: "Sécurité"
         },
         "project.gradingdino.stack.security.argon2": {
-            en: "<strong>Argon2 hashing</strong>: winner of the Password Hashing Competition (2015), created at the <strong>University of Luxembourg</strong> — memory-hard and resistant to GPU/ASIC cracking. A proud local choice.",
-            pt: "<strong>Hashing Argon2</strong>: vencedor da Password Hashing Competition (2015), criado na <strong>Universidade do Luxemburgo</strong> — memory-hard e resistente a ataques GPU/ASIC. Um orgulho tech local.",
-            lu: "<strong>Argon2-Hashing</strong>: Gewënner vun der Password Hashing Competition (2015), entwéckelt op der <strong>Universitéit Lëtzebuerg</strong> — memory-hard a resistent géint GPU/ASIC-Cracking. Eng stolz lokal Wiel.",
-            de: "<strong>Argon2-Hashing</strong>: Gewinner der Password Hashing Competition (2015), entwickelt an der <strong>Universität Luxemburg</strong> — memory-hard und resistent gegen GPU/ASIC-Cracking. Eine stolze lokale Wahl.",
-            fr: "<strong>Hachage Argon2</strong> : gagnant de la Password Hashing Competition (2015), créé à l'<strong>Université du Luxembourg</strong> — memory-hard et résistant au cassage GPU/ASIC. Une fierté locale."
+            en: "<strong>Argon2 hashing</strong>: winner of the Password Hashing Competition (2015), created at the <strong>University of Luxembourg</strong> - memory-hard and resistant to GPU/ASIC cracking. A proud local choice.",
+            pt: "<strong>Hashing Argon2</strong>: vencedor da Password Hashing Competition (2015), criado na <strong>Universidade do Luxemburgo</strong> - memory-hard e resistente a ataques GPU/ASIC. Um orgulho tech local.",
+            lu: "<strong>Argon2-Hashing</strong>: Gewënner vun der Password Hashing Competition (2015), entwéckelt op der <strong>Universitéit Lëtzebuerg</strong> - memory-hard a resistent géint GPU/ASIC-Cracking. Eng stolz lokal Wiel.",
+            de: "<strong>Argon2-Hashing</strong>: Gewinner der Password Hashing Competition (2015), entwickelt an der <strong>Universität Luxemburg</strong> - memory-hard und resistent gegen GPU/ASIC-Cracking. Eine stolze lokale Wahl.",
+            fr: "<strong>Hachage Argon2</strong> : gagnant de la Password Hashing Competition (2015), créé à l'<strong>Université du Luxembourg</strong> - memory-hard et résistant au cassage GPU/ASIC. Une fierté locale."
         },
         "project.gradingdino.stack.security.csrf": {
             en: "<strong>Secure by default</strong>: Django ships CSRF tokens, template auto-escaping against XSS, and a parameterised ORM that blocks SQL injection.",
@@ -388,11 +395,11 @@
             fr: "<strong>Sécurisé par défaut</strong> : Django fournit des jetons CSRF, l'auto-échappement des templates contre le XSS et un ORM paramétré qui bloque les injections SQL."
         },
         "project.gradingdino.stack.security.session": {
-            en: "<strong>Session auth + roles</strong>: signed session cookies plus role checks keep students, teachers and admins to their own views.",
-            pt: "<strong>Autenticação por sessão + papéis</strong>: cookies de sessão assinados e verificações de papel mantêm alunos, professores e administradores nas suas próprias vistas.",
-            lu: "<strong>Session-Auth + Rollen</strong>: signéiert Session-Cookien plus Rollechecken halen Schüler, Enseignanten an Admins op hiren eegene Vuen.",
-            de: "<strong>Session-Auth + Rollen</strong>: signierte Session-Cookies plus Rollenprüfungen halten Schüler, Lehrer und Admins bei ihren eigenen Ansichten.",
-            fr: "<strong>Auth par session + rôles</strong> : des cookies de session signés et des vérifications de rôle gardent étudiants, enseignants et admins sur leurs propres vues."
+            en: "<strong>Session auth + roles</strong>: Django's database-backed sessions plus role checks keep students, teachers and admins to their own views.",
+            pt: "<strong>Autenticação por sessão + papéis</strong>: sessões do Django guardadas na base de dados e verificações de papel mantêm alunos, professores e administradores nas suas próprias vistas.",
+            lu: "<strong>Session-Auth + Rollen</strong>: Django-Sessiounen an der Datebank plus Rollechecken halen Schüler, Enseignanten an Admins op hiren eegene Vuen.",
+            de: "<strong>Session-Auth + Rollen</strong>: datenbankgestützte Django-Sessions plus Rollenprüfungen halten Schüler, Lehrer und Admins bei ihren eigenen Ansichten.",
+            fr: "<strong>Auth par session + rôles</strong> : des sessions Django stockées en base de données et des vérifications de rôle gardent étudiants, enseignants et admins sur leurs propres vues."
         },
         "project.gradingdino.stack.infra.title": {
             en: "Orchestration",
@@ -402,11 +409,11 @@
             fr: "Orchestration"
         },
         "project.gradingdino.stack.infra.compose": {
-            en: "<strong>One command</strong>: <code>docker compose up</code> builds and starts the web and database containers together — identical on any machine.",
-            pt: "<strong>Um comando</strong>: <code>docker compose up</code> constrói e arranca os contentores web e de base de dados em conjunto — idêntico em qualquer máquina.",
-            lu: "<strong>Ee Kommando</strong>: <code>docker compose up</code> baut a start d'Web- an Datebank-Container zesummen — identesch op all Maschinn.",
-            de: "<strong>Ein Befehl</strong>: <code>docker compose up</code> baut und startet die Web- und Datenbank-Container zusammen — identisch auf jeder Maschine.",
-            fr: "<strong>Une commande</strong> : <code>docker compose up</code> construit et démarre les conteneurs web et base de données ensemble — identique sur toute machine."
+            en: "<strong>One command</strong>: <code>docker compose up</code> builds and starts the web and database containers together - identical on any machine.",
+            pt: "<strong>Um comando</strong>: <code>docker compose up</code> constrói e arranca os contentores web e de base de dados em conjunto - idêntico em qualquer máquina.",
+            lu: "<strong>Ee Kommando</strong>: <code>docker compose up</code> baut a start d'Web- an Datebank-Container zesummen - identesch op all Maschinn.",
+            de: "<strong>Ein Befehl</strong>: <code>docker compose up</code> baut und startet die Web- und Datenbank-Container zusammen - identisch auf jeder Maschine.",
+            fr: "<strong>Une commande</strong> : <code>docker compose up</code> construit et démarre les conteneurs web et base de données ensemble - identique sur toute machine."
         },
         "project.gradingdino.stack.infra.health": {
             en: "<strong>Health-gated startup</strong>: the app waits for PostgreSQL to pass a health check, then runs migrations and seeds the admin user before serving traffic.",
@@ -416,20 +423,20 @@
             fr: "<strong>Démarrage conditionné par health check</strong> : l'app attend que PostgreSQL passe un health check, puis exécute les migrations et crée l'utilisateur admin avant de servir le trafic."
         },
         "project.gradingdino.stack.infra.volumes": {
-            en: "<strong>Persistent volumes + live reload</strong>: data survives restarts via named volumes, and mounted code hot-reloads during development for fast iteration.",
-            pt: "<strong>Volumes persistentes + live reload</strong>: os dados sobrevivem a reinícios através de volumes nomeados, e o código montado recarrega a quente durante o desenvolvimento para iterar rápido.",
-            lu: "<strong>Persistent Volumen + Live Reload</strong>: d'Donnéeën iwwerliewen Neustarte iwwer benannt Volumen, an de gemounte Code lued waarm nei während dem Développement fir séier ze iteréieren.",
-            de: "<strong>Persistente Volumes + Live-Reload</strong>: Daten überstehen Neustarts dank benannter Volumes, und gemounteter Code lädt während der Entwicklung für schnelle Iteration neu.",
-            fr: "<strong>Volumes persistants + live reload</strong> : les données survivent aux redémarrages via des volumes nommés, et le code monté se recharge à chaud pendant le développement pour itérer vite."
+            en: "<strong>Persistent volume + live reload</strong>: database data survives restarts via one named volume, and the mounted code folder hot-reloads during development for fast iteration.",
+            pt: "<strong>Volume persistente + live reload</strong>: os dados da base de dados sobrevivem a reinícios através de um volume nomeado, e a pasta de código montada recarrega a quente durante o desenvolvimento para iterar rápido.",
+            lu: "<strong>Persistent Volume + Live Reload</strong>: d'Datebank-Donnéeën iwwerliewen Neustarte iwwer ee benannte Volume, an de gemounten Code-Dossier lued waarm nei während dem Développement fir séier ze iteréieren.",
+            de: "<strong>Persistentes Volume + Live-Reload</strong>: Datenbankdaten überstehen Neustarts dank eines benannten Volumes, und der gemountete Code-Ordner lädt während der Entwicklung für schnelle Iteration neu.",
+            fr: "<strong>Volume persistant + live reload</strong> : les données de la base survivent aux redémarrages via un volume nommé, et le dossier de code monté se recharge à chaud pendant le développement pour itérer vite."
         },
 
         /* ---- Why Django (journey) ---- */
         "project.gradingdino.why.title": {
-            en: "Why Django — and what it taught us",
-            pt: "Porquê Django — e o que nos ensinou",
-            lu: "Firwat Django — a wat et eis bäibruecht huet",
-            de: "Warum Django — und was es uns lehrte",
-            fr: "Pourquoi Django — et ce que ça nous a appris"
+            en: "Why Django, and what it taught us",
+            pt: "Porquê Django e o que nos ensinou",
+            lu: "Firwat Django a wat et eis bäibruecht huet",
+            de: "Warum Django und was es uns lehrte",
+            fr: "Pourquoi Django et ce que ça nous a appris"
         },
         "project.gradingdino.why.body1": {
             en: "Before a line of code, we did the groundwork: personas, 12+ user stories with acceptance criteria, MoSCoW prioritisation, and an MS Planner board. <strong>Planning first</strong> gave us a clear picture of exactly what to build.",
@@ -439,18 +446,18 @@
             fr: "Avant la moindre ligne de code, nous avons posé les bases : personas, plus de 12 user stories avec critères d'acceptation, priorisation MoSCoW et un tableau MS Planner. <strong>Planifier d'abord</strong> nous a donné une image claire de ce qu'il fallait construire."
         },
         "project.gradingdino.why.body2": {
-            en: "We compared Django, Flask and FastAPI. Django won on its <strong>\"batteries included\"</strong> philosophy — a built-in admin, auth, forms and ORM meant a small team could move fast without wiring everything from scratch.",
-            pt: "Comparámos Django, Flask e FastAPI. O Django ganhou pela sua filosofia <strong>\"baterias incluídas\"</strong> — admin integrado, autenticação, formulários e ORM permitiram a uma equipa pequena avançar rápido sem ligar tudo de raiz.",
-            lu: "Mir hunn Django, Flask a FastAPI verglach. Django huet gewonnen mat senger <strong>\"batteries included\"</strong>-Philosophie — en agebauten Admin, Auth, Formen an ORM hunn enger klenger Equipe erlaabt séier virunzekommen ouni alles vun Null ze verkabelen.",
-            de: "Wir verglichen Django, Flask und FastAPI. Django gewann mit seiner <strong>\"batteries included\"</strong>-Philosophie — ein eingebautes Admin, Auth, Formulare und ORM ließen ein kleines Team schnell vorankommen, ohne alles von Grund auf zu verdrahten.",
-            fr: "Nous avons comparé Django, Flask et FastAPI. Django l'a emporté grâce à sa philosophie <strong>\"batteries incluses\"</strong> — admin intégré, authentification, formulaires et ORM ont permis à une petite équipe d'avancer vite sans tout câbler de zéro."
+            en: "We compared Django, Flask and FastAPI. Django won on its <strong>\"batteries included\"</strong> philosophy - a built-in admin, auth, forms and ORM meant a small team could move fast without wiring everything from scratch.",
+            pt: "Comparámos Django, Flask e FastAPI. O Django ganhou pela sua filosofia <strong>\"baterias incluídas\"</strong> - admin integrado, autenticação, formulários e ORM permitiram a uma equipa pequena avançar rápido sem ligar tudo de raiz.",
+            lu: "Mir hunn Django, Flask a FastAPI verglach. Django huet gewonnen mat senger <strong>\"batteries included\"</strong>-Philosophie - en agebauten Admin, Auth, Formen an ORM hunn enger klenger Equipe erlaabt séier virunzekommen ouni alles vun Null ze verkabelen.",
+            de: "Wir verglichen Django, Flask und FastAPI. Django gewann mit seiner <strong>\"batteries included\"</strong>-Philosophie - ein eingebautes Admin, Auth, Formulare und ORM ließen ein kleines Team schnell vorankommen, ohne alles von Grund auf zu verdrahten.",
+            fr: "Nous avons comparé Django, Flask et FastAPI. Django l'a emporté grâce à sa philosophie <strong>\"batteries incluses\"</strong> - admin intégré, authentification, formulaires et ORM ont permis à une petite équipe d'avancer vite sans tout câbler de zéro."
         },
         "project.gradingdino.why.body3": {
-            en: "The catch: Django wants things <strong>done its way</strong>. On a tight deadline we hadn't fully learned its conventions, so we spent time fighting the framework instead of building features. We still shipped a working MVP — and learned the \"batteries\" only pay off once you know how to use them.",
-            pt: "O senão: o Django quer as coisas <strong>à maneira dele</strong>. Com um prazo apertado, não tínhamos dominado as suas convenções, por isso perdemos tempo a lutar contra o framework em vez de construir funcionalidades. Ainda assim entregámos um MVP funcional — e aprendemos que as \"baterias\" só compensam quando se sabe usá-las.",
-            lu: "De Pemmel: Django wëll d'Saachen <strong>op seng Manéier</strong>. Mat engem enge Delai hate mir seng Konventiounen net ganz geléiert, also hu mir géint de Framework gekämpft amplaz Features ze bauen. Mir hunn awer e funktionnéierende MVP geliwwert — a geléiert datt d'\"Batterien\" sech eréischt auszuelen wann ee se ze benotze weess.",
-            de: "Der Haken: Django will Dinge <strong>auf seine Art</strong>. Bei knapper Deadline hatten wir seine Konventionen nicht ganz gelernt, also kämpften wir mit dem Framework, statt Features zu bauen. Wir lieferten trotzdem ein funktionierendes MVP — und lernten, dass die \"Batterien\" sich erst auszahlen, wenn man sie zu nutzen weiß.",
-            fr: "Le hic : Django veut faire les choses <strong>à sa manière</strong>. Avec un délai serré, nous n'avions pas tout à fait assimilé ses conventions, alors nous avons lutté contre le framework au lieu de construire des fonctionnalités. Nous avons quand même livré un MVP fonctionnel — et appris que les \"batteries\" ne paient qu'une fois qu'on sait s'en servir."
+            en: "The catch: Django wants things <strong>done its way</strong>. On a tight deadline we hadn't fully learned its conventions, so we spent time fighting the framework instead of building features. We still shipped a working MVP - and learned the \"batteries\" only pay off once you know how to use them.",
+            pt: "O senão: o Django quer as coisas <strong>à maneira dele</strong>. Com um prazo apertado, não tínhamos dominado as suas convenções, por isso perdemos tempo a lutar contra o framework em vez de construir funcionalidades. Ainda assim entregámos um MVP funcional - e aprendemos que as \"baterias\" só compensam quando se sabe usá-las.",
+            lu: "De Pemmel: Django wëll d'Saachen <strong>op seng Manéier</strong>. Mat engem enge Delai hate mir seng Konventiounen net ganz geléiert, also hu mir géint de Framework gekämpft amplaz Features ze bauen. Mir hunn awer e funktionnéierende MVP geliwwert - a geléiert datt d'\"Batterien\" sech eréischt auszuelen wann ee se ze benotze weess.",
+            de: "Der Haken: Django will Dinge <strong>auf seine Art</strong>. Bei knapper Deadline hatten wir seine Konventionen nicht ganz gelernt, also kämpften wir mit dem Framework, statt Features zu bauen. Wir lieferten trotzdem ein funktionierendes MVP - und lernten, dass die \"Batterien\" sich erst auszahlen, wenn man sie zu nutzen weiß.",
+            fr: "Le hic : Django veut faire les choses <strong>à sa manière</strong>. Avec un délai serré, nous n'avions pas tout à fait assimilé ses conventions, alors nous avons lutté contre le framework au lieu de construire des fonctionnalités. Nous avons quand même livré un MVP fonctionnel - et appris que les \"batteries\" ne paient qu'une fois qu'on sait s'en servir."
         },
 
         /* ---- Lessons learned (cards) ---- */
@@ -655,29 +662,6 @@
             lu: "Multiple Grading Scales",
             de: "Mehrere Notenskalen",
             fr: "Plusieurs barèmes de notation"
-        },
-        "project.gradingdino.sidebar.features.notes": {
-            en: "Personal Notes",
-            pt: "Notas pessoais",
-            lu: "Perséinlech Notizen",
-            de: "Persönliche Notizen",
-            fr: "Notes personnelles"
-        },
-        "project.gradingdino.sidebar.features.observations": {
-            en: "Teacher Observations",
-            pt: "Observações do professor",
-            lu: "Observatiounen vum Enseignant",
-            de: "Beobachtungen des Lehrers",
-            fr: "Observations des enseignants"
-        },
-
-        /* ---- Misc ---- */
-        "project.gradingdino.name": {
-            en: "GradingDino",
-            pt: "GradingDino",
-            lu: "GradingDino",
-            de: "GradingDino",
-            fr: "GradingDino"
         }
     };
     Object.assign(translations, extra);

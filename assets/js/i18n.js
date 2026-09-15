@@ -1,5 +1,5 @@
 /**
- * Shared i18n helper — single translation function for all pages.
+ * Shared i18n helper - single translation function for all pages.
  * Load after translations/core.js (and any per-page translation file).
  */
 (function() {

@@ -20,12 +20,26 @@
             de: "Projekte",
             fr: "Projets"
         },
+        "projects.assemblash.title": {
+            en: "Assemblash",
+            pt: "Assemblash",
+            lu: "Assemblash",
+            de: "Assemblash",
+            fr: "Assemblash"
+        },
+        "projects.assemblash.desc": {
+            en: "An open-source, local-first visual document engine where people and AI agents can work on the same editable document through a web editor, CLI, HTTP API, or MCP.",
+            pt: "Um motor de documentos visuais, open source e local-first, onde pessoas e agentes de IA podem trabalhar no mesmo documento editável através de um editor web, CLI, API HTTP ou MCP.",
+            lu: "En Open-Source, local-first Engine fir visuell Dokumenter, wou Mënschen an AI-Agenten um selwechten editéierbare Dokument iwwer e Web-Editor, CLI, HTTP API oder MCP kënne schaffen.",
+            de: "Eine Open-Source- und Local-first-Engine für visuelle Dokumente, in der Menschen und KI-Agenten über Web-Editor, CLI, HTTP-API oder MCP am selben bearbeitbaren Dokument arbeiten können.",
+            fr: "Un moteur de documents visuels open source et local-first, où humains et agents IA peuvent travailler sur le même document modifiable via un éditeur web, une CLI, une API HTTP ou MCP."
+        },
         "projects.subtitle": {
-            en: "A collection of projects showcasing technical skills, from infrastructure and homelab setups to web development and IoT systems. Filter by category to explore specific areas.",
-            pt: "Uma coleção de projetos que demonstram competências técnicas, desde infraestrutura e configurações de homelab até desenvolvimento web e sistemas IoT. Filtre por categoria para explorar áreas específicas.",
-            lu: "Eng Sammlung vu Projeten déi technesch Fäegkeeten weisen, vun Infrastruktur a Homelab Setupen bis zu Web-Entwécklung an IoT Systemer. Filtert no Kategorie fir spezifesch Beräicher ze entdecken.",
-            de: "Eine Sammlung von Projekten, die technische Fähigkeiten zeigen, von Infrastruktur- und Homelab-Einrichtungen bis hin zu Webentwicklung und IoT-Systemen. Nach Kategorie filtern, um spezifische Bereiche zu erkunden.",
-            fr: "Une collection de projets mettant en valeur les compétences techniques, des configurations d'infrastructure et de homelab au développement web et aux systèmes IoT. Filtrez par catégorie pour explorer des domaines spécifiques."
+            en: "A project directory spanning infrastructure, open-source tools, web work, AI, and school projects. Use the filters to explore it.",
+            pt: "Um diretório de projetos com infraestrutura, ferramentas open source, trabalho web, IA e projetos escolares. Usa os filtros para o explorar.",
+            lu: "E Projet-Dossier mat Infrastruktur, Open-Source-Tools, Web-Aarbecht, AI a Schoulprojeten. Benotz d'Filtere fir en z'entdecken.",
+            de: "Ein Projektverzeichnis mit Infrastruktur, Open-Source-Tools, Webarbeit, KI und Schulprojekten. Nutze die Filter, um es zu erkunden.",
+            fr: "Un répertoire de projets couvrant l’infrastructure, les outils open source, le web, l’IA et les projets scolaires. Utilisez les filtres pour l’explorer."
         },
         "projects.back": {
             en: "Back to Portfolio",
@@ -69,26 +83,19 @@
             de: "Details ansehen",
             fr: "Voir les Détails"
         },
-        "projects.featured.heading": {
-            en: "Featured",
-            pt: "Em Destaque",
-            lu: "Highlights",
-            de: "Ausgewählt",
-            fr: "À la une"
+        "projects.githubRepository": {
+            en: "GitHub repository",
+            pt: "Repositório GitHub",
+            lu: "GitHub-Repository",
+            de: "GitHub-Repository",
+            fr: "Dépôt GitHub"
         },
-        "projects.all.heading": {
-            en: "All projects",
-            pt: "Todos os projetos",
-            lu: "All Projeten",
-            de: "Alle Projekte",
-            fr: "Tous les projets"
-        },
-        "projects.filter.more": {
-            en: "More",
-            pt: "Mais",
-            lu: "Méi",
-            de: "Mehr",
-            fr: "Plus"
+        "projects.caseStudy": {
+            en: "Case study",
+            pt: "Estudo de caso",
+            lu: "Case Study",
+            de: "Fallstudie",
+            fr: "Étude de cas"
         },
         "projects.filter.label": {
             en: "Filter",
@@ -139,19 +146,19 @@
             de: "{count} ausgewählt",
             fr: "{count} sélectionné(s)"
         },
-        "projects.stats.categories": {
-            en: "Categories",
-            pt: "Categorias",
-            lu: "Kategorien",
-            de: "Kategorien",
-            fr: "Catégories"
+        "projects.status.released": {
+            en: "Released",
+            pt: "Lançado",
+            lu: "Verëffentlecht",
+            de: "Veröffentlicht",
+            fr: "Publié"
         },
-        "projects.stats.years": {
-            en: "Years Active",
-            pt: "Anos Ativos",
-            lu: "Joren Aktiv",
-            de: "Aktive Jahre",
-            fr: "Années d'activité"
+        "projects.status.maintained": {
+            en: "Maintained",
+            pt: "Mantido",
+            lu: "Gepfleegt",
+            de: "Gepflegt",
+            fr: "Maintenu"
         }
     };
     Object.assign(translations, extra);

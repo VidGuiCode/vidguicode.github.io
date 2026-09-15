@@ -14,25 +14,11 @@
             fr: "Microsoft AZ-900"
         },
         "cert.az900.status": {
-            en: "Azure Fundamentals — January 2026",
-            pt: "Fundamentos Azure — Janeiro 2026",
-            lu: "Azure Fundamentals — Januar 2026",
-            de: "Azure Grundlagen — Januar 2026",
-            fr: "Fondamentaux Azure — Janvier 2026"
-        },
-        "cert.ccna.title": {
-            en: "CCNA Modules",
-            pt: "Módulos CCNA",
-            lu: "CCNA Moduler",
-            de: "CCNA Module",
-            fr: "Modules CCNA"
-        },
-        "cert.ccna.status": {
-            en: "Networking Fundamentals — Completed in School",
-            pt: "Fundamentos de Redes — Concluído na Escola",
-            lu: "Netzwierk Grondlagen — An der Schoul ofgeschloss",
-            de: "Netzwerk-Grundlagen — In der Schule abgeschlossen",
-            fr: "Fondamentaux Réseaux — Complété à l'École"
+            en: "Azure Fundamentals - January 2026",
+            pt: "Fundamentos Azure - Janeiro 2026",
+            lu: "Azure Fundamentals - Januar 2026",
+            de: "Azure Grundlagen - Januar 2026",
+            fr: "Fondamentaux Azure - Janvier 2026"
         },
         "cert.word.title": {
             en: "MOS Word Associate",
@@ -42,11 +28,11 @@
             fr: "MOS Word Associate"
         },
         "cert.word.status": {
-            en: "Microsoft 365 Apps — Nov 2025",
-            pt: "Microsoft 365 Apps — Nov 2025",
-            lu: "Microsoft 365 Apps — Nov 2025",
-            de: "Microsoft 365 Apps — Nov 2025",
-            fr: "Microsoft 365 Apps — Nov 2025"
+            en: "Microsoft 365 Apps - Nov 2025",
+            pt: "Microsoft 365 Apps - Nov 2025",
+            lu: "Microsoft 365 Apps - Nov 2025",
+            de: "Microsoft 365 Apps - Nov 2025",
+            fr: "Microsoft 365 Apps - Nov 2025"
         },
         "cert.ppt.title": {
             en: "MOS PowerPoint Associate",
@@ -56,16 +42,16 @@
             fr: "MOS PowerPoint Associate"
         },
         "cert.ppt.status": {
-            en: "Microsoft 365 Apps — Oct 2025",
-            pt: "Microsoft 365 Apps — Out 2025",
-            lu: "Microsoft 365 Apps — Okt 2025",
-            de: "Microsoft 365 Apps — Okt 2025",
-            fr: "Microsoft 365 Apps — Oct 2025"
+            en: "Microsoft 365 Apps - Oct 2025",
+            pt: "Microsoft 365 Apps - Out 2025",
+            lu: "Microsoft 365 Apps - Okt 2025",
+            de: "Microsoft 365 Apps - Okt 2025",
+            fr: "Microsoft 365 Apps - Oct 2025"
         },
         "certifications.subtitle": {
             en: "Industry-recognized certifications and training sessions in cloud computing, infrastructure, and technical skills. Certifications sorted by level (highest first), trainings by date (newest first).",
             pt: "Certificações reconhecidas pela indústria e sessões de formação em computação em nuvem, infraestrutura e habilidades técnicas. Certificações ordenadas por nível (maior primeiro), formações por data (mais recente primeiro).",
-            lu: "Industrie-unerkannte Zertifikater a Formatiounssessiounen a Cloud Computing, Infrastruktur an technesche Fäegkeeten. Zertifikater sortéiert no Niveau (héchste als éischt), Formatiounen no Datum (rezentste als éischt).",
+            lu: "Vun der Industrie unerkaante Zertifikater a Formatiounssessiounen a Cloud Computing, Infrastruktur an technesche Fäegkeeten. Zertifikater sortéiert no Niveau (héchste als éischt), Formatiounen no Datum (rezentste als éischt).",
             de: "Branchenweit anerkannte Zertifizierungen und Schulungssitzungen in Cloud Computing, Infrastruktur und technischen Fähigkeiten. Zertifizierungen nach Stufe sortiert (höchste zuerst), Schulungen nach Datum (neueste zuerst).",
             fr: "Certifications reconnues par l'industrie et sessions de formation en cloud computing, infrastructure et compétences techniques. Certifications triées par niveau (plus élevé en premier), formations par date (plus récentes en premier)."
         },
@@ -115,7 +101,7 @@
             en: "PROFESSIONAL CREDENTIALS",
             pt: "CREDENCIAIS PROFISSIONAIS",
             lu: "PROFESSIONELL CREDENTIALS",
-            de: "PROFESSIONELLE ANGEBOTE",
+            de: "PROFESSIONELLE ZERTIFIZIERUNGEN",
             fr: "CREDENTIALS PROFESSIONNELS"
         },
         "certifications.heading": {
@@ -124,13 +110,6 @@
             lu: "Zertifikatiounen & Training",
             de: "Zertifizierungen & Schulungen",
             fr: "Certifications & Formation"
-        },
-        "certifications.back": {
-            en: "Back to Portfolio",
-            pt: "Voltar ao Portfolio",
-            lu: "Zréck zum Portfolio",
-            de: "Zurück zum Portfolio",
-            fr: "Retour au Portfolio"
         },
         "certifications.stats.total": {
             en: "Total Certifications",
@@ -286,13 +265,6 @@
             de: "Verwandte Zertifizierungen",
             fr: "Certifications Associées"
         },
-        "certifications.modal.notes": {
-            en: "Notes",
-            pt: "Notas",
-            lu: "Notizen",
-            de: "Notizen",
-            fr: "Notes"
-        },
         "certifications.level.beginner": {
             en: "Beginner",
             pt: "Iniciante",
@@ -351,17 +323,10 @@
         },
         "certifications.modal.projects": {
             en: "Related Projects",
-            pt: "Projetos Relacionados",
+            pt: "Projetos relacionados",
             lu: "Verbonne Projeten",
             de: "Verwandte Projekte",
-            fr: "Projets Connexes"
-        },
-        "certifications.modal.noProjects": {
-            en: "No projects using this certification yet.",
-            pt: "Nenhum projeto usando esta certificação ainda.",
-            lu: "Keng Projeten déi dës Zertifikat nach benotzen.",
-            de: "Noch keine Projekte, die diese Zertifizierung verwenden.",
-            fr: "Aucun projet n'utilise encore cette certification."
+            fr: "Projets liés"
         },
         "cert.azure.az900.skills.cloud": {
             en: "Cloud Concepts",
@@ -462,11 +427,11 @@
             fr: "MOS Word Expert"
         },
         "cert.word.expert.status": {
-            en: "Microsoft 365 Apps — January 2026",
-            pt: "Microsoft 365 Apps — Janeiro 2026",
-            lu: "Microsoft 365 Apps — Januar 2026",
-            de: "Microsoft 365 Apps — Januar 2026",
-            fr: "Microsoft 365 Apps — Janvier 2026"
+            en: "Microsoft 365 Apps - January 2026",
+            pt: "Microsoft 365 Apps - Janeiro 2026",
+            lu: "Microsoft 365 Apps - Januar 2026",
+            de: "Microsoft 365 Apps - Januar 2026",
+            fr: "Microsoft 365 Apps - Janvier 2026"
         },
         "cert.word.expert.description": {
             en: "Demonstrates advanced expertise in creating and managing complex documents using Microsoft Word, including advanced formatting, custom document elements, macros, and automation.",
@@ -518,11 +483,11 @@
             fr: "Suivi un cours de formation d'une journée complète (9h-17h) couvrant les concepts Azure Fundamentals en préparation de l'examen de certification AZ-900. Organisé par Deep (POST Luxembourg Group) et animé par un formateur de leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
         },
         "formation.pluralsight.az900.name": {
-            en: "Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight",
-            pt: "Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight",
-            lu: "Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight",
-            de: "Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight",
-            fr: "Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight"
+            en: "Azure Fundamentals (AZ-900) Learning Path - Pluralsight",
+            pt: "Percurso de aprendizagem Azure Fundamentals (AZ-900) - Pluralsight",
+            lu: "Azure Fundamentals (AZ-900) Léierwee - Pluralsight",
+            de: "Azure Fundamentals (AZ-900) Lernpfad - Pluralsight",
+            fr: "Parcours d'apprentissage Azure Fundamentals (AZ-900) - Pluralsight"
         },
         "formation.pluralsight.az900.description": {
             en: "Finished the full Microsoft Certified: Azure Fundamentals (AZ-900) learning path on Pluralsight. Total time spent: ~19h. This preparation contributed to passing the AZ-900 certification exam.",
@@ -581,11 +546,11 @@
             fr: "Atelier Cloud Durable"
         },
         "formation.sustainablecloud.description": {
-            en: "Attended a 3-hour presentation/workshop on Sustainable Cloud, focusing on environmental impact and sustainable practices in cloud computing. Hosted by Arηs Group and conducted by a representative from their team, as part of my BTS Cloud Computing program at LGK.",
-            pt: "Frequentei uma apresentação/workshop de 3 horas sobre Cloud Sustentável, focando no impacto ambiental e práticas sustentáveis em cloud computing. Organizado pela Arηs Group e conduzido por um representante da sua equipa, como parte do meu programa BTS Cloud Computing no LGK.",
-            lu: "Besicht eng 3-Stonnen Presentatioun/Workshop iwwer Sustainable Cloud, deen sech op ëmweltbezunn Impakt a nohalteg Praktiken am Cloud Computing konzentréiert. Organiséiert vun Arηs Group a geleed vun engem Vertrieder vun hirer Ekipp, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
-            de: "Besuchte einen 3-stündigen Präsentation/Workshop zu Sustainable Cloud, mit Fokus auf Umweltauswirkungen und nachhaltige Praktiken im Cloud Computing. Organisiert von Arηs Group und durchgeführt von einem Vertreter ihres Teams, im Rahmen meines BTS Cloud Computing Programms am LGK.",
-            fr: "Suivi une présentation/atelier de 3 heures sur le Cloud Durable, axé sur l'impact environnemental et les pratiques durables en cloud computing. Organisé par Arηs Group et animé par un représentant de leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
+            en: "Attended a 3-hour presentation/workshop on Sustainable Cloud, focusing on environmental impact and sustainable practices in cloud computing. Hosted by ARHS Group and conducted by a representative from their team, as part of my BTS Cloud Computing program at LGK.",
+            pt: "Frequentei uma apresentação/workshop de 3 horas sobre Cloud Sustentável, focando no impacto ambiental e práticas sustentáveis em cloud computing. Organizado pela ARHS Group e conduzido por um representante da sua equipa, como parte do meu programa BTS Cloud Computing no LGK.",
+            lu: "Besicht eng 3-Stonnen Presentatioun/Workshop iwwer Sustainable Cloud, deen sech op ëmweltbezunn Impakt a nohalteg Praktiken am Cloud Computing konzentréiert. Organiséiert vun ARHS Group a geleed vun engem Vertrieder vun hirer Ekipp, als Deel vu mengem BTS Cloud Computing Programm am LGK.",
+            de: "Besuchte einen 3-stündigen Präsentation/Workshop zu Sustainable Cloud, mit Fokus auf Umweltauswirkungen und nachhaltige Praktiken im Cloud Computing. Organisiert von ARHS Group und durchgeführt von einem Vertreter ihres Teams, im Rahmen meines BTS Cloud Computing Programms am LGK.",
+            fr: "Suivi une présentation/atelier de 3 heures sur le Cloud Durable, axé sur l'impact environnemental et les pratiques durables en cloud computing. Organisé par ARHS Group et animé par un représentant de leur équipe, dans le cadre de mon programme BTS Cloud Computing au LGK."
         },
         "formation.sustainablecloud.skills.sustainable": {
             en: "Sustainable Cloud",
@@ -623,11 +588,11 @@
             fr: "Visite du Centre de Données LuxConnect"
         },
         "formation.luxconnect.description": {
-            en: "Visited the Tier IV LuxConnect data center in Bettembourg with my Cloud Computing class (both 1st and 2nd year students), organized by the 2nd year students through LGK. What stood out most was the incredible level of organization—everything is color-coded and labeled, from power lines to cooling systems. The redundancy is impressive: dual power paths, UPS systems, generators that kick in within seconds, and the facility can run autonomously for days. Efficiency metrics are excellent (PUE ~1.5, WUE ~0.2), and they even reuse waste heat. It's no surprise they've maintained zero SLA downtime since 2009 with this level of structure and redundancy.",
-            pt: "Visitei o data center Tier IV da LuxConnect em Bettembourg com a minha turma de Cloud Computing (alunos do 1º e 2º ano), organizado pelos alunos do 2º ano através do LGK. O que mais me impressionou foi o nível incrível de organização—tudo é codificado por cores e etiquetado, desde linhas de energia até sistemas de refrigeração. A redundância é impressionante: caminhos de energia duplos, sistemas UPS, geradores que entram em ação em segundos, e a instalação pode funcionar autonomamente por dias. As métricas de eficiência são excelentes (PUE ~1.5, WUE ~0.2), e eles até reutilizam o calor residual. Não é surpresa que mantiveram zero tempo de inatividade de SLA desde 2009 com este nível de estrutura e redundância.",
-            lu: "Besicht de Tier IV LuxConnect Data Center zu Bettembourg mat menger Cloud Computing Klass (sowuel 1. wéi och 2. Joer Studenten), organiséiert vun de Studenten vum 2. Joer duerch LGK. Wat mech am meeschte beandrockt huet war de ongläichleche Niveau vun Organisatioun—alles ass faarweg-kodéiert a markéiert, vun Kraaftleitungen bis Killungssystemer. D'Redundanz ass beeindruckend: duebel Kraaftweeër, UPS Systemer, Generatoren déi a Sekonnen ufänken, a d'Installatioun kann autonom fir Deeg lafen. Effizienzmetriken si exzellent (PUE ~1.5, WUE ~0.2), a si benotzen sougu Ofwäermt. Et ass keng Iwwerraschung datt si zéro SLA Downtime zanter 2009 mat dësem Niveau vun Struktur a Redundanz behalen hunn.",
-            de: "Besuchte das Tier IV LuxConnect Rechenzentrum in Bettembourg mit meiner Cloud Computing Klasse (sowohl 1. als auch 2. Jahr Studenten), organisiert von den Studenten des 2. Jahres durch LGK. Was am meisten auffiel, war das unglaubliche Maß an Organisation—alles ist farbcodiert und beschriftet, von Stromleitungen bis zu Kühlsystemen. Die Redundanz ist beeindruckend: doppelte Strompfade, UPS-Systeme, Generatoren, die innerhalb von Sekunden anspringen, und die Anlage kann tagelang autonom laufen. Die Effizienzmetriken sind ausgezeichnet (PUE ~1.5, WUE ~0.2), und sie nutzen sogar Abwärme wieder. Kein Wunder, dass sie seit 2009 null SLA-Ausfallzeiten mit diesem Maß an Struktur und Redundanz aufrechterhalten haben.",
-            fr: "Visité le centre de données Tier IV LuxConnect à Bettembourg avec ma classe de Cloud Computing (étudiants de 1ère et 2ème année), organisé par les étudiants de 2ème année via LGK. Ce qui m'a le plus frappé, c'est le niveau incroyable d'organisation—tout est codé par couleurs et étiqueté, des lignes électriques aux systèmes de refroidissement. La redondance est impressionnante : chemins d'alimentation doubles, systèmes UPS, générateurs qui démarrent en quelques secondes, et l'installation peut fonctionner de manière autonome pendant des jours. Les métriques d'efficacité sont excellentes (PUE ~1.5, WUE ~0.2), et ils réutilisent même la chaleur résiduelle. Ce n'est pas surprenant qu'ils aient maintenu zéro temps d'arrêt SLA depuis 2009 avec ce niveau de structure et de redondance."
+            en: "Visited the Tier IV LuxConnect data center in Bettembourg with my Cloud Computing class (both 1st and 2nd year students), organized by the 2nd year students through LGK. What stood out most was the incredible level of organization: everything is color-coded and labeled, from power lines to cooling systems. The redundancy is impressive: dual power paths, UPS systems, generators that kick in within seconds, and the facility can run autonomously for days. Efficiency metrics are excellent (PUE ~1.5, WUE ~0.2), and they even reuse waste heat. It's no surprise they've maintained zero SLA downtime since 2009 with this level of structure and redundancy.",
+            pt: "Visitei o data center Tier IV da LuxConnect em Bettembourg com a minha turma de Cloud Computing (alunos do 1º e 2º ano), organizado pelos alunos do 2º ano através do LGK. O que mais me impressionou foi o nível incrível de organização: tudo é codificado por cores e etiquetado, desde linhas de energia até sistemas de refrigeração. A redundância é impressionante: caminhos de energia duplos, sistemas UPS, geradores que entram em ação em segundos, e a instalação pode funcionar autonomamente por dias. As métricas de eficiência são excelentes (PUE ~1.5, WUE ~0.2), e eles até reutilizam o calor residual. Não é surpresa que mantiveram zero tempo de inatividade de SLA desde 2009 com este nível de estrutura e redundância.",
+            lu: "Besicht de Tier IV LuxConnect Data Center zu Bettembourg mat menger Cloud Computing Klass (sowuel 1. wéi och 2. Joer Studenten), organiséiert vun de Studenten vum 2. Joer duerch LGK. Wat mech am meeschte beandrockt huet war de ongläichleche Niveau vun Organisatioun: alles ass faarweg-kodéiert a markéiert, vun Kraaftleitungen bis Killungssystemer. D'Redundanz ass beeindruckend: duebel Kraaftweeër, UPS Systemer, Generatoren déi a Sekonnen ufänken, a d'Installatioun kann autonom fir Deeg lafen. Effizienzmetriken si exzellent (PUE ~1.5, WUE ~0.2), a si benotzen souguer Ofwäermt. Et ass keng Iwwerraschung datt si zéro SLA Downtime zanter 2009 mat dësem Niveau vun Struktur a Redundanz behalen hunn.",
+            de: "Besuchte das Tier IV LuxConnect Rechenzentrum in Bettembourg mit meiner Cloud Computing Klasse (sowohl 1. als auch 2. Jahr Studenten), organisiert von den Studenten des 2. Jahres durch LGK. Was am meisten auffiel, war das unglaubliche Maß an Organisation: alles ist farbcodiert und beschriftet, von Stromleitungen bis zu Kühlsystemen. Die Redundanz ist beeindruckend: doppelte Strompfade, UPS-Systeme, Generatoren, die innerhalb von Sekunden anspringen, und die Anlage kann tagelang autonom laufen. Die Effizienzmetriken sind ausgezeichnet (PUE ~1.5, WUE ~0.2), und sie nutzen sogar Abwärme wieder. Kein Wunder, dass sie seit 2009 null SLA-Ausfallzeiten mit diesem Maß an Struktur und Redundanz aufrechterhalten haben.",
+            fr: "Visité le centre de données Tier IV LuxConnect à Bettembourg avec ma classe de Cloud Computing (étudiants de 1ère et 2ème année), organisé par les étudiants de 2ème année via LGK. Ce qui m'a le plus frappé, c'est le niveau incroyable d'organisation : tout est codé par couleurs et étiqueté, des lignes électriques aux systèmes de refroidissement. La redondance est impressionnante : chemins d'alimentation doubles, systèmes UPS, générateurs qui démarrent en quelques secondes, et l'installation peut fonctionner de manière autonome pendant des jours. Les métriques d'efficacité sont excellentes (PUE ~1.5, WUE ~0.2), et ils réutilisent même la chaleur résiduelle. Ce n'est pas surprenant qu'ils aient maintenu zéro temps d'arrêt SLA depuis 2009 avec ce niveau de structure et de redondance."
         },
         "formation.luxconnect.skills.tier4": {
             en: "Tier IV Data Center",
@@ -714,11 +679,11 @@
             fr: "Introduction à la Blockchain"
         },
         "formation.blockchain.intro.description": {
-            en: "A three-session introduction to blockchain — what it is, how it works, and why it matters. We set up Metamask, explored the Sepolia testnet and faucets, and mined Sepolia ETH; covered mining mechanics, its ethics, and more theory; and finished hands-on with NFTs — minting them, using IPFS to understand where they live, trading them peer-to-peer with a neighbour, and voting through a Metamask-based app for NFT holders. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            pt: "Uma introdução ao blockchain em três sessões — o que é, como funciona e por que importa. Criámos conta na Metamask, explorámos a testnet Sepolia e os faucets, e minámos Sepolia ETH; vimos a mecânica da mineração, a sua ética e mais teoria; e terminámos com NFTs na prática — criámo-los, usámos IPFS para perceber onde ficam guardados, trocámo-los peer-to-peer com o colega ao lado, e votámos através de uma app com Metamask para titulares de NFT. The Blockchain Academy no Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            lu: "Eng Intro an d'Blockchain iwwer dräi Sessiounen — wat et ass, wéi et funktionnéiert an firwat et zielt. Mir hunn Metamask opgesat, d'Sepolia-Testnet an Faucets erkundegt, a Sepolia-ETH gemint; d'Mechanik vum Minen, seng Ethik a méi Theorie duerchgeholl; an um Enn praktesch mat NFTs geschafft — se kreéiert, IPFS benotzt fir ze verstoen wou se sinn, se Peer-to-Peer mam Noper gehandelt, an iwwer eng Metamask-App fir NFT-Besitzer ofgestëmmt. The Blockchain Academy um Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            de: "Eine Einführung in die Blockchain über drei Sitzungen — was sie ist, wie sie funktioniert und warum sie relevant ist. Wir haben Metamask eingerichtet, die Sepolia-Testnet und Faucets erkundet und Sepolia-ETH gemint; die Mechanik des Minings, seine Ethik und weitere Theorie durchgenommen; und zum Abschluss praktisch mit NFTs gearbeitet — sie erstellt, mit IPFS verstanden, wo sie gespeichert sind, sie peer-to-peer mit dem Sitznachbarn gehandelt und über eine Metamask-App für NFT-Inhaber abgestimmt. The Blockchain Academy am Lycée Guillaume Kroll (LGK), BTS Cloud Computing.",
-            fr: "Une introduction à la blockchain en trois séances — ce que c'est, comment ça marche et pourquoi c'est important. On a créé un compte Metamask, exploré la testnet Sepolia et les faucets, et miné du Sepolia ETH ; vu la mécanique du minage, son éthique et davantage de théorie ; et terminé en pratique avec les NFTs — les créer, utiliser IPFS pour comprendre où ils sont stockés, les échanger en pair-à-pair avec son voisin, et voter via une appli Metamask pour les détenteurs de NFT. The Blockchain Academy au Lycée Guillaume Kroll (LGK), BTS Cloud Computing."
+            en: "A three-session introduction to blockchain - what it is, how it works, and why it matters. We set up Metamask, explored the Sepolia testnet and faucets, and mined Sepolia ETH; covered mining mechanics, its ethics, and more theory; and finished hands-on with NFTs - minting them, using IPFS to understand where they live, trading them peer-to-peer with a neighbour, and voting through a Metamask-based app for NFT holders. The sessions were run by The Blockchain Academy at Lycée Guillaume Kroll (LGK) as part of the BTS Cloud Computing program.",
+            pt: "Uma introdução ao blockchain em três sessões - o que é, como funciona e por que importa. Criámos conta na Metamask, explorámos a testnet Sepolia e os faucets, e minámos Sepolia ETH; vimos a mecânica da mineração, a sua ética e mais teoria; e terminámos com NFTs na prática - criámo-los, usámos IPFS para perceber onde ficam guardados, trocámo-los peer-to-peer com o colega ao lado, e votámos através de uma app com Metamask para titulares de NFT. As sessões foram conduzidas pela The Blockchain Academy no Lycée Guillaume Kroll (LGK) no âmbito do BTS Cloud Computing.",
+            lu: "Eng Intro an d'Blockchain iwwer dräi Sessiounen - wat et ass, wéi et funktionnéiert an firwat et zielt. Mir hunn Metamask opgesat, d'Sepolia-Testnet an Faucets erkundegt, a Sepolia-ETH gemint; d'Mechanik vum Minen, seng Ethik a méi Theorie duerchgeholl; an um Enn praktesch mat NFTs geschafft - se kreéiert, IPFS benotzt fir ze verstoen wou se sinn, se Peer-to-Peer mam Noper gehandelt, an iwwer eng Metamask-App fir NFT-Besitzer ofgestëmmt. D'Sessiounen goufe vun The Blockchain Academy um Lycée Guillaume Kroll (LGK) am Kader vum BTS Cloud Computing gehalen.",
+            de: "Eine Einführung in die Blockchain über drei Sitzungen - was sie ist, wie sie funktioniert und warum sie relevant ist. Wir haben Metamask eingerichtet, die Sepolia-Testnet und Faucets erkundet und Sepolia-ETH gemint; die Mechanik des Minings, seine Ethik und weitere Theorie durchgenommen; und zum Abschluss praktisch mit NFTs gearbeitet - sie erstellt, mit IPFS verstanden, wo sie gespeichert sind, sie peer-to-peer mit dem Sitznachbarn gehandelt und über eine Metamask-App für NFT-Inhaber abgestimmt. Die Sitzungen wurden von The Blockchain Academy am Lycée Guillaume Kroll (LGK) im Rahmen des BTS Cloud Computing durchgeführt.",
+            fr: "Une introduction à la blockchain en trois séances - ce que c'est, comment ça marche et pourquoi c'est important. On a créé un compte Metamask, exploré la testnet Sepolia et les faucets, et miné du Sepolia ETH ; vu la mécanique du minage, son éthique et davantage de théorie ; et terminé en pratique avec les NFTs - les créer, utiliser IPFS pour comprendre où ils sont stockés, les échanger en pair-à-pair avec son voisin, et voter via une appli Metamask pour les détenteurs de NFT. Les séances étaient animées par The Blockchain Academy au Lycée Guillaume Kroll (LGK) dans le cadre du BTS Cloud Computing."
         },
         "formation.blockchain.intro.skills.fundamentals": {
             en: "Blockchain Fundamentals",
@@ -851,11 +816,11 @@
             fr: "Visite de l'Armée du Luxembourg"
         },
         "formation.luxembourgarmy.description": {
-            en: "Visited the Luxembourg Army as part of our BTS Cloud Computing class at LGK. The visit covered how the military operates and its career paths, but what stood out most from a technical perspective was their satellite capabilities — Luxembourg's investment in space and defense communication is impressive. We also got insight into their cybersecurity operations and IT infrastructure. It was a good look at how national defense intersects with the kind of tech and infrastructure work we study.",
-            pt: "Visitámos o Exército do Luxemburgo como parte da nossa turma BTS Cloud Computing no LGK. A visita abordou o funcionamento do exército e as suas carreiras, mas o que mais se destacou do ponto de vista técnico foram as suas capacidades de satélite — o investimento do Luxemburgo no espaço e na comunicação de defesa é impressionante. Também tivemos uma visão das suas operações de cibersegurança e infraestrutura de TI. Foi uma boa perspetiva de como a defesa nacional se cruza com o tipo de tecnologia e infraestrutura que estudamos.",
-            lu: "Mir hunn d'Lëtzebuerger Arméi besicht als Deel vun eiser BTS Cloud Computing Klass am LGK. De Besuch huet gewisen wéi d'Militär funktionéiert an hir Karriäreweeër, awer wat am meeschten aus technescher Siicht opgefall ass, waren hir Satellit-Kapazitéiten — d'Investitioun vum Lëtzebuerg am Weltraum an an der Verteidegungskommunikatioun ass beandrockend. Mir hunn och Abléck an hir Cybersecurity-Operatiounen an IT-Infrastruktur kritt. Et war e gudde Bléck wéi national Verteidegung sech mat der Aart vun Technologie an Infrastruktur kräizt, déi mir studéieren.",
-            de: "Besuch bei der Luxemburger Armee als Teil unserer BTS-Cloud-Computing-Klasse am LGK. Der Besuch zeigte, wie das Militär funktioniert und welche Karrierewege es gibt, aber was aus technischer Sicht am meisten hervorstach, waren die Satellitenkapazitäten — Luxemburgs Investition in Weltraum und Verteidigungskommunikation ist beeindruckend. Wir bekamen auch Einblicke in ihre Cybersecurity-Operationen und IT-Infrastruktur. Es war ein guter Blick darauf, wie nationale Verteidigung sich mit der Art von Technologie- und Infrastrukturarbeit überschneidet, die wir studieren.",
-            fr: "Visite de l'Armée du Luxembourg dans le cadre de notre classe BTS Cloud Computing au LGK. La visite a couvert le fonctionnement de l'armée et ses parcours de carrière, mais ce qui m'a le plus marqué d'un point de vue technique, ce sont leurs capacités satellitaires — l'investissement du Luxembourg dans l'espace et la communication de défense est impressionnant. Nous avons également eu un aperçu de leurs opérations de cybersécurité et de leur infrastructure IT. C'était un bon aperçu de la façon dont la défense nationale croise le type de technologie et d'infrastructure que nous étudions."
+            en: "Visited the Luxembourg Army as part of our BTS Cloud Computing class at LGK. The visit covered how the military operates and its career paths, but what stood out most from a technical perspective was their satellite capabilities - Luxembourg's investment in space and defense communication is impressive. We also got insight into their cybersecurity operations and IT infrastructure. It was a good look at how national defense intersects with the kind of tech and infrastructure work we study.",
+            pt: "Visitámos o Exército do Luxemburgo como parte da nossa turma BTS Cloud Computing no LGK. A visita abordou o funcionamento do exército e as suas carreiras, mas o que mais se destacou do ponto de vista técnico foram as suas capacidades de satélite - o investimento do Luxemburgo no espaço e na comunicação de defesa é impressionante. Também tivemos uma visão das suas operações de cibersegurança e infraestrutura de TI. Foi uma boa perspetiva de como a defesa nacional se cruza com o tipo de tecnologia e infraestrutura que estudamos.",
+            lu: "Mir hunn d'Lëtzebuerger Arméi besicht als Deel vun eiser BTS Cloud Computing Klass am LGK. De Besuch huet gewisen wéi d'Militär funktionéiert an hir Karriäreweeër, awer wat am meeschten aus technescher Siicht opgefall ass, waren hir Satellit-Kapazitéiten - d'Investitioun vum Lëtzebuerg am Weltraum an an der Verteidegungskommunikatioun ass beandrockend. Mir hunn och Abléck an hir Cybersecurity-Operatiounen an IT-Infrastruktur kritt. Et war e gudde Bléck wéi national Verteidegung sech mat der Aart vun Technologie an Infrastruktur kräizt, déi mir studéieren.",
+            de: "Besuch bei der Luxemburger Armee als Teil unserer BTS-Cloud-Computing-Klasse am LGK. Der Besuch zeigte, wie das Militär funktioniert und welche Karrierewege es gibt, aber was aus technischer Sicht am meisten hervorstach, waren die Satellitenkapazitäten - Luxemburgs Investition in Weltraum und Verteidigungskommunikation ist beeindruckend. Wir bekamen auch Einblicke in ihre Cybersecurity-Operationen und IT-Infrastruktur. Es war ein guter Blick darauf, wie nationale Verteidigung sich mit der Art von Technologie- und Infrastrukturarbeit überschneidet, die wir studieren.",
+            fr: "Visite de l'Armée du Luxembourg dans le cadre de notre classe BTS Cloud Computing au LGK. La visite a couvert le fonctionnement de l'armée et ses parcours de carrière, mais ce qui m'a le plus marqué d'un point de vue technique, ce sont leurs capacités satellitaires - l'investissement du Luxembourg dans l'espace et la communication de défense est impressionnant. Nous avons également eu un aperçu de leurs opérations de cybersécurité et de leur infrastructure IT. C'était un bon aperçu de la façon dont la défense nationale croise le type de technologie et d'infrastructure que nous étudions."
         },
         "formation.luxembourgarmy.skills.infrastructure": {
             en: "Defense IT Infrastructure",
@@ -967,18 +932,18 @@
             fr: "Technologies Émergentes"
         },
 
-        // LGK Open Day — BTS Cloud Computing Representation
+        // LGK Open Day - BTS Cloud Computing Representation
         "formation.lgkopenday.name": {
-            en: "BTS Cloud Computing Representative — LGK Open Day",
-            pt: "Representante do BTS Cloud Computing — Dia Aberto LGK",
-            lu: "BTS Cloud Computing Vertrieder — LGK Porte Ouverte",
-            de: "BTS Cloud Computing Vertreter — LGK Tag der offenen Tür",
-            fr: "Représentant BTS Cloud Computing — Porte Ouverte LGK"
+            en: "BTS Cloud Computing Representative - LGK Open Day",
+            pt: "Representante do BTS Cloud Computing - Dia Aberto LGK",
+            lu: "BTS Cloud Computing Vertrieder - LGK Oppenen Dag",
+            de: "BTS Cloud Computing Vertreter - LGK Tag der offenen Tür",
+            fr: "Représentant BTS Cloud Computing - Porte Ouverte LGK"
         },
         "formation.lgkopenday.description": {
             en: "At the Lycée Guillaume Kroll Open Day, I represented the BTS Cloud Computing program and spoke with future students and parents about what the course is like, what we work on, and where an IT path can lead. I also created a promotional video for the Diplôme de Technicien en Informatique path under a tight deadline and helped prepare the event.",
             pt: "No Dia Aberto do Lycée Guillaume Kroll, representei o programa BTS Cloud Computing e falei com futuros alunos e pais sobre como é o curso, no que trabalhamos e até onde um percurso em IT pode levar. Também criei um vídeo promocional para o percurso Diplôme de Technicien en Informatique com um prazo apertado e ajudei a preparar o evento.",
-            lu: "Bei der Porte Ouverte vum Lycée Guillaume Kroll hunn ech de BTS Cloud Computing vertrueden a mat zukünftege Schüler an Elteren doriwwer geschwat, wéi de Cours ass, u wat mir schaffen a wou en IT-Wee hi féiere kann. Ech hunn och ënner engem enke Deadline e Promotiounsvideo fir de Parcours Diplôme de Technicien en Informatique erstallt an beim Preparéiere vum Event gehollef.",
+            lu: "Beim Oppenen Dag vum Lycée Guillaume Kroll hunn ech de BTS Cloud Computing vertrueden a mat zukünftege Schüler an Elteren doriwwer geschwat, wéi de Cours ass, u wat mir schaffen a wou en IT-Wee hi féiere kann. Ech hunn och ënner engem enke Deadline e Promotiounsvideo fir de Parcours Diplôme de Technicien en Informatique erstallt an beim Preparéiere vum Event gehollef.",
             de: "Beim Tag der offenen Tür des Lycée Guillaume Kroll vertrat ich den BTS Cloud Computing und sprach mit zukünftigen Schülern und Eltern darüber, wie der Kurs abläuft, woran wir arbeiten und wohin ein Weg in die IT führen kann. Außerdem erstellte ich unter Zeitdruck ein Werbevideo für den Weg Diplôme de Technicien en Informatique und half bei der Vorbereitung der Veranstaltung.",
             fr: "Lors de la Porte Ouverte du Lycée Guillaume Kroll, j'ai représenté le BTS Cloud Computing et échangé avec de futurs élèves et leurs parents sur le déroulement de la formation, les projets sur lesquels nous travaillons et les débouchés possibles dans l'IT. J'ai aussi créé une vidéo promotionnelle pour la voie Diplôme de Technicien en Informatique dans un délai serré et aidé à préparer l'événement."
         },

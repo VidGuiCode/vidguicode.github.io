@@ -39,13 +39,6 @@ const translations = {
         de: "Erfahrung",
         fr: "Expérience"
     },
-    "nav.certifications": {
-        en: "Certifications",
-        pt: "Certificações",
-        lu: "Zertifikater",
-        de: "Zertifizierungen",
-        fr: "Certifications"
-    },
     "nav.certs": {
         en: "Certs",
         pt: "Certs",
@@ -54,41 +47,27 @@ const translations = {
         fr: "Certifs"
     },
     "hero.badge": {
-        en: "AVAILABLE FOR OPPORTUNITIES",
-        pt: "DISPONÍVEL PARA NOVAS OPORTUNIDADES",
-        lu: "DISPONIBEL FIR OPPORTUNITÉITEN",
-        de: "OFFEN FÜR NEUE MÖGLICHKEITEN",
-        fr: "DISPONIBLE POUR OPPORTUNITÉS"
+        en: "CO-FOUNDER · BUILDER · LUXEMBOURG",
+        pt: "COFUNDADOR · BUILDER · LUXEMBURGO",
+        lu: "CO-GRËNNER · BUILDER · LËTZEBUERG",
+        de: "MITGRÜNDER · BUILDER · LUXEMBURG",
+        fr: "COFONDATEUR · BUILDER · LUXEMBOURG"
     },
     "hero.subtitle": {
-        en: "Cloud Computing Student focused on cloud infrastructure, automation, and practical systems.",
-        pt: "Estudante de Cloud Computing focado em infraestrutura cloud, automação e sistemas práticos.",
-        lu: "Cloud Computing Student mat Fokus op Cloud-Infrastruktur, Automatisatioun a praktesch Systemer.",
-        de: "Cloud-Computing-Student mit Fokus auf Cloud-Infrastruktur, Automatisierung und praktische Systeme.",
-        fr: "Étudiant en Cloud Computing, axé sur l'infrastructure cloud, l'automatisation et les systèmes pratiques."
+        en: "I'm Gui, a Cloud Computing student and co-founder of Cylro. I build tools, work with AI agents, and run my own infrastructure in Luxembourg.",
+        pt: "Sou o Gui, estudante de Cloud Computing e cofundador da Cylro. Construo ferramentas, trabalho com agentes de IA e mantenho a minha própria infraestrutura no Luxemburgo.",
+        lu: "Ech sinn de Gui, Cloud-Computing-Student a Co-Grënner vu Cylro. Ech bauen Tools, schaffen mat KI-Agenten a bedreiwen meng eegen Infrastruktur zu Lëtzebuerg.",
+        de: "Ich bin Gui, Cloud-Computing-Student und Mitgründer von Cylro. Ich baue Tools, arbeite mit KI-Agenten und betreibe meine eigene Infrastruktur in Luxemburg.",
+        fr: "Je suis Gui, étudiant en Cloud Computing et cofondateur de Cylro. Je construis des outils, travaille avec des agents IA et gère ma propre infrastructure au Luxembourg."
     },
     "hero.description": {
-        en: "Based in Luxembourg, I build reliable infrastructure, automate workflows, and turn ideas into polished software and web experiences.",
-        pt: "Com base no Luxemburgo, construo infraestruturas fiáveis, automatizo fluxos de trabalho e transformo ideias em software e experiências web refinadas.",
-        lu: "Baséiert zu Lëtzebuerg bauen ech zouverlässeg Infrastruktur, automatiséieren Workflows a maachen Iddien zu poléierter Software a Web-Erfarungen.",
-        de: "In Luxemburg ansässig baue ich zuverlässige Infrastruktur, automatisiere Workflows und verwandle Ideen in ausgereifte Software- und Web-Erlebnisse.",
-        fr: "Basé au Luxembourg, je construis des infrastructures fiables, j'automatise des workflows et je transforme des idées en logiciels et expériences web soignés."
+        en: "Independent projects around software, infrastructure, and AI agents.",
+        pt: "Projetos independentes de software, infraestrutura e agentes de IA.",
+        lu: "Onofhängeg Projeten ronderëm Software, Infrastruktur a KI-Agenten.",
+        de: "Unabhängige Projekte rund um Software, Infrastruktur und KI-Agenten.",
+        fr: "Des projets indépendants autour du logiciel, de l'infrastructure et des agents IA."
     },
 
-    "home.highlight.lgk.title": {
-        en: "Recent highlight: LGK Open Day",
-        pt: "Destaque recente: Dia Aberto LGK",
-        lu: "Rezenten Highlight: LGK Porte Ouverte",
-        de: "Aktuelles Highlight: LGK Tag der offenen Tür",
-        fr: "Temps fort récent : Porte Ouverte LGK"
-    },
-    "home.highlight.lgk.desc": {
-        en: "Represented BTS Cloud Computing, spoke with future students and parents, and produced a promotional video for the IT technician path.",
-        pt: "Representei o BTS Cloud Computing, falei com futuros alunos e pais, e produzi um vídeo promocional para o percurso de técnico em informática.",
-        lu: "Ech hunn de BTS Cloud Computing vertrueden, mat zukünftege Schüler an Elteren geschwat an e Promotiounsvideo fir den Informatik-Techniker-Parcours produzéiert.",
-        de: "Ich vertrat den BTS Cloud Computing, sprach mit zukünftigen Schülern und Eltern und produzierte ein Werbevideo für den Informatiktechniker-Weg.",
-        fr: "J'ai représenté le BTS Cloud Computing, échangé avec de futurs élèves et parents, et produit une vidéo promotionnelle pour la voie technicien informatique."
-    },
     "hero.cta.contact": {
         en: "Get in Touch",
         pt: "Entrar em Contacto",
@@ -139,11 +118,11 @@ const translations = {
         fr: "Réseau"
     },
     "stat.network.desc": {
-        en: "CCNA & Security",
-        pt: "CCNA & Segurança",
-        lu: "CCNA & Sécherheet",
-        de: "CCNA & Sicherheit",
-        fr: "CCNA & Sécurité"
+        en: "Routing, VPN & Security",
+        pt: "Routing, VPN & Segurança",
+        lu: "Routing, VPN & Sécherheet",
+        de: "Routing, VPN & Sicherheit",
+        fr: "Routage, VPN & Sécurité"
     },
     "stat.development": {
         en: "Development",
@@ -174,11 +153,11 @@ const translations = {
         fr: "Je suis un passionné de cloud computing de <strong>Differdange, Luxembourg</strong>. Actuellement en <strong>BTS Cloud Computing (2025–2027)</strong> au Lycée Guillaume Kroll, avec une base solide en tant que Technicien Informatique."
     },
     "about.p2": {
-        en: "I don't just learn concepts; I build them. From hosting my own media infrastructure to developing AI-powered tools like <strong>Cylro</strong>, I'm obsessed with how systems work together.",
-        pt: "Não me limito a aprender conceitos; construo-os. Desde alojar a minha própria infraestrutura multimédia até desenvolver ferramentas com IA como <strong>Cylro</strong>, sou obcecado pela forma como os sistemas trabalham em conjunto.",
-        lu: "Ech léieren net nëmmen Konzepter; ech bauen se. Vun menger eegener Medien-Infrastruktur bis zur Entwécklung vu KI-Tools wéi <strong>Cylro</strong>, sinn ech besessen dovun wéi Systemer zesumme schaffen.",
-        de: "Ich lerne nicht nur Konzepte; ich baue sie. Vom Hosting meiner eigenen Medien-Infrastruktur bis zur Entwicklung von KI-Tools wie <strong>Cylro</strong> bin ich besessen davon, wie Systeme zusammenarbeiten.",
-        fr: "Je n'apprends pas seulement les concepts; je les construis. De l'hébergement de ma propre infrastructure média au développement d'outils IA comme <strong>Cylro</strong>, je suis passionné par le fonctionnement des systèmes."
+        en: "I learn by building. I run my own infrastructure and co-founded <strong>Cylro</strong>, a website operations platform. The practical part is seeing how the pieces work together.",
+        pt: "Aprendo ao construir. Mantenho a minha própria infraestrutura e cofundei a <strong>Cylro</strong>, uma plataforma de operações de websites. A parte prática é ver como as peças funcionam juntas.",
+        lu: "Ech léieren duerch Bauen. Ech bedreiwe meng eegen Infrastruktur an hunn <strong>Cylro</strong>, eng Website-Operations-Plattform, matgegrënnt. De prakteschen Deel ass ze gesinn, wéi d'Stécker zesumme funktionéieren.",
+        de: "Ich lerne durch Bauen. Ich betreibe meine eigene Infrastruktur und habe <strong>Cylro</strong>, eine Website-Operations-Plattform, mitgegründet. Der praktische Teil ist zu sehen, wie die Teile zusammenarbeiten.",
+        fr: "J'apprends en construisant. Je gère ma propre infrastructure et j'ai cofondé <strong>Cylro</strong>, une plateforme d'opérations web. Le côté pratique, c'est de voir comment les éléments fonctionnent ensemble."
     },
     "about.languages.intro": {
         en: "Fluent in 5 languages, thriving in multicultural environments:",
@@ -259,10 +238,10 @@ const translations = {
     },
     "skills.title": {
         en: "Tech Stack",
-        pt: "Tech Stack",
-        lu: "Tech Stack",
-        de: "Tech Stack",
-        fr: "Tech Stack"
+        pt: "Pilha tecnológica",
+        lu: "Technologie-Stack",
+        de: "Tech-Stack",
+        fr: "Pile technologique"
     },
     "skills.infrastructure.title": {
         en: "Infrastructure & Cloud",
@@ -271,40 +250,145 @@ const translations = {
         de: "Infrastruktur & Cloud",
         fr: "Infrastructure & Cloud"
     },
-    "skills.infrastructure.description": {
-        en: "Designing and operating containerized, scalable infrastructure across hybrid environments.",
-        pt: "Projetando e operando infraestrutura containerizada e escalável em ambientes híbridos.",
-        lu: "Designen a Betreiwen vun containeriséierter, skaléierbarer Infrastruktur iwwer hybrid Umgebungen.",
-        de: "Entwerfen und Betreiben containerisierter, skalierbarer Infrastruktur in hybriden Umgebungen.",
-        fr: "Conception et exploitation d'infrastructures containerisées et évolutives dans des environnements hybrides."
+    "skills.ai.title": {
+        en: "AI & Agents",
+        pt: "IA & Agentes",
+        lu: "AI & Agenten",
+        de: "KI & Agenten",
+        fr: "IA & Agents"
     },
-    "skills.infrastructure.highlight.1": {
-        en: "Kubernetes orchestration (K3s)",
-        pt: "Orquestração Kubernetes (K3s)",
-        lu: "Kubernetes Orchestratioun (K3s)",
-        de: "Kubernetes-Orchestrierung (K3s)",
-        fr: "Orchestration Kubernetes (K3s)"
+    "skills.chip.infra.containers": {
+        en: "Containers & Kubernetes",
+        pt: "Contentores & Kubernetes",
+        lu: "Container & Kubernetes",
+        de: "Container & Kubernetes",
+        fr: "Conteneurs & Kubernetes"
     },
-    "skills.infrastructure.highlight.2": {
-        en: "Multi-cloud deployments",
-        pt: "Implantações multi-cloud",
-        lu: "Multi-Cloud Deployments",
-        de: "Multi-Cloud-Bereitstellungen",
-        fr: "Déploiements multi-cloud"
+    "skills.chip.infra.cloud": {
+        en: "Public cloud",
+        pt: "Cloud pública",
+        lu: "Ëffentlech Cloud",
+        de: "Public Cloud",
+        fr: "Cloud public"
     },
-    "skills.infrastructure.highlight.3": {
-        en: "CI/CD pipelines & automation",
-        pt: "Pipelines CI/CD & automação",
-        lu: "CI/CD Pipelines & Automatiséierung",
-        de: "CI/CD-Pipelines & Automatisierung",
-        fr: "Pipelines CI/CD & automatisation"
+    "skills.chip.infra.virtualization": {
+        en: "Virtualization",
+        pt: "Virtualização",
+        lu: "Virtualiséierung",
+        de: "Virtualisierung",
+        fr: "Virtualisation"
     },
-    "skills.infrastructure.highlight.4": {
-        en: "Cost optimization strategies",
-        pt: "Estratégias de otimização de custos",
-        lu: "Käschte Optimiséierungs Strategien",
-        de: "Kostenoptimierungsstrategien",
-        fr: "Stratégies d'optimisation des coûts"
+    "skills.chip.infra.linux": {
+        en: "Linux servers",
+        pt: "Servidores Linux",
+        lu: "Linux-Serveren",
+        de: "Linux-Server",
+        fr: "Serveurs Linux"
+    },
+    "skills.chip.net.fundamentals": {
+        en: "Networking fundamentals",
+        pt: "Fundamentos de redes",
+        lu: "Netzwierk-Grondlagen",
+        de: "Netzwerkgrundlagen",
+        fr: "Fondamentaux réseau"
+    },
+    "skills.chip.net.vpn": {
+        en: "VPNs",
+        pt: "VPNs",
+        lu: "VPNen",
+        de: "VPNs",
+        fr: "VPN"
+    },
+    "skills.chip.net.dns": {
+        en: "DNS",
+        pt: "DNS",
+        lu: "DNS",
+        de: "DNS",
+        fr: "DNS"
+    },
+    "skills.chip.net.proxy": {
+        en: "Reverse proxies & TLS",
+        pt: "Reverse proxies & TLS",
+        lu: "Reverse Proxyen & TLS",
+        de: "Reverse Proxys & TLS",
+        fr: "Reverse proxies & TLS"
+    },
+    "skills.chip.dev.frontend": {
+        en: "Frontend frameworks",
+        pt: "Frameworks frontend",
+        lu: "Frontend-Frameworks",
+        de: "Frontend-Frameworks",
+        fr: "Frameworks frontend"
+    },
+    "skills.chip.dev.backend": {
+        en: "Backend & APIs",
+        pt: "Backend & APIs",
+        lu: "Backend & APIen",
+        de: "Backend & APIs",
+        fr: "Backend & API"
+    },
+    "skills.chip.dev.databases": {
+        en: "Databases",
+        pt: "Bases de dados",
+        lu: "Datebanken",
+        de: "Datenbanken",
+        fr: "Bases de données"
+    },
+    "skills.chip.dev.systems": {
+        en: "Systems programming",
+        pt: "Programação de sistemas",
+        lu: "Systemprogramméierung",
+        de: "Systemprogrammierung",
+        fr: "Programmation système"
+    },
+    "skills.chip.dev.languages": {
+        en: "TypeScript & Python",
+        pt: "TypeScript & Python",
+        lu: "TypeScript & Python",
+        de: "TypeScript & Python",
+        fr: "TypeScript & Python"
+    },
+    "skills.chip.ai.agents": {
+        en: "AI agents & MCP",
+        pt: "Agentes IA & MCP",
+        lu: "AI-Agenten & MCP",
+        de: "KI-Agenten & MCP",
+        fr: "Agents IA & MCP"
+    },
+    "skills.chip.ai.llms": {
+        en: "Frontier & open LLMs",
+        pt: "LLMs de ponta & abertos",
+        lu: "Frontier- & oppe LLMen",
+        de: "Frontier- & offene LLMs",
+        fr: "LLM de pointe & ouverts"
+    },
+    "skills.chip.ai.small": {
+        en: "Small language models",
+        pt: "Modelos pequenos",
+        lu: "Kleng Sproochmodeller",
+        de: "Kleine Sprachmodelle",
+        fr: "Petits modèles de langage"
+    },
+    "skills.chip.ai.media": {
+        en: "Image & video generation",
+        pt: "Geração de imagem & vídeo",
+        lu: "Bild- & Videogeneréierung",
+        de: "Bild- & Videogenerierung",
+        fr: "Génération d'images & vidéo"
+    },
+    "skills.chip.ai.speech": {
+        en: "Speech recognition",
+        pt: "Voz para texto",
+        lu: "Spriecherkennung",
+        de: "Spracherkennung",
+        fr: "Reconnaissance vocale"
+    },
+    "skills.chip.ai.tooling": {
+        en: "Agent tooling",
+        pt: "Ferramentas de agentes",
+        lu: "Tools fir Agenten",
+        de: "Agenten-Tooling",
+        fr: "Outils pour agents"
     },
     "skills.network.title": {
         en: "Network Engineering",
@@ -313,327 +397,12 @@ const translations = {
         de: "Netzwerktechnik",
         fr: "Ingénierie Réseau"
     },
-    "skills.network.description": {
-        en: "Building secure, resilient network architectures with modern protocols and automation.",
-        pt: "Construindo arquiteturas de rede seguras e resilientes com protocolos modernos e automação.",
-        lu: "Opbau vu sécheren, resilienten Netzwierk Architekturen mat moderne Protokollen an Automatiséierung.",
-        de: "Aufbau sicherer, widerstandsfähiger Netzwerkarchitekturen mit modernen Protokollen und Automatisierung.",
-        fr: "Construction d'architectures réseau sécurisées et résilientes avec des protocoles modernes et l'automatisation."
-    },
-    "skills.network.highlight.1": {
-        en: "VPN & secure tunneling",
-        pt: "VPN & túneis seguros",
-        lu: "VPN & sécheren Tunneling",
-        de: "VPN & sicheres Tunneling",
-        fr: "VPN & tunneling sécurisé"
-    },
-    "skills.network.highlight.2": {
-        en: "Reverse proxy & TLS automation",
-        pt: "Proxy reverso & automação TLS",
-        lu: "Reverse Proxy & TLS Automatiséierung",
-        de: "Reverse Proxy & TLS-Automatisierung",
-        fr: "Proxy inverse & automatisation TLS"
-    },
-    "skills.network.highlight.3": {
-        en: "DNS & traffic management",
-        pt: "DNS & gestão de tráfego",
-        lu: "DNS & Trafic Gestioun",
-        de: "DNS & Traffic-Management",
-        fr: "DNS & gestion du trafic"
-    },
-    "skills.network.highlight.4": {
-        en: "Network security & monitoring",
-        pt: "Segurança de rede & monitorização",
-        lu: "Netzwierk Sécherheet & Iwwerwaachung",
-        de: "Netzwerksicherheit & Überwachung",
-        fr: "Sécurité réseau & surveillance"
-    },
     "skills.development.title": {
         en: "Full-Stack Development",
         pt: "Desenvolvimento Full-Stack",
         lu: "Full-Stack Entwécklung",
         de: "Full-Stack-Entwicklung",
         fr: "Développement Full-Stack"
-    },
-    "skills.development.description": {
-        en: "Building end-to-end applications with modern frameworks, secure authentication, and optimized databases.",
-        pt: "Construindo aplicações de ponta a ponta com frameworks modernos, autenticação segura e bases de dados otimizadas.",
-        lu: "Opbau vun End-to-End Uwendungen mat moderne Frameworks, sécherer Authentifizéierung an optimiséierten Datenbanken.",
-        de: "Entwicklung von End-to-End-Anwendungen mit modernen Frameworks, sicherer Authentifizierung und optimierten Datenbanken.",
-        fr: "Développement d'applications de bout en bout avec des frameworks modernes, une authentification sécurisée et des bases de données optimisées."
-    },
-    "skills.development.highlight.1": {
-        en: "Python, JavaScript, Node.js",
-        pt: "Python, JavaScript, Node.js",
-        lu: "Python, JavaScript, Node.js",
-        de: "Python, JavaScript, Node.js",
-        fr: "Python, JavaScript, Node.js"
-    },
-    "skills.development.highlight.2": {
-        en: "FastAPI, Django, SvelteKit",
-        pt: "FastAPI, Django, SvelteKit",
-        lu: "FastAPI, Django, SvelteKit",
-        de: "FastAPI, Django, SvelteKit",
-        fr: "FastAPI, Django, SvelteKit"
-    },
-    "skills.development.highlight.3": {
-        en: "SQL databases & migrations",
-        pt: "Bases de dados SQL & migrações",
-        lu: "SQL Datenbanken & Migratiounen",
-        de: "SQL-Datenbanken & Migrationen",
-        fr: "Bases de données SQL & migrations"
-    },
-    "skills.development.highlight.4": {
-        en: "JWT auth & security best practices",
-        pt: "Autenticação JWT & melhores práticas de segurança",
-        lu: "JWT Auth & Sécherheets Best Practices",
-        de: "JWT-Auth & Sicherheitsbest Practices",
-        fr: "Authentification JWT & meilleures pratiques de sécurité"
-    },
-    "skills.cloud": {
-        en: "Cloud & DevOps",
-        pt: "Cloud & DevOps",
-        lu: "Cloud & DevOps",
-        de: "Cloud & DevOps",
-        fr: "Cloud & DevOps"
-    },
-    "skills.cloud.1": {
-        en: "Docker / Docker Compose",
-        pt: "Docker / Docker Compose",
-        lu: "Docker / Docker Compose",
-        de: "Docker / Docker Compose",
-        fr: "Docker / Docker Compose"
-    },
-    "skills.cloud.2": {
-        en: "Kubernetes (K3s cluster)",
-        pt: "Kubernetes (cluster K3s)",
-        lu: "Kubernetes (K3s Cluster)",
-        de: "Kubernetes (K3s-Cluster)",
-        fr: "Kubernetes (cluster K3s)"
-    },
-    "skills.cloud.3": {
-        en: "Traefik (Ingress & Load Balancing)",
-        pt: "Traefik (Ingress & Balanceamento de Carga)",
-        lu: "Traefik (Ingress & Load Balancing)",
-        de: "Traefik (Ingress & Lastausgleich)",
-        fr: "Traefik (Ingress & Équilibrage de charge)"
-    },
-    "skills.cloud.4": {
-        en: "Portainer (Container Management)",
-        pt: "Portainer (Gestão de Contentores)",
-        lu: "Portainer (Container Gestioun)",
-        de: "Portainer (Container-Verwaltung)",
-        fr: "Portainer (Gestion de conteneurs)"
-    },
-    "skills.cloud.5": {
-        en: "Git / GitHub",
-        pt: "Git / GitHub",
-        lu: "Git / GitHub",
-        de: "Git / GitHub",
-        fr: "Git / GitHub"
-    },
-    "skills.cloud.6": {
-        en: "Cloud Platforms (Oracle Cloud, Hetzner Cloud)",
-        pt: "Plataformas Cloud (Oracle Cloud, Hetzner Cloud)",
-        lu: "Cloud Plattformen (Oracle Cloud, Hetzner Cloud)",
-        de: "Cloud-Plattformen (Oracle Cloud, Hetzner Cloud)",
-        fr: "Plateformes Cloud (Oracle Cloud, Hetzner Cloud)"
-    },
-    "skills.cloud.7": {
-        en: "Web Hosting (IONOS, Hetzner)",
-        pt: "Alojamento Web (IONOS, Hetzner)",
-        lu: "Web Hosting (IONOS, Hetzner)",
-        de: "Web-Hosting (IONOS, Hetzner)",
-        fr: "Hébergement Web (IONOS, Hetzner)"
-    },
-    "skills.cloud.8": {
-        en: "Infrastructure management & cost optimization",
-        pt: "Gestão de infraestrutura & otimização de custos",
-        lu: "Infrastruktur Gestioun & Käschte Optimiséierung",
-        de: "Infrastrukturverwaltung & Kostenoptimierung",
-        fr: "Gestion d'infrastructure & optimisation des coûts"
-    },
-    "skills.networking": {
-        en: "Networking",
-        pt: "Redes",
-        lu: "Netzwierk",
-        de: "Netzwerk",
-        fr: "Réseaux"
-    },
-    "skills.networking.1": {
-        en: "CCNA fundamentals",
-        pt: "Fundamentos CCNA",
-        lu: "CCNA Grondlagen",
-        de: "CCNA Grundlagen",
-        fr: "Fondamentaux CCNA"
-    },
-    "skills.networking.2": {
-        en: "WireGuard (VPN & tunneling)",
-        pt: "WireGuard (VPN & túnel)",
-        lu: "WireGuard (VPN & Tunneling)",
-        de: "WireGuard (VPN & Tunneling)",
-        fr: "WireGuard (VPN & tunneling)"
-    },
-    "skills.networking.3": {
-        en: "Caddy (reverse proxy & TLS automation)",
-        pt: "Caddy (proxy reverso & automação TLS)",
-        lu: "Caddy (Reverse Proxy & TLS Automatiséierung)",
-        de: "Caddy (Reverse Proxy & TLS-Automatisierung)",
-        fr: "Caddy (proxy inverse & automatisation TLS)"
-    },
-    "skills.networking.4": {
-        en: "DNS management (Cloudflare)",
-        pt: "Gestão DNS (Cloudflare)",
-        lu: "DNS Gestioun (Cloudflare)",
-        de: "DNS-Verwaltung (Cloudflare)",
-        fr: "Gestion DNS (Cloudflare)"
-    },
-    "skills.networking.5": {
-        en: "Network security & monitoring",
-        pt: "Segurança de rede & monitorização",
-        lu: "Netzwierk Sécherheet & Iwwerwaachung",
-        de: "Netzwerksicherheit & Überwachung",
-        fr: "Sécurité réseau & surveillance"
-    },
-    "skills.programming": {
-        en: "Programming & Frameworks",
-        pt: "Programação & Frameworks",
-        lu: "Programméierung & Frameworks",
-        de: "Programmierung & Frameworks",
-        fr: "Programmation & Frameworks"
-    },
-    "skills.programming.1": {
-        en: "Python / FastAPI",
-        pt: "Python / FastAPI",
-        lu: "Python / FastAPI",
-        de: "Python / FastAPI",
-        fr: "Python / FastAPI"
-    },
-    "skills.programming.2": {
-        en: "JavaScript / Node.js",
-        pt: "JavaScript / Node.js",
-        lu: "JavaScript / Node.js",
-        de: "JavaScript / Node.js",
-        fr: "JavaScript / Node.js"
-    },
-    "skills.programming.3": {
-        en: "Django (Python Framework)",
-        pt: "Django (Framework Python)",
-        lu: "Django (Python Framework)",
-        de: "Django (Python-Framework)",
-        fr: "Django (Framework Python)"
-    },
-    "skills.programming.4": {
-        en: "SvelteKit (Frontend Framework)",
-        pt: "SvelteKit (Framework Frontend)",
-        lu: "SvelteKit (Frontend Framework)",
-        de: "SvelteKit (Frontend-Framework)",
-        fr: "SvelteKit (Framework Frontend)"
-    },
-    "skills.programming.5": {
-        en: "PHP",
-        pt: "PHP",
-        lu: "PHP",
-        de: "PHP",
-        fr: "PHP"
-    },
-    "skills.programming.6": {
-        en: "HTML / CSS",
-        pt: "HTML / CSS",
-        lu: "HTML / CSS",
-        de: "HTML / CSS",
-        fr: "HTML / CSS"
-    },
-    "skills.programming.7": {
-        en: "PowerShell / Bash",
-        pt: "PowerShell / Bash",
-        lu: "PowerShell / Bash",
-        de: "PowerShell / Bash",
-        fr: "PowerShell / Bash"
-    },
-    "skills.systems": {
-        en: "Systems & Tools",
-        pt: "Sistemas & Ferramentas",
-        lu: "Systemer & Tools",
-        de: "Systeme & Tools",
-        fr: "Systèmes & Outils"
-    },
-    "skills.systems.1": {
-        en: "Windows Server",
-        pt: "Windows Server",
-        lu: "Windows Server",
-        de: "Windows Server",
-        fr: "Windows Server"
-    },
-    "skills.systems.2": {
-        en: "Linux Server",
-        pt: "Linux Server",
-        lu: "Linux Server",
-        de: "Linux Server",
-        fr: "Linux Server"
-    },
-    "skills.systems.3": {
-        en: "Hardware Diagnostics",
-        pt: "Diagnóstico de Hardware",
-        lu: "Hardware Diagnostik",
-        de: "Hardware-Diagnose",
-        fr: "Diagnostic Matériel"
-    },
-    "skills.database": {
-        en: "Database & Security",
-        pt: "Base de Dados & Segurança",
-        lu: "Datenbank & Sécherheet",
-        de: "Datenbank & Sicherheit",
-        fr: "Base de données & Sécurité"
-    },
-    "skills.database.1": {
-        en: "SQL (MySQL, PostgreSQL, SQLite)",
-        pt: "SQL (MySQL, PostgreSQL, SQLite)",
-        lu: "SQL (MySQL, PostgreSQL, SQLite)",
-        de: "SQL (MySQL, PostgreSQL, SQLite)",
-        fr: "SQL (MySQL, PostgreSQL, SQLite)"
-    },
-    "skills.database.2": {
-        en: "Alembic (Database Migrations)",
-        pt: "Alembic (Migrações de Base de Dados)",
-        lu: "Alembic (Datenbank Migratiounen)",
-        de: "Alembic (Datenbank-Migrationen)",
-        fr: "Alembic (Migrations de base de données)"
-    },
-    "skills.database.3": {
-        en: "JWT Authentication",
-        pt: "Autenticação JWT",
-        lu: "JWT Authentifizéierung",
-        de: "JWT-Authentifizierung",
-        fr: "Authentification JWT"
-    },
-    "skills.database.4": {
-        en: "Argon2 (Password Hashing)",
-        pt: "Argon2 (Hash de Palavras-passe)",
-        lu: "Argon2 (Passwuert Hashing)",
-        de: "Argon2 (Passwort-Hashing)",
-        fr: "Argon2 (Hachage de mots de passe)"
-    },
-    "skills.database.5": {
-        en: "Database design (MCD/MLD)",
-        pt: "Design de base de dados (MCD/MLD)",
-        lu: "Datenbank Design (MCD/MLD)",
-        de: "Datenbankdesign (MCD/MLD)",
-        fr: "Conception de base de données (MCD/MLD)"
-    },
-    "skills.systems.4": {
-        en: "IoT Integration (ESP8266, Raspberry Pi)",
-        pt: "Integração IoT (ESP8266, Raspberry Pi)",
-        lu: "IoT Integratioun (ESP8266, Raspberry Pi)",
-        de: "IoT-Integration (ESP8266, Raspberry Pi)",
-        fr: "Intégration IoT (ESP8266, Raspberry Pi)"
-    },
-    "skills.systems.5": {
-        en: "Playwright (Browser Automation)",
-        pt: "Playwright (Automação de Navegador)",
-        lu: "Playwright (Browser Automatiséierung)",
-        de: "Playwright (Browser-Automatisierung)",
-        fr: "Playwright (Automatisation de navigateur)"
     },
     "projects.title": {
         en: "Featured Projects",
@@ -650,18 +419,18 @@ const translations = {
         fr: "Cloud Personnel Home Lab"
     },
     "projects.homelab.desc": {
-        en: "From March 2025 to today: a four-node self-hosted platform — cloud edge gateway, ARM home server, x86 offload node, and a ZFS NAS. It runs 10+ custom apps, five guardrailed AI agents, passwordless passkey login with an OIDC/OAuth provider, AI video generation, and a full media stack behind a self-operated WireGuard edge.",
-        pt: "De março de 2025 até hoje: uma plataforma self-hosted de quatro nós — gateway cloud de edge, home server ARM, nó x86 de offload e uma NAS ZFS. Executa 10+ apps personalizadas, cinco agentes de IA com guardrails, login sem palavra-passe com passkeys e um provedor OIDC/OAuth, geração de vídeo por IA e uma stack multimédia completa por trás de um edge WireGuard operado por mim.",
-        lu: "Vum Mäerz 2025 bis haut: eng self-hosted Plattform mat véier Noden — Cloud Edge Gateway, ARM Home Server, x86 Offload Node an eng ZFS NAS. Si leeft 10+ custom Apps, fënnef AI-Agenten mat Guardrails, Login ouni Passwuert mat Passkeys an engem OIDC/OAuth-Provider, AI-Videogeneréierung an e komplette Media-Stack hannert engem selwer bedriwwene WireGuard Edge.",
-        de: "Von März 2025 bis heute: eine Self-Hosted-Plattform mit vier Knoten — Cloud-Edge-Gateway, ARM-Home-Server, x86-Offload-Knoten und ein ZFS-NAS. Darauf laufen 10+ eigene Apps, fünf KI-Agenten mit Guardrails, passwortloses Login mit Passkeys und einem OIDC/OAuth-Provider, KI-Videogenerierung und ein kompletter Medien-Stack hinter einer selbst betriebenen WireGuard-Edge.",
-        fr: "De mars 2025 à aujourd'hui : une plateforme auto-hébergée à quatre nœuds — passerelle edge cloud, serveur maison ARM, nœud d'offload x86 et un NAS ZFS. Elle exécute 10+ apps maison, cinq agents IA avec guardrails, une connexion sans mot de passe par passkeys avec un fournisseur OIDC/OAuth, la génération vidéo par IA et une stack média complète derrière une edge WireGuard opérée par moi-même."
+        en: "My own platform for files, media, custom apps, and AI agents, spread across four connected nodes.",
+        pt: "A minha própria plataforma para ficheiros, multimédia, apps personalizadas e agentes de IA, distribuída por quatro nós ligados.",
+        lu: "Meng eege Plattform fir Fichieren, Medien, personaliséiert Apps an AI-Agenten, verdeelt iwwer véier verbonne Noden.",
+        de: "Meine eigene Plattform für Dateien, Medien, eigene Apps und KI-Agenten, verteilt auf vier verbundene Knoten.",
+        fr: "Ma propre plateforme pour les fichiers, les médias, mes applications et les agents IA, répartie sur quatre nœuds connectés."
     },
-    "projects.homelab.cta": {
-        en: "View Case Study",
-        pt: "Ver Estudo de Caso",
-        lu: "Case Study kucken",
-        de: "Fallstudie ansehen",
-        fr: "Voir l'Étude de Cas"
+    "projects.homelab.home.desc": {
+        en: "My own setup for files, media, custom apps, and AI agents.",
+        pt: "A minha própria configuração para ficheiros, media, apps personalizadas e agentes de IA.",
+        lu: "Mäin eegene Setup fir Dateien, Medien, personaliséiert Apps a KI-Agenten.",
+        de: "Mein eigenes Setup für Dateien, Medien, eigene Apps und KI-Agenten.",
+        fr: "Ma propre installation pour les fichiers, les médias, les apps personnalisées et les agents IA."
     },
     "projects.viewCaseStudy": {
         en: "View Case Study",
@@ -685,11 +454,11 @@ const translations = {
         fr: "Technique"
     },
     "project.view.hint.overview": {
-        en: "Plain-English view — built for everyone",
-        pt: "Visão simples — feita para todos",
-        lu: "Einfach Vue — fir jiddereen",
-        de: "Einfache Ansicht — für alle gemacht",
-        fr: "Vue simplifiée — pensée pour tous"
+        en: "Plain-English view, built for everyone",
+        pt: "Visão simples, feita para todos",
+        lu: "Einfach Vue fir jiddereen",
+        de: "Einfache Ansicht für alle",
+        fr: "Vue simplifiée, pensée pour tous"
     },
     "project.view.hint.technical": {
         en: "Full technical detail",
@@ -706,11 +475,11 @@ const translations = {
         fr: "Surveillance Intelligente des Plantes - Projet Final"
     },
     "projects.plant.desc": {
-        en: "Final project from September 2024 to June 2025: This was my big final project for my Computer Technician diploma. I built a complete IoT system with ESP8266 sensor nodes, a Raspberry Pi hub, a web dashboard to monitor everything, enterprise networking with VLANs, and automated backups. Presented the whole thing and got 59/60.",
-        pt: "Projeto final de setembro de 2024 a junho de 2025: Este foi o meu grande projeto final para o diploma de Técnico de Informática. Construí um sistema IoT completo com nós sensores ESP8266, um hub Raspberry Pi, um painel web para monitorizar tudo, networking empresarial com VLANs e backups automatizados. Apresentei tudo e obtive 59/60.",
-        lu: "Finale Projet vum September 2024 bis Juni 2025: Dëst war mäi grousse Finalprojekt fir mäi Computer Technician Diplom. Ech hunn e komplett IoT System mat ESP8266 Sensor Noden, engem Raspberry Pi Hub, engem Web Dashboard fir alles ze iwwerwaachen, Enterprise Networking mat VLANs, an automatiséierte Backups gebaut. Hunn dat ganzt presentéiert an hunn 59/60 kritt.",
-        de: "Abschlussprojekt von September 2024 bis Juni 2025: Das war mein großes Abschlussprojekt für mein Computer-Techniker-Diplom. Ich habe ein komplettes IoT-System mit ESP8266-Sensorknoten, einem Raspberry Pi Hub, einem Web-Dashboard zur Überwachung von allem, Enterprise-Networking mit VLANs und automatisierten Backups gebaut. Habe das Ganze präsentiert und 59/60 bekommen.",
-        fr: "Projet final de septembre 2024 à juin 2025 : C'était mon grand projet final pour mon diplôme de Technicien en informatique. J'ai construit un système IoT complet avec des nœuds capteurs ESP8266, un hub Raspberry Pi, un tableau de bord web pour tout surveiller, du networking d'entreprise avec VLANs, et des sauvegardes automatisées. J'ai présenté le tout et j'ai obtenu 59/60."
+        en: "My big final project for my Computer Technician diploma (September 2024 – June 2025). I built a complete IoT system with ESP8266 sensor nodes, a Raspberry Pi hub, a web dashboard to monitor everything, enterprise networking with VLANs, and automated backups. Presented the whole thing and got 59/60.",
+        pt: "O meu grande projeto final para o diploma de Técnico de Informática (setembro de 2024 – junho de 2025). Construí um sistema IoT completo com nós sensores ESP8266, um hub Raspberry Pi, um painel web para monitorizar tudo, networking empresarial com VLANs e backups automatizados. Apresentei tudo e obtive 59/60.",
+        lu: "Mäi grousse Finalprojekt fir mäi Computer Technician Diplom (September 2024 – Juni 2025). Ech hunn e komplett IoT System mat ESP8266 Sensor Noden, engem Raspberry Pi Hub, engem Web Dashboard fir alles ze iwwerwaachen, Enterprise Networking mat VLANs, an automatiséierte Backups gebaut. Hunn dat ganzt presentéiert an hunn 59/60 kritt.",
+        de: "Mein großes Abschlussprojekt für mein Computer-Techniker-Diplom (September 2024 – Juni 2025). Ich habe ein komplettes IoT-System mit ESP8266-Sensorknoten, einem Raspberry Pi Hub, einem Web-Dashboard zur Überwachung von allem, Enterprise-Networking mit VLANs und automatisierten Backups gebaut. Habe das Ganze präsentiert und 59/60 bekommen.",
+        fr: "Mon grand projet final pour mon diplôme de Technicien en informatique (septembre 2024 – juin 2025). J'ai construit un système IoT complet avec des nœuds capteurs ESP8266, un hub Raspberry Pi, un tableau de bord web pour tout surveiller, du networking d'entreprise avec VLANs, et des sauvegardes automatisées. J'ai présenté le tout et j'ai obtenu 59/60."
     },
     "projects.cylro.title": {
         en: "Cylro",
@@ -720,11 +489,32 @@ const translations = {
         fr: "Cylro"
     },
     "projects.cylro.desc": {
-        en: "From August 2025, in development: Cylro is a website operations platform for EU teams. I'm co-founding it with a partner to help agencies, freelancers, developers, and businesses manage many websites from one secure Space with scoped access, immutable publishing, EU-managed infrastructure, and permission-aware AI assistance.",
-        pt: "Desde agosto de 2025, em desenvolvimento: o Cylro é uma plataforma de operações de websites para equipas da UE. Estou a cofundá-la com um parceiro para ajudar agências, freelancers, developers e empresas a gerir muitos websites a partir de um Space seguro, com acesso limitado por função, publicação imutável, infraestrutura europeia gerida e assistência de IA consciente das permissões.",
-        lu: "Vum August 2025 un, an Entwécklung: Cylro ass eng Website-Operations-Plattform fir EU-Teams. Ech grënnen se zesumme mat engem Partner, fir Agencen, Freelancer, Developer an Entreprisen ze hëllefen vill Websäiten aus engem séchere Space ze verwalten, mat scoped Access, immutable Publishing, EU-gereeter Infrastruktur an permission-aware AI Assistenz.",
-        de: "Seit August 2025, in Entwicklung: Cylro ist eine Website-Operations-Plattform für EU-Teams. Ich gründe sie gemeinsam mit einem Partner, damit Agenturen, Freelancer, Entwickler und Unternehmen viele Websites aus einem sicheren Space verwalten können, mit scoped Access, immutable Publishing, EU-gemanagter Infrastruktur und permission-aware KI-Unterstützung.",
-        fr: "Depuis août 2025, en développement : Cylro est une plateforme d'opérations web pour les équipes européennes. Je la cofonde avec un partenaire pour aider agences, freelances, développeurs et entreprises à gérer de nombreux sites depuis un Space sécurisé, avec accès limité par rôle, publication immuable, infrastructure européenne gérée et assistance IA sensible aux permissions."
+        en: "Cylro is a website operations platform in development for teams managing multiple websites, access, content, and publishing from one organised Space.",
+        pt: "O Cylro é uma plataforma de operações de websites em desenvolvimento para equipas que gerem vários websites, acessos, conteúdo e publicação num Space organizado.",
+        lu: "Cylro ass eng Website-Operations-Plattform an Entwécklung fir Teams, déi méi Websäiten, Zougang, Content a Publishing an engem organiséierte Space verwalten.",
+        de: "Cylro ist eine Website-Operations-Plattform in Entwicklung für Teams, die mehrere Websites, Zugriffe, Inhalte und Publishing in einem organisierten Space verwalten.",
+        fr: "Cylro est une plateforme d’opérations web en développement pour les équipes qui gèrent plusieurs sites, les accès, le contenu et la publication depuis un Space organisé."
+    },
+    "projects.cylro.home.desc": {
+        en: "A website operations platform in development for teams managing multiple websites.",
+        pt: "Uma plataforma de operações de websites em desenvolvimento para equipas que gerem vários websites.",
+        lu: "Eng Website-Operations-Plattform an Entwécklung fir Teams, déi méi Websäiten verwalten.",
+        de: "Eine Website-Operations-Plattform in Entwicklung für Teams, die mehrere Websites verwalten.",
+        fr: "Une plateforme d’opérations web en développement pour les équipes qui gèrent plusieurs sites."
+    },
+    "projects.assemblash.title": {
+        en: "Assemblash",
+        pt: "Assemblash",
+        lu: "Assemblash",
+        de: "Assemblash",
+        fr: "Assemblash"
+    },
+    "projects.assemblash.home.desc": {
+        en: "An editable design tool where people and AI agents can work on the same design.",
+        pt: "Uma ferramenta de design editável onde pessoas e agentes de IA podem trabalhar no mesmo design.",
+        lu: "En editabelen Design-Tool, wou Mënschen a KI-Agenten um selwechten Design schaffe kënnen.",
+        de: "Ein bearbeitbares Design-Tool, an dem Menschen und KI-Agenten am selben Design arbeiten können.",
+        fr: "Un outil de design modifiable où des personnes et des agents IA peuvent travailler sur le même design."
     },
     "projects.hermes.title": {
         en: "Hermes AI Agent",
@@ -734,11 +524,11 @@ const translations = {
         fr: "Hermes AI Agent"
     },
     "projects.hermes.desc": {
-        en: "A self-hosted AI agent running 24/7 on its own VPS — Matrix-first messaging, voice in and out, persistent memory, scheduled automation, deep research and homelab watchdogs, all in one conversation.",
-        pt: "Um agente de IA self-hosted a correr 24/7 no seu próprio VPS — mensagens Matrix-first, voz à entrada e à saída, memória persistente, automação agendada, pesquisa aprofundada e watchdogs do homelab, tudo numa só conversa.",
-        lu: "En self-hosted AI-Agent deen 24/7 op sengem eegene VPS leeft — Matrix-first Messaging, Stëmm eran an eraus, persistente Erënnerung, geplangten Automatisatioun, déif Recherche an Homelab-Watchdogs, alles an enger eenzeger Konversatioun.",
-        de: "Ein selbstgehosteter KI-Agent, der rund um die Uhr auf seinem eigenen VPS läuft — Matrix-first-Messaging, Sprache rein und raus, persistentes Gedächtnis, geplante Automatisierung, Tiefenrecherche und Homelab-Watchdogs, alles in einer Konversation.",
-        fr: "Un agent IA auto-hébergé qui tourne 24/7 sur son propre VPS — messagerie Matrix-first, voix en entrée et en sortie, mémoire persistante, automatisation planifiée, recherche approfondie et surveillances homelab, le tout dans une seule conversation."
+        en: "A self-hosted AI agent running 24/7 on its own VPS - Matrix-first messaging, voice in and out, persistent memory, scheduled automation, deep research and homelab watchdogs, all in one conversation.",
+        pt: "Um agente de IA self-hosted a correr 24/7 no seu próprio VPS - mensagens Matrix-first, voz à entrada e à saída, memória persistente, automação agendada, pesquisa aprofundada e watchdogs do homelab, tudo numa só conversa.",
+        lu: "En self-hosted AI-Agent deen 24/7 op sengem eegene VPS leeft - Matrix-first Messaging, Stëmm eran an eraus, persistente Erënnerung, geplangten Automatisatioun, déif Recherche an Homelab-Watchdogs, alles an enger eenzeger Konversatioun.",
+        de: "Ein selbstgehosteter KI-Agent, der rund um die Uhr auf seinem eigenen VPS läuft - Matrix-first-Messaging, Sprache rein und raus, persistentes Gedächtnis, geplante Automatisierung, Tiefenrecherche und Homelab-Watchdogs, alles in einer Konversation.",
+        fr: "Un agent IA auto-hébergé qui tourne 24/7 sur son propre VPS - messagerie Matrix-first, voix en entrée et en sortie, mémoire persistante, automatisation planifiée, recherche approfondie et surveillances homelab, le tout dans une seule conversation."
     },
     "projects.gradingdino.title": {
         en: "GradingDino",
@@ -748,11 +538,11 @@ const translations = {
         fr: "GradingDino"
     },
     "projects.gradingdino.desc": {
-        en: "From October 2025 to November 2025: This was a group project where we built a grade management system with Django. Teachers can create classrooms and manage grades, students can track their progress. We delivered an MVP and I learned some valuable lessons about choosing the right framework for the job.",
-        pt: "De outubro de 2025 a novembro de 2025: Este foi um projeto de grupo onde construímos um sistema de gestão de notas com Django. Os professores podem criar turmas e gerir notas, os alunos podem acompanhar o seu progresso. Entregámos um MVP e aprendi algumas lições valiosas sobre escolher o framework certo para o trabalho.",
-        lu: "Vum Oktober 2025 bis November 2025: Dëst war e Gruppeprojet wou mir e Noteverwaltungssystem mat Django gebaut hunn. D'Enseignanten kënnen Klassen kreéieren a Noten verwalten, d'Schüler kënnen hire Fortschrëtt suivéieren. Mir hunn en MVP geliwwert an ech hunn e puer wäertvoll Lektiounen iwwer d'richtegt Framework fir d'Aarbecht ze wielen geléiert.",
-        de: "Von Oktober 2025 bis November 2025: Das war ein Gruppenprojekt, bei dem wir ein Notenverwaltungssystem mit Django gebaut haben. Lehrer können Klassen erstellen und Noten verwalten, Schüler können ihren Fortschritt verfolgen. Wir haben ein MVP geliefert und ich habe einige wertvolle Lektionen über die Wahl des richtigen Frameworks für den Job gelernt.",
-        fr: "D'octobre 2025 à novembre 2025 : C'était un projet de groupe où nous avons construit un système de gestion des notes avec Django. Les enseignants peuvent créer des classes et gérer les notes, les étudiants peuvent suivre leur progression. Nous avons livré un MVP et j'ai appris de précieuses leçons sur le choix du bon framework pour le travail."
+        en: "A group project (October – November 2025) where we built a grade management system with Django. Teachers grade students in their own courses and add comments, students can track their progress. We delivered an MVP and I learned some valuable lessons about choosing the right framework for the job.",
+        pt: "Um projeto de grupo (outubro – novembro de 2025) onde construímos um sistema de gestão de notas com Django. Os professores avaliam os alunos nas suas próprias disciplinas e adicionam comentários, os alunos podem acompanhar o seu progresso. Entregámos um MVP e aprendi algumas lições valiosas sobre escolher o framework certo para o trabalho.",
+        lu: "E Gruppeprojet (Oktober – November 2025) wou mir e Noteverwaltungssystem mat Django gebaut hunn. D'Enseignanten benoten d'Schüler an hiren eegene Coursen a schreiwen Kommentarer derbäi, d'Schüler kënnen hire Fortschrëtt suivéieren. Mir hunn en MVP geliwwert an ech hunn e puer wäertvoll Lektiounen iwwer d'richtegt Framework fir d'Aarbecht ze wielen geléiert.",
+        de: "Ein Gruppenprojekt (Oktober – November 2025), bei dem wir ein Notenverwaltungssystem mit Django gebaut haben. Lehrer benoten Schüler in ihren eigenen Kursen und fügen Kommentare hinzu, Schüler können ihren Fortschritt verfolgen. Wir haben ein MVP geliefert und ich habe einige wertvolle Lektionen über die Wahl des richtigen Frameworks für den Job gelernt.",
+        fr: "Un projet de groupe (octobre – novembre 2025) où nous avons construit un système de gestion des notes avec Django. Les enseignants notent les étudiants dans leurs propres cours et ajoutent des commentaires, les étudiants peuvent suivre leur progression. Nous avons livré un MVP et j'ai appris de précieuses leçons sur le choix du bon framework pour le travail."
     },
     "projects.teamsbroadcast.title": {
         en: "Teams Broadcast System",
@@ -762,25 +552,11 @@ const translations = {
         fr: "Système de Diffusion Teams"
     },
     "projects.teamsbroadcast.desc": {
-        en: "From November 2025 to January 2026: I built this school project with Power Platform after a teacher mentioned how much work it was to send messages to 20+ Teams channels manually. It gets old really fast. This tool lets you select all your channels at once, write your message once, and send it everywhere with a single click. It's designed for teachers managing hundreds of class channels and anyone else who's tired of copy-pasting announcements over and over.",
-        pt: "De novembro de 2025 a janeiro de 2026: Construí este projeto escolar com Power Platform depois de um professor mencionar quanto trabalho dava enviar mensagens para mais de 20 canais do Teams manualmente. Cansa-se muito rápido. Esta ferramenta permite selecionar todos os teus canais de uma vez, escrever a mensagem uma vez e enviá-la para todo o lado com um único clique. Foi projetada para professores que gerem centenas de canais de turmas e para qualquer pessoa cansada de copiar e colar anúncios repetidamente.",
-        lu: "Vum November 2025 bis Januar 2026: Ech hunn dëse Schoulprojet mat Power Platform gebaut nodeems en Enseignant erwähnt huet wéivill Aarbecht et ass fir Messagen op 20+ Teams Kanäl manuell ze schécken. Et gëtt séier al. Dëst Tool léisst dech all deng Kanäl op eemol auswielen, däi Message eemol schreiwen, an et iwwerall mat engem Klick schécken. Et ass entworf fir Enseignanten déi Honnerte vu Klasskanäl verwalten an all deen aneren deen et sat ass Ukënnegungen ëmmer erëm ze kopéieren a pasten.",
-        de: "Von November 2025 bis Januar 2026: Ich habe dieses Schulprojekt mit Power Platform gebaut, nachdem ein Lehrer erwähnte, wie viel Arbeit es war, Nachrichten manuell an 20+ Teams-Kanäle zu senden. Es wird richtig schnell alt. Dieses Tool lässt dich alle deine Kanäle auf einmal auswählen, deine Nachricht einmal schreiben und sie überall mit einem Klick senden. Es ist für Lehrer konzipiert, die Hunderte von Klassenkanälen verwalten, und jeden anderen, der es satt hat, Ankündigungen immer wieder zu kopieren und einzufügen.",
-        fr: "De novembre 2025 à janvier 2026 : J'ai construit ce projet scolaire avec Power Platform après qu'un enseignant a mentionné combien de travail c'était d'envoyer des messages à 20+ canaux Teams manuellement. Ça devient vieux très vite. Cet outil te permet de sélectionner tous tes canaux en une fois, écrire ton message une fois, et l'envoyer partout en un seul clic. Il est conçu pour les enseignants gérant des centaines de canaux de classe et tous ceux qui en ont marre de copier-coller des annonces encore et encore."
-    },
-    "projects.stats.total": {
-        en: "Total Projects",
-        pt: "Total de Projetos",
-        lu: "Total Projeten",
-        de: "Gesamtprojekte",
-        fr: "Total des Projets"
-    },
-    "projects.stats.completed": {
-        en: "Completed",
-        pt: "Concluídos",
-        lu: "Ofgeschloss",
-        de: "Abgeschlossen",
-        fr: "Terminés"
+        en: "A school project (November 2025 – January 2026) built with Power Platform after a teacher mentioned how much work it was to send messages to 20+ Teams channels manually. It gets old really fast. This tool lets you select all your channels at once, write your message once, and send it everywhere with a single click. It's designed for teachers managing hundreds of class channels and anyone else who's tired of copy-pasting announcements over and over.",
+        pt: "Um projeto escolar (novembro de 2025 – janeiro de 2026) construído com Power Platform depois de um professor mencionar quanto trabalho dava enviar mensagens para mais de 20 canais do Teams manualmente. Cansa-se muito rápido. Esta ferramenta permite selecionar todos os teus canais de uma vez, escrever a mensagem uma vez e enviá-la para todo o lado com um único clique. Foi projetada para professores que gerem centenas de canais de turmas e para qualquer pessoa cansada de copiar e colar anúncios repetidamente.",
+        lu: "En Schoulprojet (November 2025 – Januar 2026) gebaut mat Power Platform nodeems en Enseignant erwähnt huet wéivill Aarbecht et ass fir Messagen op 20+ Teams Kanäl manuell ze schécken. Et gëtt séier al. Dëst Tool léisst dech all deng Kanäl op eemol auswielen, däi Message eemol schreiwen, an et iwwerall mat engem Klick schécken. Et ass entworf fir Enseignanten déi Honnerte vu Klasskanäl verwalten an all deen aneren deen et sat ass Ukënnegungen ëmmer erëm ze kopéieren a pasten.",
+        de: "Ein Schulprojekt (November 2025 – Januar 2026), gebaut mit Power Platform, nachdem ein Lehrer erwähnte, wie viel Arbeit es war, Nachrichten manuell an 20+ Teams-Kanäle zu senden. Es wird richtig schnell alt. Dieses Tool lässt dich alle deine Kanäle auf einmal auswählen, deine Nachricht einmal schreiben und sie überall mit einem Klick senden. Es ist für Lehrer konzipiert, die Hunderte von Klassenkanälen verwalten, und jeden anderen, der es satt hat, Ankündigungen immer wieder zu kopieren und einzufügen.",
+        fr: "Un projet scolaire (novembre 2025 – janvier 2026) construit avec Power Platform après qu'un enseignant a mentionné combien de travail c'était d'envoyer des messages à 20+ canaux Teams manuellement. Ça devient vieux très vite. Cet outil te permet de sélectionner tous tes canaux en une fois, écrire ton message une fois, et l'envoyer partout en un seul clic. Il est conçu pour les enseignants gérant des centaines de canaux de classe et tous ceux qui en ont marre de copier-coller des annonces encore et encore."
     },
     "projects.category.infrastructure": {
         en: "Infrastructure",
@@ -805,7 +581,7 @@ const translations = {
     },
     "projects.category.ai": {
         en: "AI & Automation",
-        pt: "IA & Automacao",
+        pt: "IA & Automação",
         lu: "AI & Automatisatioun",
         de: "KI & Automatisierung",
         fr: "IA & Automatisation"
@@ -888,11 +664,11 @@ const translations = {
         fr: "Site Portfolio"
     },
     "projects.portfolio.desc": {
-        en: "Since November 2025: My living portfolio built from scratch with vanilla HTML, CSS, and JavaScript. It combines a server-rack inspired UI with dark/light themes, multi-language i18n (EN/PT/LU/DE/FR), and global fuzzy search across projects and certifications. Content is driven by centralized data files, with responsive layouts, SEO-friendly metadata, and accessibility touches like keyboard navigation and reduced-motion support. Continuously improved as I add new projects and features.",
-        pt: "Desde novembro de 2025: O meu portefólio “vivo”, construído do zero com HTML, CSS e JavaScript vanilla. Combina uma UI inspirada em rack de servidor com temas claro/escuro, i18n multi-idioma (EN/PT/LU/DE/FR) e pesquisa global fuzzy entre projetos e certificações. O conteúdo é gerido através de ficheiros de dados centralizados, com layouts responsivos, metadata SEO-friendly e detalhes de acessibilidade como navegação por teclado e suporte a movimento reduzido. Em melhoria contínua à medida que adiciono novos projetos e funcionalidades.",
-        lu: "Zënter November 2025: Mäi “liewege” Portfolio, vun Null opgebaut mat vanilla HTML, CSS an JavaScript. Et kombinéiert eng UI am Stil vun engem Server-Rack mat hell/däischter Themes, Multi-Sprooch i18n (EN/PT/LU/DE/FR) an eng global fuzzy Sich iwwer Projeten a Zertifizéierungen. Den Inhalt kënnt aus zentraliséierten Date-Fichieren, mat responsiven Layouten, SEO-frëndlecher Metadata an Accessibilitéits-Detailer wéi Keyboard-Navigatioun a Support fir reduzéiert Beweegung. Kontinuéierlech verbessert, wéi ech nei Projeten a Feature bäisetzen.",
-        de: "Seit November 2025: Mein „lebendes“ Portfolio, von Grund auf mit vanilla HTML, CSS und JavaScript gebaut. Es kombiniert eine Server-Rack-inspirierte UI mit Hell-/Dunkel-Themes, mehrsprachigem i18n (EN/PT/LU/DE/FR) und einer globalen fuzzy Suche über Projekte und Zertifizierungen. Inhalte kommen aus zentralisierten Daten-Dateien, mit responsiven Layouts, SEO-freundlicher Metadata und Barrierefreiheits-Details wie Tastatur-Navigation und Unterstützung für reduzierten Motion. Wird kontinuierlich verbessert, während ich neue Projekte und Features hinzufüge.",
-        fr: "Depuis novembre 2025 : Mon portfolio « vivant », construit de zéro avec HTML, CSS et JavaScript vanilla. Il combine une UI inspirée d’un rack serveur avec des thèmes clair/sombre, un i18n multilingue (EN/PT/LU/DE/FR) et une recherche fuzzy globale sur les projets et les certifications. Le contenu est piloté par des fichiers de données centralisés, avec des mises en page responsive, des métadonnées SEO-friendly et des détails d’accessibilité comme la navigation au clavier et le support du mouvement réduit. Amélioré en continu au fur et à mesure que j’ajoute de nouveaux projets et fonctionnalités."
+        en: "My living portfolio, live since November 2025, built from scratch with vanilla HTML, CSS, and JavaScript. It combines a server-rack inspired UI with dark/light themes, multi-language i18n (EN/PT/LU/DE/FR), and global fuzzy search across projects and certifications. Content is driven by centralized data files, with responsive layouts, SEO-friendly metadata, and accessibility touches like keyboard navigation and reduced-motion support. Continuously improved as I add new projects and features.",
+        pt: "O meu portefólio “vivo”, online desde novembro de 2025, construído do zero com HTML, CSS e JavaScript vanilla. Combina uma UI inspirada em rack de servidor com temas claro/escuro, i18n multi-idioma (EN/PT/LU/DE/FR) e pesquisa global fuzzy entre projetos e certificações. O conteúdo é gerido através de ficheiros de dados centralizados, com layouts responsivos, metadata SEO-friendly e detalhes de acessibilidade como navegação por teclado e suporte a movimento reduzido. Em melhoria contínua à medida que adiciono novos projetos e funcionalidades.",
+        lu: "Mäi “liewege” Portfolio, zënter November 2025 online, vun Null opgebaut mat vanilla HTML, CSS an JavaScript. Et kombinéiert eng UI am Stil vun engem Server-Rack mat hell/däischter Themes, Multi-Sprooch i18n (EN/PT/LU/DE/FR) an eng global fuzzy Sich iwwer Projeten a Zertifizéierungen. Den Inhalt kënnt aus zentraliséierten Date-Fichieren, mat responsiven Layouten, SEO-frëndlecher Metadata an Accessibilitéits-Detailer wéi Keyboard-Navigatioun a Support fir reduzéiert Beweegung. Kontinuéierlech verbessert, wéi ech nei Projeten a Feature bäisetzen.",
+        de: "Mein „lebendes“ Portfolio, seit November 2025 online, von Grund auf mit vanilla HTML, CSS und JavaScript gebaut. Es kombiniert eine Server-Rack-inspirierte UI mit Hell-/Dunkel-Themes, mehrsprachigem i18n (EN/PT/LU/DE/FR) und einer globalen fuzzy Suche über Projekte und Zertifizierungen. Inhalte kommen aus zentralisierten Daten-Dateien, mit responsiven Layouts, SEO-freundlicher Metadata und Barrierefreiheits-Details wie Tastatur-Navigation und Unterstützung für reduzierten Motion. Wird kontinuierlich verbessert, während ich neue Projekte und Features hinzufüge.",
+        fr: "Mon portfolio « vivant », en ligne depuis novembre 2025, construit de zéro avec HTML, CSS et JavaScript vanilla. Il combine une UI inspirée d’un rack serveur avec des thèmes clair/sombre, un i18n multilingue (EN/PT/LU/DE/FR) et une recherche fuzzy globale sur les projets et les certifications. Le contenu est piloté par des fichiers de données centralisés, avec des mises en page responsive, des métadonnées SEO-friendly et des détails d’accessibilité comme la navigation au clavier et le support du mouvement réduit. Amélioré en continu au fur et à mesure que j’ajoute de nouveaux projets et fonctionnalités."
     },
     "projects.viewMore": {
         en: "View All Projects",
@@ -938,7 +714,7 @@ const translations = {
     },
     "project.sidebar.certifications": {
         en: "Certifications Used",
-        pt: "Certificações Utilizadas",
+        pt: "Certificações utilizadas",
         lu: "Benotzt Zertifikater",
         de: "Verwendete Zertifizierungen",
         fr: "Certifications Utilisées"
@@ -971,13 +747,6 @@ const translations = {
         de: "Zuletzt aktualisiert:",
         fr: "Dernière mise à jour :"
     },
-    "project.started": {
-        en: "Started",
-        pt: "Iniciado",
-        lu: "Ugefaang",
-        de: "Gestartet",
-        fr: "Démarré"
-    },
     "projects.present": {
         en: "present",
         pt: "presente",
@@ -999,12 +768,40 @@ const translations = {
         de: "Erfahrung & Ausbildung",
         fr: "Expérience & Formation"
     },
+    "experience.cylro.date": {
+        en: "2025 – Present",
+        pt: "2025 – Presente",
+        lu: "2025 – Haut",
+        de: "2025 – Heute",
+        fr: "2025 – Présent"
+    },
+    "experience.cylro.title": {
+        en: "Co-founder",
+        pt: "Cofundador",
+        lu: "Co-Grënner",
+        de: "Mitgründer",
+        fr: "Cofondateur"
+    },
+    "experience.cylro.company": {
+        en: "Cylro",
+        pt: "Cylro",
+        lu: "Cylro",
+        de: "Cylro",
+        fr: "Cylro"
+    },
+    "experience.cylro.desc": {
+        en: "Building Cylro's product and technical foundation: one Space for teams to organize access, content, and controlled website publishing.",
+        pt: "A construir o produto e a base técnica da Cylro: um Space para as equipas organizarem acessos, conteúdo e publicação controlada de websites.",
+        lu: "Ech bauen dem Cylro säi Produkt an seng technesch Basis: ee Space fir Teams, fir Access, Content a kontrolléiert Website-Publishing ze organiséieren.",
+        de: "Ich entwickle Cylros Produkt und technische Grundlage: ein Space, in dem Teams Zugriffe, Inhalte und kontrollierte Website-Veröffentlichung organisieren.",
+        fr: "Je construis le produit et les bases techniques de Cylro : un Space où les équipes organisent les accès, le contenu et la publication contrôlée de sites web."
+    },
     "experience.bts.date": {
-        en: "2025 — Present",
-        pt: "2025 — Presente",
-        lu: "2025 — Haut",
-        de: "2025 — Heute",
-        fr: "2025 — Présent"
+        en: "2025 – Present",
+        pt: "2025 – Presente",
+        lu: "2025 – Haut",
+        de: "2025 – Heute",
+        fr: "2025 – Présent"
     },
     "experience.bts.title": {
         en: "BTS Cloud Computing",
@@ -1021,18 +818,18 @@ const translations = {
         fr: "Lycée Guillaume Kroll"
     },
     "experience.bts.desc": {
-        en: "Higher Technical Diploma focused on advanced cloud infrastructure, virtualization, and network administration.",
-        pt: "Diploma Técnico Superior focado em infraestruturas cloud avançadas, virtualização e administração de redes.",
-        lu: "Héich Technesch Diplom fokusséiert op fortgeschratt Cloud Infrastruktur, Virtualiséierung, an Netzwierk Administratioun.",
-        de: "Höheres Technisches Diplom mit Fokus auf fortgeschrittene Cloud-Infrastruktur, Virtualisierung und Netzwerkadministration.",
-        fr: "Diplôme Technique Supérieur axé sur l'infrastructure cloud avancée, la virtualisation et l'administration réseau."
+        en: "Higher Technical Diploma in advanced cloud infrastructure, virtualization and network administration. Two-year programme, 2025–2027.",
+        pt: "Diploma Técnico Superior em infraestruturas cloud avançadas, virtualização e administração de redes. Curso de dois anos, 2025–2027.",
+        lu: "Héich Technesch Diplom a fortgeschratter Cloud-Infrastruktur, Virtualiséierung an Netzwierkadministratioun. Zweejoerege Programm, 2025–2027.",
+        de: "Höheres Technisches Diplom in fortgeschrittener Cloud-Infrastruktur, Virtualisierung und Netzwerkadministration. Zweijähriges Programm, 2025–2027.",
+        fr: "Diplôme Technique Supérieur en infrastructure cloud avancée, virtualisation et administration réseau. Première année terminée, maintenant en deuxième et dernière année."
     },
     "experience.intern.date": {
-        en: "Feb-Mar '23 & Sep-Oct '24",
-        pt: "Fev-Mar '23 & Set-Out '24",
-        lu: "Feb-Mäe '23 & Sep-Okt '24",
-        de: "Feb-Mär '23 & Sep-Okt '24",
-        fr: "Fév-Mar '23 & Sep-Oct '24"
+        en: "Feb–Mar '23 & Sep–Oct '24",
+        pt: "Fev–Mar '23 & Set–Out '24",
+        lu: "Feb–Mäe '23 & Sep–Okt '24",
+        de: "Feb–Mär '23 & Sep–Okt '24",
+        fr: "Fév–Mar '23 & Sep–Oct '24"
     },
     "experience.intern.title": {
         en: "IT Intern",
@@ -1056,11 +853,11 @@ const translations = {
         fr: "Diagnostic de problèmes matériels/logiciels, déploiement d'images OS et support technique dans un environnement dynamique."
     },
     "experience.diploma.date": {
-        en: "2021 — 2025",
-        pt: "2021 — 2025",
-        lu: "2021 — 2025",
-        de: "2021 — 2025",
-        fr: "2021 — 2025"
+        en: "2021 – 2025",
+        pt: "2021 – 2025",
+        lu: "2021 – 2025",
+        de: "2021 – 2025",
+        fr: "2021 – 2025"
     },
     "experience.diploma.title": {
         en: "Computer Technician Diploma",
@@ -1098,18 +895,25 @@ const translations = {
         fr: "Connectons-nous"
     },
     "contact.description": {
-        en: "Always open to discussing cloud technologies, infrastructure projects, or new opportunities.",
-        pt: "Sempre disponível para discutir tecnologias cloud, projetos de infraestrutura ou novas oportunidades.",
-        lu: "Ëmmer op fir Cloud Technologien, Infrastruktur Projeten, oder nei Opportunitéiten ze diskutéieren.",
-        de: "Immer offen für Gespräche über Cloud-Technologien, Infrastrukturprojekte oder neue Möglichkeiten.",
-        fr: "Toujours ouvert pour discuter de technologies cloud, de projets d'infrastructure ou de nouvelles opportunités."
+        en: "Interested in something here? Get in touch.",
+        pt: "Interessado em algo aqui? Entra em contacto.",
+        lu: "Interesséiert un eppes hei? Mell dech.",
+        de: "Interessiert dich etwas hier? Melde dich.",
+        fr: "Quelque chose ici vous intéresse ? Contactez-moi."
+    },
+    "contact.x": {
+        en: "Follow on X",
+        pt: "Seguir no X",
+        lu: "Op X suivéieren",
+        de: "Auf X folgen",
+        fr: "Suivre sur X"
     },
     "contact.cv": {
         en: "Download CV",
         pt: "Descarregar CV",
         lu: "CV eroflueden",
         de: "Lebenslauf herunterladen",
-        fr: "Télécharger le CV"
+        fr: "Télécharger CV"
     },
     "contact.cv.option.en": {
         en: "English (EN)",
@@ -1140,11 +944,11 @@ const translations = {
         fr: "WhispFlow"
     },
     "projects.whispflow.desc": {
-        en: "Desktop app that records meetings, transcribes audio locally with faster-whisper, and generates AI summaries. Local-first, privacy-focused, with versioned transcripts.",
-        pt: "App desktop que grava reuniões, transcreve áudio localmente com faster-whisper e gera resumos IA. Local-first, focada em privacidade, com transcrições versionadas.",
-        lu: "Desktop App déi Sëtzungen opnëmmt, Audio lokal mat faster-whisper transkribéiert, an AI Resuméen generéiert. Local-first, Privacy-fokusséiert, mat versionéierten Transkriptiounen.",
-        de: "Desktop-App die Meetings aufnimmt, Audio lokal mit faster-whisper transkribiert und KI-Zusammenfassungen generiert. Local-first, datenschutzorientiert, mit versionierten Transkripten.",
-        fr: "App bureau qui enregistre les réunions, transcrit l'audio localement avec faster-whisper et génère des résumés IA. Local-first, axée sur la vie privée, avec transcriptions versionnées."
+        en: "Desktop app that records meetings, transcribes locally or through a transcription API, and generates AI summaries with cloud or local models. Local-first, with separate live captions and versioned transcripts.",
+        pt: "App desktop que grava reuniões, transcreve localmente ou através de uma API de transcrição e gera resumos IA com modelos na cloud ou locais. Local-first, com legendas ao vivo separadas e transcrições versionadas.",
+        lu: "Desktop App déi Sëtzungen ophëlt, lokal oder iwwer eng Transkriptiouns-API transkribéiert an AI Resuméen mat Cloud- oder lokale Modeller generéiert. Local-first, mat getrennten Live-Ënnertitelen a versionéierten Transkriptiounen.",
+        de: "Desktop-App, die Meetings aufnimmt, lokal oder über eine Transkriptions-API transkribiert und KI-Zusammenfassungen mit Cloud- oder lokalen Modellen generiert. Local-first, mit separaten Live-Untertiteln und versionierten Transkripten.",
+        fr: "App bureau qui enregistre les réunions, transcrit en local ou via une API de transcription, et génère des résumés IA avec des modèles cloud ou locaux. Local-first, avec des sous-titres en direct séparés et des transcriptions versionnées."
     },
     "projects.sentinel.title": {
         en: "Sentinel",
@@ -1168,11 +972,11 @@ const translations = {
         fr: "plane-cli"
     },
     "projects.planecli.desc": {
-        en: "An open-source unofficial CLI for Plane.so that I built because nothing like it existed. It lets you manage workspaces, projects, issues, cycles, and modules straight from the terminal. Designed so AI agents can interact with Plane through simple shell commands — no MCP server, no exposed API keys, fewer tokens wasted. I use it daily with my self-hosted Plane instance.",
-        pt: "Um CLI não oficial e open-source para o Plane.so que construí porque nada parecido existia. Permite gerir workspaces, projetos, issues, ciclos e módulos diretamente no terminal. Desenhado para que agentes de IA possam interagir com o Plane através de simples comandos shell — sem servidor MCP, sem chaves API expostas, menos tokens desperdiçados. Uso-o diariamente com a minha instância self-hosted do Plane.",
-        lu: "En Open-Source inoffiziellen CLI fir Plane.so deen ech gebaut hunn well soss näischt Ähnleches existéiert huet. Et léisst dech Workspaces, Projeten, Issues, Zyklen a Moduler direkt am Terminal verwalten. Entworf fir datt KI-Agenten mat Plane iwwer einfach Shell-Befehle kënne schaffen — keen MCP Server, keng exponéiert API Schlësselen, manner Token verschwendt. Ech benotzen et all Dag mat menger self-hosted Plane Instanz.",
-        de: "Ein inoffizielles Open-Source-CLI für Plane.so, das ich gebaut habe, weil nichts Vergleichbares existierte. Es ermöglicht die Verwaltung von Workspaces, Projekten, Issues, Zyklen und Modulen direkt im Terminal. Entworfen, damit KI-Agenten über einfache Shell-Befehle mit Plane interagieren können — kein MCP-Server, keine exponierten API-Schlüssel, weniger Token verschwendet. Ich benutze es täglich mit meiner selbst gehosteten Plane-Instanz.",
-        fr: "Un CLI non officiel et open source pour Plane.so que j'ai construit parce que rien de semblable n'existait. Il permet de gérer les workspaces, projets, issues, cycles et modules directement depuis le terminal. Conçu pour que les agents IA puissent interagir avec Plane via de simples commandes shell — pas de serveur MCP, pas de clés API exposées, moins de tokens gaspillés. Je l'utilise quotidiennement avec mon instance Plane auto-hébergée."
+        en: "An open-source unofficial CLI for Plane.so that I built because nothing like it existed. It lets you manage workspaces, projects, issues, cycles, and modules straight from the terminal. Designed so AI agents can interact with Plane through simple shell commands - no MCP server, your API key stays in a local config file, fewer tokens wasted. I use it daily with my self-hosted Plane instance.",
+        pt: "Um CLI não oficial e open-source para o Plane.so que construí porque nada parecido existia. Permite gerir workspaces, projetos, issues, ciclos e módulos diretamente no terminal. Desenhado para que agentes de IA possam interagir com o Plane através de simples comandos shell - sem servidor MCP, a chave API fica num ficheiro de configuração local, menos tokens desperdiçados. Uso-o diariamente com a minha instância self-hosted do Plane.",
+        lu: "En Open-Source inoffiziellen CLI fir Plane.so deen ech gebaut hunn well soss näischt Ähnleches existéiert huet. Et léisst dech Workspaces, Projeten, Issues, Zyklen a Moduler direkt am Terminal verwalten. Entworf fir datt KI-Agenten mat Plane iwwer einfach Shell-Befehle kënne schaffen - keen MCP Server, den API Schlëssel bleift an enger lokaler Config-Datei, manner Token verschwendt. Ech benotzen et all Dag mat menger self-hosted Plane Instanz.",
+        de: "Ein inoffizielles Open-Source-CLI für Plane.so, das ich gebaut habe, weil nichts Vergleichbares existierte. Es ermöglicht die Verwaltung von Workspaces, Projekten, Issues, Zyklen und Modulen direkt im Terminal. Entworfen, damit KI-Agenten über einfache Shell-Befehle mit Plane interagieren können - kein MCP-Server, der API-Schlüssel bleibt in einer lokalen Konfigurationsdatei, weniger Token verschwendet. Ich benutze es täglich mit meiner selbst gehosteten Plane-Instanz.",
+        fr: "Un CLI non officiel et open source pour Plane.so que j'ai construit parce que rien de semblable n'existait. Il permet de gérer les workspaces, projets, issues, cycles et modules directement depuis le terminal. Conçu pour que les agents IA puissent interagir avec Plane via de simples commandes shell - pas de serveur MCP, la clé API reste dans un fichier de configuration local, moins de tokens gaspillés. Je l'utilise quotidiennement avec mon instance Plane auto-hébergée."
     },
     "projects.solidtimecli.title": {
         en: "solidtime-cli",
@@ -1182,11 +986,11 @@ const translations = {
         fr: "solidtime-cli"
     },
     "projects.solidtimecli.desc": {
-        en: "An open-source unofficial CLI for Solidtime, the open-source time tracking system. Built it because I needed a fast way to manage time entries, projects, tasks, and tags from the terminal without opening a browser. Works with both self-hosted and Solidtime Cloud instances. Like my other CLIs, AI agents can use it directly through shell commands — no protocol overhead, no key exposure.",
-        pt: "Um CLI não oficial e open-source para o Solidtime, o sistema de registo de tempo open-source. Construí-o porque precisava de uma forma rápida de gerir entradas de tempo, projetos, tarefas e tags a partir do terminal sem abrir o browser. Funciona com instâncias self-hosted e Solidtime Cloud. Como os meus outros CLIs, agentes de IA podem usá-lo diretamente através de comandos shell — sem overhead de protocolo, sem exposição de chaves.",
-        lu: "En Open-Source inoffiziellen CLI fir Solidtime, den Open-Source Zäiterfassungssystem. Gebaut well ech eng séier Méiglechkeet gebraucht hunn fir Zäiteinträg, Projeten, Aufgaben an Tags am Terminal ze verwalten ouni e Browser opzemaachen. Funktionéiert mat self-hosted a Solidtime Cloud Instanzen. Wéi meng aner CLIs kënnen KI-Agenten et direkt iwwer Shell-Befehle benotzen — keen Protokoll-Overhead, keng Schlëssel-Exposioun.",
-        de: "Ein inoffizielles Open-Source-CLI für Solidtime, das Open-Source-Zeiterfassungssystem. Gebaut, weil ich eine schnelle Möglichkeit brauchte, Zeiteinträge, Projekte, Aufgaben und Tags im Terminal zu verwalten, ohne einen Browser zu öffnen. Funktioniert sowohl mit selbst gehosteten als auch mit Solidtime-Cloud-Instanzen. Wie meine anderen CLIs können KI-Agenten es direkt über Shell-Befehle nutzen — kein Protokoll-Overhead, keine Schlüssel-Exposition.",
-        fr: "Un CLI non officiel et open source pour Solidtime, le système de suivi du temps open source. Construit parce que j'avais besoin d'un moyen rapide de gérer les entrées de temps, projets, tâches et tags depuis le terminal sans ouvrir un navigateur. Fonctionne avec les instances auto-hébergées et Solidtime Cloud. Comme mes autres CLIs, les agents IA peuvent l'utiliser directement via des commandes shell — pas de surcharge protocolaire, pas d'exposition de clés."
+        en: "An open-source unofficial CLI for Solidtime, the open-source time tracking system. Built it because I needed a fast way to manage time entries, projects, tasks, and tags from the terminal without opening a browser. Works with both self-hosted and Solidtime Cloud instances. Like my other CLIs, AI agents can use it directly through shell commands - no protocol overhead, and your API key stays in a local config file instead of passing through an MCP server.",
+        pt: "Um CLI não oficial e open-source para o Solidtime, o sistema de registo de tempo open-source. Construí-o porque precisava de uma forma rápida de gerir entradas de tempo, projetos, tarefas e tags a partir do terminal sem abrir o browser. Funciona com instâncias self-hosted e Solidtime Cloud. Como os meus outros CLIs, agentes de IA podem usá-lo diretamente através de comandos shell - sem overhead de protocolo, e a chave API fica num ficheiro de configuração local em vez de passar por um servidor MCP.",
+        lu: "En Open-Source inoffiziellen CLI fir Solidtime, den Open-Source Zäiterfassungssystem. Gebaut well ech eng séier Méiglechkeet gebraucht hunn fir Zäiteinträg, Projeten, Aufgaben an Tags am Terminal ze verwalten ouni e Browser opzemaachen. Funktionéiert mat self-hosted a Solidtime Cloud Instanzen. Wéi meng aner CLIs kënnen KI-Agenten et direkt iwwer Shell-Befehle benotzen - keen Protokoll-Overhead, an den API Schlëssel bleift an enger lokaler Config-Datei amplaz duerch en MCP Server ze goen.",
+        de: "Ein inoffizielles Open-Source-CLI für Solidtime, das Open-Source-Zeiterfassungssystem. Gebaut, weil ich eine schnelle Möglichkeit brauchte, Zeiteinträge, Projekte, Aufgaben und Tags im Terminal zu verwalten, ohne einen Browser zu öffnen. Funktioniert sowohl mit selbst gehosteten als auch mit Solidtime-Cloud-Instanzen. Wie meine anderen CLIs können KI-Agenten es direkt über Shell-Befehle nutzen - kein Protokoll-Overhead, und der API-Schlüssel bleibt in einer lokalen Konfigurationsdatei, statt über einen MCP-Server zu laufen.",
+        fr: "Un CLI non officiel et open source pour Solidtime, le système de suivi du temps open source. Construit parce que j'avais besoin d'un moyen rapide de gérer les entrées de temps, projets, tâches et tags depuis le terminal sans ouvrir un navigateur. Fonctionne avec les instances auto-hébergées et Solidtime Cloud. Comme mes autres CLIs, les agents IA peuvent l'utiliser directement via des commandes shell - pas de surcharge protocolaire, et la clé API reste dans un fichier de configuration local au lieu de passer par un serveur MCP."
     },
     "projects.dolibarrcli.title": {
         en: "dolibarr-cli",
@@ -1196,11 +1000,11 @@ const translations = {
         fr: "dolibarr-cli"
     },
     "projects.dolibarrcli.desc": {
-        en: "An open-source unofficial CLI for Dolibarr ERP with complete REST API coverage from the terminal. Manage customers, invoices, bank accounts, products, and more without leaving the command line. Supports table, JSON, and CSV output formats plus dry-run for safe mutations. Same philosophy as my other CLIs — built for terminal-first workflows and AI agent compatibility.",
-        pt: "Um CLI não oficial e open-source para o Dolibarr ERP com cobertura completa da REST API a partir do terminal. Gerir clientes, faturas, contas bancárias, produtos e mais sem sair da linha de comandos. Suporta formatos de saída em tabela, JSON e CSV, além de dry-run para mutações seguras. A mesma filosofia dos meus outros CLIs — construído para workflows terminal-first e compatibilidade com agentes de IA.",
-        lu: "En Open-Source inoffiziellen CLI fir Dolibarr ERP mat komplettem REST API Coverage am Terminal. Clienten, Rechnungen, Bankkonten, Produkter a méi verwalten ouni d'Kommandozeil ze verloossen. Ënnerstëtzt Tabell-, JSON- a CSV-Ausgabeformater plus Dry-Run fir sécher Mutatiounen. Selwecht Philosophie wéi meng aner CLIs — gebaut fir Terminal-éischt Workflows an KI-Agent Kompatibilitéit.",
-        de: "Ein inoffizielles Open-Source-CLI für Dolibarr ERP mit vollständiger REST-API-Abdeckung im Terminal. Kunden, Rechnungen, Bankkonten, Produkte und mehr verwalten, ohne die Kommandozeile zu verlassen. Unterstützt Tabellen-, JSON- und CSV-Ausgabeformate sowie Dry-Run für sichere Mutationen. Dieselbe Philosophie wie meine anderen CLIs — gebaut für Terminal-first-Workflows und KI-Agent-Kompatibilität.",
-        fr: "Un CLI non officiel et open source pour Dolibarr ERP avec une couverture complète de l'API REST depuis le terminal. Gérer clients, factures, comptes bancaires, produits et plus sans quitter la ligne de commande. Prend en charge les formats de sortie tableau, JSON et CSV, plus le dry-run pour des mutations sûres. Même philosophie que mes autres CLIs — construit pour des workflows terminal-first et la compatibilité avec les agents IA."
+        en: "An open-source unofficial CLI for Dolibarr ERP with broad REST API coverage from the terminal. Manage customers, invoices, bank accounts, products, and more without leaving the command line. Supports table, JSON, and CSV output formats plus dry-run for safe mutations. Same philosophy as my other CLIs - built for terminal-first workflows and AI agent compatibility.",
+        pt: "Um CLI não oficial e open-source para o Dolibarr ERP com ampla cobertura da REST API a partir do terminal. Gerir clientes, faturas, contas bancárias, produtos e mais sem sair da linha de comandos. Suporta formatos de saída em tabela, JSON e CSV, além de dry-run para mutações seguras. A mesma filosofia dos meus outros CLIs - construído para workflows terminal-first e compatibilidade com agentes de IA.",
+        lu: "En Open-Source inoffiziellen CLI fir Dolibarr ERP mat breetem REST API Coverage am Terminal. Clienten, Rechnungen, Bankkonten, Produkter a méi verwalten ouni d'Kommandozeil ze verloossen. Ënnerstëtzt Tabell-, JSON- a CSV-Ausgabeformater plus Dry-Run fir sécher Mutatiounen. Selwecht Philosophie wéi meng aner CLIs - gebaut fir Terminal-éischt Workflows an KI-Agent Kompatibilitéit.",
+        de: "Ein inoffizielles Open-Source-CLI für Dolibarr ERP mit breiter REST-API-Abdeckung im Terminal. Kunden, Rechnungen, Bankkonten, Produkte und mehr verwalten, ohne die Kommandozeile zu verlassen. Unterstützt Tabellen-, JSON- und CSV-Ausgabeformate sowie Dry-Run für sichere Mutationen. Dieselbe Philosophie wie meine anderen CLIs - gebaut für Terminal-first-Workflows und KI-Agent-Kompatibilität.",
+        fr: "Un CLI non officiel et open source pour Dolibarr ERP avec une large couverture de l'API REST depuis le terminal. Gérer clients, factures, comptes bancaires, produits et plus sans quitter la ligne de commande. Prend en charge les formats de sortie tableau, JSON et CSV, plus le dry-run pour des mutations sûres. Même philosophie que mes autres CLIs - construit pour des workflows terminal-first et la compatibilité avec les agents IA."
     },
     "projects.infomaniakcli.title": {
         en: "infomaniak-cli",
@@ -1210,11 +1014,11 @@ const translations = {
         fr: "infomaniak-cli"
     },
     "projects.infomaniakcli.desc": {
-        en: "An open-source unofficial CLI for Infomaniak that lets you manage your kSuite accounts, kDrive, mail, contacts, calendar, and kChat from any terminal. Built in Python with token-based auth (no browser session), it speaks IMAP, CardDAV/CalDAV, and the Infomaniak REST API, with JSON, table, and human-readable output. Same philosophy as my other CLIs — terminal-first and built so AI agents can use it directly through shell commands, no MCP server or protocol required.",
-        pt: "Um CLI não oficial e open-source para o Infomaniak que permite gerir as suas contas kSuite, kDrive, mail, contactos, calendário e kChat a partir de qualquer terminal. Construído em Python com autenticação por token (sem sessão de browser), fala IMAP, CardDAV/CalDAV e a REST API da Infomaniak, com saída em JSON, tabela e texto legível. A mesma filosofia dos meus outros CLIs — terminal-first e construído para que agentes de IA o possam usar diretamente através de comandos shell, sem servidor MCP nem protocolo.",
-        lu: "En Open-Source inoffiziellen CLI fir Infomaniak deen dech deng kSuite Konten, kDrive, Mail, Kontakter, Kalenner a kChat aus all Terminal verwalten léisst. Gebaut a Python mat Token-baséierter Authentifikatioun (keng Browser-Sessioun), schwätzt et IMAP, CardDAV/CalDAV an d'Infomaniak REST API, mat JSON-, Tabell- a liesbarer Textausgab. Selwecht Philosophie wéi meng aner CLIs — Terminal-éischt a gebaut fir datt KI-Agenten et direkt iwwer Shell-Befehle kënne benotzen, keen MCP Server oder Protokoll néideg.",
-        de: "Ein inoffizielles Open-Source-CLI für Infomaniak, mit dem du deine kSuite-Konten, kDrive, Mail, Kontakte, Kalender und kChat von jedem Terminal aus verwalten kannst. In Python mit Token-basierter Authentifizierung (keine Browser-Sitzung) gebaut, spricht es IMAP, CardDAV/CalDAV und die Infomaniak-REST-API, mit JSON-, Tabellen- und lesbarer Textausgabe. Dieselbe Philosophie wie meine anderen CLIs — Terminal-first und so gebaut, dass KI-Agenten es direkt über Shell-Befehle nutzen können, kein MCP-Server oder Protokoll erforderlich.",
-        fr: "Un CLI non officiel et open source pour Infomaniak qui permet de gérer vos comptes kSuite, kDrive, mail, contacts, calendrier et kChat depuis n'importe quel terminal. Construit en Python avec une authentification par token (pas de session navigateur), il parle IMAP, CardDAV/CalDAV et l'API REST d'Infomaniak, avec une sortie JSON, tableau et texte lisible. Même philosophie que mes autres CLIs — terminal-first et conçu pour que les agents IA puissent l'utiliser directement via des commandes shell, sans serveur MCP ni protocole."
+        en: "An open-source unofficial CLI for Infomaniak that lets you manage your kSuite accounts, kDrive, mail, contacts, calendar, and kChat from any terminal. Built in Python with token-based auth (no browser session), it speaks IMAP, CardDAV/CalDAV, and the Infomaniak REST API, with JSON, table, and human-readable output. Same philosophy as my other CLIs - terminal-first and built so AI agents can use it directly through shell commands, no MCP server or protocol required.",
+        pt: "Um CLI não oficial e open-source para o Infomaniak que permite gerir as suas contas kSuite, kDrive, mail, contactos, calendário e kChat a partir de qualquer terminal. Construído em Python com autenticação por token (sem sessão de browser), fala IMAP, CardDAV/CalDAV e a REST API da Infomaniak, com saída em JSON, tabela e texto legível. A mesma filosofia dos meus outros CLIs - terminal-first e construído para que agentes de IA o possam usar diretamente através de comandos shell, sem servidor MCP nem protocolo.",
+        lu: "En Open-Source inoffiziellen CLI fir Infomaniak deen dech deng kSuite Konten, kDrive, Mail, Kontakter, Kalenner a kChat aus all Terminal verwalten léisst. Gebaut a Python mat Token-baséierter Authentifikatioun (keng Browser-Sessioun), schwätzt et IMAP, CardDAV/CalDAV an d'Infomaniak REST API, mat JSON-, Tabell- a liesbarer Textausgab. Selwecht Philosophie wéi meng aner CLIs - Terminal-éischt a gebaut fir datt KI-Agenten et direkt iwwer Shell-Befehle kënne benotzen, keen MCP Server oder Protokoll néideg.",
+        de: "Ein inoffizielles Open-Source-CLI für Infomaniak, mit dem du deine kSuite-Konten, kDrive, Mail, Kontakte, Kalender und kChat von jedem Terminal aus verwalten kannst. In Python mit Token-basierter Authentifizierung (keine Browser-Sitzung) gebaut, spricht es IMAP, CardDAV/CalDAV und die Infomaniak-REST-API, mit JSON-, Tabellen- und lesbarer Textausgabe. Dieselbe Philosophie wie meine anderen CLIs - Terminal-first und so gebaut, dass KI-Agenten es direkt über Shell-Befehle nutzen können, kein MCP-Server oder Protokoll erforderlich.",
+        fr: "Un CLI non officiel et open source pour Infomaniak qui permet de gérer vos comptes kSuite, kDrive, mail, contacts, calendrier et kChat depuis n'importe quel terminal. Construit en Python avec une authentification par token (pas de session navigateur), il parle IMAP, CardDAV/CalDAV et l'API REST d'Infomaniak, avec une sortie JSON, tableau et texte lisible. Même philosophie que mes autres CLIs - terminal-first et conçu pour que les agents IA puissent l'utiliser directement via des commandes shell, sans serveur MCP ni protocole."
     },
     "projects.azwhere.title": {
         en: "az-where",
@@ -1231,18 +1035,18 @@ const translations = {
         fr: "Un CLI non officiel et open source pour la découverte de disponibilité Azure. Il vérifie où des SKUs de VM peuvent réellement être déployées en combinant Azure Policy, disponibilité des SKUs, restrictions de l'abonnement et quota en temps réel, et prend maintenant aussi en charge les vérifications génériques de disponibilité des ressources, les estimations de prix des VMs, les modes de sortie pour scripts et les vérifications de mise à jour."
     },
     "projects.minicfl-az104.title": {
-        en: "MiniCFL — Azure AZ-104 Demonstration",
-        pt: "MiniCFL — Demonstração Azure AZ-104",
-        lu: "MiniCFL — Azure AZ-104 Demonstratioun",
-        de: "MiniCFL — Azure AZ-104 Demonstration",
-        fr: "MiniCFL — Démonstration Azure AZ-104"
+        en: "MiniCFL - Azure AZ-104 Demonstration",
+        pt: "MiniCFL - Demonstração Azure AZ-104",
+        lu: "MiniCFL - Azure AZ-104 Demonstratioun",
+        de: "MiniCFL - Azure AZ-104 Demonstration",
+        fr: "MiniCFL - Démonstration Azure AZ-104"
     },
     "projects.minicfl-az104.desc": {
-        en: "A three-person group project: an Azure AZ-104 administrator demonstration built around a CFL train simulator running Petange → Luxembourg. The train is just the scenario — the real deliverable is a full Azure environment: Entra ID + RBAC, a management-group hierarchy with Policy, tags and budgets, a containerised web app from ACR on App Service, a private PostgreSQL database VM, an Azure Function timer, a VNet with NSGs, and Azure Monitor — across dev and prod in two regions.",
-        pt: "Um projeto de grupo de três pessoas: uma demonstração de administrador Azure AZ-104 construída à volta de um simulador do comboio CFL no trajeto Petange → Luxemburgo. O comboio é apenas o cenário — a verdadeira entrega é um ambiente Azure completo: Entra ID + RBAC, uma hierarquia de grupos de gestão com Policy, tags e orçamentos, uma aplicação web em contentor a partir do ACR no App Service, uma VM de base de dados PostgreSQL privada, um timer com Azure Function, uma VNet com NSGs e o Azure Monitor — em dev e prod em duas regiões.",
-        lu: "E Grupp-Projet vun dräi Persounen: eng Azure AZ-104 Administrateur-Demonstratioun ronderëm ee CFL-Zuchsimulator op der Streck Petange → Lëtzebuerg. Den Zuch ass nëmmen de Szenario — déi richteg Liwwerung ass eng komplett Azure-Ëmgéigend: Entra ID + RBAC, eng Management-Group-Hierarchie mat Policy, Tags a Budgeten, eng containeriséiert Web-App aus dem ACR um App Service, eng privat PostgreSQL-Datebank-VM, en Azure-Function-Timer, eng VNet mat NSGen an den Azure Monitor — iwwer Dev a Prod an zwou Regiounen.",
-        de: "Ein Gruppenprojekt von drei Personen: eine Azure-AZ-104-Administrator-Demonstration rund um einen Simulator des CFL-Zuges auf der Strecke Petange → Luxemburg. Der Zug ist nur das Szenario — die eigentliche Leistung ist eine vollständige Azure-Umgebung: Entra ID + RBAC, eine Management-Group-Hierarchie mit Policy, Tags und Budgets, eine containerisierte Web-App aus der ACR im App Service, eine private PostgreSQL-Datenbank-VM, ein Azure-Function-Timer, ein VNet mit NSGs und Azure Monitor — über Dev und Prod in zwei Regionen.",
-        fr: "Un projet de groupe de trois personnes : une démonstration d'administrateur Azure AZ-104 construite autour d'un simulateur du train CFL sur la ligne Petange → Luxembourg. Le train n'est que le scénario — le vrai livrable est un environnement Azure complet : Entra ID + RBAC, une hiérarchie de groupes d'administration avec Policy, étiquettes et budgets, une application web conteneurisée depuis l'ACR sur App Service, une VM de base de données PostgreSQL privée, un minuteur Azure Function, un VNet avec NSGs et Azure Monitor — en dev et prod sur deux régions."
+        en: "A three-person group project: an Azure AZ-104 administrator demonstration built around a CFL train simulator running Petange → Luxembourg. The train is just the scenario - the real deliverable is a full Azure environment: Entra ID + RBAC, a management-group hierarchy with Policy, tags and budgets, a containerised web app from ACR on App Service, a private PostgreSQL database VM, an Azure Function timer, a VNet with NSGs, and Azure Monitor - across dev and prod in two regions.",
+        pt: "Um projeto de grupo de três pessoas: uma demonstração de administrador Azure AZ-104 construída à volta de um simulador do comboio CFL no trajeto Petange → Luxemburgo. O comboio é apenas o cenário - a verdadeira entrega é um ambiente Azure completo: Entra ID + RBAC, uma hierarquia de grupos de gestão com Policy, tags e orçamentos, uma aplicação web em contentor a partir do ACR no App Service, uma VM de base de dados PostgreSQL privada, um timer com Azure Function, uma VNet com NSGs e o Azure Monitor - em dev e prod em duas regiões.",
+        lu: "E Grupp-Projet vun dräi Persounen: eng Azure AZ-104 Administrateur-Demonstratioun ronderëm ee CFL-Zuchsimulator op der Streck Petange → Lëtzebuerg. Den Zuch ass nëmmen de Szenario - déi richteg Liwwerung ass eng komplett Azure-Ëmgéigend: Entra ID + RBAC, eng Management-Group-Hierarchie mat Policy, Tags a Budgeten, eng containeriséiert Web-App aus dem ACR um App Service, eng privat PostgreSQL-Datebank-VM, en Azure-Function-Timer, eng VNet mat NSGen an den Azure Monitor - iwwer Dev a Prod an zwou Regiounen.",
+        de: "Ein Gruppenprojekt von drei Personen: eine Azure-AZ-104-Administrator-Demonstration rund um einen Simulator des CFL-Zuges auf der Strecke Petange → Luxemburg. Der Zug ist nur das Szenario - die eigentliche Leistung ist eine vollständige Azure-Umgebung: Entra ID + RBAC, eine Management-Group-Hierarchie mit Policy, Tags und Budgets, eine containerisierte Web-App aus der ACR im App Service, eine private PostgreSQL-Datenbank-VM, ein Azure-Function-Timer, ein VNet mit NSGs und Azure Monitor - über Dev und Prod in zwei Regionen.",
+        fr: "Un projet de groupe de trois personnes : une démonstration d'administrateur Azure AZ-104 construite autour d'un simulateur du train CFL sur la ligne Petange → Luxembourg. Le train n'est que le scénario - le vrai livrable est un environnement Azure complet : Entra ID + RBAC, une hiérarchie de groupes d'administration avec Policy, étiquettes et budgets, une application web conteneurisée depuis l'ACR sur App Service, une VM de base de données PostgreSQL privée, un minuteur Azure Function, un VNet avec NSGs et Azure Monitor - en dev et prod sur deux régions."
     },
     "projects.modal.relatedProjects": {
         en: "Related Projects",
@@ -1434,11 +1238,11 @@ const translations = {
         fr: "Documentation Remote Desktop Services (RDS)"
     },
     "projects.rds.desc": {
-        en: "I documented and demonstrated a Windows Server 2022 Remote Desktop Services deployment. It combines AD DS, DNS, RD Web Access, and a session-based collection so students can securely access a shared desktop from external Windows 11 clients.",
-        pt: "Documentei e demonstrei uma implementação de Remote Desktop Services no Windows Server 2022. Combina AD DS, DNS, RD Web Access e uma coleção baseada em sessão para que os alunos possam aceder com segurança a um desktop partilhado a partir de clientes Windows 11 externos.",
-        lu: "Ech hunn eng Remote Desktop Services Umsetzung op Windows Server 2022 dokumentéiert a presentéiert. Et kombinéiert AD DS, DNS, RD Web Access an eng Session-baséiert Collection, sou datt d'Schüler sécher op en deelen Desktop vun externe Windows 11 Clienten zougräife kënnen.",
-        de: "Ich habe eine Remote-Desktop-Services-Bereitstellung auf Windows Server 2022 dokumentiert und demonstriert. Sie kombiniert AD DS, DNS, RD Web Access und eine sitzungsbasierte Sammlung, damit Schüler sicher auf einen gemeinsamen Desktop von externen Windows-11-Clients zugreifen können.",
-        fr: "J'ai documenté et présenté un déploiement Remote Desktop Services sur Windows Server 2022. Il combine AD DS, DNS, RD Web Access et une collection basée sur des sessions afin que les élèves puissent accéder en toute sécurité à un bureau partagé depuis des clients Windows 11 externes."
+        en: "My two-person team documented and demonstrated a Windows Server 2022 Remote Desktop Services deployment. It combines AD DS, DNS, RD Web Access, and a session-based collection so students can securely access a shared desktop from external Windows 11 clients.",
+        pt: "A minha equipa de duas pessoas documentou e demonstrou uma implementação de Remote Desktop Services no Windows Server 2022. Combina AD DS, DNS, RD Web Access e uma coleção baseada em sessão para que os alunos possam aceder com segurança a um desktop partilhado a partir de clientes Windows 11 externos.",
+        lu: "Meng Zwee-Persounen-Equipe huet eng Remote Desktop Services Umsetzung op Windows Server 2022 dokumentéiert a presentéiert. Et kombinéiert AD DS, DNS, RD Web Access an eng Session-baséiert Collection, sou datt d'Schüler sécher op en deelen Desktop vun externe Windows 11 Clienten zougräife kënnen.",
+        de: "Mein Zweier-Team hat eine Remote-Desktop-Services-Bereitstellung auf Windows Server 2022 dokumentiert und demonstriert. Sie kombiniert AD DS, DNS, RD Web Access und eine sitzungsbasierte Sammlung, damit Schüler sicher auf einen gemeinsamen Desktop von externen Windows-11-Clients zugreifen können.",
+        fr: "Mon équipe de deux personnes a documenté et présenté un déploiement Remote Desktop Services sur Windows Server 2022. Il combine AD DS, DNS, RD Web Access et une collection basée sur des sessions afin que les élèves puissent accéder en toute sécurité à un bureau partagé depuis des clients Windows 11 externes."
     },
     "projects.unraid.title": {
         en: "UnRAID Storage Server (NAS)",
@@ -1462,11 +1266,11 @@ const translations = {
         fr: "Systèmes de virtualisation de serveurs"
     },
     "projects.vircl-virtualization.desc": {
-        en: "For the VIRCL module of the BTS in Cloud Computing, my two-person team deployed and compared VMware ESXi/vCenter and Proxmox VE across four HP servers — 17 virtualization features on both, from VM lifecycle and shared NFS/iSCSI storage to live migration and backups. Our Clustering specialisation nested a third node inside the opposite hypervisor on each side to build real three-node quorum with vSphere HA/DRS and Proxmox HA.",
-        pt: "Para o módulo VIRCL do BTS em Cloud Computing, a minha equipa de duas pessoas implementou e comparou o VMware ESXi/vCenter e o Proxmox VE em quatro servidores HP — 17 funcionalidades de virtualização em ambos, do ciclo de vida das VMs e armazenamento partilhado NFS/iSCSI à migração em tempo real e backups. A nossa especialização em Clustering aninhou um terceiro nó dentro do hipervisor oposto de cada lado para criar um quórum real de três nós com vSphere HA/DRS e HA do Proxmox.",
-        lu: "Fir de VIRCL-Modul vum BTS Cloud Computing huet meng Zwee-Persounen-Equipe de VMware ESXi/vCenter an de Proxmox VE op véier HP-Serveren installéiert a verglach — 17 Virtualiséierungsfunktiounen op béiden, vum VM-Liewenszyklus a gedeelten NFS/iSCSI-Späicher bis Live-Migratioun a Backups. Eis Clustering-Spezialisatioun huet op all Säit en drëtten Node am géigeniwwerleienden Hypervisor nestéiert fir e richtege Quorum mat dräi Noden mat vSphere HA/DRS a Proxmox HA opzebauen.",
-        de: "Für das VIRCL-Modul des BTS Cloud Computing setzte mein Zweier-Team VMware ESXi/vCenter und Proxmox VE auf vier HP-Servern ein und verglich sie — 17 Virtualisierungsfunktionen auf beiden, vom VM-Lebenszyklus und gemeinsamem NFS/iSCSI-Speicher bis zu Live-Migration und Backups. Unsere Clustering-Spezialisierung verschachtelte auf jeder Seite einen dritten Knoten im jeweils anderen Hypervisor, um ein echtes Drei-Knoten-Quorum mit vSphere HA/DRS und Proxmox HA aufzubauen.",
-        fr: "Pour le module VIRCL du BTS en Cloud Computing, mon équipe de deux personnes a déployé et comparé VMware ESXi/vCenter et Proxmox VE sur quatre serveurs HP — 17 fonctionnalités de virtualisation sur les deux, du cycle de vie des VM et du stockage partagé NFS/iSCSI à la migration à chaud et aux sauvegardes. Notre spécialisation Clustering a imbriqué un troisième nœud dans l'hyperviseur opposé de chaque côté pour bâtir un vrai quorum à trois nœuds avec vSphere HA/DRS et HA Proxmox."
+        en: "For the VIRCL module of the BTS in Cloud Computing, my two-person team deployed and compared VMware ESXi/vCenter and Proxmox VE across four HP servers - 17 virtualization features on both, from VM lifecycle and shared NFS/iSCSI storage to live migration and backups. Our Clustering specialisation nested a third node inside the opposite hypervisor on each side to build real three-node quorum with vSphere HA/DRS and Proxmox HA.",
+        pt: "Para o módulo VIRCL do BTS em Cloud Computing, a minha equipa de duas pessoas implementou e comparou o VMware ESXi/vCenter e o Proxmox VE em quatro servidores HP - 17 funcionalidades de virtualização em ambos, do ciclo de vida das VMs e armazenamento partilhado NFS/iSCSI à migração em tempo real e backups. A nossa especialização em Clustering aninhou um terceiro nó dentro do hipervisor oposto de cada lado para criar um quórum real de três nós com vSphere HA/DRS e HA do Proxmox.",
+        lu: "Fir de VIRCL-Modul vum BTS Cloud Computing huet meng Zwee-Persounen-Equipe de VMware ESXi/vCenter an de Proxmox VE op véier HP-Serveren installéiert a verglach - 17 Virtualiséierungsfunktiounen op béiden, vum VM-Liewenszyklus a gedeelten NFS/iSCSI-Späicher bis Live-Migratioun a Backups. Eis Clustering-Spezialisatioun huet op all Säit en drëtten Node am géigeniwwerleienden Hypervisor nestéiert fir e richtege Quorum mat dräi Noden mat vSphere HA/DRS a Proxmox HA opzebauen.",
+        de: "Für das VIRCL-Modul des BTS Cloud Computing setzte mein Zweier-Team VMware ESXi/vCenter und Proxmox VE auf vier HP-Servern ein und verglich sie - 17 Virtualisierungsfunktionen auf beiden, vom VM-Lebenszyklus und gemeinsamem NFS/iSCSI-Speicher bis zu Live-Migration und Backups. Unsere Clustering-Spezialisierung verschachtelte auf jeder Seite einen dritten Knoten im jeweils anderen Hypervisor, um ein echtes Drei-Knoten-Quorum mit vSphere HA/DRS und Proxmox HA aufzubauen.",
+        fr: "Pour le module VIRCL du BTS en Cloud Computing, mon équipe de deux personnes a déployé et comparé VMware ESXi/vCenter et Proxmox VE sur quatre serveurs HP - 17 fonctionnalités de virtualisation sur les deux, du cycle de vie des VM et du stockage partagé NFS/iSCSI à la migration à chaud et aux sauvegardes. Notre spécialisation Clustering a imbriqué un troisième nœud dans l'hyperviseur opposé de chaque côté pour bâtir un vrai quorum à trois nœuds avec vSphere HA/DRS et HA Proxmox."
     },
     "footer.copyright": {
         en: "© {year} Guilherme Videira Marques.",

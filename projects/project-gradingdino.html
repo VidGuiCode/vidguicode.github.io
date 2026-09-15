@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
     <title>GradingDino | VidGuiCode</title>
-    <meta name="description" content="GradingDino - A grade management system built with Django, PostgreSQL, and Docker. A four-person school project: teachers manage grades, students track progress, the whole stack boots from one docker compose up.">
+    <meta name="description" content="GradingDino: a grade management system built with Django, PostgreSQL, and Docker. A four-person school project that boots from one docker compose up.">
+    <link rel="canonical" href="https://vidguicode.github.io/projects/project-gradingdino">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vidguicode.github.io/projects/project-gradingdino">
+    <meta property="og:title" content="GradingDino | VidGuiCode">
+    <meta property="og:description" content="GradingDino: a grade management system built with Django, PostgreSQL, and Docker. A four-person school project that boots from one docker compose up.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/gradingdino/dino-icon.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/projects/project-gradingdino">
+    <meta name="twitter:title" content="GradingDino | VidGuiCode">
+    <meta name="twitter:description" content="GradingDino: a grade management system built with Django, PostgreSQL, and Docker. A four-person school project that boots from one docker compose up.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/projects/gradingdino/dino-icon.webp">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +52,7 @@
     <script src="../assets/js/certifications-techstack.js"></script>
     <style>
         /* ================================================================
-           GradingDino — warm orange accent on the shared two-lens base.
+           GradingDino - warm orange accent on the shared two-lens base.
            Recolours every shared accent (glance LEDs, arch/stack/journey
            rails, badge dot, accent icon, links, download button) from the
            default green/grey to orange in one move. Same sharp, dark, mono
@@ -45,7 +61,7 @@
         .gradingdino-page {
             --gd-orange: #f97316;
             /* Flip the green accent and define the (otherwise-unset) primary
-               accent — together these cover nearly every accent on the page. */
+               accent - together these cover nearly every accent on the page. */
             --led-green: #f97316;
             --accent-primary: #f97316;
         }
@@ -85,7 +101,7 @@
                         </h1>
                     </div>
                 </div>
-                <p class="subtitle" data-i18n="project.gradingdino.subtitle">A grade management system built with Django. Teachers create classrooms and manage student grades, while students track their progress. Group project MVP — learned valuable lessons about framework selection.</p>
+                <p class="subtitle" data-i18n="project.gradingdino.subtitle">I built GradingDino with a team of four for a BTS Cloud Computing project. It gives teachers a simpler way to grade their courses, while students can follow their progress. We delivered a working MVP and learned how planning and framework choice shape a product.</p>
                 <div style="margin-top: 1rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
                     <div class="badge mvp-badge" style="margin-bottom: 0;" data-i18n="project.gradingdino.mvp">MVP</div>
                     <span style="font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
@@ -102,7 +118,7 @@
                     <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
                     <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
                 </div>
-                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view, built for everyone</span>
                 <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
             </div>
 
@@ -130,12 +146,12 @@
             </div>
 
             <h2 data-i18n="project.gradingdino.arch.title">How a request flows</h2>
-            <div class="arch-diagram">
+                <div class="arch-diagram">
                 <div class="arch-strip">
                     <span class="led led-g"></span>
                     <span class="led led-a"></span>
                     <span class="led led-d"></span>
-                    <span class="arch-strip-label">Container stack</span>
+                    <span class="arch-strip-label" data-i18n="project.gradingdino.arch.strip">Container stack</span>
                 </div>
                 <div class="arch-body">
                     <div class="arch-flow">
@@ -149,7 +165,7 @@
                             </div>
                         </div>
 
-                        <div class="arch-conn"><span data-i18n="project.gradingdino.arch.http">HTTPS form POST</span>&nbsp;&#8644;</div>
+                        <div class="arch-conn"><span data-i18n="project.gradingdino.arch.http">HTTP form POST</span>&nbsp;&#8644;</div>
 
                         <div class="arch-rack">
                             <div class="arch-rack-label" data-i18n="project.gradingdino.arch.compose">docker compose · one host</div>
@@ -169,32 +185,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="arch-note" data-i18n="project.gradingdino.arch.note" data-i18n-html="true">One <code>docker compose up</code> boots both containers. Django waits for PostgreSQL's health check, applies migrations, then seeds the admin user automatically — no manual setup.</div>
+                    <div class="arch-note" data-i18n="project.gradingdino.arch.note" data-i18n-html="true">One <code>docker compose up</code> boots both containers. Django waits for PostgreSQL's health check, applies migrations, then seeds the admin user automatically - no manual setup.</div>
                 </div>
-            </div>
+                </div>
 
             <div class="plain-only">
                 <h2 data-i18n="project.gradingdino.does.title">What it does</h2>
                 <div class="does-grid">
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="graduation-cap"></i></div>
-                        <h3 data-i18n="project.gradingdino.does.teacher.title">Teachers run the classroom</h3>
-                        <p data-i18n="project.gradingdino.does.teacher.desc">Create classes, enroll students, and enter grades with comments — plus private observations only staff can see.</p>
+                        <h3 data-i18n="project.gradingdino.does.teacher.title">Teachers grade their courses</h3>
+                        <p data-i18n="project.gradingdino.does.teacher.desc">See and filter only their own courses, and enter grades with comments. Classes and enrollments are set up by the admin.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="trending-up"></i></div>
                         <h3 data-i18n="project.gradingdino.does.student.title">Students track their progress</h3>
-                        <p data-i18n="project.gradingdino.does.student.desc">Sign in to see grades by subject and semester, watch progress build over the year, and jot personal notes.</p>
+                        <p data-i18n="project.gradingdino.does.student.desc">Sign in to see grades per course with semester, school year and averages, and watch progress build over the year.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="users"></i></div>
                         <h3 data-i18n="project.gradingdino.does.roles.title">Everyone in their lane</h3>
-                        <p data-i18n="project.gradingdino.does.roles.desc">Students, teachers and admins each get their own view — nobody sees more than they should.</p>
+                        <p data-i18n="project.gradingdino.does.roles.desc">Students, teachers and admins each get their own view - nobody sees more than they should.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="terminal"></i></div>
                         <h3 data-i18n="project.gradingdino.does.oneCommand.title">Starts with one command</h3>
-                        <p data-i18n="project.gradingdino.does.oneCommand.desc">The whole app and its database boot together — it runs the same on any machine with Docker installed.</p>
+                        <p data-i18n="project.gradingdino.does.oneCommand.desc">The whole app and its database boot together - it runs the same on any machine with Docker installed.</p>
                     </div>
                 </div>
             </div>
@@ -206,19 +222,19 @@
                 <div class="card">
                     <i data-lucide="graduation-cap" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
                     <h2 data-i18n="project.gradingdino.theProject">The Project</h2>
-                    <p data-i18n="project.gradingdino.intro1" data-i18n-html="true">GradingDino was a <strong>BTS Cloud Computing group project</strong> focused on project management methodology. A team of four worked together to build a grade management web application where teachers can create classrooms, add students, and manage grades — while students can log in to view their progress and leave personal notes.</p>
+                    <p data-i18n="project.gradingdino.intro1" data-i18n-html="true">For my <strong>BTS Cloud Computing group project</strong>, I worked with three teammates on GradingDino, a grade management web app. We used project-management methods to turn teacher and student needs into a working MVP.</p>
 
                     <h2 data-i18n="project.gradingdino.teamTitle">Team Structure & My Role</h2>
                     <p data-i18n="project.gradingdino.teamIntro">We worked as a team of four with clearly divided responsibilities:</p>
                     <ul class="feature-list">
-                        <li data-i18n="project.gradingdino.myRole" data-i18n-html="true"><strong>My Role (Lead Developer)</strong>: I handled most of the coding — Django models, views, templates, and Docker configuration. I also collaborated on database design and helped structure the documentation.</li>
-                        <li data-i18n="project.gradingdino.colleagueDB" data-i18n-html="true"><strong>Colleague (Database & Docs)</strong>: Worked with me on database schema design and took ownership of technical documentation.</li>
-                        <li data-i18n="project.gradingdino.colleaguesPlanning" data-i18n-html="true"><strong>Two Colleagues (Planning)</strong>: Created personas, wrote all 12+ user stories with acceptance criteria, performed MoSCoW prioritization, and managed the MS Planner board.</li>
+                        <li data-i18n="project.gradingdino.myRole" data-i18n-html="true"><strong>My Role (Co-Developer)</strong>: I built the application together with one teammate - Django models, views, templates, database design and Docker configuration.</li>
+                        <li data-i18n="project.gradingdino.colleagueDev" data-i18n-html="true"><strong>Teammate (Development)</strong>: Built the application with me, from the Django code to the database schema.</li>
+                        <li data-i18n="project.gradingdino.colleaguesDocs" data-i18n-html="true"><strong>Two Teammates (Documentation)</strong>: Handled the documentation - created personas, wrote all 12+ user stories with acceptance criteria, performed MoSCoW prioritization, and managed the MS Planner board.</li>
                     </ul>
 
                     <div class="tech-only">
                         <h2 data-i18n="project.gradingdino.stack.title">Under the Hood</h2>
-                        <p data-i18n="project.gradingdino.stack.intro">Five containerized layers, all booted together by a single Compose file:</p>
+                        <p data-i18n="project.gradingdino.stack.intro">Five layers, two containers (web and database), all booted together by a single Compose file:</p>
 
                         <div class="stack-diagram">
                             <!-- Presentation -->
@@ -226,7 +242,7 @@
                                 <div class="stack-head"><i data-lucide="palette"></i><h3 data-i18n="project.gradingdino.stack.frontend.title">Presentation</h3></div>
                                 <div class="stack-chips"><span>Pico.css</span><span>Semantic HTML5</span><span>Server-side rendering</span><span>Django Templates</span></div>
                                 <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.gradingdino.stack.frontend.pico" data-i18n-html="true"><strong>Pico.css</strong>: a ~10KB single-file framework that styles semantic HTML5 automatically — no build step, no learning curve, just write HTML.</li>
+                                    <li data-i18n="project.gradingdino.stack.frontend.pico" data-i18n-html="true"><strong>Pico.css</strong>: a single-file framework that styles semantic HTML5 automatically - no build step, no learning curve, just write HTML.</li>
                                     <li data-i18n="project.gradingdino.stack.frontend.ssr" data-i18n-html="true"><strong>Server-side rendering</strong>: Django renders every page and the browser posts back over a standard HTTP cycle, keeping all validation and CSRF protection on the server.</li>
                                 </ul>
                             </div>
@@ -236,8 +252,8 @@
                                 <div class="stack-chips"><span>Django 5.0</span><span>Python 3.11-slim</span><span>Django ORM</span><span>Admin</span><span>Forms</span><span>Sessions</span></div>
                                 <ul class="feature-list stack-detail">
                                     <li data-i18n="project.gradingdino.stack.backend.batteries" data-i18n-html="true"><strong>Batteries included</strong>: Django 5.0 on Python 3.11-slim shipped auth, forms, an ORM and an admin out of the box, so a small team could build features instead of plumbing.</li>
-                                    <li data-i18n="project.gradingdino.stack.backend.admin" data-i18n-html="true"><strong>Built-in admin</strong>: the Django admin manages users, subjects and grading scales (20-point, 60-point and letter grades) with no extra code.</li>
-                                    <li data-i18n="project.gradingdino.stack.backend.orm" data-i18n-html="true"><strong>ORM models</strong>: classrooms, enrolments, grades and notes are plain Python models; migrations are generated and applied automatically.</li>
+                                    <li data-i18n="project.gradingdino.stack.backend.admin" data-i18n-html="true"><strong>Built-in admin</strong>: a customised Django admin manages users, subjects, classes and enrollments; the grading scales (20-point, 60-point and letter grades) come from seed data.</li>
+                                    <li data-i18n="project.gradingdino.stack.backend.orm" data-i18n-html="true"><strong>ORM models</strong>: classes, courses, enrollments and grades are plain Python models; committed migrations are applied automatically on startup.</li>
                                 </ul>
                             </div>
                             <!-- Data -->
@@ -246,7 +262,7 @@
                                 <div class="stack-chips"><span>PostgreSQL 16</span><span>ACID</span><span>Concurrent writes</span><span>Named volume</span></div>
                                 <ul class="feature-list stack-detail">
                                     <li data-i18n="project.gradingdino.stack.db.postgres" data-i18n-html="true"><strong>PostgreSQL 16</strong>: an ACID-compliant relational store that survives container restarts through a named Docker volume.</li>
-                                    <li data-i18n="project.gradingdino.stack.db.concurrent" data-i18n-html="true"><strong>Concurrent writes</strong>: several teachers can grade at the same time without locking each other out — and the same engine scales to a production deployment.</li>
+                                    <li data-i18n="project.gradingdino.stack.db.concurrent" data-i18n-html="true"><strong>Concurrent writes</strong>: several teachers can grade at the same time without locking each other out - and the same engine scales to a production deployment.</li>
                                 </ul>
                             </div>
                             <!-- Security -->
@@ -254,39 +270,41 @@
                                 <div class="stack-head"><i data-lucide="lock"></i><h3 data-i18n="project.gradingdino.stack.security.title">Security</h3></div>
                                 <div class="stack-chips"><span>Argon2</span><span>CSRF</span><span>XSS escaping</span><span>SQLi-safe ORM</span><span>Session auth</span></div>
                                 <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.gradingdino.stack.security.argon2" data-i18n-html="true"><strong>Argon2 hashing</strong>: winner of the Password Hashing Competition (2015), created at the <strong>University of Luxembourg</strong> — memory-hard and resistant to GPU/ASIC cracking. A proud local choice.</li>
+                                    <li data-i18n="project.gradingdino.stack.security.argon2" data-i18n-html="true"><strong>Argon2 hashing</strong>: winner of the Password Hashing Competition (2015), created at the <strong>University of Luxembourg</strong> - memory-hard and resistant to GPU/ASIC cracking. A proud local choice.</li>
                                     <li data-i18n="project.gradingdino.stack.security.csrf" data-i18n-html="true"><strong>Secure by default</strong>: Django ships CSRF tokens, template auto-escaping against XSS, and a parameterised ORM that blocks SQL injection.</li>
-                                    <li data-i18n="project.gradingdino.stack.security.session" data-i18n-html="true"><strong>Session auth + roles</strong>: signed session cookies plus role checks keep students, teachers and admins to their own views.</li>
+                                    <li data-i18n="project.gradingdino.stack.security.session" data-i18n-html="true"><strong>Session auth + roles</strong>: Django's database-backed sessions plus role checks keep students, teachers and admins to their own views.</li>
                                 </ul>
                             </div>
                             <!-- Orchestration -->
                             <div class="stack-layer">
                                 <div class="stack-head"><i data-lucide="container"></i><h3 data-i18n="project.gradingdino.stack.infra.title">Orchestration</h3></div>
-                                <div class="stack-chips"><span>Docker</span><span>Docker Compose</span><span>Health checks</span><span>Auto-migrations</span><span>Persistent volumes</span></div>
+                                <div class="stack-chips"><span>Docker</span><span>Docker Compose</span><span>Health checks</span><span>Auto-migrations</span><span>Persistent volume</span></div>
                                 <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.gradingdino.stack.infra.compose" data-i18n-html="true"><strong>One command</strong>: <code>docker compose up</code> builds and starts the web and database containers together — identical on any machine.</li>
+                                    <li data-i18n="project.gradingdino.stack.infra.compose" data-i18n-html="true"><strong>One command</strong>: <code>docker compose up</code> builds and starts the web and database containers together - identical on any machine.</li>
                                     <li data-i18n="project.gradingdino.stack.infra.health" data-i18n-html="true"><strong>Health-gated startup</strong>: the app waits for PostgreSQL to pass a health check, then runs migrations and seeds the admin user before serving traffic.</li>
-                                    <li data-i18n="project.gradingdino.stack.infra.volumes" data-i18n-html="true"><strong>Persistent volumes + live reload</strong>: data survives restarts via named volumes, and mounted code hot-reloads during development for fast iteration.</li>
+                                    <li data-i18n="project.gradingdino.stack.infra.volumes" data-i18n-html="true"><strong>Persistent volume + live reload</strong>: database data survives restarts via one named volume, and the mounted code folder hot-reloads during development for fast iteration.</li>
                                 </ul>
                             </div>
                         </div>
                     </div><!-- /.tech-only -->
 
-                    <h2 data-i18n="project.gradingdino.why.title">Why Django — and what it taught us</h2>
-                    <div class="journey">
+                    <div class="tech-only">
+                        <h2 data-i18n="project.gradingdino.why.title">Why Django, and what it taught us</h2>
+                        <div class="journey">
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">01</span></div>
                             <div class="journey-body"><p data-i18n="project.gradingdino.why.body1" data-i18n-html="true">Before a line of code, we did the groundwork: personas, 12+ user stories with acceptance criteria, MoSCoW prioritisation, and an MS Planner board. <strong>Planning first</strong> gave us a clear picture of exactly what to build.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">02</span></div>
-                            <div class="journey-body"><p data-i18n="project.gradingdino.why.body2" data-i18n-html="true">We compared Django, Flask and FastAPI. Django won on its <strong>"batteries included"</strong> philosophy — a built-in admin, auth, forms and ORM meant a small team could move fast without wiring everything from scratch.</p></div>
+                            <div class="journey-body"><p data-i18n="project.gradingdino.why.body2" data-i18n-html="true">We compared Django, Flask and FastAPI. Django won on its <strong>"batteries included"</strong> philosophy - a built-in admin, auth, forms and ORM meant a small team could move fast without wiring everything from scratch.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">03</span></div>
-                            <div class="journey-body"><p data-i18n="project.gradingdino.why.body3" data-i18n-html="true">The catch: Django wants things <strong>done its way</strong>. On a tight deadline we hadn't fully learned its conventions, so we spent time fighting the framework instead of building features. We still shipped a working MVP — and learned the "batteries" only pay off once you know how to use them.</p></div>
+                            <div class="journey-body"><p data-i18n="project.gradingdino.why.body3" data-i18n-html="true">The catch: Django wants things <strong>done its way</strong>. On a tight deadline we hadn't fully learned its conventions, so we spent time fighting the framework instead of building features. We still shipped a working MVP - and learned the "batteries" only pay off once you know how to use them.</p></div>
                         </div>
-                    </div>
+                        </div>
+                    </div><!-- /.tech-only -->
 
                     <h2 data-i18n="project.gradingdino.lessonsTitle">Lessons Learned</h2>
                     <div class="does-grid">
@@ -323,7 +341,7 @@
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <div id="category-section" style="display: none;">
+                    <div id="category-section" data-project-id="gradingdino" style="display: none;">
                         <h3 data-i18n="project.sidebar.category">Category</h3>
                         <div class="line"></div>
                         <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
@@ -358,8 +376,6 @@
                         <li data-i18n="project.gradingdino.sidebar.features.rbac">Role-Based Access</li>
                         <li data-i18n="project.gradingdino.sidebar.features.history">Grade History by Year</li>
                         <li data-i18n="project.gradingdino.sidebar.features.scales">Multiple Grading Scales</li>
-                        <li data-i18n="project.gradingdino.sidebar.features.notes">Personal Notes</li>
-                        <li data-i18n="project.gradingdino.sidebar.features.observations">Teacher Observations</li>
                     </ul>
 
                     <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.certifications">Certifications Used</h3>
@@ -375,46 +391,11 @@
         </div>
 
         <footer style="margin-top: 4rem;">
-            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
         </footer>
     </main>
 
-    <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        // Use centralized category display function (updates dynamically on language change)
-        // Must wait for DOMContentLoaded since script.js wraps everything in DOMContentLoaded
-        function initProjectCategories() {
-            if (typeof window.updateProjectCategories === 'function' && typeof getProjectById !== 'undefined') {
-                window.updateProjectCategories('gradingdino');
-            } else {
-                // Retry if dependencies haven't loaded yet
-                setTimeout(initProjectCategories, 100);
-            }
-        }
-
-        // Initialize Lucide icons (wait for it to load)
-        function initLucideIcons() {
-            if (typeof renderIcons !== 'undefined') {
-                renderIcons();
-            } else {
-                setTimeout(initLucideIcons, 100);
-            }
-        }
-
-        // Wait for DOMContentLoaded - script.js initializes on DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize categories
-            setTimeout(initProjectCategories, 200);
-            // Initialize Lucide icons
-            initLucideIcons();
-        });
-
-        // Also try if DOM is already loaded (fallback)
-        if (document.readyState !== 'loading') {
-            setTimeout(initProjectCategories, 300);
-            initLucideIcons();
-        }
-    </script>
+    <script src="../assets/js/project-page-init.js" defer></script>
 </body>
 </html>

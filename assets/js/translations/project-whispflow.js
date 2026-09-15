@@ -7,33 +7,47 @@
     'use strict';
     const extra = {
         /* ---- Two-lens layout: at-a-glance metric chips ---- */
-        "project.whispflow.glance.steps.label": {
-            en: "steps, record to notes",
-            pt: "passos, da gravação às notas",
-            lu: "Schrëtt, vun der Opnam bis zu den Notizen",
-            de: "Schritte, von Aufnahme zu Notizen",
-            fr: "étapes, de l'enregistrement aux notes"
+        "project.whispflow.glance.engines.label": {
+            en: "ways to transcribe: local engine or an API",
+            pt: "formas de transcrever: motor local ou uma API",
+            lu: "Weeër fir ze transkribéieren: lokale Motor oder eng API",
+            de: "Wege zu transkribieren: lokale Engine oder eine API",
+            fr: "façons de transcrire : moteur local ou une API"
         },
         "project.whispflow.glance.providers.label": {
-            en: "interchangeable AI providers",
-            pt: "fornecedores de IA intercambiáveis",
-            lu: "auswiesselbar AI Provideren",
-            de: "austauschbare KI-Anbieter",
-            fr: "fournisseurs d'IA interchangeables"
+            en: "AI providers, from cloud to fully local",
+            pt: "fornecedores de IA, da cloud ao totalmente local",
+            lu: "AI Provideren, vun der Cloud bis komplett lokal",
+            de: "KI-Anbieter, von Cloud bis vollständig lokal",
+            fr: "fournisseurs d'IA, du cloud au tout local"
+        },
+        "project.whispflow.glance.separate.value": {
+            en: "Separate",
+            pt: "Separadas",
+            lu: "Getrennt",
+            de: "Getrennte",
+            fr: "Séparés"
+        },
+        "project.whispflow.glance.separate.label": {
+            en: "setups for live captions and full transcripts",
+            pt: "configurações para legendas ao vivo e transcrições completas",
+            lu: "Astellunge fir Live-Ënnertitelen a komplett Transkriptiounen",
+            de: "Einstellungen für Live-Untertitel und vollständige Transkripte",
+            fr: "réglages pour les sous-titres en direct et les transcriptions complètes"
+        },
+        "project.whispflow.glance.local.value": {
+            en: "Local",
+            pt: "Local",
+            lu: "Lokal",
+            de: "Lokal",
+            fr: "Local"
         },
         "project.whispflow.glance.local.label": {
-            en: "on-device transcription",
-            pt: "transcrição no dispositivo",
-            lu: "Transkriptioun um Apparat",
-            de: "Transkription auf dem Gerät",
-            fr: "transcription sur l'appareil"
-        },
-        "project.whispflow.glance.private.label": {
-            en: "audio files leave your device",
-            pt: "ficheiros de áudio saem do dispositivo",
-            lu: "Audiodateie verloossen däin Apparat",
-            de: "Audiodateien verlassen dein Gerät",
-            fr: "fichiers audio quittent votre appareil"
+            en: "by default: audio leaves only if you choose an API",
+            pt: "por defeito: o áudio só sai se escolheres uma API",
+            lu: "standardméisseg: den Audio geet nëmme fort, wann s du eng API wiels",
+            de: "standardmäßig: Audio verlässt das Gerät nur, wenn du eine API wählst",
+            fr: "par défaut : l'audio ne part que si vous choisissez une API"
         },
 
         /* ---- Architecture diagram (record-to-notes pipeline) ---- */
@@ -51,26 +65,19 @@
             de: "Pipeline von Aufnahme zu Notizen",
             fr: "Pipeline de l'enregistrement aux notes"
         },
-        "project.whispflow.arch.audio": {
-            en: "Audio in",
-            pt: "Entrada de áudio",
-            lu: "Audio-Input",
-            de: "Audio-Eingang",
-            fr: "Entrée audio"
+        "project.whispflow.arch.capture": {
+            en: "Capture",
+            pt: "Captar",
+            lu: "Erfaassen",
+            de: "Erfassen",
+            fr: "Capturer"
         },
-        "project.whispflow.arch.device": {
-            en: "Your device — offline",
-            pt: "O teu dispositivo — offline",
-            lu: "Däin Apparat — offline",
-            de: "Dein Gerät — offline",
-            fr: "Votre appareil — hors ligne"
-        },
-        "project.whispflow.arch.record": {
-            en: "Record",
-            pt: "Gravar",
-            lu: "Ophuelen",
-            de: "Aufnehmen",
-            fr: "Enregistrer"
+        "project.whispflow.arch.capture.spec": {
+            en: "record live, or import an audio file",
+            pt: "grava ao vivo, ou importa um ficheiro de áudio",
+            lu: "live ophuelen, oder eng Audiodatei importéieren",
+            de: "live aufnehmen, oder eine Audiodatei importieren",
+            fr: "enregistrer en direct, ou importer un fichier audio"
         },
         "project.whispflow.arch.transcribe": {
             en: "Transcribe",
@@ -79,6 +86,27 @@
             de: "Transkribieren",
             fr: "Transcrire"
         },
+        "project.whispflow.arch.transcribe.spec": {
+            en: "on your machine, or through Groq, OpenAI or your own server, chosen per run",
+            pt: "na tua máquina, ou através da Groq, OpenAI ou do teu próprio servidor, escolhido em cada execução",
+            lu: "op denger Maschinn, oder iwwer Groq, OpenAI oder däin eegene Server, bei all Laf gewielt",
+            de: "auf deinem Rechner, oder über Groq, OpenAI oder deinen eigenen Server, pro Durchlauf gewählt",
+            fr: "sur votre machine, ou via Groq, OpenAI ou votre propre serveur, au choix à chaque exécution"
+        },
+        "project.whispflow.arch.summarize": {
+            en: "Summarize",
+            pt: "Resumir",
+            lu: "Zesummefaassen",
+            de: "Zusammenfassen",
+            fr: "Résumer"
+        },
+        "project.whispflow.arch.summarize.spec": {
+            en: "summaries, action items and cleanup, from the transcript text only",
+            pt: "resumos, ações e limpeza, só a partir do texto da transcrição",
+            lu: "Resuméen, Aktiounspunkten a Botzen, nëmmen aus dem Transkriptiounstext",
+            de: "Zusammenfassungen, Aktionspunkte und Bereinigung, nur aus dem Transkripttext",
+            fr: "résumés, actions et nettoyage, uniquement à partir du texte de la transcription"
+        },
         "project.whispflow.arch.export": {
             en: "Export",
             pt: "Exportar",
@@ -86,19 +114,33 @@
             de: "Exportieren",
             fr: "Exporter"
         },
-        "project.whispflow.arch.summary": {
-            en: "AI Summary",
-            pt: "Resumo IA",
-            lu: "AI Resumé",
-            de: "KI-Zusammenfassung",
-            fr: "Résumé IA"
+        "project.whispflow.arch.export.spec": {
+            en: "take the transcript, summary and action items with you",
+            pt: "leva contigo a transcrição, o resumo e as ações",
+            lu: "huel d'Transkriptioun, de Resumé an d'Aktiounspunkten mat",
+            de: "nimm Transkript, Zusammenfassung und Aktionspunkte mit",
+            fr: "emportez la transcription, le résumé et les actions"
+        },
+        "project.whispflow.arch.live": {
+            en: "Live captions",
+            pt: "Legendas ao vivo",
+            lu: "Live-Ënnertitelen",
+            de: "Live-Untertitel",
+            fr: "Sous-titres en direct"
+        },
+        "project.whispflow.arch.live.spec": {
+            en: "set up separately from full transcripts, shown while you record",
+            pt: "configuradas à parte das transcrições completas, mostradas enquanto gravas",
+            lu: "getrennt vun de komplette Transkriptiounen agestallt, ugewise während s du ophëls",
+            de: "getrennt von vollständigen Transkripten eingestellt, angezeigt während du aufnimmst",
+            fr: "réglés séparément des transcriptions complètes, affichés pendant l'enregistrement"
         },
         "project.whispflow.arch.note": {
-            en: "Recording, transcription and storage all run on your device — only the transcript text is sent to a cloud AI for the summary. Your audio never leaves.",
-            pt: "Gravação, transcrição e armazenamento correm todos no teu dispositivo — só o texto da transcrição é enviado a uma IA na cloud para o resumo. O teu áudio nunca sai.",
-            lu: "Opnam, Transkriptioun a Späicherung lafen all op dengem Apparat — nëmmen den Transkriptiounstext gëtt un eng Cloud-AI fir de Resumé geschéckt. Däin Audio verléisst ni den Apparat.",
-            de: "Aufnahme, Transkription und Speicherung laufen alle auf deinem Gerät — nur der Transkripttext wird für die Zusammenfassung an eine Cloud-KI gesendet. Dein Audio verlässt das Gerät nie.",
-            fr: "Enregistrement, transcription et stockage tournent tous sur votre appareil — seul le texte de la transcription est envoyé à une IA cloud pour le résumé. Votre audio ne quitte jamais l'appareil."
+            en: "Everything runs locally by default. Audio leaves your machine only if you pick a transcription API, and AI features only ever send the transcript text, never the audio.",
+            pt: "Por defeito, tudo corre localmente. O áudio só sai da tua máquina se escolheres uma API de transcrição, e as funcionalidades de IA só enviam o texto da transcrição, nunca o áudio.",
+            lu: "Standardméisseg leeft alles lokal. Den Audio verléisst deng Maschinn nëmmen, wann s du eng Transkriptiouns-API wiels, an d'AI-Funktioune schécken ëmmer nëmmen den Transkriptiounstext, ni den Audio.",
+            de: "Standardmäßig läuft alles lokal. Audio verlässt deinen Rechner nur, wenn du eine Transkriptions-API wählst, und die KI-Funktionen senden immer nur den Transkripttext, nie das Audio.",
+            fr: "Par défaut, tout tourne en local. L'audio ne quitte votre machine que si vous choisissez une API de transcription, et les fonctions IA n'envoient que le texte de la transcription, jamais l'audio."
         },
 
         /* ---- Overview "what WhispFlow does" cards ---- */
@@ -117,25 +159,25 @@
             fr: "Enregistre toute réunion ou tout cours"
         },
         "project.whispflow.does.record.desc": {
-            en: "One click captures your microphone, the system sound, or both — with a live waveform so you know it's working.",
-            pt: "Um clique capta o microfone, o som do sistema, ou ambos — com forma de onda em tempo real para saberes que está a funcionar.",
-            lu: "Ee Klick hëlt däi Mikro, de Systemton, oder béid op — mat enger Live-Welleform sou datt s du weess datt et leeft.",
-            de: "Ein Klick erfasst dein Mikrofon, den Systemton oder beides — mit Live-Wellenform, damit du siehst, dass es läuft.",
-            fr: "Un clic capte votre micro, le son système, ou les deux — avec une forme d'onde en direct pour savoir que ça marche."
+            en: "One click captures your microphone, the system sound, or both, and you can also import an audio file.",
+            pt: "Um clique capta o microfone, o som do sistema, ou ambos, e também podes importar um ficheiro de áudio.",
+            lu: "Ee Klick hëlt däi Mikro, de Systemton, oder béid op, an du kanns och eng Audiodatei importéieren.",
+            de: "Ein Klick erfasst dein Mikrofon, den Systemton oder beides, und du kannst auch eine Audiodatei importieren.",
+            fr: "Un clic capte votre micro, le son système, ou les deux, et vous pouvez aussi importer un fichier audio."
         },
         "project.whispflow.does.transcribe.title": {
-            en: "Turns speech into text, offline",
-            pt: "Transforma fala em texto, offline",
-            lu: "Maacht aus Sprooch Text, offline",
-            de: "Macht aus Sprache Text, offline",
-            fr: "Transforme la parole en texte, hors ligne"
+            en: "Turns speech into text, your way",
+            pt: "Transforma fala em texto, à tua maneira",
+            lu: "Maacht aus Sprooch Text, sou wéi s du wëlls",
+            de: "Macht aus Sprache Text, wie du willst",
+            fr: "Transforme la parole en texte, à votre façon"
         },
         "project.whispflow.does.transcribe.desc": {
-            en: "Your words become text right on your computer using Whisper — no internet required and nothing uploaded.",
-            pt: "As tuas palavras tornam-se texto no teu computador com o Whisper — sem internet e sem nada enviado.",
-            lu: "Deng Wierder ginn um Computer zu Text mam Whisper — keng Internet néideg an näischt eropgelueden.",
-            de: "Deine Worte werden direkt auf deinem Computer mit Whisper zu Text — kein Internet nötig und nichts hochgeladen.",
-            fr: "Vos mots deviennent du texte directement sur votre ordinateur avec Whisper — sans internet et sans rien envoyer."
+            en: "On your own computer with no internet needed, or through a transcription service when you want more speed. You choose for each recording.",
+            pt: "No teu próprio computador, sem precisar de internet, ou através de um serviço de transcrição quando queres mais rapidez. Escolhes em cada gravação.",
+            lu: "Op dengem eegene Computer ouni Internet, oder iwwer e Transkriptiounsservice, wann s du méi Vitess wëlls. Du wiels fir all Opnam.",
+            de: "Auf deinem eigenen Computer ohne Internet, oder über einen Transkriptionsdienst, wenn du mehr Tempo willst. Du entscheidest bei jeder Aufnahme.",
+            fr: "Sur votre propre ordinateur sans internet, ou via un service de transcription quand vous voulez plus de rapidité. Vous choisissez pour chaque enregistrement."
         },
         "project.whispflow.does.summary.title": {
             en: "Summaries with action items",
@@ -152,18 +194,18 @@
             fr: "L'IA extrait les points clés, décisions et tâches pour repartir avec des notes claires au lieu d'un long enregistrement."
         },
         "project.whispflow.does.private.title": {
-            en: "Your audio stays private",
-            pt: "O teu áudio fica privado",
-            lu: "Däin Audio bleift privat",
-            de: "Dein Audio bleibt privat",
-            fr: "Votre audio reste privé"
+            en: "Private by default",
+            pt: "Privado por defeito",
+            lu: "Standardméisseg privat",
+            de: "Standardmäßig privat",
+            fr: "Privé par défaut"
         },
         "project.whispflow.does.private.desc": {
-            en: "Recordings and notes live on your machine. Only the transcript text is ever sent away — just for the summary.",
-            pt: "Gravações e notas ficam na tua máquina. Só o texto da transcrição é enviado — apenas para o resumo.",
-            lu: "Opnamen an Notizen bleiwen op denger Maschinn. Nëmmen den Transkriptiounstext gëtt verschéckt — just fir de Resumé.",
-            de: "Aufnahmen und Notizen bleiben auf deiner Maschine. Nur der Transkripttext wird je verschickt — nur für die Zusammenfassung.",
-            fr: "Enregistrements et notes restent sur votre machine. Seul le texte de la transcription est envoyé — juste pour le résumé."
+            en: "Everything stays on your machine unless you pick an online service. Live captions and full transcripts are set up separately, so you decide what goes where.",
+            pt: "Tudo fica na tua máquina, a não ser que escolhas um serviço online. As legendas ao vivo e as transcrições completas configuram-se à parte, por isso decides o que vai para onde.",
+            lu: "Alles bleift op denger Maschinn, ausser du wiels en Online-Service. Live-Ënnertitelen a komplett Transkriptioune ginn getrennt agestallt, sou datt s du decidéiers, wat wouhinner geet.",
+            de: "Alles bleibt auf deinem Rechner, außer du wählst einen Online-Dienst. Live-Untertitel und vollständige Transkripte werden getrennt eingestellt, so entscheidest du, was wohin geht.",
+            fr: "Tout reste sur votre machine, sauf si vous choisissez un service en ligne. Les sous-titres en direct et les transcriptions complètes se règlent séparément, vous décidez donc de ce qui va où."
         },
 
         /* ---- Technical layer-stack ---- */
@@ -189,18 +231,18 @@
             fr: "Shell de bureau avec capture audio via l'API MediaRecorder, interface de gestion des sessions, visualisation de forme d'onde en direct et stockage de fichiers organisé."
         },
         "project.whispflow.stack.whisper.title": {
-            en: "Local Transcription",
-            pt: "Transcrição Local",
-            lu: "Lokal Transkriptioun",
-            de: "Lokale Transkription",
-            fr: "Transcription locale"
+            en: "Transcription Engines",
+            pt: "Motores de Transcrição",
+            lu: "Transkriptiounsmotoren",
+            de: "Transkriptions-Engines",
+            fr: "Moteurs de transcription"
         },
         "project.whispflow.stack.whisper.body": {
-            en: "Local transcription with multiple Whisper models (tiny → large), multi-language with auto-detection. Works fully offline — no data leaves your device.",
-            pt: "Transcrição local com múltiplos modelos Whisper (tiny → large), multi-idioma com deteção automática. Funciona totalmente offline — nenhum dado sai do dispositivo.",
-            lu: "Lokal Transkriptioun mat verschiddene Whisper-Modellen (tiny → large), multi-Sprooch mat Auto-Detektioun. Funktionéiert komplett offline — keng Daten verloossen den Apparat.",
-            de: "Lokale Transkription mit mehreren Whisper-Modellen (tiny → large), mehrsprachig mit Auto-Erkennung. Funktioniert komplett offline — keine Daten verlassen das Gerät.",
-            fr: "Transcription locale avec plusieurs modèles Whisper (tiny → large), multilingue avec détection automatique. Fonctionne entièrement hors ligne — aucune donnée ne quitte l'appareil."
+            en: "A built-in local engine (faster-whisper or whisper.cpp, models from tiny to large) or any OpenAI-compatible transcription API: Groq, OpenAI, or a self-hosted server. Chosen per run, with a fallback to the local engine if an API fails.",
+            pt: "Um motor local integrado (faster-whisper ou whisper.cpp, modelos de tiny a large) ou qualquer API de transcrição compatível com OpenAI: Groq, OpenAI ou um servidor self-hosted. Escolhido em cada execução, com fallback para o motor local se uma API falhar.",
+            lu: "E agebaute lokale Motor (faster-whisper oder whisper.cpp, Modeller vun tiny bis large) oder all OpenAI-kompatibel Transkriptiouns-API: Groq, OpenAI oder e self-hosted Server. Bei all Laf gewielt, mat engem Fallback op de lokale Motor, wann eng API ausfält.",
+            de: "Eine eingebaute lokale Engine (faster-whisper oder whisper.cpp, Modelle von tiny bis large) oder jede OpenAI-kompatible Transkriptions-API: Groq, OpenAI oder ein selbst gehosteter Server. Pro Durchlauf gewählt, mit Fallback auf die lokale Engine, falls eine API ausfällt.",
+            fr: "Un moteur local intégré (faster-whisper ou whisper.cpp, modèles de tiny à large) ou toute API de transcription compatible OpenAI : Groq, OpenAI ou un serveur auto-hébergé. Choisi à chaque exécution, avec un repli sur le moteur local si une API échoue."
         },
         "project.whispflow.stack.ai.title": {
             en: "AI Summarization",
@@ -210,11 +252,11 @@
             fr: "Synthèse par IA"
         },
         "project.whispflow.stack.ai.body": {
-            en: "Structured output — key points, decisions, action items — from OpenAI, Mistral, or Anthropic. Multi-language summaries, cached to save cost.",
-            pt: "Output estruturado — pontos-chave, decisões, ações — da OpenAI, Mistral ou Anthropic. Resumos multi-idioma, em cache para poupar custos.",
-            lu: "Strukturéierten Output — Haaptpunkten, Decisiounen, Aktiounspunkten — vun OpenAI, Mistral oder Anthropic. Multi-Sprooch Resuméen, gecached fir Käschten ze spueren.",
-            de: "Strukturierter Output — Kernpunkte, Entscheidungen, Aktionspunkte — von OpenAI, Mistral oder Anthropic. Mehrsprachige Zusammenfassungen, gecacht um Kosten zu sparen.",
-            fr: "Sortie structurée — points clés, décisions, actions — depuis OpenAI, Mistral ou Anthropic. Résumés multilingues, mis en cache pour économiser."
+            en: "One AI gateway for summaries in four styles, action items and transcript cleanup. Works with OpenAI, Mistral, Anthropic, Groq, Cohere, Ollama, LM Studio or any OpenAI-compatible endpoint, with model discovery. Only the transcript text is sent.",
+            pt: "Um único gateway de IA para resumos em quatro estilos, ações e limpeza da transcrição. Funciona com OpenAI, Mistral, Anthropic, Groq, Cohere, Ollama, LM Studio ou qualquer endpoint compatível com OpenAI, com descoberta de modelos. Só é enviado o texto da transcrição.",
+            lu: "Een AI-Gateway fir Resuméen a véier Stiler, Aktiounspunkten an d'Botze vun der Transkriptioun. Funktionéiert mat OpenAI, Mistral, Anthropic, Groq, Cohere, Ollama, LM Studio oder all OpenAI-kompatiblen Endpoint, mat Modell-Discovery. Nëmmen den Transkriptiounstext gëtt geschéckt.",
+            de: "Ein KI-Gateway für Zusammenfassungen in vier Stilen, Aktionspunkte und Transkript-Bereinigung. Funktioniert mit OpenAI, Mistral, Anthropic, Groq, Cohere, Ollama, LM Studio oder jedem OpenAI-kompatiblen Endpoint, mit Modellerkennung. Nur der Transkripttext wird gesendet.",
+            fr: "Une passerelle IA unique pour des résumés en quatre styles, les actions et le nettoyage de la transcription. Compatible avec OpenAI, Mistral, Anthropic, Groq, Cohere, Ollama, LM Studio ou tout endpoint compatible OpenAI, avec découverte des modèles. Seul le texte de la transcription est envoyé."
         },
         "project.whispflow.stack.storage.title": {
             en: "Local Storage & Versioning",
@@ -240,11 +282,11 @@
             fr: "L'architecture hybride fonctionne"
         },
         "project.whispflow.lessons.hybrid.desc": {
-            en: "Local-first for privacy and offline use, cloud for intelligence — users get the best of both worlds.",
-            pt: "Local-first para privacidade e uso offline, cloud para inteligência — os utilizadores obtêm o melhor dos dois mundos.",
-            lu: "Local-first fir Privatsphär an Offline-Notzung, Cloud fir Intelligenz — Benotzer kréien dat Bescht vu béide Welten.",
-            de: "Local-first für Privatsphäre und Offline-Nutzung, Cloud für Intelligenz — Benutzer bekommen das Beste aus beiden Welten.",
-            fr: "Local-first pour la confidentialité et l'usage hors ligne, cloud pour l'intelligence — le meilleur des deux mondes."
+            en: "Local by default for privacy and offline use, with cloud engines as an option, so each user picks their own balance of speed, cost and privacy.",
+            pt: "Local por defeito para privacidade e uso offline, com motores na cloud como opção, para que cada utilizador escolha o seu equilíbrio entre velocidade, custo e privacidade.",
+            lu: "Standardméisseg lokal fir Privatsphär an Offline-Notzung, mat Cloud-Motoren als Optioun, sou datt all Benotzer säin eegene Gläichgewiicht tëscht Vitess, Käschten a Privatsphär wielt.",
+            de: "Standardmäßig lokal für Privatsphäre und Offline-Nutzung, mit Cloud-Engines als Option, damit jeder Nutzer seine eigene Balance aus Tempo, Kosten und Privatsphäre wählt.",
+            fr: "Local par défaut pour la confidentialité et l'usage hors ligne, avec des moteurs cloud en option, pour que chacun choisisse son équilibre entre vitesse, coût et confidentialité."
         },
         "project.whispflow.lessons.models.title": {
             en: "Model selection matters",
@@ -290,11 +332,11 @@
         },
 
         "project.whispflow.badge": {
-            en: "TALENT EXHIBITION — PROMA2",
-            pt: "EXPOSIÇÃO DE TALENTOS — PROMA2",
-            lu: "TALENT AUSSTELLUNG — PROMA2",
-            de: "TALENT AUSSTELLUNG — PROMA2",
-            fr: "EXPOSITION DE TALENTS — PROMA2"
+            en: "TALENT EXHIBITION - PROMA2",
+            pt: "EXPOSIÇÃO DE TALENTOS - PROMA2",
+            lu: "TALENT AUSSTELLUNG - PROMA2",
+            de: "TALENT AUSSTELLUNG - PROMA2",
+            fr: "EXPOSITION DE TALENTS - PROMA2"
         },
         "project.whispflow.hero.title": {
             en: "WhispFlow",
@@ -304,11 +346,11 @@
             fr: "WhispFlow"
         },
         "project.whispflow.hero.subtitle": {
-            en: "A desktop application that records audio, transcribes it locally using faster-whisper, and generates structured AI summaries — built for the PROMA2 Talent Exhibition.",
-            pt: "Aplicação desktop que grava áudio, transcreve localmente com faster-whisper e gera resumos IA estruturados — desenvolvida para a Exposição de Talentos PROMA2.",
-            lu: "Desktop Applikatioun déi Audio opnëmmt, et lokal mat faster-whisper transkribéiert, an strukturéiert AI Resuméen generéiert — gebaut fir d'PROMA2 Talent Ausstellung.",
-            de: "Desktop-Anwendung die Audio aufnimmt, lokal mit faster-whisper transkribiert und strukturierte KI-Zusammenfassungen generiert — gebaut für die PROMA2 Talent-Ausstellung.",
-            fr: "Application de bureau qui enregistre l'audio, le transcrit localement avec faster-whisper et génère des résumés IA structurés — conçue pour l'Exposition de Talents PROMA2."
+            en: "I built WhispFlow as a desktop app that records meetings, turns speech into searchable notes, and creates structured summaries. It runs locally by default, and you can plug in cloud or self-hosted engines for transcription and AI. It was my PROMA2 Talent Exhibition project.",
+            pt: "Construí o WhispFlow como uma aplicação desktop que grava reuniões, transforma fala em notas pesquisáveis e cria resumos estruturados. Por defeito corre localmente, e podes ligar motores na cloud ou self-hosted para a transcrição e a IA. Foi o meu projeto para a Exposição de Talentos PROMA2.",
+            lu: "Ech hunn de WhispFlow als Desktop-App gebaut déi Sëtzungen ophëlt, Sprooch an duerchsichbar Notizen verwandelt a strukturéiert Resuméë mécht. Standardméisseg leeft se lokal, an du kanns Cloud- oder self-hosted Motore fir Transkriptioun an AI uschléissen. Et war mäi Projet fir d'PROMA2 Talent Ausstellung.",
+            de: "Ich habe WhispFlow als Desktop-App gebaut, die Meetings aufnimmt, Sprache in durchsuchbare Notizen verwandelt und strukturierte Zusammenfassungen erstellt. Standardmäßig läuft sie lokal, und du kannst Cloud- oder selbst gehostete Engines für Transkription und KI anbinden. Es war mein Projekt für die PROMA2 Talent-Ausstellung.",
+            fr: "J'ai construit WhispFlow comme une application de bureau qui enregistre les réunions, transforme la parole en notes consultables et crée des résumés structurés. Elle tourne en local par défaut, et vous pouvez brancher des moteurs cloud ou auto-hébergés pour la transcription et l'IA. C'était mon projet pour l'Exposition de Talents PROMA2."
         },
         "project.whispflow.problem.title": {
             en: "The Problem",
@@ -318,11 +360,11 @@
             fr: "Le Problème"
         },
         "project.whispflow.problem.body": {
-            en: "During meetings and lectures, important information often gets lost. Taking notes manually splits attention between listening and writing, and reviewing long recordings afterward is time-consuming. This project explores how local AI and cloud services can automate the documentation workflow.",
-            pt: "Durante reuniões e aulas, informações importantes perdem-se frequentemente. Tirar notas manualmente divide a atenção entre ouvir e escrever, e rever gravações longas é demorado. Este projeto explora como IA local e serviços cloud podem automatizar o fluxo de documentação.",
-            lu: "Während Sëtzungen a Virlesunge gi wichteg Informatiounen dacks verluer. Manuell Notizen maachen deelt d'Opmierksamkeet tëscht Nolauschteren a Schreiwen, a laang Opnamen nozeliesen brauch Zäit. Dëse Projet exploréiert wéi lokal AI a Cloud-Servicer de Dokumentatiounsworkflow automatiséiere kënnen.",
-            de: "Während Meetings und Vorlesungen gehen wichtige Informationen oft verloren. Manuelles Notieren teilt die Aufmerksamkeit zwischen Zuhören und Schreiben, und lange Aufnahmen nachträglich durchzugehen ist zeitaufwändig. Dieses Projekt untersucht, wie lokale KI und Cloud-Dienste den Dokumentations-Workflow automatisieren können.",
-            fr: "Pendant les réunions et les cours, des informations importantes se perdent souvent. Prendre des notes manuellement divise l'attention entre écouter et écrire, et revoir de longs enregistrements prend du temps. Ce projet explore comment l'IA locale et les services cloud peuvent automatiser le flux de documentation."
+            en: "During meetings and lectures, important information often gets lost. Taking notes manually splits attention between listening and writing, and reviewing long recordings afterward is time-consuming. I wanted a simple way to leave each session with useful notes instead of another recording to search through.",
+            pt: "Durante reuniões e aulas, informações importantes perdem-se frequentemente. Tirar notas manualmente divide a atenção entre ouvir e escrever, e rever gravações longas é demorado. Queria uma forma simples de terminar cada sessão com notas úteis, em vez de outra gravação para pesquisar.",
+            lu: "Während Sëtzungen a Virlesunge gi wichteg Informatiounen dacks verluer. Manuell Notizen maachen deelt d'Opmierksamkeet tëscht Nolauschteren a Schreiwen, a laang Opnamen nozeliesen brauch Zäit. Ech wollt eng einfach Méiglechkeet fir all Sëtzung mat nëtzlechen Notizen ofzeschléissen, amplaz nach eng Opnam duerchsichen ze mussen.",
+            de: "Während Meetings und Vorlesungen gehen wichtige Informationen oft verloren. Manuelles Notieren teilt die Aufmerksamkeit zwischen Zuhören und Schreiben, und lange Aufnahmen nachträglich durchzugehen ist zeitaufwändig. Ich wollte eine einfache Möglichkeit, jede Sitzung mit brauchbaren Notizen statt einer weiteren durchsuchbaren Aufnahme zu verlassen.",
+            fr: "Pendant les réunions et les cours, des informations importantes se perdent souvent. Prendre des notes manuellement divise l'attention entre écouter et écrire, et revoir de longs enregistrements prend du temps. Je voulais une façon simple de sortir de chaque session avec des notes utiles plutôt qu'un nouvel enregistrement à parcourir."
         },
         "project.whispflow.solution.title": {
             en: "The Solution",
@@ -332,11 +374,11 @@
             fr: "La Solution"
         },
         "project.whispflow.solution.body": {
-            en: "WhispFlow combines local speech-to-text with cloud-based AI summarization. It records audio, transcribes it on-device using faster-whisper, then sends the transcript to a cloud AI provider for structured output — key points, decisions, and action items. The entire workflow runs from a single desktop application, from recording to organized notes ready to share.",
-            pt: "O WhispFlow combina speech-to-text local com resumos IA na cloud. Grava áudio, transcreve no dispositivo com faster-whisper, e depois envia a transcrição a um fornecedor cloud para output estruturado — pontos-chave, decisões e ações. Todo o fluxo corre numa única aplicação desktop, da gravação a notas organizadas prontas a partilhar.",
-            lu: "WhispFlow kombinéiert lokal Speech-to-Text mat Cloud-baséierter AI Zesummefaassung. Et hëlt Audio op, transkribéiert et um Apparat mat faster-whisper, a schéckt dann d'Transkriptioun un e Cloud AI Provider fir strukturéierten Output — Haaptpunkten, Decisiounen an Aktiounspunkten. De ganze Workflow leeft vun enger eenzeger Desktop Applikatioun, vun der Opnam bis zu organiséierten Notizen fäerdeg fir ze deelen.",
-            de: "WhispFlow kombiniert lokale Spracherkennung mit Cloud-basierter KI-Zusammenfassung. Es nimmt Audio auf, transkribiert es auf dem Gerät mit faster-whisper und sendet das Transkript dann an einen Cloud-KI-Anbieter für strukturierten Output — Kernpunkte, Entscheidungen und Aktionspunkte. Der gesamte Workflow läuft in einer einzigen Desktop-Anwendung, von der Aufnahme bis zu organisierten Notizen zum Teilen.",
-            fr: "WhispFlow combine la reconnaissance vocale locale avec la synthèse IA en cloud. Il enregistre l'audio, le transcrit sur l'appareil avec faster-whisper, puis envoie la transcription à un fournisseur IA cloud pour une sortie structurée — points clés, décisions et actions. Tout le flux fonctionne depuis une seule application de bureau, de l'enregistrement aux notes organisées prêtes à partager."
+            en: "I built WhispFlow to turn a meeting or lecture into organized notes: record once, get a transcript, then receive key points, decisions, and action items ready to share. Everything runs on the computer by default, and you choose whether transcription or summaries use an online service.",
+            pt: "Construí o WhispFlow para transformar uma reunião ou aula em notas organizadas: gravar uma vez, obter uma transcrição e depois receber pontos-chave, decisões e ações prontas a partilhar. Por defeito tudo corre no computador, e escolhes se a transcrição ou os resumos usam um serviço online.",
+            lu: "Ech hunn de WhispFlow gebaut fir eng Sëtzung oder Virlesung an organiséiert Notizen ze verwandelen: eemol ophuelen, eng Transkriptioun kréien an duerno Haaptpunkten, Decisiounen an Aktiounspunkten deelen. Standardméisseg leeft alles um Computer, an du wiels, ob Transkriptioun oder Resuméen en Online-Service benotzen.",
+            de: "Ich habe WhispFlow gebaut, um ein Meeting oder eine Vorlesung in organisierte Notizen zu verwandeln: einmal aufnehmen, ein Transkript erhalten und danach Kernpunkte, Entscheidungen und Aktionspunkte zum Teilen bekommen. Standardmäßig läuft alles auf dem Computer, und du entscheidest, ob Transkription oder Zusammenfassungen einen Online-Dienst nutzen.",
+            fr: "J'ai construit WhispFlow pour transformer une réunion ou un cours en notes organisées : enregistrer une fois, obtenir une transcription, puis recevoir les points clés, décisions et actions prêts à partager. Par défaut, tout tourne sur l'ordinateur, et vous choisissez si la transcription ou les résumés passent par un service en ligne."
         },
         "project.whispflow.workflow.title": {
             en: "Core Workflow",
@@ -346,67 +388,46 @@
             fr: "Flux Principal"
         },
         "project.whispflow.workflow.body1": {
-            en: "<strong>Record</strong> — One-click recording or keyboard shortcut (Ctrl+R). Three modes: Microphone, System Audio, or Hybrid. Live waveform and timer during recording.",
-            pt: "<strong>Gravar</strong> — Gravação com um clique ou atalho de teclado (Ctrl+R). Três modos: Microfone, Áudio do Sistema ou Híbrido. Forma de onda e cronómetro em tempo real.",
-            lu: "<strong>Ophuelen</strong> — Een-Klick Opnam oder Tastaturkierzel (Ctrl+R). Dräi Moden: Mikro, System Audio, oder Hybrid. Live Welleform an Timer während der Opnam.",
-            de: "<strong>Aufnehmen</strong> — Ein-Klick-Aufnahme oder Tastenkürzel (Strg+R). Drei Modi: Mikrofon, Systemaudio oder Hybrid. Live-Wellenform und Timer während der Aufnahme.",
-            fr: "<strong>Enregistrer</strong> — Enregistrement en un clic ou raccourci clavier (Ctrl+R). Trois modes : Micro, Audio Système ou Hybride. Forme d'onde et minuteur en direct."
+            en: "<strong>Record</strong> - One-click recording or keyboard shortcut (Ctrl+R). Three modes: Microphone, System Audio, or Hybrid. Audio files can also be imported. Live waveform and timer during recording.",
+            pt: "<strong>Gravar</strong> - Gravação com um clique ou atalho de teclado (Ctrl+R). Três modos: Microfone, Áudio do Sistema ou Híbrido. Também é possível importar ficheiros de áudio. Forma de onda e cronómetro em tempo real.",
+            lu: "<strong>Ophuelen</strong> - Een-Klick Opnam oder Tastaturkierzel (Ctrl+R). Dräi Moden: Mikro, System Audio, oder Hybrid. Audiodateie kënnen och importéiert ginn. Live Welleform an Timer während der Opnam.",
+            de: "<strong>Aufnehmen</strong> - Ein-Klick-Aufnahme oder Tastenkürzel (Strg+R). Drei Modi: Mikrofon, Systemaudio oder Hybrid. Audiodateien lassen sich auch importieren. Live-Wellenform und Timer während der Aufnahme.",
+            fr: "<strong>Enregistrer</strong> - Enregistrement en un clic ou raccourci clavier (Ctrl+R). Trois modes : Micro, Audio Système ou Hybride. Les fichiers audio peuvent aussi être importés. Forme d'onde et minuteur en direct."
         },
         "project.whispflow.workflow.body2": {
-            en: "<strong>Transcribe</strong> — Local transcription using faster-whisper. Choose your model (tiny to large) based on speed vs. accuracy. Multi-language with auto-detection. Live transcription available during recording.",
-            pt: "<strong>Transcrever</strong> — Transcrição local usando faster-whisper. Escolhe o modelo (tiny a large) baseado em velocidade vs. precisão. Multi-idioma com deteção automática. Transcrição em tempo real durante a gravação.",
-            lu: "<strong>Transkribéieren</strong> — Lokal Transkriptioun mat faster-whisper. Wiel deen Modell (tiny bis large) baséiert op Geschwindegkeet vs. Genauegkeet. Multi-Sprooch mat Auto-Detektioun. Live Transkriptioun während der Opnam.",
-            de: "<strong>Transkribieren</strong> — Lokale Transkription mit faster-whisper. Modell wählen (tiny bis large) basierend auf Geschwindigkeit vs. Genauigkeit. Mehrsprachig mit Auto-Erkennung. Live-Transkription während der Aufnahme.",
-            fr: "<strong>Transcrire</strong> — Transcription locale avec faster-whisper. Choisissez le modèle (tiny à large) selon vitesse vs. précision. Multi-langue avec détection auto. Transcription en direct pendant l'enregistrement."
+            en: "<strong>Transcribe</strong> - Pick the engine for each run: the local engine (faster-whisper or whisper.cpp, tiny to large models) or a transcription API such as Groq, OpenAI or a self-hosted server. Live captions have their own setting, so they can use a different engine than full transcripts.",
+            pt: "<strong>Transcrever</strong> - Escolhe o motor em cada execução: o motor local (faster-whisper ou whisper.cpp, modelos tiny a large) ou uma API de transcrição como Groq, OpenAI ou um servidor self-hosted. As legendas ao vivo têm a sua própria definição, por isso podem usar um motor diferente das transcrições completas.",
+            lu: "<strong>Transkribéieren</strong> - Wiel de Motor bei all Laf: de lokale Motor (faster-whisper oder whisper.cpp, Modeller vun tiny bis large) oder eng Transkriptiouns-API wéi Groq, OpenAI oder e self-hosted Server. Live-Ënnertitelen hunn hir eegen Astellung, sou datt se en anere Motor wéi déi komplett Transkriptioune benotze kënnen.",
+            de: "<strong>Transkribieren</strong> - Engine pro Durchlauf wählen: die lokale Engine (faster-whisper oder whisper.cpp, Modelle von tiny bis large) oder eine Transkriptions-API wie Groq, OpenAI oder ein selbst gehosteter Server. Live-Untertitel haben eine eigene Einstellung und können daher eine andere Engine nutzen als vollständige Transkripte.",
+            fr: "<strong>Transcrire</strong> - Choisissez le moteur à chaque exécution : le moteur local (faster-whisper ou whisper.cpp, modèles tiny à large) ou une API de transcription comme Groq, OpenAI ou un serveur auto-hébergé. Les sous-titres en direct ont leur propre réglage et peuvent donc utiliser un autre moteur que les transcriptions complètes."
         },
         "project.whispflow.workflow.body3": {
-            en: "<strong>Summarize</strong> — AI generates structured output: key points, decisions, action items, and a full summary. Pick from 3 providers. Generate in any language. Results are cached to save API costs.",
-            pt: "<strong>Resumir</strong> — A IA gera output estruturado: pontos-chave, decisões, ações e um resumo completo. Escolhe entre 3 fornecedores. Gera em qualquer idioma. Resultados em cache para poupar custos.",
-            lu: "<strong>Zesummefaassen</strong> — AI generéiert strukturéierten Output: Haaptpunkten, Decisiounen, Aktiounspunkten an e vollstännege Resumé. Wiel aus 3 Provideren. Generéier an all Sprooch. Resultater ginn gecached fir API-Käschten ze spueren.",
-            de: "<strong>Zusammenfassen</strong> — KI generiert strukturierten Output: Kernpunkte, Entscheidungen, Aktionspunkte und eine vollständige Zusammenfassung. 3 Anbieter zur Wahl. In jeder Sprache generieren. Ergebnisse werden gecacht um API-Kosten zu sparen.",
-            fr: "<strong>Résumer</strong> — L'IA génère une sortie structurée : points clés, décisions, actions et un résumé complet. 3 fournisseurs au choix. Génération dans n'importe quelle langue. Résultats mis en cache pour économiser les coûts API."
+            en: "<strong>Summarize</strong> - AI generates key points, decisions, action items and a full summary in four styles. Choose from eight providers, cloud or fully local, or add any OpenAI-compatible endpoint. Generate in any language.",
+            pt: "<strong>Resumir</strong> - A IA gera pontos-chave, decisões, ações e um resumo completo em quatro estilos. Escolhe entre oito fornecedores, na cloud ou totalmente locais, ou adiciona qualquer endpoint compatível com OpenAI. Gera em qualquer idioma.",
+            lu: "<strong>Zesummefaassen</strong> - AI generéiert Haaptpunkten, Decisiounen, Aktiounspunkten an e vollstännege Resumé a véier Stiler. Wiel aus aacht Provideren, an der Cloud oder komplett lokal, oder füüg all OpenAI-kompatiblen Endpoint derbäi. Generéier an all Sprooch.",
+            de: "<strong>Zusammenfassen</strong> - KI generiert Kernpunkte, Entscheidungen, Aktionspunkte und eine vollständige Zusammenfassung in vier Stilen. Acht Anbieter zur Wahl, in der Cloud oder vollständig lokal, oder einen beliebigen OpenAI-kompatiblen Endpoint hinzufügen. In jeder Sprache generieren.",
+            fr: "<strong>Résumer</strong> - L'IA génère points clés, décisions, actions et un résumé complet en quatre styles. Huit fournisseurs au choix, cloud ou entièrement locaux, ou ajoutez tout endpoint compatible OpenAI. Génération dans n'importe quelle langue."
         },
         "project.whispflow.workflow.body4": {
-            en: "<strong>Export</strong> — Copy to clipboard or export to file. Open session folders directly in file explorer. Share with colleagues or classmates.",
-            pt: "<strong>Exportar</strong> — Copiar para a área de transferência ou exportar para ficheiro. Abrir pastas de sessão diretamente no explorador. Partilhar com colegas.",
-            lu: "<strong>Exportéieren</strong> — An d'Clipboard kopéieren oder an e Fichier exportéieren. Sessiounsdossieren direkt am Datei-Explorer opmaachen. Mat Kollegen deelen.",
-            de: "<strong>Exportieren</strong> — In die Zwischenablage kopieren oder als Datei exportieren. Sitzungsordner direkt im Datei-Explorer öffnen. Mit Kollegen teilen.",
-            fr: "<strong>Exporter</strong> — Copier dans le presse-papiers ou exporter en fichier. Ouvrir les dossiers de session directement dans l'explorateur. Partager avec les collègues."
-        },
-        "project.whispflow.features.title": {
-            en: "Key Features",
-            pt: "Funcionalidades Principais",
-            lu: "Haaptfunktiounen",
-            de: "Hauptfunktionen",
-            fr: "Fonctionnalités Clés"
-        },
-        "project.whispflow.features.recording": {
-            en: "One-click recording with 3 audio modes (mic, system, hybrid)",
-            pt: "Gravação com um clique em 3 modos (micro, sistema, híbrido)",
-            lu: "Een-Klick Opnam mat 3 Audio-Moden (Mikro, System, Hybrid)",
-            de: "Ein-Klick-Aufnahme mit 3 Audio-Modi (Mikro, System, Hybrid)",
-            fr: "Enregistrement en un clic avec 3 modes audio (micro, système, hybride)"
+            en: "<strong>Export</strong> - Export to PDF, DOCX or TXT with the transcript, summary and action items. Share with colleagues or classmates.",
+            pt: "<strong>Exportar</strong> - Exporta para PDF, DOCX ou TXT com a transcrição, o resumo e as ações. Partilha com colegas.",
+            lu: "<strong>Exportéieren</strong> - Als PDF, DOCX oder TXT exportéieren, mat Transkriptioun, Resumé an Aktiounspunkten. Mat Kollegen deelen.",
+            de: "<strong>Exportieren</strong> - Als PDF, DOCX oder TXT exportieren, mit Transkript, Zusammenfassung und Aktionspunkten. Mit Kollegen teilen.",
+            fr: "<strong>Exporter</strong> - Exporter en PDF, DOCX ou TXT avec la transcription, le résumé et les actions. Partager avec les collègues."
         },
         "project.whispflow.features.transcription": {
-            en: "Local transcription with multiple Whisper models — works offline",
-            pt: "Transcrição local com múltiplos modelos Whisper — funciona offline",
-            lu: "Lokal Transkriptioun mat verschiddene Whisper Modellen — funktionéiert offline",
-            de: "Lokale Transkription mit mehreren Whisper-Modellen — funktioniert offline",
-            fr: "Transcription locale avec plusieurs modèles Whisper — fonctionne hors ligne"
+            en: "Local or API transcription, chosen per run",
+            pt: "Transcrição local ou por API, escolhida em cada execução",
+            lu: "Lokal oder API-Transkriptioun, bei all Laf gewielt",
+            de: "Lokale oder API-Transkription, pro Durchlauf gewählt",
+            fr: "Transcription locale ou par API, au choix à chaque exécution"
         },
         "project.whispflow.features.summaries": {
-            en: "AI summaries from 3 providers with multi-language support",
-            pt: "Resumos IA de 3 fornecedores com suporte multi-idioma",
-            lu: "AI Zesummefaassungen vun 3 Provideren mat Multi-Sprooch Support",
-            de: "KI-Zusammenfassungen von 3 Anbietern mit Mehrsprachunterstützung",
-            fr: "Résumés IA de 3 fournisseurs avec support multilingue"
-        },
-        "project.whispflow.features.versioning": {
-            en: "Versioned transcripts and summaries — re-transcribe without losing data",
-            pt: "Transcrições e resumos versionados — retranscrever sem perder dados",
-            lu: "Versionéiert Transkriptiounen a Resuméen — nei transkribéieren ouni Daten ze verléieren",
-            de: "Versionierte Transkripte und Zusammenfassungen — neu transkribieren ohne Datenverlust",
-            fr: "Transcriptions et résumés versionnés — retranscrire sans perdre de données"
+            en: "AI summaries from eight providers, cloud or local",
+            pt: "Resumos IA de oito fornecedores, cloud ou locais",
+            lu: "AI Zesummefaassunge vun aacht Provideren, Cloud oder lokal",
+            de: "KI-Zusammenfassungen von acht Anbietern, Cloud oder lokal",
+            fr: "Résumés IA de huit fournisseurs, cloud ou locaux"
         },
         "project.whispflow.features.sessions": {
             en: "Session management with search, tags, sorting, and context menus",
@@ -415,26 +436,12 @@
             de: "Sitzungsverwaltung mit Suche, Tags, Sortierung und Kontextmenüs",
             fr: "Gestion des sessions avec recherche, tags, tri et menus contextuels"
         },
-        "project.whispflow.features.export": {
-            en: "Export and sharing: clipboard, file, or open folder directly",
-            pt: "Exportação e partilha: clipboard, ficheiro, ou abrir pasta diretamente",
-            lu: "Exportéieren a Deelen: Clipboard, Fichier, oder Dossier direkt opmaachen",
-            de: "Export und Teilen: Zwischenablage, Datei oder Ordner direkt öffnen",
-            fr: "Export et partage : presse-papiers, fichier, ou ouvrir le dossier directement"
-        },
-        "project.whispflow.versioning.title": {
-            en: "Versioned Transcripts",
-            pt: "Transcrições Versionadas",
-            lu: "Versionéiert Transkriptiounen",
-            de: "Versionierte Transkripte",
-            fr: "Transcriptions Versionnées"
-        },
         "project.whispflow.versioning.body": {
-            en: "Re-transcribe with a different model or language — no data is overwritten. Switch between transcript versions (v1, v2, v3...) via dropdown. Each version tracks the model, language, and timestamp. Summaries are keyed by transcript version and language (e.g. v1_en, v2_fr).",
-            pt: "Retranscreve com um modelo ou idioma diferente — nenhum dado é sobrescrito. Alterna entre versões (v1, v2, v3...) via dropdown. Cada versão regista o modelo, idioma e timestamp. Resumos são indexados por versão + idioma (ex: v1_en, v2_fr).",
-            lu: "Nei transkribéieren mat engem anere Modell oder Sprooch — keng Daten ginn iwwerschriwwen. Wiesselt tëscht Transkriptiounsversiounen (v1, v2, v3...) via Dropdown. All Versioun trackt de Modell, Sprooch an Timestamp. Resuméen gi geschlësselt no Versioun + Sprooch (z.B. v1_en, v2_fr).",
-            de: "Neu transkribieren mit einem anderen Modell oder Sprache — keine Daten werden überschrieben. Zwischen Versionen (v1, v2, v3...) per Dropdown wechseln. Jede Version speichert Modell, Sprache und Zeitstempel. Zusammenfassungen sind nach Version + Sprache indexiert (z.B. v1_en, v2_fr).",
-            fr: "Retranscrire avec un modèle ou langue différente — aucune donnée n'est écrasée. Basculer entre les versions (v1, v2, v3...) via menu déroulant. Chaque version enregistre le modèle, la langue et l'horodatage. Les résumés sont indexés par version + langue (ex : v1_en, v2_fr)."
+            en: "Re-transcribe with a different model or language - no data is overwritten. Switch between transcript versions (v1, v2, v3...) via dropdown. Each version tracks the model, language, and timestamp. Summaries are keyed by transcript version and language (e.g. v1_en, v2_fr).",
+            pt: "Retranscreve com um modelo ou idioma diferente - nenhum dado é sobrescrito. Alterna entre versões (v1, v2, v3...) via dropdown. Cada versão regista o modelo, idioma e timestamp. Resumos são indexados por versão + idioma (ex: v1_en, v2_fr).",
+            lu: "Nei transkribéieren mat engem anere Modell oder Sprooch - keng Daten ginn iwwerschriwwen. Wiesselt tëscht Transkriptiounsversiounen (v1, v2, v3...) via Dropdown. All Versioun trackt de Modell, Sprooch an Timestamp. Resuméen gi geschlësselt no Versioun + Sprooch (z.B. v1_en, v2_fr).",
+            de: "Neu transkribieren mit einem anderen Modell oder Sprache - keine Daten werden überschrieben. Zwischen Versionen (v1, v2, v3...) per Dropdown wechseln. Jede Version speichert Modell, Sprache und Zeitstempel. Zusammenfassungen sind nach Version + Sprache indexiert (z.B. v1_en, v2_fr).",
+            fr: "Retranscrire avec un modèle ou langue différente - aucune donnée n'est écrasée. Basculer entre les versions (v1, v2, v3...) via menu déroulant. Chaque version enregistre le modèle, la langue et l'horodatage. Les résumés sont indexés par version + langue (ex : v1_en, v2_fr)."
         },
         "project.whispflow.learned.title": {
             en: "Lessons Learned",
@@ -442,34 +449,6 @@
             lu: "Léieren geléiert",
             de: "Gelernte Lektionen",
             fr: "Leçons Apprises"
-        },
-        "project.whispflow.learned.hybrid": {
-            en: "<strong>Hybrid architecture works</strong> — Local-first for privacy and offline use, cloud for intelligence. Users get the best of both worlds.",
-            pt: "<strong>Arquitetura híbrida funciona</strong> — Local-first para privacidade e uso offline, cloud para inteligência. Os utilizadores obtêm o melhor dos dois mundos.",
-            lu: "<strong>Hybrid Architektur funktionéiert</strong> — Local-first fir Privatsphär an Offline-Notzung, Cloud fir Intelligenz. Benotzer kréien dat Bescht vu béide Welten.",
-            de: "<strong>Hybride Architektur funktioniert</strong> — Local-first für Privatsphäre und Offline-Nutzung, Cloud für Intelligenz. Benutzer bekommen das Beste aus beiden Welten.",
-            fr: "<strong>L'architecture hybride fonctionne</strong> — Local-first pour la vie privée et l'utilisation hors ligne, cloud pour l'intelligence. Les utilisateurs profitent du meilleur des deux mondes."
-        },
-        "project.whispflow.learned.models": {
-            en: "<strong>Model selection matters</strong> — Giving users a choice between speed and accuracy (tiny vs. large Whisper models) solved the hardware limitation problem elegantly.",
-            pt: "<strong>A seleção do modelo importa</strong> — Dar aos utilizadores escolha entre velocidade e precisão (modelos tiny vs. large) resolveu elegantemente o problema de limitações de hardware.",
-            lu: "<strong>Modell-Auswiel ass wichteg</strong> — De Benotzer eng Wiel tëscht Geschwindegkeet an Genauegkeet ze ginn (tiny vs. large Whisper Modellen) huet d'Hardware-Limitatiounsproblem elegant geléist.",
-            de: "<strong>Modellauswahl ist wichtig</strong> — Den Benutzern die Wahl zwischen Geschwindigkeit und Genauigkeit zu geben (tiny vs. large Whisper-Modelle) löste das Hardware-Limitierungsproblem elegant.",
-            fr: "<strong>Le choix du modèle compte</strong> — Donner aux utilisateurs le choix entre vitesse et précision (modèles Whisper tiny vs. large) a résolu élégamment le problème des limitations matérielles."
-        },
-        "project.whispflow.learned.versioning": {
-            en: "<strong>Never overwrite user data</strong> — The versioning system means you can always go back. Users trust the tool more when they know nothing gets deleted.",
-            pt: "<strong>Nunca sobrescrever dados do utilizador</strong> — O sistema de versionamento significa que podes sempre voltar atrás. Os utilizadores confiam mais na ferramenta quando sabem que nada é apagado.",
-            lu: "<strong>Ni Benotzerdaten iwwerschreiwen</strong> — De Versionéierungssystem bedeit datt een ëmmer zréck ka goen. Benotzer vertrauen dem Tool méi wann se wëssen datt näischt geläscht gëtt.",
-            de: "<strong>Nie Benutzerdaten überschreiben</strong> — Das Versionierungssystem bedeutet, dass man immer zurückgehen kann. Benutzer vertrauen dem Tool mehr, wenn sie wissen, dass nichts gelöscht wird.",
-            fr: "<strong>Ne jamais écraser les données utilisateur</strong> — Le système de versionnage permet de toujours revenir en arrière. Les utilisateurs font plus confiance à l'outil quand ils savent que rien n'est supprimé."
-        },
-        "project.whispflow.learned.caching": {
-            en: "<strong>Cache everything expensive</strong> — Caching AI summaries by transcript version + language prevents unnecessary API calls and keeps costs under control.",
-            pt: "<strong>Cache em tudo que é caro</strong> — Fazer cache dos resumos IA por versão + idioma evita chamadas API desnecessárias e mantém os custos controlados.",
-            lu: "<strong>Alles cache wat deier ass</strong> — AI Resuméen no Transkriptiounsversioun + Sprooch ze cachen verhënnert onnéideg API-Opriff a hält d'Käschten ënner Kontroll.",
-            de: "<strong>Alles Teure cachen</strong> — KI-Zusammenfassungen nach Transkriptversion + Sprache zu cachen verhindert unnötige API-Aufrufe und hält die Kosten unter Kontrolle.",
-            fr: "<strong>Mettre en cache tout ce qui coûte cher</strong> — Cacher les résumés IA par version + langue évite les appels API inutiles et garde les coûts sous contrôle."
         },
         "project.whispflow.phases.title": {
             en: "Project Phases",
@@ -479,18 +458,18 @@
             fr: "Phases du Projet"
         },
         "project.whispflow.phases.body1": {
-            en: "<strong>Phase 1 (Current) — Local-First:</strong> All core features are implemented and working. Desktop recording, local transcription, AI summaries, versioning, session management, and export.",
-            pt: "<strong>Fase 1 (Atual) — Local-First:</strong> Todas as funcionalidades core estão implementadas e a funcionar. Gravação desktop, transcrição local, resumos IA, versionamento, gestão de sessões e exportação.",
-            lu: "<strong>Phase 1 (Aktuell) — Local-First:</strong> All Kär-Funktiounen sinn implementéiert a funktionéieren. Desktop Opnam, lokal Transkriptioun, AI Resuméen, Versionéierung, Sessiounsmanagement an Export.",
-            de: "<strong>Phase 1 (Aktuell) — Local-First:</strong> Alle Kernfunktionen sind implementiert und funktionieren. Desktop-Aufnahme, lokale Transkription, KI-Zusammenfassungen, Versionierung, Sitzungsverwaltung und Export.",
-            fr: "<strong>Phase 1 (Actuelle) — Local-First :</strong> Toutes les fonctionnalités principales sont implémentées et fonctionnelles. Enregistrement bureau, transcription locale, résumés IA, versionnage, gestion des sessions et export."
+            en: "<strong>Phase 1 (Done) - Local-First:</strong> Desktop recording, local transcription, AI summaries, versioning, session management and export.",
+            pt: "<strong>Fase 1 (Concluída) - Local-First:</strong> Gravação desktop, transcrição local, resumos IA, versionamento, gestão de sessões e exportação.",
+            lu: "<strong>Phase 1 (Fäerdeg) - Local-First:</strong> Desktop Opnam, lokal Transkriptioun, AI Resuméen, Versionéierung, Sessiounsmanagement an Export.",
+            de: "<strong>Phase 1 (Abgeschlossen) - Local-First:</strong> Desktop-Aufnahme, lokale Transkription, KI-Zusammenfassungen, Versionierung, Sitzungsverwaltung und Export.",
+            fr: "<strong>Phase 1 (Terminée) - Local-First :</strong> Enregistrement bureau, transcription locale, résumés IA, versionnage, gestion des sessions et export."
         },
         "project.whispflow.phases.body2": {
-            en: "<strong>Phase 2 (Planned) — Cloud-First:</strong> Cloud storage, remote transcription, cross-device sync, user accounts, collaboration, and offline fallback mode.",
-            pt: "<strong>Fase 2 (Planeada) — Cloud-First:</strong> Armazenamento cloud, transcrição remota, sincronização entre dispositivos, contas de utilizador, colaboração e modo offline de fallback.",
-            lu: "<strong>Phase 2 (Geplangt) — Cloud-First:</strong> Cloud Storage, Remote Transkriptioun, Cross-Device Sync, Benotzerkonten, Kollaboratioun an Offline Fallback Modus.",
-            de: "<strong>Phase 2 (Geplant) — Cloud-First:</strong> Cloud-Speicher, Remote-Transkription, geräteübergreifende Synchronisation, Benutzerkonten, Zusammenarbeit und Offline-Fallback-Modus.",
-            fr: "<strong>Phase 2 (Prévue) — Cloud-First :</strong> Stockage cloud, transcription à distance, synchronisation multi-appareils, comptes utilisateur, collaboration et mode hors ligne de secours."
+            en: "<strong>Phase 2 (In progress) - Open Engines:</strong> Transcription APIs (Groq, OpenAI, self-hosted), separate live captions, a local fallback when an API fails, and one provider list shared by transcription and AI are working. Cloud storage, sync, accounts and collaboration are still planned.",
+            pt: "<strong>Fase 2 (Em curso) - Motores Abertos:</strong> APIs de transcrição (Groq, OpenAI, self-hosted), legendas ao vivo separadas, um fallback local quando uma API falha e uma lista única de fornecedores, partilhada pela transcrição e pela IA, já funcionam. Armazenamento cloud, sincronização, contas e colaboração continuam planeados.",
+            lu: "<strong>Phase 2 (Am Gaang) - Oppe Motoren:</strong> Transkriptiouns-APIen (Groq, OpenAI, self-hosted), getrennt Live-Ënnertitelen, e lokale Fallback, wann eng API ausfält, an eng eenzeg Provider-Lëscht fir Transkriptioun an AI funktionéiere schonn. Cloud Storage, Sync, Konten a Kollaboratioun sinn nach geplangt.",
+            de: "<strong>Phase 2 (In Arbeit) - Offene Engines:</strong> Transkriptions-APIs (Groq, OpenAI, selbst gehostet), getrennte Live-Untertitel, ein lokaler Fallback bei API-Ausfall und eine gemeinsame Anbieterliste für Transkription und KI funktionieren bereits. Cloud-Speicher, Synchronisation, Konten und Zusammenarbeit sind weiterhin geplant.",
+            fr: "<strong>Phase 2 (En cours) - Moteurs ouverts :</strong> les API de transcription (Groq, OpenAI, auto-hébergé), les sous-titres en direct séparés, un repli local quand une API échoue et une liste de fournisseurs unique partagée par la transcription et l'IA fonctionnent. Le stockage cloud, la synchronisation, les comptes et la collaboration restent prévus."
         },
         "project.whispflow.context.title": {
             en: "About This Project",
@@ -500,11 +479,11 @@
             fr: "À Propos de ce Projet"
         },
         "project.whispflow.context.body": {
-            en: "Built for the <strong>Talent Exhibition</strong> (PROMA2 course) in the BTS Cloud Computing programme at Lycée Guillaume Kroll. The goal: pick a real problem, design a technical solution, and deliver a working prototype that applies cloud and AI concepts from the semester.",
-            pt: "Desenvolvido para a <strong>Exposição de Talentos</strong> (curso PROMA2) no programa BTS Cloud Computing no Lycée Guillaume Kroll. O objetivo: escolher um problema real, conceber uma solução técnica e entregar um protótipo funcional que aplique conceitos de cloud e IA do semestre.",
-            lu: "Gebaut fir d'<strong>Talent Ausstellung</strong> (PROMA2 Cours) am BTS Cloud Computing Programm um Lycée Guillaume Kroll. D'Zil: e reelle Problem erkennen, eng technesch Léisung designen, an e funktionéierende Prototyp ofliwweren deen Cloud- an AI-Konzepter vum Semester applizéiert.",
-            de: "Gebaut für die <strong>Talent-Ausstellung</strong> (PROMA2-Kurs) im BTS Cloud Computing Programm am Lycée Guillaume Kroll. Das Ziel: ein reales Problem wählen, eine technische Lösung entwerfen und einen funktionierenden Prototyp liefern, der Cloud- und KI-Konzepte des Semesters anwendet.",
-            fr: "Conçu pour l'<strong>Exposition de Talents</strong> (cours PROMA2) dans le programme BTS Cloud Computing au Lycée Guillaume Kroll. L'objectif : choisir un problème réel, concevoir une solution technique et livrer un prototype fonctionnel qui applique les concepts cloud et IA du semestre."
+            en: "I built WhispFlow for the <strong>Talent Exhibition</strong> (PROMA2 course) in the BTS Cloud Computing programme at Lycée Guillaume Kroll. I chose a real documentation problem, designed a working solution, and applied the cloud and AI concepts from the semester.",
+            pt: "Construí o WhispFlow para a <strong>Exposição de Talentos</strong> (curso PROMA2) no programa BTS Cloud Computing do Lycée Guillaume Kroll. Escolhi um problema real de documentação, concebi uma solução funcional e apliquei os conceitos de cloud e IA do semestre.",
+            lu: "Ech hunn de WhispFlow fir d'<strong>Talent Ausstellung</strong> (PROMA2 Cours) am BTS Cloud Computing Programm um Lycée Guillaume Kroll gebaut. Ech hunn e reelle Dokumentatiounsproblem gewielt, eng funktionéierend Léisung entworf an d'Cloud- an AI-Konzepter vum Semester applizéiert.",
+            de: "Ich habe WhispFlow für die <strong>Talent-Ausstellung</strong> (PROMA2-Kurs) im BTS Cloud Computing Programm am Lycée Guillaume Kroll gebaut. Ich wählte ein reales Dokumentationsproblem, entwarf eine funktionierende Lösung und wandte die Cloud- und KI-Konzepte des Semesters an.",
+            fr: "J'ai construit WhispFlow pour l'<strong>Exposition de Talents</strong> (cours PROMA2) du programme BTS Cloud Computing au Lycée Guillaume Kroll. J'ai choisi un problème réel de documentation, conçu une solution fonctionnelle et appliqué les concepts cloud et IA du semestre."
         },
         "project.whispflow.sidebar.feature1": {
             en: "One-click audio recording",
@@ -514,18 +493,25 @@
             fr: "Enregistrement audio en un clic"
         },
         "project.whispflow.sidebar.feature2": {
-            en: "Local AI transcription",
-            pt: "Transcrição IA local",
-            lu: "Lokal AI Transkriptioun",
-            de: "Lokale KI-Transkription",
-            fr: "Transcription IA locale"
+            en: "Local or API transcription",
+            pt: "Transcrição local ou por API",
+            lu: "Lokal oder API-Transkriptioun",
+            de: "Lokale oder API-Transkription",
+            fr: "Transcription locale ou par API"
         },
         "project.whispflow.sidebar.feature3": {
-            en: "3 AI summary providers",
-            pt: "3 fornecedores de resumos IA",
-            lu: "3 AI Resumé Provideren",
-            de: "3 KI-Zusammenfassungsanbieter",
-            fr: "3 fournisseurs de résumés IA"
+            en: "8 AI providers, cloud or local",
+            pt: "8 fornecedores de IA, cloud ou locais",
+            lu: "8 AI Provideren, Cloud oder lokal",
+            de: "8 KI-Anbieter, Cloud oder lokal",
+            fr: "8 fournisseurs d'IA, cloud ou locaux"
+        },
+        "project.whispflow.sidebar.feature9": {
+            en: "Separate live captions",
+            pt: "Legendas ao vivo separadas",
+            lu: "Getrennt Live-Ënnertitelen",
+            de: "Separate Live-Untertitel",
+            fr: "Sous-titres en direct séparés"
         },
         "project.whispflow.sidebar.feature4": {
             en: "Versioned transcripts",
@@ -549,11 +535,11 @@
             fr: "Gestion des sessions"
         },
         "project.whispflow.sidebar.feature7": {
-            en: "Privacy-first architecture",
-            pt: "Arquitetura privacy-first",
-            lu: "Privacy-first Architektur",
-            de: "Privacy-first-Architektur",
-            fr: "Architecture privacy-first"
+            en: "Private by default",
+            pt: "Privado por defeito",
+            lu: "Standardméisseg privat",
+            de: "Standardmäßig privat",
+            fr: "Privé par défaut"
         },
         "project.whispflow.sidebar.feature8": {
             en: "Export & sharing",

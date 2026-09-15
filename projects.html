@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark" data-lang="en">
 <head>
+    <!-- Theme bootstrap: apply saved/system theme before first paint -->
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
+            } catch (_) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
     <title>Projects | VidGuiCode</title>
-    <meta name="description" content="Portfolio projects by Guilherme Videira Marques - Infrastructure, Web Development, IoT, and School Projects showcasing technical skills and real-world applications.">
+    <meta name="description" content="Portfolio projects by Guilherme Videira Marques - Infrastructure, Web Development, IoT, and School Projects showcasing real-world technical work.">
     <meta name="keywords" content="Projects, Portfolio, Infrastructure, Web Development, IoT, Cloud Computing, Homelab, Projects Showcase">
     <link rel="canonical" href="https://vidguicode.github.io/projects">
     
@@ -13,6 +24,14 @@
     <meta property="og:url" content="https://vidguicode.github.io/projects">
     <meta property="og:title" content="Projects | VidGuiCode">
     <meta property="og:description" content="Portfolio projects showcasing technical skills and real-world applications.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/hero-profile.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/projects">
+    <meta name="twitter:title" content="Projects | VidGuiCode">
+    <meta name="twitter:description" content="Portfolio projects showcasing technical skills and real-world applications.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/hero-profile.webp">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,30 +77,10 @@
         <section class="projects-hero">
             <div class="hero-eyebrow">
                 <span class="badge" data-i18n="projects.badge">PORTFOLIO PROJECTS</span>
-                <span class="hero-eyebrow-meta">
-                    <span id="hero-year-range">—</span>
-                </span>
             </div>
 
             <h1 data-i18n="projects.heading">Projects</h1>
-            <p class="subtitle" data-i18n="projects.subtitle">A collection of projects showcasing technical skills, from infrastructure and homelab setups to web development and IoT systems. Filter by category to explore specific areas.</p>
-
-            <div class="hero-metrics" aria-label="Portfolio metrics">
-                <div class="hero-metric">
-                    <span class="hero-metric-value" id="total-projects">0</span>
-                    <span class="hero-metric-label" data-i18n="projects.stats.total">Total Projects</span>
-                </div>
-                <div class="hero-metric-divider" aria-hidden="true"></div>
-                <div class="hero-metric">
-                    <span class="hero-metric-value" id="total-categories">0</span>
-                    <span class="hero-metric-label" data-i18n="projects.stats.categories">Categories</span>
-                </div>
-                <div class="hero-metric-divider" aria-hidden="true"></div>
-                <div class="hero-metric">
-                    <span class="hero-metric-value" id="years-active">0</span>
-                    <span class="hero-metric-label" data-i18n="projects.stats.years">Years Active</span>
-                </div>
-            </div>
+            <p class="subtitle" data-i18n="projects.subtitle">A project directory spanning infrastructure, open-source tools, web work, AI, and school projects. Use the filters to explore it.</p>
         </section>
 
         <section class="featured-projects" id="featured-section" style="display: none;"></section>
@@ -130,8 +129,8 @@
         </div>
 
         <!-- Modal for Project Details -->
-        <div id="project-modal" class="modal">
-            <div class="modal-content">
+        <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-name">
+            <div class="modal-content" role="document">
                 <button class="modal-close" aria-label="Close modal">
                     <i data-lucide="x"></i>
                 </button>
@@ -221,7 +220,8 @@
 
             // Update stats
             const allProjects = getAllProjects();
-            document.getElementById('total-projects').textContent = allProjects.length;
+            const totalProjects = document.getElementById('total-projects');
+            if (totalProjects) totalProjects.textContent = allProjects.length;
             updateHeroStats(allProjects);
 
             // Order the grid via the shared sorter (respects the Recent toggle).
@@ -395,6 +395,20 @@
             }, 100);
         });
 
+        // Keep status icons limited to the names supported by assets/js/icons.js.
+        // The renderer replaces <i> with SVG, so size the source element inline
+        // to keep the generated SVG aligned with the status text as well.
+        function getProjectStatusIcon(status) {
+            if (status === 'released') return 'shield-check';
+            if (status === 'maintained') return 'activity';
+            return 'clock';
+        }
+
+        function renderProjectStatusIcon(status) {
+            const icon = getProjectStatusIcon(status);
+            return `<i data-lucide="${icon}" class="status-icon" style="width: 12px; height: 12px; flex: 0 0 12px;" aria-hidden="true"></i>`;
+        }
+
         function createProjectRow(project) {
             const row = document.createElement('div');
             row.className = 'project-row';
@@ -417,15 +431,15 @@
                 categoryHTML = `<span class="project-category">${categoryName}</span>`;
             }
             
-            // Title badges (score, in-development) - appear next to project name
+            // Title badges (score, active status) - appear next to project name
             let titleBadges = '';
             if (project.score) {
                 titleBadges += ` <span class="score-badge">${project.score}</span>`;
             }
-            if (project.status === 'in-development') {
-                const statusText = project.statusKey ? t(project.statusKey, 'In Development') : 'In Development';
-                titleBadges += ` <span class="project-status-badge status-in-development title-badge">
-                    <i data-lucide="clock"></i>
+            if (project.status && project.status !== 'completed' && project.statusKey) {
+                const statusText = t(project.statusKey, project.status);
+                titleBadges += ` <span class="project-status-badge status-${project.status} title-badge">
+                    ${renderProjectStatusIcon(project.status)}
                     ${statusText}
                 </span>`;
             }
@@ -448,7 +462,11 @@
             };
             
             // Check if project is ongoing (no dateCompleted or dateCompleted is recent/ongoing)
-            const isOngoing = !project.dateCompleted || (project.dateStarted && project.dateCompleted === project.dateStarted);
+            // A project is only ongoing if its status says so. Several finished
+            // projects start and end in the same month, and treating that as
+            // "no end date" advertised them as still running.
+            const isOngoing = project.status !== 'completed' &&
+                (!project.dateCompleted || (project.dateStarted && project.dateCompleted === project.dateStarted));
             
             if (project.status === 'in-development' && project.dateStarted) {
                 // For in-development projects, show "Month Year - present"
@@ -477,7 +495,7 @@
             let iconHTML = '';
             if (project.iconImage) {
                 if (project.id === 'cylro') {
-                    // Cylro uses submark logo
+                    // Cylro uses the approved brand app icon
                     iconHTML = `<img src="${project.iconImage}" alt="${projectName}" style="width: 64px; height: 64px; object-fit: contain;">`;
                 } else {
                     iconHTML = `<img src="${project.iconImage}" alt="${projectName}" style="width: 48px; height: 48px; object-fit: contain;">`;
@@ -521,8 +539,23 @@
                 </div>
             `;
 
-            // Make row clickable to open modal
-            row.addEventListener('click', () => showProjectModal(project.id));
+            // Rows/cards are only opened from their non-action surface. Keep
+            // links and buttons independent so they retain their native action.
+            row.tabIndex = 0;
+            row.setAttribute('aria-label', `${projectName} - ${t('projects.viewDetails', 'View Details')}`);
+            row.addEventListener('click', (event) => {
+                const target = event.target instanceof Element
+                    ? event.target.closest('a, button, [role="button"]')
+                    : null;
+                if (target) return;
+                showProjectModal(project.id, row);
+            });
+            row.addEventListener('keydown', (event) => {
+                if (event.target !== row) return;
+                if (event.key !== 'Enter' && event.key !== ' ') return;
+                event.preventDefault();
+                showProjectModal(project.id, row);
+            });
 
             return row;
         }
@@ -812,7 +845,8 @@
             }
             
             // Update stats
-            document.getElementById('total-projects').textContent = allProjects.length;
+            const totalProjects = document.getElementById('total-projects');
+            if (totalProjects) totalProjects.textContent = allProjects.length;
             updateHeroStats(allProjects);
             
             // Same sort order as renderProjects (respects the Recent toggle).
@@ -848,9 +882,9 @@
                 const filterText = filterBtn.querySelector('span:last-child');
                 if (filterText) {
                     if (selectedCategories.length === 0) {
-                        filterText.textContent = 'Filter';
+                        filterText.textContent = t('projects.filter.label', 'Filter');
                     } else {
-                        filterText.textContent = `Filter (${selectedCategories.length})`;
+                        filterText.textContent = `${t('projects.filter.label', 'Filter')} (${selectedCategories.length})`;
                     }
                 }
             }
@@ -865,13 +899,18 @@
         }
 
         // Modal functionality
-        function showProjectModal(projectId) {
+        let lastProjectModalTrigger = null;
+
+        function showProjectModal(projectId, trigger) {
             const project = getProjectById(projectId);
             if (!project) return;
 
             const modal = document.getElementById('project-modal');
             if (!modal) return;
             
+            if (trigger instanceof HTMLElement) {
+                lastProjectModalTrigger = trigger;
+            }
             document.body.style.overflow = 'hidden';
             
             const modalName = document.getElementById('modal-project-name');
@@ -974,6 +1013,25 @@
                     }
                 });
             }
+
+            requestAnimationFrame(() => {
+                const closeButton = modal.querySelector('.modal-close');
+                if (closeButton) closeButton.focus();
+            });
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            if (!modal || !modal.classList.contains('active')) return;
+
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+
+            const trigger = lastProjectModalTrigger;
+            lastProjectModalTrigger = null;
+            if (trigger && trigger.isConnected) {
+                trigger.focus();
+            }
         }
 
         // Close modal using event delegation
@@ -981,11 +1039,7 @@
             if (e.target.closest('.modal-close')) {
                 e.preventDefault();
                 e.stopPropagation();
-                const modal = document.getElementById('project-modal');
-                if (modal) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
+                closeProjectModal();
             }
         });
 
@@ -994,19 +1048,34 @@
         if (projectModal) {
             projectModal.addEventListener('click', (e) => {
                 if (e.target.id === 'project-modal' || e.target === projectModal) {
-                    projectModal.classList.remove('active');
-                    document.body.style.overflow = '';
+                    closeProjectModal();
                 }
             });
         }
 
         // Close modal on Escape key
         document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('project-modal');
             if (e.key === 'Escape') {
-                const modal = document.getElementById('project-modal');
                 if (modal && modal.classList.contains('active')) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
+                    closeProjectModal();
+                }
+            }
+
+            if (e.key === 'Tab' && modal && modal.classList.contains('active')) {
+                const focusable = Array.from(modal.querySelectorAll(
+                    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+                )).filter(element => !element.hasAttribute('hidden'));
+                if (!focusable.length) return;
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
                 }
             }
         });
@@ -1023,7 +1092,11 @@
                 }
                 return new Date(dateValue).toLocaleDateString(getCurrentLang(), { year: 'numeric', month: 'long' });
             };
-            const isOngoing = !project.dateCompleted || (project.dateStarted && project.dateCompleted === project.dateStarted);
+            // A project is only ongoing if its status says so. Several finished
+            // projects start and end in the same month, and treating that as
+            // "no end date" advertised them as still running.
+            const isOngoing = project.status !== 'completed' &&
+                (!project.dateCompleted || (project.dateStarted && project.dateCompleted === project.dateStarted));
             const presentText = t('projects.present', 'present');
             if (project.status === 'in-development' && project.dateStarted) {
                 return `${formatDate(project.dateStarted)} – ${presentText}`;
@@ -1041,8 +1114,6 @@
             card.className = 'project-card';
             card.dataset.projectId = project.id;
             if (project.status) card.dataset.status = project.status;
-            card.tabIndex = 0;
-            card.setAttribute('role', 'button');
 
             const projectName = project.nameKey ? t(project.nameKey, project.name) : project.name;
             const projectDesc = project.descriptionKey
@@ -1064,9 +1135,9 @@
             }
 
             const pills = [];
-            if (project.status === 'in-development') {
-                const statusText = project.statusKey ? t(project.statusKey, 'In Development') : 'In Development';
-                pills.push(`<span class="featured-status"><i data-lucide="clock"></i>${statusText}</span>`);
+            if (project.status && project.status !== 'completed' && project.statusKey) {
+                const statusText = t(project.statusKey, project.status);
+                pills.push(`<span class="featured-status">${renderProjectStatusIcon(project.status)}${statusText}</span>`);
             }
             if (project.score) {
                 pills.push(`<span class="featured-score">${project.score}</span>`);
@@ -1074,15 +1145,18 @@
 
             const dateLabel = formatDateLabel(project);
 
-            // Action icons (github / external link). Stop propagation so they don't open the modal.
+            // Cards are informational; their native controls own all navigation and modal behavior.
             const actions = [];
+            const detailsText = t('projects.viewDetails', 'View Details');
+            const githubText = t('projects.githubRepository', 'GitHub repository');
+            const caseStudyText = t('projects.caseStudy', 'Case study');
             if (project.githubUrl) {
-                actions.push(`<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-action-icon" title="GitHub" onclick="event.stopPropagation()"><i data-lucide="github"></i></a>`);
+                actions.push(`<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-action-icon" title="${githubText}" aria-label="${githubText}: ${projectName}"><i data-lucide="github"></i></a>`);
             }
             if (project.link) {
-                actions.push(`<a href="${project.link}" class="project-action-icon" data-i18n-title="projects.modal.viewProject" onclick="event.stopPropagation()" title="View project"><i data-lucide="external-link"></i></a>`);
+                actions.push(`<a href="${project.link}" class="project-action-icon" title="${caseStudyText}" aria-label="${caseStudyText}: ${projectName}"><i data-lucide="external-link"></i></a>`);
             }
-            actions.push(`<span class="featured-cta" aria-hidden="true"><i data-lucide="arrow-right"></i></span>`);
+            actions.push(`<button type="button" class="project-action-icon project-details-button" title="${detailsText}" aria-label="${detailsText}: ${projectName}"><i data-lucide="info"></i></button>`);
 
             card.innerHTML = `
                 <div class="featured-card-top">
@@ -1100,14 +1174,33 @@
                 </div>
             `;
 
-            const open = () => showProjectModal(project.id);
-            card.addEventListener('click', open);
-            card.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    open();
-                }
+            // Keep the card itself a focusable article instead of assigning a
+            // button role around nested links/buttons. Enter and Space provide
+            // the expected keyboard equivalent for the non-action surface.
+            card.tabIndex = 0;
+            card.setAttribute('aria-label', `${projectName} - ${detailsText}`);
+
+            card.addEventListener('click', (event) => {
+                const target = event.target instanceof Element
+                    ? event.target.closest('a, button, [role="button"]')
+                    : null;
+                if (target) return;
+                showProjectModal(project.id, card);
             });
+            card.addEventListener('keydown', (event) => {
+                if (event.target !== card) return;
+                if (event.key !== 'Enter' && event.key !== ' ') return;
+                event.preventDefault();
+                showProjectModal(project.id, card);
+            });
+
+            const detailsButton = card.querySelector('.project-details-button');
+            if (detailsButton) {
+                detailsButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    showProjectModal(project.id, detailsButton);
+                });
+            }
             return card;
         }
 
@@ -1176,11 +1269,11 @@
                 iconHTML = `<i data-lucide="${project.icon || 'folder'}"></i>`;
             }
 
-            // Status pill (in-development) shown subtly
+            // Active status pill shown subtly
             let statusPill = '';
-            if (project.status === 'in-development') {
-                const statusText = project.statusKey ? t(project.statusKey, 'In Development') : 'In Development';
-                statusPill = `<span class="featured-status"><i data-lucide="clock"></i>${statusText}</span>`;
+            if (project.status && project.status !== 'completed' && project.statusKey) {
+                const statusText = t(project.statusKey, project.status);
+                statusPill = `<span class="featured-status">${renderProjectStatusIcon(project.status)}${statusText}</span>`;
             }
 
             card.innerHTML = `
@@ -1201,7 +1294,15 @@
                 </div>
             `;
 
-            card.addEventListener('click', () => showProjectModal(project.id));
+            const detailsText = t('projects.viewDetails', 'View Details');
+            card.tabIndex = 0;
+            card.setAttribute('aria-label', `${projectName} - ${detailsText}`);
+            card.addEventListener('click', () => showProjectModal(project.id, card));
+            card.addEventListener('keydown', (event) => {
+                if (event.key !== 'Enter' && event.key !== ' ') return;
+                event.preventDefault();
+                showProjectModal(project.id, card);
+            });
             card.style.cursor = 'pointer';
             return card;
         }
@@ -1257,8 +1358,14 @@
             }
         }
         
-        // Start waiting for data
-        waitForProjectsData();
+        // Start after the shared language initializer has restored the saved locale.
+        // Rendering earlier makes data-driven cards flash/fall back to English on
+        // direct visits even though the surrounding page is already translated.
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', waitForProjectsData);
+        } else {
+            waitForProjectsData();
+        }
     </script>
 </body>
 </html>

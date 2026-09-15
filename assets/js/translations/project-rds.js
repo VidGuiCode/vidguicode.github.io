@@ -35,11 +35,11 @@
             fr: "Remote Desktop Services (RDS)"
         },
         "project.rds.subtitle": {
-            en: "Documentation and demo project covering a full Windows Server 2022 RDS deployment with AD DS, DNS, and RD Web Access.",
-            pt: "Projeto de documentação e demonstração cobrindo um deployment completo de RDS no Windows Server 2022 com AD DS, DNS e RD Web Access.",
-            lu: "Dokumentatiouns- a Demo-Projet fir eng komplett Windows Server 2022 RDS Umsetzung mat AD DS, DNS an RD Web Access.",
-            de: "Dokumentations- und Demo-Projekt für eine vollständige Windows Server 2022 RDS-Bereitstellung mit AD DS, DNS und RD Web Access.",
-            fr: "Projet de documentation et de démonstration d'un déploiement RDS complet sur Windows Server 2022 avec AD DS, DNS et RD Web Access."
+            en: "A Windows Server lab that gives students a managed desktop and apps from their own laptops, while keeping every personal computer separate from the school system. Working as a two-person team, we configured, documented, and demonstrated the service from sign-in to web access.",
+            pt: "Um laboratório Windows Server que dá aos alunos um desktop gerido e aplicações a partir dos seus próprios portáteis, mantendo cada computador pessoal separado do sistema escolar. Em equipa de duas pessoas, configurámos, documentámos e demonstrámos o serviço, desde o início de sessão até ao acesso web.",
+            lu: "E Windows-Server-Labor, dat de Schüler e geréierten Desktop an Apps vun hiren eegene Laptops gëtt an dobäi all perséinleche Computer vum Schoulsystem getrennt hält. Als Team vun zwou Persoune hu mir de Service vum Umellen bis zum Web-Zougang konfiguréiert, dokumentéiert an demonstréiert.",
+            de: "Ein Windows-Server-Labor, das Schülern einen verwalteten Desktop und Apps auf ihren eigenen Laptops bietet und jeden privaten Computer vom Schulsystem getrennt hält. Als Zweierteam haben wir den Dienst von der Anmeldung bis zum Webzugang konfiguriert, dokumentiert und demonstriert.",
+            fr: "Un laboratoire Windows Server qui donne aux élèves un bureau géré et des applications depuis leurs propres ordinateurs portables, tout en gardant chaque ordinateur personnel séparé du système scolaire. En équipe de deux, nous avons configuré, documenté et démontré le service, de la connexion à l'accès web."
         },
         "project.rds.labBadge": {
             en: "LAB 08 - WINDOWS SERVER SERVICES",
@@ -57,11 +57,11 @@
             fr: "Windows Server assurant tous les rôles"
         },
         "project.rds.glance.roles.label": {
-            en: "core roles on one box (AD DS · DNS · RDS)",
-            pt: "funções principais numa só máquina (AD DS · DNS · RDS)",
-            lu: "Haaptrollen op enger eenzeger Maschinn (AD DS · DNS · RDS)",
-            de: "Kernrollen auf einem Server (AD DS · DNS · RDS)",
-            fr: "rôles clés sur une seule machine (AD DS · DNS · RDS)"
+            en: "roles on one server: AD DS, DNS, Session Host and Web Access",
+            pt: "funções num só servidor: AD DS, DNS, Session Host e Web Access",
+            lu: "Rollen op engem eenzege Server: AD DS, DNS, Session Host a Web Access",
+            de: "Rollen auf einem Server: AD DS, DNS, Session Host und Web Access",
+            fr: "rôles sur un seul serveur : AD DS, DNS, Session Host et Web Access"
         },
         "project.rds.glance.connect.label": {
             en: "ways to connect (Remote Desktop + web)",
@@ -86,11 +86,25 @@
             fr: "Comment une session atteint l'utilisateur"
         },
         "project.rds.arch.strip": {
-            en: "Clients to desktops",
-            pt: "Dos clientes aos desktops",
-            lu: "Vu Clienten zu Desktops",
-            de: "Von Clients zu Desktops",
-            fr: "Des clients aux bureaux"
+            en: "One server, four roles",
+            pt: "Um servidor, quatro funções",
+            lu: "Ee Server, véier Rollen",
+            de: "Ein Server, vier Rollen",
+            fr: "Un serveur, quatre rôles"
+        },
+        "project.rds.arch.label.in": {
+            en: "What comes in",
+            pt: "O que entra",
+            lu: "Wat erakënnt",
+            de: "Was hereinkommt",
+            fr: "Ce qui entre"
+        },
+        "project.rds.arch.label.out": {
+            en: "What goes out",
+            pt: "O que sai",
+            lu: "Wat erausgeet",
+            de: "Was hinausgeht",
+            fr: "Ce qui sort"
         },
         "project.rds.arch.clients": {
             en: "Student PCs",
@@ -100,46 +114,46 @@
             fr: "PC des élèves"
         },
         "project.rds.arch.clients.spec": {
-            en: "bridged LAN · domain login",
-            pt: "LAN em bridge · login de domínio",
-            lu: "Bridged LAN · Domain-Login",
-            de: "Bridged LAN · Domänenanmeldung",
-            fr: "LAN en bridge · connexion domaine"
+            en: "personal machines on the lab network, signing in with a domain account",
+            pt: "máquinas pessoais na rede do laboratório, com login de uma conta de domínio",
+            lu: "perséinlech Maschinnen am Labo-Netz, mat engem Domain-Kont ageloggt",
+            de: "private Rechner im Labornetz, angemeldet mit einem Domänenkonto",
+            fr: "machines personnelles sur le réseau du labo, connectées avec un compte du domaine"
+        },
+        "project.rds.arch.core": {
+            en: "One server: RDS-SRV01 · lab8.local",
+            pt: "Um servidor: RDS-SRV01 · lab8.local",
+            lu: "Ee Server: RDS-SRV01 · lab8.local",
+            de: "Ein Server: RDS-SRV01 · lab8.local",
+            fr: "Un seul serveur : RDS-SRV01 · lab8.local"
         },
         "project.rds.arch.adds.spec": {
-            en: "domain controller · access group",
-            pt: "controlador de domínio · grupo de acesso",
-            lu: "Domain-Controller · Zougangsgrupp",
-            de: "Domänencontroller · Zugriffsgruppe",
-            fr: "contrôleur de domaine · groupe d'accès"
+            en: "domain controller, holds the RDS_Students access group",
+            pt: "controlador de domínio, detém o grupo de acesso RDS_Students",
+            lu: "Domain-Controller, hält d'Zougangsgrupp RDS_Students",
+            de: "Domänencontroller, hält die Zugriffsgruppe RDS_Students",
+            fr: "contrôleur de domaine, détient le groupe d'accès RDS_Students"
         },
         "project.rds.arch.dns.spec": {
-            en: "name resolution",
-            pt: "resolução de nomes",
-            lu: "Nimm-Opléisung",
-            de: "Namensauflösung",
-            fr: "résolution de noms"
-        },
-        "project.rds.arch.rds.meta": {
-            en: "session-based",
-            pt: "baseado em sessão",
-            lu: "session-baséiert",
-            de: "sitzungsbasiert",
-            fr: "basé sur des sessions"
+            en: "resolves the lab8.local names",
+            pt: "resolve os nomes lab8.local",
+            lu: "léist d'lab8.local-Nimm op",
+            de: "löst die lab8.local-Namen auf",
+            fr: "résout les noms lab8.local"
         },
         "project.rds.arch.rds.spec": {
-            en: "shared desktop + RemoteApps",
-            pt: "desktop partilhado + RemoteApps",
-            lu: "gedeelten Desktop + RemoteApps",
-            de: "geteilter Desktop + RemoteApps",
-            fr: "bureau partagé + RemoteApps"
+            en: "runs the shared desktop and the published apps",
+            pt: "executa o desktop partilhado e as aplicações publicadas",
+            lu: "leeft de gedeelten Desktop an déi publizéiert Apps",
+            de: "betreibt den geteilten Desktop und die veröffentlichten Apps",
+            fr: "fait tourner le bureau partagé et les applications publiées"
         },
         "project.rds.arch.web.spec": {
-            en: "self-signed certificate",
-            pt: "certificado autoassinado",
-            lu: "self-signed Zertifikat",
-            de: "selbstsigniertes Zertifikat",
-            fr: "certificat auto-signé"
+            en: "browser portal over a self-signed certificate",
+            pt: "portal de browser com um certificado autoassinado",
+            lu: "Browser-Portal iwwert e self-signed Zertifikat",
+            de: "Browser-Portal über ein selbstsigniertes Zertifikat",
+            fr: "portail navigateur via un certificat auto-signé"
         },
         "project.rds.arch.desktop": {
             en: "Desktop session",
@@ -149,25 +163,25 @@
             fr: "Session de bureau"
         },
         "project.rds.arch.desktop.spec": {
-            en: "full Windows desktop",
-            pt: "desktop Windows completo",
-            lu: "voll Windows Desktop",
-            de: "vollständiger Windows-Desktop",
-            fr: "bureau Windows complet"
+            en: "the full managed Windows desktop",
+            pt: "o desktop Windows completo e gerido",
+            lu: "de komplette geréierte Windows-Desktop",
+            de: "der komplette verwaltete Windows-Desktop",
+            fr: "le bureau Windows complet et géré"
         },
         "project.rds.arch.remoteapp.spec": {
-            en: "single published apps",
-            pt: "aplicações publicadas individuais",
-            lu: "eenzel publizéiert Apps",
-            de: "einzelne veröffentlichte Apps",
-            fr: "applications publiées individuelles"
+            en: "a single published app in its own window",
+            pt: "uma única aplicação publicada na sua própria janela",
+            lu: "eng eenzel publizéiert App an hirem eegene Fënster",
+            de: "eine einzelne veröffentlichte App in ihrem eigenen Fenster",
+            fr: "une seule application publiée dans sa propre fenêtre"
         },
         "project.rds.arch.note": {
-            en: "Only members of the <code>RDS_Students</code> security group get a session. RD Web Access is published over a self-signed certificate, and clients resolve the server name through a local hosts-file entry — no client ever joins the domain.",
-            pt: "Só os membros do grupo de segurança <code>RDS_Students</code> recebem uma sessão. O RD Web Access é publicado com um certificado autoassinado e os clientes resolvem o nome do servidor através de uma entrada local no ficheiro hosts — nenhum cliente se junta ao domínio.",
-            lu: "Nëmmen d'Memberen vun der Sécherheetsgrupp <code>RDS_Students</code> kréien eng Sessioun. RD Web Access gëtt iwwert e self-signed Zertifikat publizéiert, an d'Clienten léisen den Server-Numm iwwert eng lokal hosts-Datei Entrée op — kee Client kënnt jeemools an d'Domain.",
-            de: "Nur Mitglieder der Sicherheitsgruppe <code>RDS_Students</code> erhalten eine Sitzung. RD Web Access wird über ein selbstsigniertes Zertifikat bereitgestellt, und Clients lösen den Servernamen über einen lokalen Hosts-Datei-Eintrag auf — kein Client tritt jemals der Domäne bei.",
-            fr: "Seuls les membres du groupe de sécurité <code>RDS_Students</code> obtiennent une session. RD Web Access est publié via un certificat auto-signé, et les clients résolvent le nom du serveur grâce à une entrée locale dans le fichier hosts — aucun client ne rejoint jamais le domaine."
+            en: "All four roles are installed on that one machine, not on separate servers. Only members of the <code>RDS_Students</code> security group get a session. RD Web Access is published over a self-signed certificate, and clients resolve the server name through a local hosts-file entry - no client ever joins the domain.",
+            pt: "As quatro funções estão instaladas nessa única máquina, não em servidores separados. Só os membros do grupo de segurança <code>RDS_Students</code> recebem uma sessão. O RD Web Access é publicado com um certificado autoassinado e os clientes resolvem o nome do servidor através de uma entrada local no ficheiro hosts - nenhum cliente se junta ao domínio.",
+            lu: "All véier Rollen sinn op där eenzeger Maschinn installéiert, net op getrennte Serveren. Nëmmen d'Memberen vun der Sécherheetsgrupp <code>RDS_Students</code> kréien eng Sessioun. RD Web Access gëtt iwwert e self-signed Zertifikat publizéiert, an d'Clienten léisen den Server-Numm iwwert eng lokal hosts-Datei Entrée op - kee Client kënnt jeemools an d'Domain.",
+            de: "Alle vier Rollen laufen auf dieser einen Maschine, nicht auf getrennten Servern. Nur Mitglieder der Sicherheitsgruppe <code>RDS_Students</code> erhalten eine Sitzung. RD Web Access wird über ein selbstsigniertes Zertifikat bereitgestellt, und Clients lösen den Servernamen über einen lokalen Hosts-Datei-Eintrag auf - kein Client tritt jemals der Domäne bei.",
+            fr: "Les quatre rôles sont installés sur cette seule machine, et non sur des serveurs séparés. Seuls les membres du groupe de sécurité <code>RDS_Students</code> obtiennent une session. RD Web Access est publié via un certificat auto-signé, et les clients résolvent le nom du serveur grâce à une entrée locale dans le fichier hosts - aucun client ne rejoint jamais le domaine."
         },
 
         "project.rds.does.title": {
@@ -185,11 +199,11 @@
             fr: "Un bureau Windows pour tous"
         },
         "project.rds.does.desktop.desc": {
-            en: "Students open the same managed Windows desktop and apps from their own laptops — nothing to install.",
-            pt: "Os alunos abrem o mesmo desktop Windows gerido e as aplicações a partir dos seus próprios portáteis — sem nada para instalar.",
-            lu: "d'Schüler maachen dee selwechte verwalte Windows Desktop an d'Apps vun hiren eegene Laptopen op — näischt z'installéieren.",
-            de: "Schüler öffnen denselben verwalteten Windows-Desktop und die Apps von ihren eigenen Laptops — ohne Installation.",
-            fr: "Les élèves ouvrent le même bureau Windows géré et les applications depuis leur propre portable — rien à installer."
+            en: "Students open the same managed Windows desktop and apps from their own laptops - nothing to install.",
+            pt: "Os alunos abrem o mesmo desktop Windows gerido e as aplicações a partir dos seus próprios portáteis - sem nada para instalar.",
+            lu: "d'Schüler maachen dee selwechte verwalte Windows Desktop an d'Apps vun hiren eegene Laptopen op - näischt z'installéieren.",
+            de: "Schüler öffnen denselben verwalteten Windows-Desktop und die Apps von ihren eigenen Laptops - ohne Installation.",
+            fr: "Les élèves ouvrent le même bureau Windows géré et les applications depuis leur propre portable - rien à installer."
         },
         "project.rds.does.login.title": {
             en: "Sign in with your school account",
@@ -227,11 +241,11 @@
             fr: "Votre PC reste intact"
         },
         "project.rds.does.secure.desc": {
-            en: "Personal computers never join the school domain — everything runs on the server over the local network.",
-            pt: "Os computadores pessoais nunca se juntam ao domínio da escola — tudo corre no servidor através da rede local.",
-            lu: "Perséinlech Computeren kommen ni an d'Schoul-Domain — alles leeft um Server iwwert dat lokaalt Netzwierk.",
-            de: "Private Computer treten nie der Schuldomäne bei — alles läuft auf dem Server über das lokale Netzwerk.",
-            fr: "Les ordinateurs personnels ne rejoignent jamais le domaine de l'école — tout s'exécute sur le serveur via le réseau local."
+            en: "Personal computers never join the school domain - everything runs on the server over the local network.",
+            pt: "Os computadores pessoais nunca se juntam ao domínio da escola - tudo corre no servidor através da rede local.",
+            lu: "Perséinlech Computeren kommen ni an d'Schoul-Domain - alles leeft um Server iwwert dat lokaalt Netzwierk.",
+            de: "Private Computer treten nie der Schuldomäne bei - alles läuft auf dem Server über das lokale Netzwerk.",
+            fr: "Les ordinateurs personnels ne rejoignent jamais le domaine de l'école - tout s'exécute sur le serveur via le réseau local."
         },
 
         "project.rds.section.overview.title": {
@@ -242,11 +256,11 @@
             fr: "Vue d'ensemble"
         },
         "project.rds.section.overview.body": {
-            en: "This project documents a centralized Remote Desktop Services environment where students sign in to a shared Windows desktop and applications securely from their own devices using domain credentials, without joining the domain.",
-            pt: "Este projeto documenta um ambiente centralizado de Remote Desktop Services onde os alunos acedem com segurança a um desktop Windows partilhado e a aplicações a partir dos seus próprios dispositivos usando credenciais de domínio, sem se juntarem ao domínio.",
-            lu: "Dëst Projet dokumentéiert eng zentraliséiert Remote Desktop Services Ëmwelt, wou d'Schüler sécher op en deelen Windows Desktop an Applikatioune vun hiren eegene Geräter mat Domain-Login zougräifen, ouni an d'Domain ze kommen.",
-            de: "Dieses Projekt dokumentiert eine zentralisierte Remote-Desktop-Services-Umgebung, in der Schüler sicher auf einen gemeinsamen Windows-Desktop und Anwendungen von ihren eigenen Geräten mit Domänenanmeldedaten zugreifen, ohne der Domäne beizutreten.",
-            fr: "Ce projet documente un environnement Remote Desktop Services centralisé où les élèves accèdent en toute sécurité à un bureau Windows partagé et à des applications depuis leurs propres appareils avec des identifiants de domaine, sans joindre le domaine."
+            en: "We built and documented a centralized Remote Desktop Services environment where students sign in to a shared Windows desktop and applications securely from their own devices using domain credentials, without joining the domain.",
+            pt: "Construímos e documentámos um ambiente centralizado de Remote Desktop Services onde os alunos acedem com segurança a um desktop Windows partilhado e a aplicações a partir dos seus próprios dispositivos usando credenciais de domínio, sem se juntarem ao domínio.",
+            lu: "Mir hunn eng zentraliséiert Remote Desktop Services Ëmwelt opgebaut an dokumentéiert, wou d'Schüler sécher op en deelen Windows Desktop an Applikatioune vun hiren eegene Geräter mat Domain-Login zougräifen, ouni an d'Domain ze kommen.",
+            de: "Wir haben eine zentralisierte Remote-Desktop-Services-Umgebung aufgebaut und dokumentiert, in der Schüler sicher auf einen gemeinsamen Windows-Desktop und Anwendungen von ihren eigenen Geräten mit Domänenanmeldedaten zugreifen, ohne der Domäne beizutreten.",
+            fr: "Nous avons construit et documenté un environnement Remote Desktop Services centralisé où les élèves accèdent en toute sécurité à un bureau Windows partagé et à des applications depuis leurs propres appareils avec des identifiants de domaine, sans joindre le domaine."
         },
 
         "project.rds.stack.title": {
@@ -327,11 +341,11 @@
             fr: "Clients & Réseau"
         },
         "project.rds.stack.clients.body": {
-            en: "<strong>Physical Windows 11 PCs</strong> on a bridged LAN connect with <code>mstsc</code> using domain credentials — without ever joining the domain.",
-            pt: "<strong>PCs Windows 11 físicos</strong> numa LAN em bridge ligam-se com o <code>mstsc</code> usando credenciais de domínio — sem nunca se juntarem ao domínio.",
-            lu: "<strong>Physesch Windows 11 PCs</strong> op enger Bridged LAN verbannen sech mat <code>mstsc</code> mat Domain-Login — ouni jeemools an d'Domain ze kommen.",
-            de: "<strong>Physische Windows-11-PCs</strong> in einem Bridged LAN verbinden sich mit <code>mstsc</code> über Domänenanmeldedaten — ohne jemals der Domäne beizutreten.",
-            fr: "<strong>Des PC Windows 11 physiques</strong> sur un LAN en bridge se connectent avec <code>mstsc</code> à l'aide d'identifiants de domaine — sans jamais joindre le domaine."
+            en: "<strong>Physical Windows 11 PCs</strong> on a bridged LAN connect with <code>mstsc</code> using domain credentials - without ever joining the domain.",
+            pt: "<strong>PCs Windows 11 físicos</strong> numa LAN em bridge ligam-se com o <code>mstsc</code> usando credenciais de domínio - sem nunca se juntarem ao domínio.",
+            lu: "<strong>Physesch Windows 11 PCs</strong> op enger Bridged LAN verbannen sech mat <code>mstsc</code> mat Domain-Login - ouni jeemools an d'Domain ze kommen.",
+            de: "<strong>Physische Windows-11-PCs</strong> in einem Bridged LAN verbinden sich mit <code>mstsc</code> über Domänenanmeldedaten - ohne jemals der Domäne beizutreten.",
+            fr: "<strong>Des PC Windows 11 physiques</strong> sur un LAN en bridge se connectent avec <code>mstsc</code> à l'aide d'identifiants de domaine - sans jamais joindre le domaine."
         },
 
         "project.rds.practiced.title": {
@@ -406,11 +420,11 @@
             fr: "Documentation"
         },
         "project.rds.asset.documentation.desc": {
-            en: "View the full RDS implementation documentation used for the lab delivery.",
-            pt: "Ver a documentação completa da implementação RDS usada para a entrega do lab.",
-            lu: "Kuckt d'ganz RDS Umsetzungs-Dokumentatioun déi fir d'Lab Ofgab benotzt gouf.",
-            de: "Sehen Sie die vollständige RDS-Implementierungsdokumentation für die Lab-Abgabe.",
-            fr: "Consultez la documentation complète de l'implémentation RDS utilisée pour la remise du lab."
+            en: "View the full RDS implementation documentation we co-wrote for the lab delivery.",
+            pt: "Ver a documentação completa da implementação RDS que escrevemos em conjunto para a entrega do lab.",
+            lu: "Kuckt d'ganz RDS Umsetzungs-Dokumentatioun déi mir zesumme fir d'Lab Ofgab geschriwwen hunn.",
+            de: "Sehen Sie die vollständige RDS-Implementierungsdokumentation, die wir gemeinsam für die Lab-Abgabe verfasst haben.",
+            fr: "Consultez la documentation complète de l'implémentation RDS que nous avons rédigée ensemble pour la remise du lab."
         },
         "project.rds.asset.documentation.button": {
             en: "Download Documentation (PDF)",
@@ -427,11 +441,11 @@
             fr: "Présentation"
         },
         "project.rds.asset.presentation.desc": {
-            en: "View the project presentation slides used during the graded demonstration.",
-            pt: "Ver os slides da apresentação usados durante a demonstração avaliada.",
-            lu: "Kuckt d'Presentatiouns-Slides déi bei der bewerteter Demo benotzt goufen.",
-            de: "Sehen Sie die Präsentationsfolien, die während der bewerteten Demonstration verwendet wurden.",
-            fr: "Consultez les diapositives de présentation utilisées pendant la démonstration notée."
+            en: "View the slides we created together and presented during the graded demonstration.",
+            pt: "Ver os slides que criámos em conjunto e apresentámos durante a demonstração avaliada.",
+            lu: "Kuckt d'Presentatiouns-Slides déi mir zesumme gemaach a bei der bewerteter Demo presentéiert hunn.",
+            de: "Sehen Sie die Präsentationsfolien, die wir gemeinsam erstellt und während der bewerteten Demonstration vorgestellt haben.",
+            fr: "Consultez les diapositives que nous avons créées ensemble et présentées pendant la démonstration notée."
         },
         "project.rds.asset.presentation.button": {
             en: "Download Presentation (PDF)",

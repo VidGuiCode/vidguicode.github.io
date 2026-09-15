@@ -24,11 +24,11 @@
             en: "Hermes AI Agent", pt: "Hermes AI Agent", lu: "Hermes AI Agent", de: "Hermes AI Agent", fr: "Hermes AI Agent"
         },
         "project.ai-hermes-agent.hero.subtitle": {
-            en: "A self-hosted AI agent that runs 24/7 on its own VPS. It researches, monitors, automates and talks back — all from a single conversation that remembers what happened yesterday.",
-            pt: "Um agente de IA self-hosted que corre 24/7 no seu próprio VPS. Pesquisa, monitoriza, automatiza e responde — tudo a partir de uma única conversa que se lembra do que aconteceu ontem.",
-            lu: "En self-hosted AI-Agent deen 24/7 op sengem eegene VPS leeft. Hie recherchéiert, iwwerwaacht, automatiséiert an äntwert zréck — alles aus enger eenzeger Konversatioun déi sech un dat erënnert wat gëschter geschitt ass.",
-            de: "Ein selbstgehosteter KI-Agent, der rund um die Uhr auf seinem eigenen VPS läuft. Er recherchiert, überwacht, automatisiert und antwortet zurück — alles aus einer einzigen Konversation, die sich an das erinnert, was gestern passiert ist.",
-            fr: "Un agent IA auto-hébergé qui tourne 24/7 sur son propre VPS. Il recherche, surveille, automatise et répond — le tout depuis une seule conversation qui se souvient de ce qui s'est passé hier."
+            en: "A self-hosted AI agent that runs 24/7 on its own VPS. It researches, monitors, automates and talks back - all from a single conversation that remembers what happened yesterday.",
+            pt: "Um agente de IA self-hosted que corre 24/7 no seu próprio VPS. Pesquisa, monitoriza, automatiza e responde - tudo a partir de uma única conversa que se lembra do que aconteceu ontem.",
+            lu: "En self-hosted AI-Agent deen 24/7 op sengem eegene VPS leeft. Hie recherchéiert, iwwerwaacht, automatiséiert an äntwert zréck - alles aus enger eenzeger Konversatioun déi sech un dat erënnert wat gëschter geschitt ass.",
+            de: "Ein selbstgehosteter KI-Agent, der rund um die Uhr auf seinem eigenen VPS läuft. Er recherchiert, überwacht, automatisiert und antwortet zurück - alles aus einer einzigen Konversation, die sich an das erinnert, was gestern passiert ist.",
+            fr: "Un agent IA auto-hébergé qui tourne 24/7 sur son propre VPS. Il recherche, surveille, automatise et répond - le tout depuis une seule conversation qui se souvient de ce qui s'est passé hier."
         },
         "project.ai-hermes-agent.console": {
             en: "online since May 2026 · memory: persistent · channel: matrix",
@@ -76,64 +76,140 @@
             de: "Wie eine Nachricht durch Hermes fließt",
             fr: "Comment un message circule dans Hermes"
         },
+        "project.ai-hermes-agent.arch.kicker": {
+            en: "One core, many tools",
+            pt: "Um núcleo, muitas ferramentas",
+            lu: "Ee Kär, vill Tools",
+            de: "Ein Kern, viele Werkzeuge",
+            fr: "Un cœur, beaucoup d'outils"
+        },
         "project.ai-hermes-agent.arch.col.in": {
-            en: "channels", pt: "canais", lu: "Kanäl", de: "Kanäle", fr: "canaux"
+            en: "What comes in", pt: "O que entra", lu: "Wat erakënnt", de: "Was hereinkommt", fr: "Ce qui entre"
         },
         "project.ai-hermes-agent.arch.col.core": {
-            en: "Hermes core — agent loop (vps / docker)",
-            pt: "Núcleo Hermes — ciclo do agente (vps / docker)",
-            lu: "Hermes-Kär — Agent-Loop (vps / docker)",
-            de: "Hermes-Kern — Agenten-Loop (vps / docker)",
-            fr: "Cœur Hermes — boucle de l'agent (vps / docker)"
+            en: "Hermes core, agent loop",
+            pt: "Núcleo Hermes, ciclo do agente",
+            lu: "Hermes-Kär, Agent-Loop",
+            de: "Hermes-Kern, Agenten-Loop",
+            fr: "Cœur Hermes, boucle de l'agent"
         },
         "project.ai-hermes-agent.arch.col.out": {
-            en: "tools", pt: "ferramentas", lu: "Tools", de: "Werkzeuge", fr: "outils"
+            en: "What goes out", pt: "O que sai", lu: "Wat erausgeet", de: "Was hinausgeht", fr: "Ce qui sort"
         },
         "project.ai-hermes-agent.arch.you": {
             en: "You", pt: "Tu", lu: "Du", de: "Du", fr: "Vous"
         },
+        "project.ai-hermes-agent.arch.you.spec": {
+            en: "one private chat that keeps its context",
+            pt: "uma conversa privada que mantém o contexto",
+            lu: "eng privat Konversatioun déi hire Kontext behält",
+            de: "ein privater Chat, der seinen Kontext behält",
+            fr: "une conversation privée qui garde son contexte"
+        },
         "project.ai-hermes-agent.arch.voice": {
             en: "Voice notes", pt: "Notas de voz", lu: "Voice-Noten", de: "Sprachnachrichten", fr: "Notes vocales"
+        },
+        "project.ai-hermes-agent.arch.voice.spec": {
+            en: "send a voice note, it answers out loud",
+            pt: "envia uma nota de voz, ele responde em voz alta",
+            lu: "schéck eng Voice-Note, hien äntwert haart",
+            de: "schick eine Sprachnachricht, es antwortet laut",
+            fr: "envoyez une note vocale, il répond à voix haute"
         },
         "project.ai-hermes-agent.arch.cron": {
             en: "Schedule", pt: "Agenda", lu: "Zäitplang", de: "Zeitplan", fr: "Planification"
         },
-        "project.ai-hermes-agent.arch.route": {
-            en: "route", pt: "rota", lu: "Route", de: "Route", fr: "router"
-        },
-        "project.ai-hermes-agent.arch.call": {
-            en: "call", pt: "chama", lu: "Opruff", de: "Aufruf", fr: "appel"
+        "project.ai-hermes-agent.arch.cron.spec": {
+            en: "jobs that fire on their own, with no prompt",
+            pt: "tarefas que arrancam sozinhas, sem pedido nenhum",
+            lu: "Jobs déi vu selwer starten, ouni Ufro",
+            de: "Jobs, die von selbst starten, ganz ohne Aufforderung",
+            fr: "des tâches qui se lancent seules, sans aucune demande"
         },
         "project.ai-hermes-agent.arch.memory": {
-            en: "Memory vault", pt: "Cofre de memória", lu: "Erënnerungs-Vault", de: "Gedächtnis-Vault", fr: "Coffre mémoire"
+            en: "persistent context in git-backed Markdown",
+            pt: "contexto persistente em Markdown guardado em git",
+            lu: "persistente Kontext a Markdown, a Git gespäichert",
+            de: "dauerhafter Kontext in Markdown, in Git gesichert",
+            fr: "contexte persistant en Markdown versionné dans git"
         },
         "project.ai-hermes-agent.arch.skills": {
-            en: "Skill system", pt: "Sistema de skills", lu: "Skill-System", de: "Skill-System", fr: "Système de compétences"
+            en: "reusable procedures that repair themselves",
+            pt: "procedimentos reutilizáveis que se reparam sozinhos",
+            lu: "erëmbenotzbar Prozeduren déi sech selwer reparéieren",
+            de: "wiederverwendbare Abläufe, die sich selbst reparieren",
+            fr: "des procédures réutilisables qui se réparent seules"
         },
         "project.ai-hermes-agent.arch.router": {
-            en: "Model router", pt: "Roteador de modelos", lu: "Modell-Router", de: "Modell-Router", fr: "Routeur de modèles"
+            en: "cheap models first, frontier only when needed",
+            pt: "modelos baratos primeiro, os de topo só quando é preciso",
+            lu: "bëlleg Modeller fir d'éischt, Spëtzemodeller nëmme wann néideg",
+            de: "günstige Modelle zuerst, Spitzenmodelle nur wenn nötig",
+            fr: "d'abord les modèles bon marché, les modèles de pointe seulement si nécessaire"
+        },
+        "project.ai-hermes-agent.arch.mcp": {
+            en: "the bridge to private services",
+            pt: "a ponte para os serviços privados",
+            lu: "d'Bréck zu de private Servicer",
+            de: "die Brücke zu den privaten Diensten",
+            fr: "le pont vers les services privés"
         },
         "project.ai-hermes-agent.arch.research": {
             en: "Research", pt: "Pesquisa", lu: "Recherche", de: "Recherche", fr: "Recherche"
         },
+        "project.ai-hermes-agent.arch.research.spec": {
+            en: "cited answers, not a pile of links",
+            pt: "respostas com fontes, não uma pilha de links",
+            lu: "Äntwerte mat Quellen, keng Lëscht vu Linken",
+            de: "Antworten mit Quellen, kein Haufen Links",
+            fr: "des réponses sourcées, pas un tas de liens"
+        },
         "project.ai-hermes-agent.arch.transport": {
             en: "Transport", pt: "Transportes", lu: "Transport", de: "Verkehr", fr: "Transports"
+        },
+        "project.ai-hermes-agent.arch.transport.spec": {
+            en: "live route options for the commute home",
+            pt: "opções de rota em tempo real para o caminho de casa",
+            lu: "live Routenoptioune fir de Wee heem",
+            de: "Live-Routenoptionen für den Weg nach Hause",
+            fr: "des itinéraires en temps réel pour le trajet du retour"
         },
         "project.ai-hermes-agent.arch.personal": {
             en: "Email & calendar", pt: "Email e calendário", lu: "Email & Kalenner", de: "E-Mail & Kalender", fr: "E-mail et agenda"
         },
+        "project.ai-hermes-agent.arch.personal.spec": {
+            en: "inbox triage, events and reminders",
+            pt: "triagem da caixa de entrada, eventos e lembretes",
+            lu: "Postfach-Triage, Evenementer an Erënnerungen",
+            de: "Postfach-Triage, Termine und Erinnerungen",
+            fr: "tri de la boîte mail, événements et rappels"
+        },
         "project.ai-hermes-agent.arch.infra": {
             en: "Server health", pt: "Saúde do servidor", lu: "Server-Gesondheet", de: "Server-Zustand", fr: "Santé du serveur"
+        },
+        "project.ai-hermes-agent.arch.infra.spec": {
+            en: "watches the homelab and flags real outages",
+            pt: "vigia o homelab e sinaliza falhas reais",
+            lu: "iwwerwaacht de Homelab a mellt richteg Pannen",
+            de: "überwacht das Homelab und meldet echte Ausfälle",
+            fr: "surveille le homelab et signale les vraies pannes"
         },
         "project.ai-hermes-agent.arch.image": {
             en: "Image gen", pt: "Geração de imagens", lu: "Bild-Generéierung", de: "Bildgenerierung", fr: "Génération d'images"
         },
+        "project.ai-hermes-agent.arch.image.spec": {
+            en: "reads and generates images in the same chat",
+            pt: "lê e gera imagens na mesma conversa",
+            lu: "liest a generéiert Biller an der selwechter Konversatioun",
+            de: "liest und erzeugt Bilder im selben Chat",
+            fr: "lit et génère des images dans la même conversation"
+        },
         "project.ai-hermes-agent.arch.note": {
-            en: "Answers stream back to the same chat — as a Matrix message, a Piper-spoken reply, or an ntfy push when it can't wait. Heavy jobs run in isolated subagents so the main conversation stays clean.",
-            pt: "As respostas voltam para o mesmo chat — como mensagem de Matrix, resposta falada por Piper, ou um push de ntfy quando não pode esperar. As tarefas pesadas correm em subagentes isolados para manter a conversa principal limpa.",
-            lu: "D'Äntwerten kommen an deeselwechte Chat zréck — als Matrix-Noriicht, als vum Piper geschwaten Äntwert, oder als ntfy-Push wann et net waarde kann. Schwéier Aufgabe lafen an isoléierte Subagenten, sou datt déi Haaptkonversatioun proper bleift.",
-            de: "Antworten kommen in denselben Chat zurück — als Matrix-Nachricht, als von Piper gesprochene Antwort oder als ntfy-Push, wenn es nicht warten kann. Schwere Aufgaben laufen in isolierten Subagenten, damit die Hauptkonversation sauber bleibt.",
-            fr: "Les réponses reviennent dans la même conversation — sous forme de message Matrix, de réponse vocale via Piper, ou d'une notification ntfy quand ça ne peut pas attendre. Les tâches lourdes tournent dans des sous-agents isolés pour garder la conversation principale propre."
+            en: "Answers stream back to the same chat - as a Matrix message, a Piper-spoken reply, or an ntfy push when it can't wait. Heavy jobs run in isolated subagents so the main conversation stays clean.",
+            pt: "As respostas voltam para o mesmo chat - como mensagem de Matrix, resposta falada por Piper, ou um push de ntfy quando não pode esperar. As tarefas pesadas correm em subagentes isolados para manter a conversa principal limpa.",
+            lu: "D'Äntwerten kommen an deeselwechte Chat zréck - als Matrix-Noriicht, als vum Piper geschwaten Äntwert, oder als ntfy-Push wann et net waarde kann. Schwéier Aufgabe lafen an isoléierte Subagenten, sou datt déi Haaptkonversatioun proper bleift.",
+            de: "Antworten kommen in denselben Chat zurück - als Matrix-Nachricht, als von Piper gesprochene Antwort oder als ntfy-Push, wenn es nicht warten kann. Schwere Aufgaben laufen in isolierten Subagenten, damit die Hauptkonversation sauber bleibt.",
+            fr: "Les réponses reviennent dans la même conversation - sous forme de message Matrix, de réponse vocale via Piper, ou d'une notification ntfy quand ça ne peut pas attendre. Les tâches lourdes tournent dans des sous-agents isolés pour garder la conversation principale propre."
         },
 
         /* ---- Overview: what it actually does ---- */
@@ -180,11 +256,11 @@
             fr: "Il travaille selon un planning"
         },
         "project.ai-hermes-agent.does.schedule.desc": {
-            en: "Morning briefings, reminders and alerts arrive on their own — Hermes does the routine checks without being asked.",
-            pt: "Resumos matinais, lembretes e alertas chegam sozinhos — o Hermes faz as verificações de rotina sem que seja preciso pedir.",
-            lu: "Moiesbriefingen, Erënnerungen an Alarmer kommen vu selwer — den Hermes mécht d'Routine-Kontrollen ouni datt een et froen muss.",
-            de: "Morgen-Briefings, Erinnerungen und Warnungen kommen von selbst — Hermes erledigt die Routinechecks, ohne gefragt zu werden.",
-            fr: "Briefings du matin, rappels et alertes arrivent tout seuls — Hermes fait les vérifications de routine sans qu'on le lui demande."
+            en: "Morning briefings, reminders and alerts arrive on their own - Hermes does the routine checks without being asked.",
+            pt: "Resumos matinais, lembretes e alertas chegam sozinhos - o Hermes faz as verificações de rotina sem que seja preciso pedir.",
+            lu: "Moiesbriefingen, Erënnerungen an Alarmer kommen vu selwer - den Hermes mécht d'Routine-Kontrollen ouni datt een et froen muss.",
+            de: "Morgen-Briefings, Erinnerungen und Warnungen kommen von selbst - Hermes erledigt die Routinechecks, ohne gefragt zu werden.",
+            fr: "Briefings du matin, rappels et alertes arrivent tout seuls - Hermes fait les vérifications de routine sans qu'on le lui demande."
         },
         "project.ai-hermes-agent.does.many.title": {
             en: "One assistant, many jobs",
@@ -194,11 +270,11 @@
             fr: "Un assistant, plein de tâches"
         },
         "project.ai-hermes-agent.does.many.desc": {
-            en: "Deep research, the next bus home, your inbox and your server's health — all handled in the same conversation.",
-            pt: "Pesquisa aprofundada, o próximo autocarro para casa, a tua caixa de entrada e a saúde do teu servidor — tudo tratado na mesma conversa.",
-            lu: "Déif Recherche, deen nächste Bus heem, däi Postfach an d'Gesondheet vun dengem Server — alles an der selwechter Konversatioun erleedegt.",
-            de: "Tiefe Recherche, der nächste Bus nach Hause, dein Posteingang und der Zustand deines Servers — alles in derselben Konversation erledigt.",
-            fr: "Recherche approfondie, le prochain bus pour rentrer, votre boîte mail et la santé de votre serveur — le tout géré dans la même conversation."
+            en: "Deep research, the next bus home, your inbox and your server's health - all handled in the same conversation.",
+            pt: "Pesquisa aprofundada, o próximo autocarro para casa, a tua caixa de entrada e a saúde do teu servidor - tudo tratado na mesma conversa.",
+            lu: "Déif Recherche, deen nächste Bus heem, däi Postfach an d'Gesondheet vun dengem Server - alles an der selwechter Konversatioun erleedegt.",
+            de: "Tiefe Recherche, der nächste Bus nach Hause, dein Posteingang und der Zustand deines Servers - alles in derselben Konversation erledigt.",
+            fr: "Recherche approfondie, le prochain bus pour rentrer, votre boîte mail et la santé de votre serveur - le tout géré dans la même conversation."
         },
 
         /* ---- Shared intro ---- */
@@ -206,11 +282,25 @@
             en: "The idea", pt: "A ideia", lu: "D'Iddi", de: "Die Idee", fr: "L'idée"
         },
         "project.ai-hermes-agent.idea.body": {
-            en: "Hermes is my attempt at a <strong>JARVIS of my own</strong> — not a chatbot I open when I need help, but a personal AI layer I own end to end. It runs continuously on its own VPS, reachable through my own Matrix server, with ntfy delivering anything that can't wait straight to my devices.",
-            pt: "O Hermes é a minha tentativa de ter um <strong>JARVIS só meu</strong> — não um chatbot que abro quando preciso de ajuda, mas uma camada de IA pessoal que controlo de uma ponta à outra. Corre continuamente no seu próprio VPS, acessível através do meu próprio servidor Matrix, com o ntfy a entregar tudo o que não pode esperar diretamente nos meus dispositivos.",
-            lu: "Den Hermes ass mäi Versuch fir e <strong>JARVIS deen mir gehéiert</strong> — net e Chatbot deen ech opmaachen wann ech Hëllef brauchen, mä eng perséinlech AI-Schicht déi ech vun A bis Z kontrolléieren. Et leeft permanent op sengem eegene VPS, erreechbar iwwer mäin eegene Matrix-Server, mam ntfy dat alles wat net waarde kann direkt op meng Geräter liwwert.",
-            de: "Hermes ist mein Versuch eines <strong>eigenen JARVIS</strong> — kein Chatbot, den ich bei Bedarf öffne, sondern eine persönliche KI-Schicht, die mir von vorne bis hinten gehört. Sie läuft durchgehend auf ihrem eigenen VPS, erreichbar über meinen eigenen Matrix-Server, wobei ntfy alles, was nicht warten kann, direkt auf meine Geräte liefert.",
-            fr: "Hermes, c'est ma tentative d'avoir un <strong>JARVIS à moi</strong> — non pas un chatbot que j'ouvre quand j'ai besoin d'aide, mais une couche d'IA personnelle que je maîtrise de bout en bout. Il tourne en continu sur son propre VPS, joignable via mon propre serveur Matrix, ntfy livrant directement sur mes appareils tout ce qui ne peut pas attendre."
+            en: "Hermes is my answer to the disposable AI chat: a <strong>JARVIS of my own</strong> that remembers what matters and helps with real day-to-day jobs. I built and run it end to end on my own infrastructure, so research, reminders, personal services and urgent alerts all meet in one private conversation.",
+            pt: "O Hermes é a minha resposta ao chat de IA descartável: um <strong>JARVIS só meu</strong> que se lembra do que importa e ajuda em tarefas reais do dia a dia. Construí-o e opero-o de ponta a ponta na minha própria infraestrutura, para que pesquisa, lembretes, serviços pessoais e alertas urgentes se encontrem numa única conversa privada.",
+            lu: "Den Hermes ass meng Äntwert op wegwerfbar AI-Chats: en <strong>JARVIS deen mir gehéiert</strong>, dee sech un dat Wichtegt erënnert a bei reellen Aufgaben am Alldag hëlleft. Ech hunn en vu vir bis hannen op menger eegener Infrastruktur gebaut a bedreiwen en, sou datt Recherche, Erënnerungen, perséinlech Servicer an dréngend Alarmer an enger privater Konversatioun zesummekommen.",
+            de: "Hermes ist meine Antwort auf den wegwerfbaren KI-Chat: ein <strong>eigener JARVIS</strong>, der sich an Wichtiges erinnert und bei echten Alltagsaufgaben hilft. Ich habe ihn Ende zu Ende auf meiner eigenen Infrastruktur gebaut und betreibe ihn selbst, sodass Recherche, Erinnerungen, persönliche Dienste und dringende Benachrichtigungen in einer privaten Konversation zusammenkommen.",
+            fr: "Hermes est ma réponse au chat IA jetable : un <strong>JARVIS à moi</strong> qui se souvient de ce qui compte et aide dans de vraies tâches quotidiennes. Je l'ai construit et l'exploite de bout en bout sur ma propre infrastructure, afin que recherche, rappels, services personnels et alertes urgentes se retrouvent dans une seule conversation privée."
+        },
+        "project.ai-hermes-agent.technical.goal.title": {
+            en: "Technical design goal",
+            pt: "Objetivo técnico de conceção",
+            lu: "Technescht Designzil",
+            de: "Technisches Designziel",
+            fr: "Objectif de conception technique"
+        },
+        "project.ai-hermes-agent.technical.goal.body": {
+            en: "The challenge was to make an agent useful beyond one chat while keeping its data, actions and running costs under my control. That led to a self-hosted, message-first design with durable memory, isolated jobs and deliberate model routing.",
+            pt: "O desafio era tornar um agente útil para além de uma conversa, mantendo os seus dados, ações e custos de funcionamento sob o meu controlo. Isso levou a um desenho self-hosted, centrado em mensagens, com memória duradoura, tarefas isoladas e roteamento deliberado de modelos.",
+            lu: "D'Erausfuerderung war, en Agent iwwer eng eenzeg Konversatioun eraus nëtzlech ze maachen an dobäi seng Daten, Aktiounen a Lafkäschten ënner menger Kontroll ze halen. Dofir ass en self-hosted, message-first Design mat dauerhafter Erënnerung, isoléierten Aufgaben a bewosstem Modell-Routing entstanen.",
+            de: "Die Herausforderung war, einen Agenten über einen einzelnen Chat hinaus nützlich zu machen und dabei Daten, Aktionen und laufende Kosten unter meiner Kontrolle zu behalten. Daraus entstand ein selbstgehostetes, nachrichtenorientiertes Design mit dauerhaftem Gedächtnis, isolierten Aufgaben und bewusstem Modell-Routing.",
+            fr: "Le défi était de rendre un agent utile au-delà d'une seule conversation tout en gardant ses données, ses actions et ses coûts de fonctionnement sous mon contrôle. Cela a mené à une conception auto-hébergée, centrée sur les messages, avec une mémoire durable, des tâches isolées et un routage réfléchi des modèles."
         },
 
         /* ---- Technical: what runs under the hood ---- */
@@ -275,17 +365,17 @@
             fr: "Cœur de l'agent et mémoire"
         },
         "project.ai-hermes-agent.stack.core.memory": {
-            en: "<strong>Persistent memory vault</strong>: Searchable Markdown notes with YAML frontmatter are pushed to a personal git server — durable long-term memory, not just chat history.",
-            pt: "<strong>Cofre de memória persistente</strong>: notas em Markdown pesquisáveis com frontmatter YAML são enviadas para um servidor git pessoal — memória de longo prazo durável, não apenas histórico de chat.",
-            lu: "<strong>Persistente Erënnerungs-Vault</strong>: duerchsichbar Markdown-Noten mat YAML-Frontmatter ginn op e perséinleche git-Server geschéckt — dauerhaft Laangzäit-Erënnerung, net just Chat-Historik.",
-            de: "<strong>Persistenter Gedächtnis-Vault</strong>: Durchsuchbare Markdown-Notizen mit YAML-Frontmatter werden auf einen persönlichen Git-Server gepusht — dauerhaftes Langzeitgedächtnis, nicht nur Chatverlauf.",
-            fr: "<strong>Coffre de mémoire persistant</strong> : des notes Markdown indexables avec frontmatter YAML sont poussées vers un serveur git personnel — une mémoire durable à long terme, pas un simple historique de chat."
+            en: "<strong>Persistent memory vault</strong>: Searchable Markdown notes with YAML frontmatter are pushed to a personal git server - durable long-term memory, not just chat history.",
+            pt: "<strong>Cofre de memória persistente</strong>: notas em Markdown pesquisáveis com frontmatter YAML são enviadas para um servidor git pessoal - memória de longo prazo durável, não apenas histórico de chat.",
+            lu: "<strong>Persistente Erënnerungs-Vault</strong>: duerchsichbar Markdown-Noten mat YAML-Frontmatter ginn op e perséinleche git-Server geschéckt - dauerhaft Laangzäit-Erënnerung, net just Chat-Historik.",
+            de: "<strong>Persistenter Gedächtnis-Vault</strong>: Durchsuchbare Markdown-Notizen mit YAML-Frontmatter werden auf einen persönlichen Git-Server gepusht - dauerhaftes Langzeitgedächtnis, nicht nur Chatverlauf.",
+            fr: "<strong>Coffre de mémoire persistant</strong> : des notes Markdown indexables avec frontmatter YAML sont poussées vers un serveur git personnel - une mémoire durable à long terme, pas un simple historique de chat."
         },
         "project.ai-hermes-agent.stack.core.skills": {
             en: "<strong>Self-healing skills</strong>: 80+ reusable procedure files that auto-patch when a step drifts, so a skill that breaks once gets fixed for good.",
             pt: "<strong>Skills auto-reparáveis</strong>: mais de 80 ficheiros de procedimentos reutilizáveis que se corrigem sozinhos quando um passo se desvia, por isso uma skill que falha uma vez fica corrigida de vez.",
             lu: "<strong>Selbst-reparéierend Skills</strong>: méi wéi 80 erëmbenotzbar Prozedur-Fichieren déi sech selwer flécken wann e Schrëtt ofdriff, sou datt eng Skill déi eemol kabutt geet fir gutt gefléckt gëtt.",
-            de: "<strong>Selbstheilende Skills</strong>: 80+ wiederverwendbare Prozedur-Dateien, die sich automatisch patchen, wenn ein Schritt abweicht — ein Skill, der einmal bricht, wird dauerhaft repariert.",
+            de: "<strong>Selbstheilende Skills</strong>: 80+ wiederverwendbare Prozedur-Dateien, die sich automatisch patchen, wenn ein Schritt abweicht - ein Skill, der einmal bricht, wird dauerhaft repariert.",
             fr: "<strong>Compétences auto-réparatrices</strong> : plus de 80 fichiers de procédures réutilisables qui se corrigent automatiquement quand une étape dérive, si bien qu'une compétence qui casse une fois est réparée pour de bon."
         },
         "project.ai-hermes-agent.stack.core.mcp": {
@@ -305,11 +395,11 @@
             fr: "Automatisation planifiée"
         },
         "project.ai-hermes-agent.stack.auto.cron": {
-            en: "<strong>Isolated cron sessions</strong>: Each scheduled job runs in a clean session — collect, summarize, deliver — with no tangled state machines.",
-            pt: "<strong>Sessões cron isoladas</strong>: cada tarefa agendada corre numa sessão limpa — recolher, resumir, entregar — sem máquinas de estado emaranhadas.",
-            lu: "<strong>Isoléiert Cron-Sessiounen</strong>: all geplangten Job leeft an enger propperer Sessioun — sammelen, zesummefaassen, liwweren — ouni verwéckelt State-Machinen.",
-            de: "<strong>Isolierte Cron-Sitzungen</strong>: Jeder geplante Job läuft in einer sauberen Sitzung — sammeln, zusammenfassen, ausliefern — ohne verworrene State Machines.",
-            fr: "<strong>Sessions cron isolées</strong> : chaque tâche planifiée s'exécute dans une session propre — collecter, résumer, livrer — sans machines à états alambiquées."
+            en: "<strong>Isolated cron sessions</strong>: Each scheduled job runs in a clean session - collect, summarize, deliver - with no tangled state machines.",
+            pt: "<strong>Sessões cron isoladas</strong>: cada tarefa agendada corre numa sessão limpa - recolher, resumir, entregar - sem máquinas de estado emaranhadas.",
+            lu: "<strong>Isoléiert Cron-Sessiounen</strong>: all geplangten Job leeft an enger propperer Sessioun - sammelen, zesummefaassen, liwweren - ouni verwéckelt State-Machinen.",
+            de: "<strong>Isolierte Cron-Sitzungen</strong>: Jeder geplante Job läuft in einer sauberen Sitzung - sammeln, zusammenfassen, ausliefern - ohne verworrene State Machines.",
+            fr: "<strong>Sessions cron isolées</strong> : chaque tâche planifiée s'exécute dans une session propre - collecter, résumer, livrer - sans machines à états alambiquées."
         },
         "project.ai-hermes-agent.stack.auto.routing": {
             en: "<strong>Cost-aware routing</strong>: Cheap models handle routine watchdog checks; frontier models are reserved strictly for deep synthesis.",
@@ -418,32 +508,32 @@
             fr: "Pourquoi je l'ai construit"
         },
         "project.ai-hermes-agent.why.step1": {
-            en: "Honestly, it started with curiosity and a sci-fi itch — I wanted a <strong>JARVIS of my own</strong>. Seeing a friend self-host his own agent was the nudge: the timing was right, so I rented a box and put Hermes on it to see how far I could take it.",
-            pt: "Sinceramente, começou com curiosidade e um fascínio de ficção científica — eu queria um <strong>JARVIS só meu</strong>. Ver um amigo a alojar o seu próprio agente foi o empurrão: o momento era o certo, por isso aluguei um servidor e pus lá o Hermes para ver até onde o conseguia levar.",
-            lu: "Éierlech gesot huet et mat Neigéier an enger Science-Fiction-Loscht ugefaangen — ech wollt e <strong>JARVIS deen mir gehéiert</strong>. Ze gesinn wéi e Frënd säin eegenen Agent selwer hostet war den Ustouss: den Timing huet gepasst, also hunn ech e Server gelount an den Hermes draufgesat fir ze kucken wéi wäit ech en dréine kann.",
-            de: "Ehrlich gesagt fing es mit Neugier und einer Science-Fiction-Sehnsucht an — ich wollte einen <strong>eigenen JARVIS</strong>. Ein Freund, der seinen eigenen Agenten selbst hostete, gab den Anstoß: das Timing passte, also mietete ich einen Server und setzte Hermes darauf, um zu sehen, wie weit ich damit komme.",
-            fr: "Honnêtement, ça a commencé par de la curiosité et une envie de science-fiction — je voulais un <strong>JARVIS à moi</strong>. Voir un ami auto-héberger son propre agent a été le déclic : le moment était bien choisi, alors j'ai loué un serveur et y ai installé Hermes pour voir jusqu'où je pouvais le pousser."
+            en: "Honestly, it started with curiosity and a sci-fi itch - I wanted a <strong>JARVIS of my own</strong>. Seeing a friend self-host his own agent was the nudge: the timing was right, so I rented a box and put Hermes on it to see how far I could take it.",
+            pt: "Sinceramente, começou com curiosidade e um fascínio de ficção científica - eu queria um <strong>JARVIS só meu</strong>. Ver um amigo a alojar o seu próprio agente foi o empurrão: o momento era o certo, por isso aluguei um servidor e pus lá o Hermes para ver até onde o conseguia levar.",
+            lu: "Éierlech gesot huet et mat Neigéier an enger Science-Fiction-Loscht ugefaangen - ech wollt e <strong>JARVIS deen mir gehéiert</strong>. Ze gesinn wéi e Frënd säin eegenen Agent selwer hostet war den Ustouss: den Timing huet gepasst, also hunn ech e Server gelount an den Hermes draufgesat fir ze kucken wéi wäit ech en dréine kann.",
+            de: "Ehrlich gesagt fing es mit Neugier und einer Science-Fiction-Sehnsucht an - ich wollte einen <strong>eigenen JARVIS</strong>. Ein Freund, der seinen eigenen Agenten selbst hostete, gab den Anstoß: das Timing passte, also mietete ich einen Server und setzte Hermes darauf, um zu sehen, wie weit ich damit komme.",
+            fr: "Honnêtement, ça a commencé par de la curiosité et une envie de science-fiction - je voulais un <strong>JARVIS à moi</strong>. Voir un ami auto-héberger son propre agent a été le déclic : le moment était bien choisi, alors j'ai loué un serveur et y ai installé Hermes pour voir jusqu'où je pouvais le pousser."
         },
         "project.ai-hermes-agent.why.step2": {
-            en: "Hermes isn't my coding setup — I have plenty of agents for that. It fills a different gap: instead of opening a throwaway ChatGPT tab that forgets me by tomorrow, I just ask Hermes. It <strong>remembers either way</strong>, holds context across days, and can act on my own services.",
-            pt: "O Hermes não é o meu ambiente de programação — para isso tenho agentes que cheguem. Ele preenche outra lacuna: em vez de abrir um separador descartável do ChatGPT que amanhã já se esqueceu de mim, pergunto ao Hermes. Ele <strong>lembra-se à mesma</strong>, mantém o contexto ao longo dos dias e consegue agir sobre os meus próprios serviços.",
-            lu: "Den Hermes ass net mäi Kodéier-Setup — dofir hunn ech genuch Agenten. Hien decken eng aner Lück of: amplaz en eemolege ChatGPT-Tab opzemaachen deen mech muer scho vergiess huet, froen ech einfach den Hermes. Hien <strong>erënnert sech esou wéi esou</strong>, hält de Kontext iwwer Deeg, a kann op meng eege Servicer agéieren.",
-            de: "Hermes ist nicht mein Coding-Setup — dafür habe ich genug Agenten. Er füllt eine andere Lücke: statt einen Wegwerf-ChatGPT-Tab zu öffnen, der mich morgen schon vergessen hat, frage ich einfach Hermes. Er <strong>erinnert sich sowieso</strong>, hält den Kontext über Tage und kann auf meinen eigenen Diensten handeln.",
-            fr: "Hermes n'est pas mon environnement de code — j'ai largement assez d'agents pour ça. Il comble un autre manque : au lieu d'ouvrir un onglet ChatGPT jetable qui m'aura oublié demain, je demande simplement à Hermes. Il <strong>se souvient de toute façon</strong>, garde le contexte sur plusieurs jours et peut agir sur mes propres services."
+            en: "Hermes isn't my coding setup - I have plenty of agents for that. It fills a different gap: instead of opening a throwaway ChatGPT tab that forgets me by tomorrow, I just ask Hermes. It <strong>remembers either way</strong>, holds context across days, and can act on my own services.",
+            pt: "O Hermes não é o meu ambiente de programação - para isso tenho agentes que cheguem. Ele preenche outra lacuna: em vez de abrir um separador descartável do ChatGPT que amanhã já se esqueceu de mim, pergunto ao Hermes. Ele <strong>lembra-se à mesma</strong>, mantém o contexto ao longo dos dias e consegue agir sobre os meus próprios serviços.",
+            lu: "Den Hermes ass net mäi Kodéier-Setup - dofir hunn ech genuch Agenten. Hien decken eng aner Lück of: amplaz en eemolege ChatGPT-Tab opzemaachen deen mech muer scho vergiess huet, froen ech einfach den Hermes. Hien <strong>erënnert sech esou wéi esou</strong>, hält de Kontext iwwer Deeg, a kann op meng eege Servicer agéieren.",
+            de: "Hermes ist nicht mein Coding-Setup - dafür habe ich genug Agenten. Er füllt eine andere Lücke: statt einen Wegwerf-ChatGPT-Tab zu öffnen, der mich morgen schon vergessen hat, frage ich einfach Hermes. Er <strong>erinnert sich sowieso</strong>, hält den Kontext über Tage und kann auf meinen eigenen Diensten handeln.",
+            fr: "Hermes n'est pas mon environnement de code - j'ai largement assez d'agents pour ça. Il comble un autre manque : au lieu d'ouvrir un onglet ChatGPT jetable qui m'aura oublié demain, je demande simplement à Hermes. Il <strong>se souvient de toute façon</strong>, garde le contexte sur plusieurs jours et peut agir sur mes propres services."
         },
         "project.ai-hermes-agent.why.step3": {
-            en: "What matters most is that it's <strong>mine</strong> — not a rented product from Claude or any other provider. I own the data, the infrastructure and the skills, and I decide what it's allowed to do. The AI model is the only piece I can't self-host yet, and that doesn't change whose agent this is.",
-            pt: "O que mais importa é que é <strong>meu</strong> — não um produto alugado da Claude nem de qualquer outro fornecedor. Sou dono dos dados, da infraestrutura e das skills, e sou eu que decido o que ele pode fazer. O modelo de IA é a única peça que ainda não consigo alojar eu próprio, e isso não muda de quem é este agente.",
-            lu: "Wat am wichtegsten ass: et ass <strong>mengt</strong> — kee gelounte Produkt vun der Claude oder iergendengem anere Fournisseur. D'Donnéeën, d'Infrastruktur an d'Skills gehéieren mir, an ech decidéieren wat en däerf maachen. De AI-Modell ass dat eenzegt Stéck dat ech nach net selwer hoste kann, an dat ännert näischt drun wiem dësen Agent gehéiert.",
-            de: "Am wichtigsten ist, dass er <strong>mir gehört</strong> — kein gemietetes Produkt von Claude oder einem anderen Anbieter. Die Daten, die Infrastruktur und die Skills gehören mir, und ich entscheide, was er darf. Das KI-Modell ist das einzige Stück, das ich noch nicht selbst hosten kann, und das ändert nichts daran, wessen Agent das ist.",
-            fr: "Le plus important, c'est qu'il est <strong>à moi</strong> — pas un produit loué chez Claude ou un autre fournisseur. Les données, l'infrastructure et les compétences m'appartiennent, et c'est moi qui décide de ce qu'il a le droit de faire. Le modèle d'IA est la seule pièce que je ne peux pas encore auto-héberger, et ça ne change rien à qui appartient cet agent."
+            en: "What matters most is that it's <strong>mine</strong> - not a rented product from Claude or any other provider. I own the data, the infrastructure and the skills, and I decide what it's allowed to do. The AI model is the only piece I can't self-host yet, and that doesn't change whose agent this is.",
+            pt: "O que mais importa é que é <strong>meu</strong> - não um produto alugado da Claude nem de qualquer outro fornecedor. Sou dono dos dados, da infraestrutura e das skills, e sou eu que decido o que ele pode fazer. O modelo de IA é a única peça que ainda não consigo alojar eu próprio, e isso não muda de quem é este agente.",
+            lu: "Wat am wichtegsten ass: et ass <strong>mengt</strong> - kee gelounte Produkt vun der Claude oder iergendengem anere Fournisseur. D'Donnéeën, d'Infrastruktur an d'Skills gehéieren mir, an ech decidéieren wat en däerf maachen. De AI-Modell ass dat eenzegt Stéck dat ech nach net selwer hoste kann, an dat ännert näischt drun wiem dësen Agent gehéiert.",
+            de: "Am wichtigsten ist, dass er <strong>mir gehört</strong> - kein gemietetes Produkt von Claude oder einem anderen Anbieter. Die Daten, die Infrastruktur und die Skills gehören mir, und ich entscheide, was er darf. Das KI-Modell ist das einzige Stück, das ich noch nicht selbst hosten kann, und das ändert nichts daran, wessen Agent das ist.",
+            fr: "Le plus important, c'est qu'il est <strong>à moi</strong> - pas un produit loué chez Claude ou un autre fournisseur. Les données, l'infrastructure et les compétences m'appartiennent, et c'est moi qui décide de ce qu'il a le droit de faire. Le modèle d'IA est la seule pièce que je ne peux pas encore auto-héberger, et ça ne change rien à qui appartient cet agent."
         },
         "project.ai-hermes-agent.why.step4": {
-            en: "Then one uncompacted session loop on pay-as-you-go cost me <strong>€107 in a single week</strong>. That bill taught me cost-routing and session hygiene the hard way — and turned model routing into a core discipline of the project.",
-            pt: "Depois, um ciclo de sessão sem compactação em pay-as-you-go custou-me <strong>107 € numa só semana</strong>. Essa fatura ensinou-me cost-routing e higiene de sessões à força — e tornou o roteamento de modelos numa disciplina central do projeto.",
-            lu: "Duerno huet eng net-kompaktéiert Sessiounsschleef op Pay-as-you-go mech <strong>107 € an enger eenzeger Woch</strong> kascht. Déi Rechnung huet mir Cost-Routing a Sessiounshygiène op déi haart Manéier bäibruecht — an huet Modell-Routing zu enger Kärdisziplin vum Projet gemaach.",
-            de: "Dann kostete mich eine nicht komprimierte Sitzungsschleife im Pay-as-you-go-Modell <strong>107 € in einer einzigen Woche</strong>. Diese Rechnung brachte mir Cost-Routing und Sitzungshygiene auf die harte Tour bei — und machte Modell-Routing zu einer Kerndisziplin des Projekts.",
-            fr: "Puis une boucle de session non compactée en paiement à l'usage m'a coûté <strong>107 € en une seule semaine</strong>. Cette facture m'a appris le routage par coût et l'hygiène des sessions à la dure — et a fait du routage de modèles une discipline centrale du projet."
+            en: "Then one uncompacted session loop on pay-as-you-go cost me <strong>€107 in a single week</strong>. That bill taught me cost-routing and session hygiene the hard way - and turned model routing into a core discipline of the project.",
+            pt: "Depois, um ciclo de sessão sem compactação em pay-as-you-go custou-me <strong>107 € numa só semana</strong>. Essa fatura ensinou-me cost-routing e higiene de sessões à força - e tornou o roteamento de modelos numa disciplina central do projeto.",
+            lu: "Duerno huet eng net-kompaktéiert Sessiounsschleef op Pay-as-you-go mech <strong>107 € an enger eenzeger Woch</strong> kascht. Déi Rechnung huet mir Cost-Routing a Sessiounshygiène op déi haart Manéier bäibruecht - an huet Modell-Routing zu enger Kärdisziplin vum Projet gemaach.",
+            de: "Dann kostete mich eine nicht komprimierte Sitzungsschleife im Pay-as-you-go-Modell <strong>107 € in einer einzigen Woche</strong>. Diese Rechnung brachte mir Cost-Routing und Sitzungshygiene auf die harte Tour bei - und machte Modell-Routing zu einer Kerndisziplin des Projekts.",
+            fr: "Puis une boucle de session non compactée en paiement à l'usage m'a coûté <strong>107 € en une seule semaine</strong>. Cette facture m'a appris le routage par coût et l'hygiène des sessions à la dure - et a fait du routage de modèles une discipline centrale du projet."
         },
 
         /* ---- Lessons learned ---- */
@@ -504,11 +594,11 @@
             fr: "Maîtriser toute la stack"
         },
         "project.ai-hermes-agent.lessons.hosting.body": {
-            en: "Self-hosting means no managed service to blame — you learn the infrastructure, networking and secrets for real.",
-            pt: "Self-hosting significa que não há serviço gerido a quem culpar — aprendes a infraestrutura, a rede e os segredos a sério.",
-            lu: "Self-hosting heescht datt et kee gemanagete Service gëtt fir d'Schold ze ginn — du léiers d'Infrastruktur, d'Netzwierk an d'Geheimnisser richteg.",
-            de: "Self-Hosting heißt: kein Managed Service, dem man die Schuld geben kann — du lernst Infrastruktur, Netzwerk und Secrets wirklich.",
-            fr: "L'auto-hébergement, c'est aucun service géré à blâmer — on apprend pour de vrai l'infrastructure, le réseau et les secrets."
+            en: "Self-hosting means no managed service to blame - you learn the infrastructure, networking and secrets for real.",
+            pt: "Self-hosting significa que não há serviço gerido a quem culpar - aprendes a infraestrutura, a rede e os segredos a sério.",
+            lu: "Self-hosting heescht datt et kee gemanagete Service gëtt fir d'Schold ze ginn - du léiers d'Infrastruktur, d'Netzwierk an d'Geheimnisser richteg.",
+            de: "Self-Hosting heißt: kein Managed Service, dem man die Schuld geben kann - du lernst Infrastruktur, Netzwerk und Secrets wirklich.",
+            fr: "L'auto-hébergement, c'est aucun service géré à blâmer - on apprend pour de vrai l'infrastructure, le réseau et les secrets."
         },
         "project.ai-hermes-agent.lessons.subagents.title": {
             en: "Isolate heavy work",

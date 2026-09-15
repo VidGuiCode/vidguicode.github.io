@@ -28,11 +28,11 @@
             fr: "59/60"
         },
         "project.pif.subtitle": {
-            en: "Final project from September 2024 to June 2025: Full IoT system with ESP8266 nodes, Raspberry Pi hub, web dashboard, enterprise networking, and automated backups. Presented the completed product as part of the Computer Technician diploma.",
-            pt: "Projeto final de setembro de 2024 a junho de 2025: Sistema IoT completo com nós ESP8266, hub Raspberry Pi, dashboard web, rede empresarial e backups automatizados. Apresentei o produto concluído como parte do diploma de Técnico de Informática.",
-            lu: "Finale Projet vum September 2024 bis Juni 2025: Vollstännegt IoT System mat ESP8266 Noden, Raspberry Pi Hub, Web Dashboard, Enterprise Netzwierk, an automatesche Backups. Hunn de komplett Produit presentéiert als Deel vum Computer Technician Diplom.",
-            de: "Abschlussprojekt von September 2024 bis Juni 2025: Vollständiges IoT-System mit ESP8266-Nodes, Raspberry Pi Hub, Web-Dashboard, Enterprise-Netzwerk und automatisierten Backups. Präsentierte das fertige Produkt als Teil des Computer-Techniker-Diploms.",
-            fr: "Projet final de septembre 2024 à juin 2025 : Système IoT complet avec nœuds ESP8266, hub Raspberry Pi, tableau de bord web, réseau d'entreprise et sauvegardes automatisées. Présenté le produit terminé dans le cadre du diplôme de Technicien en informatique."
+            en: "My final Computer Technician diploma project, developed from September 2024 to June 2025: a self-watering plant system that measures conditions, shows them clearly, and protects its data with nightly backups. I built every layer, from the physical device to the software and network, to make everyday plant care more reliable.",
+            pt: "O meu projeto final do diploma de Técnico de Informática, desenvolvido de setembro de 2024 a junho de 2025: um sistema de rega automática que mede as condições das plantas, mostra-as de forma clara e protege os dados com backups noturnos. Construí todas as camadas, do dispositivo físico ao software e à rede, para tornar o cuidado diário das plantas mais fiável.",
+            lu: "Mäi Finale Projet fir den Computer Technician Diplom, entwéckelt vu September 2024 bis Juni 2025: e System fir Planzen automatesch ze Waasseren, deen d'Konditioune moosst, kloer weist a seng Donnéeë mat nuetleche Backups schützt. Ech hunn all Schicht gebaut, vum physeschen Apparat bis bei d'Software an d'Netzwierk, fir déi alldeeglech Planzefleeg méi zouverlässeg ze maachen.",
+            de: "Mein Abschlussprojekt für das Computer-Techniker-Diplom, entwickelt von September 2024 bis Juni 2025: ein selbstbewässerndes Pflanzensystem, das Bedingungen misst, sie klar darstellt und seine Daten mit nächtlichen Backups schützt. Ich habe jede Schicht gebaut, vom physischen Gerät bis zu Software und Netzwerk, um die tägliche Pflanzenpflege zuverlässiger zu machen.",
+            fr: "Mon projet final de diplôme de Technicien en informatique, développé de septembre 2024 à juin 2025 : un système d'arrosage automatique qui mesure les conditions des plantes, les affiche clairement et protège ses données avec des sauvegardes nocturnes. J'ai construit chaque couche, de l'appareil physique au logiciel et au réseau, pour rendre l'entretien quotidien des plantes plus fiable."
         },
         "project.pif.section.system.title": {
             en: "The \"Plantimeter\" System",
@@ -42,11 +42,11 @@
             fr: "Le système \"Plantimeter\""
         },
         "project.pif.section.system.body": {
-            en: "This was my <strong>PIF (Projet Intégré Final)</strong> — the capstone project for my Computer Technician diploma. I built a complete IoT plant monitoring and automation system from scratch: hardware nodes, firmware, backend server, web dashboard, and enterprise networking.",
-            pt: "Este foi o meu <strong>PIF (Projet Intégré Final)</strong> — o projeto de final de curso do diploma de Técnico de Informática. Construí um sistema IoT completo de monitorização e automação de plantas do zero: nós de hardware, firmware, servidor backend, dashboard web e rede empresarial.",
-            lu: "Dëst war mäin <strong>PIF (Projet Intégré Final)</strong> — de Capstone Projet fir mäin Computer Technician Diplom. Ech hunn e komplette IoT Planz-Monitoring an Automatisatiouns-System vu Null un gebaut: Hardware Noden, Firmware, Backend Server, Web Dashboard, an Enterprise Netzwierk.",
-            de: "Dies war mein <strong>PIF (Projet Intégré Final)</strong> — das Abschlussprojekt für mein Computer-Techniker-Diplom. Ich habe ein komplettes IoT-System zur Pflanzenüberwachung und -automatisierung von Grund auf gebaut: Hardware-Nodes, Firmware, Backend-Server, Web-Dashboard und Enterprise-Netzwerk.",
-            fr: "C’était mon <strong>PIF (Projet Intégré Final)</strong> — le projet de fin d’études pour mon diplôme de Technicien en informatique. J’ai construit un système IoT complet de monitoring et d’automatisation des plantes de A à Z : nœuds matériels, firmware, serveur backend, tableau de bord web et réseau d’entreprise."
+            en: "This was my <strong>PIF (Projet Intégré Final)</strong> - the capstone project for my Computer Technician diploma. I built a complete IoT plant monitoring and automation system from scratch: hardware nodes, firmware, backend server, web dashboard, and enterprise networking.",
+            pt: "Este foi o meu <strong>PIF (Projet Intégré Final)</strong> - o projeto de final de curso do diploma de Técnico de Informática. Construí um sistema IoT completo de monitorização e automação de plantas do zero: nós de hardware, firmware, servidor backend, dashboard web e rede empresarial.",
+            lu: "Dëst war mäin <strong>PIF (Projet Intégré Final)</strong> - de Capstone Projet fir mäin Computer Technician Diplom. Ech hunn e komplette IoT Planz-Monitoring an Automatisatiouns-System vu Null un gebaut: Hardware Noden, Firmware, Backend Server, Web Dashboard, an Enterprise Netzwierk.",
+            de: "Dies war mein <strong>PIF (Projet Intégré Final)</strong> - das Abschlussprojekt für mein Computer-Techniker-Diplom. Ich habe ein komplettes IoT-System zur Pflanzenüberwachung und -automatisierung von Grund auf gebaut: Hardware-Nodes, Firmware, Backend-Server, Web-Dashboard und Enterprise-Netzwerk.",
+            fr: "C’était mon <strong>PIF (Projet Intégré Final)</strong> - le projet de fin d’études pour mon diplôme de Technicien en informatique. J’ai construit un système IoT complet de monitoring et d’automatisation des plantes de A à Z : nœuds matériels, firmware, serveur backend, tableau de bord web et réseau d’entreprise."
         },
         "project.pif.nodes.sensor.title": {
             en: "Sensor Node",
@@ -55,124 +55,12 @@
             de: "Sensor-Knoten",
             fr: "Nœud capteur"
         },
-        "project.pif.nodes.sensor.spec": {
-            en: "ESP8266 / Wemos D1 Mini",
-            pt: "ESP8266 / Wemos D1 Mini",
-            lu: "ESP8266 / Wemos D1 Mini",
-            de: "ESP8266 / Wemos D1 Mini",
-            fr: "ESP8266 / Wemos D1 Mini"
-        },
-        "project.pif.nodes.sensor.detail1": {
-            en: "Custom PCB",
-            pt: "PCB Personalizada",
-            lu: "Benotzerdefinéiert PCB",
-            de: "Individuelle PCB",
-            fr: "PCB personnalisé"
-        },
-        "project.pif.nodes.sensor.detail2": {
-            en: "Wi-Fi + SQL",
-            pt: "Wi‑Fi + SQL",
-            lu: "Wi‑Fi + SQL",
-            de: "Wi‑Fi + SQL",
-            fr: "Wi‑Fi + SQL"
-        },
-        "project.pif.nodes.sensor.body": {
-            en: "Measures soil moisture, temperature, humidity, and light. Controls water pump and grow LED. Authenticates via MAC address and syncs with the hub.",
-            pt: "Mede humidade do solo, temperatura, humidade e luz. Controla a bomba de água e o LED de crescimento. Autentica via endereço MAC e sincroniza com o hub.",
-            lu: "Miess Buedemfiichtegkeet, Temperatur, Fiichtegkeet a Liicht. Kontrolléiert Waasserpompel a Grow LED. Authentifikatioun iwwer MAC Adress a Sync mam Hub.",
-            de: "Misst Bodenfeuchte, Temperatur, Luftfeuchte und Licht. Steuert Wasserpumpe und Grow-LED. Authentifiziert über MAC-Adresse und synchronisiert mit dem Hub.",
-            fr: "Mesure l’humidité du sol, la température, l’humidité et la lumière. Contrôle la pompe à eau et la LED de croissance. Authentifie via l’adresse MAC et se synchronise avec le hub."
-        },
-        "project.pif.nodes.sensor.tag.dht22": {
-            en: "[DHT22]",
-            pt: "[DHT22]",
-            lu: "[DHT22]",
-            de: "[DHT22]",
-            fr: "[DHT22]"
-        },
-        "project.pif.nodes.sensor.tag.bh1750": {
-            en: "[BH1750]",
-            pt: "[BH1750]",
-            lu: "[BH1750]",
-            de: "[BH1750]",
-            fr: "[BH1750]"
-        },
-        "project.pif.nodes.sensor.tag.sen0193": {
-            en: "[SEN0193]",
-            pt: "[SEN0193]",
-            lu: "[SEN0193]",
-            de: "[SEN0193]",
-            fr: "[SEN0193]"
-        },
-        "project.pif.nodes.sensor.tag.uln2803": {
-            en: "[ULN2803]",
-            pt: "[ULN2803]",
-            lu: "[ULN2803]",
-            de: "[ULN2803]",
-            fr: "[ULN2803]"
-        },
         "project.pif.nodes.hub.title": {
             en: "Hub Server",
             pt: "Servidor Hub",
             lu: "Hub Server",
             de: "Hub-Server",
             fr: "Serveur hub"
-        },
-        "project.pif.nodes.hub.spec": {
-            en: "Raspberry Pi 4 / FullpageOS",
-            pt: "Raspberry Pi 4 / FullpageOS",
-            lu: "Raspberry Pi 4 / FullpageOS",
-            de: "Raspberry Pi 4 / FullpageOS",
-            fr: "Raspberry Pi 4 / FullpageOS"
-        },
-        "project.pif.nodes.hub.detail1": {
-            en: "Touchscreen",
-            pt: "Ecrã tátil",
-            lu: "Touchscreen",
-            de: "Touchscreen",
-            fr: "Écran tactile"
-        },
-        "project.pif.nodes.hub.detail2": {
-            en: "LAMP Stack",
-            pt: "Pilha LAMP",
-            lu: "LAMP Stack",
-            de: "LAMP-Stack",
-            fr: "Stack LAMP"
-        },
-        "project.pif.nodes.hub.body": {
-            en: "Runs Apache, PHP, MariaDB. Hosts admin dashboard, touch UI for kiosk mode, and log API. Handles task scheduling and node management.",
-            pt: "Corre Apache, PHP, MariaDB. Aloja o painel de admin, UI tátil para modo quiosque e API de logs. Gere agendamento de tarefas e gestão de nós.",
-            lu: "Laféiert Apache, PHP, MariaDB. Host den Admin Dashboard, Touch UI fir Kiosk Modus, an Log API. Gestioun vu Aufgaben an Noden.",
-            de: "Betreibt Apache, PHP, MariaDB. Hostet Admin-Dashboard, Touch-UI für Kiosk-Modus und Log-API. Übernimmt Aufgabenplanung und Node-Verwaltung.",
-            fr: "Fait tourner Apache, PHP, MariaDB. Héberge le tableau de bord admin, l’interface tactile en mode kiosque et l’API de logs. Gère la planification des tâches et les nœuds."
-        },
-        "project.pif.nodes.hub.tag.apache": {
-            en: "[APACHE]",
-            pt: "[APACHE]",
-            lu: "[APACHE]",
-            de: "[APACHE]",
-            fr: "[APACHE]"
-        },
-        "project.pif.nodes.hub.tag.mariadb": {
-            en: "[MARIADB]",
-            pt: "[MARIADB]",
-            lu: "[MARIADB]",
-            de: "[MARIADB]",
-            fr: "[MARIADB]"
-        },
-        "project.pif.nodes.hub.tag.php": {
-            en: "[PHP]",
-            pt: "[PHP]",
-            lu: "[PHP]",
-            de: "[PHP]",
-            fr: "[PHP]"
-        },
-        "project.pif.nodes.hub.tag.ssl": {
-            en: "[SSL]",
-            pt: "[SSL]",
-            lu: "[SSL]",
-            de: "[SSL]",
-            fr: "[SSL]"
         },
         "project.pif.nodes.backup.title": {
             en: "Backup Server",
@@ -181,75 +69,12 @@
             de: "Backup-Server",
             fr: "Serveur de sauvegarde"
         },
-        "project.pif.nodes.backup.spec": {
-            en: "Ubuntu Server VM / RAID1",
-            pt: "VM Ubuntu Server / RAID1",
-            lu: "Ubuntu Server VM / RAID1",
-            de: "Ubuntu Server VM / RAID1",
-            fr: "VM Ubuntu Server / RAID1"
-        },
-        "project.pif.nodes.backup.detail1": {
-            en: "2× 30GB",
-            pt: "2× 30GB",
-            lu: "2× 30GB",
-            de: "2× 30GB",
-            fr: "2× 30Go"
-        },
-        "project.pif.nodes.backup.detail2": {
-            en: "Mirrored",
-            pt: "Espelhado",
-            lu: "Gespigelt",
-            de: "Gespiegelt",
-            fr: "En miroir"
-        },
         "project.pif.nodes.backup.body": {
             en: "Receives daily backups via rsync over SSH. Stores database dumps, logs, and web content with 30-day rotation.",
             pt: "Recebe backups diários via rsync sobre SSH. Guarda dumps de base de dados, logs e conteúdo web com rotação de 30 dias.",
             lu: "Kritt deeglech Backups via rsync iwwer SSH. Späichert DB Dumps, Logs, a Web Inhalt mat 30-Deeg Rotatioun.",
             de: "Erhält tägliche Backups per rsync über SSH. Speichert Datenbank-Dumps, Logs und Web-Inhalte mit 30-tägiger Rotation.",
             fr: "Reçoit des sauvegardes quotidiennes via rsync sur SSH. Stocke dumps DB, logs et contenu web avec rotation de 30 jours."
-        },
-        "project.pif.nodes.backup.tag.raid1": {
-            en: "[RAID1]",
-            pt: "[RAID1]",
-            lu: "[RAID1]",
-            de: "[RAID1]",
-            fr: "[RAID1]"
-        },
-        "project.pif.nodes.backup.tag.rsync": {
-            en: "[RSYNC]",
-            pt: "[RSYNC]",
-            lu: "[RSYNC]",
-            de: "[RSYNC]",
-            fr: "[RSYNC]"
-        },
-        "project.pif.nodes.backup.tag.cron": {
-            en: "[CRON]",
-            pt: "[CRON]",
-            lu: "[CRON]",
-            de: "[CRON]",
-            fr: "[CRON]"
-        },
-        "project.pif.nodes.backup.tag.ufw": {
-            en: "[UFW]",
-            pt: "[UFW]",
-            lu: "[UFW]",
-            de: "[UFW]",
-            fr: "[UFW]"
-        },
-        "project.pif.section.what.title": {
-            en: "What It Does",
-            pt: "O que faz",
-            lu: "Wat et mécht",
-            de: "Was es tut",
-            fr: "Ce que ça fait"
-        },
-        "project.pif.section.what.body": {
-            en: "The system automates plant care and provides real-time monitoring:",
-            pt: "O sistema automatiza o cuidado das plantas e fornece monitorização em tempo real:",
-            lu: "De System automatiséiert Planzepfleeg a bitt Echtzäit Iwwerwaachung:",
-            de: "Das System automatisiert die Pflanzenpflege und bietet Echtzeitüberwachung:",
-            fr: "Le système automatise l’entretien des plantes et offre une surveillance en temps réel :"
         },
         "project.pif.section.what.env": {
             en: "Environmental Sensing: Measures soil moisture, air temperature, humidity, and ambient light using calibrated sensors.",
@@ -299,20 +124,6 @@
             lu: "Touch Kiosk UI: Optiméiert Interface fir den Raspberry Pi Touchscreen, designt fir besser Benotzbarkeet trotz dem klengen Ecran.",
             de: "Touch-Kiosk-UI: Optimierte Oberfläche für das Raspberry Pi Touchscreen-Display, für bessere Benutzerfreundlichkeit trotz kleiner Bildschirmgröße entwickelt.",
             fr: "UI kiosque tactile : Interface optimisée pour l'écran tactile Raspberry Pi, conçue pour une meilleure utilisabilité malgré la petite taille de l'écran."
-        },
-        "project.pif.section.network.title": {
-            en: "The Network",
-            pt: "A Rede",
-            lu: "D'Netzwierk",
-            de: "Das Netzwerk",
-            fr: "Le réseau"
-        },
-        "project.pif.section.network.body": {
-            en: "I designed and configured a complete enterprise-style network in Cisco Packet Tracer:",
-            pt: "Desenhei e configurei uma rede empresarial completa no Cisco Packet Tracer:",
-            lu: "Ech hunn en Enterprise-Netzwierk am Cisco Packet Tracer designt a konfiguréiert:",
-            de: "Ich habe ein vollständiges Enterprise-Netzwerk in Cisco Packet Tracer entworfen und konfiguriert:",
-            fr: "J’ai conçu et configuré un réseau de style entreprise dans Cisco Packet Tracer :"
         },
         "project.pif.section.network.firm": {
             en: "Company Network: VLANs (10/20), DHCP server, ISR4331 router with NAT/PAT and ACLs.",
@@ -370,12 +181,19 @@
             de: "Automatisches Bewässerungssystem: Wasserpumpen-Mechanismus gesteuert von Bodenfeuchtesensoren",
             fr: "Système d'arrosage automatisé : Mécanisme de pompe à eau contrôlé par des capteurs d'humidité du sol"
         },
+        "project.pif.images.network.overview": {
+            en: "The full test network shows the plant system, office services, and a simulated internet connection working together. I designed and tested it to make sure information could move safely between the separate parts of the system.",
+            pt: "A rede de teste completa mostra o sistema de plantas, os serviços de escritório e uma ligação à internet simulada a funcionar em conjunto. Concebi-a e testei-a para garantir que a informação podia circular em segurança entre as partes separadas do sistema.",
+            lu: "Dat ganzt Testnetzwierk weist de Planzesystem, Büroservicer an eng simuléiert Internetverbindung, déi zesumme funktionéieren. Ech hunn et entworf an getest, fir sécherzestellen, datt Informatioune sécher tëscht de getrennten Deeler vum System zirkuléiere kënnen.",
+            de: "Das vollständige Testnetzwerk zeigt, wie das Pflanzensystem, Bürodienste und eine simulierte Internetverbindung zusammenarbeiten. Ich habe es entworfen und getestet, damit Informationen sicher zwischen den getrennten Teilen des Systems fließen können.",
+            fr: "Le réseau de test complet montre le système de plantes, les services de bureau et une connexion internet simulée qui fonctionnent ensemble. Je l'ai conçu et testé pour garantir que les informations puissent circuler en toute sécurité entre les différentes parties du système."
+        },
         "project.pif.images.network": {
-            en: "The whole network — including the simulated internet/ISP side — designed and tested in Cisco Packet Tracer: the home network (IoT nodes, PlantimeterAP) connects to the company office (servers, VLANs) through an ISR4331 router, with DNS routing to Google Public DNS.",
-            pt: "Toda a rede — incluindo o lado simulado de internet/ISP — concebida e testada no Cisco Packet Tracer: a rede doméstica (nós IoT, PlantimeterAP) liga-se ao escritório da empresa (servidores, VLANs) através de um router ISR4331, com roteamento DNS para o Google Public DNS.",
-            lu: "Dat ganzt Netzwierk — inklusiv déi simuléiert Internet-/ISP-Säit — am Cisco Packet Tracer entworf an getest: d'Heemnetz (IoT-Noden, PlantimeterAP) verbënnt sech mam Firmebüro (Server, VLANen) iwwer en ISR4331-Router, mat DNS-Routing op de Google Public DNS.",
-            de: "Das gesamte Netzwerk — einschließlich der simulierten Internet-/ISP-Seite — in Cisco Packet Tracer entworfen und getestet: das Heimnetzwerk (IoT-Knoten, PlantimeterAP) verbindet sich über einen ISR4331-Router mit dem Firmenbüro (Server, VLANs), mit DNS-Routing zum Google Public DNS.",
-            fr: "L'ensemble du réseau — y compris le côté internet/FAI simulé — conçu et testé dans Cisco Packet Tracer : le réseau domestique (nœuds IoT, PlantimeterAP) se connecte au bureau de l'entreprise (serveurs, VLANs) via un routeur ISR4331, avec routage DNS vers Google Public DNS."
+            en: "The whole network - including the simulated internet/ISP side - designed and tested in Cisco Packet Tracer: the home network (IoT nodes, PlantimeterAP) connects to the company office (servers, VLANs) through an ISR4331 router, with DNS routing to Google Public DNS.",
+            pt: "Toda a rede - incluindo o lado simulado de internet/ISP - concebida e testada no Cisco Packet Tracer: a rede doméstica (nós IoT, PlantimeterAP) liga-se ao escritório da empresa (servidores, VLANs) através de um router ISR4331, com roteamento DNS para o Google Public DNS.",
+            lu: "Dat ganzt Netzwierk - inklusiv déi simuléiert Internet-/ISP-Säit - am Cisco Packet Tracer entworf an getest: d'Heemnetz (IoT-Noden, PlantimeterAP) verbënnt sech mam Firmebüro (Server, VLANen) iwwer en ISR4331-Router, mat DNS-Routing op de Google Public DNS.",
+            de: "Das gesamte Netzwerk - einschließlich der simulierten Internet-/ISP-Seite - in Cisco Packet Tracer entworfen und getestet: das Heimnetzwerk (IoT-Knoten, PlantimeterAP) verbindet sich über einen ISR4331-Router mit dem Firmenbüro (Server, VLANs), mit DNS-Routing zum Google Public DNS.",
+            fr: "L'ensemble du réseau - y compris le côté internet/FAI simulé - conçu et testé dans Cisco Packet Tracer : le réseau domestique (nœuds IoT, PlantimeterAP) se connecte au bureau de l'entreprise (serveurs, VLANs) via un routeur ISR4331, avec routage DNS vers Google Public DNS."
         },
         "project.pif.section.why.title": {
             en: "Why I Built It",
@@ -385,11 +203,11 @@
             fr: "Pourquoi je l’ai construit"
         },
         "project.pif.section.why.body1": {
-            en: "This was my <strong>final exam project</strong> for the Computer Technician diploma. It had to demonstrate skills across hardware, software, networking, and documentation. I chose to go beyond the requirements — implementing \"Should\" and \"Could\" features, plus my own innovations like fuzzy search and a 80°C safety cutoff.",
-            pt: "Este foi o meu <strong>projeto final de exame</strong> para o diploma de Técnico de Informática. Tinha de demonstrar competências em hardware, software, redes e documentação. Decidi ir além dos requisitos — implementando funcionalidades \"Should\" e \"Could\", além de inovações próprias como fuzzy search e um cutoff de segurança a 80°C.",
-            lu: "Dëst war mäin <strong>finalen Examen Projet</strong> fir den Computer Technician Diplom. Ech misst Fäegkeeten an Hardware, Software, Netzwierker an Dokumentatioun weisen. Ech sinn iwwer d'Ufuerderunge gaangen — hunn \"Should\" an \"Could\" Features ëmgesat plus meng eege Innovatiounen wéi Fuzzy Search an en 80°C Sécherheets-Cutoff.",
-            de: "Dies war mein <strong>Abschlussprojekt</strong> für das Computer-Techniker-Diplom. Es musste Fähigkeiten in Hardware, Software, Netzwerk und Dokumentation zeigen. Ich bin über die Anforderungen hinausgegangen — habe \"Should\"- und \"Could\"-Features implementiert sowie eigene Innovationen wie Fuzzy Search und einen 80°C Sicherheits-Cutoff.",
-            fr: "C’était mon <strong>projet de fin d’études</strong> pour le diplôme de Technicien en informatique. Il devait démontrer des compétences en matériel, logiciel, réseau et documentation. J’ai choisi d’aller au-delà des exigences — en implémentant des fonctionnalités \"Should\" et \"Could\", ainsi que mes propres innovations comme la recherche floue et une coupure de sécurité à 80°C."
+            en: "This was my <strong>final exam project</strong> for the Computer Technician diploma. It had to demonstrate skills across hardware, software, networking, and documentation. I chose to go beyond the requirements - implementing \"Should\" and \"Could\" features, plus my own innovations like fuzzy search and an 80°C safety cutoff.",
+            pt: "Este foi o meu <strong>projeto final de exame</strong> para o diploma de Técnico de Informática. Tinha de demonstrar competências em hardware, software, redes e documentação. Decidi ir além dos requisitos - implementando funcionalidades \"Should\" e \"Could\", além de inovações próprias como fuzzy search e um cutoff de segurança a 80°C.",
+            lu: "Dëst war mäin <strong>finalen Examen Projet</strong> fir den Computer Technician Diplom. Ech misst Fäegkeeten an Hardware, Software, Netzwierker an Dokumentatioun weisen. Ech sinn iwwer d'Ufuerderunge gaangen - hunn \"Should\" an \"Could\" Features ëmgesat plus meng eege Innovatiounen wéi Fuzzy Search an en 80°C Sécherheets-Cutoff.",
+            de: "Dies war mein <strong>Abschlussprojekt</strong> für das Computer-Techniker-Diplom. Es musste Fähigkeiten in Hardware, Software, Netzwerk und Dokumentation zeigen. Ich bin über die Anforderungen hinausgegangen - habe \"Should\"- und \"Could\"-Features implementiert sowie eigene Innovationen wie Fuzzy Search und einen 80°C Sicherheits-Cutoff.",
+            fr: "C’était mon <strong>projet de fin d’études</strong> pour le diplôme de Technicien en informatique. Il devait démontrer des compétences en matériel, logiciel, réseau et documentation. J’ai choisi d’aller au-delà des exigences - en implémentant des fonctionnalités \"Should\" et \"Could\", ainsi que mes propres innovations comme la recherche floue et une coupure de sécurité à 80°C."
         },
         "project.pif.section.why.body2": {
             en: "The project was developed in sprints (A1–A7 for hardware/firmware, L1–L7 for server/network), each with clear goals, tests, and documented difficulties. The final documentation was over 100 pages.",
@@ -404,34 +222,6 @@
             lu: "Geléiert Lektiounen",
             de: "Gelernte Lektionen",
             fr: "Leçons apprises"
-        },
-        "project.pif.section.lessons.hardware": {
-            en: "<strong>Hardware debugging is humbling</strong> — Swapped resistors, wrong pin soldering, and sensor calibration taught me patience and attention to detail.",
-            pt: "<strong>Debug de hardware é humilde</strong> — Resistores trocados, soldadura no pino errado e calibração de sensores ensinaram-me paciência e atenção ao detalhe.",
-            lu: "<strong>Hardware Debugging ass bescheiden</strong> — Verwiesselt Resistore, falsch Pin Lötung, an Sensor Kalibratioun hunn mech Gedold a Detailpräzisioun geléiert.",
-            de: "<strong>Hardware-Debugging ist demütigend</strong> — Vertauschte Widerstände, falsches Pin-Löten und Sensorkalibrierung lehrten mich Geduld und Liebe zum Detail.",
-            fr: "<strong>Le débogage matériel est humble</strong> — Résistances échangées, soudure de mauvais pin et calibration des capteurs m’ont appris la patience et le sens du détail."
-        },
-        "project.pif.section.lessons.fullstack": {
-            en: "<strong>Full-stack means full responsibility</strong> — From PCB to PHP, every layer had to work together. One bug anywhere breaks everything.",
-            pt: "<strong>Full-stack significa responsabilidade total</strong> — Do PCB ao PHP, cada camada tinha de funcionar em conjunto. Um bug em qualquer ponto quebra tudo.",
-            lu: "<strong>Full-stack heescht voll Responsabilitéit</strong> — Vum PCB bis PHP, all Schicht misst zesummeschaffen. Een Bug iergendwou brécht alles.",
-            de: "<strong>Full-Stack heißt volle Verantwortung</strong> — Vom PCB bis PHP musste jede Schicht zusammenarbeiten. Ein Bug irgendwo bricht alles.",
-            fr: "<strong>Full-stack signifie pleine responsabilité</strong> — Du PCB au PHP, chaque couche devait fonctionner ensemble. Un bug n’importe où casse tout."
-        },
-        "project.pif.section.lessons.docs": {
-            en: "<strong>Documentation is a skill</strong> — Writing 100+ pages of structured documentation with user stories, diagrams, and test results was as challenging as the code.",
-            pt: "<strong>Documentar é uma competência</strong> — Escrever 100+ páginas de documentação estruturada com user stories, diagramas e resultados de testes foi tão desafiante quanto o código.",
-            lu: "<strong>Dokumentatioun ass eng Fäegkeet</strong> — 100+ Säiten strukturéiert Dokumentatioun mat User Stories, Diagrammer, an Testresultater schreiwen war esou usprochsvoll wéi de Code.",
-            de: "<strong>Dokumentation ist eine Fähigkeit</strong> — Über 100 Seiten strukturierte Dokumentation mit User Stories, Diagrammen und Testergebnissen zu schreiben war so herausfordernd wie der Code.",
-            fr: "<strong>La documentation est une compétence</strong> — Rédiger plus de 100 pages de documentation structurée avec user stories, diagrammes et résultats de tests était aussi difficile que le code."
-        },
-        "project.pif.section.lessons.security": {
-            en: "<strong>Security matters from day one</strong> — Fail2Ban, SSL, UFW, prepared statements — I learned to think about security at every layer.",
-            pt: "<strong>A segurança importa desde o primeiro dia</strong> — Fail2Ban, SSL, UFW, prepared statements — aprendi a pensar em segurança em todas as camadas.",
-            lu: "<strong>Sécherheet zielt vum éischten Dag un</strong> — Fail2Ban, SSL, UFW, prepared Statements — ech hunn geléiert Sécherheet op all Schicht ze bedenken.",
-            de: "<strong>Sicherheit zählt von Tag eins an</strong> — Fail2Ban, SSL, UFW, Prepared Statements — ich habe gelernt, Sicherheit in jeder Schicht mitzudenken.",
-            fr: "<strong>La sécurité compte dès le premier jour</strong> — Fail2Ban, SSL, UFW, requêtes préparées — j’ai appris à penser la sécurité à chaque couche."
         },
         "project.pif.sidebar.tech.esp": {
             en: "ESP8266 (Wemos D1 Mini)",
@@ -692,11 +482,11 @@
             fr: "Tableau de bord en direct sur écran tactile"
         },
         "project.pif.does.dashboard.desc": {
-            en: "Real-time charts for temperature, light and moisture — with schedules and history, on a small touchscreen and in any browser.",
-            pt: "Gráficos em tempo real de temperatura, luz e humidade — com agendamentos e histórico, num pequeno ecrã tátil e em qualquer navegador.",
-            lu: "Echtzäit-Diagrammer fir Temperatur, Liicht a Fiichtegkeet — mat Zäitpläng an Historik, op engem klengen Touchscreen an an all Browser.",
-            de: "Echtzeit-Diagramme für Temperatur, Licht und Feuchtigkeit — mit Zeitplänen und Verlauf, auf einem kleinen Touchscreen und in jedem Browser.",
-            fr: "Des graphiques en temps réel pour la température, la lumière et l'humidité — avec planifications et historique, sur un petit écran tactile et dans n'importe quel navigateur."
+            en: "Real-time charts for temperature, light and moisture - with schedules and history, on a small touchscreen and in any browser.",
+            pt: "Gráficos em tempo real de temperatura, luz e humidade - com agendamentos e histórico, num pequeno ecrã tátil e em qualquer navegador.",
+            lu: "Echtzäit-Diagrammer fir Temperatur, Liicht a Fiichtegkeet - mat Zäitpläng an Historik, op engem klengen Touchscreen an an all Browser.",
+            de: "Echtzeit-Diagramme für Temperatur, Licht und Feuchtigkeit - mit Zeitplänen und Verlauf, auf einem kleinen Touchscreen und in jedem Browser.",
+            fr: "Des graphiques en temps réel pour la température, la lumière et l'humidité - avec planifications et historique, sur un petit écran tactile et dans n'importe quel navigateur."
         },
         "project.pif.does.network.title": {
             en: "An enterprise-style network",
@@ -706,11 +496,11 @@
             fr: "Un réseau de type entreprise"
         },
         "project.pif.does.network.desc": {
-            en: "A complete company-style network — separate secured zones, proper routing and a simulated internet provider — designed and tested end to end in Cisco Packet Tracer.",
-            pt: "Uma rede completa ao estilo empresarial — zonas separadas e seguras, roteamento adequado e um fornecedor de internet simulado — concebida e testada de ponta a ponta no Cisco Packet Tracer.",
-            lu: "E komplett Netzwierk am Firmestil — getrennten, geséchertene Zonen, richtegt Routing an e simuléierten Internet-Provider — vun A bis Z am Cisco Packet Tracer entworf an getest.",
-            de: "Ein vollständiges Netzwerk im Unternehmensstil — getrennte, gesicherte Zonen, korrektes Routing und ein simulierter Internetanbieter — durchgängig in Cisco Packet Tracer entworfen und getestet.",
-            fr: "Un réseau complet de type entreprise — zones séparées et sécurisées, routage correct et un fournisseur internet simulé — conçu et testé de bout en bout dans Cisco Packet Tracer."
+            en: "A complete company-style network - separate secured zones, proper routing and a simulated internet provider - designed and tested end to end in Cisco Packet Tracer.",
+            pt: "Uma rede completa ao estilo empresarial - zonas separadas e seguras, roteamento adequado e um fornecedor de internet simulado - concebida e testada de ponta a ponta no Cisco Packet Tracer.",
+            lu: "E komplett Netzwierk am Firmestil - getrennten, geséchertene Zonen, richtegt Routing an e simuléierten Internet-Provider - vun A bis Z am Cisco Packet Tracer entworf an getest.",
+            de: "Ein vollständiges Netzwerk im Unternehmensstil - getrennte, gesicherte Zonen, korrektes Routing und ein simulierter Internetanbieter - durchgängig in Cisco Packet Tracer entworfen und getestet.",
+            fr: "Un réseau complet de type entreprise - zones séparées et sécurisées, routage correct et un fournisseur internet simulé - conçu et testé de bout en bout dans Cisco Packet Tracer."
         },
         "project.pif.does.backup.title": {
             en: "Backs itself up every night",
@@ -822,11 +612,11 @@
             fr: "Full-stack signifie pleine responsabilité"
         },
         "project.pif.lessons.fullstack.desc": {
-            en: "From PCB to PHP, every layer had to work together — one bug anywhere breaks everything.",
-            pt: "Do PCB ao PHP, cada camada tinha de funcionar em conjunto — um bug em qualquer ponto quebra tudo.",
-            lu: "Vum PCB bis PHP huet all Schicht missen zesummeschaffen — ee Bug iergendwou brécht alles.",
-            de: "Vom PCB bis PHP musste jede Schicht zusammenarbeiten — ein Bug irgendwo bricht alles.",
-            fr: "Du PCB au PHP, chaque couche devait fonctionner ensemble — un bug n'importe où casse tout."
+            en: "From PCB to PHP, every layer had to work together - one bug anywhere breaks everything.",
+            pt: "Do PCB ao PHP, cada camada tinha de funcionar em conjunto - um bug em qualquer ponto quebra tudo.",
+            lu: "Vum PCB bis PHP huet all Schicht missen zesummeschaffen - ee Bug iergendwou brécht alles.",
+            de: "Vom PCB bis PHP musste jede Schicht zusammenarbeiten - ein Bug irgendwo bricht alles.",
+            fr: "Du PCB au PHP, chaque couche devait fonctionner ensemble - un bug n'importe où casse tout."
         },
         "project.pif.lessons.docs.title": {
             en: "Documentation is a skill",
@@ -857,13 +647,6 @@
             fr: "Fail2Ban, SSL, UFW et les requêtes préparées m'ont appris à penser la sécurité à chaque couche."
         },
 
-        "project.pif.name": {
-            en: "PIF - Personal Information Form",
-            pt: "PIF - Formulário de Informações Pessoais",
-            lu: "PIF - Personal Informatiouns Formular",
-            de: "PIF - Persönliches Informationsformular",
-            fr: "PIF - Formulaire d'Informations Personnelles"
-        }
     };
     Object.assign(translations, extra);
 })();

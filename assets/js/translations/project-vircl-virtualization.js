@@ -5,7 +5,7 @@
  * Two-person BTS Cloud Computing project comparing VMware ESXi/vCenter
  * and Proxmox VE, specialising in Clustering.
  *
- * NOTE: translations were drafted by the assistant — please review the
+ * NOTE: translations were drafted by the assistant - please review the
  * pt / lu / de / fr wording for tone and terminology.
  */
 
@@ -27,11 +27,11 @@
             fr: "Systèmes de virtualisation de serveurs"
         },
         "project.vircl-virtualization.subtitle": {
-            en: "A two-person BTS Cloud Computing project that deploys and compares VMware ESXi/vCenter and Proxmox VE across four HP servers — every required virtualization feature built on both, plus a Clustering specialisation that uses cross-platform nested nodes to reach a real three-node quorum.",
-            pt: "Um projeto de dupla do BTS em Cloud Computing que implementa e compara o VMware ESXi/vCenter e o Proxmox VE em quatro servidores HP — todas as funcionalidades exigidas em ambos, mais uma especialização em Clustering que usa nós aninhados entre plataformas para obter um quórum real de três nós.",
-            lu: "E Projet vun zwee Persounen am BTS Cloud Computing, deen de VMware ESXi/vCenter an de Proxmox VE op véier HP-Serveren installéiert a vergläicht — all gefuerdert Funktioun op béide Plattformen, plus eng Spezialisatioun an Clustering, déi nestéiert Noden iwwer d'Plattforme benotzt fir e richtege Quorum mat dräi Noden ze erreechen.",
-            de: "Ein Zweier-Projekt im BTS Cloud Computing, das VMware ESXi/vCenter und Proxmox VE auf vier HP-Servern bereitstellt und vergleicht — jede geforderte Virtualisierungsfunktion auf beiden Plattformen, dazu eine Clustering-Spezialisierung, die plattformübergreifend verschachtelte Knoten nutzt, um ein echtes Quorum mit drei Knoten zu erreichen.",
-            fr: "Un projet à deux du BTS en Cloud Computing qui déploie et compare VMware ESXi/vCenter et Proxmox VE sur quatre serveurs HP — toutes les fonctionnalités requises sur les deux, plus une spécialisation Clustering qui utilise des nœuds imbriqués entre plateformes pour atteindre un véritable quorum à trois nœuds."
+            en: "A two-person BTS Cloud Computing project about running more services on less hardware and keeping them available when a server needs maintenance or fails. Andrea and I built and compared working VMware and Proxmox setups across four HP servers, including two three-node clusters.",
+            pt: "Um projeto de dupla do BTS em Cloud Computing sobre executar mais serviços com menos hardware e mantê-los disponíveis quando um servidor precisa de manutenção ou falha. A Andrea e eu construímos e comparamos configurações VMware e Proxmox funcionais em quatro servidores HP, incluindo dois clusters de três nós.",
+            lu: "E Projet vun zwee Persounen am BTS Cloud Computing doriwwer, méi Servicer mat manner Hardware ze bedreiwen an se verfügbar ze halen, wann e Server Maintenance brauch oder ausfält. Andrea an ech hunn funktionéierend VMware- a Proxmox-Ëmfeld op véier HP-Serveren gebaut a verglach, dorënner zwee Cluster mat dräi Noden.",
+            de: "Ein Zweier-Projekt im BTS Cloud Computing darüber, mehr Dienste mit weniger Hardware zu betreiben und verfügbar zu halten, wenn ein Server gewartet werden muss oder ausfällt. Andrea und ich haben funktionierende VMware- und Proxmox-Umgebungen auf vier HP-Servern gebaut und verglichen, darunter zwei Cluster mit je drei Knoten.",
+            fr: "Un projet à deux du BTS en Cloud Computing sur la façon d'exécuter davantage de services avec moins de matériel et de les maintenir disponibles lorsqu'un serveur doit être entretenu ou tombe en panne. Andrea et moi avons construit et comparé des environnements VMware et Proxmox fonctionnels sur quatre serveurs HP, dont deux clusters de trois nœuds."
         },
 
         "project.vircl-virtualization.glance.hypervisors.label": {
@@ -70,6 +70,13 @@
             de: "Wie die beiden Cluster zusammenpassen",
             fr: "Comment les deux clusters s'assemblent"
         },
+        "project.vircl-virtualization.arch.kicker": {
+            en: "Two hypervisors, three votes each",
+            pt: "Dois hipervisores, três votos cada",
+            lu: "Zwee Hypervisoren, dräi Stëmme pro Cluster",
+            de: "Zwei Hypervisoren, je drei Stimmen",
+            fr: "Deux hyperviseurs, trois votes chacun"
+        },
         "project.vircl-virtualization.arch.esxiCluster": {
             en: "VMware cluster · VIRCL-Cluster (vCenter)",
             pt: "Cluster VMware · VIRCL-Cluster (vCenter)",
@@ -85,18 +92,18 @@
             fr: "Cluster Proxmox · vircl-team4 (Corosync)"
         },
         "project.vircl-virtualization.arch.storageNote": {
-            en: "shared to both clusters — the foundation for migration & HA",
-            pt: "partilhado pelos dois clusters — a base para migração e HA",
-            lu: "fir béid Clusteren gedeelt — d'Fundament fir Migratioun & HA",
-            de: "für beide Cluster freigegeben — die Basis für Migration & HA",
-            fr: "partagé par les deux clusters — la base de la migration et de la HA"
+            en: "shared to both clusters - the foundation for migration & HA",
+            pt: "partilhado pelos dois clusters - a base para migração e HA",
+            lu: "fir béid Clusteren gedeelt - d'Fundament fir Migratioun & HA",
+            de: "für beide Cluster freigegeben - die Basis für Migration & HA",
+            fr: "partagé par les deux clusters - la base de la migration et de la HA"
         },
         "project.vircl-virtualization.arch.note": {
-            en: "Each cluster only has two physical hosts, so a third node was nested inside the opposite hypervisor — Proxmox hosts an ESXi VM and ESXi hosts a Proxmox VM. That gives every cluster three votes, which is what makes quorum (and a real clustering demo) meaningful.",
-            pt: "Cada cluster só tem dois hosts físicos, por isso um terceiro nó foi aninhado dentro do hipervisor oposto — o Proxmox aloja uma VM ESXi e o ESXi aloja uma VM Proxmox. Isso dá a cada cluster três votos, o que torna o quórum (e uma demonstração real de clustering) significativo.",
-            lu: "All Cluster huet nëmmen zwee physesch Hosten, dofir gouf en drëtten Node am géigeniwwerleienden Hypervisor nestéiert — de Proxmox hält eng ESXi-VM an den ESXi eng Proxmox-VM. Esou kritt all Cluster dräi Stëmmen, wat de Quorum (an eng richteg Clustering-Demo) sënnvoll mécht.",
-            de: "Jeder Cluster hat nur zwei physische Hosts, daher wurde ein dritter Knoten im jeweils anderen Hypervisor verschachtelt — Proxmox betreibt eine ESXi-VM und ESXi eine Proxmox-VM. So erhält jeder Cluster drei Stimmen, was Quorum (und eine echte Clustering-Demo) erst sinnvoll macht.",
-            fr: "Chaque cluster n'a que deux hôtes physiques, donc un troisième nœud a été imbriqué dans l'hyperviseur opposé — Proxmox héberge une VM ESXi et ESXi héberge une VM Proxmox. Cela donne trois votes à chaque cluster, ce qui rend le quorum (et une vraie démo de clustering) pertinent."
+            en: "Each cluster only has two physical hosts, so a third node was nested inside the opposite hypervisor - Proxmox hosts an ESXi VM and ESXi hosts a Proxmox VM. That gives every cluster three votes, which is what makes quorum (and a real clustering demo) meaningful.",
+            pt: "Cada cluster só tem dois hosts físicos, por isso um terceiro nó foi aninhado dentro do hipervisor oposto - o Proxmox aloja uma VM ESXi e o ESXi aloja uma VM Proxmox. Isso dá a cada cluster três votos, o que torna o quórum (e uma demonstração real de clustering) significativo.",
+            lu: "All Cluster huet nëmmen zwee physesch Hosten, dofir gouf en drëtten Node am géigeniwwerleienden Hypervisor nestéiert - de Proxmox hält eng ESXi-VM an den ESXi eng Proxmox-VM. Esou kritt all Cluster dräi Stëmmen, wat de Quorum (an eng richteg Clustering-Demo) sënnvoll mécht.",
+            de: "Jeder Cluster hat nur zwei physische Hosts, daher wurde ein dritter Knoten im jeweils anderen Hypervisor verschachtelt - Proxmox betreibt eine ESXi-VM und ESXi eine Proxmox-VM. So erhält jeder Cluster drei Stimmen, was Quorum (und eine echte Clustering-Demo) erst sinnvoll macht.",
+            fr: "Chaque cluster n'a que deux hôtes physiques, donc un troisième nœud a été imbriqué dans l'hyperviseur opposé - Proxmox héberge une VM ESXi et ESXi héberge une VM Proxmox. Cela donne trois votes à chaque cluster, ce qui rend le quorum (et une vraie démo de clustering) pertinent."
         },
 
         "project.vircl-virtualization.nodes.hp13.title": {
@@ -199,11 +206,11 @@
             fr: "Plusieurs serveurs sur une machine"
         },
         "project.vircl-virtualization.does.consolidate.desc": {
-            en: "One physical server safely runs lots of isolated virtual machines — the idea that lets companies replace racks of hardware with a handful of boxes.",
-            pt: "Um servidor físico corre, em segurança, várias máquinas virtuais isoladas — a ideia que permite às empresas substituir racks de hardware por um punhado de máquinas.",
-            lu: "Ee physesche Server leeft sécher vill isoléiert virtuell Maschinnen — d'Iddi, déi et de Firmen erlaabt, ganz Racken Hardware duerch e puer Këschten z'ersetzen.",
-            de: "Ein physischer Server betreibt sicher viele isolierte virtuelle Maschinen — die Idee, mit der Unternehmen ganze Hardware-Racks durch eine Handvoll Geräte ersetzen.",
-            fr: "Un seul serveur physique exécute en toute sécurité de nombreuses machines virtuelles isolées — l'idée qui permet aux entreprises de remplacer des baies de matériel par une poignée de machines."
+            en: "One physical server safely runs lots of isolated virtual machines - the idea that lets companies replace racks of hardware with a handful of boxes.",
+            pt: "Um servidor físico corre, em segurança, várias máquinas virtuais isoladas - a ideia que permite às empresas substituir racks de hardware por um punhado de máquinas.",
+            lu: "Ee physesche Server leeft sécher vill isoléiert virtuell Maschinnen - d'Iddi, déi et de Firmen erlaabt, ganz Racken Hardware duerch e puer Këschten z'ersetzen.",
+            de: "Ein physischer Server betreibt sicher viele isolierte virtuelle Maschinen - die Idee, mit der Unternehmen ganze Hardware-Racks durch eine Handvoll Geräte ersetzen.",
+            fr: "Un seul serveur physique exécute en toute sécurité de nombreuses machines virtuelles isolées - l'idée qui permet aux entreprises de remplacer des baies de matériel par une poignée de machines."
         },
         "project.vircl-virtualization.does.migrate.title": {
             en: "Move servers while they run",
@@ -227,11 +234,11 @@
             fr: "Rester en ligne en cas de panne d'hôte"
         },
         "project.vircl-virtualization.does.ha.desc": {
-            en: "Our specialisation: group hosts into a cluster so that if one dies, protected machines automatically restart on another — the heart of high availability.",
-            pt: "A nossa especialização: juntar hosts num cluster para que, se um falhar, as máquinas protegidas reiniciem automaticamente noutro — o cerne da alta disponibilidade.",
-            lu: "Eis Spezialisatioun: Hosten an engem Cluster gruppéieren, sou datt, wann ee ausfält, geschützte Maschinnen automatesch op engem aneren nei starten — de Kär vun der Héichverfügbarkeet.",
-            de: "Unsere Spezialisierung: Hosts zu einem Cluster zusammenfassen, sodass bei Ausfall eines Hosts geschützte Maschinen automatisch auf einem anderen neu starten — der Kern der Hochverfügbarkeit.",
-            fr: "Notre spécialisation : regrouper les hôtes en cluster pour que, si l'un tombe, les machines protégées redémarrent automatiquement sur un autre — le cœur de la haute disponibilité."
+            en: "Our specialisation: group hosts into a cluster so that if one dies, protected machines automatically restart on another - the heart of high availability.",
+            pt: "A nossa especialização: juntar hosts num cluster para que, se um falhar, as máquinas protegidas reiniciem automaticamente noutro - o cerne da alta disponibilidade.",
+            lu: "Eis Spezialisatioun: Hosten an engem Cluster gruppéieren, sou datt, wann ee ausfält, geschützte Maschinnen automatesch op engem aneren nei starten - de Kär vun der Héichverfügbarkeet.",
+            de: "Unsere Spezialisierung: Hosts zu einem Cluster zusammenfassen, sodass bei Ausfall eines Hosts geschützte Maschinen automatisch auf einem anderen neu starten - der Kern der Hochverfügbarkeit.",
+            fr: "Notre spécialisation : regrouper les hôtes en cluster pour que, si l'un tombe, les machines protégées redémarrent automatiquement sur un autre - le cœur de la haute disponibilité."
         },
 
         "project.vircl-virtualization.section.setup.title": {
@@ -242,11 +249,11 @@
             fr: "Quatre serveurs HP vierges, deux hyperviseurs"
         },
         "project.vircl-virtualization.section.setup.body": {
-            en: "For the VIRCL module of the BTS in Cloud Computing, my teammate Andrea Girotto and I were handed four bare HP ProLiant servers (HP13–HP16) and one rule: become experts in two type-1 hypervisors and prove it. We installed VMware ESXi with vCenter on HP13 and HP15, Proxmox VE on HP14 and HP16, wired an Unraid box as shared NFS/iSCSI storage, and then implemented every required feature on both platforms — installing, configuring, breaking, and documenting each one. The images below are each hypervisor's built-in web dashboard — the ESXi Host Client and the Proxmox VE summary — on the HP hosts right after install.",
-            pt: "Para o módulo VIRCL do BTS em Cloud Computing, o meu colega Andrea Girotto e eu recebemos quatro servidores HP ProLiant em branco (HP13–HP16) e uma regra: tornar-nos peritos em dois hipervisores de tipo 1 e prová-lo. Instalámos o VMware ESXi com vCenter no HP13 e HP15, o Proxmox VE no HP14 e HP16, ligámos uma máquina Unraid como armazenamento partilhado NFS/iSCSI e implementámos todas as funcionalidades exigidas em ambas as plataformas — instalando, configurando, partindo e documentando cada uma. As imagens abaixo são o painel web integrado de cada hipervisor — o ESXi Host Client e o resumo do Proxmox VE — nos hosts HP logo após a instalação.",
-            lu: "Fir de VIRCL-Modul vum BTS Cloud Computing hunn ech a mäi Koleeg Andrea Girotto véier eidel HP ProLiant-Serveren (HP13–HP16) kritt an eng Reegel: Experten an zwee Typ-1-Hypervisoren ze ginn an et ze beweisen. Mir hunn de VMware ESXi mat vCenter op HP13 an HP15 installéiert, de Proxmox VE op HP14 an HP16, eng Unraid-Këscht als gedeelten NFS/iSCSI-Späicher ugeschloss, an dann all gefuerdert Funktioun op béide Plattformen ëmgesat — installéiert, konfiguréiert, futti gemaach an dokumentéiert. D'Biller hei drënner sinn dat agebaute Web-Dashboard vun all Hypervisor — den ESXi Host Client an d'Proxmox-VE-Iwwersiicht — op den HP-Hosten direkt nom Installéieren.",
-            de: "Für das VIRCL-Modul des BTS Cloud Computing bekamen mein Teamkollege Andrea Girotto und ich vier leere HP-ProLiant-Server (HP13–HP16) und eine Regel: Experten für zwei Typ-1-Hypervisoren werden und das beweisen. Wir installierten VMware ESXi mit vCenter auf HP13 und HP15, Proxmox VE auf HP14 und HP16, banden eine Unraid-Box als gemeinsamen NFS/iSCSI-Speicher an und setzten dann jede geforderte Funktion auf beiden Plattformen um — installieren, konfigurieren, kaputtmachen und dokumentieren. Die Bilder unten zeigen das integrierte Web-Dashboard beider Hypervisoren — den ESXi Host Client und die Proxmox-VE-Übersicht — auf den HP-Hosts direkt nach der Installation.",
-            fr: "Pour le module VIRCL du BTS en Cloud Computing, mon coéquipier Andrea Girotto et moi avons reçu quatre serveurs HP ProLiant vierges (HP13–HP16) et une règle : devenir experts de deux hyperviseurs de type 1 et le prouver. Nous avons installé VMware ESXi avec vCenter sur HP13 et HP15, Proxmox VE sur HP14 et HP16, branché une machine Unraid comme stockage partagé NFS/iSCSI, puis implémenté chaque fonctionnalité requise sur les deux plateformes — installer, configurer, casser et documenter chacune. Les images ci-dessous montrent le tableau de bord web intégré de chaque hyperviseur — l'ESXi Host Client et le résumé Proxmox VE — sur les hôtes HP juste après l'installation."
+            en: "For the VIRCL module of the BTS in Cloud Computing, my teammate Andrea Girotto and I were handed four bare HP ProLiant servers (HP13–HP16) and one rule: become experts in two type-1 hypervisors and prove it. We installed VMware ESXi with vCenter on HP13 and HP15, Proxmox VE on HP14 and HP16, wired an Unraid box as shared NFS/iSCSI storage, and then implemented every required feature on both platforms - installing, configuring, breaking, and documenting each one. The images below are each hypervisor's built-in web dashboard - the ESXi Host Client and the Proxmox VE summary - on the HP hosts right after install.",
+            pt: "Para o módulo VIRCL do BTS em Cloud Computing, o meu colega Andrea Girotto e eu recebemos quatro servidores HP ProLiant em branco (HP13–HP16) e uma regra: tornar-nos peritos em dois hipervisores de tipo 1 e prová-lo. Instalámos o VMware ESXi com vCenter no HP13 e HP15, o Proxmox VE no HP14 e HP16, ligámos uma máquina Unraid como armazenamento partilhado NFS/iSCSI e implementámos todas as funcionalidades exigidas em ambas as plataformas - instalando, configurando, partindo e documentando cada uma. As imagens abaixo são o painel web integrado de cada hipervisor - o ESXi Host Client e o resumo do Proxmox VE - nos hosts HP logo após a instalação.",
+            lu: "Fir de VIRCL-Modul vum BTS Cloud Computing hunn ech a mäi Koleeg Andrea Girotto véier eidel HP ProLiant-Serveren (HP13–HP16) kritt an eng Reegel: Experten an zwee Typ-1-Hypervisoren ze ginn an et ze beweisen. Mir hunn de VMware ESXi mat vCenter op HP13 an HP15 installéiert, de Proxmox VE op HP14 an HP16, eng Unraid-Këscht als gedeelten NFS/iSCSI-Späicher ugeschloss, an dann all gefuerdert Funktioun op béide Plattformen ëmgesat - installéiert, konfiguréiert, futti gemaach an dokumentéiert. D'Biller hei drënner sinn dat agebaute Web-Dashboard vun all Hypervisor - den ESXi Host Client an d'Proxmox-VE-Iwwersiicht - op den HP-Hosten direkt nom Installéieren.",
+            de: "Für das VIRCL-Modul des BTS Cloud Computing bekamen mein Teamkollege Andrea Girotto und ich vier leere HP-ProLiant-Server (HP13–HP16) und eine Regel: Experten für zwei Typ-1-Hypervisoren werden und das beweisen. Wir installierten VMware ESXi mit vCenter auf HP13 und HP15, Proxmox VE auf HP14 und HP16, banden eine Unraid-Box als gemeinsamen NFS/iSCSI-Speicher an und setzten dann jede geforderte Funktion auf beiden Plattformen um - installieren, konfigurieren, kaputtmachen und dokumentieren. Die Bilder unten zeigen das integrierte Web-Dashboard beider Hypervisoren - den ESXi Host Client und die Proxmox-VE-Übersicht - auf den HP-Hosts direkt nach der Installation.",
+            fr: "Pour le module VIRCL du BTS en Cloud Computing, mon coéquipier Andrea Girotto et moi avons reçu quatre serveurs HP ProLiant vierges (HP13–HP16) et une règle : devenir experts de deux hyperviseurs de type 1 et le prouver. Nous avons installé VMware ESXi avec vCenter sur HP13 et HP15, Proxmox VE sur HP14 et HP16, branché une machine Unraid comme stockage partagé NFS/iSCSI, puis implémenté chaque fonctionnalité requise sur les deux plateformes - installer, configurer, casser et documenter chacune. Les images ci-dessous montrent le tableau de bord web intégré de chaque hyperviseur - l'ESXi Host Client et le résumé Proxmox VE - sur les hôtes HP juste après l'installation."
         },
         "project.vircl-virtualization.image.caption": {
             en: "ESXi Host Client on an HP ProLiant DL380 Gen10",
@@ -293,11 +300,11 @@
             fr: "VMware : champs hôte/domaine séparés + une appliance vCenter dédiée · Proxmox : un seul installateur basé sur Debian, interface web intégrée"
         },
         "project.vircl-virtualization.stack.deploy.b1": {
-            en: "<strong>Bare-metal installs over iLO</strong>: both ISOs mounted from the school NAS as iLO virtual media — no USB stick, both hosts booted from the virtual CD.",
-            pt: "<strong>Instalações bare-metal por iLO</strong>: ambos os ISOs montados a partir do NAS da escola como media virtual iLO — sem pen USB, ambos os hosts arrancaram do CD virtual.",
-            lu: "<strong>Bare-Metal-Installatiounen iwwer iLO</strong>: béid ISOe vum Schoul-NAS als iLO virtuell Media gemount — keen USB-Stick, béid Hosten hu vum virtuelle CD gestart.",
-            de: "<strong>Bare-Metal-Installationen über iLO</strong>: beide ISOs vom Schul-NAS als virtuelle iLO-Medien eingebunden — kein USB-Stick, beide Hosts booteten von der virtuellen CD.",
-            fr: "<strong>Installations bare-metal via iLO</strong> : les deux ISO montées depuis le NAS de l'école en média virtuel iLO — pas de clé USB, les deux hôtes ont démarré sur le CD virtuel."
+            en: "<strong>Bare-metal installs over iLO</strong>: both ISOs mounted from the school NAS as iLO virtual media - no USB stick, both hosts booted from the virtual CD.",
+            pt: "<strong>Instalações bare-metal por iLO</strong>: ambos os ISOs montados a partir do NAS da escola como media virtual iLO - sem pen USB, ambos os hosts arrancaram do CD virtual.",
+            lu: "<strong>Bare-Metal-Installatiounen iwwer iLO</strong>: béid ISOe vum Schoul-NAS als iLO virtuell Media gemount - keen USB-Stick, béid Hosten hu vum virtuelle CD gestart.",
+            de: "<strong>Bare-Metal-Installationen über iLO</strong>: beide ISOs vom Schul-NAS als virtuelle iLO-Medien eingebunden - kein USB-Stick, beide Hosts booteten von der virtuellen CD.",
+            fr: "<strong>Installations bare-metal via iLO</strong> : les deux ISO montées depuis le NAS de l'école en média virtuel iLO - pas de clé USB, les deux hôtes ont démarré sur le CD virtuel."
         },
         "project.vircl-virtualization.stack.deploy.b2": {
             en: "<strong>vCenter Server Appliance</strong>: VCSA deployed on HP13 in two stages; PNID set to the IP (not a hostname) to dodge a reverse-DNS check while lab DNS was incomplete.",
@@ -315,11 +322,11 @@
         },
 
         "project.vircl-virtualization.stack.lifecycle.title": {
-            en: "VM lifecycle — GUI & CLI",
-            pt: "Ciclo de vida da VM — GUI e CLI",
-            lu: "VM-Liewenszyklus — GUI & CLI",
-            de: "VM-Lebenszyklus — GUI & CLI",
-            fr: "Cycle de vie de la VM — GUI & CLI"
+            en: "VM lifecycle - GUI & CLI",
+            pt: "Ciclo de vida da VM - GUI e CLI",
+            lu: "VM-Liewenszyklus - GUI & CLI",
+            de: "VM-Lebenszyklus - GUI & CLI",
+            fr: "Cycle de vie de la VM - GUI & CLI"
         },
         "project.vircl-virtualization.stack.lifecycle.vs": {
             en: "VMware: PowerCLI scripting against vCenter · Proxmox: <code>qm</code> commands straight on the node",
@@ -336,11 +343,11 @@
             fr: "<strong>Créer des deux manières</strong> : des VM créées via l'assistant GUI puis à nouveau en CLI (PowerCLI sur ESXi, <code>qm</code> sur Proxmox), puis un client Windows et un serveur Linux installés à l'intérieur."
         },
         "project.vircl-virtualization.stack.lifecycle.b2": {
-            en: "<strong>Reconfigure & clone</strong>: live CPU/RAM/disk/NIC changes, full clones, and OVF / vzdump exports — proving the everyday admin workflow on each side.",
-            pt: "<strong>Reconfigurar e clonar</strong>: alterações de CPU/RAM/disco/NIC em tempo real, clones completos e exportações OVF / vzdump — provando o fluxo de trabalho diário do administrador em cada lado.",
-            lu: "<strong>Nei konfiguréieren & klonen</strong>: CPU/RAM/Disk/NIC live geännert, voll Klonen, an OVF-/vzdump-Exporten — beweist den alldeegleche Admin-Workflow op all Säit.",
-            de: "<strong>Neu konfigurieren & klonen</strong>: CPU/RAM/Disk/NIC im laufenden Betrieb ändern, vollständige Klone und OVF-/vzdump-Exporte — beweist den täglichen Admin-Workflow auf beiden Seiten.",
-            fr: "<strong>Reconfigurer & cloner</strong> : modifications CPU/RAM/disque/NIC à chaud, clones complets et exports OVF / vzdump — la preuve du flux d'administration quotidien de chaque côté."
+            en: "<strong>Reconfigure & clone</strong>: live CPU/RAM/disk/NIC changes, full clones, and OVF / vzdump exports - proving the everyday admin workflow on each side.",
+            pt: "<strong>Reconfigurar e clonar</strong>: alterações de CPU/RAM/disco/NIC em tempo real, clones completos e exportações OVF / vzdump - provando o fluxo de trabalho diário do administrador em cada lado.",
+            lu: "<strong>Nei konfiguréieren & klonen</strong>: CPU/RAM/Disk/NIC live geännert, voll Klonen, an OVF-/vzdump-Exporten - beweist den alldeegleche Admin-Workflow op all Säit.",
+            de: "<strong>Neu konfigurieren & klonen</strong>: CPU/RAM/Disk/NIC im laufenden Betrieb ändern, vollständige Klone und OVF-/vzdump-Exporte - beweist den täglichen Admin-Workflow auf beiden Seiten.",
+            fr: "<strong>Reconfigurer & cloner</strong> : modifications CPU/RAM/disque/NIC à chaud, clones complets et exports OVF / vzdump - la preuve du flux d'administration quotidien de chaque côté."
         },
         "project.vircl-virtualization.stack.lifecycle.b3": {
             en: "<strong>Snapshots & templates</strong>: point-in-time snapshots and golden templates so new VMs come from a known-good base instead of a fresh install each time.",
@@ -372,11 +379,11 @@
             fr: "<strong>Deux protocoles depuis un seul NAS</strong> : la machine Unraid expose NFS et iSCSI pour que chaque hyperviseur monte les datastores partagés à sa manière."
         },
         "project.vircl-virtualization.stack.storage.b2": {
-            en: "<strong>Storage migration</strong>: moving a VM's disk between local and remote storage live — the prerequisite that makes host migration safe.",
-            pt: "<strong>Migração de armazenamento</strong>: mover o disco de uma VM entre armazenamento local e remoto em tempo real — o pré-requisito que torna segura a migração de host.",
-            lu: "<strong>Späicher-Migratioun</strong>: d'Disk vun enger VM live tëscht lokalem an entferntem Späicher beweegen — d'Viraussetzung, déi d'Host-Migratioun sécher mécht.",
-            de: "<strong>Speicher-Migration</strong>: die Disk einer VM im laufenden Betrieb zwischen lokalem und entferntem Speicher verschieben — die Voraussetzung, die Host-Migration sicher macht.",
-            fr: "<strong>Migration de stockage</strong> : déplacer à chaud le disque d'une VM entre stockage local et distant — le prérequis qui rend la migration d'hôte sûre."
+            en: "<strong>Storage migration</strong>: moving a VM's disk between local and remote storage live - the prerequisite that makes host migration safe.",
+            pt: "<strong>Migração de armazenamento</strong>: mover o disco de uma VM entre armazenamento local e remoto em tempo real - o pré-requisito que torna segura a migração de host.",
+            lu: "<strong>Späicher-Migratioun</strong>: d'Disk vun enger VM live tëscht lokalem an entferntem Späicher beweegen - d'Viraussetzung, déi d'Host-Migratioun sécher mécht.",
+            de: "<strong>Speicher-Migration</strong>: die Disk einer VM im laufenden Betrieb zwischen lokalem und entferntem Speicher verschieben - die Voraussetzung, die Host-Migration sicher macht.",
+            fr: "<strong>Migration de stockage</strong> : déplacer à chaud le disque d'une VM entre stockage local et distant - le prérequis qui rend la migration d'hôte sûre."
         },
         "project.vircl-virtualization.stack.storage.b3": {
             en: "<strong>Host migration</strong>: a running VM moved HP13&nbsp;→&nbsp;HP15 (vMotion) and HP14&nbsp;→&nbsp;HP16 (Proxmox online migration) once its disk lived on shared storage.",
@@ -423,11 +430,11 @@
         },
 
         "project.vircl-virtualization.stack.cluster.title": {
-            en: "Specialisation — Clustering",
-            pt: "Especialização — Clustering",
-            lu: "Spezialisatioun — Clustering",
-            de: "Spezialisierung — Clustering",
-            fr: "Spécialisation — Clustering"
+            en: "Specialisation - Clustering",
+            pt: "Especialização - Clustering",
+            lu: "Spezialisatioun - Clustering",
+            de: "Spezialisierung - Clustering",
+            fr: "Spécialisation - Clustering"
         },
         "project.vircl-virtualization.stack.cluster.vs": {
             en: "VMware: central vCenter you deploy first · Proxmox: peer-to-peer, any node joins and Corosync handles quorum",
@@ -516,25 +523,25 @@
             fr: "Comment le projet s'est déroulé"
         },
         "project.vircl-virtualization.section.why.body1": {
-            en: "The brief was deliberately broad: <strong>become an expert in two hypervisors and prove it</strong> through a documented report, a video tutorial, and a presentation. Andrea and I split the hosts — he led HP13 (ESXi + vCenter) and HP16 (Proxmox), I led HP14 (Proxmox) and we shared HP15 (ESXi).",
-            pt: "O enunciado era propositadamente amplo: <strong>tornar-se perito em dois hipervisores e prová-lo</strong> através de um relatório documentado, um tutorial em vídeo e uma apresentação. O Andrea e eu dividimos os hosts — ele liderou o HP13 (ESXi + vCenter) e o HP16 (Proxmox), eu liderei o HP14 (Proxmox) e partilhámos o HP15 (ESXi).",
-            lu: "D'Opgab war bewosst breet: <strong>Expert an zwee Hypervisoren ze ginn an et ze beweisen</strong> mat engem dokumentéierte Rapport, engem Video-Tutorial an enger Presentatioun. Den Andrea an ech hunn d'Hosten opgedeelt — hien huet HP13 (ESXi + vCenter) an HP16 (Proxmox) gemaach, ech HP14 (Proxmox), an HP15 (ESXi) hu mir gedeelt.",
-            de: "Die Aufgabe war bewusst breit: <strong>Experte für zwei Hypervisoren werden und es beweisen</strong> — mit einem dokumentierten Bericht, einem Video-Tutorial und einer Präsentation. Andrea und ich teilten die Hosts auf — er übernahm HP13 (ESXi + vCenter) und HP16 (Proxmox), ich HP14 (Proxmox), und HP15 (ESXi) teilten wir uns.",
-            fr: "Le sujet était volontairement large : <strong>devenir expert de deux hyperviseurs et le prouver</strong> via un rapport documenté, un tutoriel vidéo et une présentation. Andrea et moi avons réparti les hôtes — il a piloté HP13 (ESXi + vCenter) et HP16 (Proxmox), j'ai piloté HP14 (Proxmox) et nous avons partagé HP15 (ESXi)."
+            en: "The brief was deliberately broad: <strong>become an expert in two hypervisors and prove it</strong> through a documented report, a video tutorial, and a presentation. Andrea and I split the hosts - he led HP13 (ESXi + vCenter) and HP16 (Proxmox), I led HP14 (Proxmox) and we shared HP15 (ESXi).",
+            pt: "O enunciado era propositadamente amplo: <strong>tornar-se perito em dois hipervisores e prová-lo</strong> através de um relatório documentado, um tutorial em vídeo e uma apresentação. O Andrea e eu dividimos os hosts - ele liderou o HP13 (ESXi + vCenter) e o HP16 (Proxmox), eu liderei o HP14 (Proxmox) e partilhámos o HP15 (ESXi).",
+            lu: "D'Opgab war bewosst breet: <strong>Expert an zwee Hypervisoren ze ginn an et ze beweisen</strong> mat engem dokumentéierte Rapport, engem Video-Tutorial an enger Presentatioun. Den Andrea an ech hunn d'Hosten opgedeelt - hien huet HP13 (ESXi + vCenter) an HP16 (Proxmox) gemaach, ech HP14 (Proxmox), an HP15 (ESXi) hu mir gedeelt.",
+            de: "Die Aufgabe war bewusst breit: <strong>Experte für zwei Hypervisoren werden und es beweisen</strong> - mit einem dokumentierten Bericht, einem Video-Tutorial und einer Präsentation. Andrea und ich teilten die Hosts auf - er übernahm HP13 (ESXi + vCenter) und HP16 (Proxmox), ich HP14 (Proxmox), und HP15 (ESXi) teilten wir uns.",
+            fr: "Le sujet était volontairement large : <strong>devenir expert de deux hyperviseurs et le prouver</strong> via un rapport documenté, un tutoriel vidéo et une présentation. Andrea et moi avons réparti les hôtes - il a piloté HP13 (ESXi + vCenter) et HP16 (Proxmox), j'ai piloté HP14 (Proxmox) et nous avons partagé HP15 (ESXi)."
         },
         "project.vircl-virtualization.section.why.body2": {
-            en: "We then worked through <strong>seventeen virtualization features on both platforms</strong> — deployment, VM creation by GUI and CLI, guest installs, resource changes, cloning, export, backups, snapshots, templates, shared storage, storage and host migration, users, and patching — comparing each one and writing down the problems honestly.",
-            pt: "Depois trabalhámos <strong>dezassete funcionalidades de virtualização em ambas as plataformas</strong> — implementação, criação de VMs por GUI e CLI, instalação de convidados, alterações de recursos, clonagem, exportação, backups, snapshots, templates, armazenamento partilhado, migração de armazenamento e de host, utilizadores e atualizações — comparando cada uma e registando os problemas com honestidade.",
-            lu: "Duerno hu mir <strong>siwwzéng Virtualiséierungsfunktiounen op béide Plattformen</strong> duerchgeschafft — Deployment, VM-Erstellung iwwer GUI a CLI, Gaascht-Installatiounen, Ressourcenännerungen, Klonen, Export, Backups, Snapshots, Templates, gedeelte Späicher, Späicher- an Host-Migratioun, Benotzer a Patching — all eenzel verglach an d'Problemer éierlech opgeschriwwen.",
-            de: "Dann arbeiteten wir <strong>siebzehn Virtualisierungsfunktionen auf beiden Plattformen</strong> durch — Bereitstellung, VM-Erstellung per GUI und CLI, Gast-Installationen, Ressourcenänderungen, Klonen, Export, Backups, Snapshots, Vorlagen, gemeinsamer Speicher, Speicher- und Host-Migration, Benutzer und Patching — verglichen jede einzeln und hielten die Probleme ehrlich fest.",
-            fr: "Nous avons ensuite traité <strong>dix-sept fonctionnalités de virtualisation sur les deux plateformes</strong> — déploiement, création de VM en GUI et CLI, installations invitées, modifications de ressources, clonage, export, sauvegardes, snapshots, modèles, stockage partagé, migration de stockage et d'hôte, utilisateurs et mises à jour — en comparant chacune et en consignant honnêtement les problèmes."
+            en: "We then worked through <strong>seventeen virtualization features on both platforms</strong> - deployment, VM creation by GUI and CLI, guest installs, resource changes, cloning, export, backups, snapshots, templates, shared storage, storage and host migration, users, and patching - comparing each one and writing down the problems honestly.",
+            pt: "Depois trabalhámos <strong>dezassete funcionalidades de virtualização em ambas as plataformas</strong> - implementação, criação de VMs por GUI e CLI, instalação de convidados, alterações de recursos, clonagem, exportação, backups, snapshots, templates, armazenamento partilhado, migração de armazenamento e de host, utilizadores e atualizações - comparando cada uma e registando os problemas com honestidade.",
+            lu: "Duerno hu mir <strong>siwwzéng Virtualiséierungsfunktiounen op béide Plattformen</strong> duerchgeschafft - Deployment, VM-Erstellung iwwer GUI a CLI, Gaascht-Installatiounen, Ressourcenännerungen, Klonen, Export, Backups, Snapshots, Templates, gedeelte Späicher, Späicher- an Host-Migratioun, Benotzer a Patching - all eenzel verglach an d'Problemer éierlech opgeschriwwen.",
+            de: "Dann arbeiteten wir <strong>siebzehn Virtualisierungsfunktionen auf beiden Plattformen</strong> durch - Bereitstellung, VM-Erstellung per GUI und CLI, Gast-Installationen, Ressourcenänderungen, Klonen, Export, Backups, Snapshots, Vorlagen, gemeinsamer Speicher, Speicher- und Host-Migration, Benutzer und Patching - verglichen jede einzeln und hielten die Probleme ehrlich fest.",
+            fr: "Nous avons ensuite traité <strong>dix-sept fonctionnalités de virtualisation sur les deux plateformes</strong> - déploiement, création de VM en GUI et CLI, installations invitées, modifications de ressources, clonage, export, sauvegardes, snapshots, modèles, stockage partagé, migration de stockage et d'hôte, utilisateurs et mises à jour - en comparant chacune et en consignant honnêtement les problèmes."
         },
         "project.vircl-virtualization.section.why.body3": {
-            en: "Our chosen specialisation was <strong>Clustering</strong>. Four hosts only give two nodes per platform, which is weak for explaining quorum — so we nested a third node inside the opposite hypervisor on each side, giving both clusters a genuine three-vote design with HA, DRS, and live migration to show off.",
-            pt: "A nossa especialização escolhida foi <strong>Clustering</strong>. Quatro hosts só dão dois nós por plataforma, o que é fraco para explicar o quórum — por isso aninhámos um terceiro nó dentro do hipervisor oposto de cada lado, dando a ambos os clusters um verdadeiro desenho de três votos com HA, DRS e migração em tempo real para demonstrar.",
-            lu: "Eis gewielten Spezialisatioun war <strong>Clustering</strong>. Véier Hosten ginn nëmmen zwee Noden pro Plattform, wat schwaach ass fir de Quorum z'erklären — dofir hu mir op all Säit en drëtten Node am géigeniwwerleienden Hypervisor nestéiert, sou datt béid Clusteren e richtegen Dräi-Stëmmen-Design mat HA, DRS a Live-Migratioun hu fir ze weisen.",
-            de: "Unsere gewählte Spezialisierung war <strong>Clustering</strong>. Vier Hosts ergeben nur zwei Knoten pro Plattform, was zum Erklären von Quorum zu schwach ist — also verschachtelten wir auf jeder Seite einen dritten Knoten im jeweils anderen Hypervisor und gaben beiden Clustern ein echtes Drei-Stimmen-Design mit HA, DRS und Live-Migration zum Vorführen.",
-            fr: "Notre spécialisation choisie était le <strong>Clustering</strong>. Quatre hôtes ne donnent que deux nœuds par plateforme, ce qui est trop faible pour expliquer le quorum — nous avons donc imbriqué de chaque côté un troisième nœud dans l'hyperviseur opposé, offrant aux deux clusters une vraie conception à trois votes avec HA, DRS et migration à chaud à présenter."
+            en: "Our chosen specialisation was <strong>Clustering</strong>. Four hosts only give two nodes per platform, which is weak for explaining quorum - so we nested a third node inside the opposite hypervisor on each side, giving both clusters a genuine three-vote design with HA, DRS, and live migration to show off.",
+            pt: "A nossa especialização escolhida foi <strong>Clustering</strong>. Quatro hosts só dão dois nós por plataforma, o que é fraco para explicar o quórum - por isso aninhámos um terceiro nó dentro do hipervisor oposto de cada lado, dando a ambos os clusters um verdadeiro desenho de três votos com HA, DRS e migração em tempo real para demonstrar.",
+            lu: "Eis gewielten Spezialisatioun war <strong>Clustering</strong>. Véier Hosten ginn nëmmen zwee Noden pro Plattform, wat schwaach ass fir de Quorum z'erklären - dofir hu mir op all Säit en drëtten Node am géigeniwwerleienden Hypervisor nestéiert, sou datt béid Clusteren e richtegen Dräi-Stëmmen-Design mat HA, DRS a Live-Migratioun hu fir ze weisen.",
+            de: "Unsere gewählte Spezialisierung war <strong>Clustering</strong>. Vier Hosts ergeben nur zwei Knoten pro Plattform, was zum Erklären von Quorum zu schwach ist - also verschachtelten wir auf jeder Seite einen dritten Knoten im jeweils anderen Hypervisor und gaben beiden Clustern ein echtes Drei-Stimmen-Design mit HA, DRS und Live-Migration zum Vorführen.",
+            fr: "Notre spécialisation choisie était le <strong>Clustering</strong>. Quatre hôtes ne donnent que deux nœuds par plateforme, ce qui est trop faible pour expliquer le quorum - nous avons donc imbriqué de chaque côté un troisième nœud dans l'hyperviseur opposé, offrant aux deux clusters une vraie conception à trois votes avec HA, DRS et migration à chaud à présenter."
         },
 
         "project.vircl-virtualization.section.lessons.title": {
@@ -566,11 +573,11 @@
             fr: "ESXi déteste les points"
         },
         "project.vircl-virtualization.lessons.hostname.body": {
-            en: "The ESXi installer splits hostname and domain into two fields — typing <code>hp13.vircl.local</code> in the hostname box fails silently. Short name in one field, domain in the other.",
-            pt: "O instalador do ESXi separa o hostname e o domínio em dois campos — escrever <code>hp13.vircl.local</code> no campo do hostname falha em silêncio. Nome curto num campo, domínio no outro.",
-            lu: "Den ESXi-Installer deelt Hostnumm an Domain an zwee Felder op — <code>hp13.vircl.local</code> an d'Hostnumm-Feld ze schreiwen feelt roueg. Kuerznumm an engem Feld, Domain am aneren.",
-            de: "Der ESXi-Installer trennt Hostname und Domain in zwei Felder — <code>hp13.vircl.local</code> ins Hostname-Feld zu tippen schlägt stillschweigend fehl. Kurzname in das eine Feld, Domain in das andere.",
-            fr: "L'installateur ESXi sépare le nom d'hôte et le domaine en deux champs — saisir <code>hp13.vircl.local</code> dans le champ du nom d'hôte échoue sans message. Nom court dans un champ, domaine dans l'autre."
+            en: "The ESXi installer splits hostname and domain into two fields - typing <code>hp13.vircl.local</code> in the hostname box fails silently. Short name in one field, domain in the other.",
+            pt: "O instalador do ESXi separa o hostname e o domínio em dois campos - escrever <code>hp13.vircl.local</code> no campo do hostname falha em silêncio. Nome curto num campo, domínio no outro.",
+            lu: "Den ESXi-Installer deelt Hostnumm an Domain an zwee Felder op - <code>hp13.vircl.local</code> an d'Hostnumm-Feld ze schreiwen feelt roueg. Kuerznumm an engem Feld, Domain am aneren.",
+            de: "Der ESXi-Installer trennt Hostname und Domain in zwei Felder - <code>hp13.vircl.local</code> ins Hostname-Feld zu tippen schlägt stillschweigend fehl. Kurzname in das eine Feld, Domain in das andere.",
+            fr: "L'installateur ESXi sépare le nom d'hôte et le domaine en deux champs - saisir <code>hp13.vircl.local</code> dans le champ du nom d'hôte échoue sans message. Nom court dans un champ, domaine dans l'autre."
         },
         "project.vircl-virtualization.lessons.pnid.title": {
             en: "vCenter needs DNS",
@@ -805,11 +812,11 @@
             fr: "Lire le rapport complet"
         },
         "project.vircl-virtualization.section.assets.body": {
-            en: "The complete graded deliverables — the feature-by-feature documentation comparing both hypervisors, and the clustering specialisation slides.",
-            pt: "Os entregáveis avaliados completos — a documentação funcionalidade a funcionalidade comparando ambos os hipervisores e os slides da especialização em clustering.",
-            lu: "Déi komplett bewäert Liwwerungen — d'Dokumentatioun Funktioun fir Funktioun, déi déi zwee Hypervisoren vergläicht, an d'Foilen vun der Clustering-Spezialisatioun.",
-            de: "Die vollständigen benoteten Liefergegenstände — die Dokumentation Funktion für Funktion im Vergleich beider Hypervisoren und die Folien der Clustering-Spezialisierung.",
-            fr: "Les livrables évalués complets — la documentation fonctionnalité par fonctionnalité comparant les deux hyperviseurs et les diapositives de la spécialisation clustering."
+            en: "The complete graded deliverables - the feature-by-feature documentation comparing both hypervisors, and the clustering specialisation slides.",
+            pt: "Os entregáveis avaliados completos - a documentação funcionalidade a funcionalidade comparando ambos os hipervisores e os slides da especialização em clustering.",
+            lu: "Déi komplett bewäert Liwwerungen - d'Dokumentatioun Funktioun fir Funktioun, déi déi zwee Hypervisoren vergläicht, an d'Foilen vun der Clustering-Spezialisatioun.",
+            de: "Die vollständigen benoteten Liefergegenstände - die Dokumentation Funktion für Funktion im Vergleich beider Hypervisoren und die Folien der Clustering-Spezialisierung.",
+            fr: "Les livrables évalués complets - la documentation fonctionnalité par fonctionnalité comparant les deux hyperviseurs et les diapositives de la spécialisation clustering."
         },
         "project.vircl-virtualization.asset.documentation.title": {
             en: "Documentation",

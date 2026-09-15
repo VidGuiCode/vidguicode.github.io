@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark" data-lang="en">
 <head>
+    <!-- Theme bootstrap: apply saved/system theme before first paint -->
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
+            } catch (_) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guilherme Videira Marques | Cloud Engineer</title>
-    <meta name="description" content="Portfolio of Guilherme Videira Marques - Cloud Engineer based in Luxembourg. Building reliable infrastructure, automating workflows, and turning ideas into polished web experiences.">
-    <meta name="keywords" content="Cloud Computing, DevOps, Infrastructure, Docker, Kubernetes, Luxembourg, BTS Cloud Computing">
+    <meta name="theme-color" content="#0a0a0c">
+    <title>Guilherme Videira Marques | Builder & Cylro Co-founder</title>
+    <meta name="description" content="Portfolio of Guilherme Videira Marques, a builder and Cylro co-founder in Luxembourg. Independent projects in software, infrastructure, and AI agents.">
+    <meta name="keywords" content="Guilherme Videira Marques, Cylro, builder, software, infrastructure, AI agents, Luxembourg">
     <meta name="author" content="Guilherme Videira Marques">
     <link rel="canonical" href="https://vidguicode.github.io/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vidguicode.github.io/">
-    <meta property="og:title" content="Guilherme Videira Marques | Cloud Engineer">
-    <meta property="og:description" content="Cloud Engineer based in Luxembourg. Building reliable infrastructure, automating workflows, and turning ideas into polished web experiences.">
+    <meta property="og:title" content="Guilherme Videira Marques | Builder & Cylro Co-founder">
+    <meta property="og:description" content="Builder and Cylro co-founder in Luxembourg. Independent projects in software, infrastructure, and AI agents.">
     <meta property="og:image" content="https://vidguicode.github.io/assets/img/hero-profile.webp">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="pt_PT">
@@ -23,8 +34,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://vidguicode.github.io/">
-    <meta name="twitter:title" content="Guilherme Videira Marques | Cloud Engineer">
-    <meta name="twitter:description" content="Cloud Engineer based in Luxembourg.">
+    <meta name="twitter:title" content="Guilherme Videira Marques | Builder & Cylro Co-founder">
+    <meta name="twitter:description" content="Builder and Cylro co-founder in Luxembourg.">
     <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/hero-profile.webp">
     
     <!-- Fonts - Preload critical fonts -->
@@ -58,11 +69,12 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Guilherme Videira Marques",
-        "jobTitle": "Cloud Engineer",
+        "jobTitle": "Builder and Cylro Co-founder",
         "url": "https://vidguicode.github.io/",
         "sameAs": [
             "https://www.linkedin.com/in/guilherme-videira-marques/",
-            "https://github.com/VidGuiCode"
+            "https://github.com/VidGuiCode",
+            "https://x.com/GuiMarques9_"
         ],
         "address": {
             "@type": "PostalAddress",
@@ -79,6 +91,7 @@
     
     <!-- Translations - Load early (needed by inline scripts) -->
     <script src="assets/js/translations/core.js"></script>
+    <script src="assets/js/translations/certifications.js"></script>
     <script src="assets/js/i18n.js"></script>
 </head>
 <body>
@@ -111,13 +124,13 @@
         <!-- Hero Section -->
         <section id="home" class="hero-grid" data-nav-label="Home">
             <div class="card hero-text">
-                <div class="badge" data-i18n="hero.badge">AVAILABLE FOR OPPORTUNITIES</div>
+                <div class="badge" data-i18n="hero.badge">CO-FOUNDER · BUILDER · LUXEMBOURG</div>
                 <h1>Guilherme<br>Videira Marques</h1>
-                <p class="subtitle" data-i18n="hero.subtitle">Cloud Computing Student focused on cloud infrastructure, automation, and practical systems.</p>
-                <p data-i18n="hero.description">Based in Luxembourg, I build reliable infrastructure, automate workflows, and turn ideas into polished software and web experiences.</p>
+                <p class="subtitle" data-i18n="hero.subtitle">I'm Gui, a Cloud Computing student and co-founder of Cylro. I build tools, work with AI agents, and run my own infrastructure in Luxembourg.</p>
+                <p data-i18n="hero.description">Independent projects around software, infrastructure, and AI agents.</p>
                 <div class="hero-actions">
-                    <a href="#contact" class="btn primary" data-i18n="hero.cta.contact">Get in Touch</a>
-                    <a href="#projects" class="btn secondary" data-i18n="hero.cta.work">View Work</a>
+                    <a href="#projects" class="btn primary" data-i18n="hero.cta.work">View Work</a>
+                    <a href="#contact" class="btn secondary" data-i18n="hero.cta.contact">Get in Touch</a>
                 </div>
             </div>
             
@@ -140,7 +153,7 @@
             <div class="card stat-box">
                 <i data-lucide="globe" class="accent-icon"></i>
                 <h3 data-i18n="stat.network">Network</h3>
-                <p data-i18n="stat.network.desc">CCNA & Security</p>
+                <p data-i18n="stat.network.desc">Routing, VPN & Security</p>
             </div>
 
             <div class="card stat-box">
@@ -164,7 +177,7 @@
 
                 <div class="about-item">
                     <i data-lucide="zap"></i>
-                    <p data-i18n="about.p2" data-i18n-html>I don't just learn concepts; I build them. From hosting my own media infrastructure to developing AI-powered tools like <strong>Cylro</strong>, I'm obsessed with how systems work together.</p>
+                    <p data-i18n="about.p2" data-i18n-html>I learn by building. I run my own infrastructure and co-founded <strong>Cylro</strong>, a website operations platform. The practical part is seeing how the pieces work together.</p>
                 </div>
 
                 <div class="about-facts">
@@ -211,10 +224,10 @@
                     <h3 data-i18n="skills.infrastructure.title">Infrastructure & Cloud</h3>
                 </div>
                 <div class="skill-chip-grid">
-                    <span class="skill-chip">K3s</span>
-                    <span class="skill-chip">Docker / Compose</span>
-                    <span class="skill-chip">Oracle Cloud</span>
-                    <span class="skill-chip">Linux Server</span>
+                    <span class="skill-chip" data-i18n="skills.chip.infra.containers">Containers &amp; Kubernetes</span>
+                    <span class="skill-chip" data-i18n="skills.chip.infra.cloud">Public cloud</span>
+                    <span class="skill-chip" data-i18n="skills.chip.infra.virtualization">Virtualization</span>
+                    <span class="skill-chip" data-i18n="skills.chip.infra.linux">Linux servers</span>
                 </div>
             </div>
 
@@ -224,10 +237,10 @@
                     <h3 data-i18n="skills.network.title">Network Engineering</h3>
                 </div>
                 <div class="skill-chip-grid">
-                    <span class="skill-chip">CCNA Fundamentals</span>
-                    <span class="skill-chip">WireGuard (VPN)</span>
-                    <span class="skill-chip">DNS Management</span>
-                    <span class="skill-chip">Caddy (Proxy + TLS)</span>
+                    <span class="skill-chip" data-i18n="skills.chip.net.fundamentals">Networking fundamentals</span>
+                    <span class="skill-chip" data-i18n="skills.chip.net.vpn">VPNs</span>
+                    <span class="skill-chip" data-i18n="skills.chip.net.dns">DNS</span>
+                    <span class="skill-chip" data-i18n="skills.chip.net.proxy">Reverse proxies &amp; TLS</span>
                 </div>
             </div>
 
@@ -237,11 +250,26 @@
                     <h3 data-i18n="skills.development.title">Full-Stack Development</h3>
                 </div>
                 <div class="skill-chip-grid">
-                    <span class="skill-chip">PHP</span>
-                    <span class="skill-chip">Node.js</span>
-                    <span class="skill-chip">Svelte / SvelteKit</span>
-                    <span class="skill-chip">Vue 3 / Nuxt 4</span>
-                    <span class="skill-chip">Python / FastAPI</span>
+                    <span class="skill-chip" data-i18n="skills.chip.dev.frontend">Frontend frameworks</span>
+                    <span class="skill-chip" data-i18n="skills.chip.dev.backend">Backend &amp; APIs</span>
+                    <span class="skill-chip" data-i18n="skills.chip.dev.databases">Databases</span>
+                    <span class="skill-chip" data-i18n="skills.chip.dev.systems">Systems programming</span>
+                    <span class="skill-chip" data-i18n="skills.chip.dev.languages">TypeScript &amp; Python</span>
+                </div>
+            </div>
+
+            <div class="card skill-stack-card">
+                <div class="skill-stack-header">
+                    <i data-lucide="bot"></i>
+                    <h3 data-i18n="skills.ai.title">AI &amp; Agents</h3>
+                </div>
+                <div class="skill-chip-grid">
+                    <span class="skill-chip" data-i18n="skills.chip.ai.agents">AI agents &amp; MCP</span>
+                    <span class="skill-chip" data-i18n="skills.chip.ai.llms">Frontier &amp; open LLMs</span>
+                    <span class="skill-chip" data-i18n="skills.chip.ai.small">Small language models</span>
+                    <span class="skill-chip" data-i18n="skills.chip.ai.media">Image &amp; video generation</span>
+                    <span class="skill-chip" data-i18n="skills.chip.ai.speech">Speech recognition</span>
+                    <span class="skill-chip" data-i18n="skills.chip.ai.tooling">Agent tooling</span>
                 </div>
             </div>
         </section>
@@ -253,19 +281,18 @@
                 <div class="line"></div>
             </div>
 
-            <!-- Home Lab Project -->
-            <a href="projects/project-homelab" class="card project-card project-card-link">
-                <div class="project-icon">
-                    <i data-lucide="server-cog"></i>
+            <a href="projects/project-assemblash" class="card project-card project-card-link selected-work-card">
+                <div class="selected-work-media">
+                    <img src="assets/img/projects/assemblash/thumbnail.webp" alt="Assemblash project thumbnail" loading="lazy" width="1600" height="900">
                 </div>
-                <h3 data-i18n="projects.homelab.title">Home Lab Personal Cloud</h3>
-                <p class="project-desc" data-i18n="projects.homelab.desc">From March 2025 to today: a four-node self-hosted platform — cloud edge gateway, ARM home server, x86 offload node, and a ZFS NAS. It runs 10+ custom apps, five guardrailed AI agents, passwordless passkey login with an OIDC/OAuth provider, AI video generation, and a full media stack behind a self-operated WireGuard edge.</p>
-                <div class="tags">
-                    <span>K3s</span>
-                    <span>Docker</span>
-                    <span>WireGuard</span>
-                    <span>Tailscale</span>
-                    <span>Cloudflare</span>
+                <div class="selected-work-content">
+                    <h3 data-i18n="projects.assemblash.title">Assemblash</h3>
+                    <p class="project-desc" data-i18n="projects.assemblash.home.desc">An editable design tool where people and AI agents can work on the same design.</p>
+                </div>
+                <div class="tags selected-work-tags">
+                    <span>Rust</span>
+                    <span>CLI</span>
+                    <span>MCP</span>
                 </div>
                 <div class="project-cta">
                     <span data-i18n="projects.viewCaseStudy">View Case Study</span>
@@ -273,18 +300,37 @@
                 </div>
             </a>
 
-            <a href="projects/project-cylro" class="card project-card project-card-link">
-                <div class="project-icon">
-                    <i data-lucide="layout"></i>
+            <a href="projects/project-cylro" class="card project-card project-card-link selected-work-card" data-status="in-development">
+                <div class="selected-work-media">
+                    <img src="assets/img/projects/cylro/thumbnail.webp" alt="Cylro project thumbnail" loading="lazy" width="1600" height="900">
                 </div>
-                <h3 data-i18n="projects.cylro.title">Cylro</h3>
-                <p class="project-desc" data-i18n="projects.cylro.desc">Website operations platform for EU teams, with scoped access, immutable publishing, EU-managed infrastructure, and permission-aware AI assistance.</p>
-                <div class="tags">
-                    <span>AI</span>
+                <div class="selected-work-content">
+                    <h3 data-i18n="projects.cylro.title">Cylro</h3>
+                    <p class="project-desc" data-i18n="projects.cylro.home.desc">A website operations platform in development for teams managing multiple websites.</p>
+                </div>
+                <div class="tags selected-work-tags">
                     <span>Website Operations</span>
-                    <span>Nuxt</span>
-                    <span>PostgreSQL</span>
-                    <span>EU Infrastructure</span>
+                    <span>Publishing</span>
+                    <span>AI Assistance</span>
+                </div>
+                <div class="project-cta">
+                    <span data-i18n="projects.viewCaseStudy">View Case Study</span>
+                    <i data-lucide="arrow-right"></i>
+                </div>
+            </a>
+
+            <a href="projects/project-homelab" class="card project-card project-card-link selected-work-card">
+                <div class="selected-work-media">
+                    <img src="assets/img/projects/homelab/thumbnail.webp" alt="Home Lab project thumbnail" loading="lazy" width="1600" height="900">
+                </div>
+                <div class="selected-work-content">
+                    <h3 data-i18n="projects.homelab.title">Home Lab Personal Cloud</h3>
+                    <p class="project-desc" data-i18n="projects.homelab.home.desc">My own setup for files, media, custom apps, and AI agents.</p>
+                </div>
+                <div class="tags selected-work-tags">
+                    <span>Self-hosting</span>
+                    <span>Media</span>
+                    <span>AI Agents</span>
                 </div>
                 <div class="project-cta">
                     <span data-i18n="projects.viewCaseStudy">View Case Study</span>
@@ -306,8 +352,8 @@
 
             <!-- Cert and highlight cards will be inserted here by JS -->
 
-            <a id="cert-view-more" href="certifications" class="btn primary" style="grid-column: 1 / -1; justify-self: center; margin-top: 1rem;" data-i18n="certifications.viewMore">
-                View All Certifications <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            <a id="cert-view-more" href="certifications" class="btn primary" style="grid-column: 1 / -1; justify-self: center; margin-top: 1rem;">
+                <span data-i18n="certifications.viewMore">View All Certifications</span> <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
             </a>
         </section>
 
@@ -320,18 +366,28 @@
 
             <div class="card experience-card">
                 <div class="exp-date">
+                    <img src="assets/img/projects/cylro/cylro-app-icon-brand.svg" alt="Cylro app icon" loading="lazy" width="120" height="120">
+                    <span data-i18n="experience.cylro.date">2025 – Present</span>
+                </div>
+                <h3 data-i18n="experience.cylro.title">Co-founder</h3>
+                <h4 data-i18n="experience.cylro.company">Cylro</h4>
+                <p data-i18n="experience.cylro.desc">Building Cylro's product and technical foundation: one Space for teams to organize access, content, and controlled website publishing.</p>
+            </div>
+
+            <div class="card experience-card">
+                <div class="exp-date">
                     <img src="assets/img/logos/lgk-logo.webp" alt="LGK Logo" loading="lazy" width="120" height="auto">
-                    <span data-i18n="experience.bts.date">2025 — Present</span>
+                    <span data-i18n="experience.bts.date">2025 – Present</span>
                 </div>
                 <h3 data-i18n="experience.bts.title">BTS Cloud Computing</h3>
                 <h4 data-i18n="experience.bts.company">Lycée Guillaume Kroll</h4>
-                <p data-i18n="experience.bts.desc">Higher Technical Diploma focused on advanced cloud infrastructure, virtualization, and network administration.</p>
+                <p data-i18n="experience.bts.desc">Higher Technical Diploma in advanced cloud infrastructure, virtualization and network administration. Two-year programme, 2025–2027.</p>
             </div>
 
             <div class="card experience-card">
                 <div class="exp-date">
                     <img src="assets/img/logos/pcphoneservices-logo.webp" alt="PC Phone Service Logo" loading="lazy" width="120" height="auto">
-                    <span data-i18n="experience.intern.date">Feb-Mar '23 & Sep-Oct '24</span>
+                    <span data-i18n="experience.intern.date">Feb–Mar '23 & Sep–Oct '24</span>
                 </div>
                 <h3 data-i18n="experience.intern.title">IT Intern</h3>
                 <h4 data-i18n="experience.intern.company">PC Phone Service</h4>
@@ -341,7 +397,7 @@
             <div class="card experience-card">
                 <div class="exp-date">
                     <img src="assets/img/logos/lgk-logo.webp" alt="LGK Logo" loading="lazy" width="120" height="auto">
-                    <span data-i18n="experience.diploma.date">2021 — 2025</span>
+                    <span data-i18n="experience.diploma.date">2021 – 2025</span>
                 </div>
                 <h3 data-i18n="experience.diploma.title">Computer Technician Diploma</h3>
                 <h4 data-i18n="experience.diploma.company">Lycée Guillaume Kroll</h4>
@@ -357,7 +413,7 @@
             </div>
             
             <div class="card contact-card">
-                <p data-i18n="contact.description">Always open to discussing cloud technologies, infrastructure projects, or new opportunities.</p>
+                <p data-i18n="contact.description">Interested in something here? Get in touch.</p>
                 <div class="contact-links">
                     <a href="https://www.linkedin.com/in/guilherme-videira-marques/" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="LinkedIn Profile">
                         <i data-lucide="linkedin" aria-hidden="true"></i>
@@ -366,6 +422,10 @@
                     <a href="https://github.com/VidGuiCode" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="GitHub Profile">
                         <i data-lucide="github" aria-hidden="true"></i>
                         <span>GitHub</span>
+                    </a>
+                    <a href="https://x.com/GuiMarques9_" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="Follow Gui on X">
+                        <span class="contact-x" aria-hidden="true">X</span>
+                        <span data-i18n="contact.x">Follow on X</span>
                     </a>
                     <a href="links" class="contact-item" aria-label="All my links">
                         <i data-lucide="link" aria-hidden="true"></i>
@@ -378,7 +438,7 @@
                         </button>
                         <div class="cv-dropdown-menu" role="menu" aria-hidden="true">
                             <a href="assets/docs/cv-guilherme-videira-marques-en.pdf" target="_blank" rel="noopener noreferrer" class="cv-dropdown-item" role="menuitem" data-i18n="contact.cv.option.en">English (EN)</a>
-                            <a href="assets/docs/cv-guilherme-videira-marques-fr.pdf" target="_blank" rel="noopener noreferrer" class="cv-dropdown-item" role="menuitem" data-i18n="contact.cv.option.fr">Français (FR)</a>
+                            <a href="assets/docs/cv-guilherme-videira-marques-fr.pdf" target="_blank" rel="noopener noreferrer" class="cv-dropdown-item" role="menuitem" data-i18n="contact.cv.option.fr">French (FR)</a>
                         </div>
                     </div>
                 </div>
@@ -389,7 +449,7 @@
             <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
                 <img src="assets/img/logos/vidguicode-favicon.svg" alt="VidGuiCode Logo" class="footer-logo">
             </div>
-            <p data-i18n="footer.copyright">&copy; <script>document.write(new Date().getFullYear())</script> Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
 
         </footer>
 
@@ -469,15 +529,25 @@
                         _cached: true
                     }));
                     
-                    const formItems = formations.map(form => ({
+                    // Outreach days stay listed on the certifications page, but a home
+                    // page highlight slot should go to actual training.
+                    const formItems = formations
+                        .filter(form => form.group !== 'outreach' && form.category !== 'Outreach')
+                        .map(form => ({
                         ...form,
                         type: 'formation',
                         sortOrder: form.dateCompleted ? new Date(form.dateCompleted).getTime() : 0,
                         _cached: true
                     }));
                     
-                    // Sort certs explicitly (getCertificationsSortedByRank already returns highest rank first)
-                    const topCerts = certItems.sort((a, b) => b.sortOrder - a.sortOrder).slice(0, 2);
+                    // Cloud certifications first, then difficulty. Ranking by difficulty
+                    // alone put Microsoft Office exams ahead of Azure Fundamentals, which is
+                    // backwards for a cloud portfolio. A future cloud certification will
+                    // surface here on its own.
+                    const isCloud = item => item.category === 'Cloud Computing';
+                    const topCerts = certItems
+                        .sort((a, b) => (isCloud(b) - isCloud(a)) || (b.sortOrder - a.sortOrder))
+                        .slice(0, 2);
                     const topHighlights = formItems.sort((a, b) => b.sortOrder - a.sortOrder).slice(0, 2);
 
                     // Homepage order: strongest credentials first, then recent highlights.
@@ -624,7 +694,7 @@
         "itemListElement": []
     }
     </script>
-    <script defer>
+    <script>
         // Populate certifications structured data after certifications-data.js loads
         document.addEventListener('DOMContentLoaded', () => {
             const populateStructuredData = () => {

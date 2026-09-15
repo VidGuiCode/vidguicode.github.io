@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark" data-lang="en">
 <head>
+    <!-- Theme bootstrap: apply saved/system theme before first paint -->
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
+            } catch (_) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
     <title>Certifications & Training | VidGuiCode</title>
     <meta name="description" content="Professional certifications and training sessions completed by Guilherme Videira Marques - Microsoft Azure, Office Specialist, Power Platform, and more.">
     <meta name="keywords" content="Certifications, Training, Microsoft Azure, Office Specialist, Power Platform, Cloud Computing, Professional Credentials, Formations">
@@ -13,6 +24,14 @@
     <meta property="og:url" content="https://vidguicode.github.io/certifications">
     <meta property="og:title" content="Certifications & Training | VidGuiCode">
     <meta property="og:description" content="Professional certifications and training sessions completed by Guilherme Videira Marques.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/hero-profile.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/certifications">
+    <meta name="twitter:title" content="Certifications &amp; Training | VidGuiCode">
+    <meta name="twitter:description" content="Professional certifications and training sessions completed by Guilherme Videira Marques.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/hero-profile.webp">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,19 +71,19 @@
     <main class="container" style="padding-top: 100px;">
         <a href="/#home" class="back-link">
             <i data-lucide="arrow-left"></i>
-            <span data-i18n="certifications.back">Back to Portfolio</span>
+            <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
         </a>
 
         <section class="certifications-hero">
             <div class="hero-eyebrow">
                 <span class="badge" data-i18n="certifications.badge">PROFESSIONAL CREDENTIALS</span>
                 <span class="hero-eyebrow-meta">
-                    <span id="certification-year-range">—</span>
+                    <span id="certification-year-range">-</span>
                 </span>
             </div>
 
             <h1 data-i18n="certifications.heading">Certifications & Training</h1>
-            <p class="subtitle" data-i18n="certifications.subtitle">Industry-recognized certifications and training sessions demonstrating expertise in cloud computing, productivity tools, and technical skills. Certifications sorted by level — highest rank first. Trainings shown separately.</p>
+            <p class="subtitle" data-i18n="certifications.subtitle">Industry-recognized certifications and training sessions in cloud computing, infrastructure, and technical skills. Certifications sorted by level (highest first), trainings by date (newest first).</p>
 
             <div class="hero-metrics" aria-label="Certification metrics">
                 <div class="hero-metric">
@@ -78,7 +97,7 @@
                 </div>
                 <div class="hero-metric-divider" aria-hidden="true"></div>
                 <div class="hero-metric">
-                    <span class="hero-metric-value" id="highest-level">—</span>
+                    <span class="hero-metric-value" id="highest-level">-</span>
                     <span class="hero-metric-label" data-i18n="certifications.stats.highest">Highest Level</span>
                 </div>
             </div>
@@ -176,6 +195,20 @@
     <script src="assets/js/search.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
+        // icons.js is loaded with defer, so window.renderIcons may not exist yet
+        // when this parse-time script runs. Guard every call.
+        function safeRenderIcons(root) {
+            if (typeof window.renderIcons === 'function') window.renderIcons(root);
+        }
+
+        // Once icons.js has loaded (defer runs before DOMContentLoaded), replace any
+        // icon placeholders that were injected into the DOM before it was available.
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function () { safeRenderIcons(); });
+        } else {
+            safeRenderIcons();
+        }
+
         const FORMATION_GROUPS = {
             formations: {
                 labelKey: 'certifications.filter.formations',
@@ -356,6 +389,10 @@
                 attributes: true,
                 attributeFilter: ['data-theme']
             });
+
+            // script.js may have already applied the saved/system theme before this
+            // handler ran, so the observer would miss it. Reconcile once now.
+            updateFormationLogos();
         });
 
         function updateCertificationHeroStats() {
@@ -378,7 +415,7 @@
                         : `certifications.level.${highestCert.level.label.toLowerCase()}`;
                     highestLevelEl.textContent = t(highestLevelNameKey, highestCert.level.label);
                 } else {
-                    highestLevelEl.textContent = '—';
+                    highestLevelEl.textContent = '-';
                 }
             }
 
@@ -389,8 +426,8 @@
                     .map(date => new Date(date).getFullYear())
                     .filter(year => Number.isFinite(year));
                 yearRangeEl.textContent = years.length
-                    ? `${Math.min(...years)} → ${new Date().getFullYear()}`
-                    : '—';
+                    ? `${Math.min(...years)} → ${Math.max(...years)}`
+                    : '-';
             }
         }
 
@@ -423,7 +460,7 @@
                         <p>${emptyText}</p>
                     </div>
                 `;
-                renderIcons();
+                safeRenderIcons();
                 return;
             }
 
@@ -441,7 +478,7 @@
             });
 
             // Re-initialize Lucide icons
-            renderIcons();
+            safeRenderIcons();
         }
 
 	        function createCertificationRow(cert) {
@@ -735,7 +772,7 @@
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
             updateFilterResultCount();
-            renderIcons();
+            safeRenderIcons();
         }
         
         // Instant apply + live counter when toggling filters in the modal
@@ -941,7 +978,7 @@
                         <p>${emptyText}</p>
                     </div>
                 `;
-                renderIcons();
+                safeRenderIcons();
                 return;
             }
 
@@ -958,7 +995,7 @@
                 }
             });
 
-            renderIcons();
+            safeRenderIcons();
             updateFormationLogos();
         }
 
@@ -983,7 +1020,7 @@
                         <p>${emptyText}</p>
                     </div>
                 `;
-                renderIcons();
+                safeRenderIcons();
                 return;
             }
 
@@ -1000,7 +1037,7 @@
                 }
             });
 
-            renderIcons();
+            safeRenderIcons();
             updateFormationLogos();
         }
 
@@ -1142,7 +1179,7 @@
             }
 
             modal.classList.add('active');
-            renderIcons();
+            safeRenderIcons();
         }
 
         // Formation modal functionality
@@ -1174,7 +1211,7 @@
             if (modalBadgeImg) {
                 if (formation.logo) {
                     // Determine which logo to use based on theme
-                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
                     let logoToUse = formation.logo;
 
                     if (currentTheme === 'light' && formation.logoLight) {
@@ -1277,7 +1314,7 @@
             }
 
             modal.classList.add('active');
-            renderIcons();
+            safeRenderIcons();
         }
 
         // Function to close modal and clear hash
@@ -1392,17 +1429,9 @@
                 renderMainFilterButtons();
                 renderCertifications();
                 
-                // Initialize Lucide icons
-                if (typeof renderIcons !== 'undefined') {
-                    renderIcons();
-                } else {
-                    // Wait for Lucide to load
-                    window.addEventListener('load', () => {
-                        if (typeof renderIcons !== 'undefined') {
-                            renderIcons();
-                        }
-                    });
-                }
+                // Initialize icons (no-op until icons.js has loaded)
+                safeRenderIcons();
+                window.addEventListener('load', () => safeRenderIcons());
             } else {
                 // Data not loaded yet, wait a bit and retry
                 setTimeout(waitForCertificationsData, 50);

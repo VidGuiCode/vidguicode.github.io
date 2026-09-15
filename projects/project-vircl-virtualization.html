@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
     <title>Server Virtualization Systems | VidGuiCode</title>
-    <meta name="description" content="A two-person BTS Cloud Computing project deploying and comparing VMware ESXi/vCenter and Proxmox VE across four HP servers — 17 virtualization features on both, with a Clustering specialisation that uses cross-platform nested nodes to build real three-node quorum.">
+    <meta name="description" content="A BTS Cloud Computing project deploying and comparing VMware ESXi/vCenter and Proxmox VE across four HP servers, with a three-node clustering specialisation.">
+    <link rel="canonical" href="https://vidguicode.github.io/projects/project-vircl-virtualization">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vidguicode.github.io/projects/project-vircl-virtualization">
+    <meta property="og:title" content="Server Virtualization Systems | VidGuiCode">
+    <meta property="og:description" content="A BTS Cloud Computing project deploying and comparing VMware ESXi/vCenter and Proxmox VE across four HP servers, with a three-node clustering specialisation.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/vircl-virtualization/esxi-host-client-summary.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/projects/project-vircl-virtualization">
+    <meta name="twitter:title" content="Server Virtualization Systems | VidGuiCode">
+    <meta name="twitter:description" content="A BTS Cloud Computing project deploying and comparing VMware ESXi/vCenter and Proxmox VE across four HP servers, with a three-node clustering specialisation.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/projects/vircl-virtualization/esxi-host-client-summary.webp">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +51,17 @@
     <script src="../assets/js/search.js"></script>
     <script src="../assets/js/certifications-techstack.js"></script>
     <style>
+
+        /* The shared storage belongs to neither cluster, so it takes a
+           neutral rail rather than VMware blue or Proxmox orange. */
+        .bp--split .bp-shared {
+            border-top-color: var(--rack-rail);
+        }
+        .bp--split .bp-shared .bp-icon,
+        .bp--split .bp-shared .bp-mono {
+            color: var(--text-secondary);
+        }
+
         /* Project Images */
         .project-image-container {
             margin: 2rem 0;
@@ -222,51 +249,13 @@
         /* ===== Platform brand theming: ESXi/vSphere blue + Proxmox orange ===== */
         .project-glance { --esxi: #4aa3df; --pmx: #e57000; }
 
-        /* ESXi / vCenter cluster rack */
-        .rack-esxi { border-color: rgba(74, 163, 223, 0.55); box-shadow: inset 0 0 0 1px rgba(74, 163, 223, 0.12); }
-        .rack-esxi .arch-rack-label { color: var(--esxi); }
-        .rack-esxi .arch-unit { border-left-color: var(--esxi); }
-        .rack-esxi .arch-led { background: var(--esxi); box-shadow: 0 0 6px var(--esxi); }
-
-        /* Proxmox cluster rack */
-        .rack-pmx { border-color: rgba(229, 112, 0, 0.55); box-shadow: inset 0 0 0 1px rgba(229, 112, 0, 0.12); }
-        .rack-pmx .arch-rack-label { color: var(--pmx); }
-        .rack-pmx .arch-unit { border-left-color: var(--pmx); }
-        .rack-pmx .arch-led { background: var(--pmx); box-shadow: 0 0 6px var(--pmx); }
-
-        /* Nested nodes: keep the rack colour but mark them dashed */
-        .rack-esxi .arch-unit.is-external,
-        .rack-pmx .arch-unit.is-external { border-left-style: dashed; }
-
-        /* Shared storage node: amber, sits between both */
-        .arch-unit.unit-storage { border-left-color: var(--led-amber); }
-        .arch-unit.unit-storage .arch-led { background: var(--led-amber); box-shadow: 0 0 6px var(--led-amber); }
+        /* Blueprint columns carry the platform colour each cluster runs on */
+        .bp--split .bp-col:first-child { --bp-accent: var(--esxi); }
+        .bp--split .bp-col:last-child { --bp-accent: var(--pmx); }
 
         /* Glance LEDs alternate the two platform colours */
         .project-glance .glance-grid .glance-stat:nth-child(odd) .glance-led { background: var(--esxi); box-shadow: 0 0 6px var(--esxi); }
         .project-glance .glance-grid .glance-stat:nth-child(even) .glance-led { background: var(--pmx); box-shadow: 0 0 6px var(--pmx); }
-
-        /* Legend under the topology diagram */
-        .arch-legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem 1.1rem;
-            margin-top: 1rem;
-            font-family: 'SF Mono', 'SFMono-Regular', ui-monospace, monospace;
-            font-size: 0.72rem;
-            color: var(--text-secondary);
-        }
-        .arch-legend .al { display: inline-flex; align-items: center; gap: 0.4rem; }
-        .arch-legend .al::before {
-            content: '';
-            width: 9px; height: 9px;
-            border-radius: 50%;
-            flex: 0 0 auto;
-        }
-        .arch-legend .al-esxi::before { background: var(--esxi); box-shadow: 0 0 5px var(--esxi); }
-        .arch-legend .al-pmx::before { background: var(--pmx); box-shadow: 0 0 5px var(--pmx); }
-        .arch-legend .al-shared::before { background: var(--led-amber); box-shadow: 0 0 5px var(--led-amber); }
-        .arch-legend .al-nested::before { background: transparent; border: 1px dashed var(--text-secondary); box-shadow: none; }
 
         /* Hero badge: subtle blend of both brand colours */
         .project-hero .badge {
@@ -305,7 +294,7 @@
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.vircl-virtualization.badge">VIRTUALIZATION</div>
                 <h1 data-i18n="project.vircl-virtualization.title">Server Virtualization Systems</h1>
-                <p class="subtitle" data-i18n="project.vircl-virtualization.subtitle">A two-person BTS Cloud Computing project that deploys and compares VMware ESXi/vCenter and Proxmox VE across four HP servers — every required virtualization feature built on both, plus a Clustering specialisation that uses cross-platform nested nodes to reach a real three-node quorum.</p>
+                <p class="subtitle" data-i18n="project.vircl-virtualization.subtitle">A two-person BTS Cloud Computing project about running more services on less hardware and keeping them available when a server needs maintenance or fails. Andrea and I built and compared working VMware and Proxmox setups across four HP servers, including two three-node clusters.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
                     <span data-i18n="project.lastUpdated">Last updated:</span> <span>26/06/2026</span>
@@ -319,7 +308,7 @@
                     <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
                     <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
                 </div>
-                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view, built for everyone</span>
                 <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
             </div>
 
@@ -347,82 +336,56 @@
             </div>
 
             <h2 data-i18n="project.vircl-virtualization.arch.title">How the two clusters fit together</h2>
-            <div class="arch-diagram">
-                <div class="arch-strip">
-                    <span class="led led-g"></span>
-                    <span class="led led-a"></span>
-                    <span class="led led-d"></span>
-                    <span class="arch-strip-label">Cross-platform cluster topology</span>
-                </div>
-                <div class="arch-body">
-                    <div class="arch-flow">
-                        <div class="arch-rack rack-esxi">
-                            <div class="arch-rack-label" data-i18n="project.vircl-virtualization.arch.esxiCluster">VMware cluster · VIRCL-Cluster (vCenter)</div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.vircl-virtualization.nodes.hp13.title">HP13 · ESXi + vCenter</span></div>
-                                    <div class="u-meta">10.0.10.131</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.vircl-virtualization.nodes.hp13.spec">physical host · hosts VCSA</div>
-                            </div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.vircl-virtualization.nodes.hp15.title">HP15 · ESXi</span></div>
-                                    <div class="u-meta">10.0.10.151</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.vircl-virtualization.nodes.hp15.spec">physical host · vMotion target</div>
-                            </div>
-                            <div class="arch-unit is-external">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.vircl-virtualization.nodes.esxinested.title">esxi-nested</span></div>
-                                    <div class="u-meta">10.0.10.143</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.vircl-virtualization.nodes.esxinested.spec">nested ESXi VM, runs on HP14 ↗</div>
-                            </div>
-                        </div>
+            <div class="bp bp--split">
+                <span class="bp-kicker" data-i18n="project.vircl-virtualization.arch.kicker">Two hypervisors, three votes each</span>
 
-                        <div class="arch-col">
-                            <div class="arch-unit is-internet unit-storage">
-                                <div class="u-name"><span class="arch-led"></span><span data-i18n="project.vircl-virtualization.nodes.storage.title">Unraid shared storage</span></div>
-                                <div class="u-spec" data-i18n="project.vircl-virtualization.nodes.storage.spec">NFS + iSCSI · CLOIF2</div>
-                            </div>
-                            <div class="arch-conn">&#8645;</div>
-                            <div class="arch-note-mini" style="font-family:'SF Mono',monospace;font-size:0.72rem;color:var(--text-secondary);text-align:center;" data-i18n="project.vircl-virtualization.arch.storageNote">shared to both clusters — the foundation for migration &amp; HA</div>
+                <div class="bp-cols">
+                    <div class="bp-col">
+                        <div class="bp-col-head"><i data-lucide="boxes" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.vircl-virtualization.arch.esxiCluster">VMware cluster · VIRCL-Cluster (vCenter)</span></div>
+                        <div class="bp-card">
+                            <span class="bp-card-name"><i data-lucide="server" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.vircl-virtualization.nodes.hp13.title">HP13 · ESXi + vCenter</span></span>
+                            <span class="bp-mono">10.0.10.131</span>
+                            <span class="bp-spec" data-i18n="project.vircl-virtualization.nodes.hp13.spec">physical host · hosts VCSA</span>
                         </div>
-
-                        <div class="arch-rack rack-pmx">
-                            <div class="arch-rack-label" data-i18n="project.vircl-virtualization.arch.pmxCluster">Proxmox cluster · vircl-team4 (Corosync)</div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.vircl-virtualization.nodes.hp14.title">HP14 · Proxmox VE</span></div>
-                                    <div class="u-meta">10.0.10.141</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.vircl-virtualization.nodes.hp14.spec">physical host · migration target</div>
-                            </div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.vircl-virtualization.nodes.hp16.title">HP16 · Proxmox VE</span></div>
-                                    <div class="u-meta">10.0.10.161</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.vircl-virtualization.nodes.hp16.spec">physical host · HA manager</div>
-                            </div>
-                            <div class="arch-unit is-external">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.vircl-virtualization.nodes.pvenested.title">pve-nested</span></div>
-                                    <div class="u-meta">witness vote</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.vircl-virtualization.nodes.pvenested.spec">nested Proxmox VM, runs on HP13 ↖</div>
-                            </div>
+                        <div class="bp-card">
+                            <span class="bp-card-name"><i data-lucide="server" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.vircl-virtualization.nodes.hp15.title">HP15 · ESXi</span></span>
+                            <span class="bp-mono">10.0.10.151</span>
+                            <span class="bp-spec" data-i18n="project.vircl-virtualization.nodes.hp15.spec">physical host · vMotion target</span>
+                        </div>
+                        <div class="bp-card">
+                            <span class="bp-card-name"><i data-lucide="box" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.vircl-virtualization.nodes.esxinested.title">esxi-nested</span></span>
+                            <span class="bp-mono">10.0.10.143 · 3rd vote</span>
+                            <span class="bp-spec" data-i18n="project.vircl-virtualization.nodes.esxinested.spec">nested ESXi VM, runs on HP14 ↗</span>
                         </div>
                     </div>
-                    <div class="arch-legend">
-                        <span class="al al-esxi">VMware ESXi / vCenter</span>
-                        <span class="al al-pmx">Proxmox VE</span>
-                        <span class="al al-shared">Shared storage</span>
-                        <span class="al al-nested">dashed = nested node</span>
+
+                    <div class="bp-col">
+                        <div class="bp-col-head"><i data-lucide="boxes" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.vircl-virtualization.arch.pmxCluster">Proxmox cluster · vircl-team4 (Corosync)</span></div>
+                        <div class="bp-card">
+                            <span class="bp-card-name"><i data-lucide="server" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.vircl-virtualization.nodes.hp14.title">HP14 · Proxmox VE</span></span>
+                            <span class="bp-mono">10.0.10.141</span>
+                            <span class="bp-spec" data-i18n="project.vircl-virtualization.nodes.hp14.spec">physical host · migration target</span>
+                        </div>
+                        <div class="bp-card">
+                            <span class="bp-card-name"><i data-lucide="server" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.vircl-virtualization.nodes.hp16.title">HP16 · Proxmox VE</span></span>
+                            <span class="bp-mono">10.0.10.161</span>
+                            <span class="bp-spec" data-i18n="project.vircl-virtualization.nodes.hp16.spec">physical host · HA manager</span>
+                        </div>
+                        <div class="bp-card">
+                            <span class="bp-card-name"><i data-lucide="box" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.vircl-virtualization.nodes.pvenested.title">pve-nested</span></span>
+                            <span class="bp-mono">3rd vote</span>
+                            <span class="bp-spec" data-i18n="project.vircl-virtualization.nodes.pvenested.spec">nested Proxmox VM, runs on HP13 ↖</span>
+                        </div>
                     </div>
-                    <div class="arch-note" data-i18n="project.vircl-virtualization.arch.note">Each cluster only has two physical hosts, so a third node was nested inside the opposite hypervisor — Proxmox hosts an ESXi VM and ESXi hosts a Proxmox VM. That gives every cluster three votes, which is what makes quorum (and a real clustering demo) meaningful.</div>
                 </div>
+
+                <div class="bp-shared">
+                    <span class="bp-card-name"><i data-lucide="hard-drive" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.vircl-virtualization.nodes.storage.title">Unraid shared storage</span></span>
+                    <span class="bp-mono" data-i18n="project.vircl-virtualization.nodes.storage.spec">NFS + iSCSI · CLOIF2</span>
+                    <span class="bp-spec" data-i18n="project.vircl-virtualization.arch.storageNote">shared to both clusters - the foundation for migration &amp; HA</span>
+                </div>
+
+                <p class="bp-note" data-i18n="project.vircl-virtualization.arch.note">Each cluster only has two physical hosts, so a third node was nested inside the opposite hypervisor - Proxmox hosts an ESXi VM and ESXi hosts a Proxmox VM. That gives every cluster three votes, which is what makes quorum (and a real clustering demo) meaningful.</p>
             </div>
 
             <div class="plain-only">
@@ -436,7 +399,7 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="layers"></i></div>
                         <h3 data-i18n="project.vircl-virtualization.does.consolidate.title">Many servers on one machine</h3>
-                        <p data-i18n="project.vircl-virtualization.does.consolidate.desc">One physical server safely runs lots of isolated virtual machines — the idea that lets companies replace racks of hardware with a handful of boxes.</p>
+                        <p data-i18n="project.vircl-virtualization.does.consolidate.desc">One physical server safely runs lots of isolated virtual machines - the idea that lets companies replace racks of hardware with a handful of boxes.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="arrow-right"></i></div>
@@ -446,7 +409,7 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="activity"></i></div>
                         <h3 data-i18n="project.vircl-virtualization.does.ha.title">Stay online when a host fails</h3>
-                        <p data-i18n="project.vircl-virtualization.does.ha.desc">Our specialisation: group hosts into a cluster so that if one dies, protected machines automatically restart on another — the heart of high availability.</p>
+                        <p data-i18n="project.vircl-virtualization.does.ha.desc">Our specialisation: group hosts into a cluster so that if one dies, protected machines automatically restart on another - the heart of high availability.</p>
                     </div>
                 </div>
             </div>
@@ -459,7 +422,7 @@
                     <div class="intro-text">
                         <i data-lucide="server" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
                         <h2 data-i18n="project.vircl-virtualization.section.setup.title">Four bare HP servers, two hypervisors</h2>
-                        <p data-i18n="project.vircl-virtualization.section.setup.body">For the VIRCL module of the BTS in Cloud Computing, my teammate Andrea Girotto and I were handed four bare HP ProLiant servers (HP13–HP16) and one rule: become experts in two type-1 hypervisors and prove it. We installed VMware ESXi with vCenter on HP13 and HP15, Proxmox VE on HP14 and HP16, wired an Unraid box as shared NFS/iSCSI storage, and then implemented every required feature on both platforms — installing, configuring, breaking, and documenting each one. The images below are each hypervisor's built-in web dashboard — the ESXi Host Client and the Proxmox VE summary — on the HP hosts right after install.</p>
+                        <p data-i18n="project.vircl-virtualization.section.setup.body">For the VIRCL module of the BTS in Cloud Computing, my teammate Andrea Girotto and I were handed four bare HP ProLiant servers (HP13–HP16) and one rule: become experts in two type-1 hypervisors and prove it. We installed VMware ESXi with vCenter on HP13 and HP15, Proxmox VE on HP14 and HP16, wired an Unraid box as shared NFS/iSCSI storage, and then implemented every required feature on both platforms - installing, configuring, breaking, and documenting each one. The images below are each hypervisor's built-in web dashboard - the ESXi Host Client and the Proxmox VE summary - on the HP hosts right after install.</p>
                     </div>
 
                     <div class="image-duo intro-duo">
@@ -487,18 +450,18 @@
                             <div class="stack-chips"><span>ESXi 8.0U2</span><span>VCSA 8.0U3</span><span>Proxmox VE 9</span><span>iLO virtual media</span><span>VMFS</span><span>LVM-thin</span></div>
                             <div class="vs-line" data-i18n="project.vircl-virtualization.stack.deploy.vs">VMware: split host/domain fields + a separate vCenter appliance · Proxmox: single Debian-based installer, web UI built in</div>
                             <ul class="feature-list stack-detail">
-                                <li data-i18n="project.vircl-virtualization.stack.deploy.b1" data-i18n-html><strong>Bare-metal installs over iLO</strong>: both ISOs mounted from the school NAS as iLO virtual media — no USB stick, both hosts booted from the virtual CD.</li>
+                                <li data-i18n="project.vircl-virtualization.stack.deploy.b1" data-i18n-html><strong>Bare-metal installs over iLO</strong>: both ISOs mounted from the school NAS as iLO virtual media - no USB stick, both hosts booted from the virtual CD.</li>
                                 <li data-i18n="project.vircl-virtualization.stack.deploy.b2" data-i18n-html><strong>vCenter Server Appliance</strong>: VCSA deployed on HP13 in two stages; PNID set to the IP (not a hostname) to dodge a reverse-DNS check while lab DNS was incomplete.</li>
                                 <li data-i18n="project.vircl-virtualization.stack.deploy.b3" data-i18n-html><strong>Proxmox post-install</strong>: enterprise repo swapped for the no-subscription repo, <code>apt dist-upgrade</code>, and the 1.09&nbsp;TiB volume turned into an LVM-thin pool for VM disks.</li>
                             </ul>
                         </div>
                         <div class="stack-layer">
-                            <div class="stack-head"><i data-lucide="box"></i><h3 data-i18n="project.vircl-virtualization.stack.lifecycle.title">VM lifecycle — GUI &amp; CLI</h3></div>
+                            <div class="stack-head"><i data-lucide="box"></i><h3 data-i18n="project.vircl-virtualization.stack.lifecycle.title">VM lifecycle - GUI &amp; CLI</h3></div>
                             <div class="stack-chips"><span>vCenter wizard</span><span>PowerCLI</span><span>qm CLI</span><span>Windows 10</span><span>Lubuntu</span><span>Snapshots</span><span>Templates</span><span>Clone</span><span>OVF export</span></div>
-                            <div class="vs-line" data-i18n="project.vircl-virtualization.stack.lifecycle.vs">VMware: PowerCLI scripting against vCenter · Proxmox: <code>qm</code> commands straight on the node</div>
+                            <div class="vs-line" data-i18n="project.vircl-virtualization.stack.lifecycle.vs" data-i18n-html="true">VMware: PowerCLI scripting against vCenter · Proxmox: <code>qm</code> commands straight on the node</div>
                             <ul class="feature-list stack-detail">
                                 <li data-i18n="project.vircl-virtualization.stack.lifecycle.b1" data-i18n-html><strong>Create both ways</strong>: VMs built through the GUI wizard and again from the CLI (PowerCLI on ESXi, <code>qm</code> on Proxmox), then a Windows client and a Linux server installed inside.</li>
-                                <li data-i18n="project.vircl-virtualization.stack.lifecycle.b2" data-i18n-html><strong>Reconfigure &amp; clone</strong>: live CPU/RAM/disk/NIC changes, full clones, and OVF / vzdump exports — proving the everyday admin workflow on each side.</li>
+                                <li data-i18n="project.vircl-virtualization.stack.lifecycle.b2" data-i18n-html><strong>Reconfigure &amp; clone</strong>: live CPU/RAM/disk/NIC changes, full clones, and OVF / vzdump exports - proving the everyday admin workflow on each side.</li>
                                 <li data-i18n="project.vircl-virtualization.stack.lifecycle.b3" data-i18n-html><strong>Snapshots &amp; templates</strong>: point-in-time snapshots and golden templates so new VMs come from a known-good base instead of a fresh install each time.</li>
                             </ul>
                         </div>
@@ -508,14 +471,14 @@
                             <div class="vs-line" data-i18n="project.vircl-virtualization.stack.storage.vs">VMware: vMotion &amp; Storage vMotion · Proxmox: online migration over the Corosync cluster</div>
                             <ul class="feature-list stack-detail">
                                 <li data-i18n="project.vircl-virtualization.stack.storage.b1" data-i18n-html><strong>Two protocols from one NAS</strong>: the Unraid box exposes NFS and iSCSI so each hypervisor could mount shared datastores its preferred way.</li>
-                                <li data-i18n="project.vircl-virtualization.stack.storage.b2" data-i18n-html><strong>Storage migration</strong>: moving a VM's disk between local and remote storage live — the prerequisite that makes host migration safe.</li>
+                                <li data-i18n="project.vircl-virtualization.stack.storage.b2" data-i18n-html><strong>Storage migration</strong>: moving a VM's disk between local and remote storage live - the prerequisite that makes host migration safe.</li>
                                 <li data-i18n="project.vircl-virtualization.stack.storage.b3" data-i18n-html><strong>Host migration</strong>: a running VM moved HP13&nbsp;→&nbsp;HP15 (vMotion) and HP14&nbsp;→&nbsp;HP16 (Proxmox online migration) once its disk lived on shared storage.</li>
                             </ul>
                         </div>
                         <div class="stack-layer">
                             <div class="stack-head"><i data-lucide="archive"></i><h3 data-i18n="project.vircl-virtualization.stack.ops.title">Backup, users &amp; patching</h3></div>
                             <div class="stack-chips"><span>vzdump</span><span>ESXi config backup</span><span>vCenter roles</span><span>pveum</span><span>Patching</span></div>
-                            <div class="vs-line" data-i18n="project.vircl-virtualization.stack.ops.vs">VMware: <code>vim-cmd</code> config bundle + role-based permissions · Proxmox: <code>vzdump</code> + <code>pveum</code> users/ACLs</div>
+                            <div class="vs-line" data-i18n="project.vircl-virtualization.stack.ops.vs" data-i18n-html="true">VMware: <code>vim-cmd</code> config bundle + role-based permissions · Proxmox: <code>vzdump</code> + <code>pveum</code> users/ACLs</div>
                             <ul class="feature-list stack-detail">
                                 <li data-i18n="project.vircl-virtualization.stack.ops.b1" data-i18n-html><strong>Config &amp; VM backups</strong>: host configuration bundles downloaded on the ESXi side, scheduled <code>vzdump</code> archives on the Proxmox side, plus VM-level export/restore.</li>
                                 <li data-i18n="project.vircl-virtualization.stack.ops.b2" data-i18n-html><strong>Users &amp; permissions</strong>: role-based access in vCenter and realm/ACL users in Proxmox, so admin rights are scoped instead of shared-root.</li>
@@ -523,7 +486,7 @@
                             </ul>
                         </div>
                         <div class="stack-layer">
-                            <div class="stack-head"><i data-lucide="boxes"></i><h3 data-i18n="project.vircl-virtualization.stack.cluster.title">Specialisation — Clustering</h3></div>
+                            <div class="stack-head"><i data-lucide="boxes"></i><h3 data-i18n="project.vircl-virtualization.stack.cluster.title">Specialisation - Clustering</h3></div>
                             <div class="stack-chips"><span>VIRCL-Cluster</span><span>vSphere HA</span><span>DRS</span><span>Corosync</span><span>Quorum</span><span>HA groups</span><span>Nested nodes</span></div>
                             <div class="vs-line" data-i18n="project.vircl-virtualization.stack.cluster.vs">VMware: central vCenter you deploy first · Proxmox: peer-to-peer, any node joins and Corosync handles quorum</div>
                             <ul class="feature-list stack-detail">
@@ -571,15 +534,15 @@
                     <div class="journey">
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">01</span></div>
-                            <div class="journey-body"><p data-i18n="project.vircl-virtualization.section.why.body1" data-i18n-html>The brief was deliberately broad: <strong>become an expert in two hypervisors and prove it</strong> through a documented report, a video tutorial, and a presentation. Andrea and I split the hosts — he led HP13 (ESXi + vCenter) and HP16 (Proxmox), I led HP14 (Proxmox) and we shared HP15 (ESXi).</p></div>
+                            <div class="journey-body"><p data-i18n="project.vircl-virtualization.section.why.body1" data-i18n-html>The brief was deliberately broad: <strong>become an expert in two hypervisors and prove it</strong> through a documented report, a video tutorial, and a presentation. Andrea and I split the hosts - he led HP13 (ESXi + vCenter) and HP16 (Proxmox), I led HP14 (Proxmox) and we shared HP15 (ESXi).</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">02</span></div>
-                            <div class="journey-body"><p data-i18n="project.vircl-virtualization.section.why.body2" data-i18n-html>We then worked through <strong>seventeen virtualization features on both platforms</strong> — deployment, VM creation by GUI and CLI, guest installs, resource changes, cloning, export, backups, snapshots, templates, shared storage, storage and host migration, users, and patching — comparing each one and writing down the problems honestly.</p></div>
+                            <div class="journey-body"><p data-i18n="project.vircl-virtualization.section.why.body2" data-i18n-html>We then worked through <strong>seventeen virtualization features on both platforms</strong> - deployment, VM creation by GUI and CLI, guest installs, resource changes, cloning, export, backups, snapshots, templates, shared storage, storage and host migration, users, and patching - comparing each one and writing down the problems honestly.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">03</span></div>
-                            <div class="journey-body"><p data-i18n="project.vircl-virtualization.section.why.body3" data-i18n-html>Our chosen specialisation was <strong>Clustering</strong>. Four hosts only give two nodes per platform, which is weak for explaining quorum — so we nested a third node inside the opposite hypervisor on each side, giving both clusters a genuine three-vote design with HA, DRS, and live migration to show off.</p></div>
+                            <div class="journey-body"><p data-i18n="project.vircl-virtualization.section.why.body3" data-i18n-html>Our chosen specialisation was <strong>Clustering</strong>. Four hosts only give two nodes per platform, which is weak for explaining quorum - so we nested a third node inside the opposite hypervisor on each side, giving both clusters a genuine three-vote design with HA, DRS, and live migration to show off.</p></div>
                         </div>
                     </div>
 
@@ -593,7 +556,7 @@
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="terminal"></i></div>
                             <h3 data-i18n="project.vircl-virtualization.lessons.hostname.title">ESXi hates dots</h3>
-                            <p data-i18n="project.vircl-virtualization.lessons.hostname.body">The ESXi installer splits hostname and domain into two fields — typing <code>hp13.vircl.local</code> in the hostname box fails silently. Short name in one field, domain in the other.</p>
+                            <p data-i18n="project.vircl-virtualization.lessons.hostname.body" data-i18n-html="true">The ESXi installer splits hostname and domain into two fields - typing <code>hp13.vircl.local</code> in the hostname box fails silently. Short name in one field, domain in the other.</p>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="globe"></i></div>
@@ -638,7 +601,7 @@
                     </div>
 
                     <h2 data-i18n="project.vircl-virtualization.section.assets.title">Read the full report</h2>
-                    <p data-i18n="project.vircl-virtualization.section.assets.body">The complete graded deliverables — the feature-by-feature documentation comparing both hypervisors, and the clustering specialisation slides.</p>
+                    <p data-i18n="project.vircl-virtualization.section.assets.body">The complete graded deliverables - the feature-by-feature documentation comparing both hypervisors, and the clustering specialisation slides.</p>
 
                     <div class="asset-card">
                         <h3>
@@ -669,7 +632,7 @@
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <div id="category-section" style="display: none;">
+                    <div id="category-section" data-project-id="vircl-virtualization" style="display: none;">
                         <h3 data-i18n="project.sidebar.category">Category</h3>
                         <div class="line"></div>
                         <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
@@ -733,7 +696,7 @@
         </div>
 
         <footer style="margin-top: 4rem;">
-            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
         </footer>
     </main>
 
@@ -743,67 +706,7 @@
         <img id="modal-image" class="image-modal-content" src="" alt="">
     </div>
 
-    <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        function initProjectCategories() {
-            if (typeof window.updateProjectCategories === 'function' && typeof getProjectById !== 'undefined') {
-                window.updateProjectCategories('vircl-virtualization');
-            } else {
-                setTimeout(initProjectCategories, 100);
-            }
-        }
-
-        function initLucideIcons() {
-            if (typeof renderIcons !== 'undefined') {
-                renderIcons();
-            } else {
-                setTimeout(initLucideIcons, 100);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(initProjectCategories, 200);
-            initLucideIcons();
-        });
-
-        if (document.readyState !== 'loading') {
-            setTimeout(initProjectCategories, 300);
-            initLucideIcons();
-        }
-
-        function openImageModal(imageSrc, imageAlt) {
-            const modal = document.getElementById('image-modal');
-            const modalImage = document.getElementById('modal-image');
-            if (modal && modalImage) {
-                modalImage.src = imageSrc;
-                modalImage.alt = imageAlt || '';
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                modalImage.onerror = function() {
-                    console.error('Failed to load image:', imageSrc);
-                    modalImage.alt = 'Image failed to load';
-                };
-            }
-        }
-
-        function closeImageModal(event) {
-            if (event) { event.stopPropagation(); }
-            const modal = document.getElementById('image-modal');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const modal = document.getElementById('image-modal');
-                if (modal && modal.classList.contains('active')) {
-                    closeImageModal();
-                }
-            }
-        });
-    </script>
+    <script src="../assets/js/project-page-init.js" defer></script>
 </body>
 </html>

@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
     <title>Teams Broadcast System | VidGuiCode</title>
-    <meta name="description" content="Teams Broadcast System: a Power Platform tool that posts one message to 20+ Microsoft Teams channels in a single click, with a full per-channel audit trail. Two-lens case study for everyone and engineers.">
+    <meta name="description" content="Teams Broadcast System: a Power Platform tool that posts one message to 20+ Microsoft Teams channels in a single click, with a per-channel audit trail.">
+    <link rel="canonical" href="https://vidguicode.github.io/projects/project-teams-broadcast">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vidguicode.github.io/projects/project-teams-broadcast">
+    <meta property="og:title" content="Teams Broadcast System | VidGuiCode">
+    <meta property="og:description" content="Teams Broadcast System: a Power Platform tool that posts one message to 20+ Microsoft Teams channels in a single click, with a per-channel audit trail.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/teams-broadcast/broadcast-main.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/projects/project-teams-broadcast">
+    <meta name="twitter:title" content="Teams Broadcast System | VidGuiCode">
+    <meta name="twitter:description" content="Teams Broadcast System: a Power Platform tool that posts one message to 20+ Microsoft Teams channels in a single click, with a per-channel audit trail.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/projects/teams-broadcast/broadcast-main.webp">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +51,18 @@
     <script src="../assets/js/search.js"></script>
     <script src="../assets/js/certifications-techstack.js"></script>
     <style>
+
+        /* The blueprint reads --accent-brand. This project lives entirely
+           inside Microsoft Teams, so it takes the Teams purple rather than
+           the site default blue. Scoped to <main> so the navbar and search
+           keep the site-wide palette. */
+        main {
+            --accent-brand: #5b5fc7;    /* light mode */
+        }
+        [data-theme="dark"] main {
+            --accent-brand: #7b83eb;    /* dark mode, the lighter Teams purple */
+        }
+
         /* Typography uses centralized scale - see styles.css */
 
         /* Project Images */
@@ -222,7 +250,7 @@
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.teamsbroadcast.badge">SCHOOL PROJECT</div>
                 <h1 data-i18n="project.teamsbroadcast.hero.title">Teams Broadcast System</h1>
-                <p class="subtitle" data-i18n="project.teamsbroadcast.hero.subtitle">Power Platform solution that eliminates the manual hassle of broadcasting messages to 20+ Microsoft Teams channels. Built for teachers, students, and organizational leaders.</p>
+                <p class="subtitle" data-i18n="project.teamsbroadcast.hero.subtitle">I built this Power Platform tool to help teachers, students, and organizational leaders send one announcement to 20+ Microsoft Teams channels at once, with a clear record of where it went.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
                     <span data-i18n="project.lastUpdated">Last updated:</span> <span>26/06/2026</span>
@@ -236,7 +264,7 @@
                     <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
                     <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
                 </div>
-                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view — built for everyone</span>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view, built for everyone</span>
                 <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
             </div>
 
@@ -264,74 +292,48 @@
             </div>
 
             <h2 data-i18n="project.teamsbroadcast.arch.title">How a broadcast flows</h2>
-            <div class="arch-diagram">
-                <div class="arch-strip">
-                    <span class="led led-g"></span>
-                    <span class="led led-a"></span>
-                    <span class="led led-d"></span>
-                    <span class="arch-strip-label">Broadcast pipeline</span>
-                </div>
-                <div class="arch-body">
-                    <div class="arch-flow">
-                        <div class="arch-col">
-                            <div class="arch-unit is-internet">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.teamsbroadcast.arch.user">User</span></div>
-                                    <div class="u-meta" data-i18n="project.teamsbroadcast.arch.user.meta">any device</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.teamsbroadcast.arch.user.spec">teacher · student · director</div>
-                            </div>
-                            <div class="arch-conn">&darr;</div>
-                            <div class="arch-unit is-external">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.teamsbroadcast.arch.apps.title">Power Apps</span></div>
-                                    <div class="u-meta" data-i18n="project.teamsbroadcast.arch.apps.meta">canvas app</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.teamsbroadcast.arch.apps.spec">select channels · compose · state guard</div>
-                            </div>
-                        </div>
+            <div class="bp bp--flow">
+                <span class="bp-kicker" data-i18n="project.teamsbroadcast.arch.strip">Broadcast pipeline</span>
 
-                        <div class="arch-conn"><span data-i18n="project.teamsbroadcast.arch.trigger">selection + message</span>&nbsp;&#8644;</div>
-
-                        <div class="arch-rack">
-                            <div class="arch-rack-label" data-i18n="project.teamsbroadcast.arch.tenant">Power Platform · Microsoft 365 tenant</div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.teamsbroadcast.arch.fetch.title">Fetch flow</span></div>
-                                    <div class="u-meta" data-i18n="project.teamsbroadcast.arch.fetch.meta">on app open</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.teamsbroadcast.arch.fetch.spec">lists every Team and channel</div>
-                            </div>
-                            <div class="arch-unit">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.teamsbroadcast.arch.broadcast.title">Broadcast flow</span></div>
-                                    <div class="u-meta" data-i18n="project.teamsbroadcast.arch.broadcast.meta">apply to each</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.teamsbroadcast.arch.broadcast.spec">posts the message per channel</div>
-                            </div>
-                            <div class="arch-unit is-external">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.teamsbroadcast.arch.log.title">Dataverse</span></div>
-                                    <div class="u-meta" data-i18n="project.teamsbroadcast.arch.log.meta">audit table</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.teamsbroadcast.arch.log.spec">per-channel delivery status</div>
-                            </div>
-                        </div>
-
-                        <div class="arch-conn"><span data-i18n="project.teamsbroadcast.arch.connector">Teams connector</span>&nbsp;&rarr;</div>
-
-                        <div class="arch-col">
-                            <div class="arch-unit is-external">
-                                <div class="u-top">
-                                    <div class="u-name"><span class="arch-led"></span><span data-i18n="project.teamsbroadcast.arch.teams.title">Microsoft Teams</span></div>
-                                    <div class="u-meta" data-i18n="project.teamsbroadcast.arch.teams.meta">20+ channels</div>
-                                </div>
-                                <div class="u-spec" data-i18n="project.teamsbroadcast.arch.teams.spec">message delivered and confirmed</div>
-                            </div>
-                        </div>
+                <div class="bp-stages">
+                    <div class="bp-stage">
+                        <span class="bp-step">1</span>
+                        <span class="bp-card-name"><i data-lucide="user" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.teamsbroadcast.arch.user">User</span></span>
+                        <span class="bp-spec" data-i18n="project.teamsbroadcast.arch.user.spec">a teacher, student or director, on any device</span>
                     </div>
-                    <div class="arch-note" data-i18n="project.teamsbroadcast.arch.note">Each send returns success or failure per channel, so a failed post is visible instead of silently lost. During development it runs against real Teams with dedicated test channels — no school channel ever gets spammed.</div>
+                    <div class="bp-stage">
+                        <span class="bp-step">2</span>
+                        <span class="bp-card-name"><i data-lucide="layout" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.teamsbroadcast.arch.apps.title">Power Apps</span></span>
+                        <span class="bp-mono">canvas app</span>
+                        <span class="bp-spec" data-i18n="project.teamsbroadcast.arch.apps.spec">select channels, compose, and a guard against double sends</span>
+                    </div>
+                    <div class="bp-stage">
+                        <span class="bp-step">3</span>
+                        <span class="bp-card-name"><i data-lucide="search" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.teamsbroadcast.arch.fetch.title">Fetch flow</span></span>
+                        <span class="bp-mono">Power Automate</span>
+                        <span class="bp-spec" data-i18n="project.teamsbroadcast.arch.fetch.spec">on app open, lists every Team and channel</span>
+                    </div>
+                    <div class="bp-stage">
+                        <span class="bp-step">4</span>
+                        <span class="bp-card-name"><i data-lucide="route" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.teamsbroadcast.arch.broadcast.title">Broadcast flow</span></span>
+                        <span class="bp-mono">apply to each</span>
+                        <span class="bp-spec" data-i18n="project.teamsbroadcast.arch.broadcast.spec">posts the message per channel</span>
+                    </div>
+                    <div class="bp-stage">
+                        <span class="bp-step">5</span>
+                        <span class="bp-card-name"><i data-lucide="message-square" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.teamsbroadcast.arch.teams.title">Microsoft Teams</span></span>
+                        <span class="bp-mono">Teams connector</span>
+                        <span class="bp-spec" data-i18n="project.teamsbroadcast.arch.teams.spec">message delivered and confirmed in over 20 channels</span>
+                    </div>
+                    <div class="bp-stage">
+                        <span class="bp-step">6</span>
+                        <span class="bp-card-name"><i data-lucide="database" class="bp-icon" aria-hidden="true"></i><span data-i18n="project.teamsbroadcast.arch.log.title">Dataverse</span></span>
+                        <span class="bp-mono">audit table</span>
+                        <span class="bp-spec" data-i18n="project.teamsbroadcast.arch.log.spec">per-channel delivery status</span>
+                    </div>
                 </div>
+
+                <p class="bp-note" data-i18n="project.teamsbroadcast.arch.note">Each send returns success or failure per channel, so a failed post is visible instead of silently lost. During development it runs against real Teams with dedicated test channels - no school channel ever gets spammed.</p>
             </div>
 
             <div class="plain-only">
@@ -355,7 +357,7 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="archive"></i></div>
                         <h3 data-i18n="project.teamsbroadcast.does.history.title">Keep a searchable history</h3>
-                        <p data-i18n="project.teamsbroadcast.does.history.desc">Every broadcast is logged with who sent what, when, and where — searchable any time you need proof.</p>
+                        <p data-i18n="project.teamsbroadcast.does.history.desc">Every broadcast is logged with who sent what, when, and where - searchable any time you need proof.</p>
                     </div>
                 </div>
             </div>
@@ -368,7 +370,7 @@
                     <i data-lucide="radio" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
                     <h2 data-i18n="project.teamsbroadcast.problem.title">The Problem</h2>
                     <p data-i18n="project.teamsbroadcast.problem.body">Sending the same message to 20+ Teams channels manually is tedious. You have to open each one, copy-paste, and hope you didn't forget any. There's no way to track what was sent where.</p>
-                    <p data-i18n="project.teamsbroadcast.problem.solution">This tool flips that around: select all channels at once, write your message once, and broadcast everywhere with one click — with full logs of exactly what was sent where.</p>
+                    <p data-i18n="project.teamsbroadcast.problem.solution">I flipped that around: select all channels at once, write the message once, and send it everywhere with one click, while keeping a complete log of each destination.</p>
 
                     <div class="project-image-container">
                         <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/teams-broadcast/broadcast-main.webp', 'Teams Broadcast main interface showing channel selection and message composition')">
@@ -379,12 +381,12 @@
 
                     <div class="tech-only">
                         <h2 data-i18n="project.teamsbroadcast.stack.title">Under the hood</h2>
-                        <p data-i18n="project.teamsbroadcast.stack.intro">Three Power Platform services, cleanly split into UI, logic, and data layers — plus the native Teams connector for delivery.</p>
+                        <p data-i18n="project.teamsbroadcast.stack.intro">Three Power Platform services, cleanly split into UI, logic, and data layers - plus the native Teams connector for delivery.</p>
 
                         <div class="stack-diagram">
                             <!-- Power Apps -->
                             <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="layout"></i><h3 data-i18n="project.teamsbroadcast.stack.apps.title">Power Apps — Canvas frontend</h3></div>
+                                <div class="stack-head"><i data-lucide="layout"></i><h3 data-i18n="project.teamsbroadcast.stack.apps.title">Power Apps - Canvas frontend</h3></div>
                                 <div class="stack-chips"><span>Canvas App</span><span>Power Fx</span><span>Collections</span><span>State machine</span><span>Validation</span></div>
                                 <ul class="feature-list stack-detail">
                                     <li data-i18n="project.teamsbroadcast.stack.apps.ui" data-i18n-html="true"><strong>Single-screen UX</strong>: channel multi-select, a subject line, and a rich message body live on one canvas, with input validation before anything can be sent.</li>
@@ -394,7 +396,7 @@
                             </div>
                             <!-- Power Automate -->
                             <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="zap"></i><h3 data-i18n="project.teamsbroadcast.stack.automate.title">Power Automate — Two cloud flows</h3></div>
+                                <div class="stack-head"><i data-lucide="zap"></i><h3 data-i18n="project.teamsbroadcast.stack.automate.title">Power Automate - Two cloud flows</h3></div>
                                 <div class="stack-chips"><span>Cloud Flows</span><span>Teams connector</span><span>Apply to each</span><span>Respond to app</span><span>Error handling</span></div>
                                 <ul class="feature-list stack-detail">
                                     <li data-i18n="project.teamsbroadcast.stack.automate.fetch" data-i18n-html="true"><strong>Fetch flow</strong>: on app open (or "Refresh channels") it pulls every Team and channel the user can access and hands the list back to Power Apps.</li>
@@ -404,7 +406,7 @@
                             </div>
                             <!-- Dataverse -->
                             <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="database"></i><h3 data-i18n="project.teamsbroadcast.stack.data.title">Dataverse — Audit store</h3></div>
+                                <div class="stack-head"><i data-lucide="database"></i><h3 data-i18n="project.teamsbroadcast.stack.data.title">Dataverse - Audit store</h3></div>
                                 <div class="stack-chips"><span>Dataverse</span><span>Tables</span><span>Timestamps</span><span>Search</span><span>Relationships</span></div>
                                 <ul class="feature-list stack-detail">
                                     <li data-i18n="project.teamsbroadcast.stack.data.store" data-i18n-html="true"><strong>Every broadcast recorded</strong>: subject, body, sender, timestamp, target channels, and the per-channel delivery status are written on each send.</li>
@@ -413,7 +415,7 @@
                             </div>
                             <!-- Teams -->
                             <div class="stack-layer">
-                                <div class="stack-head"><i data-lucide="message-square"></i><h3 data-i18n="project.teamsbroadcast.stack.teams.title">Microsoft Teams — Delivery</h3></div>
+                                <div class="stack-head"><i data-lucide="message-square"></i><h3 data-i18n="project.teamsbroadcast.stack.teams.title">Microsoft Teams - Delivery</h3></div>
                                 <div class="stack-chips"><span>Teams connector</span><span>Microsoft 365</span><span>Channel posts</span><span>Native API</span></div>
                                 <ul class="feature-list stack-detail">
                                     <li data-i18n="project.teamsbroadcast.stack.teams.connector" data-i18n-html="true"><strong>Native connector, no custom code</strong>: messages are posted through Microsoft's own Teams connector, so delivery and permissions follow the tenant's existing rules.</li>
@@ -423,21 +425,23 @@
                         </div>
                     </div><!-- /.tech-only -->
 
-                    <h2 data-i18n="project.teamsbroadcast.why.title">Why I built it</h2>
-                    <div class="journey">
+                    <div class="tech-only">
+                        <h2 data-i18n="project.teamsbroadcast.why.title">Why I built it</h2>
+                        <div class="journey">
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">01</span></div>
-                            <div class="journey-body"><p data-i18n="project.teamsbroadcast.why.body1" data-i18n-html="true">A teacher mentioned how much of a chore it was to send the same announcement to 20+ Teams channels by hand — open each one, copy, paste, repeat, and still wonder if one got missed. It was a <strong>real, boring problem</strong> begging for automation.</p></div>
+                            <div class="journey-body"><p data-i18n="project.teamsbroadcast.why.body1" data-i18n-html="true">A teacher mentioned how much of a chore it was to send the same announcement to 20+ Teams channels by hand - open each one, copy, paste, repeat, and still wonder if one got missed. It was a <strong>real, boring problem</strong> begging for automation.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">02</span></div>
-                            <div class="journey-body"><p data-i18n="project.teamsbroadcast.why.body2" data-i18n-html="true">I chose Power Platform on purpose: it's the low-code stack the school and many organizations already run on. The challenge was to treat it like real engineering — <strong>separate UI, logic, and data layers</strong>, proper state management, and an audit trail from day one.</p></div>
+                            <div class="journey-body"><p data-i18n="project.teamsbroadcast.why.body2" data-i18n-html="true">I chose Power Platform on purpose: it's the low-code stack the school and many organizations already run on. The challenge was to treat it like real engineering - <strong>separate UI, logic, and data layers</strong>, proper state management, and an audit trail from day one.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">03</span></div>
-                            <div class="journey-body"><p data-i18n="project.teamsbroadcast.why.body3" data-i18n-html="true">The result is a tool teachers, students, project leads, and directors can all use to push consistent messaging across many channels — and a graded project that proves <strong>low-code can still be built like a product</strong>.</p></div>
+                            <div class="journey-body"><p data-i18n="project.teamsbroadcast.why.body3" data-i18n-html="true">The result is a tool teachers, students, project leads, and directors can all use to push consistent messaging across many channels - and a graded project that proves <strong>low-code can still be built like a product</strong>.</p></div>
                         </div>
-                    </div>
+                        </div>
+                    </div><!-- /.tech-only -->
 
                     <div class="project-image-container">
                         <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/teams-broadcast/broadcast-logs.webp', 'Broadcast logs showing complete message history with search and filters')">
@@ -451,7 +455,7 @@
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="award"></i></div>
                             <h3 data-i18n="project.teamsbroadcast.lessons.lowcode.title">Low-code ≠ low-quality</h3>
-                            <p data-i18n="project.teamsbroadcast.lessons.lowcode.desc">With real design patterns — layered architecture and clean state — low-code tools can absolutely be production-grade.</p>
+                            <p data-i18n="project.teamsbroadcast.lessons.lowcode.desc">With real design patterns - layered architecture and clean state - low-code tools can absolutely be production-grade.</p>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="git-branch"></i></div>
@@ -479,7 +483,7 @@
                             <span data-i18n="project.teamsbroadcast.presentation.title">Presentation</span>
                         </h3>
                         <p data-i18n="project.teamsbroadcast.presentation.desc">View the project presentation slides used during the graded demonstration.</p>
-                        <a href="../assets/docs/projects/teams-broadcast/teams-broadcast-presentation.pdf" target="_blank" class="asset-download-button">
+                        <a href="../assets/docs/projects/teams-broadcast/teams-broadcast-presentation.pdf" target="_blank" rel="noopener noreferrer" class="asset-download-button">
                             <i data-lucide="download"></i>
                             <span data-i18n="project.teamsbroadcast.presentation.button">Download Presentation (PDF)</span>
                         </a>
@@ -490,7 +494,7 @@
             <!-- Sidebar -->
             <aside class="project-sidebar">
                 <div class="card">
-                    <div id="category-section" style="display: none;">
+                    <div id="category-section" data-project-id="teams-broadcast" style="display: none;">
                         <h3 data-i18n="project.sidebar.category">Category</h3>
                         <div class="line"></div>
                         <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
@@ -531,7 +535,7 @@
         </div>
 
         <footer style="margin-top: 4rem;">
-            <p data-i18n="footer.copyright">&copy; 2025 Guilherme Videira Marques.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
         </footer>
     </main>
 
@@ -541,75 +545,7 @@
         <img id="modal-image" class="image-modal-content" src="" alt="">
     </div>
 
-    <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        // Use centralized category display function (updates dynamically on language change)
-        function initProjectCategories() {
-            if (typeof window.updateProjectCategories === 'function' && typeof getProjectById !== 'undefined') {
-                window.updateProjectCategories('teams-broadcast');
-            } else {
-                setTimeout(initProjectCategories, 100);
-            }
-        }
-
-        // Initialize Lucide icons (wait for it to load)
-        function initLucideIcons() {
-            if (typeof renderIcons !== 'undefined') {
-                renderIcons();
-            } else {
-                setTimeout(initLucideIcons, 100);
-            }
-        }
-
-        // Wait for DOMContentLoaded - script.js initializes on DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(initProjectCategories, 200);
-            initLucideIcons();
-        });
-
-        // Also try if DOM is already loaded (fallback)
-        if (document.readyState !== 'loading') {
-            setTimeout(initProjectCategories, 300);
-            initLucideIcons();
-        }
-
-        // Image Modal Functions
-        function openImageModal(imageSrc, imageAlt) {
-            const modal = document.getElementById('image-modal');
-            const modalImage = document.getElementById('modal-image');
-            if (modal && modalImage) {
-                modalImage.src = imageSrc;
-                modalImage.alt = imageAlt || '';
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                modalImage.onerror = function() {
-                    console.error('Failed to load image:', imageSrc);
-                    modalImage.alt = 'Image failed to load';
-                };
-            }
-        }
-
-        function closeImageModal(event) {
-            if (event) {
-                event.stopPropagation();
-            }
-            const modal = document.getElementById('image-modal');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-
-        // Close modal on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const modal = document.getElementById('image-modal');
-                if (modal && modal.classList.contains('active')) {
-                    closeImageModal();
-                }
-            }
-        });
-    </script>
+    <script src="../assets/js/project-page-init.js" defer></script>
 </body>
 </html>

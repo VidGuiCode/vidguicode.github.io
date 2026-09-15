@@ -68,6 +68,20 @@
             de: "SATA-Disks",
             fr: "Disques SATA"
         },
+        "project.unraid.arch.volumes": {
+            en: "RAID volumes",
+            pt: "Volumes RAID",
+            lu: "RAID-Volumen",
+            de: "RAID-Volumes",
+            fr: "Volumes RAID"
+        },
+        "project.unraid.arch.disks": {
+            en: "Physical disks",
+            pt: "Discos físicos",
+            lu: "Physesch Disken",
+            de: "Physische Disks",
+            fr: "Disques physiques"
+        },
         "project.unraid.arch.rack": {
             en: "Intel SR2600 · UnRAID",
             pt: "Intel SR2600 · UnRAID",
@@ -97,11 +111,11 @@
             fr: "Initiateur iSCSI"
         },
         "project.unraid.arch.note": {
-            en: "Per-user permissions gate every share — parents read/write, the child is read-only and can't touch Backup. RAID 5 parity lives in the Areca card, so UnRAID sees one disk; Intel RMM3 manages the box out-of-band even when the OS is down.",
-            pt: "As permissões por utilizador controlam cada partilha — os pais leem/escrevem, a criança é só de leitura e não pode tocar no Backup. A paridade do RAID 5 vive na placa Areca, por isso o UnRAID vê um único disco; o Intel RMM3 gere o servidor out-of-band mesmo com o SO desligado.",
-            lu: "Rechter pro Benotzer kontrolléieren all Deelung — d'Elteren liesen/schreiwen, d'Kand ass nëmme-liesen a kann de Backup net beréieren. D'RAID-5-Paritéit läit op der Areca-Kaart, also gesäit UnRAID eng eenzeg Disk; Intel RMM3 verwalt de Server out-of-band, och wann den OS ënnen ass.",
-            de: "Rechte pro Benutzer steuern jede Freigabe — Eltern lesen/schreiben, das Kind ist nur lesend und kann Backup nicht anfassen. Die RAID-5-Parität liegt auf der Areca-Karte, also sieht UnRAID eine einzige Disk; Intel RMM3 verwaltet den Server out-of-band, selbst wenn das OS aus ist.",
-            fr: "Les permissions par utilisateur contrôlent chaque partage — les parents lisent/écrivent, l'enfant est en lecture seule et ne peut pas toucher à Backup. La parité RAID 5 vit sur la carte Areca, donc UnRAID voit un seul disque ; l'Intel RMM3 gère le serveur hors bande même quand l'OS est éteint."
+            en: "Per-user permissions gate every share - parents read/write, the child is read-only and can't touch Backup. RAID 5 parity lives in the Areca card, so UnRAID sees one disk; Intel RMM3 manages the box out-of-band even when the OS is down.",
+            pt: "As permissões por utilizador controlam cada partilha - os pais leem/escrevem, a criança é só de leitura e não pode tocar no Backup. A paridade do RAID 5 vive na placa Areca, por isso o UnRAID vê um único disco; o Intel RMM3 gere o servidor out-of-band mesmo com o SO desligado.",
+            lu: "Rechter pro Benotzer kontrolléieren all Deelung - d'Elteren liesen/schreiwen, d'Kand ass nëmme-liesen a kann de Backup net beréieren. D'RAID-5-Paritéit läit op der Areca-Kaart, also gesäit UnRAID eng eenzeg Disk; Intel RMM3 verwalt de Server out-of-band, och wann den OS ënnen ass.",
+            de: "Rechte pro Benutzer steuern jede Freigabe - Eltern lesen/schreiben, das Kind ist nur lesend und kann Backup nicht anfassen. Die RAID-5-Parität liegt auf der Areca-Karte, also sieht UnRAID eine einzige Disk; Intel RMM3 verwaltet den Server out-of-band, selbst wenn das OS aus ist.",
+            fr: "Les permissions par utilisateur contrôlent chaque partage - les parents lisent/écrivent, l'enfant est en lecture seule et ne peut pas toucher à Backup. La parité RAID 5 vit sur la carte Areca, donc UnRAID voit un seul disque ; l'Intel RMM3 gère le serveur hors bande même quand l'OS est éteint."
         },
 
         /* ---- Overview "what this server does" cards ---- */
@@ -134,11 +148,11 @@
             fr: "Chacun a le bon accès"
         },
         "project.unraid.does.access.desc": {
-            en: "Parents can edit, the kid is read-only, and the backup folder is locked down — set per person.",
-            pt: "Os pais podem editar, a criança é só de leitura e a pasta de backup está bloqueada — definido por pessoa.",
-            lu: "D'Elteren kënnen änneren, d'Kand ass nëmme-liesen, an den Backup-Dossier ass gespaart — pro Persoun agestallt.",
-            de: "Eltern können bearbeiten, das Kind ist nur lesend, und der Backup-Ordner ist gesperrt — pro Person festgelegt.",
-            fr: "Les parents peuvent éditer, l'enfant est en lecture seule et le dossier de sauvegarde est verrouillé — réglé par personne."
+            en: "Parents can edit, the kid is read-only, and the backup folder is locked down - set per person.",
+            pt: "Os pais podem editar, a criança é só de leitura e a pasta de backup está bloqueada - definido por pessoa.",
+            lu: "D'Elteren kënnen änneren, d'Kand ass nëmme-liesen, an den Backup-Dossier ass gespaart - pro Persoun agestallt.",
+            de: "Eltern können bearbeiten, das Kind ist nur lesend, und der Backup-Ordner ist gesperrt - pro Person festgelegt.",
+            fr: "Les parents peuvent éditer, l'enfant est en lecture seule et le dossier de sauvegarde est verrouillé - réglé par personne."
         },
         "project.unraid.does.redundant.title": {
             en: "Survives a dead disk",
@@ -194,11 +208,11 @@
             fr: "Quand l'interface web est tombée"
         },
         "project.unraid.trouble.web.desc": {
-            en: "After a config reset, nginx threw a 502 and PHP came back blank. Restarting <code>nginx</code>, <code>php-fpm</code> and <code>emhttp</code> by hand fixed it — and adding the daemon to UnRAID's startup <code>go</code> file made it stick.",
-            pt: "Após um reset de configuração, o nginx dava um 502 e o PHP vinha em branco. Reiniciar <code>nginx</code>, <code>php-fpm</code> e <code>emhttp</code> à mão resolveu — e adicionar o daemon ao ficheiro de arranque <code>go</code> do UnRAID tornou-o permanente.",
-            lu: "No engem Konfig-Reset huet nginx e 502 ginn an PHP koum eidel zréck. <code>nginx</code>, <code>php-fpm</code> an <code>emhttp</code> mat der Hand nei ze starten huet et geléist — an den Daemon an d'Startfichier <code>go</code> vun UnRAID derbäizesetzen huet et permanent gemaach.",
-            de: "Nach einem Konfig-Reset warf nginx einen 502 und PHP kam leer zurück. <code>nginx</code>, <code>php-fpm</code> und <code>emhttp</code> von Hand neu zu starten behob es — und den Daemon zur Startdatei <code>go</code> von UnRAID hinzuzufügen machte es dauerhaft.",
-            fr: "Après une réinitialisation de la config, nginx renvoyait une 502 et PHP revenait vide. Redémarrer <code>nginx</code>, <code>php-fpm</code> et <code>emhttp</code> à la main l'a corrigé — et ajouter le démon au fichier de démarrage <code>go</code> d'UnRAID l'a rendu permanent."
+            en: "After a config reset, nginx threw a 502 and PHP came back blank. Restarting <code>nginx</code>, <code>php-fpm</code> and <code>emhttp</code> by hand fixed it - and adding the daemon to UnRAID's startup <code>go</code> file made it stick.",
+            pt: "Após um reset de configuração, o nginx dava um 502 e o PHP vinha em branco. Reiniciar <code>nginx</code>, <code>php-fpm</code> e <code>emhttp</code> à mão resolveu - e adicionar o daemon ao ficheiro de arranque <code>go</code> do UnRAID tornou-o permanente.",
+            lu: "No engem Konfig-Reset huet nginx e 502 ginn an PHP koum eidel zréck. <code>nginx</code>, <code>php-fpm</code> an <code>emhttp</code> mat der Hand nei ze starten huet et geléist - an den Daemon an d'Startfichier <code>go</code> vun UnRAID derbäizesetzen huet et permanent gemaach.",
+            de: "Nach einem Konfig-Reset warf nginx einen 502 und PHP kam leer zurück. <code>nginx</code>, <code>php-fpm</code> und <code>emhttp</code> von Hand neu zu starten behob es - und den Daemon zur Startdatei <code>go</code> von UnRAID hinzuzufügen machte es dauerhaft.",
+            fr: "Après une réinitialisation de la config, nginx renvoyait une 502 et PHP revenait vide. Redémarrer <code>nginx</code>, <code>php-fpm</code> et <code>emhttp</code> à la main l'a corrigé - et ajouter le démon au fichier de démarrage <code>go</code> d'UnRAID l'a rendu permanent."
         },
         "project.unraid.trouble.btrfs.title": {
             en: "Reviving the Btrfs pool",
@@ -223,11 +237,11 @@
             fr: "Serveur de stockage UnRAID (NAS) | VidGuiCode"
         },
         "project.unraid.meta.desc": {
-            en: "School NAS project: staging and configuring an Intel 2U rack server with UnRAID, hardware RAID 5 (Areca ARC-1880), Btrfs RAID 1, SMB shares, per-user permissions, and an iSCSI block-storage target.",
-            pt: "Projeto escolar de NAS: preparação e configuração de um servidor rack Intel 2U com UnRAID, RAID 5 por hardware (Areca ARC-1880), RAID 1 Btrfs, partilhas SMB, permissões por utilizador e um alvo de armazenamento em bloco iSCSI.",
-            lu: "Schoulprojet NAS: Opbau a Konfiguratioun vun engem Intel 2U Rackserver mat UnRAID, Hardware-RAID 5 (Areca ARC-1880), Btrfs-RAID 1, SMB-Deelungen, Rechter pro Benotzer an engem iSCSI-Block-Späicher-Zil.",
-            de: "Schul-NAS-Projekt: Aufbau und Konfiguration eines Intel-2U-Rackservers mit UnRAID, Hardware-RAID 5 (Areca ARC-1880), Btrfs-RAID 1, SMB-Freigaben, Rechten pro Benutzer und einem iSCSI-Blockspeicher-Ziel.",
-            fr: "Projet scolaire NAS : préparation et configuration d'un serveur rack Intel 2U avec UnRAID, RAID 5 matériel (Areca ARC-1880), RAID 1 Btrfs, partages SMB, permissions par utilisateur et une cible de stockage en bloc iSCSI."
+            en: "School NAS project: an Intel 2U rack server running UnRAID with hardware RAID 5, Btrfs RAID 1, SMB shares, per-user permissions, and an iSCSI target.",
+            pt: "Projeto escolar de NAS: um servidor rack Intel 2U com UnRAID, RAID 5 por hardware, RAID 1 Btrfs, partilhas SMB, permissões por utilizador e um alvo iSCSI.",
+            lu: "Schoulprojet NAS: en Intel 2U Rackserver mat UnRAID, Hardware-RAID 5, Btrfs-RAID 1, SMB-Deelungen, Rechter pro Benotzer an engem iSCSI-Zil.",
+            de: "Schul-NAS-Projekt: ein Intel-2U-Rackserver mit UnRAID, Hardware-RAID 5, Btrfs-RAID 1, SMB-Freigaben, Rechten pro Benutzer und einem iSCSI-Ziel.",
+            fr: "Projet scolaire NAS : un serveur rack Intel 2U sous UnRAID avec RAID 5 matériel, RAID 1 Btrfs, partages SMB, permissions par utilisateur et une cible iSCSI."
         },
         "project.unraid.badge": {
             en: "SCHOOL PROJECT",
@@ -244,11 +258,11 @@
             fr: "Serveur de stockage UnRAID (NAS)"
         },
         "project.unraid.subtitle": {
-            en: "A rack server taken from bare metal to a working multi-user NAS. Hardware RAID 5, a Btrfs mirror, SMB shares with per-user permissions, and an iSCSI block-storage target.",
-            pt: "Um servidor rack levado do zero até um NAS multiutilizador a funcionar. RAID 5 por hardware, um espelho Btrfs, partilhas SMB com permissões por utilizador e um alvo de armazenamento em bloco iSCSI.",
-            lu: "E Rackserver, vu blank Hardware bis zu engem funktionnellen Multi-User-NAS. Hardware-RAID 5, e Btrfs-Spigel, SMB-Deelungen mat Rechter pro Benotzer an en iSCSI-Block-Späicher-Zil.",
-            de: "Ein Rackserver, von blanker Hardware bis zu einem laufenden Mehrbenutzer-NAS. Hardware-RAID 5, ein Btrfs-Spiegel, SMB-Freigaben mit Rechten pro Benutzer und ein iSCSI-Blockspeicher-Ziel.",
-            fr: "Un serveur rack mené du matériel nu jusqu'à un NAS multi-utilisateurs fonctionnel. RAID 5 matériel, un miroir Btrfs, des partages SMB avec permissions par utilisateur et une cible de stockage en bloc iSCSI."
+            en: "I turned a bare rack server into a shared family storage server with protected storage, per-user access, and a Windows block-storage test.",
+            pt: "Transformei um servidor rack vazio num servidor de armazenamento familiar partilhado, com armazenamento protegido, acesso por utilizador e um teste de armazenamento em bloco a partir do Windows.",
+            lu: "Ech hunn e blanke Rackserver an e gemeinsame Famillje-Späicherserver verwandelt, mat geschütztem Späicher, Zougang pro Benotzer an engem Block-Späicher-Test vu Windows aus.",
+            de: "Ich verwandelte einen blanken Rackserver in einen gemeinsam genutzten Familienspeicher mit geschütztem Speicher, Zugriff pro Benutzer und einem Block-Speicher-Test unter Windows.",
+            fr: "J'ai transformé un serveur rack nu en serveur de stockage familial partagé, avec un stockage protégé, des accès par utilisateur et un test de stockage en bloc depuis Windows."
         },
         "project.unraid.labBadge": {
             en: "CLOUD INFRASTRUCTURE 2 · NAS",
@@ -265,11 +279,11 @@
             fr: "Aperçu"
         },
         "project.unraid.section.overview.body": {
-            en: "For the Cloud Infrastructure 2 module of my BTS Cloud Computing, my team of two was handed a bare Intel 2U rack server and told to turn it into a working storage box. We fitted the hardware, set up a hardware RAID controller, installed UnRAID, racked it, and built a full family file-sharing setup on top. To finish, we tested iSCSI block storage from a Windows machine.",
-            pt: "No módulo Cloud Infrastructure 2 do meu BTS Cloud Computing, a minha equipa de duas pessoas recebeu um servidor rack Intel 2U vazio para transformar num aparelho de armazenamento funcional. Montámos o hardware, configurámos um controlador RAID por hardware, instalámos o UnRAID, colocámo-lo no rack e construímos por cima um cenário completo de partilha de ficheiros em família. No fim, testámos armazenamento em bloco iSCSI a partir de uma máquina Windows.",
-            lu: "Fir de Modul Cloud Infrastructure 2 vu mengem BTS Cloud Computing huet meng Equipe vun zwee Persounen e blanke Intel 2U Rackserver kritt, fir en an e funktionnéiert Späichergerät ze maachen. Mir hunn d'Hardware agebaut, e Hardware-RAID-Controller agestallt, UnRAID installéiert, en am Rack montéiert an dorop e komplette Familljen-Fichier-Deelungs-Szenario opgebaut. Um Enn hu mir iSCSI-Block-Späicher vun enger Windows-Maschinn getest.",
-            de: "Für das Modul Cloud Infrastructure 2 meines BTS Cloud Computing bekam mein Zweier-Team einen blanken Intel-2U-Rackserver, um daraus ein funktionierendes Speichergerät zu machen. Wir bauten die Hardware ein, richteten einen Hardware-RAID-Controller ein, installierten UnRAID, montierten ihn im Rack und bauten darauf ein komplettes Familien-Dateifreigabe-Szenario auf. Zum Schluss testeten wir iSCSI-Blockspeicher von einem Windows-Rechner aus.",
-            fr: "Pour le module Cloud Infrastructure 2 de mon BTS Cloud Computing, mon équipe de deux personnes a reçu un serveur rack Intel 2U nu à transformer en appareil de stockage fonctionnel. Nous avons monté le matériel, configuré un contrôleur RAID matériel, installé UnRAID, posé le serveur dans le rack et construit par-dessus un scénario complet de partage de fichiers familial. Pour finir, nous avons testé le stockage en bloc iSCSI depuis une machine Windows."
+            en: "For the Cloud Infrastructure 2 module of my BTS Cloud Computing, my teammate and I turned a bare Intel 2U rack server into a shared storage server. We fitted the hardware, added hardware RAID for resilience, installed UnRAID, mounted it in a rack, and set up family file sharing. We also tested giving a Windows machine its own virtual disk over iSCSI.",
+            pt: "No módulo Cloud Infrastructure 2 do meu BTS Cloud Computing, eu e o meu colega transformámos um servidor rack Intel 2U vazio num servidor de armazenamento partilhado. Montámos o hardware, adicionámos RAID por hardware para resiliência, instalámos o UnRAID, colocámo-lo num rack e configurámos a partilha de ficheiros em família. Também testámos dar a uma máquina Windows o seu próprio disco virtual através de iSCSI.",
+            lu: "Fir de Modul Cloud Infrastructure 2 vu mengem BTS Cloud Computing hunn ech a mäi Teammember e blanke Intel 2U Rackserver an e gemeinsame Späicherserver verwandelt. Mir hunn d'Hardware agebaut, Hardware-RAID fir Resilienz bäigefüügt, UnRAID installéiert, en am Rack montéiert an d'Familljen-Dateideelung ageriicht. Mir hunn och getest enger Windows-Maschinn hiren eegene virtuelle Disk iwwer iSCSI ze ginn.",
+            de: "Für das Modul Cloud Infrastructure 2 meines BTS Cloud Computing verwandelten mein Teampartner und ich einen blanken Intel-2U-Rackserver in einen gemeinsam genutzten Speicher. Wir bauten die Hardware ein, ergänzten Hardware-RAID für Ausfallsicherheit, installierten UnRAID, montierten ihn im Rack und richteten die Familien-Dateifreigabe ein. Außerdem testeten wir, einer Windows-Maschine über iSCSI eine eigene virtuelle Festplatte zu geben.",
+            fr: "Pour le module Cloud Infrastructure 2 de mon BTS Cloud Computing, mon coéquipier et moi avons transformé un serveur rack Intel 2U nu en serveur de stockage partagé. Nous avons monté le matériel, ajouté un RAID matériel pour la résilience, installé UnRAID, placé le serveur dans un rack et configuré le partage de fichiers familial. Nous avons aussi testé l'attribution d'un disque virtuel à une machine Windows via iSCSI."
         },
         "project.unraid.section.hardware.title": {
             en: "The Hardware",
@@ -292,27 +306,6 @@
             de: "Hardware-RAID 5",
             fr: "RAID 5 matériel"
         },
-        "project.unraid.card.raid5.spec": {
-            en: "Areca ARC-1880 · 3 × SAS",
-            pt: "Areca ARC-1880 · 3 × SAS",
-            lu: "Areca ARC-1880 · 3 × SAS",
-            de: "Areca ARC-1880 · 3 × SAS",
-            fr: "Areca ARC-1880 · 3 × SAS"
-        },
-        "project.unraid.card.raid5.detail1": {
-            en: "280 GB usable",
-            pt: "280 GB utilizáveis",
-            lu: "280 GB notzbar",
-            de: "280 GB nutzbar",
-            fr: "280 Go utilisables"
-        },
-        "project.unraid.card.raid5.detail2": {
-            en: "XFS",
-            pt: "XFS",
-            lu: "XFS",
-            de: "XFS",
-            fr: "XFS"
-        },
         "project.unraid.card.raid5.body": {
             en: "Three enterprise 15K SAS disks that a dedicated RAID controller presents as one logical volume. All the redundancy happens in hardware, so UnRAID just sees a single disk.",
             pt: "Três discos SAS empresariais de 15K que um controlador RAID dedicado apresenta como um único volume lógico. Toda a redundância acontece em hardware, por isso o UnRAID vê apenas um disco.",
@@ -326,27 +319,6 @@
             lu: "Software-RAID 1",
             de: "Software-RAID 1",
             fr: "RAID 1 logiciel"
-        },
-        "project.unraid.card.raid1.spec": {
-            en: "Btrfs mirror · 2 × SATA",
-            pt: "Espelho Btrfs · 2 × SATA",
-            lu: "Btrfs-Spigel · 2 × SATA",
-            de: "Btrfs-Spiegel · 2 × SATA",
-            fr: "Miroir Btrfs · 2 × SATA"
-        },
-        "project.unraid.card.raid1.detail1": {
-            en: "160 GB",
-            pt: "160 GB",
-            lu: "160 GB",
-            de: "160 GB",
-            fr: "160 Go"
-        },
-        "project.unraid.card.raid1.detail2": {
-            en: "Btrfs",
-            pt: "Btrfs",
-            lu: "Btrfs",
-            de: "Btrfs",
-            fr: "Btrfs"
         },
         "project.unraid.card.raid1.body": {
             en: "Two native SATA disks mirrored as a Btrfs RAID 1 pool. Each disk holds a full copy, so losing one drive loses no data. This is where the Backup share lives.",
@@ -417,13 +389,6 @@
             lu: "Problemer déi sech ze erënnere loune",
             de: "Probleme, die im Gedächtnis bleiben",
             fr: "Des problèmes à retenir"
-        },
-        "project.unraid.section.troubleshooting.body": {
-            en: "Two problems taught us the most. After a config reset the web UI wouldn't load (nginx threw a 502 and PHP came back blank), so we restarted the services by hand (<code>nginx</code>, <code>php-fpm</code>, <code>emhttp</code>) and then made it stick by adding the daemon to UnRAID's startup <code>go</code> file. The Btrfs pool also refused to start with <em>\"Too many wrong and/or missing disks\"</em>. The fix was a fresh disk assignment (New Config, keeping the assignments) and then formatting the unmounted disks into a proper Btrfs filesystem.",
-            pt: "Dois problemas foram os que mais nos ensinaram. Após um reset de configuração, a interface web não carregava (o nginx dava um 502 e o PHP vinha em branco), por isso reiniciámos os serviços à mão (<code>nginx</code>, <code>php-fpm</code>, <code>emhttp</code>) e tornámo-lo permanente adicionando o daemon ao ficheiro de arranque <code>go</code> do UnRAID. O pool Btrfs também se recusava a arrancar com <em>\"Too many wrong and/or missing disks\"</em>. A solução foi uma nova atribuição de discos (New Config, mantendo as atribuições) e depois formatar os discos não montados num sistema de ficheiros Btrfs válido.",
-            lu: "Zwee Problemer hunn eis am meeschte beigebruecht. No engem Konfiguratiouns-Reset huet d'Web-UI net gelueden (nginx huet e 502 ginn an PHP koum eidel zréck), also hu mir d'Servicer mat der Hand nei gestart (<code>nginx</code>, <code>php-fpm</code>, <code>emhttp</code>) an et duerno permanent gemaach, andeems mir den Daemon an d'Startfichier <code>go</code> vun UnRAID derbäigesat hunn. De Btrfs-Pool huet och refuséiert ze starten mat <em>\"Too many wrong and/or missing disks\"</em>. D'Léisung war eng nei Disk-Zouweisung (New Config, mat den Zouweisungen behalen) an duerno d'Formatéiere vun den net gemounten Disken an e valabele Btrfs-Fichiersystem.",
-            de: "Zwei Probleme haben uns am meisten gelehrt. Nach einem Konfigurations-Reset lud die Web-UI nicht (nginx warf einen 502 und PHP kam leer zurück), also starteten wir die Dienste von Hand neu (<code>nginx</code>, <code>php-fpm</code>, <code>emhttp</code>) und machten es dann dauerhaft, indem wir den Daemon zur Startdatei <code>go</code> von UnRAID hinzufügten. Der Btrfs-Pool weigerte sich ebenfalls zu starten mit <em>\"Too many wrong and/or missing disks\"</em>. Die Lösung war eine neue Disk-Zuweisung (New Config, unter Beibehaltung der Zuweisungen) und danach das Formatieren der nicht eingehängten Disks zu einem gültigen Btrfs-Dateisystem.",
-            fr: "Deux problèmes nous ont le plus appris. Après une réinitialisation de la configuration, l'interface web ne chargeait pas (nginx renvoyait une 502 et PHP revenait vide), nous avons donc redémarré les services à la main (<code>nginx</code>, <code>php-fpm</code>, <code>emhttp</code>) puis rendu cela permanent en ajoutant le démon au fichier de démarrage <code>go</code> d'UnRAID. Le pool Btrfs refusait aussi de démarrer avec <em>\"Too many wrong and/or missing disks\"</em>. La solution a été une nouvelle affectation des disques (New Config, en gardant les affectations) puis le formatage des disques non montés en un système de fichiers Btrfs valide."
         },
         "project.unraid.sidebar.tech.unraid": {
             en: "UnRAID (Lime Technology)",

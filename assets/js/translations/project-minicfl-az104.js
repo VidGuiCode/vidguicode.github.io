@@ -1,5 +1,5 @@
 /**
- * MiniCFL — Azure AZ-104 Demonstration project page translations.
+ * MiniCFL - Azure AZ-104 Demonstration project page translations.
  * Languages: en, pt, lu, de, fr
  *
  * Card title/desc live in core.js (projects.minicfl-az104.title / .desc).
@@ -10,6 +10,13 @@
 (function () {
     'use strict';
     const extra = {
+        "project.minicfl-az104.subtitle": {
+            en: "A familiar CFL train journey turned into a real cloud-administration project. Our three-person team built a live tracker and the secure, monitored Azure environment behind it, showing how a service is managed from access and cost control to daily operation.",
+            pt: "Uma viagem familiar de comboio CFL transformada num projeto real de administração cloud. A nossa equipa de três pessoas construiu um rastreador ao vivo e o ambiente Azure seguro e monitorizado por trás dele, mostrando como um serviço é gerido desde o controlo de acesso e de custos até à operação diária.",
+            lu: "Eng bekannte CFL-Zuchrees an e richtege Cloud-Administratiounsprojet ëmgewandelt. Eis dräiköppeg Equipe huet e Live-Tracker an déi sécher, iwwerwaacht Azure-Ëmwelt dohannert gebaut a weist domat, wéi e Service vum Zougangs- a Käschtekontroll bis zum alldeegleche Betrib geréiert gëtt.",
+            de: "Eine vertraute CFL-Zugfahrt, die zu einem echten Cloud-Administrationsprojekt wurde. Unser dreiköpfiges Team hat einen Live-Tracker und die sichere, überwachte Azure-Umgebung dahinter gebaut und zeigt damit, wie ein Dienst von Zugriffs- und Kostenkontrolle bis zum täglichen Betrieb verwaltet wird.",
+            fr: "Un trajet familier des CFL transformé en véritable projet d'administration cloud. Notre équipe de trois personnes a construit un suivi en direct et l'environnement Azure sécurisé et supervisé qui le soutient, montrant comment un service est géré du contrôle des accès et des coûts à son exploitation quotidienne."
+        },
         "project.minicfl-az104.badge": {
             en: "CLOUD · AZ-104",
             pt: "CLOUD · AZ-104",
@@ -154,11 +161,11 @@
             fr: "Un suivi de train en direct"
         },
         "project.minicfl-az104.does.track.desc": {
-            en: "A web page shows one CFL train moving between Petange and Luxembourg — where it is, the next stop, planned vs. real arrival, and how late it is.",
-            pt: "Uma página web mostra um comboio CFL a circular entre Petange e Luxemburgo — onde está, a próxima paragem, a chegada prevista vs. real e o atraso.",
-            lu: "Eng Websäit weist ee CFL-Zuch deen tëscht Petange a Lëtzebuerg fiert — wou en ass, déi nächst Statioun, geplangten géint reellen Arrivée an de Retard.",
-            de: "Eine Webseite zeigt einen CFL-Zug, der zwischen Petange und Luxemburg fährt — wo er ist, die nächste Station, geplante vs. tatsächliche Ankunft und die Verspätung.",
-            fr: "Une page web montre un train CFL circulant entre Petange et Luxembourg — où il se trouve, le prochain arrêt, l'arrivée prévue vs. réelle et le retard."
+            en: "A web page shows one CFL train moving between Petange and Luxembourg - where it is, the next stop, planned vs. real arrival, and how late it is.",
+            pt: "Uma página web mostra um comboio CFL a circular entre Petange e Luxemburgo - onde está, a próxima paragem, a chegada prevista vs. real e o atraso.",
+            lu: "Eng Websäit weist ee CFL-Zuch deen tëscht Petange a Lëtzebuerg fiert - wou en ass, déi nächst Statioun, geplangten géint reellen Arrivée an de Retard.",
+            de: "Eine Webseite zeigt einen CFL-Zug, der zwischen Petange und Luxemburg fährt - wo er ist, die nächste Station, geplante vs. tatsächliche Ankunft und die Verspätung.",
+            fr: "Une page web montre un train CFL circulant entre Petange et Luxembourg - où il se trouve, le prochain arrêt, l'arrivée prévue vs. réelle et le retard."
         },
         "project.minicfl-az104.does.admin.title": {
             en: "Built like a cloud admin",
@@ -168,11 +175,11 @@
             fr: "Conçu comme un administrateur cloud"
         },
         "project.minicfl-az104.does.admin.desc": {
-            en: "Real users, groups and permissions, organised subscriptions, and rules that decide who can change what — the everyday job of an Azure administrator.",
-            pt: "Utilizadores, grupos e permissões reais, subscrições organizadas e regras que decidem quem pode alterar o quê — o trabalho diário de um administrador Azure.",
-            lu: "Reell Benotzer, Gruppen a Permissiounen, organiséiert Subscriptiounen a Reegelen déi entscheeden wien wat ka änneren — den alldeegleche Job vun engem Azure-Administrateur.",
-            de: "Echte Benutzer, Gruppen und Berechtigungen, organisierte Subscriptions und Regeln, die festlegen, wer was ändern darf — die tägliche Arbeit eines Azure-Administrators.",
-            fr: "De vrais utilisateurs, groupes et permissions, des abonnements organisés et des règles qui décident qui peut modifier quoi — le travail quotidien d'un administrateur Azure."
+            en: "Real users, groups and permissions, organised subscriptions, and rules that decide who can change what - the everyday job of an Azure administrator.",
+            pt: "Utilizadores, grupos e permissões reais, subscrições organizadas e regras que decidem quem pode alterar o quê - o trabalho diário de um administrador Azure.",
+            lu: "Reell Benotzer, Gruppen a Permissiounen, organiséiert Subscriptiounen a Reegelen déi entscheeden wien wat ka änneren - den alldeegleche Job vun engem Azure-Administrateur.",
+            de: "Echte Benutzer, Gruppen und Berechtigungen, organisierte Subscriptions und Regeln, die festlegen, wer was ändern darf - die tägliche Arbeit eines Azure-Administrators.",
+            fr: "De vrais utilisateurs, groupes et permissions, des abonnements organisés et des règles qui décident qui peut modifier quoi - le travail quotidien d'un administrateur Azure."
         },
         "project.minicfl-az104.does.secure.title": {
             en: "Private by design",
@@ -211,11 +218,11 @@
             fr: "Un train que l'on voit, un environnement que l'on administre"
         },
         "project.minicfl-az104.section.intro.body": {
-            en: "MiniCFL is a three-person AZ-104 (Azure Administrator) demonstration project we built for the BTS Cloud Computing course. The visible part is deliberately small: a simulator that moves one CFL train along the real Petange → Luxembourg line and shows its live position, next stop, delay and timetable. The train exists to give every Azure resource a concrete reason to be there. Around it our team built — and administered — a complete environment covering the five AZ-104 skill areas, deployed across a development and a production environment in two different Azure regions.",
-            pt: "O MiniCFL é um projeto de demonstração AZ-104 (Administrador Azure) de três pessoas que construímos para o curso BTS Cloud Computing. A parte visível é deliberadamente pequena: um simulador que move um comboio CFL ao longo da linha real Petange → Luxemburgo e mostra a sua posição ao vivo, próxima paragem, atraso e horário. O comboio existe para dar a cada recurso Azure uma razão concreta de existir. À sua volta, a nossa equipa construiu — e administrou — um ambiente completo que cobre as cinco áreas de competência do AZ-104, implementado num ambiente de desenvolvimento e num de produção em duas regiões Azure diferentes.",
-            lu: "MiniCFL ass en AZ-104 (Azure Administrateur) Demonstratiounsprojet vun dräi Persounen, dee mir fir de BTS Cloud Computing Cours gebaut hunn. Den siichtbaren Deel ass bewosst kleng: e Simulator deen ee CFL-Zuch laanscht déi reell Streck Petange → Lëtzebuerg beweegt an seng live Positioun, déi nächst Statioun, de Retard an den Horaire weist. Den Zuch existéiert fir all Azure-Ressource e konkrete Grond ze ginn do ze sinn. Ronderëm huet eis Equipe eng komplett Ëmgéigend gebaut — a administréiert — déi déi fënnef AZ-104 Kompetenzberäicher ofdeckt, deployéiert op enger Dev- an enger Prod-Ëmgéigend an zwou verschiddenen Azure-Regiounen.",
-            de: "MiniCFL ist ein AZ-104- (Azure-Administrator-) Demonstrationsprojekt von drei Personen, das wir für den BTS-Cloud-Computing-Kurs gebaut haben. Der sichtbare Teil ist bewusst klein: ein Simulator, der einen CFL-Zug entlang der echten Strecke Petange → Luxemburg bewegt und seine Live-Position, die nächste Station, Verspätung und den Fahrplan zeigt. Der Zug existiert, um jeder Azure-Ressource einen konkreten Daseinsgrund zu geben. Darum herum hat unser Team eine vollständige Umgebung gebaut — und administriert —, die die fünf AZ-104-Kompetenzbereiche abdeckt und über eine Entwicklungs- und eine Produktionsumgebung in zwei verschiedenen Azure-Regionen bereitgestellt ist.",
-            fr: "MiniCFL est un projet de démonstration AZ-104 (Administrateur Azure) à trois personnes que nous avons construit pour le cursus BTS Cloud Computing. La partie visible est volontairement modeste : un simulateur qui fait circuler un train CFL le long de la vraie ligne Petange → Luxembourg et affiche sa position en direct, le prochain arrêt, le retard et l'horaire. Le train existe pour donner à chaque ressource Azure une raison d'être concrète. Autour de lui, notre équipe a bâti — et administré — un environnement complet couvrant les cinq domaines de compétences AZ-104, déployé sur un environnement de développement et un de production dans deux régions Azure différentes."
+            en: "MiniCFL is a three-person AZ-104 (Azure Administrator) demonstration project we built for the BTS Cloud Computing course. The visible part is deliberately small: a simulator that moves one CFL train along the real Petange → Luxembourg line and shows its live position, next stop, delay and timetable. The train exists to give every Azure resource a concrete reason to be there. Around it our team built and administered a complete environment covering the five AZ-104 skill areas, deployed across a development and a production environment in two different Azure regions.",
+            pt: "O MiniCFL é um projeto de demonstração AZ-104 (Administrador Azure) de três pessoas que construímos para o curso BTS Cloud Computing. A parte visível é deliberadamente pequena: um simulador que move um comboio CFL ao longo da linha real Petange → Luxemburgo e mostra a sua posição ao vivo, próxima paragem, atraso e horário. O comboio existe para dar a cada recurso Azure uma razão concreta de existir. À sua volta, a nossa equipa construiu e administrou um ambiente completo que cobre as cinco áreas de competência do AZ-104, implementado num ambiente de desenvolvimento e num de produção em duas regiões Azure diferentes.",
+            lu: "MiniCFL ass en AZ-104 (Azure Administrateur) Demonstratiounsprojet vun dräi Persounen, dee mir fir de BTS Cloud Computing Cours gebaut hunn. Den siichtbaren Deel ass bewosst kleng: e Simulator deen ee CFL-Zuch laanscht déi reell Streck Petange → Lëtzebuerg beweegt an seng live Positioun, déi nächst Statioun, de Retard an den Horaire weist. Den Zuch existéiert fir all Azure-Ressource e konkrete Grond ze ginn do ze sinn. Ronderëm huet eis Equipe eng komplett Ëmgéigend gebaut an administréiert, déi déi fënnef AZ-104 Kompetenzberäicher ofdeckt, deployéiert op enger Dev- an enger Prod-Ëmgéigend an zwou verschiddenen Azure-Regiounen.",
+            de: "MiniCFL ist ein AZ-104- (Azure-Administrator-) Demonstrationsprojekt von drei Personen, das wir für den BTS-Cloud-Computing-Kurs gebaut haben. Der sichtbare Teil ist bewusst klein: ein Simulator, der einen CFL-Zug entlang der echten Strecke Petange → Luxemburg bewegt und seine Live-Position, die nächste Station, Verspätung und den Fahrplan zeigt. Der Zug existiert, um jeder Azure-Ressource einen konkreten Daseinsgrund zu geben. Darum herum hat unser Team eine vollständige Umgebung gebaut und administriert, die die fünf AZ-104-Kompetenzbereiche abdeckt und über eine Entwicklungs- und eine Produktionsumgebung in zwei verschiedenen Azure-Regionen bereitgestellt ist.",
+            fr: "MiniCFL est un projet de démonstration AZ-104 (Administrateur Azure) à trois personnes que nous avons construit pour le cursus BTS Cloud Computing. La partie visible est volontairement modeste : un simulateur qui fait circuler un train CFL le long de la vraie ligne Petange → Luxembourg et affiche sa position en direct, le prochain arrêt, le retard et l'horaire. Le train existe pour donner à chaque ressource Azure une raison d'être concrète. Autour de lui, notre équipe a bâti et administré un environnement complet couvrant les cinq domaines de compétences AZ-104, déployé sur un environnement de développement et un de production dans deux régions Azure différentes."
         },
         "project.minicfl-az104.image.sim.caption": {
             en: "The MiniCFL web app: the train lane, six stations, the live status panel and the timetable.",
@@ -240,18 +247,18 @@
             fr: "À trois, nous avons réparti l'environnement par domaine de compétences AZ-104, pour que chaque partie ait un responsable clair."
         },
         "project.minicfl-az104.team.donnny.role": {
-            en: "Identity & governance — the management-group hierarchy, RBAC role assignments, users and groups, and budgets.",
-            pt: "Identidade e governação — a hierarquia de grupos de gestão, as atribuições de funções RBAC, os utilizadores e grupos, e os orçamentos.",
-            lu: "Identitéit & Governance — d'Management-Group-Hierarchie, d'RBAC-Rolle-Zouweisungen, d'Benotzer a Gruppen, an d'Budgeten.",
-            de: "Identität & Governance — die Management-Group-Hierarchie, die RBAC-Rollenzuweisungen, Benutzer und Gruppen sowie die Budgets.",
-            fr: "Identité et gouvernance — la hiérarchie de groupes d'administration, les attributions de rôles RBAC, les utilisateurs et groupes, et les budgets."
+            en: "Identity & governance - the management-group hierarchy, RBAC role assignments, users and groups, and budgets.",
+            pt: "Identidade e governação - a hierarquia de grupos de gestão, as atribuições de funções RBAC, os utilizadores e grupos, e os orçamentos.",
+            lu: "Identitéit & Governance - d'Management-Group-Hierarchie, d'RBAC-Rolle-Zouweisungen, d'Benotzer a Gruppen, an d'Budgeten.",
+            de: "Identität & Governance - die Management-Group-Hierarchie, die RBAC-Rollenzuweisungen, Benutzer und Gruppen sowie die Budgets.",
+            fr: "Identité et gouvernance - la hiérarchie de groupes d'administration, les attributions de rôles RBAC, les utilisateurs et groupes, et les budgets."
         },
         "project.minicfl-az104.team.marios.role": {
-            en: "Networking & database — the NSGs, the VNet, and the VM running the PostgreSQL database.",
-            pt: "Rede e base de dados — as NSGs, a VNet e a VM que executa a base de dados PostgreSQL.",
-            lu: "Networking & Datebank — d'NSGen, d'VNet, an d'VM op där d'PostgreSQL-Datebank leeft.",
-            de: "Networking & Datenbank — die NSGs, das VNet und die VM, auf der die PostgreSQL-Datenbank läuft.",
-            fr: "Réseau et base de données — les NSGs, le VNet, et la VM qui exécute la base de données PostgreSQL."
+            en: "Networking & database - the NSGs, the VNet, and the VM running the PostgreSQL database.",
+            pt: "Rede e base de dados - as NSGs, a VNet e a VM que executa a base de dados PostgreSQL.",
+            lu: "Networking & Datebank - d'NSGen, d'VNet, an d'VM op där d'PostgreSQL-Datebank leeft.",
+            de: "Networking & Datenbank - die NSGs, das VNet und die VM, auf der die PostgreSQL-Datenbank läuft.",
+            fr: "Réseau et base de données - les NSGs, le VNet, et la VM qui exécute la base de données PostgreSQL."
         },
         "project.minicfl-az104.team.me.name": {
             en: "Guilherme (me)",
@@ -261,11 +268,11 @@
             fr: "Guilherme (moi)"
         },
         "project.minicfl-az104.team.me.role": {
-            en: "Compute, app & monitoring — the containerised web app on App Service, ACR, the Azure Function timer, and Azure Monitor.",
-            pt: "Computação, app e monitorização — a aplicação web em contentor no App Service, o ACR, o timer da Azure Function e o Azure Monitor.",
-            lu: "Compute, App & Monitoring — déi containeriséiert Web-App um App Service, den ACR, den Azure-Function-Timer, an den Azure Monitor.",
-            de: "Compute, App & Monitoring — die containerisierte Web-App auf App Service, die ACR, der Azure-Function-Timer und Azure Monitor.",
-            fr: "Calcul, app et surveillance — l'application web conteneurisée sur App Service, l'ACR, le minuteur Azure Function et Azure Monitor."
+            en: "Compute, app & monitoring - the containerised web app on App Service, ACR, the Azure Function timer, and Azure Monitor.",
+            pt: "Computação, app e monitorização - a aplicação web em contentor no App Service, o ACR, o timer da Azure Function e o Azure Monitor.",
+            lu: "Compute, App & Monitoring - déi containeriséiert Web-App um App Service, den ACR, den Azure-Function-Timer, an den Azure Monitor.",
+            de: "Compute, App & Monitoring - die containerisierte Web-App auf App Service, die ACR, der Azure-Function-Timer und Azure Monitor.",
+            fr: "Calcul, app et surveillance - l'application web conteneurisée sur App Service, l'ACR, le minuteur Azure Function et Azure Monitor."
         },
         "project.minicfl-az104.section.what.title": {
             en: "What runs underneath",
@@ -290,11 +297,11 @@
             fr: "Identité et gouvernance"
         },
         "project.minicfl-az104.section.what.identity.hierarchy": {
-            en: "<strong>Management-group hierarchy</strong>: Tenant Root → Students → B1CLC → b1clc-beelen, with two student subscriptions (GloDo, VidGu) underneath — a real governance scope above the resource-group level.",
-            pt: "<strong>Hierarquia de grupos de gestão</strong>: Tenant Root → Students → B1CLC → b1clc-beelen, com duas subscrições de estudante (GloDo, VidGu) por baixo — um âmbito de governação real acima do nível dos grupos de recursos.",
-            lu: "<strong>Management-Group-Hierarchie</strong>: Tenant Root → Students → B1CLC → b1clc-beelen, mat zwou Studente-Subscriptiounen (GloDo, VidGu) drënner — e reelle Governance-Scope iwwer dem Resource-Group-Niveau.",
-            de: "<strong>Management-Group-Hierarchie</strong>: Tenant Root → Students → B1CLC → b1clc-beelen, mit zwei Studenten-Subscriptions (GloDo, VidGu) darunter — ein echter Governance-Scope oberhalb der Resource-Group-Ebene.",
-            fr: "<strong>Hiérarchie de groupes d'administration</strong> : Tenant Root → Students → B1CLC → b1clc-beelen, avec deux abonnements étudiants (GloDo, VidGu) en dessous — une véritable portée de gouvernance au-dessus du niveau des groupes de ressources."
+            en: "<strong>Management-group hierarchy</strong>: Tenant Root → Students → B1CLC → b1clc-beelen, with two student subscriptions (GloDo, VidGu) underneath - a real governance scope above the resource-group level.",
+            pt: "<strong>Hierarquia de grupos de gestão</strong>: Tenant Root → Students → B1CLC → b1clc-beelen, com duas subscrições de estudante (GloDo, VidGu) por baixo - um âmbito de governação real acima do nível dos grupos de recursos.",
+            lu: "<strong>Management-Group-Hierarchie</strong>: Tenant Root → Students → B1CLC → b1clc-beelen, mat zwou Studente-Subscriptiounen (GloDo, VidGu) drënner - e reelle Governance-Scope iwwer dem Resource-Group-Niveau.",
+            de: "<strong>Management-Group-Hierarchie</strong>: Tenant Root → Students → B1CLC → b1clc-beelen, mit zwei Studenten-Subscriptions (GloDo, VidGu) darunter - ein echter Governance-Scope oberhalb der Resource-Group-Ebene.",
+            fr: "<strong>Hiérarchie de groupes d'administration</strong> : Tenant Root → Students → B1CLC → b1clc-beelen, avec deux abonnements étudiants (GloDo, VidGu) en dessous - une véritable portée de gouvernance au-dessus du niveau des groupes de ressources."
         },
         "project.minicfl-az104.section.what.identity.rbac": {
             en: "<strong>Least-privilege RBAC</strong>: Entra ID users and groups for admins, developers and readers, with roles assigned at resource-group scope (Contributor / Reader) instead of handing out Owner.",
@@ -319,11 +326,11 @@
             fr: "Calcul"
         },
         "project.minicfl-az104.section.what.compute.web": {
-            en: "<strong>Containerised web UI</strong>: the simulator is built as a Docker image, pushed to Azure Container Registry, and run on App Service (Web App for Containers) — the live <code>app-minicfl-web-dev</code> site.",
-            pt: "<strong>UI web em contentor</strong>: o simulador é construído como uma imagem Docker, enviado para o Azure Container Registry e executado no App Service (Web App for Containers) — o site ao vivo <code>app-minicfl-web-dev</code>.",
-            lu: "<strong>Containeriséiert Web-UI</strong>: de Simulator gëtt als Docker-Image gebaut, an d'Azure Container Registry gepusht an um App Service (Web App for Containers) ausgefouert — déi live <code>app-minicfl-web-dev</code> Säit.",
-            de: "<strong>Containerisierte Web-UI</strong>: der Simulator wird als Docker-Image gebaut, in die Azure Container Registry gepusht und auf App Service (Web App for Containers) ausgeführt — die Live-Site <code>app-minicfl-web-dev</code>.",
-            fr: "<strong>Interface web conteneurisée</strong> : le simulateur est construit en image Docker, envoyé vers Azure Container Registry et exécuté sur App Service (Web App for Containers) — le site en direct <code>app-minicfl-web-dev</code>."
+            en: "<strong>Containerised web UI</strong>: the simulator is built as a Docker image, pushed to Azure Container Registry, and run on App Service (Web App for Containers) - the live <code>app-minicfl-web-dev</code> site.",
+            pt: "<strong>UI web em contentor</strong>: o simulador é construído como uma imagem Docker, enviado para o Azure Container Registry e executado no App Service (Web App for Containers) - o site ao vivo <code>app-minicfl-web-dev</code>.",
+            lu: "<strong>Containeriséiert Web-UI</strong>: de Simulator gëtt als Docker-Image gebaut, an d'Azure Container Registry gepusht an um App Service (Web App for Containers) ausgefouert - déi live <code>app-minicfl-web-dev</code> Säit.",
+            de: "<strong>Containerisierte Web-UI</strong>: der Simulator wird als Docker-Image gebaut, in die Azure Container Registry gepusht und auf App Service (Web App for Containers) ausgeführt - die Live-Site <code>app-minicfl-web-dev</code>.",
+            fr: "<strong>Interface web conteneurisée</strong> : le simulateur est construit en image Docker, envoyé vers Azure Container Registry et exécuté sur App Service (Web App for Containers) - le site en direct <code>app-minicfl-web-dev</code>."
         },
         "project.minicfl-az104.section.what.compute.vm": {
             en: "<strong>Database VM (IaaS)</strong>: a small Azure VM with a managed disk hosts the PostgreSQL database that stores the route, stops, train state and update history.",
@@ -355,11 +362,11 @@
             fr: "<strong>VNet segmenté</strong> : <code>vnet-minicfl-dev</code> sépare un sous-réseau web (<code>snet-web-dev</code>) d'un sous-réseau de base de données (<code>snet-db-dev</code>) afin d'isoler les deux niveaux."
         },
         "project.minicfl-az104.section.what.network.nsg": {
-            en: "<strong>NSG rules</strong>: <code>nsg-web-dev</code> allows HTTP/HTTPS and restricts admin access; <code>nsg_db_dev</code> allows the app/function to reach the DB but denies all inbound public database access — proven with connectivity tests.",
-            pt: "<strong>Regras de NSG</strong>: a <code>nsg-web-dev</code> permite HTTP/HTTPS e restringe o acesso de administração; a <code>nsg_db_dev</code> permite que a app/função aceda à BD mas nega todo o acesso público de entrada à base de dados — comprovado com testes de conectividade.",
-            lu: "<strong>NSG-Reegelen</strong>: <code>nsg-web-dev</code> erlaabt HTTP/HTTPS a restrëngt den Admin-Zougrëff; <code>nsg_db_dev</code> erlaabt der App/Funktioun op d'DB zouzegräifen, mä verbitt all ëffentlechen Datebank-Zougrëff vu baussen — bewisen mat Konnektivitéits-Tester.",
-            de: "<strong>NSG-Regeln</strong>: <code>nsg-web-dev</code> erlaubt HTTP/HTTPS und beschränkt den Admin-Zugriff; <code>nsg_db_dev</code> erlaubt der App/Funktion den Zugriff auf die DB, verweigert aber jeglichen öffentlichen eingehenden Datenbankzugriff — nachgewiesen mit Konnektivitätstests.",
-            fr: "<strong>Règles NSG</strong> : <code>nsg-web-dev</code> autorise HTTP/HTTPS et restreint l'accès admin ; <code>nsg_db_dev</code> autorise l'app/fonction à atteindre la BD mais refuse tout accès public entrant à la base de données — prouvé par des tests de connectivité."
+            en: "<strong>NSG rules</strong>: <code>nsg-web-dev</code> allows HTTP/HTTPS and restricts admin access; <code>nsg_db_dev</code> allows the app/function to reach the DB but denies all inbound public database access - proven with connectivity tests.",
+            pt: "<strong>Regras de NSG</strong>: a <code>nsg-web-dev</code> permite HTTP/HTTPS e restringe o acesso de administração; a <code>nsg_db_dev</code> permite que a app/função aceda à BD mas nega todo o acesso público de entrada à base de dados - comprovado com testes de conectividade.",
+            lu: "<strong>NSG-Reegelen</strong>: <code>nsg-web-dev</code> erlaabt HTTP/HTTPS a restrëngt den Admin-Zougrëff; <code>nsg_db_dev</code> erlaabt der App/Funktioun op d'DB zouzegräifen, mä verbitt all ëffentlechen Datebank-Zougrëff vu baussen - bewisen mat Konnektivitéits-Tester.",
+            de: "<strong>NSG-Regeln</strong>: <code>nsg-web-dev</code> erlaubt HTTP/HTTPS und beschränkt den Admin-Zugriff; <code>nsg_db_dev</code> erlaubt der App/Funktion den Zugriff auf die DB, verweigert aber jeglichen öffentlichen eingehenden Datenbankzugriff - nachgewiesen mit Konnektivitätstests.",
+            fr: "<strong>Règles NSG</strong> : <code>nsg-web-dev</code> autorise HTTP/HTTPS et restreint l'accès admin ; <code>nsg_db_dev</code> autorise l'app/fonction à atteindre la BD mais refuse tout accès public entrant à la base de données - prouvé par des tests de connectivité."
         },
         "project.minicfl-az104.section.what.network.watcher": {
             en: "<strong>Network Watcher</strong>: connectivity checks confirm the web tier is reachable while the database stays private inside the VNet.",
@@ -457,18 +464,18 @@
             fr: "Le cursus AZ-104 avait besoin d'une démonstration, pas seulement de notes. Nous voulions un scénario <strong>assez petit pour être terminé mais assez réel pour être administré correctement</strong>, alors nous avons choisi quelque chose de familier : le train CFL qui circule sur la ligne Petange → Luxembourg."
         },
         "project.minicfl-az104.section.why.body2": {
-            en: "The train is only the excuse. The point is the <strong>Azure environment around it</strong>: identity and access, governance, compute, networking, monitoring and cost control. Every resource exists because the simulator needs it — the Function updates the train, the VM stores it, the network protects it, monitoring watches it.",
-            pt: "O comboio é apenas o pretexto. O essencial é o <strong>ambiente Azure à sua volta</strong>: identidade e acesso, governação, computação, rede, monitorização e controlo de custos. Cada recurso existe porque o simulador precisa dele — a Function atualiza o comboio, a VM guarda-o, a rede protege-o, a monitorização vigia-o.",
-            lu: "Den Zuch ass nëmmen d'Ausried. De Punkt ass d'<strong>Azure-Ëmgéigend ronderëm</strong>: Identitéit an Zougrëff, Governance, Compute, Networking, Monitoring a Käschtekontroll. All Ressource existéiert well de Simulator se brauch — d'Function aktualiséiert den Zuch, d'VM späichert en, d'Netzwierk schützt en, d'Monitoring iwwerwaacht en.",
-            de: "Der Zug ist nur der Vorwand. Worum es geht, ist die <strong>Azure-Umgebung darum herum</strong>: Identität und Zugriff, Governance, Compute, Networking, Monitoring und Kostenkontrolle. Jede Ressource existiert, weil der Simulator sie braucht — die Function aktualisiert den Zug, die VM speichert ihn, das Netzwerk schützt ihn, das Monitoring überwacht ihn.",
-            fr: "Le train n'est que le prétexte. L'essentiel, c'est l'<strong>environnement Azure qui l'entoure</strong> : identité et accès, gouvernance, calcul, réseau, surveillance et maîtrise des coûts. Chaque ressource existe parce que le simulateur en a besoin — la Function met à jour le train, la VM le stocke, le réseau le protège, la surveillance le surveille."
+            en: "The train is only the excuse. The point is the <strong>Azure environment around it</strong>: identity and access, governance, compute, networking, monitoring and cost control. Every resource exists because the simulator needs it - the Function updates the train, the VM stores it, the network protects it, monitoring watches it.",
+            pt: "O comboio é apenas o pretexto. O essencial é o <strong>ambiente Azure à sua volta</strong>: identidade e acesso, governação, computação, rede, monitorização e controlo de custos. Cada recurso existe porque o simulador precisa dele - a Function atualiza o comboio, a VM guarda-o, a rede protege-o, a monitorização vigia-o.",
+            lu: "Den Zuch ass nëmmen d'Ausried. De Punkt ass d'<strong>Azure-Ëmgéigend ronderëm</strong>: Identitéit an Zougrëff, Governance, Compute, Networking, Monitoring a Käschtekontroll. All Ressource existéiert well de Simulator se brauch - d'Function aktualiséiert den Zuch, d'VM späichert en, d'Netzwierk schützt en, d'Monitoring iwwerwaacht en.",
+            de: "Der Zug ist nur der Vorwand. Worum es geht, ist die <strong>Azure-Umgebung darum herum</strong>: Identität und Zugriff, Governance, Compute, Networking, Monitoring und Kostenkontrolle. Jede Ressource existiert, weil der Simulator sie braucht - die Function aktualisiert den Zug, die VM speichert ihn, das Netzwerk schützt ihn, das Monitoring überwacht ihn.",
+            fr: "Le train n'est que le prétexte. L'essentiel, c'est l'<strong>environnement Azure qui l'entoure</strong> : identité et accès, gouvernance, calcul, réseau, surveillance et maîtrise des coûts. Chaque ressource existe parce que le simulateur en a besoin - la Function met à jour le train, la VM le stocke, le réseau le protège, la surveillance le surveille."
         },
         "project.minicfl-az104.section.why.body3": {
-            en: "We deployed it twice — <strong>dev in France Central and prod in Sweden Central</strong>, across two student subscriptions — and mapped each resource back to an AZ-104 skill area with screenshots in the report. The goal isn't only that the app works, but that we can explain why every piece is there.",
-            pt: "Implementámo-lo duas vezes — <strong>dev em France Central e prod em Sweden Central</strong>, em duas subscrições de estudante — e associámos cada recurso a uma área de competência do AZ-104 com capturas de ecrã no relatório. O objetivo não é apenas que a aplicação funcione, mas que consigamos explicar porque cada peça está lá.",
-            lu: "Mir hunn et zweemol deployéiert — <strong>Dev a France Central a Prod a Sweden Central</strong>, iwwer zwou Studente-Subscriptiounen — an all Ressource zréck op en AZ-104 Kompetenzberäich mat Screenshots am Rapport zougeuerdnet. D'Zil ass net nëmmen datt d'App funktionéiert, mä datt mir kënnen erklären firwat all Stéck do ass.",
-            de: "Wir haben es zweimal bereitgestellt — <strong>Dev in France Central und Prod in Sweden Central</strong>, über zwei Studenten-Subscriptions — und jede Ressource mit Screenshots im Bericht einem AZ-104-Kompetenzbereich zugeordnet. Das Ziel ist nicht nur, dass die App funktioniert, sondern dass wir erklären können, warum jedes Teil da ist.",
-            fr: "Nous l'avons déployé deux fois — <strong>dev en France Central et prod en Sweden Central</strong>, sur deux abonnements étudiants — et nous avons relié chaque ressource à un domaine de compétences AZ-104 avec des captures d'écran dans le rapport. Le but n'est pas seulement que l'application fonctionne, mais que nous puissions expliquer pourquoi chaque élément est là."
+            en: "We deployed it twice - <strong>dev in France Central and prod in Sweden Central</strong>, across two student subscriptions - and mapped each resource back to an AZ-104 skill area with screenshots in the report. The goal isn't only that the app works, but that we can explain why every piece is there.",
+            pt: "Implementámo-lo duas vezes - <strong>dev em France Central e prod em Sweden Central</strong>, em duas subscrições de estudante - e associámos cada recurso a uma área de competência do AZ-104 com capturas de ecrã no relatório. O objetivo não é apenas que a aplicação funcione, mas que consigamos explicar porque cada peça está lá.",
+            lu: "Mir hunn et zweemol deployéiert - <strong>Dev a France Central a Prod a Sweden Central</strong>, iwwer zwou Studente-Subscriptiounen - an all Ressource zréck op en AZ-104 Kompetenzberäich mat Screenshots am Rapport zougeuerdnet. D'Zil ass net nëmmen datt d'App funktionéiert, mä datt mir kënnen erklären firwat all Stéck do ass.",
+            de: "Wir haben es zweimal bereitgestellt - <strong>Dev in France Central und Prod in Sweden Central</strong>, über zwei Studenten-Subscriptions - und jede Ressource mit Screenshots im Bericht einem AZ-104-Kompetenzbereich zugeordnet. Das Ziel ist nicht nur, dass die App funktioniert, sondern dass wir erklären können, warum jedes Teil da ist.",
+            fr: "Nous l'avons déployé deux fois - <strong>dev en France Central et prod en Sweden Central</strong>, sur deux abonnements étudiants - et nous avons relié chaque ressource à un domaine de compétences AZ-104 avec des captures d'écran dans le rapport. Le but n'est pas seulement que l'application fonctionne, mais que nous puissions expliquer pourquoi chaque élément est là."
         },
 
         "project.minicfl-az104.section.lessons.title": {
@@ -514,11 +521,11 @@
             fr: "Étiqueter et budgéter tout"
         },
         "project.minicfl-az104.lessons.cost.body": {
-            en: "On student credit, budget alerts and consistent tags are not optional — they are how you avoid waking up to an empty subscription.",
-            pt: "Com crédito de estudante, alertas de orçamento e tags consistentes não são opcionais — são como se evita acordar com uma subscrição vazia.",
-            lu: "Mat Studentekredit sinn Budget-Alerten a konsequent Tags net optional — si sinn d'Manéier wéi ee verhënnert moies mat enger eidler Subscriptioun opzewächen.",
-            de: "Mit Studentenguthaben sind Budget-Alerts und konsistente Tags nicht optional — sie verhindern, dass man mit einer leeren Subscription aufwacht.",
-            fr: "Avec un crédit étudiant, les alertes de budget et des étiquettes cohérentes ne sont pas optionnelles — c'est ainsi qu'on évite de se réveiller avec un abonnement vide."
+            en: "On student credit, budget alerts and consistent tags are not optional - they are how you avoid waking up to an empty subscription.",
+            pt: "Com crédito de estudante, alertas de orçamento e tags consistentes não são opcionais - são como se evita acordar com uma subscrição vazia.",
+            lu: "Mat Studentekredit sinn Budget-Alerten a konsequent Tags net optional - si sinn d'Manéier wéi ee verhënnert moies mat enger eidler Subscriptioun opzewächen.",
+            de: "Mit Studentenguthaben sind Budget-Alerts und konsistente Tags nicht optional - sie verhindern, dass man mit einer leeren Subscription aufwacht.",
+            fr: "Avec un crédit étudiant, les alertes de budget et des étiquettes cohérentes ne sont pas optionnelles - c'est ainsi qu'on évite de se réveiller avec un abonnement vide."
         },
         "project.minicfl-az104.lessons.pressure.title": {
             en: "Scope under pressure",
@@ -528,11 +535,11 @@
             fr: "Cadrer sous pression"
         },
         "project.minicfl-az104.lessons.pressure.body": {
-            en: "We built this under real time pressure, so we cut what didn't fit — a planned Load Balancer demo stayed on the backlog. Knowing what to drop to still ship a coherent environment is its own skill.",
-            pt: "Construímos isto sob real pressão de tempo, por isso cortámos o que não cabia — uma demonstração de Load Balancer planeada ficou no backlog. Saber o que deixar de fora para ainda entregar um ambiente coerente é uma competência por si só.",
-            lu: "Mir hunn dat ënner reellem Zäitdrock gebaut, also hu mir geschnidden wat net gepasst huet — eng geplangte Load-Balancer-Demo ass um Backlog bliwwen. Ze wëssen wat falezelooss fir nach ëmmer eng kohärent Ëmgéigend ze liwweren ass eng eege Kompetenz.",
-            de: "Wir haben das unter echtem Zeitdruck gebaut, also haben wir gestrichen, was nicht passte — eine geplante Load-Balancer-Demo blieb im Backlog. Zu wissen, was man weglässt, um trotzdem eine kohärente Umgebung zu liefern, ist eine eigene Fähigkeit.",
-            fr: "Nous avons construit cela sous une réelle pression de temps, alors nous avons coupé ce qui ne rentrait pas — une démo de Load Balancer prévue est restée dans le backlog. Savoir quoi abandonner pour livrer malgré tout un environnement cohérent est une compétence à part entière."
+            en: "We built this under real time pressure, so we cut what didn't fit - a planned Load Balancer demo stayed on the backlog. Knowing what to drop to still ship a coherent environment is its own skill.",
+            pt: "Construímos isto sob real pressão de tempo, por isso cortámos o que não cabia - uma demonstração de Load Balancer planeada ficou no backlog. Saber o que deixar de fora para ainda entregar um ambiente coerente é uma competência por si só.",
+            lu: "Mir hunn dat ënner reellem Zäitdrock gebaut, also hu mir geschnidden wat net gepasst huet - eng geplangte Load-Balancer-Demo ass um Backlog bliwwen. Ze wëssen wat falezelooss fir nach ëmmer eng kohärent Ëmgéigend ze liwweren ass eng eege Kompetenz.",
+            de: "Wir haben das unter echtem Zeitdruck gebaut, also haben wir gestrichen, was nicht passte - eine geplante Load-Balancer-Demo blieb im Backlog. Zu wissen, was man weglässt, um trotzdem eine kohärente Umgebung zu liefern, ist eine eigene Fähigkeit.",
+            fr: "Nous avons construit cela sous une réelle pression de temps, alors nous avons coupé ce qui ne rentrait pas - une démo de Load Balancer prévue est restée dans le backlog. Savoir quoi abandonner pour livrer malgré tout un environnement cohérent est une compétence à part entière."
         },
 
         "project.minicfl-az104.section.next.title": {

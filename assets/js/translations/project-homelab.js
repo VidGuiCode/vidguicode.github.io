@@ -27,6 +27,20 @@
             de: "Was als leiser Raspberry-Pi-Cluster im Wohnzimmer begann, ist heute eine Self-Hosted-Plattform mit vier Knoten: ein ARM-Edge-Gateway in der Cloud, ein ARM-Home-Server, ein x86_64-Laptop für Compute-Offload und ein dediziertes ZFS-NAS für Storage. Die lokale Hardware sitzt jetzt in einem kompakten 10U-Rack mit überwachter Stromversorgung und Luftstrom, während öffentlicher Traffic die Plattform weiterhin nur über einen selbst betriebenen WireGuard-Tunnel erreicht.",
             fr: "Ce qui a commencé comme un cluster Raspberry Pi silencieux dans mon salon est devenu une plateforme self-hosted à quatre nœuds : une passerelle ARM en cloud, un serveur maison ARM, un laptop x86_64 pour l'offload de calcul, et un NAS ZFS dédié au stockage. Le matériel sur site vit désormais dans un rack compact 10U avec alimentation et flux d'air surveillés, tandis que le trafic public n'atteint toujours la plateforme qu'à travers un tunnel WireGuard opéré par moi-même."
         },
+        "project.homelab.technical.goal.title": {
+            en: "Technical design goal",
+            pt: "Objetivo técnico de conceção",
+            lu: "Technescht Designzil",
+            de: "Technisches Designziel",
+            fr: "Objectif de conception technique"
+        },
+        "project.homelab.technical.goal.body": {
+            en: "I designed this as a real-world learning environment, not a lab that only works on paper. The architecture separates public entry, compute and storage so I can experiment safely, keep services recoverable and work within the limits of quiet, low-power hardware at home.",
+            pt: "Concebi isto como um ambiente de aprendizagem do mundo real, não como um laboratório que só funciona no papel. A arquitetura separa a entrada pública, a computação e o armazenamento para que eu possa experimentar em segurança, manter os serviços recuperáveis e trabalhar dentro dos limites de hardware silencioso e de baixo consumo em casa.",
+            lu: "Ech hunn dëst als Léierëmfeld aus der realer Welt entworf, net als Lab dat nëmmen um Pabeier funktionéiert. D'Architektur trennt den ëffentlechen Zougang, Compute a Storage, fir datt ech sécher experimentéiere kann, Servicer erëmhierstellbar halen an an de Grenze vu roueger, energiespuerender Hardware doheem schaffe kann.",
+            de: "Ich habe dies als Lernumgebung für die reale Welt entworfen, nicht als Labor, das nur auf dem Papier funktioniert. Die Architektur trennt öffentlichen Zugang, Rechenleistung und Speicher, damit ich sicher experimentieren, Dienste wiederherstellbar halten und innerhalb der Grenzen leiser, stromsparender Hardware zu Hause arbeiten kann.",
+            fr: "J'ai conçu cela comme un environnement d'apprentissage concret, pas comme un laboratoire qui ne fonctionne que sur le papier. L'architecture sépare l'entrée publique, le calcul et le stockage afin que je puisse expérimenter en sécurité, garder les services récupérables et travailler dans les limites d'un matériel domestique silencieux et peu énergivore."
+        },
         "project.homelab.section.what.title": {
             en: "What Runs On It",
             pt: "O que corre nele",
@@ -41,34 +55,6 @@
             de: "Die Plattform ist jetzt in vier sich ergänzende Ebenen aufgeteilt: die Control-Plane auf dem Home-Server, eine Agenten- und Worker-Schicht, eine dedizierte Storage/Media-Ebene und ein gehärtetes Edge-Gateway.",
             fr: "La plateforme est maintenant répartie sur quatre couches complémentaires : le plan de contrôle du serveur maison, une couche d'agents et de workers, un plan dédié au stockage/média et une passerelle edge durcie."
         },
-        "project.homelab.section.what.compose.title": {
-            en: "Docker Compose Stack",
-            pt: "Stack Docker Compose",
-            lu: "Docker Compose Stack",
-            de: "Docker-Compose-Stack",
-            fr: "Stack Docker Compose"
-        },
-        "project.homelab.section.what.compose.media": {
-            en: "Self-hosted Media: Jellyfin for personal media streaming, Immich for photo backup with ML features, Nextcloud for file sync, and Navidrome for music.",
-            pt: "Media self-hosted: Jellyfin para streaming de media pessoal, Immich para backup de fotos com recursos de ML, Nextcloud para sincronização de ficheiros e Navidrome para música.",
-            lu: "Self-hosted Medien: Jellyfin fir perséinleche Streaming, Immich fir Foto-Backup mat ML Features, Nextcloud fir File-Sync, a Navidrome fir Musek.",
-            de: "Selbst-gehostete Medien: Jellyfin für persönliches Streaming, Immich für Foto-Backup mit ML-Funktionen, Nextcloud für Dateisynchronisation und Navidrome für Musik.",
-            fr: "Médias auto-hébergés : Jellyfin pour le streaming personnel, Immich pour la sauvegarde photo avec ML, Nextcloud pour la synchronisation de fichiers et Navidrome pour la musique."
-        },
-        "project.homelab.section.what.compose.platform": {
-            en: "Custom Web Platform: Self-built apps including an AI-powered content digest tool, QR code generator, and centralized app launcher—all sharing a unified authentication system.",
-            pt: "Plataforma web personalizada: Apps próprias incluindo ferramenta de resumos com IA, gerador de códigos QR e lançador centralizado — todos com um sistema de autenticação unificado.",
-            lu: "Personaliséiert Web Plattform: Selwer gebaut Apps inklusiv AI-gestäerkte Digest-Tool, QR Code Generator, an zentrale App Launcher — all mat engem eenheetleche Auth System.",
-            de: "Individuelle Web-Plattform: Eigenentwickelte Apps wie ein KI-gestütztes Digest-Tool, QR-Code-Generator und zentraler App-Launcher – alle teilen sich ein einheitliches Auth-System.",
-            fr: "Plateforme web personnalisée : Applications maison dont un outil de digest IA, un générateur de QR codes et un lanceur centralisé — tous avec une authentification unifiée."
-        },
-        "project.homelab.section.what.compose.sso": {
-            en: "Single Sign-On: JWT-based SSO across all subdomains with token blacklisting, audit logging, and role-based access control.",
-            pt: "Single Sign-On: SSO baseado em JWT em todos os subdomínios com blacklist de tokens, auditoria e controlo de acesso por papéis.",
-            lu: "Single Sign-On: JWT-baséiert SSO iwwer all Subdomaine mat Token Blacklisting, Audit Logging a Rollen-baséierten Zougang.",
-            de: "Single Sign-On: JWT-basiertes SSO über alle Subdomains mit Token-Blacklisting, Audit-Logs und rollenbasiertem Zugriff.",
-            fr: "Single Sign-On : SSO basé sur JWT pour tous les sous-domaines, avec blacklist de tokens, journalisation d’audit et contrôle d’accès par rôles."
-        },
         "project.homelab.section.what.k3s.title": {
             en: "K3s Cluster",
             pt: "Cluster K3s",
@@ -76,47 +62,12 @@
             de: "K3s-Cluster",
             fr: "Cluster K3s"
         },
-        "project.homelab.section.what.k3s.orchestration": {
-            en: "Lightweight Orchestration: Kubernetes-based cluster with Traefik ingress for routing and Portainer for management.",
-            pt: "Orquestração leve: Cluster baseado em Kubernetes com Traefik ingress para encaminhamento e Portainer para gestão.",
-            lu: "Liicht Orchestratioun: Kubernetes-baséierte Cluster mat Traefik Ingress fir Routing a Portainer fir Gestioun.",
-            de: "Leichtgewicht-Orchestrierung: Kubernetes-basierter Cluster mit Traefik Ingress fürs Routing und Portainer für das Management.",
-            fr: "Orchestration légère : Cluster basé sur Kubernetes avec Traefik Ingress pour le routage et Portainer pour la gestion."
-        },
-        "project.homelab.section.what.k3s.apps": {
-            en: "Containerized Apps: Services like the QR generator run as Kubernetes deployments with proper ingress rules.",
-            pt: "Apps conteinerizadas: Serviços como o gerador de QR correm em deployments Kubernetes com regras de ingress adequadas.",
-            lu: "Containeriséiert Apps: Servicer wéi de QR Generator lafen als Kubernetes Deployments mat passende Ingress Reegelen.",
-            de: "Containerisierte Apps: Dienste wie der QR-Generator laufen als Kubernetes-Deployments mit passenden Ingress-Regeln.",
-            fr: "Applications conteneurisées : Des services comme le générateur de QR tournent en déploiements Kubernetes avec les bonnes règles d’ingress."
-        },
         "project.homelab.section.what.gateway.title": {
             en: "Cloud Gateway (Oracle VPS)",
             pt: "Gateway na cloud (Oracle VPS)",
             lu: "Cloud-Gateway (Oracle VPS)",
             de: "Cloud-Gateway (Oracle VPS)",
             fr: "Passerelle cloud (Oracle VPS)"
-        },
-        "project.homelab.section.what.gateway.tunnel": {
-            en: "Secure Tunnel: WireGuard VPN connects the home cluster to a cloud VPS, enabling public access without exposing home ports.",
-            pt: "Túnel seguro: WireGuard VPN liga o cluster doméstico a um VPS na cloud, permitindo acesso público sem expor portas de casa.",
-            lu: "Sécheren Tunnel: WireGuard VPN verbënnt den Heem-Cluster mat engem Cloud VPS, ouni Heem-Porten opzemaachen.",
-            de: "Sicherer Tunnel: WireGuard VPN verbindet den Heim-Cluster mit einem Cloud-VPS und ermöglicht öffentlichen Zugriff ohne Ports daheim zu öffnen.",
-            fr: "Tunnel sécurisé : WireGuard VPN relie le cluster maison à un VPS cloud, offrant un accès public sans exposer les ports domestiques."
-        },
-        "project.homelab.section.what.gateway.proxy": {
-            en: "Reverse Proxy: Caddy handles SSL termination and routes traffic through the encrypted tunnel to home services.",
-            pt: "Reverse Proxy: Caddy faz a terminação SSL e encaminha o tráfego pelo túnel encriptado para os serviços em casa.",
-            lu: "Reverse Proxy: Caddy këmmert sech ëm SSL Terminatioun a rout de Traffic duerch den encryptéierten Tunnel op Heem Servicer.",
-            de: "Reverse Proxy: Caddy terminiert SSL und leitet den Traffic durch den verschlüsselten Tunnel zu den Heimdiensten.",
-            fr: "Reverse proxy : Caddy gère la terminaison SSL et route le trafic via le tunnel chiffré vers les services maison."
-        },
-        "project.homelab.section.what.gateway.monitoring": {
-            en: "Uptime Monitoring: Status page tracks all services with alerting capabilities.",
-            pt: "Monitorização: Página de estado acompanha todos os serviços com alertas.",
-            lu: "Uptime Iwwerwaachung: Status Säit iwwerwaacht all Servicer mat Alarmer.",
-            de: "Uptime-Monitoring: Statusseite überwacht alle Dienste mit Alarmierungen.",
-            fr: "Supervision : Une page de statut suit tous les services avec alertes."
         },
         "project.homelab.nodes.primary.title": {
             en: "Primary Node",
@@ -146,34 +97,6 @@
             de: "8GB RAM",
             fr: "8GB RAM"
         },
-        "project.homelab.nodes.primary.body": {
-            en: "The control plane. Runs the main Docker Compose stack, hosts the backend and custom apps, and acts as the K3s control node.",
-            pt: "O plano de controlo. Executa a stack principal em Docker Compose, aloja o backend e as apps personalizadas, e atua como nó de controlo do K3s.",
-            lu: "De Control Plane. Leeft de wichtegsten Docker-Compose Stack, host de Backend an d'custom Apps, a déngt als K3s Control Node.",
-            de: "Die Control-Plane. Betreibt den Haupt-Docker-Compose-Stack, hostet Backend und eigene Apps und fungiert als K3s-Control-Node.",
-            fr: "Le plan de contrôle. Exécute la stack Docker Compose principale, héberge le backend et les apps maison, et sert de nœud de contrôle K3s."
-        },
-        "project.homelab.nodes.primary.tag.master": {
-            en: "[MASTER]",
-            pt: "[MASTER]",
-            lu: "[MASTER]",
-            de: "[MASTER]",
-            fr: "[MASTER]"
-        },
-        "project.homelab.nodes.primary.tag.arm64": {
-            en: "[ARM64]",
-            pt: "[ARM64]",
-            lu: "[ARM64]",
-            de: "[ARM64]",
-            fr: "[ARM64]"
-        },
-        "project.homelab.nodes.primary.tag.lowpower": {
-            en: "[LOW-POWER]",
-            pt: "[BAIXO CONSUMO]",
-            lu: "[NIDDER-VERBRAUCH]",
-            de: "[NIEDRIGER VERBRAUCH]",
-            fr: "[BASSE CONSOMMATION]"
-        },
         "project.homelab.nodes.worker.title": {
             en: "Worker Node",
             pt: "Nó Worker",
@@ -201,34 +124,6 @@
             lu: "16GB RAM",
             de: "16GB RAM",
             fr: "16GB RAM"
-        },
-        "project.homelab.nodes.worker.body": {
-            en: "The offload node. Handles Playwright, Sharp/libvips, private search, and other heavier workloads that are faster on x86_64.",
-            pt: "O nó de offload. Trata do Playwright, Sharp/libvips, pesquisa privada e outras cargas pesadas que correm melhor em x86_64.",
-            lu: "Den Offload-Node. Këmmert sech ëm Playwright, Sharp/libvips, privat Sich an aner schwéier Workloads déi op x86_64 méi séier sinn.",
-            de: "Der Offload-Knoten. Übernimmt Playwright, Sharp/libvips, private Suche und andere schwerere Workloads, die auf x86_64 schneller laufen.",
-            fr: "Le nœud d'offload. Gère Playwright, Sharp/libvips, la recherche privée et d'autres charges plus lourdes qui tournent plus vite sur x86_64."
-        },
-        "project.homelab.nodes.worker.tag.worker": {
-            en: "[WORKER]",
-            pt: "[WORKER]",
-            lu: "[WORKER]",
-            de: "[WORKER]",
-            fr: "[WORKER]"
-        },
-        "project.homelab.nodes.worker.tag.x86": {
-            en: "[X86_64]",
-            pt: "[X86_64]",
-            lu: "[X86_64]",
-            de: "[X86_64]",
-            fr: "[X86_64]"
-        },
-        "project.homelab.nodes.worker.tag.ups": {
-            en: "[BATTERY-UPS]",
-            pt: "[BATERIA-UPS]",
-            lu: "[BATTERIE-UPS]",
-            de: "[BATTERIE-USV]",
-            fr: "[BATTERIE-UPS]"
         },
         "project.homelab.nodes.gateway.title": {
             en: "Cloud Gateway",
@@ -258,20 +153,6 @@
             de: "24GB RAM",
             fr: "24GB RAM"
         },
-        "project.homelab.nodes.gateway.badge": {
-            en: "FREE TIER",
-            pt: "NÍVEL GRATUITO",
-            lu: "GRATIS-STUF",
-            de: "KOSTENLOS",
-            fr: "OFFRE GRATUITE"
-        },
-        "project.homelab.nodes.gateway.body": {
-            en: "The internet-facing edge. Terminates TLS, filters traffic with CrowdSec, exposes a VPN-only gateway API, and carries ingress over WireGuard.",
-            pt: "A edge virada para a internet. Termina TLS, filtra tráfego com CrowdSec, expõe uma API de gateway acessível só por VPN e transporta o ingress via WireGuard.",
-            lu: "D'Edge op der Internetsäit. Terminéiert TLS, filtert de Verkéier mat CrowdSec, stellt eng nëmme per VPN accessibel Gateway-API bereet a transportéiert den Ingress iwwer WireGuard.",
-            de: "Die internetseitige Edge. Terminiert TLS, filtert Traffic mit CrowdSec, stellt eine nur per VPN erreichbare Gateway-API bereit und transportiert Ingress über WireGuard.",
-            fr: "La couche edge exposée à Internet. Termine TLS, filtre le trafic avec CrowdSec, expose une API de passerelle accessible uniquement par VPN, et transporte l'ingress via WireGuard."
-        },
         "project.homelab.nodes.storage.title": {
             en: "Storage Node",
             pt: "Nó de Armazenamento",
@@ -300,34 +181,6 @@
             de: "32GB RAM",
             fr: "32GB RAM"
         },
-        "project.homelab.nodes.storage.body": {
-            en: "The storage plane. Hosts ZFS pools, the media stack, photo backup, file sync, music services, and hot/cold S3-compatible object storage.",
-            pt: "O plano de armazenamento. Aloja pools ZFS, a stack multimédia, backup de fotos, sincronização de ficheiros, serviços de música e armazenamento S3 compatível em camadas hot/cold.",
-            lu: "D'Späicher-Ebene. Host ZFS-Pools, de Media-Stack, Foto-Backup, File-Sync, Museksservicer an hot/cold S3-kompatibele Object-Storage.",
-            de: "Die Storage-Ebene. Hostet ZFS-Pools, den Media-Stack, Foto-Backup, Dateisynchronisierung, Musikdienste und S3-kompatiblen Hot/Cold-Object-Storage.",
-            fr: "Le plan de stockage. Héberge les pools ZFS, la stack média, la sauvegarde photo, la sync de fichiers, les services musicaux et un stockage objet compatible S3 en hot/cold."
-        },
-        "project.homelab.nodes.storage.tag.storage": {
-            en: "[STORAGE]",
-            pt: "[STORAGE]",
-            lu: "[STORAGE]",
-            de: "[STORAGE]",
-            fr: "[STORAGE]"
-        },
-        "project.homelab.nodes.storage.tag.zfs": {
-            en: "[ZFS]",
-            pt: "[ZFS]",
-            lu: "[ZFS]",
-            de: "[ZFS]",
-            fr: "[ZFS]"
-        },
-        "project.homelab.nodes.storage.tag.object": {
-            en: "[OBJECT]",
-            pt: "[OBJECT]",
-            lu: "[OBJECT]",
-            de: "[OBJECT]",
-            fr: "[OBJECT]"
-        },
         "project.homelab.nodes.switch.title": {
             en: "Network Switch",
             pt: "Switch de Rede",
@@ -349,62 +202,6 @@
             de: "8 Ports / 1 Gbps",
             fr: "8 ports / 1 Gbps"
         },
-        "project.homelab.nodes.switch.type": {
-            en: "Easy Smart Managed",
-            pt: "Easy Smart Managed",
-            lu: "Easy Smart Managed",
-            de: "Easy Smart Managed",
-            fr: "Easy Smart Managed"
-        },
-        "project.homelab.nodes.switch.body": {
-            en: "Connects the home server, compute node, and NAS on the local network. Managed switch with QoS and IGMP snooping — sits in the rack and links all on-site nodes to the home router.",
-            pt: "Liga o home server, o nó de computação e a NAS na rede local. Switch gerido com QoS e IGMP snooping — está no rack e liga todos os nós locais ao router doméstico.",
-            lu: "Verbënnt de Home Server, de Compute Node an d'NAS am lokale Netz. Gemanagten Switch mat QoS a IGMP Snooping — steet am Rack a verbënnt all On-Site Noden mam Heemrouter.",
-            de: "Verbindet Home-Server, Compute-Node und NAS im lokalen Netzwerk. Managed Switch mit QoS und IGMP Snooping — sitzt im Rack und verbindet alle On-Site-Knoten mit dem Heimrouter.",
-            fr: "Relie le serveur maison, le nœud de calcul et le NAS sur le réseau local. Switch managé avec QoS et IGMP snooping — installé dans le rack, il connecte tous les nœuds sur site au routeur domestique."
-        },
-        "project.homelab.nodes.switch.tag.managed": {
-            en: "[MANAGED]",
-            pt: "[MANAGED]",
-            lu: "[MANAGED]",
-            de: "[MANAGED]",
-            fr: "[MANAGED]"
-        },
-        "project.homelab.nodes.switch.tag.gigabit": {
-            en: "[GIGABIT]",
-            pt: "[GIGABIT]",
-            lu: "[GIGABIT]",
-            de: "[GIGABIT]",
-            fr: "[GIGABIT]"
-        },
-        "project.homelab.nodes.switch.tag.ports": {
-            en: "[8-PORT]",
-            pt: "[8-PORT]",
-            lu: "[8-PORT]",
-            de: "[8-PORT]",
-            fr: "[8-PORT]"
-        },
-        "project.homelab.nodes.gateway.tag.gateway": {
-            en: "[GATEWAY]",
-            pt: "[GATEWAY]",
-            lu: "[GATEWAY]",
-            de: "[GATEWAY]",
-            fr: "[GATEWAY]"
-        },
-        "project.homelab.nodes.gateway.tag.caddy": {
-            en: "[CADDY]",
-            pt: "[CADDY]",
-            lu: "[CADDY]",
-            de: "[CADDY]",
-            fr: "[CADDY]"
-        },
-        "project.homelab.nodes.gateway.tag.wireguard": {
-            en: "[WIREGUARD]",
-            pt: "[WIREGUARD]",
-            lu: "[WIREGUARD]",
-            de: "[WIREGUARD]",
-            fr: "[WIREGUARD]"
-        },
         "project.homelab.section.why.title": {
             en: "Why I Built It",
             pt: "Porque o construí",
@@ -420,18 +217,18 @@
             fr: "J’avais besoin d’un bac à sable pour casser les choses en sécurité. C’était mon <strong>premier vrai projet personnel</strong>, celui qui m’a poussé au-delà des tutos vers la résolution concrète de problèmes. Parti de Jellyfin pour le streaming, c’est devenu une plateforme complète après la création d’un tunnel sécurisé maison pour remplacer les services tiers."
         },
         "project.homelab.section.why.body2": {
-            en: "Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> — and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.",
-            pt: "Para além de aprender, continuava a esbarrar na mesma frustração: as ferramentas existentes eram limitadas, cheias de anúncios ou simplesmente não se adequavam ao que precisava. O gerador de QR? A maioria das versões online estava atrás de paywalls ou coberta de anúncios. A app Vault? Nada do que existia correspondia ao workflow que tinha em mente. Então, em vez de me conformar, <strong>comecei a construir as minhas próprias ferramentas</strong> — e isso cresceu para um ecossistema self-hosted completo de aplicações personalizadas que substituem ferramentas de terceiros nos meus termos.",
-            lu: "Nieft dem Léieren, sinn ech ëmmer erëm op déi selwecht Frustratioun gestouss: déi existéierend Tools waren entweder limitéiert, voller Reklammen oder hu guer net zu menge Besoine gepasst. De QR-Generator? Déi meescht Online-Versioune waren hannert Paywalls oder voller Annoncen. D'Vault-App? Näischt dobaussen huet dem Workflow entspriecht, deen ech am Kapp hat. Also, amplaz mech domat zefridden ze ginn, <strong>hunn ech ugefaang meng eegen Tools ze bauen</strong> — an dat ass zu engem komplette self-hosted Ecosystem vu personaliséierten Applikatiounen gewuess, dat Drëtt-Partei-Tools op meng Aart ersetzt.",
-            de: "Neben dem Lerneffekt gab es immer wieder denselben Frust: Viele Tools waren eingeschränkt, voller Werbung oder schlicht nicht das, was ich brauchte. Beim QR-Generator landete man oft hinter Paywalls oder zwischen Bannern. Für die Vault-App fand ich nichts, das zu meinem Workflow passte. Also habe ich aufgehört, Kompromisse zu machen, und <strong>angefangen, meine eigenen Lösungen zu bauen</strong> — daraus ist Schritt für Schritt ein komplettes Self-Hosted-Ökosystem entstanden, das Drittanbieter-Tools zu meinen Bedingungen ersetzt.",
-            fr: "Au-delà de l'apprentissage, je me heurtais toujours à la même frustration : les outils existants étaient soit limités, soit bourrés de pubs, soit inadaptés à mes besoins. Le générateur de QR ? La plupart des versions en ligne étaient derrière des paywalls ou couvertes de pubs. L'app Vault ? Rien ne correspondait au workflow que j'avais en tête. Alors plutôt que de me contenter, <strong>j'ai commencé à construire les miens</strong> — et ça s'est transformé en un écosystème self-hosted complet d'applications personnalisées remplaçant les outils tiers à ma façon."
+            en: "Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> - and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.",
+            pt: "Para além de aprender, continuava a esbarrar na mesma frustração: as ferramentas existentes eram limitadas, cheias de anúncios ou simplesmente não se adequavam ao que precisava. O gerador de QR? A maioria das versões online estava atrás de paywalls ou coberta de anúncios. A app Vault? Nada do que existia correspondia ao workflow que tinha em mente. Então, em vez de me conformar, <strong>comecei a construir as minhas próprias ferramentas</strong> - e isso cresceu para um ecossistema self-hosted completo de aplicações personalizadas que substituem ferramentas de terceiros nos meus termos.",
+            lu: "Nieft dem Léieren, sinn ech ëmmer erëm op déi selwecht Frustratioun gestouss: déi existéierend Tools waren entweder limitéiert, voller Reklammen oder hu guer net zu menge Besoine gepasst. De QR-Generator? Déi meescht Online-Versioune waren hannert Paywalls oder voller Annoncen. D'Vault-App? Näischt dobaussen huet dem Workflow entspriecht, deen ech am Kapp hat. Also, amplaz mech domat zefridden ze ginn, <strong>hunn ech ugefaang meng eegen Tools ze bauen</strong> - an dat ass zu engem komplette self-hosted Ecosystem vu personaliséierten Applikatiounen gewuess, dat Drëtt-Partei-Tools op meng Aart ersetzt.",
+            de: "Neben dem Lerneffekt gab es immer wieder denselben Frust: Viele Tools waren eingeschränkt, voller Werbung oder schlicht nicht das, was ich brauchte. Beim QR-Generator landete man oft hinter Paywalls oder zwischen Bannern. Für die Vault-App fand ich nichts, das zu meinem Workflow passte. Also habe ich aufgehört, Kompromisse zu machen, und <strong>angefangen, meine eigenen Lösungen zu bauen</strong> - daraus ist Schritt für Schritt ein komplettes Self-Hosted-Ökosystem entstanden, das Drittanbieter-Tools zu meinen Bedingungen ersetzt.",
+            fr: "Au-delà de l'apprentissage, je me heurtais toujours à la même frustration : les outils existants étaient soit limités, soit bourrés de pubs, soit inadaptés à mes besoins. Le générateur de QR ? La plupart des versions en ligne étaient derrière des paywalls ou couvertes de pubs. L'app Vault ? Rien ne correspondait au workflow que j'avais en tête. Alors plutôt que de me contenter, <strong>j'ai commencé à construire les miens</strong> - et ça s'est transformé en un écosystème self-hosted complet d'applications personnalisées remplaçant les outils tiers à ma façon."
         },
         "project.homelab.section.why.body3": {
-            en: "Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 8+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.",
-            pt: "Pelo caminho aprendi a desenhar em torno de limitações reais: arquiteturas mistas, planos separados de storage e compute, ingress zero-trust e aplicações que partilham autenticação sem partilhar atalhos de segurança. <strong>Construí 8+ apps personalizadas e um framework de agentes de raiz</strong>, o que me provou que é possível fazer engenharia séria de sistemas muito antes de ter hardware empresarial.",
-            lu: "Ënnerwee hunn ech geléiert ronderëm richteg Aschränkungen ze designen: gemëschten Architekturen, getrennte Storage- a Compute-Ebenen, Zero-Trust-Ingress an Applikatiounen, déi Auth deelen ouni Sécherheets-Ofkierzungen ze iwwerhuelen. <strong>Ech hunn 8+ personaliséiert Apps an en Agent-Framework vun Null op gebaut</strong>, an domat fir mech bewisen, datt eescht Systemdesign scho laang virun Enterprise-Hardware méiglech ass.",
-            de: "Dabei habe ich gelernt, um echte Einschränkungen herum zu entwerfen: gemischte Architekturen, getrennte Storage- und Compute-Ebenen, Zero-Trust-Ingress und Anwendungen, die Auth teilen, ohne Sicherheitsabkürzungen zu übernehmen. <strong>Ich habe 8+ eigene Apps und ein Agent-Framework von Grund auf gebaut</strong>, was mir bewiesen hat, dass ernsthaftes Systemdesign lange vor Enterprise-Hardware möglich ist.",
-            fr: "En chemin, j'ai appris à concevoir autour de contraintes réelles : architectures mixtes, plans de calcul et de stockage séparés, ingress zero-trust, et applications qui partagent l'auth sans partager de raccourcis de sécurité. <strong>J'ai construit 8+ apps maison et un framework d'agents from scratch</strong>, ce qui m'a prouvé qu'un vrai design de systèmes est possible bien avant d'avoir du matériel d'entreprise."
+            en: "Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 10+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.",
+            pt: "Pelo caminho aprendi a desenhar em torno de limitações reais: arquiteturas mistas, planos separados de storage e compute, ingress zero-trust e aplicações que partilham autenticação sem partilhar atalhos de segurança. <strong>Construí 10+ apps personalizadas e um framework de agentes de raiz</strong>, o que me provou que é possível fazer engenharia séria de sistemas muito antes de ter hardware empresarial.",
+            lu: "Ënnerwee hunn ech geléiert ronderëm richteg Aschränkungen ze designen: gemëschten Architekturen, getrennte Storage- a Compute-Ebenen, Zero-Trust-Ingress an Applikatiounen, déi Auth deelen ouni Sécherheets-Ofkierzungen ze iwwerhuelen. <strong>Ech hunn 10+ personaliséiert Apps an en Agent-Framework vun Null op gebaut</strong>, an domat fir mech bewisen, datt eescht Systemdesign scho laang virun Enterprise-Hardware méiglech ass.",
+            de: "Dabei habe ich gelernt, um echte Einschränkungen herum zu entwerfen: gemischte Architekturen, getrennte Storage- und Compute-Ebenen, Zero-Trust-Ingress und Anwendungen, die Auth teilen, ohne Sicherheitsabkürzungen zu übernehmen. <strong>Ich habe 10+ eigene Apps und ein Agent-Framework von Grund auf gebaut</strong>, was mir bewiesen hat, dass ernsthaftes Systemdesign lange vor Enterprise-Hardware möglich ist.",
+            fr: "En chemin, j'ai appris à concevoir autour de contraintes réelles : architectures mixtes, plans de calcul et de stockage séparés, ingress zero-trust, et applications qui partagent l'auth sans partager de raccourcis de sécurité. <strong>J'ai construit 10+ apps maison et un framework d'agents from scratch</strong>, ce qui m'a prouvé qu'un vrai design de systèmes est possible bien avant d'avoir du matériel d'entreprise."
         },
         "project.homelab.section.lessons.title": {
             en: "Lessons Learned",
@@ -473,13 +270,6 @@
             de: "Wie geht es weiter",
             fr: "Et après"
         },
-        "project.homelab.section.next.body": {
-            en: "Next steps are deeper K3s adoption for selected microservices, more agent-driven workflows, continued hardening of the edge and auth stack, and expanding the platform with new internal tools only when they solve a real gap in my day-to-day workflows.",
-            pt: "Os próximos passos passam por uma adoção mais profunda de K3s para microserviços selecionados, mais workflows orientados por agentes, endurecimento contínuo da stack de edge e autenticação, e expansão da plataforma com novas ferramentas internas apenas quando resolverem uma lacuna real no meu dia a dia.",
-            lu: "Als nächst kënnt eng méi déif K3s-Notzung fir ausgewielte Microservices, méi agent-gedriwwen Workflows, weider Hardening vum Edge- an Auth-Stack, an d'Erweiderung vun der Plattform mat neien internen Tools nëmmen dann, wann se eng richteg Lück a mengem Alldag léisen.",
-            de: "Als Nächstes stehen eine tiefere K3s-Nutzung für ausgewählte Microservices, mehr agentengesteuerte Workflows, weiteres Hardening von Edge- und Auth-Stack und der Ausbau der Plattform mit neuen internen Tools an — aber nur dann, wenn sie eine echte Lücke in meinem Alltag schließen.",
-            fr: "La suite : une adoption plus poussée de K3s pour certains microservices, davantage de workflows pilotés par agents, un durcissement continu de la couche edge et de l'auth, et l'ajout de nouveaux outils internes uniquement lorsqu'ils répondent à un vrai manque dans mon quotidien."
-        },
         "project.homelab.sidebar.tech.k3s": {
             en: "K3s Kubernetes",
             pt: "K3s Kubernetes",
@@ -493,223 +283,6 @@
             lu: "Docker Compose",
             de: "Docker Compose",
             fr: "Docker Compose"
-        },
-        "project.homelab.sidebar.tech.vps": {
-            en: "Oracle Cloud (ARM64)",
-            pt: "Oracle Cloud (ARM64)",
-            lu: "Oracle Cloud (ARM64)",
-            de: "Oracle Cloud (ARM64)",
-            fr: "Oracle Cloud (ARM64)"
-        },
-        "project.homelab.sidebar.tech.wireguard": {
-            en: "WireGuard VPN",
-            pt: "WireGuard VPN",
-            lu: "WireGuard VPN",
-            de: "WireGuard VPN",
-            fr: "WireGuard VPN"
-        },
-        "project.homelab.sidebar.tech.caddy": {
-            en: "Caddy Reverse Proxy",
-            pt: "Caddy Reverse Proxy",
-            lu: "Caddy Reverse Proxy",
-            de: "Caddy Reverse Proxy",
-            fr: "Caddy Reverse Proxy"
-        },
-        "project.homelab.sidebar.tech.cloudflare": {
-            en: "Cloudflare DNS",
-            pt: "Cloudflare DNS",
-            lu: "Cloudflare DNS",
-            de: "Cloudflare DNS",
-            fr: "Cloudflare DNS"
-        },
-        "project.homelab.sidebar.tech.fastapi": {
-            en: "FastAPI (Python)",
-            pt: "FastAPI (Python)",
-            lu: "FastAPI (Python)",
-            de: "FastAPI (Python)",
-            fr: "FastAPI (Python)"
-        },
-        "project.homelab.sidebar.tech.sqlite": {
-            en: "SQLite + Alembic",
-            pt: "SQLite + Alembic",
-            lu: "SQLite + Alembic",
-            de: "SQLite + Alembic",
-            fr: "SQLite + Alembic"
-        },
-        "project.homelab.sidebar.tech.sveltekit": {
-            en: "SvelteKit 2 (Svelte 4/5)",
-            pt: "SvelteKit 2 (Svelte 4/5)",
-            lu: "SvelteKit 2 (Svelte 4/5)",
-            de: "SvelteKit 2 (Svelte 4/5)",
-            fr: "SvelteKit 2 (Svelte 4/5)"
-        },
-        "project.homelab.sidebar.tech.react": {
-            en: "React 18",
-            pt: "React 18",
-            lu: "React 18",
-            de: "React 18",
-            fr: "React 18"
-        },
-        "project.homelab.sidebar.tech.jwt": {
-            en: "JWT Authentication",
-            pt: "Autenticação JWT",
-            lu: "JWT Authentifizéierung",
-            de: "JWT-Authentifizierung",
-            fr: "Authentification JWT"
-        },
-        "project.homelab.sidebar.tech.bcrypt": {
-            en: "bcrypt (Passlib)",
-            pt: "bcrypt (Passlib)",
-            lu: "bcrypt (Passlib)",
-            de: "bcrypt (Passlib)",
-            fr: "bcrypt (Passlib)"
-        },
-        "project.homelab.sidebar.tech.traefik": {
-            en: "Traefik Ingress",
-            pt: "Traefik Ingress",
-            lu: "Traefik Ingress",
-            de: "Traefik Ingress",
-            fr: "Traefik Ingress"
-        },
-        "project.homelab.sidebar.tech.portainer": {
-            en: "Portainer",
-            pt: "Portainer",
-            lu: "Portainer",
-            de: "Portainer",
-            fr: "Portainer"
-        },
-        "project.homelab.sidebar.tech.crowdsec": {
-            en: "CrowdSec",
-            pt: "CrowdSec",
-            lu: "CrowdSec",
-            de: "CrowdSec",
-            fr: "CrowdSec"
-        },
-        "project.homelab.sidebar.tech.tailscale": {
-            en: "Tailscale Mesh VPN",
-            pt: "Tailscale Mesh VPN",
-            lu: "Tailscale Mesh VPN",
-            de: "Tailscale Mesh VPN",
-            fr: "Tailscale Mesh VPN"
-        },
-        "project.homelab.sidebar.tech.registry": {
-            en: "Docker Registry",
-            pt: "Docker Registry",
-            lu: "Docker Registry",
-            de: "Docker Registry",
-            fr: "Docker Registry"
-        },
-        "project.homelab.sidebar.tech.playwright": {
-            en: "Playwright",
-            pt: "Playwright",
-            lu: "Playwright",
-            de: "Playwright",
-            fr: "Playwright"
-        },
-        "project.homelab.sidebar.tech.mistral": {
-            en: "Mistral AI",
-            pt: "Mistral AI",
-            lu: "Mistral AI",
-            de: "Mistral AI",
-            fr: "Mistral AI"
-        },
-        "project.homelab.sidebar.tech.sharp": {
-            en: "Sharp (libvips)",
-            pt: "Sharp (libvips)",
-            lu: "Sharp (libvips)",
-            de: "Sharp (libvips)",
-            fr: "Sharp (libvips)"
-        },
-        "project.homelab.sidebar.tech.jellyfin": {
-            en: "Jellyfin",
-            pt: "Jellyfin",
-            lu: "Jellyfin",
-            de: "Jellyfin",
-            fr: "Jellyfin"
-        },
-        "project.homelab.sidebar.tech.arr": {
-            en: "Jellyfin, Immich, Nextcloud, Navidrome",
-            pt: "Jellyfin, Immich, Nextcloud, Navidrome",
-            lu: "Jellyfin, Immich, Nextcloud, Navidrome",
-            de: "Jellyfin, Immich, Nextcloud, Navidrome",
-            fr: "Jellyfin, Immich, Nextcloud, Navidrome"
-        },
-        "project.homelab.sidebar.features.custom": {
-            en: "6+ Custom Web Apps (Self-Built)",
-            pt: "6+ Aplicações Web Personalizadas (Desenvolvidas por mim)",
-            lu: "6+ Personaliséiert Web Apps (Selwer gebaut)",
-            de: "6+ Eigene Web-Apps (selbst entwickelt)",
-            fr: "6+ Applications web personnalisées (Auto-construites)"
-        },
-        "project.homelab.sidebar.features.sso": {
-            en: "Unified SSO System",
-            pt: "Sistema SSO Unificado",
-            lu: "Eenheetlech SSO System",
-            de: "Einheitliches SSO-System",
-            fr: "Système SSO unifié"
-        },
-        "project.homelab.sidebar.features.hybrid": {
-            en: "Hybrid ARM/x86 Architecture",
-            pt: "Arquitetura Híbrida ARM/x86",
-            lu: "Hybrid ARM/x86 Architektur",
-            de: "Hybride ARM/x86-Architektur",
-            fr: "Architecture hybride ARM/x86"
-        },
-        "project.homelab.sidebar.features.silent": {
-            en: "Silent Living Room Operation",
-            pt: "Funcionamento Silencioso na Sala",
-            lu: "Roueg Wunnzëmmer Operatioun",
-            de: "Leiser Wohnzimmerbetrieb",
-            fr: "Fonctionnement silencieux au salon"
-        },
-        "project.homelab.sidebar.features.dual": {
-            en: "K3s + Docker Compose (~15 services)",
-            pt: "K3s + Docker Compose (~15 serviços)",
-            lu: "K3s + Docker Compose (~15 Servicer)",
-            de: "K3s + Docker Compose (ca. 15 Services)",
-            fr: "K3s + Docker Compose (~15 services)"
-        },
-        "project.homelab.sidebar.features.wireguard": {
-            en: "WireGuard Secure Tunnel",
-            pt: "Túnel Seguro WireGuard",
-            lu: "WireGuard Sécheren Tunnel",
-            de: "WireGuard sicherer Tunnel",
-            fr: "Tunnel sécurisé WireGuard"
-        },
-        "project.homelab.sidebar.features.ai": {
-            en: "AI-Powered Content Processing",
-            pt: "Processamento de Conteúdo com IA",
-            lu: "AI-gestäerzte Inhaltsveraarbechtung",
-            de: "KI-gestützte Inhaltsverarbeitung",
-            fr: "Traitement de contenu par IA"
-        },
-        "project.homelab.sidebar.features.media": {
-            en: "Full Media Automation",
-            pt: "Automação Multimédia Completa",
-            lu: "Komplett Medien Automatiséierung",
-            de: "Vollständige Medienautomatisierung",
-            fr: "Automatisation multimédia complète"
-        },
-        "project.homelab.sidebar.features.offload": {
-            en: "Worker Offload Architecture",
-            pt: "Arquitetura de Offload de Workers",
-            lu: "Worker Offload Architektur",
-            de: "Worker-Offload-Architektur",
-            fr: "Architecture d'offload workers"
-        },
-        "project.homelab.sidebar.features.crowdsec": {
-            en: "CrowdSec Threat Detection",
-            pt: "Deteção de Ameaças CrowdSec",
-            lu: "CrowdSec Bedrohungserkennung",
-            de: "CrowdSec-Bedrohungserkennung",
-            fr: "Détection de menaces CrowdSec"
-        },
-        "project.homelab.sidebar.features.lowpower": {
-            en: "Low-Power ARM Design",
-            pt: "Design ARM de Baixo Consumo",
-            lu: "Niddreg-Verbrauch ARM Design",
-            de: "Stromsparendes ARM-Design",
-            fr: "Conception ARM basse consommation"
         },
         "project.homelab.sidebar.features.cli": {
             en: "Platform CLI for terminal workflows over VPN",
@@ -739,13 +312,6 @@
             de: "Aktuelles physisches Layout: ein kompaktes 10U-Rack",
             fr: "Disposition physique actuelle : un rack compact 10U"
         },
-        "project.homelab.hardware.body": {
-            en: "All on-site hardware is organized around the same real-world constraints that shaped the first version of the lab: quiet operation, low idle power, minimal cable mess, and hardware that earns its spot in the rack by solving an actual problem.",
-            pt: "Todo o hardware local está organizado em torno das mesmas limitações do mundo real que moldaram a primeira versão do lab: funcionamento silencioso, baixo consumo em idle, o mínimo de confusão com cabos e hardware que só ganha lugar no rack se resolver um problema real.",
-            lu: "All Hardware um Site ass ronderëm déiselwecht praktesch Aschränkunge organiséiert, déi schonn déi éischt Versioun vum Lab gepräägt hunn: rouege Betrib, niddrege Stroumverbrauch am Idle, sou wéineg Kabelchaos wéi méiglech, an Hardware, déi hir Plaz am Rack nëmme verdéngt, wann se e richtege Problem léist.",
-            de: "Die gesamte lokale Hardware ist nach denselben realen Einschränkungen organisiert, die schon die erste Version des Labs geprägt haben: leiser Betrieb, niedriger Idle-Verbrauch, möglichst wenig Kabelchaos und Hardware, die ihren Platz im Rack nur verdient, wenn sie ein echtes Problem löst.",
-            fr: "Tout le matériel sur site est organisé autour des mêmes contraintes réelles qui ont façonné la première version du lab : fonctionnement silencieux, faible consommation au repos, minimum de câbles en désordre, et du matériel qui mérite sa place dans le rack uniquement s'il résout un vrai problème."
-        },
         "project.homelab.section.what.core.title": {
             en: "Core Platform (Home Server)",
             pt: "Plataforma central (home server)",
@@ -761,18 +327,18 @@
             fr: "<strong>Plan de contrôle backend unifié</strong> : FastAPI + SQLAlchemy + Alembic + SQLite gèrent l'authentification, les permissions, l'enregistrement des apps, les journaux d'audit, l'orchestration IA et l'état partagé entre applications."
         },
         "project.homelab.section.what.core.auth": {
-            en: "<strong>Passwordless, federated login</strong>: passkeys (WebAuthn/FIDO2) are the primary sign-in, on top of a from-scratch OIDC provider and an OAuth 2.0 consent flow — so other apps and AI assistants can log in with the platform.",
-            pt: "<strong>Login sem palavra-passe e federado</strong>: as passkeys (WebAuthn/FIDO2) são o método principal de entrada, sobre um provedor OIDC feito de raiz e um fluxo de consentimento OAuth 2.0 — para que outras apps e assistentes de IA possam autenticar-se com a plataforma.",
-            lu: "<strong>Login ouni Passwuert a federéiert</strong>: Passkeys (WebAuthn/FIDO2) sinn de primäre Login, uewen op engem vun Null gebaute OIDC-Provider an engem OAuth 2.0 Zoustëmmungsfloss — sou datt aner Apps an AI-Assistenten sech mat der Plattform aloggen kënnen.",
-            de: "<strong>Passwortloses, föderiertes Login</strong>: Passkeys (WebAuthn/FIDO2) sind die primäre Anmeldung, dazu ein selbst gebauter OIDC-Provider und ein OAuth-2.0-Consent-Flow — damit sich andere Apps und KI-Assistenten mit der Plattform anmelden können.",
-            fr: "<strong>Connexion sans mot de passe et fédérée</strong> : les passkeys (WebAuthn/FIDO2) sont la connexion principale, au-dessus d'un fournisseur OIDC fait maison et d'un flux de consentement OAuth 2.0 — pour que d'autres apps et assistants IA puissent se connecter avec la plateforme."
+            en: "<strong>Passwordless, federated login</strong>: passkeys (WebAuthn/FIDO2) are the primary sign-in, on top of a from-scratch OIDC provider and an OAuth 2.0 consent flow - so other apps and AI assistants can log in with the platform.",
+            pt: "<strong>Login sem palavra-passe e federado</strong>: as passkeys (WebAuthn/FIDO2) são o método principal de entrada, sobre um provedor OIDC feito de raiz e um fluxo de consentimento OAuth 2.0 - para que outras apps e assistentes de IA possam autenticar-se com a plataforma.",
+            lu: "<strong>Login ouni Passwuert a federéiert</strong>: Passkeys (WebAuthn/FIDO2) sinn de primäre Login, uewen op engem vun Null gebaute OIDC-Provider an engem OAuth 2.0 Zoustëmmungsfloss - sou datt aner Apps an AI-Assistenten sech mat der Plattform aloggen kënnen.",
+            de: "<strong>Passwortloses, föderiertes Login</strong>: Passkeys (WebAuthn/FIDO2) sind die primäre Anmeldung, dazu ein selbst gebauter OIDC-Provider und ein OAuth-2.0-Consent-Flow - damit sich andere Apps und KI-Assistenten mit der Plattform anmelden können.",
+            fr: "<strong>Connexion sans mot de passe et fédérée</strong> : les passkeys (WebAuthn/FIDO2) sont la connexion principale, au-dessus d'un fournisseur OIDC fait maison et d'un flux de consentement OAuth 2.0 - pour que d'autres apps et assistants IA puissent se connecter avec la plateforme."
         },
         "project.homelab.section.what.core.surfaces": {
-            en: "<strong>Real-time and generative surfaces</strong>: self-hosted voice/video rooms (LiveKit/WebRTC) and an AI keyframe video generator that turns a start and end frame into a short clip — both behind the same SSO and edge security.",
-            pt: "<strong>Superfícies em tempo real e generativas</strong>: salas de voz/vídeo self-hosted (LiveKit/WebRTC) e um gerador de vídeo por keyframes de IA que transforma um frame inicial e final num clipe curto — ambos atrás do mesmo SSO e segurança de edge.",
-            lu: "<strong>Echtzäit- a generativ Flächen</strong>: self-hosted Voice-/Video-Raim (LiveKit/WebRTC) an en AI-Keyframe-Videogenerator deen aus engem Start- an Enn-Frame e kuerze Clip mécht — béid hannert deemselwechte SSO an Edge-Sécherheet.",
-            de: "<strong>Echtzeit- und generative Flächen</strong>: selbst gehostete Voice-/Video-Räume (LiveKit/WebRTC) und ein KI-Keyframe-Videogenerator, der aus einem Start- und Endframe einen kurzen Clip macht — beide hinter demselben SSO und Edge-Schutz.",
-            fr: "<strong>Surfaces temps réel et génératives</strong> : des salles voix/vidéo auto-hébergées (LiveKit/WebRTC) et un générateur vidéo par images-clés IA qui transforme une image de début et de fin en un court clip — toutes deux derrière le même SSO et la sécurité d'edge."
+            en: "<strong>Real-time and generative surfaces</strong>: self-hosted voice/video rooms (LiveKit/WebRTC) and an AI keyframe video generator that turns a start and end frame into a short clip - both behind the same SSO and edge security.",
+            pt: "<strong>Superfícies em tempo real e generativas</strong>: salas de voz/vídeo self-hosted (LiveKit/WebRTC) e um gerador de vídeo por keyframes de IA que transforma um frame inicial e final num clipe curto - ambos atrás do mesmo SSO e segurança de edge.",
+            lu: "<strong>Echtzäit- a generativ Flächen</strong>: self-hosted Voice-/Video-Raim (LiveKit/WebRTC) an en AI-Keyframe-Videogenerator deen aus engem Start- an Enn-Frame e kuerze Clip mécht - béid hannert deemselwechte SSO an Edge-Sécherheet.",
+            de: "<strong>Echtzeit- und generative Flächen</strong>: selbst gehostete Voice-/Video-Räume (LiveKit/WebRTC) und ein KI-Keyframe-Videogenerator, der aus einem Start- und Endframe einen kurzen Clip macht - beide hinter demselben SSO und Edge-Schutz.",
+            fr: "<strong>Surfaces temps réel et génératives</strong> : des salles voix/vidéo auto-hébergées (LiveKit/WebRTC) et un générateur vidéo par images-clés IA qui transforme une image de début et de fin en un court clip - toutes deux derrière le même SSO et la sécurité d'edge."
         },
         "project.homelab.section.what.core.suite": {
             en: "<strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery, task log, career workspace, voice/video rooms, an AI video generator, a mail surface, and a QR generator microservice.",
@@ -780,13 +346,6 @@
             lu: "<strong>Personaliséierte Produkt-Suite</strong>: Identitéits-Portal, App-Hub, Admin-Konsol, Content-Digest, Vault, Term-Mastery, Task-Log, Carrière-Workspace, Voice-/Video-Raim, en AI-Videogenerator, eng Mail-Fläch an e QR-Generator-Microservice.",
             de: "<strong>Eigene Produkt-Suite</strong>: Identitätsportal, App-Hub, Admin-Konsole, Content-Digest, Vault, Term-Mastery, Task-Log, Karriere-Workspace, Voice-/Video-Räume, ein KI-Videogenerator, eine Mail-Fläche und ein QR-Generator-Microservice.",
             fr: "<strong>Suite de produits maison</strong> : portail d'identité, hub d'apps, console d'admin, digest de contenu, vault, term-mastery, journal de tâches, espace carrière, salles voix/vidéo, un générateur vidéo IA, une surface mail et un microservice générateur de QR."
-        },
-        "project.homelab.section.what.core.compose": {
-            en: "<strong>Compose-first runtime</strong>: The home server still runs the main Docker Compose stack for day-to-day services and hot-reload development, while K3s is reserved for isolated microservices.",
-            pt: "<strong>Runtime orientado ao Compose</strong>: O home server continua a correr a stack principal em Docker Compose para os serviços do dia a dia e desenvolvimento com hot reload, enquanto o K3s fica reservado para microsserviços isolados.",
-            lu: "<strong>Compose-first Runtime</strong>: De Home Server leeft nach ëmmer mam Haapt-Docker-Compose-Stack fir Alldagsservicer a Hot-Reload-Entwécklung, wärend K3s fir isoléiert Microservices reservéiert ass.",
-            de: "<strong>Compose-first-Runtime</strong>: Der Home-Server betreibt weiterhin den Haupt-Docker-Compose-Stack für Alltagsdienste und Hot-Reload-Entwicklung, während K3s für isolierte Microservices reserviert bleibt.",
-            fr: "<strong>Runtime orientée Compose</strong> : Le serveur maison exécute toujours la stack Docker Compose principale pour les services du quotidien et le développement avec hot reload, tandis que K3s reste réservé aux microservices isolés."
         },
         "project.homelab.section.what.core.killswitch": {
             en: "<strong>Hard application kill switch</strong>: Every custom frontend is registered centrally, so disabling an app immediately blocks access even on direct URL visits.",
@@ -823,13 +382,6 @@
             de: "<strong>Security-Triage-Agent</strong>: Korreliert Edge-Alerts, Zugriffslogs, Sitzungen und genehmigungspflichtige Schreibaktionen für die Admin-Prüfung.",
             fr: "<strong>Agent de triage sécurité</strong> : Corrèle les alertes edge, logs d'accès, sessions et actions d'écriture soumises à approbation pour revue admin."
         },
-        "project.homelab.section.what.apps.offload": {
-            en: "<strong>Compute offload pattern</strong>: The laptop handles Playwright scraping, Sharp image optimization, SearXNG, and audio feature extraction, with local fallbacks on the home server.",
-            pt: "<strong>Padrão de offload computacional</strong>: O portátil trata do scraping com Playwright, otimização de imagem com Sharp, SearXNG e extração de características de áudio, com fallbacks locais no home server.",
-            lu: "<strong>Compute-Offload-Muster</strong>: De Laptop iwwerhëlt Playwright-Scraping, Bildoptimiséierung mat Sharp, SearXNG an d'Extraktioun vun Audio-Features, mat lokale Fallbacks um Home Server.",
-            de: "<strong>Compute-Offload-Muster</strong>: Der Laptop übernimmt Playwright-Scraping, Bildoptimierung mit Sharp, SearXNG und Audio-Feature-Extraktion, mit lokalen Fallbacks auf dem Home-Server.",
-            fr: "<strong>Modèle d'offload de calcul</strong> : Le laptop gère le scraping Playwright, l'optimisation d'image avec Sharp, SearXNG et l'extraction de caractéristiques audio, avec des fallbacks locaux sur le serveur maison."
-        },
         "project.homelab.section.what.apps.guardrails": {
             en: "<strong>Shared guardrails</strong>: Every agent runs behind kill switches, token/cost/runtime budgets, tool allowlists, concurrency caps, and blocked-action logging.",
             pt: "<strong>Guardrails partilhados</strong>: Cada agente corre atrás de kill switches, orçamentos de tokens/custos/runtime, allowlists de ferramentas, limites de concorrência e registo de ações bloqueadas.",
@@ -838,11 +390,11 @@
             fr: "<strong>Guardrails partagés</strong> : Chaque agent fonctionne derrière des kill switches, des budgets de jetons/coûts/runtime, des allowlists d'outils, des plafonds de concurrence et une journalisation des actions bloquées."
         },
         "project.homelab.section.what.apps.governance": {
-            en: "<strong>Governance triage agent</strong>: watches internal session, permission, and account anomalies with a graded action policy — low-risk fixes auto-execute, high-blast-radius actions enter a human approval queue.",
-            pt: "<strong>Agente de triagem de governança</strong>: vigia anomalias internas de sessões, permissões e contas com uma política de ações graduada — correções de baixo risco executam automaticamente, ações de grande impacto entram numa fila de aprovação humana.",
-            lu: "<strong>Governance-Triage-Agent</strong>: iwwerwaacht intern Anomalien bei Sessiounen, Permissiounen a Konten mat enger graduéierter Aktiounspolitik — Korrekturen mat klengem Risiko lafen automatesch, Aktiounen mat groussem Impakt kommen an eng mënschlech Genehmegungs-Schlaang.",
-            de: "<strong>Governance-Triage-Agent</strong>: überwacht interne Anomalien bei Sessions, Berechtigungen und Konten mit einer abgestuften Aktionspolitik — risikoarme Korrekturen laufen automatisch, Aktionen mit großer Tragweite landen in einer menschlichen Freigabe-Warteschlange.",
-            fr: "<strong>Agent de triage de gouvernance</strong> : surveille les anomalies internes de sessions, permissions et comptes avec une politique d'actions graduée — les correctifs à faible risque s'exécutent automatiquement, les actions à fort impact passent par une file d'approbation humaine."
+            en: "<strong>Governance triage agent</strong>: watches internal session, permission, and account anomalies with a graded action policy - low-risk fixes auto-execute, high-blast-radius actions enter a human approval queue.",
+            pt: "<strong>Agente de triagem de governança</strong>: vigia anomalias internas de sessões, permissões e contas com uma política de ações graduada - correções de baixo risco executam automaticamente, ações de grande impacto entram numa fila de aprovação humana.",
+            lu: "<strong>Governance-Triage-Agent</strong>: iwwerwaacht intern Anomalien bei Sessiounen, Permissiounen a Konten mat enger graduéierter Aktiounspolitik - Korrekturen mat klengem Risiko lafen automatesch, Aktiounen mat groussem Impakt kommen an eng mënschlech Genehmegungs-Schlaang.",
+            de: "<strong>Governance-Triage-Agent</strong>: überwacht interne Anomalien bei Sessions, Berechtigungen und Konten mit einer abgestuften Aktionspolitik - risikoarme Korrekturen laufen automatisch, Aktionen mit großer Tragweite landen in einer menschlichen Freigabe-Warteschlange.",
+            fr: "<strong>Agent de triage de gouvernance</strong> : surveille les anomalies internes de sessions, permissions et comptes avec une politique d'actions graduée - les correctifs à faible risque s'exécutent automatiquement, les actions à fort impact passent par une file d'approbation humaine."
         },
         "project.homelab.section.what.apps.infra": {
             en: "<strong>Infrastructure monitoring agent</strong>: runs probes across nodes, containers, temperatures, and backup freshness, then an optional AI layer triages findings into a recovery-aware signal feed.",
@@ -1155,11 +707,18 @@
             fr: "machines qui n'en font qu'une"
         },
         "project.homelab.glance.uptime.label": {
-            en: "online since March 2025",
-            pt: "online desde março de 2025",
-            lu: "online zënter Mäerz 2025",
-            de: "online seit März 2025",
-            fr: "en ligne depuis mars 2025"
+            en: "maintained since March 2025",
+            pt: "mantido desde março de 2025",
+            lu: "zënter Mäerz 2025 gepflegt",
+            de: "seit März 2025 gepflegt",
+            fr: "maintenu depuis mars 2025"
+        },
+        "project.homelab.glance.status.value": {
+            en: "Active",
+            pt: "Ativo",
+            lu: "Aktiv",
+            de: "Aktiv",
+            fr: "Actif"
         },
         "project.homelab.glance.apps.label": {
             en: "custom web apps I built",
@@ -1206,11 +765,11 @@
             fr: "Tunnel WireGuard"
         },
         "project.homelab.arch.note": {
-            en: "A Tailscale mesh overlays every node for admin access — only the WireGuard tunnel ever carries public traffic.",
-            pt: "Uma mesh Tailscale cobre todos os nós para acesso de administração — só o túnel WireGuard transporta tráfego público.",
-            lu: "Eng Tailscale-Mesh deckt all Node fir den Admin-Zougang of — nëmmen den WireGuard-Tunnel dréit ëffentleche Verkéier.",
-            de: "Ein Tailscale-Mesh überlagert alle Knoten für den Admin-Zugriff — nur der WireGuard-Tunnel trägt öffentlichen Traffic.",
-            fr: "Un mesh Tailscale couvre tous les nœuds pour l'accès admin — seul le tunnel WireGuard transporte le trafic public."
+            en: "A Tailscale mesh overlays every node for admin access - only the WireGuard tunnel ever carries public traffic.",
+            pt: "Uma mesh Tailscale cobre todos os nós para acesso de administração - só o túnel WireGuard transporta tráfego público.",
+            lu: "Eng Tailscale-Mesh deckt all Node fir den Admin-Zougang of - nëmmen den WireGuard-Tunnel dréit ëffentleche Verkéier.",
+            de: "Ein Tailscale-Mesh überlagert alle Knoten für den Admin-Zugriff - nur der WireGuard-Tunnel trägt öffentlichen Traffic.",
+            fr: "Un mesh Tailscale couvre tous les nœuds pour l'accès admin - seul le tunnel WireGuard transporte le trafic public."
         },
 
         // --- Plain-English "what it does" cards (overview) ---
@@ -1229,11 +788,11 @@
             fr: "Ton propre Netflix, Photos et Drive"
         },
         "project.homelab.does.media.desc": {
-            en: "Stream films, back up phone photos, sync files and play music — self-hosted, no monthly subscriptions.",
-            pt: "Vê filmes, faz backup das fotos do telemóvel, sincroniza ficheiros e ouve música — tudo self-hosted, sem subscrições mensais.",
-            lu: "Filmer kucken, Telefon-Fotoen sécheren, Fichiere synchroniséieren a Musek lauschteren — alles self-hosted, ouni méintlech Abonnementer.",
-            de: "Filme streamen, Handy-Fotos sichern, Dateien synchronisieren und Musik hören — self-hosted, ohne monatliche Abos.",
-            fr: "Regarder des films, sauvegarder les photos du téléphone, synchroniser des fichiers et écouter de la musique — self-hosted, sans abonnements mensuels."
+            en: "Stream films, back up phone photos, sync files and play music - self-hosted, no monthly subscriptions.",
+            pt: "Vê filmes, faz backup das fotos do telemóvel, sincroniza ficheiros e ouve música - tudo self-hosted, sem subscrições mensais.",
+            lu: "Filmer kucken, Telefon-Fotoen sécheren, Fichiere synchroniséieren a Musek lauschteren - alles self-hosted, ouni méintlech Abonnementer.",
+            de: "Filme streamen, Handy-Fotos sichern, Dateien synchronisieren und Musik hören - self-hosted, ohne monatliche Abos.",
+            fr: "Regarder des films, sauvegarder les photos du téléphone, synchroniser des fichiers et écouter de la musique - self-hosted, sans abonnements mensuels."
         },
         "project.homelab.does.apps.title": {
             en: "A suite of web apps I built",
@@ -1243,11 +802,11 @@
             fr: "Toute une série d'apps web que j'ai construites"
         },
         "project.homelab.does.apps.desc": {
-            en: "Login, an app hub, a vault, a career workspace, voice/video rooms, even an AI video generator — all on one secure backend.",
-            pt: "Login, um hub de apps, um vault, um workspace de carreira, salas de voz/vídeo, até um gerador de vídeo por IA — tudo num backend seguro.",
-            lu: "Login, en App-Hub, e Vault, e Carrière-Workspace, Voice-/Video-Raim, souguer en AI-Videogenerator — alles op engem sécheren Backend.",
-            de: "Login, ein App-Hub, ein Vault, ein Karriere-Workspace, Voice-/Video-Räume, sogar ein KI-Videogenerator — alles auf einem sicheren Backend.",
-            fr: "Connexion, un hub d'apps, un vault, un espace carrière, des salles voix/vidéo, et même un générateur vidéo IA — le tout sur un backend sécurisé."
+            en: "Login, an app hub, a vault, a career workspace, voice/video rooms, even an AI video generator - all on one secure backend.",
+            pt: "Login, um hub de apps, um vault, um workspace de carreira, salas de voz/vídeo, até um gerador de vídeo por IA - tudo num backend seguro.",
+            lu: "Login, en App-Hub, e Vault, e Carrière-Workspace, Voice-/Video-Raim, souguer en AI-Videogenerator - alles op engem sécheren Backend.",
+            de: "Login, ein App-Hub, ein Vault, ein Karriere-Workspace, Voice-/Video-Räume, sogar ein KI-Videogenerator - alles auf einem sicheren Backend.",
+            fr: "Connexion, un hub d'apps, un vault, un espace carrière, des salles voix/vidéo, et même un générateur vidéo IA - le tout sur un backend sécurisé."
         },
         "project.homelab.does.agents.title": {
             en: "AI agents that do real work",
@@ -1271,11 +830,11 @@
             fr: "Verrouillé et sans mot de passe"
         },
         "project.homelab.does.secure.desc": {
-            en: "Sign in with Face ID or a passkey, and nothing faces the internet directly — every request passes through a private, filtered tunnel.",
-            pt: "Entra com Face ID ou uma passkey, e nada está exposto diretamente à internet — cada pedido passa por um túnel privado e filtrado.",
-            lu: "Logg dech mat Face ID oder enger Passkey an, an näischt ass direkt am Internet ausgesat — all Ufro geet duerch e private, gefilterten Tunnel.",
-            de: "Melde dich mit Face ID oder einem Passkey an, und nichts ist direkt im Internet exponiert — jede Anfrage läuft durch einen privaten, gefilterten Tunnel.",
-            fr: "Connecte-toi avec Face ID ou une passkey, et rien n'est exposé directement à internet — chaque requête passe par un tunnel privé et filtré."
+            en: "Sign in with Face ID or a passkey, and nothing faces the internet directly - every request passes through a private, filtered tunnel.",
+            pt: "Entra com Face ID ou uma passkey, e nada está exposto diretamente à internet - cada pedido passa por um túnel privado e filtrado.",
+            lu: "Logg dech mat Face ID oder enger Passkey an, an näischt ass direkt am Internet ausgesat - all Ufro geet duerch e private, gefilterten Tunnel.",
+            de: "Melde dich mit Face ID oder einem Passkey an, und nichts ist direkt im Internet exponiert - jede Anfrage läuft durch einen privaten, gefilterten Tunnel.",
+            fr: "Connecte-toi avec Face ID ou une passkey, et rien n'est exposé directement à internet - chaque requête passe par un tunnel privé et filtré."
         },
 
         // --- What's next roadmap cards ---

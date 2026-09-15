@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
+    <title>Assemblash | VidGuiCode</title>
+    <meta name="description" content="Assemblash is an open-source, local-first visual document engine for people and AI agents.">
+    <link rel="canonical" href="https://vidguicode.github.io/projects/project-assemblash">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vidguicode.github.io/projects/project-assemblash">
+    <meta property="og:title" content="Assemblash | VidGuiCode">
+    <meta property="og:description" content="A local-first visual document engine with editable documents for people and AI agents.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/assemblash/assemblash-reveal.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidguicode.github.io/projects/project-assemblash">
+    <meta name="twitter:title" content="Assemblash | VidGuiCode">
+    <meta name="twitter:description" content="A local-first visual document engine with editable documents for people and AI agents.">
+    <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/projects/assemblash/assemblash-reveal.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="../assets/js/icons.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/flag-icons-minimal.css">
+    <script src="../assets/js/fuse.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logos/vidguicode-favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/img/logos/vidguicode-favicon.svg">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../assets/js/translations/core.js"></script>
+    <script src="../assets/js/translations/project-assemblash.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/project-view.js" defer></script>
+    <script src="../assets/js/projects-data.js"></script>
+    <script src="../assets/js/certifications-data.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/certifications-techstack.js"></script>
+    <style>
+        .assemblash-title {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .assemblash-title img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .assemblash-github {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Assemblash brand accent. #ef3325 is the red of the logo mark, so
+           this page's accents match the product instead of the site default
+           blue/green. Scoped to <main> on purpose: the shared navbar, search
+           overlay and focus rings keep the site-wide palette.
+           --led-amber and --rack-rail are left alone, so the architecture
+           diagram still distinguishes external and internet units. */
+        .assemblash-page main {
+            --accent-brand: #d62b1e;    /* light theme: darkened for contrast on the pale background */
+            --accent-brand-rgb: 214, 43, 30;
+            --accent-primary: var(--accent-brand);
+            --accent-secondary: var(--accent-brand);
+            --led-green: var(--accent-brand);
+        }
+
+        [data-theme="dark"] .assemblash-page main {
+            --accent-brand: #ef3325;    /* brand red, straight from assemblash-mark.svg */
+            --accent-brand-rgb: 239, 51, 37;
+        }
+
+        .assemblash-page .accent-icon,
+        .assemblash-page .tech-stack-list svg {
+            color: var(--accent-brand, var(--text-primary));
+        }
+
+        .assemblash-github i { display: block; }
+
+        .assemblash-updated {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .assemblash-figure-link { display: block; }
+
+        /* ── "How it fits together" ────────────────────────────────────
+           A purpose-built diagram, replacing the shared .arch-* rack
+           component. That component is a server-rack metaphor (LED strip,
+           "units", rack rails) reused on all 12 project pages; on a
+           document engine it is decoration that says nothing, and it drew
+           the section's actual claim as three columns of similar boxes.
+           The claim is that every interface funnels through one validated
+           layer, so here the funnel is literal: five entry points, a
+           narrowing, one gate, then what comes out. Scoped to
+           .assemblash-page so the other 11 pages keep the shared rack. */
+        .assemblash-page .ax-diagram {
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            padding: clamp(1rem, 3vw, 1.75rem);
+            margin-top: 1.25rem;
+        }
+
+        .assemblash-page .ax-kicker {
+            display: block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: var(--fs-xs);
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-brand);
+            margin-bottom: 1.35rem;
+        }
+
+        .assemblash-page .ax-tier-label {
+            display: block;
+            font-size: var(--fs-xs);
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.6rem;
+        }
+
+        /* Five entry points. */
+        .assemblash-page .ax-ins {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.5rem;
+        }
+
+        .assemblash-page .ax-in {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            min-width: 0;
+            padding: 0.75rem 0.8rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-top: 2px solid var(--accent-brand);
+        }
+
+        .assemblash-page .ax-in-name,
+        .assemblash-page .ax-out-name {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: var(--fs-small);
+            color: var(--text-primary);
+        }
+
+        /* icons.js swaps <i data-lucide> for an <svg> and carries the class
+           across, so this styles the generated svg directly. Each icon names
+           the kind of thing the card is, so the row is scannable without
+           reading it. Decorative: the label beside it carries the meaning. */
+        .assemblash-page .ax-icon,
+        .assemblash-page .ax-gate-icon {
+            width: 1rem;
+            height: 1rem;
+            flex: 0 0 1rem;
+            color: var(--accent-brand);
+        }
+
+        .assemblash-page .ax-gate-icon {
+            width: 1.15rem;
+            height: 1.15rem;
+            flex: 0 0 1.15rem;
+        }
+
+        /* Monospace marks real commands, paths and identifiers, and nothing
+           else. Prose stays in the body face, so the two never trade places. */
+        .assemblash-page .ax-mono,
+        .assemblash-page .ax-check,
+        .assemblash-page .ax-gate-name {
+            font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+        }
+
+        .assemblash-page .ax-mono {
+            font-size: 0.7rem;
+            color: var(--accent-brand);
+            overflow-wrap: anywhere;
+        }
+
+        .assemblash-page .ax-in-spec,
+        .assemblash-page .ax-out-spec {
+            font-size: 0.72rem;
+            line-height: 1.45;
+            color: var(--text-secondary);
+        }
+
+        /* The narrowing. Everything above converges into the gate below. */
+        .assemblash-page .ax-funnel {
+            position: relative;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* The tint deepens downward, so the shape reads as flow heading
+           into the gate rather than as a flat wedge. */
+        .assemblash-page .ax-funnel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(var(--accent-brand-rgb), 0.05),
+                rgba(var(--accent-brand-rgb), 0.22)
+            );
+            clip-path: polygon(0 0, 100% 0, 63% 100%, 37% 100%);
+        }
+
+        .assemblash-page .ax-funnel-label {
+            position: relative;
+            padding: 0.15rem 0.6rem;
+            background: var(--card-bg);
+            font-size: var(--fs-xs);
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--accent-brand);
+        }
+
+        /* The gate. Deliberately the loudest thing in the diagram. */
+        .assemblash-page .ax-gate {
+            border: 2px solid var(--accent-brand);
+            background: rgba(var(--accent-brand-rgb), 0.07);
+        }
+
+        .assemblash-page .ax-gate-top {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.6rem 1rem;
+            padding: 0.85rem 1rem;
+        }
+
+        /* The product name reads as an identifier; its role reads as prose. */
+        .assemblash-page .ax-gate-id {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.2rem 0.6rem;
+            min-width: 0;
+        }
+
+        .assemblash-page .ax-gate-name {
+            font-size: var(--fs-small);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .assemblash-page .ax-gate-role {
+            font-size: var(--fs-small);
+            color: var(--text-secondary);
+        }
+
+        .assemblash-page .ax-gate-checks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+
+        .assemblash-page .ax-check {
+            padding: 0.2rem 0.5rem;
+            font-size: 0.7rem;
+            color: var(--accent-brand);
+            border: 1px solid rgba(var(--accent-brand-rgb), 0.5);
+        }
+
+        .assemblash-page .ax-gate-verdict {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            border-top: 1px solid rgba(var(--accent-brand-rgb), 0.3);
+        }
+
+        .assemblash-page .ax-verdict-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: var(--fs-small);
+            color: var(--text-primary);
+        }
+
+        .assemblash-page .ax-verdict-meta {
+            font-size: var(--fs-small);
+            color: var(--text-secondary);
+        }
+
+        .assemblash-page .ax-verdict-meta::before {
+            content: "·";
+            margin-right: 0.5rem;
+            color: var(--accent-brand);
+        }
+
+        /* One line out of the gate, into the results. */
+        .assemblash-page .ax-split {
+            position: relative;
+            height: 36px;
+        }
+
+        .assemblash-page .ax-split::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 9px;
+            width: 2px;
+            margin-left: -1px;
+            background: var(--accent-brand);
+        }
+
+        .assemblash-page .ax-split::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 2px;
+            width: 9px;
+            height: 9px;
+            margin-left: -5px;
+            border-right: 2px solid var(--accent-brand);
+            border-bottom: 2px solid var(--accent-brand);
+            transform: rotate(45deg);
+        }
+
+        .assemblash-page .ax-outs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+
+        .assemblash-page .ax-out {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            min-width: 0;
+            padding: 0.75rem 0.85rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--accent-brand);
+        }
+
+        .assemblash-page .ax-note {
+            margin-top: 1.35rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: var(--fs-small);
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 860px) {
+            .assemblash-page .ax-ins { grid-template-columns: repeat(2, 1fr); }
+            .assemblash-page .ax-ins .ax-in:last-child { grid-column: 1 / -1; }
+            .assemblash-page .ax-outs { grid-template-columns: 1fr; }
+            .assemblash-page .ax-funnel { height: 46px; }
+            .assemblash-page .ax-funnel::before { clip-path: polygon(0 0, 100% 0, 72% 100%, 28% 100%); }
+        }
+
+        @media (max-width: 520px) {
+            .assemblash-page .ax-ins { grid-template-columns: 1fr; }
+            .assemblash-page .ax-ins .ax-in:last-child { grid-column: auto; }
+            .assemblash-page .ax-gate-top { justify-content: flex-start; }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .assemblash-page .ax-in,
+            .assemblash-page .ax-out { transition: border-color 0.2s ease; }
+            .assemblash-page .ax-in:hover,
+            .assemblash-page .ax-out:hover { border-color: var(--accent-brand); }
+        }
+    </style>
+</head>
+<body class="assemblash-page" data-view="overview">
+    <div class="grid-background"></div>
+    <div id="search-container"></div>
+    <div id="navbar-container"></div>
+
+    <main class="container" style="padding-top: 100px;">
+        <a href="../projects" class="back-link">
+            <i data-lucide="arrow-left"></i>
+            <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
+        </a>
+
+        <section class="project-hero">
+            <div class="project-title-group">
+                <div class="badge" data-i18n="project.assemblash.badge">RELEASED · V1.8.0</div>
+                <h1 class="assemblash-title"><img src="../assets/img/projects/assemblash/assemblash-mark.svg" width="64" height="64" alt="Assemblash logo"> <span>Assemblash</span></h1>
+                <p class="subtitle" data-i18n="project.assemblash.subtitle">A local-first visual document engine where people and AI agents can work on the same editable document.</p>
+                <p style="margin-top: 1rem;">
+                    <a class="btn primary assemblash-github" href="https://github.com/VidGuiCode/assemblash" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="github"></i>
+                        <span data-i18n="project.assemblash.github">Open source on GitHub</span>
+                    </a>
+                </p>
+                <p class="assemblash-updated">
+                    <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>12/09/2026</span>
+                </p>
+            </div>
+        </section>
+
+        <section class="project-glance">
+            <div class="view-switch-row">
+                <div class="view-toggle" role="group" aria-label="View mode">
+                    <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
+                    <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
+                </div>
+                <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view, built for everyone</span>
+                <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
+            </div>
+
+            <div class="glance-grid">
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">5</div>
+                    <div class="glance-label" data-i18n="project.assemblash.glance.interfaces.label">ways to open the same document</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">6</div>
+                    <div class="glance-label" data-i18n="project.assemblash.glance.platforms.label">platforms built and tested every release</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">0</div>
+                    <div class="glance-label" data-i18n="project.assemblash.glance.cloud.label">accounts or AI providers required</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led"></span>
+                    <div class="glance-num">1.8.0</div>
+                    <div class="glance-label" data-i18n="project.assemblash.glance.release.label">current release, same document schema since 1.0</div>
+                </div>
+            </div>
+
+            <h2 data-i18n="project.assemblash.arch.title">How it fits together</h2>
+            <div class="ax-diagram">
+                <span class="ax-kicker" data-i18n="project.assemblash.arch.strip">One operation layer</span>
+
+                <div class="ax-tier">
+                    <span class="ax-tier-label" data-i18n="project.assemblash.arch.tier.in">Five ways in</span>
+                    <div class="ax-ins">
+                        <div class="ax-in">
+                            <span class="ax-in-name"><i data-lucide="layout" class="ax-icon" aria-hidden="true"></i><span data-i18n="project.assemblash.arch.editor">Reference editor</span></span>
+                            <span class="ax-mono">TypeScript</span>
+                            <span class="ax-in-spec" data-i18n="project.assemblash.arch.editor.spec">in your browser, served by the binary</span>
+                        </div>
+                        <div class="ax-in">
+                            <span class="ax-in-name"><i data-lucide="terminal" class="ax-icon" aria-hidden="true"></i><span>CLI</span></span>
+                            <span class="ax-mono">assemblash</span>
+                            <span class="ax-in-spec" data-i18n="project.assemblash.arch.cli.spec">shell scripts and local workflows</span>
+                        </div>
+                        <div class="ax-in">
+                            <span class="ax-in-name"><i data-lucide="globe" class="ax-icon" aria-hidden="true"></i><span>HTTP API</span></span>
+                            <span class="ax-mono">assemblash serve</span>
+                            <span class="ax-in-spec" data-i18n="project.assemblash.arch.http.spec">a local endpoint on 127.0.0.1</span>
+                        </div>
+                        <div class="ax-in">
+                            <span class="ax-in-name"><i data-lucide="box" class="ax-icon" aria-hidden="true"></i><span>Rust API</span></span>
+                            <span class="ax-mono">assemblash-core</span>
+                            <span class="ax-in-spec" data-i18n="project.assemblash.arch.rust.spec">embed the engine in your own program</span>
+                        </div>
+                        <div class="ax-in">
+                            <span class="ax-in-name"><i data-lucide="bot" class="ax-icon" aria-hidden="true"></i><span>MCP server</span></span>
+                            <span class="ax-mono">assemblash mcp</span>
+                            <span class="ax-in-spec" data-i18n="project.assemblash.arch.mcp.spec">AI agents, over the Model Context Protocol</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ax-funnel">
+                    <span class="ax-funnel-label" data-i18n="project.assemblash.arch.conn.in">same operations</span>
+                </div>
+
+                <div class="ax-gate">
+                    <div class="ax-gate-top">
+                        <div class="ax-gate-id">
+                            <i data-lucide="shield-check" class="ax-gate-icon" aria-hidden="true"></i><span class="ax-gate-name">assemblash-core</span>
+                            <span class="ax-gate-role" data-i18n="project.assemblash.arch.rack">validated operation layer</span>
+                        </div>
+                        <div class="ax-gate-checks">
+                            <span class="ax-check">validate</span>
+                            <span class="ax-check">dryRun</span>
+                            <span class="ax-check">expectedVersion</span>
+                        </div>
+                    </div>
+                    <div class="ax-gate-verdict">
+                        <span class="ax-verdict-name" data-i18n="project.assemblash.arch.ops">Typed operations</span>
+                        <span class="ax-verdict-meta" data-i18n="project.assemblash.arch.ops.meta">refuse or commit</span>
+                    </div>
+                </div>
+
+                <div class="ax-split" aria-hidden="true"></div>
+
+                <div class="ax-tier">
+                    <span class="ax-tier-label" data-i18n="project.assemblash.arch.tier.out">One document, one history</span>
+                    <div class="ax-outs">
+                        <div class="ax-out">
+                            <span class="ax-out-name"><i data-lucide="file-code-2" class="ax-icon" aria-hidden="true"></i><span data-i18n="project.assemblash.arch.document">Document + history</span></span>
+                            <span class="ax-mono">document.json · assets/ · history/</span>
+                            <span class="ax-out-spec" data-i18n="project.assemblash.arch.document.spec">plain files you can read, diff and back up</span>
+                        </div>
+                        <div class="ax-out">
+                            <span class="ax-out-name"><i data-lucide="clock" class="ax-icon" aria-hidden="true"></i><span data-i18n="project.assemblash.arch.journal">Journal</span></span>
+                            <span class="ax-mono">history/</span>
+                            <span class="ax-out-spec"><span data-i18n="project.assemblash.arch.journal.spec">undo and redo across restarts</span>, <span data-i18n="project.assemblash.arch.journal.meta">with its actor</span></span>
+                        </div>
+                        <div class="ax-out">
+                            <span class="ax-out-name"><i data-lucide="image" class="ax-icon" aria-hidden="true"></i><span data-i18n="project.assemblash.arch.render">Deterministic renderer</span></span>
+                            <span class="ax-mono">resvg</span>
+                            <span class="ax-out-spec" data-i18n="project.assemblash.arch.render.spec">PNG and SVG export · pinned fonts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="ax-note" data-i18n="project.assemblash.arch.note">Nothing goes around this gate. A click in the editor, a shell command, an HTTP request and an MCP tool call all become the same validated operation, and each one lands in the history with the name of whoever made it.</p>
+            </div>
+
+            <div class="plain-only">
+                <h2 data-i18n="project.assemblash.does.title">What it actually does</h2>
+                <div class="does-grid">
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="layers"></i></div>
+                        <h3 data-i18n="project.assemblash.does.editable.title">Files stay editable</h3>
+                        <p data-i18n="project.assemblash.does.editable.desc">Text, images, shapes and groups stay separate pieces. You can reopen the file next week and move things around instead of starting the whole design again.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="bot"></i></div>
+                        <h3 data-i18n="project.assemblash.does.agents.title">People and agents, one file</h3>
+                        <p data-i18n="project.assemblash.does.agents.desc">An AI agent can draft a design on another machine and hand it over; you open the same file and finish it by hand. Every change is recorded and can be undone.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="hard-drive"></i></div>
+                        <h3 data-i18n="project.assemblash.does.local.title">Runs on your own machine</h3>
+                        <p data-i18n="project.assemblash.does.local.desc">One small program you download and run. Creating, editing and exporting all work offline. No sign-up, no subscription, and nothing of yours sits on someone else's server.</p>
+                    </div>
+                    <div class="does-card">
+                        <div class="does-icon"><i data-lucide="copy"></i></div>
+                        <h3 data-i18n="project.assemblash.does.repeat.title">Templates and variants</h3>
+                        <p data-i18n="project.assemblash.does.repeat.desc">Turn a finished design into a template with named slots, then fill it in again for every version you need. You get the same result on Windows, Linux or macOS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="project-meta-grid">
+            <article>
+                <div class="card">
+                    <i data-lucide="layers" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <div class="plain-only">
+                        <h2 data-i18n="project.assemblash.intro.title">What it is</h2>
+                        <p data-i18n="project.assemblash.intro.p1">Assemblash is a local-first, open-source option for Canva-style graphics, templates and repeatable visual assets. It covers less ground than Canva, on purpose. The point is that a document stays structured and editable, on your own machine.</p>
+                        <p data-i18n="project.assemblash.intro.p2">The idea started when I needed to work on a design away from home, without my laptop or GIMP in front of me. Canva was there, but it is closed source and a few of the features I wanted sat behind a paid plan. I also could not find anything where my AI agents could put together a first draft that was still editable afterwards. So I built Assemblash. An agent can work on another machine and send me a project, I fine-tune it, copy it to my laptop and export it again, without starting over from prompts or being handed a flat image.</p>
+                    </div>
+
+                    <figure style="margin: 2rem 0;">
+                        <a class="assemblash-figure-link" href="../assets/img/projects/assemblash/assemblash-reveal.webp" target="_blank" rel="noopener noreferrer" onclick="openImageModal('../assets/img/projects/assemblash/assemblash-reveal.webp', 'Assemblash v1.4.0 project image, created with Assemblash'); return false;" data-i18n-title="project.assemblash.figure.open" title="Open the Assemblash v1.4.0 project image" aria-label="Open the Assemblash v1.4.0 project image">
+                            <img src="../assets/img/projects/assemblash/assemblash-reveal.webp" width="1600" height="900" loading="lazy" alt="Assemblash v1.4.0 project image, created with Assemblash" style="display: block; width: 100%; height: auto; border: 1px solid var(--border-color);">
+                        </a>
+                        <figcaption style="margin-top: 0.75rem; color: var(--text-secondary);" data-i18n="project.assemblash.figure.caption">The v1.4.0 project graphic was composed in Assemblash. I keep the editable project here as a real example.</figcaption>
+                    </figure>
+
+                    <div class="tech-only">
+                        <h2 data-i18n="project.assemblash.technical.motivation.title">The handoff problem</h2>
+                        <p data-i18n="project.assemblash.technical.motivation.p1">The hard part was never image generation, it was the handoff. My agents run on other machines, and I still want to adjust the result visually on my laptop. A flat PNG breaks that handoff, and re-prompting for small corrections is slow. Assemblash keeps the document model, assets, layers and operation history portable, so an agent-generated draft and my manual edits stay the same project.</p>
+
+                        <h2 data-i18n="project.assemblash.workflow.title">One document, several ways to work on it</h2>
+                        <p data-i18n="project.assemblash.workflow.p1">A person can inspect and refine a composition in the editor. A script, application, or AI agent can inspect layers, apply an operation, render a preview, and export through the CLI, API, or MCP.</p>
+                        <ul class="feature-list">
+                            <li data-i18n="project.assemblash.workflow.item1">Structured layers, groups, assets, templates, and reusable styles</li>
+                            <li data-i18n="project.assemblash.workflow.item2">Editable history: operations can be inspected and undone</li>
+                            <li data-i18n="project.assemblash.workflow.item3">PNG and SVG export without depending on a cloud service</li>
+                        </ul>
+
+                        <h2 data-i18n="project.assemblash.stack.title">What's inside</h2>
+                        <div class="stack-diagram">
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="box"></i><h3 data-i18n="project.assemblash.stack.core.title">Document model - assemblash-core</h3></div>
+                                <div class="stack-chips"><span>Rust</span><span>serde JSON</span><span>schemaVersion 1</span><span>stable IDs</span><span>presets</span><span>templates</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.assemblash.stack.core.layers" data-i18n-html><strong>Layer tree</strong>: canvas dimensions and background, plus text, raster image, SVG, shape (rectangle, ellipse, line) and nested group layers with position, size, rotation, scale, opacity, visibility and ordering.</li>
+                                    <li data-i18n="project.assemblash.stack.core.identity" data-i18n-html><strong>Stable identity</strong>: every layer keeps a stable ID plus metadata, locking, duplication, grouping and ungrouping, so a script can address the same element across sessions.</li>
+                                    <li data-i18n="project.assemblash.stack.core.layout" data-i18n-html><strong>Layout queries</strong>: alignment, centering, distribution, snapping, bounds and overlap queries answer the same way from the CLI, the HTTP API and MCP.</li>
+                                    <li data-i18n="project.assemblash.stack.core.reuse" data-i18n-html><strong>Reuse primitives</strong>: named presets, authorable templates, named slots and deterministic variant batches turn one composition into a repeatable set.</li>
+                                    <li data-i18n="project.assemblash.stack.core.files" data-i18n-html><strong>Ordinary files</strong>: a project is <code>document.json</code>, <code>assets/</code> and <code>history/</code>. JSON persistence preserves unknown fields, and the contracts are published as schemas.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="git-branch"></i><h3 data-i18n="project.assemblash.stack.ops.title">Operation layer and history</h3></div>
+                                <div class="stack-chips"><span>typed</span><span>validated</span><span>journalled</span><span>dryRun</span><span>expectedVersion</span><span>undo/redo</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.assemblash.stack.ops.transaction" data-i18n-html><strong>One transactional path</strong>: every mutation goes through the same operation layer, and a refused operation leaves the document byte-for-byte unchanged.</li>
+                                    <li data-i18n="project.assemblash.stack.ops.journal" data-i18n-html><strong>Attributed journal</strong>: successful operations are recorded with their actor and transaction ID, and can be undone or redone across restarts.</li>
+                                    <li data-i18n="project.assemblash.stack.ops.version" data-i18n-html><strong>Conflict and preview control</strong>: expected-version checks stop a stale client overwriting newer work, and a dry run shows what a mutation would do without committing it.</li>
+                                    <li data-i18n="project.assemblash.stack.ops.protection" data-i18n-html><strong>Enforced protection</strong>: <code>locked</code>, <code>protected</code> and <code>readOnly</code> layers are enforced in the engine rather than hidden behind UI controls, and unknown top-level properties are refused instead of silently discarded.</li>
+                                    <li data-i18n="project.assemblash.stack.ops.boundary" data-i18n-html><strong>Filesystem boundary</strong>: project and asset paths stay inside the configured boundary, and imported SVGs are sanitized before they enter the asset store.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="network"></i><h3 data-i18n="project.assemblash.stack.interfaces.title">Five interfaces, one engine</h3></div>
+                                <div class="stack-chips"><span>TypeScript editor</span><span>CLI</span><span>HTTP API</span><span>Rust crates</span><span>MCP</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.assemblash.stack.interfaces.reference" data-i18n-html><strong>The editor has no privileges</strong>: it is a reference client. Its edits, CLI commands, HTTP requests and MCP tool calls all compile to the same operations, so no interface can do something the others cannot review or undo.</li>
+                                    <li data-i18n="project.assemblash.stack.interfaces.serve" data-i18n-html><strong>Local HTTP server</strong>: <code>assemblash serve</code> listens on <code>127.0.0.1</code> and needs no configuration; a non-loopback bind refuses to start without an access token.</li>
+                                    <li data-i18n="project.assemblash.stack.interfaces.mcp" data-i18n-html><strong>MCP server</strong>: read tools for documents, layers, validation, history and rendered previews, plus mutation tools carrying dry run, version checks, protection checks and undo transaction IDs.</li>
+                                    <li data-i18n="project.assemblash.stack.interfaces.binary" data-i18n-html><strong>One self-contained executable</strong>: the built TypeScript interface is embedded in the Rust binary, so there is no Node.js runtime to install. The official <code>scratch</code> container image is about 9 MB.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="image"></i><h3 data-i18n="project.assemblash.stack.render.title">Deterministic renderer and font store</h3></div>
+                                <div class="stack-chips"><span>resvg</span><span>tiny-skia</span><span>PNG</span><span>SVG</span><span>14 blend modes</span><span>hash-pinned fonts</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.assemblash.stack.render.pipeline" data-i18n-html><strong>Document to SVG as a pure function</strong>, rasterized with <code>resvg</code> and <code>tiny-skia</code>: PNG export, compatible SVG export and configurable output dimensions.</li>
+                                    <li data-i18n="project.assemblash.stack.render.blend" data-i18n-html><strong>Fourteen blend modes out of sixteen</strong>: <code>color-dodge</code> and <code>color-burn</code> rasterize fine but are not bit-identical on every target, so they return a typed error instead of being drawn.</li>
+                                    <li data-i18n="project.assemblash.stack.render.effects" data-i18n-html><strong>Non-destructive effect stack</strong>: brightness, contrast, saturation, blur, seeded grain and drop shadow are stored on the layer, not baked into the pixels.</li>
+                                    <li data-i18n="project.assemblash.stack.render.fonts" data-i18n-html><strong>Fonts are never substituted</strong>: they load only from files you provide or install into the font store, and their bytes are hashed and pinned, which is what keeps the same document producing bit-identical PNGs on all six targets.</li>
+                                    <li data-i18n="project.assemblash.stack.render.warnings" data-i18n-html><strong>Advisory export warnings</strong>: <code>wordBrokenMidWord</code>, <code>textOverflowsBox</code> and, on the HTTP and MCP paths, <code>lockReclaimed</code> each carry a code and a message, plus a layer ID where one applies. They change no pixel and no exit status. They just tell you what the export could not do well, or that a stale lock was cleared first. Text in an imported SVG that names no loaded font is no longer a warning: since 1.5.0 the render refuses it with a typed error.</li>
+                                </ul>
+                            </div>
+                            <div class="stack-layer">
+                                <div class="stack-head"><i data-lucide="container"></i><h3 data-i18n="project.assemblash.stack.release.title">Release, CI and stability</h3></div>
+                                <div class="stack-chips"><span>GitHub Actions</span><span>6 targets</span><span>.exe</span><span>.deb</span><span>archives</span><span>Apache-2.0</span></div>
+                                <ul class="feature-list stack-detail">
+                                    <li data-i18n="project.assemblash.stack.release.targets" data-i18n-html><strong>Six targets in every release</strong>: Windows, Linux and macOS on both x86_64 and ARM64, with a bare executable per Windows target and a <code>.deb</code> per Linux target beside the archives.</li>
+                                    <li data-i18n="project.assemblash.stack.release.validation" data-i18n-html><strong>Release validation drives the real binary</strong>: the same smoke test exercises CLI, HTTP and MCP on all six targets before release, then again against checksum-verified archives downloaded after publication.</li>
+                                    <li data-i18n="project.assemblash.stack.release.promises" data-i18n-html><strong>Two promises for 1.x</strong>: a document written by 1.0 stays readable by every 1.x release, and a client written against the 1.0 operation API keeps working. Breaking either requires a major release with a documented migration.</li>
+                                    <li data-i18n="project.assemblash.stack.release.limits" data-i18n-html><strong>Limits stated in the README</strong>: styled text runs are not implemented, no AI provider adapter ships, and built-in authentication is one shared token - accounts, roles, OIDC and TLS belong in a reverse proxy in front of it.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <figure style="margin: 2rem 0;">
+                            <a class="assemblash-figure-link" href="../assets/img/projects/assemblash/assemblash-interfaces.webp" target="_blank" rel="noopener noreferrer" onclick="openImageModal('../assets/img/projects/assemblash/assemblash-interfaces.webp', 'Assemblash card listing the editor, CLI, HTTP API, Rust API and MCP interfaces'); return false;" data-i18n-title="project.assemblash.figure.interfaces.open" title="Open the Assemblash interfaces graphic" aria-label="Open the Assemblash interfaces graphic">
+                                <img src="../assets/img/projects/assemblash/assemblash-interfaces.webp" width="1600" height="900" loading="lazy" alt="Assemblash card listing the editor, CLI, HTTP API, Rust API and MCP interfaces" style="display: block; width: 100%; height: auto; border: 1px solid var(--border-color);">
+                            </a>
+                            <figcaption style="margin-top: 0.75rem; color: var(--text-secondary);" data-i18n="project.assemblash.figure.interfaces.caption">The five interfaces, drawn as an Assemblash document and exported by the deterministic renderer, the same path as any other export.</figcaption>
+                        </figure>
+
+                        <h2 data-i18n="project.assemblash.release.title">Public release</h2>
+                        <p data-i18n="project.assemblash.release.p1">Assemblash v1.8.0, released on 12 September 2026, is the current release. Since 1.4.0 it has gained font management, shape layers and a drop shadow effect, richer text styling, clipping, cropping and flips, and one capability listing shared by every interface. The public repository documents the released project, its local-first approach, and its interfaces for people, applications, scripts, and AI agents.</p>
+                        <p data-i18n="project.assemblash.release.p2">It is a focused composition engine on purpose, and it does not try to replace a full professional design application. That scope is what keeps it useful for repeatable visual assets and for work that has to stay editable.</p>
+                    </div>
+
+                    <div class="plain-only">
+                        <h2 data-i18n="project.assemblash.why.title">Why I built it</h2>
+                        <div class="journey">
+                            <div class="journey-step">
+                                <div class="journey-marker"><span class="journey-num">01</span></div>
+                                <div class="journey-body"><p data-i18n="project.assemblash.why.step1" data-i18n-html>Visual tools kept pushing me to one of two extremes: a <strong>powerful editor that is hard to automate reliably</strong>, or a generation pipeline that hands back a flat image nobody can comfortably refine. I wanted something between the two and could not find it.</p></div>
+                            </div>
+                            <div class="journey-step">
+                                <div class="journey-marker"><span class="journey-num">02</span></div>
+                                <div class="journey-body"><p data-i18n="project.assemblash.why.step2" data-i18n-html>So I made the design itself <strong>a structured file</strong>: layers, groups, assets, templates and named slots that survive being handed from one machine to another, and from an agent back to me.</p></div>
+                            </div>
+                            <div class="journey-step">
+                                <div class="journey-marker"><span class="journey-num">03</span></div>
+                                <div class="journey-body"><p data-i18n="project.assemblash.why.step3" data-i18n-html>That meant building the <strong>engine first and every interface as an adapter over it</strong>. An agent's work goes through the same checks as my own clicks and lands in the same history, so I can review it and undo it instead of having to trust it.</p></div>
+                            </div>
+                        </div>
+
+                        <h2 data-i18n="project.assemblash.lessons.title">Lessons learned</h2>
+                        <div class="does-grid">
+                            <div class="does-card">
+                                <div class="does-icon"><i data-lucide="target"></i></div>
+                                <h3 data-i18n="project.assemblash.lessons.determinism.title">Two blend modes I left out</h3>
+                                <p data-i18n="project.assemblash.lessons.determinism.desc">Two blend modes drew correctly but not identically on every platform, so I left them out instead of shipping them. Getting the same result everywhere was worth more to me than two extra options.</p>
+                            </div>
+                            <div class="does-card">
+                                <div class="does-icon"><i data-lucide="shield-check"></i></div>
+                                <h3 data-i18n="project.assemblash.lessons.validated.title">Every change is checked</h3>
+                                <p data-i18n="project.assemblash.lessons.validated.desc">Letting an automated tool edit your work is only comfortable if every change is validated, recorded with who made it, and reversible. Then I do not have to rely on trust.</p>
+                            </div>
+                            <div class="does-card">
+                                <div class="does-icon"><i data-lucide="palette"></i></div>
+                                <h3 data-i18n="project.assemblash.lessons.fonts.title">Fonts are never swapped silently</h3>
+                                <p data-i18n="project.assemblash.lessons.fonts.desc">Dropping in a lookalike font is the kind of helpfulness that ruins a design later on. Assemblash only uses the font files you give it, and tells you when something does not fit.</p>
+                            </div>
+                            <div class="does-card">
+                                <div class="does-icon"><i data-lucide="alert-circle"></i></div>
+                                <h3 data-i18n="project.assemblash.lessons.tests.title">Fixing a test suite that never failed</h3>
+                                <p data-i18n="project.assemblash.lessons.tests.desc">One release existed only to fix the test suite. Some tests were checking an old build, and a hung run reported nothing at all. It changed no feature and it was still the most useful release I shipped.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <aside>
+                <div class="card project-sidebar">
+                    <div id="category-section" data-project-id="assemblash">
+                        <h3 data-i18n="project.sidebar.category">Category</h3>
+                        <div class="line"></div>
+                        <div id="project-categories" class="project-certifications" style="margin-top: 0.75rem;"></div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.techStack">Tech Stack</h3>
+                    <div class="line"></div>
+                    <ul class="tech-stack-list">
+                        <li><i data-lucide="code-2"></i> <span>Rust</span></li>
+                        <li><i data-lucide="monitor"></i> <span data-i18n="project.assemblash.tech.editor">Browser editor</span></li>
+                        <li><i data-lucide="terminal"></i> <span>CLI + HTTP API</span></li>
+                        <li><i data-lucide="bot"></i> <span>MCP server</span></li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;" data-i18n="project.sidebar.keyFeatures">Key Features</h3>
+                    <div class="line"></div>
+                    <ul class="skill-list" style="margin-top: 1rem;">
+                        <li data-i18n="project.assemblash.sidebar.feature1">Local-first and open source</li>
+                        <li data-i18n="project.assemblash.sidebar.feature2">Editable visual documents</li>
+                        <li data-i18n="project.assemblash.sidebar.feature3">Human and agent workflows</li>
+                        <li data-i18n="project.assemblash.sidebar.feature4">CLI, API, and MCP access</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <footer style="margin-top: 4rem;">
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
+        </footer>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal" onclick="closeImageModal()">
+        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">&times;</button>
+        <img id="modal-image" class="image-modal-content" src="" alt="">
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/project-page-init.js" defer></script>
+</body>
+</html>

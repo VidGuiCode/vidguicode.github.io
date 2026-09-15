@@ -169,11 +169,11 @@ const FORMATIONS = [
     },
     {
         id: 'pluralsight-az900',
-        name: 'Microsoft Certified: Azure Fundamentals (AZ-900) — Pluralsight',
+        name: 'Azure Fundamentals (AZ-900) Learning Path - Pluralsight',
         nameKey: 'formation.pluralsight.az900.name',
         provider: 'Pluralsight',
         category: 'Cloud Computing',
-        description: 'Finished the full Microsoft Certified: Azure Fundamentals (AZ-900) learning path on Pluralsight. Total time spent: ~19h. This preparation contributed to passing the AZ-900 certification exam.',
+        description: 'Finished the full Azure Fundamentals (AZ-900) learning path on Pluralsight. Total time spent: ~19h. This preparation contributed to passing the AZ-900 certification exam.',
         descriptionKey: 'formation.pluralsight.az900.description',
         dateCompleted: '2025-12-17', // Last viewed Dec 17, 2025
         duration: '~19h', // Total view time (My Paths)
@@ -208,9 +208,9 @@ const FORMATIONS = [
         id: 'sustainable-cloud-workshop',
         name: 'Sustainable Cloud Workshop',
         nameKey: 'formation.sustainablecloud.name',
-        provider: 'Arηs Group',
+        provider: 'ARHS Group',
         category: 'Cloud Computing',
-        description: 'Attended a 3-hour presentation/workshop on Sustainable Cloud, focusing on environmental impact and sustainable practices in cloud computing. Hosted by Arηs Group and conducted by a representative from their team, as part of my BTS Cloud Computing program at LGK.',
+        description: 'Attended a 3-hour presentation/workshop on Sustainable Cloud, focusing on environmental impact and sustainable practices in cloud computing. Hosted by ARHS Group and conducted by a representative from their team, as part of my BTS Cloud Computing program at LGK.',
         descriptionKey: 'formation.sustainablecloud.description',
         dateCompleted: '2026-01-06', // January 6, 2026
         duration: '3 hours', // Duration of training (rounded from 2h45)
@@ -219,8 +219,8 @@ const FORMATIONS = [
         relatedCertifications: [], // No related certification
         skills: ['Sustainable Cloud', 'Environmental Impact', 'Cloud Best Practices', 'Green IT'],
         skillsKeys: ['formation.sustainablecloud.skills.sustainable', 'formation.sustainablecloud.skills.environmental', 'formation.sustainablecloud.skills.practices', 'formation.sustainablecloud.skills.greenit'],
-        logo: 'assets/img/logos/arns-group-logo-white.webp', // Arηs Group logo - white version for dark mode
-        logoLight: null, // No light version available - will need dark version or CSS filter
+        logo: 'assets/img/logos/arns-group-logo-white.webp', // ARHS Group logo - white version for dark mode
+        logoLight: 'assets/img/logos/arns-group-logo-white.webp', // only a white mark exists; .arns-logo-light-mode darkens it in light theme
         logoDark: 'assets/img/logos/arns-group-logo-white.webp', // White logo for dark backgrounds
         tags: ['EXTEX'], // External extravenant (external company presenter)
     },
@@ -230,7 +230,7 @@ const FORMATIONS = [
         nameKey: 'formation.luxconnect.name',
         provider: 'LuxConnect',
         category: 'Infrastructure',
-        description: 'Visited the Tier IV LuxConnect data center in Bettembourg with my Cloud Computing class (both 1st and 2nd year students), organized by the 2nd year students through LGK. What stood out most was the incredible level of organization—everything is color-coded and labeled, from power lines to cooling systems. The redundancy is impressive: dual power paths, UPS systems, generators that kick in within seconds, and the facility can run autonomously for days. Efficiency metrics are excellent (PUE ~1.5, WUE ~0.2), and they even reuse waste heat. It\'s no surprise they\'ve maintained zero SLA downtime since 2009 with this level of structure and redundancy.',
+        description: 'Visited the Tier IV LuxConnect data center in Bettembourg with my Cloud Computing class (both 1st and 2nd year students), organized by the 2nd year students through LGK. What stood out most was the incredible level of organization, everything is color-coded and labeled, from power lines to cooling systems. The redundancy is impressive: dual power paths, UPS systems, generators that kick in within seconds, and the facility can run autonomously for days. Efficiency metrics are excellent (PUE ~1.5, WUE ~0.2), and they even reuse waste heat. It\'s no surprise they\'ve maintained zero SLA downtime since 2009 with this level of structure and redundancy.',
         descriptionKey: 'formation.luxconnect.description',
         descriptionImages: [
             {
@@ -277,7 +277,7 @@ const FORMATIONS = [
         nameKey: 'formation.blockchain.intro.name',
         provider: 'The Blockchain Academy',
         category: 'Blockchain',
-        description: 'A three-session introduction to blockchain — what it is, how it works, and why it matters. We set up Metamask, explored the Sepolia testnet and faucets, and mined Sepolia ETH; covered mining mechanics, its ethics, and more theory; and finished hands-on with NFTs — minting them, using IPFS to understand where they live, trading them peer-to-peer with a neighbour, and voting through a Metamask-based app for NFT holders. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.',
+        description: 'A three-session introduction to blockchain - what it is, how it works, and why it matters. We set up Metamask, explored the Sepolia testnet and faucets, and mined Sepolia ETH; covered mining mechanics, its ethics, and more theory; and finished hands-on with NFTs - minting them, using IPFS to understand where they live, trading them peer-to-peer with a neighbour, and voting through a Metamask-based app for NFT holders. The Blockchain Academy at Lycée Guillaume Kroll (LGK), BTS Cloud Computing.',
         descriptionKey: 'formation.blockchain.intro.description',
         dateCompleted: '2026-02-03', // February 3, 2026 (final of three sessions)
         duration: '9 hours (3 sessions)', // Duration of training
@@ -333,7 +333,7 @@ const FORMATIONS = [
         nameKey: 'formation.luxembourgarmy.name',
         provider: 'Armée du Luxembourg',
         category: 'Security',
-        description: 'Visited the Luxembourg Army as part of our BTS Cloud Computing class at LGK. The visit covered how the military operates and its career paths, but what stood out most from a technical perspective was their satellite capabilities — Luxembourg\'s investment in space and defense communication is impressive. We also got insight into their cybersecurity operations and IT infrastructure. It was a good look at how national defense intersects with the kind of tech and infrastructure work we study.',
+        description: 'Visited the Luxembourg Army as part of our BTS Cloud Computing class at LGK. The visit covered how the military operates and its career paths, but what stood out most from a technical perspective was their satellite capabilities - Luxembourg\'s investment in space and defense communication is impressive. We also got insight into their cybersecurity operations and IT infrastructure. It was a good look at how national defense intersects with the kind of tech and infrastructure work we study.',
         descriptionKey: 'formation.luxembourgarmy.description',
         dateCompleted: '2026-03-13', // March 13, 2026
         duration: 'Half-day',
@@ -385,7 +385,7 @@ const FORMATIONS = [
     },
     {
         id: 'lgk-open-day-bts-cloud-computing',
-        name: 'BTS Cloud Computing Representative — LGK Open Day',
+        name: 'BTS Cloud Computing Representative - LGK Open Day',
         nameKey: 'formation.lgkopenday.name',
         provider: 'Lycée Guillaume Kroll (LGK)',
         group: 'outreach',
@@ -399,7 +399,7 @@ const FORMATIONS = [
         relatedCertifications: [],
         skills: ['Public Speaking', 'Technical Communication', 'Event Coordination', 'Video Production', 'Visitor Engagement'],
         skillsKeys: ['formation.lgkopenday.skills.publicspeaking', 'formation.lgkopenday.skills.communication', 'formation.lgkopenday.skills.eventcoordination', 'formation.lgkopenday.skills.video', 'formation.lgkopenday.skills.visitorengagement'],
-        logo: 'assets/img/logos/lgk-logo.webp',
+        logo: 'assets/img/logos/lgk-mark.webp',
     },
     // Add more formations as needed
 ];
@@ -420,7 +420,7 @@ const PROJECT_NAMES = {
     },
     'minicfl-az104': {
         key: 'projects.minicfl-az104.title',
-        fallback: 'MiniCFL — Azure AZ-104 Demonstration'
+        fallback: 'MiniCFL - Azure AZ-104 Demonstration'
     },
     'teams-broadcast': {
         key: 'projects.teamsbroadcast.title',
