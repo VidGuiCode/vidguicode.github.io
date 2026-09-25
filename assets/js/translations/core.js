@@ -404,6 +404,55 @@ const translations = {
         de: "Full-Stack-Entwicklung",
         fr: "Développement Full-Stack"
     },
+    "skills.security.title": {
+        en: "Cybersecurity",
+        pt: "Cibersegurança",
+        lu: "Cybersécherheet",
+        de: "Cybersicherheit",
+        fr: "Cybersécurité"
+    },
+    "skills.chip.sec.threats": {
+        en: "CIA triad & threat actors",
+        pt: "Tríade CIA & agentes de ameaça",
+        lu: "CIA-Triade & Bedrohungsakteuren",
+        de: "CIA-Triade & Bedrohungsakteure",
+        fr: "Triade CIA & acteurs de menace"
+    },
+    "skills.chip.sec.offensive": {
+        en: "Web attacks: XSS & SQL injection",
+        pt: "Ataques web: XSS & injeção SQL",
+        lu: "Web-Ugrëff: XSS & SQL-Injektioun",
+        de: "Web-Angriffe: XSS & SQL-Injection",
+        fr: "Attaques web : XSS & injection SQL"
+    },
+    "skills.chip.sec.labs": {
+        en: "Kali Linux & TryHackMe labs",
+        pt: "Labs de Kali Linux & TryHackMe",
+        lu: "Kali Linux & TryHackMe Labs",
+        de: "Kali Linux & TryHackMe Labs",
+        fr: "Labs Kali Linux & TryHackMe"
+    },
+    "skills.chip.sec.crypto": {
+        en: "Applied cryptography",
+        pt: "Criptografia aplicada",
+        lu: "Ugewandt Kryptografie",
+        de: "Angewandte Kryptografie",
+        fr: "Cryptographie appliquée"
+    },
+    "skills.chip.sec.incident": {
+        en: "Incident response",
+        pt: "Resposta a incidentes",
+        lu: "Incident Response",
+        de: "Incident Response",
+        fr: "Réponse aux incidents"
+    },
+    "skills.chip.sec.risk": {
+        en: "Risk assessment",
+        pt: "Avaliação de riscos",
+        lu: "Risikobewäertung",
+        de: "Risikobewertung",
+        fr: "Évaluation des risques"
+    },
     "projects.title": {
         en: "Featured Projects",
         pt: "Projetos em Destaque",

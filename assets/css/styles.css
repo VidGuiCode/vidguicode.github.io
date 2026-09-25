@@ -3382,6 +3382,12 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* The fifth stack (Cybersecurity) spans the full row so the grid stays 2x2
+   plus one wide foundation card instead of stranding a half-width card. */
+.skill-stack-card-wide {
+    grid-column: 1 / -1;
+}
+
 /* Compact chips inside the Tech Stack only. Slightly tighter padding and
    gaps let each stack fit in fewer rows, so the two cards in a row match
    height with no blank space. Scoped so chips elsewhere are unaffected. */
