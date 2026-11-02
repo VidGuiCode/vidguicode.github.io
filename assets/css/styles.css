@@ -72,7 +72,6 @@
     --fs-xs: clamp(0.7rem, 0.2vw + 0.6rem, 0.75rem);     /* Extra small: 0.7rem mobile → 0.75rem desktop */
 
     --nav-offset-gap: 220px;
-    --nav-anchor-align: 0.4;
 }
 
 [data-theme="dark"] {

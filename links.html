@@ -40,7 +40,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/img/logos/vidguicode-favicon.svg">
-    <link rel="apple-touch-icon" href="assets/img/logos/vidguicode-favicon.svg">
+    <link rel="apple-touch-icon" href="assets/img/logos/apple-touch-icon.png">
 
     <style>
         :root {
@@ -836,7 +836,8 @@
             });
 
             window.setLanguage = function (lang) {
-                document.documentElement.setAttribute('lang', lang);
+                // 'lu' is the site's key; the ISO 639-1 code for Luxembourgish is 'lb'
+                document.documentElement.setAttribute('lang', lang === 'lu' ? 'lb' : lang);
                 document.documentElement.setAttribute('data-lang', lang);
                 localStorage.setItem('lang', lang);
                 if (currentLangDisplay) {

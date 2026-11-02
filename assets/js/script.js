@@ -226,7 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function setLanguage(lang) {
         // Update HTML lang attribute
-        htmlElement.setAttribute('lang', lang);
+        // 'lu' is the site's key; the ISO 639-1 code for Luxembourgish is 'lb'
+        htmlElement.setAttribute('lang', lang === 'lu' ? 'lb' : lang);
         htmlElement.setAttribute('data-lang', lang);
         
         // Update current language display
@@ -439,38 +440,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Smooth scrolling for anchor links (event delegation for dynamically injected nav)
-    document.addEventListener('click', (e) => {
-        const anchor = e.target.closest('a[href^="#"]');
-        if (!anchor) return;
-
-        const targetId = anchor.getAttribute('href');
-        if (targetId === '#' || !targetId) return;
-
-        const targetElement = document.querySelector(targetId);
-        if (!targetElement) return;
-
-        e.preventDefault();
-
-        // Account for fixed header + optional per-section offset + align target in viewport
-        const rootStyle = getComputedStyle(document.documentElement);
-        const cssOffset = parseInt(rootStyle.getPropertyValue('--nav-offset-gap'), 10);
-        const headerOffset = Number.isFinite(cssOffset) ? cssOffset : 80;
-        const alignRatio = parseFloat(rootStyle.getPropertyValue('--nav-anchor-align'));
-        const safeAlign = Number.isFinite(alignRatio) ? Math.min(Math.max(alignRatio, 0), 0.9) : 0;
-        const visibleHeight = Math.max(window.innerHeight - headerOffset, 0);
-        const desiredTop = safeAlign > 0 ? headerOffset + (visibleHeight * safeAlign) : headerOffset;
-
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const extraOffset = parseInt(targetElement.getAttribute('data-scroll-offset'), 10) || 0;
-        const offsetPosition = elementPosition + window.pageYOffset - desiredTop - extraOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
-    });
-
     // Intersection Observer for "Power On" animations
     // Skip animations if user prefers reduced motion
     if (!prefersReducedMotion) {
@@ -564,9 +533,18 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', updateNavOffset);
     }
 
+    // getElementById, not querySelector: a hash like "#1abc" is not a valid selector and would throw
+    const findHashTarget = (hash) => {
+        try {
+            return document.getElementById(decodeURIComponent(hash.slice(1)));
+        } catch (_) {
+            return null;
+        }
+    };
+
     const scrollToHash = (hash, smooth) => {
         if (!hash) return;
-        const target = document.querySelector(hash);
+        const target = findHashTarget(hash);
         const navbar = document.querySelector('.navbar');
         if (!target || !navbar) return;
         const offset = navbar.offsetHeight + 12;
@@ -584,7 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!link) return;
         const hash = link.getAttribute('href');
         if (!hash || hash === '#') return;
-        if (!document.querySelector(hash)) return;
+        if (!findHashTarget(hash)) return;
         event.preventDefault();
         history.pushState(null, '', hash);
         scrollToHash(hash, true);
