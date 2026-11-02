@@ -92,7 +92,7 @@ const PROJECTS = [
         status: 'released',
         statusKey: 'projects.status.released',
         dateCompleted: '2026-09-05',
-        lastUpdated: '2026-09-12',
+        lastUpdated: '2026-10-24',
         githubUrl: 'https://github.com/VidGuiCode/assemblash',
         link: 'projects/project-assemblash',
         featured: true,

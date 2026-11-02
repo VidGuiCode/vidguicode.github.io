@@ -410,7 +410,7 @@
 
         <section class="project-hero">
             <div class="project-title-group">
-                <div class="badge" data-i18n="project.assemblash.badge">RELEASED · V1.8.0</div>
+                <div class="badge" data-i18n="project.assemblash.badge">RELEASED · V1.13.0</div>
                 <h1 class="assemblash-title"><img src="../assets/img/projects/assemblash/assemblash-mark.svg" width="64" height="64" alt="Assemblash logo"> <span>Assemblash</span></h1>
                 <p class="subtitle" data-i18n="project.assemblash.subtitle">A local-first visual document engine where people and AI agents can work on the same editable document.</p>
                 <p style="margin-top: 1rem;">
@@ -421,7 +421,7 @@
                 </p>
                 <p class="assemblash-updated">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
-                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>12/09/2026</span>
+                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>24/10/2026</span>
                 </p>
             </div>
         </section>
@@ -454,7 +454,7 @@
                 </div>
                 <div class="glance-stat">
                     <span class="glance-led"></span>
-                    <div class="glance-num">1.8.0</div>
+                    <div class="glance-num">1.13.0</div>
                     <div class="glance-label" data-i18n="project.assemblash.glance.release.label">current release, same document schema since 1.0</div>
                 </div>
             </div>
@@ -553,7 +553,7 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="bot"></i></div>
                         <h3 data-i18n="project.assemblash.does.agents.title">People and agents, one file</h3>
-                        <p data-i18n="project.assemblash.does.agents.desc">An AI agent can draft a design on another machine and hand it over; you open the same file and finish it by hand. Every change is recorded and can be undone.</p>
+                        <p data-i18n="project.assemblash.does.agents.desc">An AI agent can work on the same design with you at the same time, and you see its changes appear in the editor. It can also draft on another machine and hand the file over. Every change is recorded and can be undone.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="hard-drive"></i></div>
@@ -604,7 +604,8 @@
                                 <div class="stack-head"><i data-lucide="box"></i><h3 data-i18n="project.assemblash.stack.core.title">Document model - assemblash-core</h3></div>
                                 <div class="stack-chips"><span>Rust</span><span>serde JSON</span><span>schemaVersion 1</span><span>stable IDs</span><span>presets</span><span>templates</span></div>
                                 <ul class="feature-list stack-detail">
-                                    <li data-i18n="project.assemblash.stack.core.layers" data-i18n-html><strong>Layer tree</strong>: canvas dimensions and background, plus text, raster image, SVG, shape (rectangle, ellipse, line) and nested group layers with position, size, rotation, scale, opacity, visibility and ordering.</li>
+                                    <li data-i18n="project.assemblash.stack.core.layers" data-i18n-html><strong>Layer tree</strong>: canvas dimensions and background, plus text, raster image, SVG, shape (rectangle, ellipse, line and free-form path, with dash patterns and arrow or circle markers) and nested group layers with position, size, rotation, scale, opacity, visibility and ordering.</li>
+                                    <li data-i18n="project.assemblash.stack.core.paint" data-i18n-html><strong>Paint and type</strong>: solid colours or linear and radial gradients on backgrounds, text, fills and strokes, canvas background images, and styled text runs with exact font faces, paragraph spacing and justified alignment.</li>
                                     <li data-i18n="project.assemblash.stack.core.identity" data-i18n-html><strong>Stable identity</strong>: every layer keeps a stable ID plus metadata, locking, duplication, grouping and ungrouping, so a script can address the same element across sessions.</li>
                                     <li data-i18n="project.assemblash.stack.core.layout" data-i18n-html><strong>Layout queries</strong>: alignment, centering, distribution, snapping, bounds and overlap queries answer the same way from the CLI, the HTTP API and MCP.</li>
                                     <li data-i18n="project.assemblash.stack.core.reuse" data-i18n-html><strong>Reuse primitives</strong>: named presets, authorable templates, named slots and deterministic variant batches turn one composition into a repeatable set.</li>
@@ -627,8 +628,8 @@
                                 <div class="stack-chips"><span>TypeScript editor</span><span>CLI</span><span>HTTP API</span><span>Rust crates</span><span>MCP</span></div>
                                 <ul class="feature-list stack-detail">
                                     <li data-i18n="project.assemblash.stack.interfaces.reference" data-i18n-html><strong>The editor has no privileges</strong>: it is a reference client. Its edits, CLI commands, HTTP requests and MCP tool calls all compile to the same operations, so no interface can do something the others cannot review or undo.</li>
-                                    <li data-i18n="project.assemblash.stack.interfaces.serve" data-i18n-html><strong>Local HTTP server</strong>: <code>assemblash serve</code> listens on <code>127.0.0.1</code> and needs no configuration; a non-loopback bind refuses to start without an access token.</li>
-                                    <li data-i18n="project.assemblash.stack.interfaces.mcp" data-i18n-html><strong>MCP server</strong>: read tools for documents, layers, validation, history and rendered previews, plus mutation tools carrying dry run, version checks, protection checks and undo transaction IDs.</li>
+                                    <li data-i18n="project.assemblash.stack.interfaces.serve" data-i18n-html><strong>Local HTTP server</strong>: <code>assemblash serve</code> listens on <code>127.0.0.1</code> and needs no configuration. A non-loopback bind refuses to start without an access token, and a loopback server without one refuses requests carrying another site's Host or Origin.</li>
+                                    <li data-i18n="project.assemblash.stack.interfaces.mcp" data-i18n-html><strong>MCP inside the editor</strong>: since 1.9.0 the running editor serves MCP at <code>/mcp</code>, so a person and an agent edit the same open project in one history, and the editor shows the agent's changes without a reload. 53 tools cover reading documents, layers, validation, history and rendered previews, and mutations that carry dry run, version checks, protection checks and undo transaction IDs.</li>
                                     <li data-i18n="project.assemblash.stack.interfaces.binary" data-i18n-html><strong>One self-contained executable</strong>: the built TypeScript interface is embedded in the Rust binary, so there is no Node.js runtime to install. The official <code>scratch</code> container image is about 9 MB.</li>
                                 </ul>
                             </div>
@@ -638,9 +639,9 @@
                                 <ul class="feature-list stack-detail">
                                     <li data-i18n="project.assemblash.stack.render.pipeline" data-i18n-html><strong>Document to SVG as a pure function</strong>, rasterized with <code>resvg</code> and <code>tiny-skia</code>: PNG export, compatible SVG export and configurable output dimensions.</li>
                                     <li data-i18n="project.assemblash.stack.render.blend" data-i18n-html><strong>Fourteen blend modes out of sixteen</strong>: <code>color-dodge</code> and <code>color-burn</code> rasterize fine but are not bit-identical on every target, so they return a typed error instead of being drawn.</li>
-                                    <li data-i18n="project.assemblash.stack.render.effects" data-i18n-html><strong>Non-destructive effect stack</strong>: brightness, contrast, saturation, blur, seeded grain and drop shadow are stored on the layer, not baked into the pixels.</li>
+                                    <li data-i18n="project.assemblash.stack.render.effects" data-i18n-html><strong>Non-destructive effect stack</strong>: brightness, contrast, saturation, blur, seeded grain, drop shadow, hue rotation and invert are stored on the layer, not baked into the pixels.</li>
                                     <li data-i18n="project.assemblash.stack.render.fonts" data-i18n-html><strong>Fonts are never substituted</strong>: they load only from files you provide or install into the font store, and their bytes are hashed and pinned, which is what keeps the same document producing bit-identical PNGs on all six targets.</li>
-                                    <li data-i18n="project.assemblash.stack.render.warnings" data-i18n-html><strong>Advisory export warnings</strong>: <code>wordBrokenMidWord</code>, <code>textOverflowsBox</code> and, on the HTTP and MCP paths, <code>lockReclaimed</code> each carry a code and a message, plus a layer ID where one applies. They change no pixel and no exit status. They just tell you what the export could not do well, or that a stale lock was cleared first. Text in an imported SVG that names no loaded font is no longer a warning: since 1.5.0 the render refuses it with a typed error.</li>
+                                    <li data-i18n="project.assemblash.stack.render.warnings" data-i18n-html><strong>Advisory export warnings</strong>: <code>wordBrokenMidWord</code>, <code>textOverflowsBox</code>, <code>textCoveredByLayer</code> and, on the HTTP and MCP paths, <code>lockReclaimed</code> each carry a code and a message, plus a layer ID where one applies. They change no pixel and no exit status. They just tell you what the export could not do well, or that a stale lock was cleared first. Text in an imported SVG that names no loaded font is no longer a warning: since 1.5.0 the render refuses it with a typed error.</li>
                                 </ul>
                             </div>
                             <div class="stack-layer">
@@ -649,8 +650,9 @@
                                 <ul class="feature-list stack-detail">
                                     <li data-i18n="project.assemblash.stack.release.targets" data-i18n-html><strong>Six targets in every release</strong>: Windows, Linux and macOS on both x86_64 and ARM64, with a bare executable per Windows target and a <code>.deb</code> per Linux target beside the archives.</li>
                                     <li data-i18n="project.assemblash.stack.release.validation" data-i18n-html><strong>Release validation drives the real binary</strong>: the same smoke test exercises CLI, HTTP and MCP on all six targets before release, then again against checksum-verified archives downloaded after publication.</li>
+                                    <li data-i18n="project.assemblash.stack.release.update" data-i18n-html><strong>Self-update with checksums</strong>: <code>assemblash upgrade</code> downloads the new release, verifies it against the published <code>SHA256SUMS</code> and swaps the binary, keeping the old one until the next start. The update check is optional, sends no identifiers and runs at most once a day.</li>
                                     <li data-i18n="project.assemblash.stack.release.promises" data-i18n-html><strong>Two promises for 1.x</strong>: a document written by 1.0 stays readable by every 1.x release, and a client written against the 1.0 operation API keeps working. Breaking either requires a major release with a documented migration.</li>
-                                    <li data-i18n="project.assemblash.stack.release.limits" data-i18n-html><strong>Limits stated in the README</strong>: styled text runs are not implemented, no AI provider adapter ships, and built-in authentication is one shared token - accounts, roles, OIDC and TLS belong in a reverse proxy in front of it.</li>
+                                    <li data-i18n="project.assemblash.stack.release.limits" data-i18n-html><strong>Limits stated in the README</strong>: no AI provider adapter ships, the editor is a reference client rather than a full design application, and built-in authentication is one shared token - accounts, roles, OIDC and TLS belong in a reverse proxy in front of it.</li>
                                 </ul>
                             </div>
                         </div>
@@ -663,7 +665,7 @@
                         </figure>
 
                         <h2 data-i18n="project.assemblash.release.title">Public release</h2>
-                        <p data-i18n="project.assemblash.release.p1">Assemblash v1.8.0, released on 12 September 2026, is the current release. Since 1.4.0 it has gained font management, shape layers and a drop shadow effect, richer text styling, clipping, cropping and flips, and one capability listing shared by every interface. The public repository documents the released project, its local-first approach, and its interfaces for people, applications, scripts, and AI agents.</p>
+                        <p data-i18n="project.assemblash.release.p1">Assemblash v1.13.0, released on 24 October 2026, is the current release. Since 1.8.0 a person and an AI agent can edit the same project at the same time in the open editor, and it has gained free-form path shapes, gradients and background images, styled text with paragraph spacing and justified alignment, hue rotation and invert effects, an optional self-updater, and an interface in English, French and German. The public repository documents the released project, its local-first approach, and its interfaces for people, applications, scripts, and AI agents.</p>
                         <p data-i18n="project.assemblash.release.p2">It is a focused composition engine on purpose, and it does not try to replace a full professional design application. That scope is what keeps it useful for repeatable visual assets and for work that has to stay editable.</p>
                     </div>
 
