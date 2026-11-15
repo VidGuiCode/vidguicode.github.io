@@ -21,11 +21,11 @@
             fr: "Du petit cluster au rack complet"
         },
         "project.homelab.section.setup.body": {
-            en: "What started as a quiet Raspberry Pi cluster in my living room has grown into a four-node self-hosted platform: an ARM edge gateway in the cloud, an ARM home server, an x86_64 laptop for compute offload, and a dedicated ZFS NAS for storage. The on-site gear now lives in a compact 10U rack with monitored power and airflow, while public traffic still reaches the platform only through a self-operated WireGuard tunnel.",
-            pt: "O que começou como um cluster silencioso com Raspberry Pi na minha sala cresceu para uma plataforma self-hosted de quatro nós: um gateway ARM na cloud, um home server ARM, um portátil x86_64 para offload computacional e uma NAS ZFS dedicada ao armazenamento. O equipamento local vive agora num rack compacto de 10U com energia e fluxo de ar monitorizados, enquanto o tráfego público continua a chegar à plataforma apenas através de um túnel WireGuard operado por mim.",
-            lu: "Wat als rouege Raspberry Pi Cluster a mengem Wunnzëmmer ugefaangen huet, ass zu enger self-hosted Plattform mat véier Noden gewuess: en ARM Edge Gateway an der Cloud, en ARM Home Server, en x86_64 Laptop fir Compute-Offload, an eng dedizéiert ZFS NAS fir Storage. D'Hardware um Site lieft elo an engem kompakte 10U Rack mat iwwerwaachter Stroumversuergung a Loftfloss, an den ëffentleche Verkéier kënnt nach ëmmer nëmmen iwwer e selwer bedriwwene WireGuard Tunnel eran.",
-            de: "Was als leiser Raspberry-Pi-Cluster im Wohnzimmer begann, ist heute eine Self-Hosted-Plattform mit vier Knoten: ein ARM-Edge-Gateway in der Cloud, ein ARM-Home-Server, ein x86_64-Laptop für Compute-Offload und ein dediziertes ZFS-NAS für Storage. Die lokale Hardware sitzt jetzt in einem kompakten 10U-Rack mit überwachter Stromversorgung und Luftstrom, während öffentlicher Traffic die Plattform weiterhin nur über einen selbst betriebenen WireGuard-Tunnel erreicht.",
-            fr: "Ce qui a commencé comme un cluster Raspberry Pi silencieux dans mon salon est devenu une plateforme self-hosted à quatre nœuds : une passerelle ARM en cloud, un serveur maison ARM, un laptop x86_64 pour l'offload de calcul, et un NAS ZFS dédié au stockage. Le matériel sur site vit désormais dans un rack compact 10U avec alimentation et flux d'air surveillés, tandis que le trafic public n'atteint toujours la plateforme qu'à travers un tunnel WireGuard opéré par moi-même."
+            en: "What started as a quiet Raspberry Pi cluster in my living room has grown into a four-node self-hosted platform: an ARM edge gateway in the cloud, an ARM home server, an x86_64 laptop for compute offload and local AI, and a dedicated ZFS NAS for storage. The on-site gear now lives in an enclosed 10U cabinet with monitored power and fan control driven by drive temperatures, while public traffic still reaches the platform only through a self-operated WireGuard tunnel.",
+            pt: "O que começou como um cluster silencioso com Raspberry Pi na minha sala cresceu para uma plataforma self-hosted de quatro nós: um gateway ARM na cloud, um home server ARM, um portátil x86_64 para offload computacional e IA local, e uma NAS ZFS dedicada ao armazenamento. O equipamento local vive agora num armário fechado de 10U com energia monitorizada e ventilação controlada pela temperatura dos discos, enquanto o tráfego público continua a chegar à plataforma apenas através de um túnel WireGuard operado por mim.",
+            lu: "Wat als rouege Raspberry Pi Cluster a mengem Wunnzëmmer ugefaangen huet, ass zu enger self-hosted Plattform mat véier Noden gewuess: en ARM Edge Gateway an der Cloud, en ARM Home Server, en x86_64 Laptop fir Compute-Offload a lokal KI, an eng dedizéiert ZFS NAS fir Storage. D'Hardware um Site lieft elo an engem zouene 10U Schaf mat iwwerwaachtem Stroum an enger Ventilatioun, déi sech no der Temperatur vun de Placken riicht, an den ëffentleche Verkéier kënnt nach ëmmer nëmmen iwwer e selwer bedriwwene WireGuard Tunnel eran.",
+            de: "Was als leiser Raspberry-Pi-Cluster im Wohnzimmer begann, ist heute eine selbst gehostete Plattform mit vier Knoten: ein ARM-Edge-Gateway in der Cloud, ein ARM-Homeserver, ein x86_64-Laptop für Compute-Offload und lokale KI sowie ein dedizierter ZFS-NAS für Speicher. Die Hardware vor Ort steckt jetzt in einem geschlossenen 10U-Schrank mit überwachtem Strom und einer Lüftersteuerung nach Festplattentemperatur, und öffentlicher Verkehr erreicht die Plattform weiterhin nur über einen selbst betriebenen WireGuard-Tunnel.",
+            fr: "Ce qui a commencé comme un cluster Raspberry Pi silencieux dans mon salon est devenu une plateforme auto-hébergée à quatre nœuds : une passerelle ARM dans le cloud, un serveur ARM à la maison, un portable x86_64 pour le calcul déporté et l'IA locale, et un NAS ZFS dédié au stockage. Le matériel sur place vit maintenant dans une armoire fermée de 10U avec une consommation surveillée et des ventilateurs pilotés par la température des disques, et le trafic public n'atteint toujours la plateforme que par un tunnel WireGuard que j'opère moi-même."
         },
         "project.homelab.technical.goal.title": {
             en: "Technical design goal",
@@ -224,11 +224,11 @@
             fr: "Au-delà de l'apprentissage, je me heurtais toujours à la même frustration : les outils existants étaient soit limités, soit bourrés de pubs, soit inadaptés à mes besoins. Le générateur de QR ? La plupart des versions en ligne étaient derrière des paywalls ou couvertes de pubs. L'app Vault ? Rien ne correspondait au workflow que j'avais en tête. Alors plutôt que de me contenter, <strong>j'ai commencé à construire les miens</strong> - et ça s'est transformé en un écosystème self-hosted complet d'applications personnalisées remplaçant les outils tiers à ma façon."
         },
         "project.homelab.section.why.body3": {
-            en: "Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 10+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.",
-            pt: "Pelo caminho aprendi a desenhar em torno de limitações reais: arquiteturas mistas, planos separados de storage e compute, ingress zero-trust e aplicações que partilham autenticação sem partilhar atalhos de segurança. <strong>Construí 10+ apps personalizadas e um framework de agentes de raiz</strong>, o que me provou que é possível fazer engenharia séria de sistemas muito antes de ter hardware empresarial.",
-            lu: "Ënnerwee hunn ech geléiert ronderëm richteg Aschränkungen ze designen: gemëschten Architekturen, getrennte Storage- a Compute-Ebenen, Zero-Trust-Ingress an Applikatiounen, déi Auth deelen ouni Sécherheets-Ofkierzungen ze iwwerhuelen. <strong>Ech hunn 10+ personaliséiert Apps an en Agent-Framework vun Null op gebaut</strong>, an domat fir mech bewisen, datt eescht Systemdesign scho laang virun Enterprise-Hardware méiglech ass.",
-            de: "Dabei habe ich gelernt, um echte Einschränkungen herum zu entwerfen: gemischte Architekturen, getrennte Storage- und Compute-Ebenen, Zero-Trust-Ingress und Anwendungen, die Auth teilen, ohne Sicherheitsabkürzungen zu übernehmen. <strong>Ich habe 10+ eigene Apps und ein Agent-Framework von Grund auf gebaut</strong>, was mir bewiesen hat, dass ernsthaftes Systemdesign lange vor Enterprise-Hardware möglich ist.",
-            fr: "En chemin, j'ai appris à concevoir autour de contraintes réelles : architectures mixtes, plans de calcul et de stockage séparés, ingress zero-trust, et applications qui partagent l'auth sans partager de raccourcis de sécurité. <strong>J'ai construit 10+ apps maison et un framework d'agents from scratch</strong>, ce qui m'a prouvé qu'un vrai design de systèmes est possible bien avant d'avoir du matériel d'entreprise."
+            en: "Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 15+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.",
+            pt: "Pelo caminho aprendi a desenhar em torno de limitações reais: arquiteturas mistas, planos separados de storage e compute, ingress zero-trust e aplicações que partilham autenticação sem partilhar atalhos de segurança. <strong>Construí 15+ apps personalizadas e um framework de agentes de raiz</strong>, o que me provou que é possível fazer engenharia séria de sistemas muito antes de ter hardware empresarial.",
+            lu: "Ënnerwee hunn ech geléiert ronderëm richteg Aschränkungen ze designen: gemëschten Architekturen, getrennte Storage- a Compute-Ebenen, Zero-Trust-Ingress an Applikatiounen, déi Auth deelen ouni Sécherheets-Ofkierzungen ze iwwerhuelen. <strong>Ech hunn 15+ personaliséiert Apps an en Agent-Framework vun Null op gebaut</strong>, an domat fir mech bewisen, datt eescht Systemdesign scho laang virun Enterprise-Hardware méiglech ass.",
+            de: "Dabei habe ich gelernt, um echte Einschränkungen herum zu entwerfen: gemischte Architekturen, getrennte Storage- und Compute-Ebenen, Zero-Trust-Ingress und Anwendungen, die Auth teilen, ohne Sicherheitsabkürzungen zu übernehmen. <strong>Ich habe 15+ eigene Apps und ein Agent-Framework von Grund auf gebaut</strong>, was mir bewiesen hat, dass ernsthaftes Systemdesign lange vor Enterprise-Hardware möglich ist.",
+            fr: "En chemin, j'ai appris à concevoir autour de contraintes réelles : architectures mixtes, plans de calcul et de stockage séparés, ingress zero-trust, et applications qui partagent l'auth sans partager de raccourcis de sécurité. <strong>J'ai construit 15+ apps maison et un framework d'agents from scratch</strong>, ce qui m'a prouvé qu'un vrai design de systèmes est possible bien avant d'avoir du matériel d'entreprise."
         },
         "project.homelab.section.lessons.title": {
             en: "Lessons Learned",
@@ -237,18 +237,90 @@
             de: "Gelerntes",
             fr: "Leçons retenues"
         },
-        "project.homelab.section.lessons.arm.title": { en: "ARM has quirks", pt: "ARM tem quirks", lu: "ARM huet seng Launen", de: "ARM hat Eigenheiten", fr: "ARM a ses bizarreries" },
-        "project.homelab.section.lessons.arm.body": { en: "Not all Docker images support ARM64. Finding compatible alternatives and tweaking configs taught me to read docs carefully.", pt: "Nem todas as imagens Docker suportam ARM64. Encontrar alternativas compatíveis e ajustar configs ensinou-me a ler a documentação com atenção.", lu: "Net all Docker-Images ënnerstëtzen ARM64. Kompatibel Alternativen ze fannen an d'Configs unzepassen huet mech geléiert, d'Dokumentatioun genee ze liesen.", de: "Nicht alle Docker-Images unterstützen ARM64. Kompatible Alternativen zu finden und Configs anzupassen, hat mich gelehrt, Dokus genau zu lesen.", fr: "Toutes les images Docker ne gèrent pas ARM64. Chercher des alternatives compatibles et ajuster les configs m’a appris à lire la doc attentivement." },
-        "project.homelab.section.lessons.dns.title": { en: "DNS is powerful", pt: "DNS é poderoso", lu: "DNS ass staark", de: "DNS ist mächtig", fr: "Le DNS est puissant" },
-        "project.homelab.section.lessons.dns.body": { en: "Managing records in Cloudflare and understanding how traffic flows made the whole system click.", pt: "Gerir registos no Cloudflare e entender o fluxo de tráfego fez o sistema ganhar sentido.", lu: "Duerch d'Managen vun den DNS-Records an d'Verstoe vum Traffic-Floss huet de System fir mech Sënn gemaach.", de: "DNS-Einträge in Cloudflare zu managen und den Traffic-Flow zu verstehen, ließ alles zusammenpassen.", fr: "Gérer les enregistrements dans Cloudflare et comprendre les flux a fait déclic." },
-        "project.homelab.section.lessons.iterate.title": { en: "Start small, iterate fast", pt: "Começa pequeno, itera rápido", lu: "Kleng ufänken, séier iteréieren", de: "Klein starten, schnell iterieren", fr: "Commencer petit, itérer vite" },
-        "project.homelab.section.lessons.iterate.body": { en: "This setup grew organically. Each problem solved unlocked the next improvement.", pt: "Esta configuração cresceu organicamente. Cada problema resolvido desbloqueou a melhoria seguinte.", lu: "Dës Opstellung ass organesch gewuess. All geléiste Problem huet déi nächst Verbesserung opgemaach.", de: "Dieses Setup ist organisch gewachsen. Jedes gelöste Problem öffnete die nächste Verbesserung.", fr: "Cette configuration a grandi organiquement. Chaque problème résolu a débloqué la suite." },
-        "project.homelab.section.lessons.cost.title": { en: "Cost-conscious infrastructure", pt: "Infra consciente de custos", lu: "Käschtebewosst Infra", de: "Kostenbewusste Infrastruktur", fr: "Infra soucieuse des coûts" },
-        "project.homelab.section.lessons.cost.body": { en: "Running on low-power devices and free-tier cloud taught me to optimize before scaling.", pt: "Correr em dispositivos de baixo consumo e cloud gratuita ensinou-me a optimizar antes de escalar.", lu: "Op niddereg-Stroum Geräter a Free-Tier Cloud lafen huet mech geléiert ze optimiséieren éier ech skalaéieren.", de: "Auf stromsparenden Geräten und Free-Tier-Cloud zu laufen, lehrte mich zu optimieren, bevor ich skaliere.", fr: "Tourner sur du matériel basse conso et du cloud gratuit m’a appris à optimiser avant de scaler." },
-        "project.homelab.section.lessons.security.title": { en: "Security is a journey", pt: "Segurança é uma jornada", lu: "Sécherheet ass eng Rees", de: "Sicherheit ist eine Reise", fr: "La sécurité est un parcours" },
-        "project.homelab.section.lessons.security.body": { en: "Implementing SSO, token blacklisting, and audit logging taught me that authentication is more than just passwords.", pt: "Implementar SSO, blacklist de tokens e auditoria mostrou-me que autenticação é mais do que senhas.", lu: "SSO, Token Blacklisting an Audit Logging ëmsetzen huet gewisen datt Authentifikatioun méi wéi Passwierder ass.", de: "SSO, Token-Blacklisting und Audit-Logs zu bauen zeigte mir, dass Auth mehr ist als Passwörter.", fr: "Mettre en place SSO, blacklist de tokens et journaux d’audit m’a montré que l’authentification, ce n’est pas que des mots de passe." },
-        "project.homelab.section.lessons.hybrid.title": { en: "Hybrid architecture complexity", pt: "Complexidade da arquitetura híbrida", lu: "Komplexitéit vun der Hybrid Architektur", de: "Komplexität der Hybrid-Architektur", fr: "Complexité de l'architecture hybride" },
-        "project.homelab.section.lessons.hybrid.body": { en: "Coordinating Docker Compose and K3s on the same node, plus a remote VPS gateway, required careful port planning and network design.", pt: "Coordenar Docker Compose e K3s no mesmo nó, mais um gateway VPS remoto, exigiu planeamento cuidadoso de portas e desenho de rede.", lu: "Docker Compose a K3s um selwechte Node koordinéieren, plus e VPS Gateway, huet genee Port a Netzwierk Planung verlaangt.", de: "Docker Compose und K3s auf demselben Node plus ein Remote-VPS-Gateway erforderten sorgfältige Port- und Netzplanung.", fr: "Coordonner Docker Compose et K3s sur le même nœud, plus une passerelle VPS distante, a demandé un vrai travail sur les ports et le réseau." },
+        "project.homelab.section.lessons.arm.title": {
+            en: "ARM has quirks",
+            pt: "ARM tem quirks",
+            lu: "ARM huet seng Launen",
+            de: "ARM hat Eigenheiten",
+            fr: "ARM a ses bizarreries"
+        },
+        "project.homelab.section.lessons.arm.body": {
+            en: "Not all Docker images support ARM64. Finding compatible alternatives and tweaking configs taught me to read docs carefully.",
+            pt: "Nem todas as imagens Docker suportam ARM64. Encontrar alternativas compatíveis e ajustar configs ensinou-me a ler a documentação com atenção.",
+            lu: "Net all Docker-Images ënnerstëtzen ARM64. Kompatibel Alternativen ze fannen an d'Configs unzepassen huet mech geléiert, d'Dokumentatioun genee ze liesen.",
+            de: "Nicht alle Docker-Images unterstützen ARM64. Kompatible Alternativen zu finden und Configs anzupassen, hat mich gelehrt, Dokus genau zu lesen.",
+            fr: "Toutes les images Docker ne gèrent pas ARM64. Chercher des alternatives compatibles et ajuster les configs m’a appris à lire la doc attentivement."
+        },
+        "project.homelab.section.lessons.dns.title": {
+            en: "DNS is powerful",
+            pt: "DNS é poderoso",
+            lu: "DNS ass staark",
+            de: "DNS ist mächtig",
+            fr: "Le DNS est puissant"
+        },
+        "project.homelab.section.lessons.dns.body": {
+            en: "Managing records in Cloudflare and understanding how traffic flows made the whole system click.",
+            pt: "Gerir registos no Cloudflare e entender o fluxo de tráfego fez o sistema ganhar sentido.",
+            lu: "Duerch d'Managen vun den DNS-Records an d'Verstoe vum Traffic-Floss huet de System fir mech Sënn gemaach.",
+            de: "DNS-Einträge in Cloudflare zu managen und den Traffic-Flow zu verstehen, ließ alles zusammenpassen.",
+            fr: "Gérer les enregistrements dans Cloudflare et comprendre les flux a fait déclic."
+        },
+        "project.homelab.section.lessons.iterate.title": {
+            en: "Start small, iterate fast",
+            pt: "Começa pequeno, itera rápido",
+            lu: "Kleng ufänken, séier iteréieren",
+            de: "Klein starten, schnell iterieren",
+            fr: "Commencer petit, itérer vite"
+        },
+        "project.homelab.section.lessons.iterate.body": {
+            en: "This setup grew organically. Each problem solved unlocked the next improvement.",
+            pt: "Esta configuração cresceu organicamente. Cada problema resolvido desbloqueou a melhoria seguinte.",
+            lu: "Dës Opstellung ass organesch gewuess. All geléiste Problem huet déi nächst Verbesserung opgemaach.",
+            de: "Dieses Setup ist organisch gewachsen. Jedes gelöste Problem öffnete die nächste Verbesserung.",
+            fr: "Cette configuration a grandi organiquement. Chaque problème résolu a débloqué la suite."
+        },
+        "project.homelab.section.lessons.cost.title": {
+            en: "Cost-conscious infrastructure",
+            pt: "Infra consciente de custos",
+            lu: "Käschtebewosst Infra",
+            de: "Kostenbewusste Infrastruktur",
+            fr: "Infra soucieuse des coûts"
+        },
+        "project.homelab.section.lessons.cost.body": {
+            en: "Running on low-power devices and free-tier cloud taught me to optimize before scaling.",
+            pt: "Correr em dispositivos de baixo consumo e cloud gratuita ensinou-me a optimizar antes de escalar.",
+            lu: "Op niddereg-Stroum Geräter a Free-Tier Cloud lafen huet mech geléiert ze optimiséieren éier ech skalaéieren.",
+            de: "Auf stromsparenden Geräten und Free-Tier-Cloud zu laufen, lehrte mich zu optimieren, bevor ich skaliere.",
+            fr: "Tourner sur du matériel basse conso et du cloud gratuit m’a appris à optimiser avant de scaler."
+        },
+        "project.homelab.section.lessons.security.title": {
+            en: "Security is a journey",
+            pt: "Segurança é uma jornada",
+            lu: "Sécherheet ass eng Rees",
+            de: "Sicherheit ist eine Reise",
+            fr: "La sécurité est un parcours"
+        },
+        "project.homelab.section.lessons.security.body": {
+            en: "Implementing SSO, token blacklisting, and audit logging taught me that authentication is more than just passwords.",
+            pt: "Implementar SSO, blacklist de tokens e auditoria mostrou-me que autenticação é mais do que senhas.",
+            lu: "SSO, Token Blacklisting an Audit Logging ëmsetzen huet gewisen datt Authentifikatioun méi wéi Passwierder ass.",
+            de: "SSO, Token-Blacklisting und Audit-Logs zu bauen zeigte mir, dass Auth mehr ist als Passwörter.",
+            fr: "Mettre en place SSO, blacklist de tokens et journaux d’audit m’a montré que l’authentification, ce n’est pas que des mots de passe."
+        },
+        "project.homelab.section.lessons.hybrid.title": {
+            en: "Hybrid architecture complexity",
+            pt: "Complexidade da arquitetura híbrida",
+            lu: "Komplexitéit vun der Hybrid Architektur",
+            de: "Komplexität der Hybrid-Architektur",
+            fr: "Complexité de l'architecture hybride"
+        },
+        "project.homelab.section.lessons.hybrid.body": {
+            en: "Coordinating Docker Compose and K3s on the same node, plus a remote VPS gateway, required careful port planning and network design.",
+            pt: "Coordenar Docker Compose e K3s no mesmo nó, mais um gateway VPS remoto, exigiu planeamento cuidadoso de portas e desenho de rede.",
+            lu: "Docker Compose a K3s um selwechte Node koordinéieren, plus e VPS Gateway, huet genee Port a Netzwierk Planung verlaangt.",
+            de: "Docker Compose und K3s auf demselben Node plus ein Remote-VPS-Gateway erforderten sorgfältige Port- und Netzplanung.",
+            fr: "Coordonner Docker Compose et K3s sur le même nœud, plus une passerelle VPS distante, a demandé un vrai travail sur les ports et le réseau."
+        },
         "project.homelab.section.lessons.environment.title": {
             en: "Environment matters",
             pt: "O ambiente importa",
@@ -262,6 +334,48 @@
             lu: "Mat nëmmen enger eenzeger LAN-Dous doheem huet de Cluster am Wunnzëmmer misse stoen. Dës Aschränkung huet mech zu intelligente Hardware-Decisioune gezwongen: roueg Komponenten, niddreg-verbrauchend ARM-Prozessoren an effizient Killung. D'Upassung un déi richteg Aschränkunge vun der Realitéit huet mech zu engem bessere Ingenieur gemaach.",
             de: "Mit nur einer LAN-Buchse im Haus musste der Cluster im Wohnzimmer stehen. Diese Einschränkung erzwang kluge Hardware-Entscheidungen: leise Komponenten, stromsparende ARM-Prozessoren und effiziente Kühlung. Die Anpassung an reale Einschränkungen machte mich zu einem besseren Ingenieur.",
             fr: "Avec une seule prise LAN à la maison, le cluster devait vivre dans le salon. Cette contrainte a forcé des choix matériels intelligents : composants silencieux, processeurs ARM basse consommation et refroidissement efficace. S'adapter aux limitations du monde réel a fait de moi un meilleur ingénieur."
+        },
+        "project.homelab.section.lessons.localai.title": {
+            en: "Local AI has a hardware ceiling",
+            pt: "A IA local tem um limite de hardware",
+            lu: "Lokal KI huet eng Hardware-Grenz",
+            de: "Lokale KI hat eine Hardware-Grenze",
+            fr: "L'IA locale a un plafond matériel"
+        },
+        "project.homelab.section.lessons.localai.body": {
+            en: "I benchmarked local models on the worker laptop with my research agent's real prompt. One run took 4 to 20 minutes against a 10-second target. Memory bandwidth was the limit, not the settings, so local models now handle background work and the agents stay on a hosted API.",
+            pt: "Fiz benchmarks de modelos locais no portátil worker com o prompt real do meu agente de pesquisa. Uma execução demorou 4 a 20 minutos, contra um objetivo de 10 segundos. O limite era a largura de banda da memória, não a configuração, por isso os modelos locais tratam agora do trabalho em segundo plano e os agentes continuam numa API alojada.",
+            lu: "Ech hu lokal Modeller um Worker-Laptop mam richtege Prompt vu mengem Recherche-Agent getest. Ee Laf huet 4 bis 20 Minutten gedauert, géint en Zil vun 10 Sekonnen. D'Grenz war d'Speicherbandbreet, net d'Astellungen, dofir maachen déi lokal Modeller elo Hannergrondaarbecht an d'Agente bleiwen op enger gehoster API.",
+            de: "Ich habe lokale Modelle auf dem Worker-Laptop mit dem echten Prompt meines Recherche-Agenten gemessen. Ein Durchlauf dauerte 4 bis 20 Minuten, bei einem Ziel von 10 Sekunden. Die Grenze war die Speicherbandbreite, nicht die Einstellungen, deshalb übernehmen lokale Modelle jetzt Hintergrundarbeit und die Agenten bleiben auf einer gehosteten API.",
+            fr: "J'ai mesuré des modèles locaux sur le portable worker avec le vrai prompt de mon agent de recherche. Une exécution prenait 4 à 20 minutes, pour un objectif de 10 secondes. La limite venait de la bande passante mémoire, pas des réglages, donc les modèles locaux gèrent maintenant les tâches de fond et les agents restent sur une API hébergée."
+        },
+        "project.homelab.section.lessons.mobile.title": {
+            en: "Works on Wi-Fi, fails on mobile",
+            pt: "Funciona no Wi-Fi, falha nos dados móveis",
+            lu: "Leeft um WLAN, net op mobilen Donnéeën",
+            de: "Geht im WLAN, scheitert mobil",
+            fr: "Ça marche en Wi-Fi, pas en données mobiles"
+        },
+        "project.homelab.section.lessons.mobile.body": {
+            en: "Every service timed out on roaming mobile data while Wi-Fi worked instantly. The cause was oversized TCP packets lost inside the carrier's tunnel. Capping the packet size at the edge fixed it, and the obvious suspect, HTTP/3, turned out to be a red herring.",
+            pt: "Todos os serviços davam timeout com dados móveis em roaming, enquanto o Wi-Fi funcionava logo. A causa eram pacotes TCP demasiado grandes perdidos dentro do túnel do operador. Limitar o tamanho dos pacotes no edge resolveu, e o suspeito óbvio, o HTTP/3, era uma pista falsa.",
+            lu: "All Service ass mat mobilen Donnéeën am Roaming an en Timeout gelaf, während WLAN direkt funktionéiert huet. D'Ursaach waren ze grouss TCP-Paketen, déi am Tunnel vum Provider verluer gaange sinn. D'Paketgréisst um Edge ze begrenzen huet et geléist, an den offensichtleche Verdächtegen, HTTP/3, war eng falsch Spuer.",
+            de: "Jeder Dienst lief mit mobilen Daten im Roaming in einen Timeout, während WLAN sofort funktionierte. Die Ursache waren zu große TCP-Pakete, die im Tunnel des Netzbetreibers verloren gingen. Die Paketgröße am Edge zu begrenzen löste es, und der naheliegende Verdacht, HTTP/3, war eine falsche Fährte.",
+            fr: "Tous les services expiraient en données mobiles à l'étranger alors que le Wi-Fi marchait tout de suite. La cause : des paquets TCP trop gros perdus dans le tunnel de l'opérateur. Limiter la taille des paquets en bordure a réglé le problème, et le suspect évident, HTTP/3, était une fausse piste."
+        },
+        "project.homelab.section.lessons.cooling.title": {
+            en: "Measure, then cool",
+            pt: "Medir primeiro, arrefecer depois",
+            lu: "Fir d'éischt moossen, dann killen",
+            de: "Erst messen, dann kühlen",
+            fr: "Mesurer, puis refroidir"
+        },
+        "project.homelab.section.lessons.cooling.body": {
+            en: "In the enclosed cabinet the drives averaged 44 to 45 °C. I mapped each fan header, wrote a fan curve that follows the hottest drive, and printed an exhaust shroud. The drives now sit at 40 to 41 °C, quiet enough for a living room.",
+            pt: "No armário fechado os discos tinham uma média de 44 a 45 °C. Identifiquei cada conector de ventoinha, escrevi uma curva que segue o disco mais quente e imprimi uma saída de ar. Os discos estão agora a 40 a 41 °C, silenciosos o suficiente para uma sala.",
+            lu: "Am zoue Schaf louchen d'Placken am Duerchschnëtt bei 44 bis 45 °C. Ech hunn all Ventilator-Uschloss identifizéiert, eng Kurv geschriwwen, déi der waarmster Plack follegt, an en Auslaass gedréckt. D'Placke sinn elo bei 40 bis 41 °C, roueg genuch fir e Wunnzëmmer.",
+            de: "Im geschlossenen Schrank lagen die Platten im Schnitt bei 44 bis 45 °C. Ich habe jeden Lüfteranschluss zugeordnet, eine Kurve geschrieben, die der heißesten Platte folgt, und eine Abluftführung gedruckt. Die Platten liegen jetzt bei 40 bis 41 °C, leise genug fürs Wohnzimmer.",
+            fr: "Dans l'armoire fermée, les disques tournaient en moyenne à 44 à 45 °C. J'ai identifié chaque connecteur de ventilateur, écrit une courbe qui suit le disque le plus chaud et imprimé une sortie d'air. Les disques sont maintenant à 40 à 41 °C, assez silencieux pour un salon."
         },
         "project.homelab.section.next.title": {
             en: "What's Next",
@@ -327,11 +441,11 @@
             fr: "<strong>Plan de contrôle backend unifié</strong> : FastAPI + SQLAlchemy + Alembic + SQLite gèrent l'authentification, les permissions, l'enregistrement des apps, les journaux d'audit, l'orchestration IA et l'état partagé entre applications."
         },
         "project.homelab.section.what.core.auth": {
-            en: "<strong>Passwordless, federated login</strong>: passkeys (WebAuthn/FIDO2) are the primary sign-in, on top of a from-scratch OIDC provider and an OAuth 2.0 consent flow - so other apps and AI assistants can log in with the platform.",
-            pt: "<strong>Login sem palavra-passe e federado</strong>: as passkeys (WebAuthn/FIDO2) são o método principal de entrada, sobre um provedor OIDC feito de raiz e um fluxo de consentimento OAuth 2.0 - para que outras apps e assistentes de IA possam autenticar-se com a plataforma.",
-            lu: "<strong>Login ouni Passwuert a federéiert</strong>: Passkeys (WebAuthn/FIDO2) sinn de primäre Login, uewen op engem vun Null gebaute OIDC-Provider an engem OAuth 2.0 Zoustëmmungsfloss - sou datt aner Apps an AI-Assistenten sech mat der Plattform aloggen kënnen.",
-            de: "<strong>Passwortloses, föderiertes Login</strong>: Passkeys (WebAuthn/FIDO2) sind die primäre Anmeldung, dazu ein selbst gebauter OIDC-Provider und ein OAuth-2.0-Consent-Flow - damit sich andere Apps und KI-Assistenten mit der Plattform anmelden können.",
-            fr: "<strong>Connexion sans mot de passe et fédérée</strong> : les passkeys (WebAuthn/FIDO2) sont la connexion principale, au-dessus d'un fournisseur OIDC fait maison et d'un flux de consentement OAuth 2.0 - pour que d'autres apps et assistants IA puissent se connecter avec la plateforme."
+            en: "<strong>Passwordless, federated login</strong>: passkeys (WebAuthn/FIDO2) are the primary sign-in, on top of a from-scratch OIDC provider and an OAuth 2.0 consent flow, so other apps and AI assistants can log in with the platform. Access tokens are scoped per app and checked on every API call.",
+            pt: "<strong>Login federado e sem password</strong>: passkeys (WebAuthn/FIDO2) são o método principal, sobre um fornecedor OIDC feito de raiz e um fluxo de consentimento OAuth 2.0, para que outras apps e assistentes de IA possam entrar com a plataforma. Os tokens de acesso têm âmbito por app e são verificados em cada chamada à API.",
+            lu: "<strong>Federéierte Login ouni Passwuert</strong>: Passkeys (WebAuthn/FIDO2) sinn den Haaptlogin, op engem selwer gebauten OIDC Provider an engem OAuth 2.0 Consent Flow, sou datt aner Apps an KI-Assistenten sech mat der Plattform umelle kënnen. Access Tokens si pro App begrenzt a ginn bei all API-Opruff gepréift.",
+            de: "<strong>Passwortloser, föderierter Login</strong>: Passkeys (WebAuthn/FIDO2) sind die primäre Anmeldung, auf einem selbst gebauten OIDC-Provider und einem OAuth-2.0-Consent-Flow, damit sich andere Apps und KI-Assistenten über die Plattform anmelden können. Zugriffstokens sind pro App begrenzt und werden bei jedem API-Aufruf geprüft.",
+            fr: "<strong>Connexion fédérée sans mot de passe</strong> : les passkeys (WebAuthn/FIDO2) sont la connexion principale, sur un fournisseur OIDC fait maison et un flux de consentement OAuth 2.0, pour que d'autres applis et assistants IA puissent se connecter via la plateforme. Les jetons d'accès sont limités par appli et vérifiés à chaque appel d'API."
         },
         "project.homelab.section.what.core.surfaces": {
             en: "<strong>Real-time and generative surfaces</strong>: self-hosted voice/video rooms (LiveKit/WebRTC) and an AI keyframe video generator that turns a start and end frame into a short clip - both behind the same SSO and edge security.",
@@ -341,11 +455,11 @@
             fr: "<strong>Surfaces temps réel et génératives</strong> : des salles voix/vidéo auto-hébergées (LiveKit/WebRTC) et un générateur vidéo par images-clés IA qui transforme une image de début et de fin en un court clip - toutes deux derrière le même SSO et la sécurité d'edge."
         },
         "project.homelab.section.what.core.suite": {
-            en: "<strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery, task log, career workspace, voice/video rooms, an AI video generator, a mail surface, and a QR generator microservice.",
-            pt: "<strong>Conjunto de produtos personalizados</strong>: portal de identidade, hub de apps, consola de administração, digest de conteúdo, vault, term-mastery, registo de tarefas, workspace de carreira, salas de voz/vídeo, um gerador de vídeo por IA, uma superfície de email e um microsserviço gerador de QR.",
-            lu: "<strong>Personaliséierte Produkt-Suite</strong>: Identitéits-Portal, App-Hub, Admin-Konsol, Content-Digest, Vault, Term-Mastery, Task-Log, Carrière-Workspace, Voice-/Video-Raim, en AI-Videogenerator, eng Mail-Fläch an e QR-Generator-Microservice.",
-            de: "<strong>Eigene Produkt-Suite</strong>: Identitätsportal, App-Hub, Admin-Konsole, Content-Digest, Vault, Term-Mastery, Task-Log, Karriere-Workspace, Voice-/Video-Räume, ein KI-Videogenerator, eine Mail-Fläche und ein QR-Generator-Microservice.",
-            fr: "<strong>Suite de produits maison</strong> : portail d'identité, hub d'apps, console d'admin, digest de contenu, vault, term-mastery, journal de tâches, espace carrière, salles voix/vidéo, un générateur vidéo IA, une surface mail et un microservice générateur de QR."
+            en: "<strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery, task log, career workspace, voice/video rooms, an AI video generator, a mail studio, a music intake app, a knowledge base console, and a QR generator microservice.",
+            pt: "<strong>Suite de produtos própria</strong>: portal de identidade, hub de apps, consola de administração, digest de conteúdos, vault, domínio de termos, registo de tarefas, espaço de carreira, salas de voz/vídeo, um gerador de vídeo com IA, um estúdio de email, uma app de entrada de música, uma consola da base de conhecimento e um microserviço gerador de QR.",
+            lu: "<strong>Eege Produit-Suite</strong>: Identitéitsportal, App-Hub, Admin-Konsol, Content-Digest, Vault, Begrëffer-Training, Task-Log, Karriär-Workspace, Stëmm/Video-Raim, en KI-Video-Generator, e Mail-Studio, eng Musek-Intake-App, eng Konsol fir d'Wëssensbasis an e QR-Generator-Mikroservice.",
+            de: "<strong>Eigene Produktsuite</strong>: Identitätsportal, App-Hub, Admin-Konsole, Content-Digest, Vault, Begriffstraining, Task-Log, Karriere-Workspace, Sprach-/Videoräume, ein KI-Videogenerator, ein Mail-Studio, eine Musik-Intake-App, eine Konsole für die Wissensbasis und ein QR-Generator-Microservice.",
+            fr: "<strong>Suite de produits maison</strong> : portail d'identité, hub d'applis, console d'administration, digest de contenus, vault, maîtrise de termes, journal de tâches, espace carrière, salons voix/vidéo, un générateur de vidéo IA, un studio d'e-mails, une appli d'ajout de musique, une console pour la base de connaissances et un microservice de génération de QR."
         },
         "project.homelab.section.what.core.killswitch": {
             en: "<strong>Hard application kill switch</strong>: Every custom frontend is registered centrally, so disabling an app immediately blocks access even on direct URL visits.",
@@ -353,6 +467,13 @@
             lu: "<strong>Harde Kill-Switch fir Applikatiounen</strong>: All personaliséierte Frontend ass zentral registréiert, also blockéiert d'Desaktivéiere vun enger App direkt den Zougang, och bei engem direkten URL-Opruff.",
             de: "<strong>Harter Application-Kill-Switch</strong>: Jedes eigene Frontend ist zentral registriert, sodass das Deaktivieren einer App den Zugriff sofort blockiert, selbst bei direktem URL-Aufruf.",
             fr: "<strong>Kill switch applicatif strict</strong> : Chaque frontend personnalisé est enregistré centralement, donc désactiver une app bloque immédiatement l'accès, même via une URL directe."
+        },
+        "project.homelab.section.what.core.mcp": {
+            en: "<strong>AI assistant bridge (MCP)</strong>: AI clients connect through single sign-on and consent, the server mints a scoped token for them, and they get tools for tasks, research, calendars, mail and security briefs.",
+            pt: "<strong>Ponte para assistentes de IA (MCP)</strong>: os clientes de IA ligam-se por single sign-on e consentimento, o servidor cria-lhes um token com âmbito limitado e recebem ferramentas para tarefas, pesquisa, calendários, email e resumos de segurança.",
+            lu: "<strong>Bréck fir KI-Assistenten (MCP)</strong>: KI-Clienten verbanne sech iwwer Single Sign-on an Zoustëmmung, de Server erstellt hinnen e begrenzten Token, a si kréien Tools fir Aufgaben, Recherche, Kalenneren, Mail a Sécherheetsiwwersiichten.",
+            de: "<strong>Brücke für KI-Assistenten (MCP)</strong>: KI-Clients verbinden sich per Single Sign-on und Zustimmung, der Server erstellt ihnen ein begrenztes Token, und sie erhalten Tools für Aufgaben, Recherche, Kalender, Mail und Sicherheitsberichte.",
+            fr: "<strong>Pont pour assistants IA (MCP)</strong> : les clients IA se connectent par authentification unique et consentement, le serveur leur crée un jeton limité, et ils obtiennent des outils pour les tâches, la recherche, les calendriers, les e-mails et les synthèses de sécurité."
         },
         "project.homelab.section.what.apps.title": {
             en: "Agent + Worker Layer",
@@ -362,11 +483,11 @@
             fr: "Couche agents + workers"
         },
         "project.homelab.section.what.apps.retriever": {
-            en: "<strong>Retriever agent</strong>: Researches the web through a private meta-search backend and headless browsing, then returns structured briefs.",
-            pt: "<strong>Agente Retriever</strong>: Pesquisa a web através de um backend de meta-pesquisa privado e navegação headless, devolvendo depois briefs estruturados.",
-            lu: "<strong>Retriever-Agent</strong>: Fuerscht am Web iwwer e private Meta-Search-Backend an Headless-Browsing an liwwert dono strukturéiert Briefings zeréck.",
-            de: "<strong>Retriever-Agent</strong>: Recherchiert im Web über ein privates Meta-Search-Backend und Headless-Browsing und liefert anschließend strukturierte Briefings zurück.",
-            fr: "<strong>Agent Retriever</strong> : Recherche sur le web via un backend de méta-recherche privé et de la navigation headless, puis renvoie des briefs structurés."
+            en: "<strong>Research agent</strong>: Researches the web through a private meta-search backend and headless browsing, then returns structured briefs.",
+            pt: "<strong>Agente de pesquisa</strong>: Pesquisa a web através de um backend de meta-pesquisa privado e navegação headless, devolvendo depois briefs estruturados.",
+            lu: "<strong>Recherche-Agent</strong>: Fuerscht am Web iwwer e private Meta-Search-Backend an Headless-Browsing an liwwert dono strukturéiert Briefings zeréck.",
+            de: "<strong>Recherche-Agent</strong>: Recherchiert im Web über ein privates Meta-Search-Backend und Headless-Browsing und liefert anschließend strukturierte Briefings zurück.",
+            fr: "<strong>Agent de recherche</strong> : Recherche sur le web via un backend de méta-recherche privé et de la navigation headless, puis renvoie des briefs structurés."
         },
         "project.homelab.section.what.apps.term": {
             en: "<strong>Term-mastery agent</strong>: Generates summaries, flashcards, and remediation workflows for learning content.",
@@ -397,11 +518,53 @@
             fr: "<strong>Agent de triage de gouvernance</strong> : surveille les anomalies internes de sessions, permissions et comptes avec une politique d'actions graduée - les correctifs à faible risque s'exécutent automatiquement, les actions à fort impact passent par une file d'approbation humaine."
         },
         "project.homelab.section.what.apps.infra": {
-            en: "<strong>Infrastructure monitoring agent</strong>: runs probes across nodes, containers, temperatures, and backup freshness, then an optional AI layer triages findings into a recovery-aware signal feed.",
-            pt: "<strong>Agente de monitorização de infraestrutura</strong>: corre sondas em nós, contentores, temperaturas e atualidade dos backups, e depois uma camada de IA opcional classifica os resultados num feed de sinais com reconhecimento de recuperação.",
-            lu: "<strong>Infrastruktur-Iwwerwaachungs-Agent</strong>: leeft Proben iwwer Noden, Container, Temperaturen an d'Aktualitéit vun de Backups, an dann triéiert eng optional AI-Schicht d'Resultater an e Signal-Feed dee Recovery erkennt.",
-            de: "<strong>Infrastruktur-Monitoring-Agent</strong>: führt Proben über Knoten, Container, Temperaturen und Backup-Aktualität aus, dann triagiert eine optionale KI-Schicht die Funde in einen Recovery-bewussten Signal-Feed.",
-            fr: "<strong>Agent de surveillance d'infrastructure</strong> : lance des sondes sur les nœuds, conteneurs, températures et fraîcheur des sauvegardes, puis une couche IA optionnelle trie les résultats en un flux de signaux conscient des reprises."
+            en: "<strong>Infrastructure monitoring agent</strong>: runs probes across nodes, containers, temperatures, and backup freshness, then an optional AI layer triages findings into a recovery-aware signal feed. A paired repair agent proposes a bounded fix and only applies it after my approval.",
+            pt: "<strong>Agente de monitorização da infraestrutura</strong>: corre verificações em nós, containers, temperaturas e frescura dos backups, e uma camada de IA opcional faz a triagem dos resultados num feed de sinais que acompanha a recuperação. Um agente de reparação associado propõe uma correção limitada e só a aplica depois da minha aprovação.",
+            lu: "<strong>Infrastruktur-Monitoring-Agent</strong>: leeft Proben iwwer Noden, Container, Temperaturen an d'Aktualitéit vun de Backups, an eng optional KI-Schicht sortéiert d'Resultater an e Signal-Feed, deen d'Erhuelung matverfollegt. E Reparatur-Agent dobäi proposéiert eng begrenzte Léisung a setzt se eréischt no menger Zoustëmmung ëm.",
+            de: "<strong>Infrastruktur-Monitoring-Agent</strong>: führt Prüfungen über Knoten, Container, Temperaturen und Backup-Aktualität aus, und eine optionale KI-Schicht sortiert die Funde in einen Signal-Feed, der die Wiederherstellung mitverfolgt. Ein zugehöriger Reparatur-Agent schlägt eine begrenzte Korrektur vor und wendet sie erst nach meiner Freigabe an.",
+            fr: "<strong>Agent de supervision de l'infrastructure</strong> : lance des sondes sur les nœuds, les conteneurs, les températures et la fraîcheur des sauvegardes, puis une couche IA optionnelle trie les résultats dans un flux de signaux qui suit la reprise. Un agent de réparation associé propose un correctif limité et ne l'applique qu'après mon accord."
+        },
+        "project.homelab.section.what.apps.quality": {
+            en: "<strong>Quality-check agent</strong>: verifies content summaries and crawls, spots login walls and empty captures, and tries one bounded rescue scrape before it refreshes the result.",
+            pt: "<strong>Agente de controlo de qualidade</strong>: verifica resumos e crawls de conteúdo, deteta páginas de login e capturas vazias, e tenta uma recuperação limitada antes de atualizar o resultado.",
+            lu: "<strong>Qualitéitskontroll-Agent</strong>: iwwerpréift Resuméen a Crawls, erkennt Login-Mauere an eidel Captures, a probéiert eng begrenzte Rettung, ier en d'Resultat aktualiséiert.",
+            de: "<strong>Qualitätsprüfungs-Agent</strong>: prüft Zusammenfassungen und Crawls, erkennt Login-Sperren und leere Erfassungen und versucht einen begrenzten Rettungs-Scrape, bevor er das Ergebnis aktualisiert.",
+            fr: "<strong>Agent de contrôle qualité</strong> : vérifie les résumés et les crawls, repère les murs de connexion et les captures vides, et tente une récupération limitée avant de mettre le résultat à jour."
+        },
+        "project.homelab.section.what.apps.drafting": {
+            en: "<strong>Drafting and CV agents</strong>: one writes replies to a conversation for mandatory human review and never sends anything itself. The other reviews a CV, tailors it to a job posting and returns edits that I accept or reject.",
+            pt: "<strong>Agentes de redação e de CV</strong>: um escreve respostas a uma conversa para revisão humana obrigatória e nunca envia nada sozinho. O outro revê um CV, adapta-o a uma oferta de emprego e devolve alterações que eu aceito ou rejeito.",
+            lu: "<strong>Redaktiouns- a CV-Agenten</strong>: deen een schreift Äntwerten op e Gespréich fir eng obligatoresch mënschlech Kontroll a schéckt selwer ni eppes of. Deen aneren iwwerpréift e CV, passt en un eng Stellenannonce un a gëtt Ännerunge zréck, déi ech unhuelen oder refuséieren.",
+            de: "<strong>Entwurfs- und CV-Agenten</strong>: einer schreibt Antworten auf ein Gespräch zur verpflichtenden menschlichen Prüfung und versendet nie selbst etwas. Der andere prüft einen Lebenslauf, passt ihn an eine Stellenanzeige an und liefert Änderungen, die ich annehme oder ablehne.",
+            fr: "<strong>Agents de rédaction et de CV</strong> : l'un rédige des réponses à une conversation pour une relecture humaine obligatoire et n'envoie jamais rien lui-même. L'autre relit un CV, l'adapte à une offre d'emploi et renvoie des modifications que j'accepte ou refuse."
+        },
+        "project.homelab.section.what.apps.localai": {
+            en: "<strong>Self-hosted AI gateway</strong>: an OpenAI-compatible endpoint serves nine local models (chat, tool calling, code, embeddings) and two text-to-speech voices from the worker laptop's integrated GPU over Vulkan, for background and batch work.",
+            pt: "<strong>Gateway de IA self-hosted</strong>: um endpoint compatível com OpenAI serve nove modelos locais (chat, chamadas de ferramentas, código, embeddings) e duas vozes de texto para fala a partir da GPU integrada do portátil worker via Vulkan, para trabalho em segundo plano e em lote.",
+            lu: "<strong>Self-hosted KI-Gateway</strong>: en OpenAI-kompatibelen Endpoint servéiert néng lokal Modeller (Chat, Tool-Calling, Code, Embeddings) an zwou Text-to-Speech-Stëmmen vun der integréierter GPU vum Worker-Laptop iwwer Vulkan, fir Hannergrond- a Batch-Aarbecht.",
+            de: "<strong>Selbst gehostetes KI-Gateway</strong>: ein OpenAI-kompatibler Endpunkt liefert neun lokale Modelle (Chat, Tool-Calling, Code, Embeddings) und zwei Text-to-Speech-Stimmen von der integrierten GPU des Worker-Laptops über Vulkan, für Hintergrund- und Batch-Arbeit.",
+            fr: "<strong>Passerelle IA auto-hébergée</strong> : un point d'accès compatible OpenAI sert neuf modèles locaux (chat, appel d'outils, code, embeddings) et deux voix de synthèse vocale depuis le GPU intégré du portable worker via Vulkan, pour les tâches de fond et par lots."
+        },
+        "project.homelab.section.what.apps.decision": {
+            en: "<strong>Fast decision engine</strong>: a CPU model answers choice and score questions about a text in about 100 ms without generating any tokens, and flags likely prompt injection on the AI gateway as a signal, never a block.",
+            pt: "<strong>Motor de decisão rápido</strong>: um modelo em CPU responde a perguntas de escolha e pontuação sobre um texto em cerca de 100 ms sem gerar tokens, e assinala possíveis prompt injections no gateway de IA como sinal, nunca como bloqueio.",
+            lu: "<strong>Séieren Decisiouns-Motor</strong>: e CPU-Modell beäntwert Choix- a Score-Froen iwwer en Text an ongeféier 100 ms ouni Tokens ze generéieren, a mellt wahrscheinlech Prompt Injections um KI-Gateway als Signal, ni als Spär.",
+            de: "<strong>Schnelle Entscheidungs-Engine</strong>: ein CPU-Modell beantwortet Auswahl- und Bewertungsfragen zu einem Text in etwa 100 ms, ohne Tokens zu erzeugen, und meldet mögliche Prompt Injection am KI-Gateway als Signal, nie als Sperre.",
+            fr: "<strong>Moteur de décision rapide</strong> : un modèle sur CPU répond à des questions de choix et de score sur un texte en environ 100 ms sans générer de tokens, et signale les injections de prompt probables sur la passerelle IA comme un signal, jamais comme un blocage."
+        },
+        "project.homelab.section.what.apps.knowledge": {
+            en: "<strong>Agent memory and knowledge base</strong>: hybrid vector and full-text search over remembered notes, learned pages, video transcripts and crawled documentation, with local embeddings. It never indexes personal data.",
+            pt: "<strong>Memória dos agentes e base de conhecimento</strong>: pesquisa híbrida vetorial e de texto completo sobre notas memorizadas, páginas aprendidas, transcrições de vídeo e documentação recolhida, com embeddings locais. Nunca indexa dados pessoais.",
+            lu: "<strong>Gedächtnis vun den Agenten a Wëssensbasis</strong>: hybrid Vektor- a Volltext-Sich iwwer gespäichert Notizen, geléiert Säiten, Video-Transkriptiounen a gecrawlt Dokumentatioun, mat lokalen Embeddings. Perséinlech Donnéeë ginn ni indexéiert.",
+            de: "<strong>Agentengedächtnis und Wissensbasis</strong>: hybride Vektor- und Volltextsuche über gemerkte Notizen, gelernte Seiten, Video-Transkripte und gecrawlte Dokumentation, mit lokalen Embeddings. Persönliche Daten werden nie indexiert.",
+            fr: "<strong>Mémoire des agents et base de connaissances</strong> : recherche hybride vectorielle et plein texte sur les notes mémorisées, les pages apprises, les transcriptions vidéo et la documentation crawlée, avec des embeddings locaux. Elle n'indexe jamais de données personnelles."
+        },
+        "project.homelab.section.what.apps.ingest": {
+            en: "<strong>Video to transcript</strong>: a worker turns a video link into a timestamped, chunked transcript that agents can read, using human-written subtitles first and Whisper as the fallback.",
+            pt: "<strong>De vídeo a transcrição</strong>: um worker transforma um link de vídeo numa transcrição com marcas de tempo e dividida em partes que os agentes conseguem ler, usando primeiro legendas escritas por pessoas e o Whisper como alternativa.",
+            lu: "<strong>Vu Video op Transkriptioun</strong>: e Worker mécht aus engem Video-Link eng Transkriptioun mat Zäitmarken an Deeler, déi d'Agente liese kënnen, mat vu Mënsche geschriwwenen Ënnertitelen als éischt Wiel a Whisper als Ersatz.",
+            de: "<strong>Vom Video zum Transkript</strong>: ein Worker macht aus einem Videolink ein zeitgestempeltes, in Abschnitte geteiltes Transkript, das Agenten lesen können, mit von Menschen geschriebenen Untertiteln zuerst und Whisper als Rückfall.",
+            fr: "<strong>De la vidéo à la transcription</strong> : un worker transforme un lien vidéo en transcription horodatée et découpée que les agents peuvent lire, en utilisant d'abord les sous-titres écrits par des humains et Whisper en secours."
         },
         "project.homelab.section.what.apps.modes": {
             en: "<strong>Two run modes, tiered models</strong>: every agent runs as a cheap fixed pipeline or an adaptive LLM-driven loop; Mistral Small drives the decisions, Mistral Large the final synthesis.",
@@ -425,11 +588,11 @@
             fr: "<strong>TrueNAS SCALE + ZFS</strong> : Nœud de stockage séparé avec stockage massif sur HDD en miroir, tier hot sur SSD et datasets spécifiques par service."
         },
         "project.homelab.section.what.media.services": {
-            en: "<strong>Full self-hosted media</strong>: Jellyfin with hardware transcoding, fed by a Radarr/Sonarr/Jellyseerr/Bazarr/Jackett acquisition pipeline with ClamAV scanning; Immich for photos; Nextcloud for files; Navidrome + Lidarr + AudioMuse-AI for music.",
-            pt: "<strong>Média self-hosted completa</strong>: Jellyfin com transcodificação por hardware, alimentado por um pipeline de aquisição Radarr/Sonarr/Jellyseerr/Bazarr/Jackett com verificação ClamAV; Immich para fotos; Nextcloud para ficheiros; Navidrome + Lidarr + AudioMuse-AI para música.",
-            lu: "<strong>Komplett self-hosted Media</strong>: Jellyfin mat Hardware-Transcoding, gespeist vun engem Radarr/Sonarr/Jellyseerr/Bazarr/Jackett Acquisitioun-Pipeline mat ClamAV-Scan; Immich fir Fotoen; Nextcloud fir Fichieren; Navidrome + Lidarr + AudioMuse-AI fir Musek.",
-            de: "<strong>Komplett self-hosted Medien</strong>: Jellyfin mit Hardware-Transcoding, gespeist von einer Radarr/Sonarr/Jellyseerr/Bazarr/Jackett-Pipeline mit ClamAV-Scan; Immich für Fotos; Nextcloud für Dateien; Navidrome + Lidarr + AudioMuse-AI für Musik.",
-            fr: "<strong>Médias auto-hébergés complets</strong> : Jellyfin avec transcodage matériel, alimenté par un pipeline d'acquisition Radarr/Sonarr/Jellyseerr/Bazarr/Jackett avec analyse ClamAV ; Immich pour les photos ; Nextcloud pour les fichiers ; Navidrome + Lidarr + AudioMuse-AI pour la musique."
+            en: "<strong>Full self-hosted media</strong>: Jellyfin with hardware transcoding, fed by a Radarr/Sonarr/Jellyseerr/Bazarr/Jackett acquisition pipeline with ClamAV scanning; Immich for photos; Nextcloud for files; Navidrome + Lidarr + Soulseek for music; Forgejo for Git hosting.",
+            pt: "<strong>Media completa e self-hosted</strong>: Jellyfin com transcodificação por hardware, alimentado por um pipeline Radarr/Sonarr/Jellyseerr/Bazarr/Jackett com análise ClamAV; Immich para fotos; Nextcloud para ficheiros; Navidrome + Lidarr + Soulseek para música; Forgejo para alojamento Git.",
+            lu: "<strong>Komplett self-hosted Medien</strong>: Jellyfin mat Hardware-Transcoding, gefiddert vun enger Radarr/Sonarr/Jellyseerr/Bazarr/Jackett Pipeline mat ClamAV-Scan; Immich fir Fotoen; Nextcloud fir Fichieren; Navidrome + Lidarr + Soulseek fir Musek; Forgejo fir Git-Hosting.",
+            de: "<strong>Vollständig selbst gehostete Medien</strong>: Jellyfin mit Hardware-Transcoding, gespeist von einer Radarr/Sonarr/Jellyseerr/Bazarr/Jackett-Pipeline mit ClamAV-Scan; Immich für Fotos; Nextcloud für Dateien; Navidrome + Lidarr + Soulseek für Musik; Forgejo für Git-Hosting.",
+            fr: "<strong>Médias entièrement auto-hébergés</strong> : Jellyfin avec transcodage matériel, alimenté par un pipeline Radarr/Sonarr/Jellyseerr/Bazarr/Jackett avec analyse ClamAV ; Immich pour les photos ; Nextcloud pour les fichiers ; Navidrome + Lidarr + Soulseek pour la musique ; Forgejo pour l'hébergement Git."
         },
         "project.homelab.section.what.media.object": {
             en: "<strong>S3-compatible object storage</strong>: Dual MinIO tiers keep hot objects on SSD and move colder data to HDD through lifecycle rules.",
@@ -437,6 +600,20 @@
             lu: "<strong>S3-kompatibele Object-Storage</strong>: Zwee MinIO-Tiers halen waarm Objeten op SSD a verréckelen déi méi kal Donnéeën iwwer Lifecycle-Reegelen op HDD.",
             de: "<strong>S3-kompatibler Object-Storage</strong>: Zwei MinIO-Tiers halten heiße Objekte auf SSD und verschieben kältere Daten per Lifecycle-Regeln auf HDD.",
             fr: "<strong>Stockage objet compatible S3</strong> : Deux tiers MinIO gardent les objets chauds sur SSD et déplacent les données plus froides vers HDD via des règles de cycle de vie."
+        },
+        "project.homelab.section.what.media.backup": {
+            en: "<strong>Versioned backups</strong>: a dedicated backup runner writes timestamped, checksummed archives for each data domain to the NAS and keeps 30 versions, while ZFS snapshots cover the datasets.",
+            pt: "<strong>Backups com versões</strong>: um executor de backups dedicado grava arquivos com data e checksum para cada domínio de dados na NAS e guarda 30 versões, enquanto os snapshots ZFS cobrem os datasets.",
+            lu: "<strong>Versionéiert Backups</strong>: en dedizéierte Backup-Runner schreift Archiven mat Zäitstempel a Checksum fir all Donnéeë-Beräich op d'NAS a behält 30 Versiounen, während ZFS-Snapshots d'Datasets ofdecken.",
+            de: "<strong>Versionierte Backups</strong>: ein eigener Backup-Runner schreibt zeitgestempelte Archive mit Prüfsumme für jeden Datenbereich auf den NAS und behält 30 Versionen, während ZFS-Snapshots die Datasets abdecken.",
+            fr: "<strong>Sauvegardes versionnées</strong> : un exécuteur de sauvegardes dédié écrit sur le NAS des archives horodatées avec somme de contrôle pour chaque domaine de données et garde 30 versions, tandis que les snapshots ZFS couvrent les datasets."
+        },
+        "project.homelab.section.what.media.rack": {
+            en: "<strong>Rack power and cooling</strong>: a smart plug measures the whole rack and the platform sets it against the live electricity price. A script on the NAS drives the intake fan from the hottest drive every 10 seconds, with a 3D-printed exhaust shroud on top, and the drives now hold 40 to 41 °C.",
+            pt: "<strong>Energia e arrefecimento do rack</strong>: uma tomada inteligente mede o rack inteiro e a plataforma cruza esse consumo com o preço da eletricidade em tempo real. Um script na NAS ajusta a ventoinha de entrada a cada 10 segundos pelo disco mais quente, com uma saída de ar impressa em 3D no topo, e os discos mantêm agora 40 a 41 °C.",
+            lu: "<strong>Stroum a Ofkillung vum Rack</strong>: e Smart Plug moosst de ganze Rack, an d'Plattform setzt dee Verbrauch géint de Live-Stroumpräis. E Script op der NAS reegelt all 10 Sekonnen de Loftventilator no der waarmster Plack, mat engem 3D-gedréckten Auslaass uewen, an d'Placken halen elo 40 bis 41 °C.",
+            de: "<strong>Strom und Kühlung des Racks</strong>: ein smarter Stecker misst das ganze Rack, und die Plattform stellt den Verbrauch dem aktuellen Strompreis gegenüber. Ein Skript auf dem NAS regelt den Zuluftlüfter alle 10 Sekunden nach der heißesten Festplatte, mit einer 3D-gedruckten Abluftführung oben, und die Platten halten jetzt 40 bis 41 °C.",
+            fr: "<strong>Énergie et refroidissement du rack</strong> : une prise connectée mesure tout le rack et la plateforme met cette consommation face au prix de l'électricité en direct. Un script sur le NAS règle le ventilateur d'entrée toutes les 10 secondes selon le disque le plus chaud, avec une sortie d'air imprimée en 3D au sommet, et les disques tiennent maintenant 40 à 41 °C."
         },
         "project.homelab.section.what.k3s.ingress": {
             en: "<strong>Traefik ingress</strong>: Host-based routing and a clean path to declarative microservice deployments.",
@@ -565,11 +742,11 @@
             fr: "LiveKit (salles WebRTC)"
         },
         "project.homelab.sidebar.tech.video": {
-            en: "DashScope (image-to-video)",
-            pt: "DashScope (imagem-para-vídeo)",
-            lu: "DashScope (Bild-zu-Video)",
-            de: "DashScope (Bild-zu-Video)",
-            fr: "DashScope (image vers vidéo)"
+            en: "Qwen Wan + Seedance (image-to-video)",
+            pt: "Qwen Wan + Seedance (imagem para vídeo)",
+            lu: "Qwen Wan + Seedance (Bild op Video)",
+            de: "Qwen Wan + Seedance (Bild zu Video)",
+            fr: "Qwen Wan + Seedance (image vers vidéo)"
         },
         "project.homelab.sidebar.tech.email": {
             en: "Resend (transactional email)",
@@ -599,6 +776,27 @@
             de: "Playwright + Sharp + SearXNG",
             fr: "Playwright + Sharp + SearXNG"
         },
+        "project.homelab.sidebar.tech.localai": {
+            en: "Ollama + Vulkan (local LLMs)",
+            pt: "Ollama + Vulkan (LLMs locais)",
+            lu: "Ollama + Vulkan (lokal LLMs)",
+            de: "Ollama + Vulkan (lokale LLMs)",
+            fr: "Ollama + Vulkan (LLM locaux)"
+        },
+        "project.homelab.sidebar.tech.search": {
+            en: "sqlite-vec + FTS5 (hybrid search)",
+            pt: "sqlite-vec + FTS5 (pesquisa híbrida)",
+            lu: "sqlite-vec + FTS5 (hybrid Sich)",
+            de: "sqlite-vec + FTS5 (hybride Suche)",
+            fr: "sqlite-vec + FTS5 (recherche hybride)"
+        },
+        "project.homelab.sidebar.tech.speech": {
+            en: "Whisper, Kokoro, Piper (speech)",
+            pt: "Whisper, Kokoro, Piper (voz)",
+            lu: "Whisper, Kokoro, Piper (Sprooch)",
+            de: "Whisper, Kokoro, Piper (Sprache)",
+            fr: "Whisper, Kokoro, Piper (voix)"
+        },
         "project.homelab.sidebar.tech.media": {
             en: "Jellyfin, Immich, Nextcloud, Navidrome",
             pt: "Jellyfin, Immich, Nextcloud, Navidrome",
@@ -614,11 +812,11 @@
             fr: "Topologie hybride à quatre nœuds"
         },
         "project.homelab.sidebar.features.rack": {
-            en: "Compact 10U rack with monitored power",
-            pt: "Rack compacto de 10U com energia monitorizada",
-            lu: "Kompakte 10U-Rack mat iwwerwaachter Stroumversuergung",
-            de: "Kompaktes 10U-Rack mit überwachter Stromversorgung",
-            fr: "Rack compact 10U avec alimentation surveillée"
+            en: "Enclosed 10U rack with monitored power",
+            pt: "Rack fechado de 10U com energia monitorizada",
+            lu: "Zouene 10U Rack mat iwwerwaachtem Stroum",
+            de: "Geschlossenes 10U-Rack mit überwachtem Strom",
+            fr: "Rack fermé 10U avec consommation surveillée"
         },
         "project.homelab.sidebar.features.exposure": {
             en: "Zero direct internet exposure for the home server",
@@ -642,11 +840,11 @@
             fr: "Fournisseur OIDC + OAuth 2.0 pour connecteurs IA"
         },
         "project.homelab.sidebar.features.apps": {
-            en: "10+ custom apps sharing one backend control plane",
-            pt: "10+ apps personalizadas a partilhar o mesmo plano de controlo backend",
-            lu: "10+ personaliséiert Apps, déi ee gemeinsame Backend-Control-Plane deelen",
-            de: "10+ eigene Apps mit gemeinsamer Backend-Control-Plane",
-            fr: "10+ apps personnalisées partageant un même plan de contrôle backend"
+            en: "15+ custom apps sharing one backend control plane",
+            pt: "Mais de 15 apps próprias com um único backend de controlo",
+            lu: "Iwwer 15 eegen Apps mat engem gemeinsame Backend",
+            de: "15+ eigene Apps auf einer gemeinsamen Backend-Steuerung",
+            fr: "Plus de 15 applis maison sur un seul backend de contrôle"
         },
         "project.homelab.sidebar.features.realtime": {
             en: "Self-hosted voice/video rooms (LiveKit)",
@@ -663,11 +861,18 @@
             fr: "Génération vidéo par images-clés IA"
         },
         "project.homelab.sidebar.features.agents": {
-            en: "Five guardrailed AI agents with approval gates",
-            pt: "Cinco agentes de IA com guardrails e portões de aprovação",
-            lu: "Fënnef AI-Agenten mat Guardrails an Approval-Gates",
-            de: "Fünf KI-Agenten mit Guardrails und Freigabe-Gates",
-            fr: "Cinq agents IA avec guardrails et portes d'approbation"
+            en: "Nine guardrailed AI agents with approval gates",
+            pt: "Nove agentes de IA com guardrails e aprovações",
+            lu: "Néng KI-Agenten mat Guardrails a Fräigaben",
+            de: "Neun KI-Agenten mit Guardrails und Freigaben",
+            fr: "Neuf agents IA avec garde-fous et validations"
+        },
+        "project.homelab.sidebar.features.localai": {
+            en: "Self-hosted OpenAI-compatible AI gateway",
+            pt: "Gateway de IA self-hosted compatível com OpenAI",
+            lu: "Self-hosted KI-Gateway, OpenAI-kompatibel",
+            de: "Selbst gehostetes, OpenAI-kompatibles KI-Gateway",
+            fr: "Passerelle IA auto-hébergée compatible OpenAI"
         },
         "project.homelab.sidebar.features.nas": {
             en: "Dedicated NAS with hot/cold object storage",
@@ -675,6 +880,13 @@
             lu: "Dedizéierten NAS mat Hot/Cold-Object-Storage",
             de: "Dediziertes NAS mit Hot/Cold-Object-Storage",
             fr: "NAS dédié avec stockage objet hot/cold"
+        },
+        "project.homelab.sidebar.features.cooling": {
+            en: "Fan control driven by drive temperatures",
+            pt: "Ventoinhas controladas pela temperatura dos discos",
+            lu: "Ventilatioun no der Temperatur vun de Placken",
+            de: "Lüftersteuerung nach Festplattentemperatur",
+            fr: "Ventilation pilotée par la température des disques"
         },
         "project.homelab.sidebar.features.mediafull": {
             en: "Full media, photos, files, and music stack",
@@ -697,8 +909,6 @@
             de: "Gemischtes Deployment-Modell mit Docker Compose + K3s",
             fr: "Modèle de déploiement mixte Docker Compose + K3s"
         },
-
-        // --- At-a-glance metric chips ---
         "project.homelab.glance.nodes.label": {
             en: "machines working as one",
             pt: "máquinas a funcionar como uma só",
@@ -734,8 +944,6 @@
             de: "KI-Assistenten mit Schutzmechanismen",
             fr: "assistants IA avec garde-fous"
         },
-
-        // --- Architecture diagram ---
         "project.homelab.arch.title": {
             en: "How it fits together",
             pt: "Como tudo se encaixa",
@@ -771,8 +979,6 @@
             de: "Ein Tailscale-Mesh überlagert alle Knoten für den Admin-Zugriff - nur der WireGuard-Tunnel trägt öffentlichen Traffic.",
             fr: "Un mesh Tailscale couvre tous les nœuds pour l'accès admin - seul le tunnel WireGuard transporte le trafic public."
         },
-
-        // --- Plain-English "what it does" cards (overview) ---
         "project.homelab.does.title": {
             en: "What it actually does",
             pt: "O que faz na prática",
@@ -816,11 +1022,11 @@
             fr: "Des agents IA qui font un vrai travail"
         },
         "project.homelab.does.agents.desc": {
-            en: "Research, study, security, governance and infrastructure helpers that run safely behind strict limits.",
-            pt: "Ajudantes de pesquisa, estudo, segurança, governança e infraestrutura que funcionam em segurança dentro de limites rígidos.",
-            lu: "Hëllefen fir Recherche, Léieren, Sécherheet, Governance an Infrastruktur déi sécher bannent strenge Grenze lafen.",
-            de: "Helfer für Recherche, Lernen, Sicherheit, Governance und Infrastruktur, die sicher innerhalb strenger Grenzen laufen.",
-            fr: "Des assistants de recherche, d'étude, de sécurité, de gouvernance et d'infrastructure qui fonctionnent en toute sécurité dans des limites strictes."
+            en: "Research, study, security, writing, CV coaching and infrastructure helpers that run safely behind strict limits and ask before they act.",
+            pt: "Ajudantes de pesquisa, estudo, segurança, escrita, CV e infraestrutura que correm em segurança dentro de limites rígidos e pedem autorização antes de agir.",
+            lu: "Hëllefe fir Recherche, Léieren, Sécherheet, Schreiwen, CV an Infrastruktur, déi sécher bannent strenge Grenze lafen a froen, ier se handelen.",
+            de: "Helfer für Recherche, Lernen, Sicherheit, Schreiben, Lebenslauf und Infrastruktur, die sicher in strengen Grenzen laufen und fragen, bevor sie handeln.",
+            fr: "Des assistants pour la recherche, l'étude, la sécurité, l'écriture, le CV et l'infrastructure, qui tournent en sécurité dans des limites strictes et demandent avant d'agir."
         },
         "project.homelab.does.secure.title": {
             en: "Locked down and passwordless",
@@ -836,8 +1042,6 @@
             de: "Melde dich mit Face ID oder einem Passkey an, und nichts ist direkt im Internet exponiert - jede Anfrage läuft durch einen privaten, gefilterten Tunnel.",
             fr: "Connecte-toi avec Face ID ou une passkey, et rien n'est exposé directement à internet - chaque requête passe par un tunnel privé et filtré."
         },
-
-        // --- What's next roadmap cards ---
         "project.homelab.next.voice": {
             en: "Phone-first voice assistant (Hermes)",
             pt: "Assistente de voz no telemóvel (Hermes)",
@@ -846,11 +1050,11 @@
             fr: "Assistant vocal sur téléphone (Hermes)"
         },
         "project.homelab.next.video": {
-            en: "Longer, multi-segment AI video",
-            pt: "Vídeo de IA mais longo e multi-segmento",
-            lu: "Méi laang, Multi-Segment AI-Video",
-            de: "Längeres, mehrteiliges KI-Video",
-            fr: "Vidéo IA plus longue et multi-segments"
+            en: "AI video v2: timeline, captions and storyboards",
+            pt: "Vídeo IA v2: timeline, legendas e storyboards",
+            lu: "KI-Video v2: Timeline, Ënnertitelen a Storyboards",
+            de: "KI-Video v2: Timeline, Untertitel und Storyboards",
+            fr: "Vidéo IA v2 : timeline, sous-titres et storyboards"
         },
         "project.homelab.next.career": {
             en: "Finish the career workspace & mail inbox",
@@ -860,11 +1064,11 @@
             fr: "Finir l'espace carrière et la boîte mail"
         },
         "project.homelab.next.agents": {
-            en: "More guardrailed agents: digest, scribe, hub",
-            pt: "Mais agentes com guardrails: digest, scribe, hub",
-            lu: "Méi Agenten mat Guardrails: digest, scribe, hub",
-            de: "Mehr Agenten mit Guardrails: digest, scribe, hub",
-            fr: "Plus d'agents avec guardrails : digest, scribe, hub"
+            en: "One security agent above both security twins",
+            pt: "Um agente de segurança acima dos dois gémeos de segurança",
+            lu: "Ee Sécherheets-Agent iwwer deenen zwee Sécherheets-Zwillingen",
+            de: "Ein Sicherheitsagent über beiden Sicherheits-Zwillingen",
+            fr: "Un agent de sécurité au-dessus des deux jumeaux de sécurité"
         },
     };
     Object.assign(translations, extra);

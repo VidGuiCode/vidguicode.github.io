@@ -15,21 +15,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0a0c">
     <title>Home Lab Platform | VidGuiCode</title>
-    <meta name="description" content="A four-node self-hosted homelab platform: 10+ custom apps, 5 guardrailed AI agents, passwordless passkeys, an OIDC identity provider, and a media stack.">
+    <meta name="description" content="A four-node self-hosted homelab platform: 15+ custom apps, 9 guardrailed AI agents, a self-hosted AI gateway, passwordless passkeys, an OIDC identity provider, and a media stack.">
     <link rel="canonical" href="https://vidguicode.github.io/projects/project-homelab">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://vidguicode.github.io/projects/project-homelab">
     <meta property="og:title" content="Home Lab Platform | VidGuiCode">
-    <meta property="og:description" content="A four-node self-hosted homelab platform: 10+ custom apps, 5 guardrailed AI agents, passwordless passkeys, an OIDC identity provider, and a media stack.">
+    <meta property="og:description" content="A four-node self-hosted homelab platform: 15+ custom apps, 9 guardrailed AI agents, a self-hosted AI gateway, passwordless passkeys, an OIDC identity provider, and a media stack.">
     <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/homelab/homelab-rack.webp">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://vidguicode.github.io/projects/project-homelab">
     <meta name="twitter:title" content="Home Lab Platform | VidGuiCode">
-    <meta name="twitter:description" content="A four-node self-hosted homelab platform: 10+ custom apps, 5 guardrailed AI agents, passwordless passkeys, an OIDC identity provider, and a media stack.">
+    <meta name="twitter:description" content="A four-node self-hosted homelab platform: 15+ custom apps, 9 guardrailed AI agents, a self-hosted AI gateway, passwordless passkeys, an OIDC identity provider, and a media stack.">
     <meta name="twitter:image" content="https://vidguicode.github.io/assets/img/projects/homelab/homelab-rack.webp">
     
     <!-- Fonts -->
@@ -257,7 +257,7 @@
                 <p class="subtitle" data-i18n="projects.homelab.desc">My own platform for files, media, custom apps, and AI agents, spread across four connected nodes.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
-                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>25/06/2026</span>
+                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>15/11/2026</span>
                 </p>
             </div>
         </section>
@@ -285,12 +285,12 @@
                 </div>
                 <div class="glance-stat">
                     <span class="glance-led"></span>
-                    <div class="glance-num">10+</div>
+                    <div class="glance-num">15+</div>
                     <div class="glance-label" data-i18n="project.homelab.glance.apps.label">custom web apps I built</div>
                 </div>
                 <div class="glance-stat">
                     <span class="glance-led"></span>
-                    <div class="glance-num">5</div>
+                    <div class="glance-num">9</div>
                     <div class="glance-label" data-i18n="project.homelab.glance.agents.label">AI assistants with guardrails</div>
                 </div>
             </div>
@@ -373,7 +373,7 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="bot"></i></div>
                         <h3 data-i18n="project.homelab.does.agents.title">AI agents that do real work</h3>
-                        <p data-i18n="project.homelab.does.agents.desc">Research, study, security, governance and infrastructure helpers that run safely behind strict limits.</p>
+                        <p data-i18n="project.homelab.does.agents.desc">Research, study, security, writing, CV coaching and infrastructure helpers that run safely behind strict limits and ask before they act.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="shield"></i></div>
@@ -393,7 +393,7 @@
                         <div class="intro-text">
                             <i data-lucide="server" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
                             <h2 data-i18n="project.homelab.section.setup.title">From Tiny Cluster to Full Rack</h2>
-                            <p data-i18n="project.homelab.section.setup.body">What started as a quiet Raspberry Pi cluster in my living room has grown into a four-node self-hosted platform: an ARM edge gateway in the cloud, an ARM home server, an x86_64 laptop for compute offload, and a dedicated ZFS NAS for storage. The on-site gear now lives in a compact 10U rack with monitored power and airflow, while public traffic still reaches the platform only through a self-operated WireGuard tunnel.</p>
+                            <p data-i18n="project.homelab.section.setup.body">What started as a quiet Raspberry Pi cluster in my living room has grown into a four-node self-hosted platform: an ARM edge gateway in the cloud, an ARM home server, an x86_64 laptop for compute offload and local AI, and a dedicated ZFS NAS for storage. The on-site gear now lives in an enclosed 10U cabinet with monitored power and fan control driven by drive temperatures, while public traffic still reaches the platform only through a self-operated WireGuard tunnel.</p>
                         </div>
                         <div class="intro-image project-image-container">
                             <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/homelab/homelab-rack.webp', 'My Home Lab rack with the home server, compute node, storage node, and networking gear')">
@@ -424,25 +424,32 @@
                         </div>
                         <div class="stack-layer">
                             <div class="stack-head"><i data-lucide="server-cog"></i><h3 data-i18n="project.homelab.section.what.core.title">Core Platform (Home Server)</h3></div>
-                            <div class="stack-chips"><span>FastAPI</span><span>SQLAlchemy</span><span>SQLite</span><span>Passkeys</span><span>OIDC</span><span>OAuth2</span><span>JWT SSO</span><span>LiveKit</span><span>Typer CLI</span><span>Private PyPI</span></div>
+                            <div class="stack-chips"><span>FastAPI</span><span>SQLAlchemy</span><span>SQLite</span><span>Passkeys</span><span>OIDC</span><span>OAuth2</span><span>JWT SSO</span><span>LiveKit</span><span>MCP</span><span>Typer CLI</span><span>Private PyPI</span></div>
                             <ul class="feature-list stack-detail">
                                 <li data-i18n="project.homelab.section.what.core.list" data-i18n-html><strong>Unified backend control plane</strong>: FastAPI + SQLAlchemy + Alembic + SQLite drive authentication, permissions, app registration, audit logs, AI orchestration, and cross-app state.</li>
-                                <li data-i18n="project.homelab.section.what.core.auth" data-i18n-html><strong>Passwordless, federated login</strong>: passkeys (WebAuthn/FIDO2) are the primary sign-in, on top of a from-scratch OIDC provider and an OAuth 2.0 consent flow - so other apps and AI assistants can log in with the platform.</li>
+                                <li data-i18n="project.homelab.section.what.core.auth" data-i18n-html><strong>Passwordless, federated login</strong>: passkeys (WebAuthn/FIDO2) are the primary sign-in, on top of a from-scratch OIDC provider and an OAuth 2.0 consent flow, so other apps and AI assistants can log in with the platform. Access tokens are scoped per app and checked on every API call.</li>
                                 <li data-i18n="project.homelab.section.what.core.surfaces" data-i18n-html><strong>Real-time and generative surfaces</strong>: self-hosted voice/video rooms (LiveKit/WebRTC) and an AI keyframe video generator that turns a start and end frame into a short clip - both behind the same SSO and edge security.</li>
-                                <li data-i18n="project.homelab.section.what.core.suite" data-i18n-html><strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery, task log, career workspace, voice/video rooms, an AI video generator, a mail surface, and a QR generator microservice.</li>
+                                <li data-i18n="project.homelab.section.what.core.suite" data-i18n-html><strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery, task log, career workspace, voice/video rooms, an AI video generator, a mail studio, a music intake app, a knowledge base console, and a QR generator microservice.</li>
                                 <li data-i18n="project.homelab.section.what.core.killswitch" data-i18n-html><strong>Hard application kill switch</strong>: Every custom frontend is registered centrally, so disabling an app immediately blocks access even on direct URL visits.</li>
+                                <li data-i18n="project.homelab.section.what.core.mcp" data-i18n-html><strong>AI assistant bridge (MCP)</strong>: AI clients connect through single sign-on and consent, the server mints a scoped token for them, and they get tools for tasks, research, calendars, mail and security briefs.</li>
                                 <li data-i18n="project.homelab.section.what.compose.cli" data-i18n-html><strong>Platform CLI</strong>: A Typer-based Python CLI wraps the backend API for terminal workflows over VPN. Supports auth, task management, security operations, and health checks via Personal Access Tokens. Distributed through a self-hosted private PyPI server.</li>
                             </ul>
                         </div>
                         <div class="stack-layer">
                             <div class="stack-head"><i data-lucide="bot"></i><h3 data-i18n="project.homelab.section.what.apps.title">Agent + Worker Layer</h3></div>
-                            <div class="stack-chips"><span>Retriever</span><span>Term-mastery</span><span>Security-triage</span><span>Governance-triage</span><span>Infra-monitoring</span><span>Playwright</span><span>Sharp</span><span>SearXNG</span><span>Mistral AI</span></div>
+                            <div class="stack-chips"><span>Research</span><span>Term-mastery</span><span>Security-triage</span><span>Governance-triage</span><span>Infra-monitoring</span><span>Infra-repair</span><span>Quality-check</span><span>Drafting</span><span>CV-coach</span><span>Ollama</span><span>Vulkan</span><span>sqlite-vec</span><span>Whisper</span><span>Playwright</span><span>Sharp</span><span>SearXNG</span><span>Mistral AI</span></div>
                             <ul class="feature-list stack-detail">
-                                <li data-i18n="project.homelab.section.what.apps.retriever" data-i18n-html><strong>Retriever agent</strong>: Researches the web through a private meta-search backend and headless browsing, then returns structured briefs.</li>
+                                <li data-i18n="project.homelab.section.what.apps.retriever" data-i18n-html><strong>Research agent</strong>: Researches the web through a private meta-search backend and headless browsing, then returns structured briefs.</li>
                                 <li data-i18n="project.homelab.section.what.apps.term" data-i18n-html><strong>Term-mastery agent</strong>: Generates summaries, flashcards, and remediation workflows for learning content.</li>
                                 <li data-i18n="project.homelab.section.what.apps.security" data-i18n-html><strong>Security triage agent</strong>: Correlates edge alerts, access logs, sessions, and approval-gated write actions for admin review.</li>
                                 <li data-i18n="project.homelab.section.what.apps.governance" data-i18n-html><strong>Governance triage agent</strong>: watches internal session, permission, and account anomalies with a graded action policy - low-risk fixes auto-execute, high-blast-radius actions enter a human approval queue.</li>
-                                <li data-i18n="project.homelab.section.what.apps.infra" data-i18n-html><strong>Infrastructure monitoring agent</strong>: runs probes across nodes, containers, temperatures, and backup freshness, then an optional AI layer triages findings into a recovery-aware signal feed.</li>
+                                <li data-i18n="project.homelab.section.what.apps.infra" data-i18n-html><strong>Infrastructure monitoring agent</strong>: runs probes across nodes, containers, temperatures, and backup freshness, then an optional AI layer triages findings into a recovery-aware signal feed. A paired repair agent proposes a bounded fix and only applies it after my approval.</li>
+                                <li data-i18n="project.homelab.section.what.apps.quality" data-i18n-html><strong>Quality-check agent</strong>: verifies content summaries and crawls, spots login walls and empty captures, and tries one bounded rescue scrape before it refreshes the result.</li>
+                                <li data-i18n="project.homelab.section.what.apps.drafting" data-i18n-html><strong>Drafting and CV agents</strong>: one writes replies to a conversation for mandatory human review and never sends anything itself. The other reviews a CV, tailors it to a job posting and returns edits that I accept or reject.</li>
+                                <li data-i18n="project.homelab.section.what.apps.localai" data-i18n-html><strong>Self-hosted AI gateway</strong>: an OpenAI-compatible endpoint serves nine local models (chat, tool calling, code, embeddings) and two text-to-speech voices from the worker laptop's integrated GPU over Vulkan, for background and batch work.</li>
+                                <li data-i18n="project.homelab.section.what.apps.decision" data-i18n-html><strong>Fast decision engine</strong>: a CPU model answers choice and score questions about a text in about 100 ms without generating any tokens, and flags likely prompt injection on the AI gateway as a signal, never a block.</li>
+                                <li data-i18n="project.homelab.section.what.apps.knowledge" data-i18n-html><strong>Agent memory and knowledge base</strong>: hybrid vector and full-text search over remembered notes, learned pages, video transcripts and crawled documentation, with local embeddings. It never indexes personal data.</li>
+                                <li data-i18n="project.homelab.section.what.apps.ingest" data-i18n-html><strong>Video to transcript</strong>: a worker turns a video link into a timestamped, chunked transcript that agents can read, using human-written subtitles first and Whisper as the fallback.</li>
                                 <li data-i18n="project.homelab.section.what.apps.modes" data-i18n-html><strong>Two run modes, tiered models</strong>: every agent runs as a cheap fixed pipeline or an adaptive LLM-driven loop; Mistral Small drives the decisions, Mistral Large the final synthesis.</li>
                                 <li data-i18n="project.homelab.section.what.apps.guardrails" data-i18n-html><strong>Shared guardrails</strong>: Every agent runs behind kill switches, token/cost/runtime budgets, tool allowlists, concurrency caps, and blocked-action logging.</li>
                             </ul>
@@ -459,11 +466,13 @@
                         </div>
                         <div class="stack-layer">
                             <div class="stack-head"><i data-lucide="hard-drive"></i><h3 data-i18n="project.homelab.section.what.media.title">Storage + Media Plane (NAS)</h3></div>
-                            <div class="stack-chips"><span>TrueNAS</span><span>ZFS</span><span>Jellyfin</span><span>Radarr/Sonarr</span><span>Immich</span><span>Nextcloud</span><span>Navidrome</span><span>Lidarr</span><span>MinIO</span></div>
+                            <div class="stack-chips"><span>TrueNAS</span><span>ZFS</span><span>Jellyfin</span><span>Radarr/Sonarr</span><span>Immich</span><span>Nextcloud</span><span>Navidrome</span><span>Lidarr</span><span>Forgejo</span><span>MinIO</span></div>
                             <ul class="feature-list stack-detail">
                                 <li data-i18n="project.homelab.section.what.media.truenas" data-i18n-html><strong>TrueNAS SCALE + ZFS</strong>: Separate storage node with mirrored HDD bulk storage, SSD hot tier, and service-specific datasets.</li>
-                                <li data-i18n="project.homelab.section.what.media.services" data-i18n-html><strong>Full self-hosted media</strong>: Jellyfin with hardware transcoding, fed by a Radarr/Sonarr/Jellyseerr/Bazarr/Jackett acquisition pipeline with ClamAV scanning; Immich for photos; Nextcloud for files; Navidrome + Lidarr + AudioMuse-AI for music.</li>
+                                <li data-i18n="project.homelab.section.what.media.services" data-i18n-html><strong>Full self-hosted media</strong>: Jellyfin with hardware transcoding, fed by a Radarr/Sonarr/Jellyseerr/Bazarr/Jackett acquisition pipeline with ClamAV scanning; Immich for photos; Nextcloud for files; Navidrome + Lidarr + Soulseek for music; Forgejo for Git hosting.</li>
                                 <li data-i18n="project.homelab.section.what.media.object" data-i18n-html><strong>S3-compatible object storage</strong>: Dual MinIO tiers keep hot objects on SSD and move colder data to HDD through lifecycle rules.</li>
+                                <li data-i18n="project.homelab.section.what.media.backup" data-i18n-html><strong>Versioned backups</strong>: a dedicated backup runner writes timestamped, checksummed archives for each data domain to the NAS and keeps 30 versions, while ZFS snapshots cover the datasets.</li>
+                                <li data-i18n="project.homelab.section.what.media.rack" data-i18n-html><strong>Rack power and cooling</strong>: a smart plug measures the whole rack and the platform sets it against the live electricity price. A script on the NAS drives the intake fan from the hottest drive every 10 seconds, with a 3D-printed exhaust shroud on top, and the drives now hold 40 to 41 °C.</li>
                             </ul>
                         </div>
                     </div>
@@ -483,7 +492,7 @@
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">03</span></div>
-                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body3" data-i18n-html>Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 10+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.</p></div>
+                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body3" data-i18n-html>Along the way I learned how to design around real constraints: mixed architectures, separate storage and compute planes, zero-trust ingress, and applications that share auth without sharing security shortcuts. <strong>I built 15+ custom apps and an agent framework from scratch</strong>, which proved to me that serious systems design is possible long before you have enterprise hardware.</p></div>
                         </div>
                     </div>
                     </div>
@@ -526,6 +535,21 @@
                             <h3 data-i18n="project.homelab.section.lessons.environment.title">Environment matters</h3>
                             <p data-i18n="project.homelab.section.lessons.environment.body">With only one LAN outlet in the home, the cluster had to live in the living room. This constraint forced smart hardware choices: silent components, low-power ARM processors, and efficient cooling. Adapting to real-world limitations made me a better engineer.</p>
                         </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="brain"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.localai.title">Local AI has a hardware ceiling</h3>
+                            <p data-i18n="project.homelab.section.lessons.localai.body">I benchmarked local models on the worker laptop with my research agent's real prompt. One run took 4 to 20 minutes against a 10-second target. Memory bandwidth was the limit, not the settings, so local models now handle background work and the agents stay on a hosted API.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="network"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.mobile.title">Works on Wi-Fi, fails on mobile</h3>
+                            <p data-i18n="project.homelab.section.lessons.mobile.body">Every service timed out on roaming mobile data while Wi-Fi worked instantly. The cause was oversized TCP packets lost inside the carrier's tunnel. Capping the packet size at the edge fixed it, and the obvious suspect, HTTP/3, turned out to be a red herring.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="activity"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.cooling.title">Measure, then cool</h3>
+                            <p data-i18n="project.homelab.section.lessons.cooling.body">In the enclosed cabinet the drives averaged 44 to 45 °C. I mapped each fan header, wrote a fan curve that follows the hottest drive, and printed an exhaust shroud. The drives now sit at 40 to 41 °C, quiet enough for a living room.</p>
+                        </div>
                     </div>
                     </div>
 
@@ -538,7 +562,7 @@
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="clapperboard"></i></div>
-                            <h3 data-i18n="project.homelab.next.video">Longer, multi-segment AI video</h3>
+                            <h3 data-i18n="project.homelab.next.video">AI video v2: timeline, captions and storyboards</h3>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="file-text"></i></div>
@@ -546,7 +570,7 @@
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="sparkles"></i></div>
-                            <h3 data-i18n="project.homelab.next.agents">More guardrailed agents: digest, scribe, hub</h3>
+                            <h3 data-i18n="project.homelab.next.agents">One security agent above both security twins</h3>
                         </div>
                     </div>
                     </div>
@@ -578,8 +602,11 @@
                         <li><i data-lucide="code-2"></i> <span data-i18n="project.homelab.sidebar.tech.frontend">SvelteKit, React, TypeScript</span></li>
                         <li><i data-lucide="bot"></i> <span data-i18n="project.homelab.sidebar.tech.agents">Mistral AI + Guardrailed Agents</span></li>
                         <li><i data-lucide="search"></i> <span data-i18n="project.homelab.sidebar.tech.worker">Playwright + Sharp + SearXNG</span></li>
+                        <li><i data-lucide="cpu"></i> <span data-i18n="project.homelab.sidebar.tech.localai">Ollama + Vulkan (local LLMs)</span></li>
+                        <li><i data-lucide="database"></i> <span data-i18n="project.homelab.sidebar.tech.search">sqlite-vec + FTS5 (hybrid search)</span></li>
+                        <li><i data-lucide="audio-waveform"></i> <span data-i18n="project.homelab.sidebar.tech.speech">Whisper, Kokoro, Piper (speech)</span></li>
                         <li><i data-lucide="radio"></i> <span data-i18n="project.homelab.sidebar.tech.rtc">LiveKit (WebRTC rooms)</span></li>
-                        <li><i data-lucide="clapperboard"></i> <span data-i18n="project.homelab.sidebar.tech.video">DashScope (image-to-video)</span></li>
+                        <li><i data-lucide="clapperboard"></i> <span data-i18n="project.homelab.sidebar.tech.video">Qwen Wan + Seedance (image-to-video)</span></li>
                         <li><i data-lucide="film"></i> <span data-i18n="project.homelab.sidebar.tech.media">Jellyfin, Immich, Nextcloud, Navidrome</span></li>
                         <li><i data-lucide="mail"></i> <span data-i18n="project.homelab.sidebar.tech.email">Resend (transactional email)</span></li>
                         <li><i data-lucide="terminal"></i> <span data-i18n="project.homelab.sidebar.tech.cli">Typer CLI + Private PyPI</span></li>
@@ -589,16 +616,18 @@
                     <div class="line"></div>
                     <ul class="skill-list" style="margin-top: 1rem;">
                         <li data-i18n="project.homelab.sidebar.features.topology">Four-node hybrid topology</li>
-                        <li data-i18n="project.homelab.sidebar.features.rack">Compact 10U rack with monitored power</li>
+                        <li data-i18n="project.homelab.sidebar.features.rack">Enclosed 10U rack with monitored power</li>
                         <li data-i18n="project.homelab.sidebar.features.exposure">Zero direct internet exposure for the home server</li>
                         <li data-i18n="project.homelab.sidebar.features.auth">Passwordless passkeys + custom JWT SSO + 2FA</li>
                         <li data-i18n="project.homelab.sidebar.features.federated">OIDC provider + OAuth 2.0 for AI connectors</li>
-                        <li data-i18n="project.homelab.sidebar.features.apps">10+ custom apps sharing one backend control plane</li>
+                        <li data-i18n="project.homelab.sidebar.features.apps">15+ custom apps sharing one backend control plane</li>
                         <li data-i18n="project.homelab.sidebar.features.cli">Platform CLI for terminal workflows over VPN</li>
-                        <li data-i18n="project.homelab.sidebar.features.agents">Five guardrailed AI agents with approval gates</li>
+                        <li data-i18n="project.homelab.sidebar.features.agents">Nine guardrailed AI agents with approval gates</li>
+                        <li data-i18n="project.homelab.sidebar.features.localai">Self-hosted OpenAI-compatible AI gateway</li>
                         <li data-i18n="project.homelab.sidebar.features.realtime">Self-hosted voice/video rooms (LiveKit)</li>
                         <li data-i18n="project.homelab.sidebar.features.video">AI keyframe-to-video generation</li>
                         <li data-i18n="project.homelab.sidebar.features.nas">Dedicated NAS with hot/cold object storage</li>
+                        <li data-i18n="project.homelab.sidebar.features.cooling">Fan control driven by drive temperatures</li>
                         <li data-i18n="project.homelab.sidebar.features.mediafull">Full media, photos, files, and music stack</li>
                         <li data-i18n="project.homelab.sidebar.features.compute">Compute offload for browser and image workloads</li>
                         <li data-i18n="project.homelab.sidebar.features.deploy">Mixed Docker Compose + K3s deployment model</li>
