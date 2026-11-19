@@ -468,11 +468,11 @@ const translations = {
         fr: "Cloud Personnel Home Lab"
     },
     "projects.homelab.desc": {
-        en: "My own platform for files, media, custom apps, and AI agents, spread across four connected nodes.",
-        pt: "A minha própria plataforma para ficheiros, multimédia, apps personalizadas e agentes de IA, distribuída por quatro nós ligados.",
-        lu: "Meng eege Plattform fir Fichieren, Medien, personaliséiert Apps an AI-Agenten, verdeelt iwwer véier verbonne Noden.",
-        de: "Meine eigene Plattform für Dateien, Medien, eigene Apps und KI-Agenten, verteilt auf vier verbundene Knoten.",
-        fr: "Ma propre plateforme pour les fichiers, les médias, mes applications et les agents IA, répartie sur quatre nœuds connectés."
+        en: "My own platform for files, media, custom apps, and AI agents.",
+        pt: "A minha plataforma para ficheiros, multimédia, aplicações próprias e agentes de IA.",
+        lu: "Meng eege Plattform fir Fichieren, Medien, eegen Apps an AI-Agenten.",
+        de: "Meine eigene Plattform für Dateien, Medien, eigene Apps und KI-Agenten.",
+        fr: "Ma plateforme pour les fichiers, les médias, mes applications et les agents IA."
     },
     "projects.homelab.home.desc": {
         en: "My own setup for files, media, custom apps, and AI agents.",

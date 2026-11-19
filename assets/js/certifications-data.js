@@ -408,7 +408,7 @@ const FORMATIONS = [
 const PROJECT_NAMES = {
     'homelab': {
         key: 'projects.homelab.title',
-        fallback: 'SyntraLab Personal Cloud'
+        fallback: 'Home Lab Personal Cloud'
     },
     'gradingdino': {
         key: 'projects.gradingdino.title',
