@@ -357,11 +357,11 @@
             fr: "<strong>CLI de la plateforme</strong> : J’ai créé et empaqueté une CLI Python avec Typer pour la gestion des tâches, les opérations de sécurité et les contrôles de fonctionnement."
         },
         "project.homelab.image.caption": {
-            en: "Home Lab Personal Cloud illustration",
-            pt: "Ilustração da cloud pessoal",
-            lu: "Illustratioun vun der perséinlecher Cloud",
-            de: "Illustration der persönlichen Cloud",
-            fr: "Illustration du cloud personnel"
+            en: "My Home Lab rack",
+            pt: "O rack do meu laboratório doméstico",
+            lu: "De Rack vu mengem Home Lab",
+            de: "Das Rack meines Home Labs",
+            fr: "La baie de mon laboratoire à domicile"
         },
         "project.homelab.section.what.core.title": {
             en: "Application Platform",
