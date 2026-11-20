@@ -578,11 +578,11 @@
 
         /* ---- Current status ---- */
         "project.cylro.section.now.title": {
-            en: "Current Status",
-            pt: "Estado Atual",
-            lu: "Aktuelle Status",
-            de: "Aktueller Status",
-            fr: "Statut actuel"
+            en: "Product status",
+            pt: "Estado do produto",
+            lu: "Status vum Produit",
+            de: "Produktstatus",
+            fr: "État du produit"
         },
         "project.cylro.section.now.p1": {
             en: "Cylro is pre-release and we're still building it. Our landing page is live and you can request early access through cylro.com, but the product isn't open for general use. We're not making any availability, pricing, or service commitments yet.",
@@ -806,11 +806,32 @@
             fr: "<strong>Docker pour le développement et les images de livraison</strong> : Compose couvre notre développement local et nos workflows d'images de livraison. Ce n'est pas ce que je compte faire tourner en production."
         },
         "project.cylro.stack.infra.b3": {
-            en: "<strong>Hetzner as our first production provider</strong>: affordable compute, suitable storage, and good S3 pricing for a company at our stage. We may look at Scaleway, OVH, and other European providers later.",
-            pt: "<strong>Hetzner como o nosso primeiro fornecedor de produção</strong>: computação acessível, armazenamento adequado e bons preços de S3 para uma empresa na nossa fase. Podemos olhar para a Scaleway, a OVH e outros fornecedores europeus mais tarde.",
-            lu: "<strong>Hetzner als eise éischte Produktiounsprovider</strong>: bezuelbar Rechenleeschtung, passende Späicher a gutt S3-Präisser fir eng Firma an eiser Phas. Mir kënne méi spéit op Scaleway, OVH an aner europäesch Provider kucken.",
-            de: "<strong>Hetzner als unser erster Produktionsanbieter</strong>: bezahlbare Rechenleistung, passender Speicher und gute S3-Preise für ein Unternehmen in unserer Phase. Scaleway, OVH und andere europäische Anbieter schauen wir uns eventuell später an.",
-            fr: "<strong>Hetzner comme premier fournisseur de production</strong> : calcul abordable, stockage adapté et bons tarifs S3 pour une entreprise à notre stade. Nous regarderons peut-être Scaleway, OVH et d'autres fournisseurs européens plus tard."
+            en: "<strong>Provisioning on Hetzner</strong> is planned with Terraform, which will create the production servers and networking, including IP addresses. The Terraform configuration will pass cloud-init settings to each server so it can run its initial setup automatically on first boot.",
+            pt: "<strong>O aprovisionamento na Hetzner</strong> está previsto com Terraform, que vai criar os servidores de produção e configurar a rede, incluindo os endereços IP. A configuração do Terraform vai passar as definições do cloud-init a cada servidor para automatizar a configuração inicial no primeiro arranque.",
+            lu: "<strong>D’Bereetstellung bei Hetzner</strong> ass mat Terraform geplangt. Terraform soll d’Produktiounsserver an d’Netzwierk mat den IP-Adressen uleeën. D’Terraform-Konfiguratioun gëtt all Server d’cloud-init-Astellungen mat, fir datt den initiale Setup beim éischte Start automatesch leeft.",
+            de: "<strong>Die Bereitstellung bei Hetzner</strong> ist mit Terraform geplant. Terraform soll die Produktionsserver anlegen und das Netzwerk samt IP-Adressen einrichten. Die Terraform-Konfiguration übergibt jedem Server seine cloud-init-Einstellungen, damit die Ersteinrichtung beim ersten Start automatisch läuft.",
+            fr: "<strong>Le provisionnement chez Hetzner</strong> est prévu avec Terraform, qui créera les serveurs de production et le réseau, y compris les adresses IP. La configuration Terraform transmettra les paramètres cloud-init à chaque serveur pour automatiser sa configuration initiale au premier démarrage."
+        },
+        "project.cylro.stack.infra.ansible": {
+            en: "<strong>Ansible is an option for configuration and recovery.</strong> We’re considering playbooks to apply the remaining server configuration after first boot and repeat those steps when rebuilding a server during recovery.",
+            pt: "<strong>O Ansible é uma opção para a configuração e a recuperação.</strong> Estamos a considerar playbooks para aplicar a restante configuração após o primeiro arranque e repetir esses passos ao reconstruir um servidor durante uma recuperação.",
+            lu: "<strong>Ansible ass eng Optioun fir d’Konfiguratioun an d’Restauratioun.</strong> Mir iwwerleeën, Playbooks ze benotzen, fir de Rescht vum Setup nom éischte Start unzewenden an déi selwecht Schrëtt beim Neiopbau vun engem Server am Fall vun enger Restauratioun ze widderhuelen.",
+            de: "<strong>Ansible ist eine Option für Konfiguration und Wiederherstellung.</strong> Wir prüfen, ob wir mit Playbooks die restliche Konfiguration nach dem ersten Start anwenden und dieselben Schritte beim Wiederaufbau eines Servers wiederholen können.",
+            fr: "<strong>Ansible est une option pour la configuration et la reprise.</strong> Nous envisageons des playbooks pour appliquer le reste de la configuration après le premier démarrage et répéter ces étapes lors de la reconstruction d’un serveur."
+        },
+        "project.cylro.stack.infra.provisioningChip": {
+            en: "Terraform + cloud-init (planned)",
+            pt: "Terraform + cloud-init (previstos)",
+            lu: "Terraform + cloud-init (geplangt)",
+            de: "Terraform + cloud-init (geplant)",
+            fr: "Terraform + cloud-init (prévus)"
+        },
+        "project.cylro.stack.infra.ansibleChip": {
+            en: "Ansible (under consideration)",
+            pt: "Ansible (em análise)",
+            lu: "Ansible (gëtt erwogen)",
+            de: "Ansible (wird geprüft)",
+            fr: "Ansible (à l’étude)"
         },
         "project.cylro.stack.infra.b4": {
             en: "<strong>Deployment platform still being decided</strong>: I'm evaluating a visual container-deployment platform for releases, updates, service health, and operational visibility during the alpha. I haven't fixed the final choice or the multi-server approach.",
@@ -910,18 +931,125 @@
             fr: "<strong>Validé par une utilisation locale concrète</strong> : je teste les changements localement en utilisant vraiment le produit, pas seulement de façon isolée."
         },
         "project.cylro.stack.workflow.b3": {
-            en: "<strong>Branch-based work in GitHub</strong>: we keep parallel work separate to reduce conflicts while we build.",
-            pt: "<strong>Trabalho por branches no GitHub</strong>: mantemos o trabalho em paralelo separado para reduzir conflitos enquanto construímos.",
-            lu: "<strong>Branch-baséiert Aarbecht am GitHub</strong>: mir halen parallel Aarbecht getrennt, fir Konflikter beim Bauen ze reduzéieren.",
-            de: "<strong>Branch-basierte Arbeit in GitHub</strong>: wir halten parallele Arbeit getrennt, um Konflikte beim Bauen zu verringern.",
-            fr: "<strong>Travail par branches sur GitHub</strong> : nous gardons le travail en parallèle séparé pour réduire les conflits pendant que nous construisons."
+            en: "<strong>We use branches in Forgejo</strong> to keep parallel work separate and reduce conflicts.",
+            pt: "<strong>Usamos branches no Forgejo</strong> para manter o trabalho em paralelo separado e reduzir conflitos.",
+            lu: "<strong>Mir benotze Branches a Forgejo</strong>, fir parallel Aarbecht getrennt ze halen a Konflikter ze reduzéieren.",
+            de: "<strong>Wir arbeiten mit Branches in Forgejo</strong>, um parallele Änderungen zu trennen und Konflikte zu reduzieren.",
+            fr: "<strong>Nous travaillons avec des branches dans Forgejo</strong> pour séparer les travaux en parallèle et réduire les conflits."
         },
         "project.cylro.stack.workflow.b4": {
-            en: "<strong>What we don't have yet</strong>: a complete CI/CD pipeline, a formal staging environment, and comprehensive automated testing. Those are what I want to strengthen as the alpha forces real release discipline on us.",
-            pt: "<strong>O que ainda não temos</strong>: um pipeline de CI/CD completo, um ambiente de staging formal e testes automatizados abrangentes. É isso que quero reforçar à medida que o alpha nos impuser disciplina real de releases.",
-            lu: "<strong>Wat mir nach net hunn</strong>: eng komplett CI/CD-Pipeline, e formellt Staging-Ëmfeld an ëmfaassend automatiséiert Tester. Dat wëll ech stäerken, wann den Alpha eis richteg Release-Disziplin ofverlaangt.",
-            de: "<strong>Was wir noch nicht haben</strong>: eine vollständige CI/CD-Pipeline, eine formale Staging-Umgebung und umfassende automatisierte Tests. Genau das will ich stärken, sobald der Alpha uns echte Release-Disziplin abverlangt.",
-            fr: "<strong>Ce que nous n'avons pas encore</strong> : un pipeline CI/CD complet, un environnement de staging formel et des tests automatisés étendus. C'est ce que je veux renforcer quand l'alpha nous imposera une vraie discipline de release."
+            en: "<strong>Our release workflow is still taking shape.</strong> We’re working toward an end-to-end product release pipeline, a dedicated staging environment, and broader automated test coverage for the alpha.",
+            pt: "<strong>O nosso processo de lançamento ainda está a ser definido.</strong> Estamos a trabalhar num processo automatizado de lançamento do produto de ponta a ponta, num ambiente de pré-produção dedicado e numa maior cobertura de testes automatizados para a fase alfa.",
+            lu: "<strong>Eise Release-Prozess ass nach am Opbau.</strong> Mir schaffen un enger duerchgoender Pipeline fir Produit-Releasen, engem eegenen Testëmfeld virum Release a méi ëmfaassenden automatiséierten Tester fir den Alpha.",
+            de: "<strong>Unser Release-Prozess ist noch im Aufbau.</strong> Für die Alpha arbeiten wir an einer durchgängigen Pipeline für Produkt-Releases, einer eigenen Staging-Umgebung und einer breiteren automatisierten Testabdeckung.",
+            fr: "<strong>Notre processus de mise en production prend encore forme.</strong> Pour l’alpha, nous travaillons sur une chaîne de livraison de bout en bout pour le produit, un environnement de préproduction dédié et une couverture plus large des tests automatisés."
+        },
+
+        /* ---- Cylro company operations ---- */
+        "project.cylro.internal.title": {
+            en: "Cylro’s internal platform",
+            pt: "A plataforma interna da Cylro",
+            lu: "Cylro seng intern Plattform",
+            de: "Cylros interne Plattform",
+            fr: "La plateforme interne de Cylro"
+        },
+        "project.cylro.internal.intro": {
+            en: "I brought Cylro’s Git hosting, continuous integration (CI), private access, project management, monitoring, and backups together on one self-managed Debian server. I designed and built the platform and run it for our team.",
+            pt: "Reuni o alojamento Git, a integração contínua (CI), o acesso privado, a gestão de projetos, a monitorização e as cópias de segurança da Cylro num único servidor Debian que administro. Concebi e implementei a plataforma e asseguro o seu funcionamento para a nossa equipa.",
+            lu: "Ech hunn dem Cylro säi Git-Hosting, seng kontinuéierlech Integratioun (CI), de privaten Zougang, d’Projetverwaltung, d’Iwwerwaachung an d’Backuppen op engem eenzegen Debian-Server zesummebruecht, deen ech selwer verwalten. Ech hunn d’Plattform konzipéiert an opgebaut a bedreiwe se fir eis Ekipp.",
+            de: "Ich habe Cylros Git-Hosting, kontinuierliche Integration (CI), privaten Zugang, Projektmanagement, Monitoring und Backups auf einem einzigen selbst verwalteten Debian-Server gebündelt. Ich habe die Plattform entworfen und aufgebaut und betreibe sie für unser Team.",
+            fr: "J’ai regroupé l’hébergement Git, l’intégration continue (CI), l’accès privé, la gestion de projet, la supervision et les sauvegardes de Cylro sur un seul serveur Debian que j’administre. J’ai conçu et mis en place la plateforme et je l’exploite pour notre équipe."
+        },
+        "project.cylro.internal.overview": {
+            en: "I moved the website operations product’s repository to Forgejo and migrated our project management tool, Plane.",
+            pt: "Migrei o repositório do produto de gestão de sites para o Forgejo e transferi o Plane, a nossa ferramenta de gestão de projetos.",
+            lu: "Ech hunn de Repository vun eiser Plattform fir de Betrib vu Websäiten op Forgejo geplënnert an och eist Projetverwaltungsinstrument Plane migréiert.",
+            de: "Ich habe das Repository unseres Produkts für den Website-Betrieb zu Forgejo und unser Projektmanagement-Tool Plane auf den neuen Server migriert.",
+            fr: "J’ai transféré le dépôt de notre produit de gestion de sites web vers Forgejo et migré Plane, notre outil de gestion de projet."
+        },
+        "project.cylro.internal.layout.title": {
+            en: "How the server is organised",
+            pt: "Como organizei o servidor",
+            lu: "Wéi de Server opgebaut ass",
+            de: "Wie der Server aufgebaut ist",
+            fr: "Comment le serveur est organisé"
+        },
+        "project.cylro.internal.layout.body": {
+            en: "I run the company tools in separate Docker containers so I can update them individually. Caddy handles HTTPS, and staff connect through the NetBird VPN to use private tools. Automated builds and tests run in their own Docker environment with limits on resource use and network access. I monitor the services and store encrypted backups offsite, where they’re available if I need to rebuild the server.",
+            pt: "Executo as ferramentas da empresa em contentores Docker separados para poder atualizá-las individualmente. O Caddy gere o HTTPS e a equipa liga-se através da VPN NetBird para usar as ferramentas privadas. As compilações e os testes automatizados correm num ambiente Docker próprio, com limites de utilização de recursos e de acesso à rede. Monitorizo os serviços e guardo cópias de segurança cifradas noutro local, para as poder usar se precisar de reconstruir o servidor.",
+            lu: "Ech bedreiwen d’Instrumenter vun der Firma a getrennten Docker-Containeren, fir datt ech se eenzel aktualiséiere kann. Caddy këmmert sech ëm HTTPS, an d’Ekipp benotzt den NetBird-VPN, fir op déi privat Instrumenter zouzegräifen. Automatiséiert Build- an Testjobs lafen an engem eegenen Docker-Ëmfeld mat limitéierte Ressourcen a limitéiertem Netzzougang. Ech iwwerwaachen d’Servicer a späichere verschlësselte Backuppen op enger externer Plaz, fir se beim Neiopbau vum Server benotzen ze kënnen.",
+            de: "Ich betreibe die Werkzeuge des Unternehmens in getrennten Docker-Containern, damit ich sie einzeln aktualisieren kann. Caddy übernimmt HTTPS, und das Team greift über das NetBird-VPN auf private Werkzeuge zu. Automatisierte Builds und Tests laufen in einer eigenen Docker-Umgebung mit begrenzter Ressourcennutzung und eingeschränktem Netzwerkzugriff. Ich überwache die Dienste und speichere verschlüsselte Backups an einem anderen Standort. So habe ich sie zur Hand, falls ich den Server neu aufsetzen muss.",
+            fr: "J’exécute les outils de l’entreprise dans des conteneurs Docker distincts pour pouvoir les mettre à jour individuellement. Caddy gère le HTTPS et l’équipe accède aux outils privés via le VPN NetBird. Les compilations et les tests automatisés s’exécutent dans leur propre environnement Docker, avec des limites de ressources et des restrictions d’accès au réseau. Je supervise les services et conserve les sauvegardes chiffrées hors site pour pouvoir les utiliser si je dois reconstruire le serveur."
+        },
+        "project.cylro.internal.migration.title": {
+            en: "Git and project management migrations",
+            pt: "Migração do Git e da gestão de projetos",
+            lu: "Migratioun vu Git a Projetverwaltung",
+            de: "Migration von Git und Projektmanagement",
+            fr: "Migration de Git et de la gestion de projet"
+        },
+        "project.cylro.internal.migration.body": {
+            en: "I moved the product repository to our self-hosted Forgejo instance. For Plane, I used an encrypted backup, restored it on the same application version, checked the container images, and planned the switch to the new server.",
+            pt: "Migrei o repositório do produto para a nossa instância autoalojada do Forgejo. Para o Plane, usei uma cópia de segurança cifrada, restaurei-a na mesma versão da aplicação, verifiquei as imagens dos contentores e planeei a transição para o novo servidor.",
+            lu: "Ech hunn de Repository vum Produit op eis selwer gehost Forgejo-Instanz geplënnert. Fir Plane hunn ech e verschlësselte Backup benotzt, en op där selwechter Versioun vun der Applikatioun restauréiert, d’Container-Images kontrolléiert an de Wiessel op den neie Server geplangt.",
+            de: "Ich habe das Produkt-Repository zu unserer selbst gehosteten Forgejo-Instanz migriert. Für Plane habe ich ein verschlüsseltes Backup auf derselben Anwendungsversion wiederhergestellt, die Container-Images geprüft und die Umschaltung auf den neuen Server geplant.",
+            fr: "J’ai transféré le dépôt du produit vers notre instance auto-hébergée de Forgejo. Pour Plane, j’ai restauré une sauvegarde chiffrée sur la même version de l’application, vérifié les images de conteneurs et planifié la bascule vers le nouveau serveur."
+        },
+        "project.cylro.internal.ci.title": {
+            en: "CI job isolation",
+            pt: "Isolamento das tarefas de CI",
+            lu: "Isolatioun vun de CI-Jobs",
+            de: "Isolation der CI-Jobs",
+            fr: "Isolation des tâches de CI"
+        },
+        "project.cylro.internal.ci.body": {
+            en: "CI jobs run code from the repository and its dependencies on a server shared with company tools. I configured the runners to use rootless Docker to limit host privileges, capped resource usage so a job couldn’t starve other services, and restricted network access to keep jobs away from private services.",
+            pt: "As tarefas de CI executam código do repositório e das suas dependências num servidor partilhado com ferramentas da empresa. Configurei-as em Docker sem privilégios de root para limitar o acesso ao sistema anfitrião, impus limites de recursos para evitar que uma tarefa prejudicasse outros serviços e restringi o acesso à rede para as manter afastadas dos serviços privados.",
+            lu: "CI-Jobs féiere Code aus dem Repository a sengen Dependenzen op engem Server aus, op deem och d’Instrumenter vun der Firma lafen. Ech hunn d’Jobs mat Docker ouni Root-Rechter lafe gelooss, fir hir Rechter um Host ze begrenzen. Ech hunn och d’Ressourcen an den Netzzougang limitéiert, fir aner Servicer virun Iwwerlaaschtung ze schützen an déi privat Servicer ofzeschiermen.",
+            de: "CI-Jobs führen Code aus dem Repository und seinen Abhängigkeiten auf demselben Server wie die Firmenwerkzeuge aus. Mit Rootless Docker habe ich ihre Rechte auf dem Host begrenzt. Ressourcenlimits schützen andere Dienste vor Überlastung, und Netzwerkbeschränkungen halten die Jobs von privaten Diensten fern.",
+            fr: "Les tâches de CI exécutent le code du dépôt et de ses dépendances sur le même serveur que les outils de l’entreprise. Je les ai configurées dans Docker sans privilèges root pour limiter leurs droits sur l’hôte. J’ai plafonné leur consommation de ressources pour protéger les autres services et restreint leur accès réseau pour les isoler des services privés."
+        },
+        "project.cylro.internal.access.title": {
+            en: "Private access and HTTPS",
+            pt: "Acesso privado e HTTPS",
+            lu: "Privaten Zougang an HTTPS",
+            de: "Privater Zugang und HTTPS",
+            fr: "Accès privé et HTTPS"
+        },
+        "project.cylro.internal.access.body": {
+            en: "I set up NetBird so staff could reach private services over a VPN. I delegated DNS-01 certificate challenges to a dedicated DNS service, so Caddy could renew HTTPS certificates for VPN-only services without a token that could modify the primary DNS zone.",
+            pt: "Configurei o NetBird para que a equipa pudesse aceder aos serviços privados através de uma VPN. Deleguei os desafios DNS-01 de validação de certificados a um serviço DNS dedicado, para que o Caddy pudesse renovar os certificados HTTPS dos serviços exclusivos da VPN sem um token com permissões para alterar a zona DNS principal.",
+            lu: "Ech hunn NetBird ageriicht, fir datt d’Ekipp iwwer e VPN op déi privat Servicer zougräife konnt. Ech hunn d’DNS-01-Challengë fir d’Zertifikater un en dedizéierten DNS-Service delegéiert. Esou konnt Caddy d’HTTPS-Zertifikater fir Servicer, déi nëmmen iwwer de VPN zougänglech sinn, ouni Token mat Schreifrechter fir d’Haapt-DNS-Zon erneieren.",
+            de: "Ich habe NetBird eingerichtet, damit das Team über ein VPN auf private Dienste zugreifen kann. Die DNS-01-Challenges für Zertifikate habe ich an einen eigenen DNS-Dienst delegiert. So konnte Caddy HTTPS-Zertifikate für Dienste mit reinem VPN-Zugang erneuern, ohne ein Token mit Schreibrechten für die primäre DNS-Zone zu benötigen.",
+            fr: "J’ai configuré NetBird pour permettre à l’équipe d’accéder aux services privés via un VPN. J’ai délégué les défis DNS-01 à un service DNS dédié. Caddy pouvait ainsi renouveler les certificats HTTPS des services accessibles uniquement via le VPN sans disposer d’un jeton capable de modifier la zone DNS principale."
+        },
+        "project.cylro.internal.changes.title": {
+            en: "Access changes with rollback",
+            pt: "Alterações de acesso com reversão",
+            lu: "Zougangsännerunge mat Rollback",
+            de: "Zugriffsänderungen mit Rückfalloption",
+            fr: "Modifications d’accès avec retour arrière"
+        },
+        "project.cylro.internal.changes.body": {
+            en: "Before changing server access, I scheduled an automatic rollback. I verified access in a new session, cancelled the rollback, and recorded the result.",
+            pt: "Antes de alterar o acesso ao servidor, programei uma reversão automática. Verifiquei o acesso numa nova sessão, cancelei a reversão e registei o resultado.",
+            lu: "Ier ech den Zougang zum Server geännert hunn, hunn ech en automatesche Rollback geplangt. Ech hunn den Zougang an enger neier Sessioun iwwerpréift, de Rollback annuléiert an d’Resultat dokumentéiert.",
+            de: "Vor einer Änderung am Serverzugang habe ich eine automatische Rücknahme eingeplant. Ich habe den Zugang in einer neuen Sitzung geprüft, die Rücknahme abgebrochen und das Ergebnis dokumentiert.",
+            fr: "Avant de modifier l’accès au serveur, j’ai programmé un retour arrière automatique. J’ai vérifié l’accès dans une nouvelle session, annulé le retour arrière et consigné le résultat."
+        },
+        "project.cylro.internal.recovery.title": {
+            en: "Monitoring and recovery",
+            pt: "Monitorização e recuperação",
+            lu: "Iwwerwaachung a Restauratioun",
+            de: "Monitoring und Wiederherstellung",
+            fr: "Supervision et restauration"
+        },
+        "project.cylro.internal.recovery.body": {
+            en: "I set up service health checks, metrics, and alerts, and configured restic to encrypt backups before sending them offsite. The Plane migration included a restore of that service. I also successfully restored the full internal platform on a fresh server.",
+            pt: "Configurei verificações do estado dos serviços, métricas e alertas e usei o restic para cifrar as cópias de segurança antes de as enviar para outro local. A migração do Plane incluiu o restauro desse serviço. Também concluí com êxito o restauro de toda a plataforma interna num servidor novo.",
+            lu: "Ech hunn Zoustandskontrolle fir d’Servicer, Metriken an Alarmer ageriicht a restic esou konfiguréiert, datt et d’Backuppe verschlësselt, ier et se op eng extern Plaz schéckt. Bei der Plane-Migratioun hunn ech dee Service restauréiert. Ech hunn och déi ganz intern Plattform op engem neie Server mat Erfolleg restauréiert.",
+            de: "Ich habe Zustandsprüfungen für die Dienste, Metriken und Alarme eingerichtet und restic so konfiguriert, dass es Backups vor der externen Speicherung verschlüsselt. Bei der Plane-Migration habe ich diesen Dienst wiederhergestellt. Ich habe auch die gesamte interne Plattform erfolgreich auf einem neuen Server wiederhergestellt.",
+            fr: "J’ai mis en place des contrôles de l’état des services, des métriques et des alertes, et configuré restic pour chiffrer les sauvegardes avant leur envoi hors site. La migration de Plane a compris la restauration de ce service. J’ai également restauré avec succès l’ensemble de la plateforme interne sur un serveur neuf."
         },
 
         /* ---- What I'm working on ---- */
@@ -954,11 +1082,11 @@
             fr: "Déploiement et exploitation"
         },
         "project.cylro.next.ops.body": {
-            en: "Settling the deployment platform, the operations view, and the backup and restoration paths I want the alpha to put under real pressure.",
-            pt: "Fechar a plataforma de deployment, a vista operacional e os caminhos de backup e restauro que quero pôr sob pressão real no alpha.",
-            lu: "D'Deployment-Plattform, d'Betribsiwwersiicht an d'Backup- a Restauratiounsweeër festleeën, déi ech am Alpha ënner richtegen Drock setze wëll.",
-            de: "Die Deployment-Plattform, die Betriebsansicht sowie die Backup- und Wiederherstellungswege festlegen, die ich im Alpha unter echten Druck setzen will.",
-            fr: "Arrêter le choix de la plateforme de déploiement, la vue d'exploitation et les chemins de sauvegarde et de restauration que je veux mettre sous pression réelle pendant l'alpha."
+            en: "We’re planning to automate Cylro’s production server setup on Hetzner with Terraform and cloud-init. We’re also considering Ansible to make configuration and recovery repeatable.",
+            pt: "Planeamos automatizar a preparação dos servidores de produção da Cylro na Hetzner com Terraform e cloud-init. Estamos também a considerar o Ansible para que a configuração e a recuperação possam ser repetidas de forma consistente.",
+            lu: "Mir plangen, de Setup vun de Cylro-Produktiounsservere bei Hetzner mat Terraform a cloud-init ze automatiséieren. Mir iwwerleeën och, Ansible ze benotzen, fir d’Konfiguratioun an d’Restauratioun op déiselwecht Manéier widderhuelen ze kënnen.",
+            de: "Wir planen, die Einrichtung der Cylro-Produktionsserver bei Hetzner mit Terraform und cloud-init zu automatisieren. Wir prüfen auch Ansible, um Konfiguration und Wiederherstellung reproduzierbar zu machen.",
+            fr: "Nous prévoyons d’automatiser la mise en place des serveurs de production de Cylro chez Hetzner avec Terraform et cloud-init. Nous envisageons aussi Ansible pour rendre les étapes de configuration et de reprise reproductibles."
         },
         "project.cylro.next.alpha.title": {
             en: "Private alpha",
@@ -976,6 +1104,20 @@
         },
 
         /* ---- Sidebar: tech stack ---- */
+        "project.cylro.sidebar.tech.product": {
+            en: "Website operations product",
+            pt: "Produto de gestão de sites",
+            lu: "Produit fir de Betrib vu Websäiten",
+            de: "Produkt für den Website-Betrieb",
+            fr: "Produit de gestion de sites web"
+        },
+        "project.cylro.sidebar.tech.internal": {
+            en: "Internal platform",
+            pt: "Plataforma interna",
+            lu: "Intern Plattform",
+            de: "Interne Plattform",
+            fr: "Plateforme interne"
+        },
         "project.cylro.sidebar.tech.nuxt": {
             en: "Nuxt 4 + Vue 3 (SSR)",
             pt: "Nuxt 4 + Vue 3 (SSR)",
