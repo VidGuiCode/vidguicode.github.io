@@ -6,21 +6,20 @@
  *
  *     <script src="../assets/js/project-page-init.js" defer></script>
  *
- * It does three things on DOMContentLoaded:
+ * On DOMContentLoaded:
  *   1. Localises <title> / <meta name="description"> when <body> carries a
  *      data-meta-prefix (e.g. "project.rds.meta"), re-applying on language change.
  *   2. Renders the project category badges, reading the project id from
  *      #category-section[data-project-id].
- *   3. Renders the inline icons (icons.js is loaded with defer, so renderIcons
- *      is available by DOMContentLoaded).
- *   4. Provides the shared image-modal open/close helpers (window.openImageModal
- *      / window.closeImageModal) that the case-study figure markup calls.
+ *   3. Initializes download cards and renders the inline icons.
+ *   4. Connects image links to the shared viewer.
  */
 (function () {
     'use strict';
 
     var POLL_INTERVAL_MS = 100;
     var MAX_WAIT_MS = 5000;
+    var imageModalTrigger = null;
 
     /** Read the project id declared on #category-section. */
     function getProjectId() {
@@ -62,6 +61,23 @@
         }
     }
 
+    /** Add the shared icons to a card's heading and its link or pending status. */
+    function initAssetCards() {
+        function prependIcon(element, name) {
+            var icon = document.createElement('i');
+            icon.setAttribute('data-lucide', name);
+            element.prepend(icon);
+        }
+
+        document.querySelectorAll('.asset-card[data-asset-icon]').forEach(function (card) {
+            var heading = card.querySelector(':scope > h3');
+            var action = card.querySelector(':scope > a, :scope > span');
+            if (!heading || !action) return;
+            prependIcon(heading, card.dataset.assetIcon);
+            prependIcon(action, action.matches('a') ? 'download' : 'clock');
+        });
+    }
+
     /**
      * Localise the document title and meta description for pages whose
      * translation file provides <prefix>.title / <prefix>.desc keys.
@@ -94,20 +110,13 @@
         }
     }
 
-    /**
-     * Image modal: open/close the full-size preview used by case-study figures.
-     *
-     * These two functions stay global because the markup wires them up with
-     * inline onclick attributes. They used to be copy-pasted into eight project
-     * pages with small behavioural drift, so this is the union of all variants:
-     * a broken image is reported instead of failing silently, and clicking the
-     * enlarged image itself no longer closes the modal.
-     */
-    window.openImageModal = function (imageSrc, imageAlt) {
+    /** Open the full-size preview used by case-study figures. */
+    window.openImageModal = function (imageSrc, imageAlt, trigger) {
         var modal = document.getElementById('image-modal');
         var modalImage = document.getElementById('modal-image');
         if (!modal || !modalImage) return;
 
+        imageModalTrigger = trigger || document.activeElement;
         modalImage.src = imageSrc;
         modalImage.alt = imageAlt || '';
         modalImage.onerror = function () {
@@ -117,6 +126,8 @@
 
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        var closeButton = modal.querySelector('.image-modal-close');
+        if (closeButton) closeButton.focus();
     };
 
     window.closeImageModal = function (event) {
@@ -127,29 +138,57 @@
 
         modal.classList.remove('active');
         document.body.style.overflow = '';
+        if (imageModalTrigger) imageModalTrigger.focus({ preventScroll: true });
+        imageModalTrigger = null;
     };
 
-    /** Escape closes the modal; a click on the image itself does not. */
+    /** Enhance image links while retaining direct links for new tabs and no-JS use. */
     function initImageModal() {
+        var links = document.querySelectorAll('a.project-image-wrapper[href]');
+        if (!links.length) return;
+
+        document.body.insertAdjacentHTML('beforeend', `
+            <div id="image-modal" class="image-modal" role="dialog" aria-modal="true" aria-label="Image preview">
+                <button type="button" class="image-modal-close" aria-label="Close image">&times;</button>
+                <img id="modal-image" class="image-modal-content" alt="">
+            </div>
+        `);
+        var modal = document.getElementById('image-modal');
+
+        var closeButton = modal.querySelector('.image-modal-close');
+        links.forEach(function (link) {
+            link.setAttribute('aria-haspopup', 'dialog');
+            link.addEventListener('click', function (event) {
+                if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+
+                var image = link.querySelector('img');
+                var caption = document.getElementById(link.getAttribute('aria-labelledby'));
+                event.preventDefault();
+                window.openImageModal(link.href, image?.alt || caption?.textContent.trim(), link);
+            });
+        });
+
         document.addEventListener('keydown', function (e) {
-            if (e.key !== 'Escape') return;
-            var modal = document.getElementById('image-modal');
-            if (modal && modal.classList.contains('active')) {
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Escape') {
                 window.closeImageModal();
+            } else if (e.key === 'Tab' && closeButton) {
+                e.preventDefault();
+                closeButton.focus();
             }
         });
 
-        var modalImage = document.getElementById('modal-image');
-        if (modalImage) {
-            modalImage.addEventListener('click', function (e) {
-                e.stopPropagation();
-            });
-        }
+        modal.addEventListener('click', function (event) {
+            if (event.target === modal || closeButton.contains(event.target)) {
+                window.closeImageModal();
+            }
+        });
     }
 
     document.addEventListener('DOMContentLoaded', function () {
         initMeta();
         initCategories();
+        initAssetCards();
         initIcons();
         initImageModal();
     });

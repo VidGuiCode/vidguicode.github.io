@@ -28,11 +28,18 @@
             fr: "59/60"
         },
         "project.pif.subtitle": {
-            en: "My final Computer Technician diploma project, developed from September 2024 to June 2025: a self-watering plant system that measures conditions, shows them clearly, and protects its data with nightly backups. I built every layer, from the physical device to the software and network, to make everyday plant care more reliable.",
-            pt: "O meu projeto final do diploma de Técnico de Informática, desenvolvido de setembro de 2024 a junho de 2025: um sistema de rega automática que mede as condições das plantas, mostra-as de forma clara e protege os dados com backups noturnos. Construí todas as camadas, do dispositivo físico ao software e à rede, para tornar o cuidado diário das plantas mais fiável.",
-            lu: "Mäi Finale Projet fir den Computer Technician Diplom, entwéckelt vu September 2024 bis Juni 2025: e System fir Planzen automatesch ze Waasseren, deen d'Konditioune moosst, kloer weist a seng Donnéeë mat nuetleche Backups schützt. Ech hunn all Schicht gebaut, vum physeschen Apparat bis bei d'Software an d'Netzwierk, fir déi alldeeglech Planzefleeg méi zouverlässeg ze maachen.",
-            de: "Mein Abschlussprojekt für das Computer-Techniker-Diplom, entwickelt von September 2024 bis Juni 2025: ein selbstbewässerndes Pflanzensystem, das Bedingungen misst, sie klar darstellt und seine Daten mit nächtlichen Backups schützt. Ich habe jede Schicht gebaut, vom physischen Gerät bis zu Software und Netzwerk, um die tägliche Pflanzenpflege zuverlässiger zu machen.",
-            fr: "Mon projet final de diplôme de Technicien en informatique, développé de septembre 2024 à juin 2025 : un système d'arrosage automatique qui mesure les conditions des plantes, les affiche clairement et protège ses données avec des sauvegardes nocturnes. J'ai construit chaque couche, de l'appareil physique au logiciel et au réseau, pour rendre l'entretien quotidien des plantes plus fiable."
+            en: "Plantimeter, my Computer Technician diploma capstone, waters plants when the soil is dry, displays live sensor readings on a touchscreen, and backs up its data every night.",
+            pt: "O Plantimeter, o meu projeto final do diploma de Técnico de Informática, rega as plantas quando o solo está seco, mostra as leituras dos sensores em tempo real num ecrã tátil e faz cópias de segurança dos dados todas as noites.",
+            lu: "De Plantimeter, mäin Ofschlossprojet fir den Diplom als Informatiktechniker, gëtt de Planze Waasser, wann de Buedem dréchen ass. En affichéiert d’Moosswäerter live op engem Touchscreen a mécht all Nuecht e Backup vun den Donnéeën.",
+            de: "Plantimeter, mein Abschlussprojekt für das Computertechniker-Diplom, bewässert Pflanzen bei trockenem Boden, zeigt die Sensorwerte in Echtzeit auf einem Touchscreen an und sichert die Daten jede Nacht.",
+            fr: "Plantimeter, mon projet de fin d’études pour le diplôme de technicien en informatique, arrose les plantes quand le sol est sec, affiche les relevés des capteurs en temps réel sur un écran tactile et sauvegarde les données chaque nuit."
+        },
+        "project.pif.contribution": {
+            en: "I built the ESP8266 sensor node and watering hardware, wrote the firmware and the Raspberry Pi dashboard, and configured the network and backup server.",
+            pt: "Construí o nó de sensores com ESP8266 e o equipamento de rega, programei o firmware e o painel do Raspberry Pi e configurei a rede e o servidor de cópias de segurança.",
+            lu: "Ech hunn den ESP8266-Sensorknuet an d’Hardware fir d’Bewässerung gebaut, d’Firmware an den Dashboard fir de Raspberry Pi geschriwwen an d’Netzwierk an de Backup-Server konfiguréiert.",
+            de: "Ich baute den ESP8266-Sensorknoten und die Bewässerungshardware, programmierte die Firmware und das Dashboard für den Raspberry Pi und richtete das Netzwerk und den Backup-Server ein.",
+            fr: "J’ai construit le nœud de capteurs ESP8266 et le système d’arrosage, programmé le micrologiciel et le tableau de bord du Raspberry Pi, puis configuré le réseau et le serveur de sauvegarde."
         },
         "project.pif.section.system.title": {
             en: "The \"Plantimeter\" System",

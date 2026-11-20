@@ -11,15 +11,6 @@
     }
 
     Object.assign(translations, {
-        // Header
-        "links.status": {
-            en: "Student · Co-founder",
-            pt: "Estudante · Cofundador",
-            lu: "Student · Co-Grënner",
-            de: "Student · Mitgründer",
-            fr: "Étudiant · Cofondateur"
-        },
-
         // Bio
         "links.bio": {
             en: "<strong>Cloud Computing student and Cylro co-founder</strong> in Luxembourg. I build tools, work with AI agents, and run my own infrastructure.",

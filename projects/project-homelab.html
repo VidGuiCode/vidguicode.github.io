@@ -60,179 +60,6 @@
     <script src="../assets/js/certifications-data.js"></script>
     <script src="../assets/js/search.js"></script>
     <script src="../assets/js/certifications-techstack.js"></script>
-    <style>
-        /* Typography uses centralized scale - see styles.css */
-
-        /* Project Images */
-        .project-image-container {
-            margin: 2rem 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        .project-image-wrapper {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-            max-width: 100%;
-        }
-
-        .project-image-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 48px;
-            height: 48px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .project-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 24px;
-            height: 24px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E");
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        @media (min-width: 769px) {
-            .project-image-wrapper:hover::after,
-            .project-image-wrapper:hover::before {
-                opacity: 1;
-            }
-        }
-
-        .project-image {
-            transition: transform 0.2s ease, opacity 0.2s ease;
-        }
-
-        @media (min-width: 769px) {
-            .project-image-wrapper:hover .project-image {
-                transform: scale(1.02);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                filter: brightness(0.95);
-            }
-        }
-
-        .project-image-caption {
-            margin-top: 0.75rem;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            text-align: center;
-        }
-
-        /* Side-by-side layout for intro section */
-        .intro-with-image {
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
-            margin-top: 1rem;
-        }
-
-        .intro-with-image .intro-text {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .intro-with-image .intro-text h2 {
-            margin-top: 0;
-        }
-
-        .intro-with-image .intro-image {
-            flex: 0 0 320px;
-            max-width: 320px;
-            margin-top: calc(48px + 1rem); /* Icon height + margin-bottom to align with h2 */
-        }
-
-        .intro-with-image .intro-image .project-image-wrapper img {
-            max-height: 320px;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        @media (max-width: 768px) {
-            .intro-with-image {
-                flex-direction: column;
-                margin-top: 0;
-            }
-
-            .intro-with-image .intro-image {
-                flex: 1;
-                max-width: 100%;
-                margin-top: 1.5rem;
-            }
-
-            .intro-with-image .intro-image .project-image-wrapper img {
-                max-height: 280px;
-            }
-        }
-
-        /* Image Modal */
-        .image-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .image-modal.active {
-            display: flex;
-        }
-
-        .image-modal-content {
-            max-width: 90vw;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .image-modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            line-height: 1;
-        }
-
-        @media (max-width: 768px) {
-            .image-modal {
-                padding: 1rem;
-            }
-
-            .image-modal-content {
-                max-width: 100%;
-                max-height: 90vh;
-            }
-        }
-
-    </style>
 </head>
 <body data-view="overview">
     <div class="grid-background"></div>
@@ -243,21 +70,22 @@
     <!-- Navbar (generated by navbar.js) -->
     <div id="navbar-container"></div>
 
-    <main class="container" style="padding-top: 100px;">
+    <main class="container project-case-study">
         
-        <a href="/#projects" class="back-link">
+        <a href="../projects" class="back-link" data-project-list-back>
             <i data-lucide="arrow-left"></i>
-            <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
+            <span data-i18n="project.allProjects">All projects</span>
         </a>
 
         <section class="project-hero">
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.homelab.badge">INFRASTRUCTURE</div>
                 <h1 data-i18n="projects.homelab.title">Home Lab Personal Cloud</h1>
-                <p class="subtitle" data-i18n="projects.homelab.desc">My own platform for files, media, custom apps, and AI agents.</p>
+                <p class="subtitle" data-i18n="project.homelab.subtitle">My home lab grew from a media server into a self-hosted platform I use for file storage, streaming, custom apps, and AI workflows.</p>
+                <p data-i18n="project.homelab.contribution">I designed the lab to separate incoming traffic, application workloads, and storage. I built shared passkey sign-in and apps for job applications and vocabulary practice.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
-                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>15/11/2026</span>
+                    <span data-i18n="project.lastUpdated">Last updated:</span> <span>19/11/2026</span>
                 </p>
             </div>
         </section>
@@ -353,7 +181,7 @@
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="layout"></i></div>
                         <h3 data-i18n="project.homelab.does.apps.title">A suite of web apps I built</h3>
-                        <p data-i18n="project.homelab.does.apps.desc">Login, an app hub, a vault, a career workspace, voice/video rooms, even an AI video generator - all on one secure backend.</p>
+                        <p data-i18n="project.homelab.does.apps.desc">Apps for job applications, vocabulary, video, and knowledge search share one sign-in.</p>
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="bot"></i></div>
@@ -362,7 +190,7 @@
                     </div>
                     <div class="does-card">
                         <div class="does-icon"><i data-lucide="shield"></i></div>
-                        <h3 data-i18n="project.homelab.does.secure.title">Locked down and passwordless</h3>
+                        <h3 data-i18n="project.homelab.does.secure.title">Shared sign-in with passkeys</h3>
                         <p data-i18n="project.homelab.does.secure.desc">Sign in with a passkey. A protected gateway handles traffic, and applications share identity and permission checks.</p>
                     </div>
                 </div>
@@ -374,20 +202,19 @@
             <article>
                 <div class="card">
                     <div class="plain-only">
-                    <div class="intro-with-image">
-                        <div class="intro-text">
-                            <i data-lucide="server" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
-                            <h2 data-i18n="project.homelab.section.setup.title">From Media Server to Personal Cloud</h2>
-                            <p data-i18n="project.homelab.section.setup.body">I started with media streaming and expanded the lab into a platform for my own applications, shared sign-in, AI workflows, and storage. I use it to test changes and solve problems that come up when you run your own services.</p>
-                        </div>
-                        <div class="intro-image project-image-container">
-                            <div class="project-image-wrapper" onclick="openImageModal('../assets/img/projects/homelab/homelab-rack.webp', 'My Home Lab rack with servers and networking equipment')">
-                                <img src="../assets/img/projects/homelab/homelab-rack.webp" alt="My Home Lab rack with servers and networking equipment" class="project-image" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border-color);">
-                            </div>
-                            <p class="project-image-caption" data-i18n="project.homelab.image.caption">My Home Lab rack</p>
-                        </div>
+                        <i data-lucide="server" class="accent-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                        <h2 data-i18n="project.homelab.section.setup.title">From Media Server to Personal Cloud</h2>
+                        <p data-i18n="project.homelab.section.setup.body">I started with media streaming and expanded the lab into a platform for my own applications, shared sign-in, AI workflows, and storage. I use it to test changes and solve problems that come up when you run your own services.</p>
                     </div>
-                    </div>
+                    <section>
+                        <h2 data-i18n="project.homelab.examples.title">Apps I built</h2>
+                        <ul class="feature-list">
+                            <li data-i18n="project.homelab.examples.career" data-i18n-html><strong>Job application workspace.</strong> I built a tool that imports CVs into structured fields, suggests edits for a specific job, and exports a PDF. I accept or reject each suggested edit.</li>
+                            <li data-i18n="project.homelab.examples.learning" data-i18n-html><strong>Vocabulary trainer.</strong> I built a tool that turns a term into a short explanation, flashcards, and links to related terms. Spaced repetition brings difficult terms back for review.</li>
+                            <li data-i18n="project.homelab.examples.video" data-i18n-html><strong>AI video generator.</strong> I choose a start and an end image, see the estimated cost, and submit a background job. The page shows progress until the short clip is ready.</li>
+                            <li data-i18n="project.homelab.examples.knowledge" data-i18n-html><strong>Searchable knowledge base.</strong> AI assistants can save notes and transcripts through MCP. Keyword search and local embeddings help them retrieve relevant passages for later tasks.</li>
+                        </ul>
+                    </section>
                     
                     <div class="tech-only">
                     <h2 data-i18n="project.homelab.technical.goal.title">Technical design goal</h2>
@@ -414,10 +241,11 @@
                                 <li data-i18n="project.homelab.section.what.core.list" data-i18n-html><strong>Unified backend control plane</strong>: FastAPI + SQLAlchemy + Alembic + SQLite drive authentication, permissions, app registration, audit logs, AI orchestration, and cross-app state.</li>
                                 <li data-i18n="project.homelab.section.what.core.auth" data-i18n-html><strong>Passwordless, federated login</strong>: I built an OIDC provider and an OAuth 2.0 consent flow. Users sign in with passkeys, and applications and AI assistants receive scoped tokens.</li>
                                 <li data-i18n="project.homelab.section.what.core.surfaces" data-i18n-html><strong>Real-time and generative surfaces</strong>: self-hosted voice/video rooms (LiveKit/WebRTC) and an AI keyframe video generator that turns a start and end frame into a short clip - both behind the same SSO and edge security.</li>
-                                <li data-i18n="project.homelab.section.what.core.suite" data-i18n-html><strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery, task log, career workspace, voice/video rooms, an AI video generator, a mail studio, a music intake app, a knowledge base console, and a QR generator microservice.</li>
+                                <li data-i18n="project.homelab.section.what.core.suite" data-i18n-html><strong>Other custom apps.</strong> An app launcher brings together tools for web captures, item and payment tracking, agent activity, music intake, voice and video rooms, and QR codes.</li>
                                 <li data-i18n="project.homelab.section.what.core.killswitch" data-i18n-html><strong>Central app controls</strong>: A shared application registry lets me disable access to individual apps.</li>
                                 <li data-i18n="project.homelab.section.what.core.mcp" data-i18n-html><strong>AI assistant bridge (MCP)</strong>: AI clients connect through single sign-on and consent, the server mints a scoped token for them, and they get tools for tasks, research, calendars, mail and security briefs.</li>
-                                <li data-i18n="project.homelab.section.what.compose.cli" data-i18n-html><strong>Platform CLI</strong>: I built and packaged a Typer-based Python CLI for tasks, security operations, and health checks.</li>
+                                <li data-i18n="project.homelab.section.what.core.analytics" data-i18n-html><strong>Administration dashboard.</strong> I can check how long agent runs take and what they cost.</li>
+                                <li data-i18n="project.homelab.section.what.compose.cli" data-i18n-html><strong>Task workflow across CLI and MCP.</strong> I built a Python CLI that lets a coding agent pick up a task and log its progress. The agent can check service health through MCP, then record its result in the shared task log.</li>
                             </ul>
                         </div>
                         <div class="stack-layer">
@@ -457,7 +285,7 @@
                                 <li data-i18n="project.homelab.section.what.media.zfs" data-i18n-html><strong>ZFS memory tuning</strong>: I limited the filesystem cache to leave memory available for applications running alongside storage.</li>
                                 <li data-i18n="project.homelab.section.what.media.services" data-i18n-html><strong>Full self-hosted media</strong>: Jellyfin with hardware transcoding, fed by a Radarr/Sonarr/Jellyseerr/Bazarr/Jackett acquisition pipeline with ClamAV scanning; Immich for photos; Nextcloud for files; Navidrome + Lidarr + Soulseek for music; Forgejo for Git hosting.</li>
                                 <li data-i18n="project.homelab.section.what.media.object" data-i18n-html><strong>S3-compatible object storage</strong>: Dual MinIO tiers keep hot objects on SSD and move colder data to HDD through lifecycle rules.</li>
-                                <li data-i18n="project.homelab.section.what.media.backup" data-i18n-html><strong>Versioned backups</strong>: A backup runner writes timestamped, checksummed archives, alongside ZFS snapshots.</li>
+                                <li data-i18n="project.homelab.section.what.media.backup" data-i18n-html><strong>Versioned backups.</strong> A nightly job copies core databases and service configuration. It keeps previous versions and records checksums.</li>
                                 <li data-i18n="project.homelab.section.what.media.game" data-i18n-html><strong>Game server plan</strong>: I planned a containerized game server with persistent world data.</li>
                                 <li data-i18n="project.homelab.section.what.media.rack" data-i18n-html><strong>Power and cooling</strong>: I monitor power use and use drive temperatures to control airflow.</li>
                             </ul>
@@ -475,7 +303,7 @@
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">02</span></div>
-                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body2" data-i18n-html>Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> - and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.</p></div>
+                            <div class="journey-body"><p data-i18n="project.homelab.section.why.body2" data-i18n-html>I wanted tools that fit the way I work. Two examples are a QR generator and an app for tracking items and payments.</p></div>
                         </div>
                         <div class="journey-step">
                             <div class="journey-marker"><span class="journey-num">03</span></div>
@@ -498,9 +326,9 @@
                             <p data-i18n="project.homelab.section.lessons.dns.body">Managing records in Cloudflare and understanding how traffic flows made the whole system click.</p>
                         </div>
                         <div class="does-card">
-                            <div class="does-icon"><i data-lucide="sprout"></i></div>
-                            <h3 data-i18n="project.homelab.section.lessons.iterate.title">Start small, iterate fast</h3>
-                            <p data-i18n="project.homelab.section.lessons.iterate.body">This setup grew organically. Each problem solved unlocked the next improvement.</p>
+                            <div class="does-icon"><i data-lucide="audio-waveform"></i></div>
+                            <h3 data-i18n="project.homelab.section.lessons.speech.title">Faster local speech</h3>
+                            <p data-i18n="project.homelab.section.lessons.speech.body">In a July 2026 test, a lighter text-to-speech engine cut response time from about 2.5 seconds to roughly half a second per sentence through the same gateway. The faster voice sounded less natural.</p>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="zap"></i></div>
@@ -535,7 +363,7 @@
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="activity"></i></div>
                             <h3 data-i18n="project.homelab.section.lessons.cooling.title">Measure, then cool</h3>
-                            <p data-i18n="project.homelab.section.lessons.cooling.body">Drive temperatures averaged 44 to 45 °C. I wrote a fan curve that follows the hottest drive and printed an exhaust shroud. Temperatures settled at 40 to 41 °C.</p>
+                            <p data-i18n="project.homelab.section.lessons.cooling.body">I added fan control based on the warmest drive. The fans switch to full speed if a sensor fails. The readings recorded after the change were lower.</p>
                         </div>
                     </div>
                     </div>
@@ -545,19 +373,19 @@
                     <div class="does-grid">
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="audio-waveform"></i></div>
-                            <h3 data-i18n="project.homelab.next.voice">Build on the existing Hermes voice workflow</h3>
+                            <h3 data-i18n="project.homelab.next.voice">Improve the voice assistant workflow</h3>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="clapperboard"></i></div>
-                            <h3 data-i18n="project.homelab.next.video">AI video v2: timeline, captions and storyboards</h3>
+                            <h3 data-i18n="project.homelab.next.video">Explore a node-based editor for video workflows</h3>
                         </div>
                         <div class="does-card">
                             <div class="does-icon"><i data-lucide="file-text"></i></div>
-                            <h3 data-i18n="project.homelab.next.career">Finish the career workspace &amp; mail inbox</h3>
+                            <h3 data-i18n="project.homelab.next.career">Keep improving the job application workspace</h3>
                         </div>
                         <div class="does-card">
-                            <div class="does-icon"><i data-lucide="sparkles"></i></div>
-                            <h3 data-i18n="project.homelab.next.agents">One security agent above both security twins</h3>
+                            <div class="does-icon"><i data-lucide="hard-drive"></i></div>
+                            <h3 data-i18n="project.homelab.next.restore">Test a database restore in isolation</h3>
                         </div>
                     </div>
                     </div>
@@ -626,12 +454,6 @@
             <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
         </footer>
     </main>
-
-    <!-- Image Modal -->
-    <div id="image-modal" class="image-modal" onclick="closeImageModal()">
-        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">×</button>
-        <img id="modal-image" class="image-modal-content" src="" alt="">
-    </div>
 
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/project-page-init.js" defer></script>

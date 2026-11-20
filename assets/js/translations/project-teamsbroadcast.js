@@ -21,11 +21,18 @@
             fr: "Système de Diffusion Teams"
         },
         "project.teamsbroadcast.hero.subtitle": {
-            en: "I built this Power Platform tool to help teachers, students, and organizational leaders send one announcement to 20+ Microsoft Teams channels at once, with a clear record of where it went.",
-            pt: "Construí esta ferramenta Power Platform para ajudar professores, estudantes e líderes organizacionais a enviar um anúncio para mais de 20 canais do Microsoft Teams de uma vez, com um registo claro do destino.",
-            lu: "Ech hunn dëst Power Platform Tool gebaut fir Enseignanten, Schüler a Leaderen ze hëllefen eng Ukënnegung gläichzäiteg op 20+ Microsoft Teams Kanäl ze schécken, mat engem kloere Beweis wou se ukomm ass.",
-            de: "Ich habe dieses Power Platform Tool gebaut, damit Lehrer, Studenten und Organisationsleiter eine Ankündigung gleichzeitig an 20+ Microsoft Teams-Kanäle senden können, mit einem klaren Nachweis ihres Ziels.",
-            fr: "J'ai construit cet outil Power Platform pour aider les enseignants, les étudiants et les responsables à envoyer une annonce à 20+ canaux Microsoft Teams en une fois, avec une trace claire de sa destination."
+            en: "The tool sends one announcement to 20+ Microsoft Teams channels at once and shows which posts succeeded. I tested delivery in dedicated Teams channels.",
+            pt: "A ferramenta envia um anúncio para mais de 20 canais do Microsoft Teams de uma só vez e mostra em quais foi publicado com sucesso. Testei o envio em canais de teste do Teams.",
+            lu: "D’Tool schéckt eng Ukënnegung gläichzäiteg an iwwer 20 Microsoft-Teams-Kanäl a weist, a wéi enge Kanäl se publizéiert gouf. Ech hunn d’Verschécken an Testkanäl am Teams getest.",
+            de: "Das Tool sendet eine Ankündigung gleichzeitig an mehr als 20 Microsoft-Teams-Kanäle und zeigt, wo sie erfolgreich veröffentlicht wurde. Ich testete die Zustellung in eigenen Teams-Testkanälen.",
+            fr: "L’outil diffuse une annonce dans plus de 20 canaux Microsoft Teams à la fois et indique dans lesquels elle a bien été publiée. J’ai testé l’envoi dans des canaux Teams dédiés aux essais."
+        },
+        "project.teamsbroadcast.hero.contribution": {
+            en: "I built the Power Apps screen for selecting channels and composing messages, the Power Automate flows that list channels and send posts, and the searchable Dataverse delivery log.",
+            pt: "Criei o ecrã em Power Apps para selecionar canais e escrever mensagens, os fluxos no Power Automate que listam os canais e publicam as mensagens, e o histórico pesquisável de envios no Dataverse.",
+            lu: "Ech hunn d’Vue a Power Apps fir Kanäl auszewielen a Messagen ze schreiwen entwéckelt. Ech hunn och d’Power-Automate-Flows gebaut, déi d’Kanäl oplëschten a Messagë schécken, an den duerchsichbare Versandlog am Dataverse ageriicht.",
+            de: "Ich entwickelte die Power-Apps-Oberfläche für die Kanalauswahl und das Verfassen von Nachrichten, die Power-Automate-Flows zum Auflisten der Kanäle und Versenden der Beiträge sowie das durchsuchbare Zustellprotokoll in Dataverse.",
+            fr: "J’ai développé l’écran Power Apps pour sélectionner les canaux et rédiger les messages, les flux Power Automate qui listent les canaux et publient les messages, ainsi que le journal d’envoi consultable dans Dataverse."
         },
 
         "project.teamsbroadcast.glance.channels.label": {

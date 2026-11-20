@@ -250,7 +250,7 @@
                     searchTerms: searchTerms.join(' '),
                     allLangText: getAllLangText([project.nameKey, project.descriptionKey, ...(project.categoryKeys || [])]),
                     icon: project.icon || 'folder',
-                    link: project.link,
+                    link: project.link || project.githubUrl,
                     data: project
                 });
             });
@@ -274,6 +274,7 @@
                     provider: cert.provider,
                     category: cert.category,
                     skills: skills.join(' '),
+                    searchTerms: (cert.searchTerms || []).join(' '),
                     level: cert.level?.label || '',
                     allLangText: getAllLangText([cert.nameKey, cert.descriptionKey, ...(cert.skillsKeys || [])]),
                     icon: 'award',
@@ -643,6 +644,13 @@
             results = directSearchBySubstring(normalizedQuery);
         }
 
+        const exactCertifications = searchData.filter(item =>
+            item.type === 'certification' &&
+            [item.name, ...(item.data.searchTerms || [])].some(term => term.toLowerCase() === normalizedQuery)
+        );
+        // Exact credential matches should survive the fuzzy result limit and grouping.
+        results = mergeUniqueResults(exactCertifications.map(item => ({ item })), results);
+
         // Save to recent searches
         addRecentSearch(query);
 
@@ -715,7 +723,7 @@
         });
 
         // Render results with query for highlighting
-        renderResults(grouped, query);
+        renderResults(grouped, query, exactCertifications.length > 0);
     }
 
     function getSynonymQueries(normalizedQuery) {
@@ -1234,13 +1242,12 @@
         return combined.slice(0, 6);
     }
 
-    function renderResults(grouped, query) {
+    function renderResults(grouped, query, certificationsFirst) {
         let html = '';
 
         // Detect current page
         const currentPage = window.location.pathname;
         const isOnCertificationsPage = currentPage.includes('certifications.html') || currentPage.endsWith('certifications');
-        const isOnProjectsPage = currentPage.includes('projects.html') || currentPage.endsWith('projects');
         const isInSubdirectory = currentPage.includes('/projects/') || currentPage.includes('/certifications/');
         const pathPrefix = isInSubdirectory ? '../' : '';
 
@@ -1262,6 +1269,9 @@
             html += '</div>';
         }
 
+        const actionsHtml = html;
+        html = '';
+
         // Projects (sub-grouped by category)
         if (grouped.project.length > 0) {
             html += '<div class="search-group">';
@@ -1282,7 +1292,10 @@
                     html += '<div class="search-subgroup-title">' + escapeHtml(category) + '</div>';
                 }
                 items.forEach(item => {
-                    const link = item.link ? ((item.link.startsWith('http') || item.link.startsWith('/')) ? item.link : pathPrefix + item.link) : '#projects';
+                    const projectPath = item.link || 'projects';
+                    const link = projectPath.startsWith('http') || projectPath.startsWith('/')
+                        ? projectPath
+                        : pathPrefix + projectPath;
 
                     html += '<a href="' + link + '" class="search-result-item">';
                     html += '<div class="search-result-header">';
@@ -1316,6 +1329,9 @@
             });
             html += '</div>';
         }
+
+        const projectsHtml = html;
+        html = '';
 
         // Certifications (sub-grouped by provider)
         if (grouped.certification.length > 0) {
@@ -1375,6 +1391,11 @@
             });
             html += '</div>';
         }
+
+        const certificationsHtml = html;
+        html = actionsHtml + (certificationsFirst
+            ? certificationsHtml + projectsHtml
+            : projectsHtml + certificationsHtml);
 
         // Formations
         if (grouped.formation.length > 0) {

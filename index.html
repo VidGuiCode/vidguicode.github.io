@@ -44,7 +44,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="assets/img/formal-profile.webp" as="image" fetchpriority="high">
+    <link rel="preload" as="image" fetchpriority="high"
+          imagesrcset="assets/img/formal-profile-480.webp 480w, assets/img/formal-profile-800.webp 800w, assets/img/formal-profile-1200.webp 1200w"
+          imagesizes="(max-width: 768px) min(434px, calc(100vw - 60px)), 380px">
     <link rel="preload" href="assets/css/styles.css" as="style">
     <!-- Icons -->
     <script src="assets/js/icons.js" defer></script>
@@ -127,7 +129,7 @@
                 <div class="badge" data-i18n="hero.badge">CO-FOUNDER · BUILDER · LUXEMBOURG</div>
                 <h1>Guilherme<br>Videira Marques</h1>
                 <p class="subtitle" data-i18n="hero.subtitle">I'm Gui, a Cloud Computing student and co-founder of Cylro. I build tools, work with AI agents, and run my own infrastructure in Luxembourg.</p>
-                <p data-i18n="hero.description">Independent projects around software, infrastructure, and AI agents.</p>
+                <p class="hero-description" data-i18n="hero.description">Independent projects around software, infrastructure, and AI agents.</p>
                 <div class="hero-actions">
                     <a href="#projects" class="btn primary" data-i18n="hero.cta.work">View Work</a>
                     <a href="#contact" class="btn secondary" data-i18n="hero.cta.contact">Get in Touch</a>
@@ -135,158 +137,39 @@
             </div>
             
             <div class="card hero-image">
-                <img src="assets/img/formal-profile.webp" alt="Guilherme Videira Marques" class="profile-img" fetchpriority="high" width="400" height="500">
+                <img src="assets/img/formal-profile-480.webp"
+                     srcset="assets/img/formal-profile-480.webp 480w, assets/img/formal-profile-800.webp 800w, assets/img/formal-profile-1200.webp 1200w"
+                     sizes="(max-width: 768px) min(434px, calc(100vw - 60px)), 380px"
+                     alt="Guilherme Videira Marques" class="profile-img" fetchpriority="high" width="400" height="500">
             </div>
 
-            <div class="card stat-box">
+            <a class="card stat-box" href="projects/project-homelab">
+                <span class="stat-link-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
                 <i data-lucide="server" class="accent-icon"></i>
                 <h3 data-i18n="stat.homelab">Homelab</h3>
                 <p data-i18n="stat.homelab.desc">Hybrid Infrastructure</p>
-            </div>
+            </a>
 
-            <div class="card stat-box">
+            <a class="card stat-box" href="projects?category=devops">
+                <span class="stat-link-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
                 <i data-lucide="cpu" class="accent-icon"></i>
                 <h3 data-i18n="stat.devops">DevOps</h3>
                 <p data-i18n="stat.devops.desc">Docker & Kubernetes</p>
-            </div>
+            </a>
 
-            <div class="card stat-box">
+            <a class="card stat-box" href="projects?category=networking">
+                <span class="stat-link-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
                 <i data-lucide="globe" class="accent-icon"></i>
                 <h3 data-i18n="stat.network">Network</h3>
                 <p data-i18n="stat.network.desc">Routing, VPN & Security</p>
-            </div>
+            </a>
 
-            <div class="card stat-box">
+            <a class="card stat-box" href="projects?category=full-stack&amp;category=ai%26automation">
+                <span class="stat-link-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
                 <i data-lucide="code-2" class="accent-icon"></i>
                 <h3 data-i18n="stat.development">Development</h3>
                 <p data-i18n="stat.development.desc">Full Stack & AI</p>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section-grid" data-nav-label="About">
-            <div class="section-header">
-                <h2 data-i18n="about.title">About Me</h2>
-                <div class="line"></div>
-            </div>
-            <div class="card about-content">
-                <div class="about-item">
-                    <i data-lucide="map-pin"></i>
-                    <p data-i18n="about.p1" data-i18n-html>I'm a cloud-computing enthusiast from <strong>Differdange, Luxembourg</strong>. Currently studying for my <strong>BTS Cloud Computing (2025–2027)</strong> at Lycée Guillaume Kroll, building on a solid foundation as a Computer Technician.</p>
-                </div>
-
-                <div class="about-item">
-                    <i data-lucide="zap"></i>
-                    <p data-i18n="about.p2" data-i18n-html>I learn by building. I run my own infrastructure and co-founded <strong>Cylro</strong>, a website operations platform. The practical part is seeing how the pieces work together.</p>
-                </div>
-
-                <div class="about-facts">
-                    <div class="about-fact">
-                        <i data-lucide="languages"></i>
-                        <div>
-                            <p class="about-fact-title" data-i18n="about.languages.intro">Fluent in 5 languages, thriving in multicultural environments:</p>
-                            <div class="tags">
-                                <span data-i18n="about.languages.portuguese">Portuguese (C1)</span>
-                                <span data-i18n="about.languages.luxembourgish">Luxembourgish (C1)</span>
-                                <span data-i18n="about.languages.english">English (C1)</span>
-                                <span data-i18n="about.languages.german">German (B2)</span>
-                                <span data-i18n="about.languages.french">French (B2)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-fact">
-                        <i data-lucide="heart"></i>
-                        <div>
-                            <p class="about-fact-title" data-i18n="about.hobbies.intro">Beyond tech, I stay active and creative:</p>
-                            <div class="tags">
-                                <span data-i18n="about.hobbies.gym">Strength Training</span>
-                                <span data-i18n="about.hobbies.basketball">Basketball</span>
-                                <span data-i18n="about.hobbies.design">Graphic Design</span>
-                                <span data-i18n="about.hobbies.building">Building Tech Projects</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section-grid skills-compact" data-nav-label="Skills">
-            <div class="section-header">
-                <h2 data-i18n="skills.title">Tech Stack</h2>
-                <div class="line"></div>
-            </div>
-
-            <div class="card skill-stack-card">
-                <div class="skill-stack-header">
-                    <i data-lucide="server-cog"></i>
-                    <h3 data-i18n="skills.infrastructure.title">Infrastructure & Cloud</h3>
-                </div>
-                <div class="skill-chip-grid">
-                    <span class="skill-chip" data-i18n="skills.chip.infra.containers">Containers &amp; Kubernetes</span>
-                    <span class="skill-chip" data-i18n="skills.chip.infra.cloud">Public cloud</span>
-                    <span class="skill-chip" data-i18n="skills.chip.infra.virtualization">Virtualization</span>
-                    <span class="skill-chip" data-i18n="skills.chip.infra.linux">Linux servers</span>
-                </div>
-            </div>
-
-            <div class="card skill-stack-card">
-                <div class="skill-stack-header">
-                    <i data-lucide="network"></i>
-                    <h3 data-i18n="skills.network.title">Network Engineering</h3>
-                </div>
-                <div class="skill-chip-grid">
-                    <span class="skill-chip" data-i18n="skills.chip.net.fundamentals">Networking fundamentals</span>
-                    <span class="skill-chip" data-i18n="skills.chip.net.vpn">VPNs</span>
-                    <span class="skill-chip" data-i18n="skills.chip.net.dns">DNS</span>
-                    <span class="skill-chip" data-i18n="skills.chip.net.proxy">Reverse proxies &amp; TLS</span>
-                </div>
-            </div>
-
-            <div class="card skill-stack-card">
-                <div class="skill-stack-header">
-                    <i data-lucide="code-2"></i>
-                    <h3 data-i18n="skills.development.title">Full-Stack Development</h3>
-                </div>
-                <div class="skill-chip-grid">
-                    <span class="skill-chip" data-i18n="skills.chip.dev.frontend">Frontend frameworks</span>
-                    <span class="skill-chip" data-i18n="skills.chip.dev.backend">Backend &amp; APIs</span>
-                    <span class="skill-chip" data-i18n="skills.chip.dev.databases">Databases</span>
-                    <span class="skill-chip" data-i18n="skills.chip.dev.systems">Systems programming</span>
-                    <span class="skill-chip" data-i18n="skills.chip.dev.languages">TypeScript &amp; Python</span>
-                </div>
-            </div>
-
-            <div class="card skill-stack-card">
-                <div class="skill-stack-header">
-                    <i data-lucide="bot"></i>
-                    <h3 data-i18n="skills.ai.title">AI &amp; Agents</h3>
-                </div>
-                <div class="skill-chip-grid">
-                    <span class="skill-chip" data-i18n="skills.chip.ai.agents">AI agents &amp; MCP</span>
-                    <span class="skill-chip" data-i18n="skills.chip.ai.llms">Frontier &amp; open LLMs</span>
-                    <span class="skill-chip" data-i18n="skills.chip.ai.small">Small language models</span>
-                    <span class="skill-chip" data-i18n="skills.chip.ai.media">Image &amp; video generation</span>
-                    <span class="skill-chip" data-i18n="skills.chip.ai.speech">Speech recognition</span>
-                    <span class="skill-chip" data-i18n="skills.chip.ai.tooling">Agent tooling</span>
-                </div>
-            </div>
-
-            <div class="card skill-stack-card skill-stack-card-wide">
-                <div class="skill-stack-header">
-                    <i data-lucide="shield"></i>
-                    <h3 data-i18n="skills.security.title">Cybersecurity</h3>
-                </div>
-                <div class="skill-chip-grid">
-                    <span class="skill-chip" data-i18n="skills.chip.sec.threats">CIA triad &amp; threat actors</span>
-                    <span class="skill-chip" data-i18n="skills.chip.sec.offensive">Web attacks: XSS &amp; SQL injection</span>
-                    <span class="skill-chip" data-i18n="skills.chip.sec.labs">Kali Linux &amp; TryHackMe labs</span>
-                    <span class="skill-chip" data-i18n="skills.chip.sec.crypto">Applied cryptography</span>
-                    <span class="skill-chip" data-i18n="skills.chip.sec.incident">Incident response</span>
-                    <span class="skill-chip" data-i18n="skills.chip.sec.risk">Risk assessment</span>
-                </div>
-            </div>
+            </a>
         </section>
 
         <!-- Projects Section -->
@@ -358,6 +241,151 @@
                 </a>
         </section>
 
+        <!-- About Section -->
+        <section id="about" class="section-grid" data-nav-label="About">
+            <div class="section-header">
+                <h2 data-i18n="about.title">About Me</h2>
+                <div class="line"></div>
+            </div>
+            <div class="card about-content">
+                <div class="about-item">
+                    <i data-lucide="map-pin"></i>
+                    <p data-i18n="about.location" data-i18n-html>I'm from <strong>Differdange, Luxembourg</strong>.</p>
+                </div>
+
+                <div class="about-facts">
+                    <div class="about-fact">
+                        <i data-lucide="languages"></i>
+                        <div>
+                            <p class="about-fact-title" data-i18n="about.languages.label">Languages</p>
+                            <div class="tags">
+                                <span data-i18n="about.languages.portuguese">Portuguese (C1)</span>
+                                <span data-i18n="about.languages.luxembourgish">Luxembourgish (C1)</span>
+                                <span data-i18n="about.languages.english">English (C1)</span>
+                                <span data-i18n="about.languages.german">German (B2)</span>
+                                <span data-i18n="about.languages.french">French (B2)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-fact">
+                        <i data-lucide="heart"></i>
+                        <div>
+                            <p class="about-fact-title" data-i18n="about.hobbies.label">Interests</p>
+                            <div class="tags">
+                                <span data-i18n="about.hobbies.gym">Strength Training</span>
+                                <span data-i18n="about.hobbies.basketball">Basketball</span>
+                                <span data-i18n="about.hobbies.design">Graphic Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-grid skills-compact" data-nav-label="Skills">
+            <div class="section-header">
+                <h2 data-i18n="skills.title">Tech Stack</h2>
+                <div class="line"></div>
+            </div>
+
+            <a class="card skill-stack-card project-card-link" href="projects/project-minicfl-az104"
+                aria-labelledby="skill-infrastructure-title skill-infrastructure-project">
+                <div class="skill-stack-header">
+                    <i data-lucide="server-cog"></i>
+                    <h3 id="skill-infrastructure-title" data-i18n="skills.infrastructure.title">Infrastructure & Cloud</h3>
+                </div>
+                <div class="skill-chip-grid">
+                    <span class="skill-chip" data-i18n="skills.chip.infra.containers">Containers &amp; Kubernetes</span>
+                    <span class="skill-chip" data-i18n="skills.chip.infra.cloud">Public cloud</span>
+                    <span class="skill-chip" data-i18n="skills.chip.infra.virtualization">Virtualization</span>
+                    <span class="skill-chip" data-i18n="skills.chip.infra.linux">Linux servers</span>
+                </div>
+                <div class="project-cta">
+                    <span id="skill-infrastructure-project">MiniCFL</span>
+                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </div>
+            </a>
+
+            <a class="card skill-stack-card project-card-link" href="projects/project-pif"
+                aria-labelledby="skill-network-title skill-network-project">
+                <div class="skill-stack-header">
+                    <i data-lucide="network"></i>
+                    <h3 id="skill-network-title" data-i18n="skills.network.title">Network Engineering</h3>
+                </div>
+                <div class="skill-chip-grid">
+                    <span class="skill-chip" data-i18n="skills.chip.net.fundamentals">Networking fundamentals</span>
+                    <span class="skill-chip" data-i18n="skills.chip.net.vpn">VPNs</span>
+                    <span class="skill-chip" data-i18n="skills.chip.net.dns">DNS</span>
+                    <span class="skill-chip" data-i18n="skills.chip.net.proxy">Reverse proxies &amp; TLS</span>
+                </div>
+                <div class="project-cta">
+                    <span id="skill-network-project">Plantimeter</span>
+                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </div>
+            </a>
+
+            <a class="card skill-stack-card project-card-link" href="projects/project-cylro"
+                aria-labelledby="skill-development-title skill-development-project">
+                <div class="skill-stack-header">
+                    <i data-lucide="code-2"></i>
+                    <h3 id="skill-development-title" data-i18n="skills.development.title">Full-Stack Development</h3>
+                </div>
+                <div class="skill-chip-grid">
+                    <span class="skill-chip" data-i18n="skills.chip.dev.frontend">Frontend frameworks</span>
+                    <span class="skill-chip" data-i18n="skills.chip.dev.backend">Backend &amp; APIs</span>
+                    <span class="skill-chip" data-i18n="skills.chip.dev.databases">Databases</span>
+                    <span class="skill-chip" data-i18n="skills.chip.dev.systems">Systems programming</span>
+                    <span class="skill-chip" data-i18n="skills.chip.dev.languages">TypeScript &amp; Python</span>
+                </div>
+                <div class="project-cta">
+                    <span id="skill-development-project">Cylro</span>
+                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </div>
+            </a>
+
+            <a class="card skill-stack-card project-card-link" href="projects/project-ai-hermes-agent"
+                aria-labelledby="skill-ai-title skill-ai-project">
+                <div class="skill-stack-header">
+                    <i data-lucide="bot"></i>
+                    <h3 id="skill-ai-title" data-i18n="skills.ai.title">AI &amp; Agents</h3>
+                </div>
+                <div class="skill-chip-grid">
+                    <span class="skill-chip" data-i18n="skills.chip.ai.agents">AI agents &amp; MCP</span>
+                    <span class="skill-chip" data-i18n="skills.chip.ai.llms">Frontier &amp; open LLMs</span>
+                    <span class="skill-chip" data-i18n="skills.chip.ai.small">Small language models</span>
+                    <span class="skill-chip" data-i18n="skills.chip.ai.media">Image &amp; video generation</span>
+                    <span class="skill-chip" data-i18n="skills.chip.ai.speech">Speech recognition</span>
+                    <span class="skill-chip" data-i18n="skills.chip.ai.tooling">Agent tooling</span>
+                </div>
+                <div class="project-cta">
+                    <span id="skill-ai-project">Hermes AI Agent</span>
+                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </div>
+            </a>
+
+            <a class="card skill-stack-card skill-stack-card-wide project-card-link" href="projects/project-homelab"
+                aria-labelledby="skill-security-title skill-security-project">
+                <div class="skill-stack-header">
+                    <i data-lucide="shield"></i>
+                    <h3 id="skill-security-title" data-i18n="skills.security.title">Cybersecurity</h3>
+                </div>
+                <div class="skill-chip-grid">
+                    <span class="skill-chip" data-i18n="skills.chip.sec.threats">CIA triad &amp; threat actors</span>
+                    <span class="skill-chip" data-i18n="skills.chip.sec.offensive">Web attacks: XSS &amp; SQL injection</span>
+                    <span class="skill-chip" data-i18n="skills.chip.sec.labs">Kali Linux &amp; TryHackMe labs</span>
+                    <span class="skill-chip" data-i18n="skills.chip.sec.crypto">Applied cryptography</span>
+                    <span class="skill-chip" data-i18n="skills.chip.sec.incident">Incident response</span>
+                    <span class="skill-chip" data-i18n="skills.chip.sec.risk">Risk assessment</span>
+                </div>
+                <div class="project-cta">
+                    <span id="skill-security-project">Homelab</span>
+                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </div>
+            </a>
+        </section>
+
         <!-- Certifications Section -->
         <section id="certifications" class="section-grid" data-nav-label="Certifications">
             <div class="section-header">
@@ -416,7 +444,10 @@
                 </div>
                 <h3 data-i18n="experience.diploma.title">Computer Technician Diploma</h3>
                 <h4 data-i18n="experience.diploma.company">Lycée Guillaume Kroll</h4>
-                <p data-i18n="experience.diploma.desc">Graduated with "Very Good" mention. Final Project score: 59/60.</p>
+                <p>
+                    <span data-i18n="experience.diploma.honors">Graduated with the distinction “Very Good”.</span>
+                    <a class="capstone-link" href="projects/project-pif" data-i18n="experience.diploma.capstone">Plantimeter capstone (59/60)</a>
+                </p>
             </div>
         </section>
 
@@ -430,6 +461,10 @@
             <div class="card contact-card">
                 <p data-i18n="contact.description">Interested in something here? Get in touch.</p>
                 <div class="contact-links">
+                    <a href="mailto:vidgu017@gmail.com" class="contact-item">
+                        <span aria-hidden="true"><i data-lucide="mail"></i></span>
+                        <span data-i18n="contact.email">Email</span>
+                    </a>
                     <a href="https://www.linkedin.com/in/guilherme-videira-marques/" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="LinkedIn Profile">
                         <i data-lucide="linkedin" aria-hidden="true"></i>
                         <span>LinkedIn</span>

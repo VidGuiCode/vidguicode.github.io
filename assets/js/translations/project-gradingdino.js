@@ -26,11 +26,18 @@
             fr: "GradingDino"
         },
         "project.gradingdino.subtitle": {
-            en: "I built GradingDino with a team of four for a BTS Cloud Computing project. It gives teachers a simpler way to grade their courses, while students can follow their progress. We delivered a working MVP and learned how planning and framework choice shape a product.",
-            pt: "Construí o GradingDino com uma equipa de quatro pessoas para um projeto de BTS Cloud Computing. Dá aos professores uma forma mais simples de lançar notas nos seus cursos, enquanto os alunos acompanham o seu progresso. Entregámos um MVP funcional e aprendemos como o planeamento e a escolha do framework moldam um produto.",
-            lu: "Ech hunn de GradingDino mat enger Equipe vu véier fir e BTS Cloud Computing Projet gebaut. En mécht et Enseignanten méi einfach hir Coursen ze bewäerten, während d'Schüler hire Fortschrëtt suivéiere kënnen. Mir hunn e funktionnéierende MVP geliwwert a geléiert wéi Planung a Framework-Auswiel e Produkt formen.",
-            de: "Ich habe GradingDino mit einem Viererteam für ein BTS Cloud Computing Projekt gebaut. Lehrer können damit ihre Kurse einfacher benoten, während Schüler ihren Fortschritt verfolgen. Wir lieferten ein funktionierendes MVP und lernten, wie Planung und Framework-Auswahl ein Produkt prägen.",
-            fr: "J'ai construit GradingDino avec une équipe de quatre pour un projet de BTS Cloud Computing. Il donne aux enseignants un moyen plus simple de noter leurs cours, tandis que les étudiants suivent leur progression. Nous avons livré un MVP fonctionnel et appris comment la planification et le choix du framework façonnent un produit."
+            en: "Our four-person team delivered a working grading app where teachers could enter grades for their courses and students could track their progress.",
+            pt: "A nossa equipa de quatro pessoas entregou uma aplicação funcional de gestão de notas. Os professores podiam registar notas nas suas disciplinas e os alunos podiam acompanhar o seu progresso.",
+            lu: "Eis Equipe vu véier Leit huet eng funktionéierend App fir d’Verwaltung vun Notte geliwwert. D’Enseignante konnten d’Notte fir hir Coursen androen, an d’Schüler konnten hire Fortschrëtt verfollegen.",
+            de: "Unser vierköpfiges Team lieferte eine funktionsfähige Anwendung zur Notenverwaltung. Lehrkräfte konnten Noten für ihre Kurse eintragen und Lernende ihren Fortschritt verfolgen.",
+            fr: "Notre équipe de quatre personnes a livré une application fonctionnelle de gestion des notes. Les enseignants pouvaient saisir les notes de leurs cours et les étudiants suivre leurs progrès."
+        },
+        "project.gradingdino.contribution": {
+            en: "I co-developed the app with one teammate, working on the Django models, views and templates, the database schema, and the Docker setup.",
+            pt: "Desenvolvi a aplicação com um colega. Trabalhei nos modelos, nas views e nos templates do Django, no esquema da base de dados e na configuração do Docker.",
+            lu: "Ech hunn d’App mat engem Teammember entwéckelt an un den Django-Modeller, Views an Templates, um Datebankschema an un der Docker-Konfiguratioun geschafft.",
+            de: "Ich entwickelte die Anwendung gemeinsam mit einem Teammitglied und arbeitete an den Django-Modellen, Views und Templates, am Datenbankschema und an der Docker-Konfiguration.",
+            fr: "J’ai codéveloppé l’application avec un coéquipier. J’ai travaillé sur les modèles, les vues et les gabarits Django, le schéma de la base de données et la configuration Docker."
         },
         "project.gradingdino.mvp": {
             en: "MVP",

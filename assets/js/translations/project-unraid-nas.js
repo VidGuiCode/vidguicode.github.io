@@ -258,11 +258,18 @@
             fr: "Serveur de stockage UnRAID (NAS)"
         },
         "project.unraid.subtitle": {
-            en: "I turned a bare rack server into a shared family storage server with protected storage, per-user access, and a Windows block-storage test.",
-            pt: "Transformei um servidor rack vazio num servidor de armazenamento familiar partilhado, com armazenamento protegido, acesso por utilizador e um teste de armazenamento em bloco a partir do Windows.",
-            lu: "Ech hunn e blanke Rackserver an e gemeinsame Famillje-Späicherserver verwandelt, mat geschütztem Späicher, Zougang pro Benotzer an engem Block-Späicher-Test vu Windows aus.",
-            de: "Ich verwandelte einen blanken Rackserver in einen gemeinsam genutzten Familienspeicher mit geschütztem Speicher, Zugriff pro Benutzer und einem Block-Speicher-Test unter Windows.",
-            fr: "J'ai transformé un serveur rack nu en serveur de stockage familial partagé, avec un stockage protégé, des accès par utilisateur et un test de stockage en bloc depuis Windows."
+            en: "We turned a bare rack server into a shared file server with per-user access and storage that could tolerate a drive failure. We verified that a Windows PC could use a network disk like a local drive.",
+            pt: "Transformámos um servidor de rack num servidor de ficheiros partilhado, com permissões por utilizador e armazenamento capaz de suportar a falha de um disco. Confirmámos que um PC com Windows conseguia usar um disco de rede como se fosse local.",
+            lu: "Mir hunn e blanke Rackserver an e gemeinsame Fichierserver ëmgebaut, mat Zougrëffsrechter pro Benotzer a Späicher, deen den Ausfall vun enger Festplack verkraafte konnt. Mir hu gepréift, datt e Windows-PC eng Festplack iwwer d’Netzwierk wéi eng lokal Festplack benotze konnt.",
+            de: "Wir bauten einen leeren Rackserver zu einem gemeinsamen Dateiserver mit individuellen Zugriffsrechten und Speicher um, der den Ausfall eines Laufwerks verkraften konnte. Wir prüften, ob ein Windows-PC ein Netzlaufwerk wie einen lokalen Datenträger nutzen konnte.",
+            fr: "Nous avons transformé un serveur rack nu en serveur de fichiers partagé, avec des accès par utilisateur et un stockage capable de supporter la panne d’un disque. Nous avons vérifié qu’un PC Windows pouvait utiliser un disque via le réseau comme un disque local."
+        },
+        "project.unraid.contribution": {
+            en: "I worked with Andrea to fit the drives and RAID controller, install UnRAID, and test file-share permissions and the iSCSI disk from Windows.",
+            pt: "Trabalhei com o Andrea para montar os discos e o controlador RAID, instalar o UnRAID e testar, a partir do Windows, as permissões das pastas partilhadas e o disco iSCSI.",
+            lu: "Ech hu mam Andrea d’Festplacken an de RAID-Controller agebaut, UnRAID installéiert an d’Zougrëffsrechter op déi gedeelt Classeuren an den iSCSI-Disk vu Windows aus getest.",
+            de: "Ich arbeitete mit Andrea daran, die Laufwerke und den RAID-Controller einzubauen, UnRAID zu installieren und die Zugriffsrechte der Dateifreigaben sowie den iSCSI-Datenträger unter Windows zu testen.",
+            fr: "J’ai travaillé avec Andrea pour installer les disques et le contrôleur RAID, mettre en place UnRAID et tester depuis Windows les droits d’accès aux dossiers partagés et le disque iSCSI."
         },
         "project.unraid.labBadge": {
             en: "CLOUD INFRASTRUCTURE 2 · NAS",

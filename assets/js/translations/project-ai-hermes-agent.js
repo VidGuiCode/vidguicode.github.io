@@ -24,11 +24,18 @@
             en: "Hermes AI Agent", pt: "Hermes AI Agent", lu: "Hermes AI Agent", de: "Hermes AI Agent", fr: "Hermes AI Agent"
         },
         "project.ai-hermes-agent.hero.subtitle": {
-            en: "A self-hosted AI agent that runs 24/7 on its own VPS. It researches, monitors, automates and talks back - all from a single conversation that remembers what happened yesterday.",
-            pt: "Um agente de IA self-hosted que corre 24/7 no seu próprio VPS. Pesquisa, monitoriza, automatiza e responde - tudo a partir de uma única conversa que se lembra do que aconteceu ontem.",
-            lu: "En self-hosted AI-Agent deen 24/7 op sengem eegene VPS leeft. Hie recherchéiert, iwwerwaacht, automatiséiert an äntwert zréck - alles aus enger eenzeger Konversatioun déi sech un dat erënnert wat gëschter geschitt ass.",
-            de: "Ein selbstgehosteter KI-Agent, der rund um die Uhr auf seinem eigenen VPS läuft. Er recherchiert, überwacht, automatisiert und antwortet zurück - alles aus einer einzigen Konversation, die sich an das erinnert, was gestern passiert ist.",
-            fr: "Un agent IA auto-hébergé qui tourne 24/7 sur son propre VPS. Il recherche, surveille, automatise et répond - le tout depuis une seule conversation qui se souvient de ce qui s'est passé hier."
+            en: "My self-hosted assistant keeps context across Matrix conversations. It can pick up earlier research, deliver reminders, and alert my phone when a homelab service goes down.",
+            pt: "O meu assistente, alojado por mim, mantém o contexto entre conversas no Matrix. Consegue retomar pesquisas, enviar lembretes e alertar-me no telemóvel quando um serviço do meu laboratório fica indisponível.",
+            lu: "Mäin Assistent, deen ech selwer hosten, behält de Kontext tëscht Gespréicher am Matrix. Hie kann eng fréier Recherche weiderféieren, Erënnerunge schécken a mäin Handy alarméieren, wann e Service am Homelab ausfält.",
+            de: "Mein selbst gehosteter Assistent behält den Kontext über Matrix-Gespräche hinweg. Er kann frühere Recherchen fortsetzen, Erinnerungen schicken und mich auf dem Smartphone warnen, wenn ein Dienst im Homelab ausfällt.",
+            fr: "Mon assistant auto-hébergé conserve le contexte d’une conversation Matrix à l’autre. Il peut reprendre une recherche, envoyer des rappels et m’alerter sur mon téléphone lorsqu’un service du homelab tombe en panne."
+        },
+        "project.ai-hermes-agent.hero.contribution": {
+            en: "I deployed Nous Research's Hermes Agent on my own server. I integrated Git-backed memory, model routing, and the scheduled jobs that check my homelab and send alerts.",
+            pt: "Instalei o Hermes Agent da Nous Research no meu próprio servidor. Integrei a memória guardada em Git, a seleção de modelos e as tarefas agendadas que verificam o meu laboratório e enviam alertas.",
+            lu: "Ech hunn den Hermes Agent vun Nous Research op mengem eegene Server installéiert. Ech hunn e Gediechtnes op Basis vu Git, d’Modellauswiel an déi geplangten Aufgaben integréiert, déi mäin Homelab iwwerpréiwen an Alarmer schécken.",
+            de: "Ich setzte den Hermes Agent von Nous Research auf meinem eigenen Server auf. Ich integrierte den Git-gestützten Speicher, die Modellauswahl und geplante Aufgaben, die mein Homelab prüfen und Warnungen versenden.",
+            fr: "J’ai déployé Hermes Agent de Nous Research sur mon propre serveur. J’ai intégré la mémoire stockée dans Git, la sélection des modèles et les tâches planifiées qui vérifient mon homelab et envoient des alertes."
         },
         "project.ai-hermes-agent.console": {
             en: "online since May 2026 · memory: persistent · channel: matrix",

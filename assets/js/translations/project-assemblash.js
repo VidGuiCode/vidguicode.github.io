@@ -16,7 +16,18 @@
             en: "RELEASED · V1.13.0", pt: "LANÇADO · V1.13.0", lu: "VERËFFENTLECHT · V1.13.0", de: "VERÖFFENTLICHT · V1.13.0", fr: "PUBLIÉ · V1.13.0"
         },
         "project.assemblash.subtitle": {
-            en: "A local-first visual document engine where people and AI agents can work on the same editable document.", pt: "Um motor de documentos visuais local-first onde pessoas e agentes de IA podem trabalhar no mesmo documento editável.", lu: "En local-first Engine fir visuell Dokumenter, wou Mënschen an AI-Agenten um selwechten editéierbare Dokument kënne schaffen.", de: "Eine Local-first-Engine für visuelle Dokumente, in der Menschen und KI-Agenten am selben bearbeitbaren Dokument arbeiten können.", fr: "Un moteur de documents visuels local-first où humains et agents IA peuvent travailler sur le même document modifiable."
+            en: "An AI agent can draft a design that you can open and edit locally. Assemblash is available as open-source software for Windows, macOS, and Linux.",
+            pt: "Um agente de IA pode criar um rascunho de um design que podes abrir e editar localmente. O Assemblash está disponível como software de código aberto para Windows, macOS e Linux.",
+            lu: "En AI-Agent kann en Entworf erstellen, deen s du lokal opmaachen a beaarbechte kanns. Assemblash ass als Open-Source-Software fir Windows, macOS a Linux verfügbar.",
+            de: "Ein KI-Agent kann einen Entwurf erstellen, den du lokal öffnen und bearbeiten kannst. Assemblash ist als Open-Source-Software für Windows, macOS und Linux verfügbar.",
+            fr: "Un agent IA peut préparer un brouillon que vous pouvez ouvrir et modifier localement. Assemblash est disponible en open source pour Windows, macOS et Linux."
+        },
+        "project.assemblash.contribution": {
+            en: "I built the Rust engine that powers the editor, command line, and agent tools. They share one edit history, so I can review and undo changes made by an agent.",
+            pt: "Criei o motor em Rust que alimenta o editor, a linha de comandos e as ferramentas para agentes. Todos partilham o mesmo histórico de edição, o que me permite rever e desfazer alterações feitas por um agente.",
+            lu: "Ech hunn d’Rust-Engine fir den Editor, d’Kommandozeil an d’Agenten-Tools gebaut. Si deelen eng Ännerungshistorik, sou datt ech d’Ännerunge vun engem Agent préiwen an zeréckhuele kann.",
+            de: "Ich habe die Rust-Engine für den Editor, die Kommandozeile und die Agentenwerkzeuge gebaut. Sie teilen sich einen Änderungsverlauf, sodass ich Änderungen eines Agenten prüfen und rückgängig machen kann.",
+            fr: "J’ai développé le moteur en Rust qui fait fonctionner l’éditeur, la ligne de commande et les outils pour agents. Ils partagent un historique qui me permet de vérifier et d’annuler les modifications d’un agent."
         },
         "project.assemblash.github": {
             en: "Open source on GitHub", pt: "Open source no GitHub", lu: "Open Source op GitHub", de: "Open Source auf GitHub", fr: "Open source sur GitHub"

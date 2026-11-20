@@ -11,11 +11,18 @@
     'use strict';
     const extra = {
         "project.minicfl-az104.subtitle": {
-            en: "A familiar CFL train journey turned into a real cloud-administration project. Our three-person team built a live tracker and the secure, monitored Azure environment behind it, showing how a service is managed from access and cost control to daily operation.",
-            pt: "Uma viagem familiar de comboio CFL transformada num projeto real de administração cloud. A nossa equipa de três pessoas construiu um rastreador ao vivo e o ambiente Azure seguro e monitorizado por trás dele, mostrando como um serviço é gerido desde o controlo de acesso e de custos até à operação diária.",
-            lu: "Eng bekannte CFL-Zuchrees an e richtege Cloud-Administratiounsprojet ëmgewandelt. Eis dräiköppeg Equipe huet e Live-Tracker an déi sécher, iwwerwaacht Azure-Ëmwelt dohannert gebaut a weist domat, wéi e Service vum Zougangs- a Käschtekontroll bis zum alldeegleche Betrib geréiert gëtt.",
-            de: "Eine vertraute CFL-Zugfahrt, die zu einem echten Cloud-Administrationsprojekt wurde. Unser dreiköpfiges Team hat einen Live-Tracker und die sichere, überwachte Azure-Umgebung dahinter gebaut und zeigt damit, wie ein Dienst von Zugriffs- und Kostenkontrolle bis zum täglichen Betrieb verwaltet wird.",
-            fr: "Un trajet familier des CFL transformé en véritable projet d'administration cloud. Notre équipe de trois personnes a construit un suivi en direct et l'environnement Azure sécurisé et supervisé qui le soutient, montrant comment un service est géré du contrôle des accès et des coûts à son exploitation quotidienne."
+            en: "Our three-person team deployed a live tracker for a simulated CFL train. We demonstrated all five AZ-104 skill areas across development and production environments in two Azure regions.",
+            pt: "A nossa equipa de três pessoas implementou um sistema de acompanhamento em tempo real de um comboio CFL simulado. Demonstrámos as cinco áreas de competência do AZ-104 em ambientes de desenvolvimento e produção, distribuídos por duas regiões do Azure.",
+            lu: "Eis Equipe vun dräi Leit huet e Live-Tracker fir e simuléierten CFL-Zuch op Azure agesat. Mir hunn all fënnef AZ-104-Kompetenzberäicher an Entwécklungs- a Produktiounsëmfeld an zwou Azure-Regioune demonstréiert.",
+            de: "Unser dreiköpfiges Team stellte einen Live-Tracker für einen simulierten CFL-Zug bereit. Wir demonstrierten alle fünf AZ-104-Kompetenzbereiche in Entwicklungs- und Produktionsumgebungen in zwei Azure-Regionen.",
+            fr: "Notre équipe de trois personnes a déployé un outil de suivi en temps réel pour un train CFL simulé. Nous avons démontré les cinq domaines de compétences de l’AZ-104 dans des environnements de développement et de production répartis sur deux régions Azure."
+        },
+        "project.minicfl-az104.contribution": {
+            en: "I built the web app and deployed it to Azure App Service using Azure Container Registry. I set up the Azure Function that updates the train position and configured Azure Monitor.",
+            pt: "Construí a aplicação web e publiquei-a no Azure App Service a partir do Azure Container Registry. Configurei a monitorização no Azure Monitor e a Azure Function que atualiza a posição do comboio.",
+            lu: "Ech hunn d’Webapp gebaut an se iwwer Azure Container Registry op Azure App Service agesat. Ech hunn d’Azure Function ageriicht, déi d’Positioun vum Zuch aktualiséiert, an d’Iwwerwaachung am Azure Monitor konfiguréiert.",
+            de: "Ich entwickelte die Webanwendung und stellte sie über Azure Container Registry auf Azure App Service bereit. Ich richtete die Azure Function zur Aktualisierung der Zugposition und die Überwachung in Azure Monitor ein.",
+            fr: "J’ai développé l’application web et l’ai déployée sur Azure App Service à partir d’Azure Container Registry. J’ai configuré la supervision dans Azure Monitor et la fonction Azure qui actualise la position du train."
         },
         "project.minicfl-az104.badge": {
             en: "CLOUD · AZ-104",

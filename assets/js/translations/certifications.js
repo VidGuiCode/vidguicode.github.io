@@ -49,11 +49,11 @@
             fr: "Microsoft 365 Apps - Oct 2025"
         },
         "certifications.subtitle": {
-            en: "Industry-recognized certifications and training sessions in cloud computing, infrastructure, and technical skills. Certifications sorted by level (highest first), trainings by date (newest first).",
-            pt: "Certificações reconhecidas pela indústria e sessões de formação em computação em nuvem, infraestrutura e habilidades técnicas. Certificações ordenadas por nível (maior primeiro), formações por data (mais recente primeiro).",
-            lu: "Vun der Industrie unerkaante Zertifikater a Formatiounssessiounen a Cloud Computing, Infrastruktur an technesche Fäegkeeten. Zertifikater sortéiert no Niveau (héchste als éischt), Formatiounen no Datum (rezentste als éischt).",
-            de: "Branchenweit anerkannte Zertifizierungen und Schulungssitzungen in Cloud Computing, Infrastruktur und technischen Fähigkeiten. Zertifizierungen nach Stufe sortiert (höchste zuerst), Schulungen nach Datum (neueste zuerst).",
-            fr: "Certifications reconnues par l'industrie et sessions de formation en cloud computing, infrastructure et compétences techniques. Certifications triées par niveau (plus élevé en premier), formations par date (plus récentes en premier)."
+            en: "Earned credentials, training, and outreach in cloud computing and IT.",
+            pt: "Certificações obtidas, formação e divulgação em cloud computing e informática.",
+            lu: "Erreecht Zertifikater, Formatiounen an Outreach am Cloud Computing an an der IT.",
+            de: "Erworbene Zertifikate, Schulungen und Outreach in Cloud Computing und IT.",
+            fr: "Certifications obtenues, formations et activités de sensibilisation en cloud computing et en informatique."
         },
         "cert.azure.az900.name": {
             en: "Microsoft Certified: Azure Fundamentals",
@@ -118,12 +118,40 @@
             de: "Gesamt Zertifizierungen",
             fr: "Total des Certifications"
         },
-        "certifications.stats.highest": {
-            en: "Highest Level",
-            pt: "Nível Mais Alto",
-            lu: "Héchsten Niveau",
-            de: "Höchste Stufe",
-            fr: "Niveau le Plus Élevé"
+        "certifications.prep.azure": {
+            en: "AZ-900 exam prep",
+            pt: "Preparação para o exame AZ-900",
+            lu: "Preparatioun op den AZ-900-Examen",
+            de: "Vorbereitung auf die AZ-900-Prüfung",
+            fr: "Préparation à l’examen AZ-900"
+        },
+        "certifications.prep.azure-fundamentals-training": {
+            en: "Deep · Instructor-led training",
+            pt: "Deep · Formação com formador",
+            lu: "Deep · Formatioun mat Formateur",
+            de: "Deep · Schulung mit Trainer",
+            fr: "Deep · Formation avec formateur"
+        },
+        "certifications.prep.pluralsight-az900": {
+            en: "Pluralsight · Online learning path",
+            pt: "Pluralsight · Percurso de aprendizagem online",
+            lu: "Pluralsight · Online-Léierparcours",
+            de: "Pluralsight · Online-Lernpfad",
+            fr: "Pluralsight · Parcours de formation en ligne"
+        },
+        "certifications.group.earned": {
+            en: "Earned certifications",
+            pt: "Certificações obtidas",
+            lu: "Erreecht Zertifikater",
+            de: "Erworbene Zertifikate",
+            fr: "Certifications obtenues"
+        },
+        "certifications.group.inProgress": {
+            en: "Certifications in progress",
+            pt: "Certificações em curso",
+            lu: "Zertifikater an der Preparatioun",
+            de: "Laufende Zertifizierungen",
+            fr: "Certifications en cours"
         },
         "certifications.filter.all": {
             en: "All",

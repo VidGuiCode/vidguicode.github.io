@@ -35,11 +35,18 @@
             fr: "Remote Desktop Services (RDS)"
         },
         "project.rds.subtitle": {
-            en: "A Windows Server lab that gives students a managed desktop and apps from their own laptops, while keeping every personal computer separate from the school system. Working as a two-person team, we configured, documented, and demonstrated the service from sign-in to web access.",
-            pt: "Um laboratório Windows Server que dá aos alunos um desktop gerido e aplicações a partir dos seus próprios portáteis, mantendo cada computador pessoal separado do sistema escolar. Em equipa de duas pessoas, configurámos, documentámos e demonstrámos o serviço, desde o início de sessão até ao acesso web.",
-            lu: "E Windows-Server-Labor, dat de Schüler e geréierten Desktop an Apps vun hiren eegene Laptops gëtt an dobäi all perséinleche Computer vum Schoulsystem getrennt hält. Als Team vun zwou Persoune hu mir de Service vum Umellen bis zum Web-Zougang konfiguréiert, dokumentéiert an demonstréiert.",
-            de: "Ein Windows-Server-Labor, das Schülern einen verwalteten Desktop und Apps auf ihren eigenen Laptops bietet und jeden privaten Computer vom Schulsystem getrennt hält. Als Zweierteam haben wir den Dienst von der Anmeldung bis zum Webzugang konfiguriert, dokumentiert und demonstriert.",
-            fr: "Un laboratoire Windows Server qui donne aux élèves un bureau géré et des applications depuis leurs propres ordinateurs portables, tout en gardant chaque ordinateur personnel séparé du système scolaire. En équipe de deux, nous avons configuré, documenté et démontré le service, de la connexion à l'accès web."
+            en: "We demonstrated that students could sign in to a web portal with a school account and launch a managed Windows desktop or individual apps from a personal laptop without joining the school domain.",
+            pt: "Demonstrámos que os alunos podiam iniciar sessão num portal web com a conta escolar e abrir um ambiente de trabalho Windows gerido ou aplicações individuais a partir de um portátil pessoal, sem o associar ao domínio da escola.",
+            lu: "Mir hu gewisen, datt d’Schüler sech mat hirem Schoulkont op engem Webportal umelle kënnen. Vun hirem perséinleche Laptop aus kënne si e geréierte Windows-Desktop oder eenzel Apps starten, ouni datt de Laptop Deel vun der Schouldomain gëtt.",
+            de: "Wir zeigten, dass sich Schüler mit ihrem Schulkonto an einem Webportal anmelden und einen verwalteten Windows-Desktop oder einzelne Anwendungen auf ihrem privaten Laptop starten konnten. Der Laptop musste der Schuldomäne dafür nicht beitreten.",
+            fr: "Nous avons montré que les élèves pouvaient se connecter à un portail web avec leur compte scolaire et lancer un bureau Windows administré ou des applications individuelles depuis leur ordinateur portable personnel, sans le joindre au domaine de l’école."
+        },
+        "project.rds.contribution": {
+            en: "I worked with Andrea to configure the Windows Server 2022 session host and RD Web Access. I helped test access from Windows 11 and co-wrote the step-by-step deployment guide.",
+            pt: "Trabalhei com o Andrea na configuração do anfitrião de sessões em Windows Server 2022 e do RD Web Access. Ajudei a testar o acesso a partir do Windows 11 e escrevi com ele o guia de implementação passo a passo.",
+            lu: "Ech hunn zesumme mam Andrea de Session Host um Windows Server 2022 an den RD Web Access konfiguréiert. Ech hunn gehollef, den Zougang vu Windows 11 aus ze testen, an de Guide fir d’Installatioun Schrëtt fir Schrëtt matgeschriwwen.",
+            de: "Ich richtete gemeinsam mit Andrea den Sitzungshost unter Windows Server 2022 und RD Web Access ein. Ich half beim Testen des Zugriffs von Windows 11 aus und schrieb die Schritt-für-Schritt-Anleitung zur Bereitstellung mit.",
+            fr: "J’ai configuré avec Andrea l’hôte de session sous Windows Server 2022 et RD Web Access. J’ai participé aux tests d’accès depuis Windows 11 et coécrit le guide de déploiement étape par étape."
         },
         "project.rds.labBadge": {
             en: "LAB 08 - WINDOWS SERVER SERVICES",

@@ -28,6 +28,18 @@
     }
 
     function init() {
+        const backLink = document.querySelector('[data-project-list-back]');
+        const params = new URLSearchParams(location.search);
+        if (backLink && params.has('project')) {
+            const listUrl = new URL(backLink.href);
+            for (const [key, value] of params) {
+                if (key === 'category' || key === 'sort' || key === 'project') {
+                    listUrl.searchParams.append(key, value);
+                }
+            }
+            backLink.href = listUrl.href;
+        }
+
         var saved = 'overview';
         try { saved = localStorage.getItem('projectView') || 'overview'; } catch (e) { /* ignore */ }
         setView(saved);

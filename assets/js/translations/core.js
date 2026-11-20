@@ -145,6 +145,13 @@ const translations = {
         de: "Über Mich",
         fr: "À Propos de Moi"
     },
+    "about.location": {
+        en: "I'm from <strong>Differdange, Luxembourg</strong>.",
+        pt: "Sou de <strong>Differdange, Luxemburgo</strong>.",
+        lu: "Ech kommen aus <strong>Déifferdeng, Lëtzebuerg</strong>.",
+        de: "Ich komme aus <strong>Differdingen, Luxemburg</strong>.",
+        fr: "Je viens de <strong>Differdange, au Luxembourg</strong>."
+    },
     "about.p1": {
         en: "I'm a cloud-computing enthusiast from <strong>Differdange, Luxembourg</strong>. Currently studying for my <strong>BTS Cloud Computing (2025–2027)</strong> at Lycée Guillaume Kroll, building on a solid foundation as a Computer Technician.",
         pt: "Sou um entusiasta de cloud computing de <strong>Differdange, Luxemburgo</strong>. Atualmente frequento o curso <strong>BTS Cloud Computing (2025–2027)</strong> no Lycée Guillaume Kroll, com uma base sólida como Técnico de Informática.",
@@ -158,6 +165,13 @@ const translations = {
         lu: "Ech léieren duerch Bauen. Ech bedreiwe meng eegen Infrastruktur an hunn <strong>Cylro</strong>, eng Website-Operations-Plattform, matgegrënnt. De prakteschen Deel ass ze gesinn, wéi d'Stécker zesumme funktionéieren.",
         de: "Ich lerne durch Bauen. Ich betreibe meine eigene Infrastruktur und habe <strong>Cylro</strong>, eine Website-Operations-Plattform, mitgegründet. Der praktische Teil ist zu sehen, wie die Teile zusammenarbeiten.",
         fr: "J'apprends en construisant. Je gère ma propre infrastructure et j'ai cofondé <strong>Cylro</strong>, une plateforme d'opérations web. Le côté pratique, c'est de voir comment les éléments fonctionnent ensemble."
+    },
+    "about.languages.label": {
+        en: "Languages",
+        pt: "Línguas",
+        lu: "Sproochen",
+        de: "Sprachen",
+        fr: "Langues"
     },
     "about.languages.intro": {
         en: "Fluent in 5 languages, thriving in multicultural environments:",
@@ -200,6 +214,13 @@ const translations = {
         lu: "Franséisch (B2)",
         de: "Französisch (B2)",
         fr: "Français (B2)"
+    },
+    "about.hobbies.label": {
+        en: "Interests",
+        pt: "Interesses",
+        lu: "Interessen",
+        de: "Interessen",
+        fr: "Centres d’intérêt"
     },
     "about.hobbies.intro": {
         en: "Beyond tech, I stay active and creative:",
@@ -726,6 +747,13 @@ const translations = {
         de: "Alle Projekte ansehen",
         fr: "Voir Tous les Projets"
     },
+    "project.allProjects": {
+        en: "All projects",
+        pt: "Todos os projetos",
+        lu: "All Projeten",
+        de: "Alle Projekte",
+        fr: "Tous les projets"
+    },
     "project.backToPortfolio": {
         en: "Back to Portfolio",
         pt: "Voltar ao portefólio",
@@ -922,6 +950,20 @@ const translations = {
         de: "Lycée Guillaume Kroll",
         fr: "Lycée Guillaume Kroll"
     },
+    "experience.diploma.honors": {
+        en: "Graduated with the distinction “Very Good”.",
+        pt: "Concluí o curso com a menção «Muito Bom».",
+        lu: "Ech hunn den Diplom mat der Mentioun «Très Bien» ofgeschloss.",
+        de: "Abschluss mit der Auszeichnung „Sehr gut“.",
+        fr: "Diplômé avec la mention « Très bien »."
+    },
+    "experience.diploma.capstone": {
+        en: "Plantimeter capstone (59/60)",
+        pt: "Plantimeter, projeto final (59/60)",
+        lu: "Plantimeter, Ofschlossprojet (59/60)",
+        de: "Plantimeter, Abschlussprojekt (59/60)",
+        fr: "Plantimeter, projet de fin d’études (59/60)"
+    },
     "experience.diploma.desc": {
         en: "Graduated with \"Very Good\" mention. Final Project score: 59/60.",
         pt: "Diplomado com menção \"Muito Bom\". Nota do Projeto Final: 59/60.",
@@ -1082,6 +1124,20 @@ const translations = {
         lu: "En Open-Source inoffizielle CLI fir Azure Disponibilitéits-Discovery. Et kontrolléiert wou VM SKUs wierklech deployéiert kënne ginn andeems Azure Policy, SKU Disponibilitéit, Subscription-Restriktiounen a live Quota kombinéiert ginn, an ënnerstëtzt elo och generesch Resource-Disponibilitéits-Checks, VM Präis-Schätzungen, Output-Modi fir Scripts an Update-Checks.",
         de: "Ein inoffizielles Open-Source-CLI für Azure-Verfügbarkeitsprüfung. Es prüft, wo VM-SKUs tatsächlich bereitgestellt werden können, indem Azure Policy, SKU-Verfügbarkeit, Subscription-Einschränkungen und Live-Quota kombiniert werden, und unterstützt jetzt auch generische Ressourcenverfügbarkeitsprüfungen, VM-Preisschätzungen, Ausgabemodi für Skripte und Update-Checks.",
         fr: "Un CLI non officiel et open source pour la découverte de disponibilité Azure. Il vérifie où des SKUs de VM peuvent réellement être déployées en combinant Azure Policy, disponibilité des SKUs, restrictions de l'abonnement et quota en temps réel, et prend maintenant aussi en charge les vérifications génériques de disponibilité des ressources, les estimations de prix des VMs, les modes de sortie pour scripts et les vérifications de mise à jour."
+    },
+    "projects.aws-image-converter.title": {
+        en: "AWS Image Converter",
+        pt: "Conversor de imagens na AWS",
+        lu: "Bildkonverter op AWS",
+        de: "Bildkonverter auf AWS",
+        fr: "Convertisseur d’images sur AWS"
+    },
+    "projects.aws-image-converter.desc": {
+        en: "An AWS Academy team project that converts and resizes images for web publishing. A Flask portal on EC2 accepts uploads, private S3 storage triggers Lambda, and the portal shows a before-and-after preview with a temporary download link.",
+        pt: "Um projeto de equipa da AWS Academy que converte e redimensiona imagens para publicação na web. Um portal Flask em EC2 recebe os ficheiros, o armazenamento privado em S3 aciona o Lambda e o portal mostra uma comparação antes e depois com um link temporário para descarregar.",
+        lu: "En Teamprojet vun der AWS Academy, dee Biller fir d’Publikatioun um Web konvertéiert a verklengert. E Flask-Portal op EC2 hëlt d’Fichieren entgéint, de private S3-Späicher start Lambda, an de Portal weist de Virun-an-Duerno-Verglach mat engem temporären Downloadlink.",
+        de: "Ein Teamprojekt der AWS Academy, das Bilder für Webpublikationen konvertiert und verkleinert. Ein Flask-Portal auf EC2 nimmt Uploads an, ein privater S3-Bucket löst Lambda aus und das Portal zeigt einen Vorher-nachher-Vergleich mit einem temporären Downloadlink.",
+        fr: "Un projet d’équipe AWS Academy qui convertit et redimensionne des images pour la publication web. Un portail Flask sur EC2 reçoit les fichiers, le stockage privé sur S3 déclenche Lambda et le portail affiche un aperçu avant/après avec un lien de téléchargement temporaire."
     },
     "projects.minicfl-az104.title": {
         en: "MiniCFL - Azure AZ-104 Demonstration",
@@ -1327,6 +1383,13 @@ const translations = {
         lu: "© {year} Guilherme Videira Marques.",
         de: "© {year} Guilherme Videira Marques.",
         fr: "© {year} Guilherme Videira Marques."
+    },
+    "contact.email": {
+        en: "Email",
+        pt: "E-mail",
+        lu: "E-Mail",
+        de: "E-Mail",
+        fr: "E-mail"
     },
     "contact.allLinks": {
         en: "All my links",

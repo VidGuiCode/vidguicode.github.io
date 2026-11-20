@@ -44,6 +44,7 @@ const CERTIFICATIONS = [
         id: 'azure-az900',
         shortCode: 'badge-Azure-AZ900',
         name: 'Microsoft Certified: Azure Fundamentals',
+        searchTerms: ['AZ-900', 'AZ900', 'Azure Fundamentals'],
         nameKey: 'cert.azure.az900.name', // Detail page translation key
         indexTitleKey: 'cert.az900.title', // Compact title for index section
         statusKey: 'cert.az900.status', // Status/subtitle line
@@ -59,7 +60,7 @@ const CERTIFICATIONS = [
         skills: ['Cloud Concepts', 'Azure Services', 'Security & Compliance', 'Azure Pricing'],
         skillsKeys: ['cert.azure.az900.skills.cloud', 'cert.azure.az900.skills.services', 'cert.azure.az900.skills.security', 'cert.azure.az900.skills.pricing'], // Translation keys
         relatedProjects: ['minicfl-az104'], // AZ-104 demo project used Azure Fundamentals knowledge
-        relatedFormations: ['azure-fundamentals-training'], // IDs of related formations/trainings
+        relatedFormations: ['azure-fundamentals-training', 'pluralsight-az900'], // IDs of related formations/trainings
         dateEarned: '2026-01-26', // January 26, 2026
         expiryDate: null,
         isFree: false, // Not free

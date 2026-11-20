@@ -127,17 +127,19 @@
     <div id="search-container"></div>
     <div id="navbar-container"></div>
 
-    <main class="container" style="padding-top: 100px;">
-        <a href="/#projects" class="back-link">
+    <main class="container project-case-study">
+        <a href="../projects" class="back-link" data-project-list-back>
             <i data-lucide="arrow-left"></i>
-            <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
+            <span data-i18n="project.allProjects">All projects</span>
         </a>
 
         <section class="project-hero">
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.ai-hermes-agent.badge">AI AUTOMATION</div>
                 <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
-                    <img src="../assets/img/projects/hermes/hermes.webp" alt="Nous Research Hermes artwork" class="hermes-logo">
+                    <a href="../assets/img/projects/hermes/hermes.webp" class="project-image-wrapper">
+                        <img src="../assets/img/projects/hermes/hermes.webp" alt="Nous Research Hermes artwork" class="hermes-logo project-image">
+                    </a>
                     <div style="flex: 1; min-width: 220px;">
                         <div class="hermes-eyebrow">NOUS · HERMES // SELF-HOSTED AGENT</div>
                         <h1 style="line-height: 1; margin-bottom: 0;">
@@ -145,7 +147,8 @@
                         </h1>
                     </div>
                 </div>
-                <p class="subtitle" data-i18n="project.ai-hermes-agent.hero.subtitle">A self-hosted AI agent that runs 24/7 on its own VPS. It researches, monitors, automates and talks back - all from a single conversation that remembers what happened yesterday.</p>
+                <p class="subtitle" data-i18n="project.ai-hermes-agent.hero.subtitle">My self-hosted assistant keeps context across Matrix conversations. It can pick up earlier research, deliver reminders, and alert my phone when a homelab service goes down.</p>
+                <p data-i18n="project.ai-hermes-agent.hero.contribution">I deployed Nous Research's Hermes Agent on my own server. I integrated Git-backed memory, model routing, and the scheduled jobs that check my homelab and send alerts.</p>
                 <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
                     <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
                     <span data-i18n="project.lastUpdated">Last updated:</span> <span>15/06/2026</span>

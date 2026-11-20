@@ -6,6 +6,62 @@
 (function() {
     'use strict';
     const extra = {
+        "project.homelab.subtitle": {
+            en: "My home lab grew from a media server into a self-hosted platform I use for file storage, streaming, custom apps, and AI workflows.",
+            pt: "O meu laboratório doméstico evoluiu de um servidor multimédia para uma plataforma que alojo e utilizo para armazenar ficheiros, fazer streaming, executar aplicações próprias e automatizar tarefas com IA.",
+            lu: "Mäi Homelab ass vun engem Medieserver zu enger Plattform gewuess, déi ech selwer hosten a fir Dateien, Streaming, eegen Apps an AI-Workflows benotzen.",
+            de: "Mein Homelab entwickelte sich von einem Medienserver zu einer selbst gehosteten Plattform, die ich für Dateispeicherung, Streaming, eigene Apps und KI-Workflows nutze.",
+            fr: "Mon homelab est passé d’un serveur multimédia à une plateforme que j’héberge et que j’utilise pour stocker des fichiers, diffuser des médias, faire tourner mes applications et automatiser des tâches avec l’IA."
+        },
+        "project.homelab.contribution": {
+            en: "I designed the lab to separate incoming traffic, application workloads, and storage. I built shared passkey sign-in and apps for job applications and vocabulary practice.",
+            pt: "Concebi o laboratório para separar o tráfego de entrada, as aplicações e o armazenamento. Criei um início de sessão partilhado com passkeys e aplicações para candidaturas a empregos e prática de vocabulário.",
+            lu: "Ech hunn de Lab esou entworf, datt erakommenden Trafic, d’Aarbechtslaascht vun den Apps an d’Späichere getrennt sinn. Ech hunn e gemeinsame Login mat Passkeys an Apps fir Bewerbungen a Vokabeltraining gebaut.",
+            de: "Ich entwarf das Lab so, dass eingehender Datenverkehr, Anwendungslast und Speicher getrennt sind. Ich entwickelte eine gemeinsame Passkey-Anmeldung und Apps für Bewerbungen und Vokabeltraining.",
+            fr: "J’ai conçu le lab pour séparer le trafic entrant, l’exécution des applications et le stockage. J’ai mis en place une connexion commune par passkey et créé des applications pour les candidatures et l’apprentissage du vocabulaire."
+        },
+        "project.homelab.examples.title": {
+            en: "Apps I built",
+            pt: "Aplicações que criei",
+            lu: "Apps, déi ech gebaut hunn",
+            de: "Anwendungen, die ich gebaut habe",
+            fr: "Les applications que j’ai créées"
+        },
+        "project.homelab.examples.career": {
+            en: "<strong>Job application workspace.</strong> I built a tool that imports CVs into structured fields, suggests edits for a specific job, and exports a PDF. I accept or reject each suggested edit.",
+            pt: "<strong>Área de candidaturas.</strong> Criei uma ferramenta que importa currículos para campos estruturados, sugere alterações para uma vaga e exporta um PDF. Aceito ou rejeito cada sugestão.",
+            lu: "<strong>Bewerbungsplattform.</strong> Ech hunn en Tool gebaut, dat CVen a strukturéiert Felder importéiert, Ännerunge fir eng konkret Plaz virschléit an e PDF exportéiert. Ech huelen all Virschlag un oder refuséieren en.",
+            de: "<strong>Bewerbungsplattform.</strong> Ich habe ein Tool gebaut, das Lebensläufe in strukturierte Felder importiert, Änderungen für eine konkrete Stelle vorschlägt und ein PDF exportiert. Jeden Vorschlag kann ich annehmen oder ablehnen.",
+            fr: "<strong>Espace de candidature.</strong> J’ai créé un outil qui importe les CV dans des champs structurés, propose des modifications adaptées à une offre et exporte un PDF. J’accepte ou je refuse chaque proposition."
+        },
+        "project.homelab.examples.learning": {
+            en: "<strong>Vocabulary trainer.</strong> I built a tool that turns a term into a short explanation, flashcards, and links to related terms. Spaced repetition brings difficult terms back for review.",
+            pt: "<strong>Treino de vocabulário.</strong> Criei uma ferramenta que gera uma explicação curta, cartões de estudo e ligações a termos relacionados. A repetição espaçada volta a apresentar os termos mais difíceis.",
+            lu: "<strong>Vokabeltrainer.</strong> Ech hunn en Tool gebaut, dat fir e Begrëff eng kuerz Erklärung, Léierkaarten a Linken op verbonne Begrëffer erstellt. Schwéier Begrëffer kommen a mat Ofstand geplangte Widderhuelungen erëm.",
+            de: "<strong>Vokabeltrainer.</strong> Ich habe ein Tool gebaut, das zu einem Begriff eine kurze Erklärung, Karteikarten und Links zu verwandten Begriffen erstellt. Schwierige Begriffe tauchen in zeitlich verteilten Wiederholungen erneut auf.",
+            fr: "<strong>Outil d’apprentissage du vocabulaire.</strong> J’ai créé un outil qui produit une courte explication, des cartes mémoire et des liens vers des termes associés. La répétition espacée fait revenir les termes difficiles."
+        },
+        "project.homelab.examples.video": {
+            en: "<strong>AI video generator.</strong> I choose a start and an end image, see the estimated cost, and submit a background job. The page shows progress until the short clip is ready.",
+            pt: "<strong>Gerador de vídeo com IA.</strong> Escolho uma imagem inicial e uma final, vejo o custo estimado e envio a tarefa para execução em segundo plano. A página mostra o progresso até o vídeo estar pronto.",
+            lu: "<strong>KI-Videogenerator.</strong> Ech wielen e Start- an e Schlussbild, gesinn déi geschate Käschten a starten eng Aufgab am Hannergrond. D’Säit weist de Fortschrëtt, bis de kuerze Clip fäerdeg ass.",
+            de: "<strong>KI-Videogenerator.</strong> Ich wähle ein Start- und ein Endbild, sehe die geschätzten Kosten und starte einen Hintergrundauftrag. Die Seite zeigt den Fortschritt an, bis der kurze Clip fertig ist.",
+            fr: "<strong>Générateur vidéo par IA.</strong> Je choisis une image de départ et une image de fin, je vois le coût estimé et je lance une tâche en arrière-plan. La page affiche la progression jusqu’à ce que le clip soit prêt."
+        },
+        "project.homelab.examples.knowledge": {
+            en: "<strong>Searchable knowledge base.</strong> AI assistants can save notes and transcripts through MCP. Keyword search and local embeddings help them retrieve relevant passages for later tasks.",
+            pt: "<strong>Base de conhecimento pesquisável.</strong> Os assistentes de IA podem guardar notas e transcrições através de MCP. A pesquisa por palavras-chave e os embeddings locais ajudam a recuperar passagens relevantes para outras tarefas.",
+            lu: "<strong>Wëssensbasis mat Sichfunktioun.</strong> KI-Assistenten kënnen Notizen an Transkriptiounen iwwer MCP späicheren. Mat enger Schlësselwuertsich a lokalen Embeddings fanne si passend Passagë fir spéider Aufgaben.",
+            de: "<strong>Durchsuchbare Wissensbasis.</strong> KI-Assistenten können Notizen und Transkripte über MCP speichern. Stichwortsuche und lokale Embeddings helfen ihnen, später passende Passagen abzurufen.",
+            fr: "<strong>Base de connaissances consultable.</strong> Les assistants IA peuvent enregistrer des notes et des transcriptions via MCP. La recherche par mots-clés et les embeddings locaux les aident à retrouver des passages pertinents pour d’autres tâches."
+        },
+        "project.homelab.section.what.core.analytics": {
+            en: "<strong>Administration dashboard.</strong> I can check how long agent runs take and what they cost.",
+            pt: "<strong>Painel de administração.</strong> Posso consultar a duração e o custo das execuções dos agentes.",
+            lu: "<strong>Administratiounspanel.</strong> Ech gesinn, wéi laang d’Agenten hir Aufgaben ausféieren a wat dat kascht.",
+            de: "<strong>Admin-Dashboard.</strong> Ich kann Dauer und Kosten der Agentenläufe einsehen.",
+            fr: "<strong>Tableau de bord d’administration.</strong> Je consulte la durée et le coût des exécutions des agents."
+        },
         "project.homelab.section.what.media.game": {
             en: "<strong>Game server plan</strong>: I planned a containerized game server with persistent world data.",
             pt: "<strong>Plano para um servidor de jogo</strong>: Planeei um servidor de jogo em contentor com dados persistentes do mundo.",
@@ -154,11 +210,11 @@
             fr: "Je voulais un espace sûr pour expérimenter. C’était mon <strong>premier projet personnel d’envergure</strong>. Je suis parti de Jellyfin pour créer une plateforme de services que je pouvais héberger et entretenir moi-même."
         },
         "project.homelab.section.why.body2": {
-            en: "Beyond learning, I kept running into the same frustration: existing tools were either limited, ad-ridden, or just didn't fit what I needed. The QR generator? Most online versions were locked behind paywalls or covered in ads. The Vault app? Nothing out there matched the workflow I had in mind. So instead of settling, <strong>I started building my own</strong> - and that grew into a full self-hosted ecosystem of custom applications replacing third-party tools on my own terms.",
-            pt: "Para além de aprender, continuava a esbarrar na mesma frustração: as ferramentas existentes eram limitadas, cheias de anúncios ou simplesmente não se adequavam ao que precisava. O gerador de QR? A maioria das versões online estava atrás de paywalls ou coberta de anúncios. A app Vault? Nada do que existia correspondia ao workflow que tinha em mente. Então, em vez de me conformar, <strong>comecei a construir as minhas próprias ferramentas</strong> - e isso cresceu para um ecossistema self-hosted completo de aplicações personalizadas que substituem ferramentas de terceiros nos meus termos.",
-            lu: "Nieft dem Léieren, sinn ech ëmmer erëm op déi selwecht Frustratioun gestouss: déi existéierend Tools waren entweder limitéiert, voller Reklammen oder hu guer net zu menge Besoine gepasst. De QR-Generator? Déi meescht Online-Versioune waren hannert Paywalls oder voller Annoncen. D'Vault-App? Näischt dobaussen huet dem Workflow entspriecht, deen ech am Kapp hat. Also, amplaz mech domat zefridden ze ginn, <strong>hunn ech ugefaang meng eegen Tools ze bauen</strong> - an dat ass zu engem komplette self-hosted Ecosystem vu personaliséierten Applikatiounen gewuess, dat Drëtt-Partei-Tools op meng Aart ersetzt.",
-            de: "Neben dem Lerneffekt gab es immer wieder denselben Frust: Viele Tools waren eingeschränkt, voller Werbung oder schlicht nicht das, was ich brauchte. Beim QR-Generator landete man oft hinter Paywalls oder zwischen Bannern. Für die Vault-App fand ich nichts, das zu meinem Workflow passte. Also habe ich aufgehört, Kompromisse zu machen, und <strong>angefangen, meine eigenen Lösungen zu bauen</strong> - daraus ist Schritt für Schritt ein komplettes Self-Hosted-Ökosystem entstanden, das Drittanbieter-Tools zu meinen Bedingungen ersetzt.",
-            fr: "Au-delà de l'apprentissage, je me heurtais toujours à la même frustration : les outils existants étaient soit limités, soit bourrés de pubs, soit inadaptés à mes besoins. Le générateur de QR ? La plupart des versions en ligne étaient derrière des paywalls ou couvertes de pubs. L'app Vault ? Rien ne correspondait au workflow que j'avais en tête. Alors plutôt que de me contenter, <strong>j'ai commencé à construire les miens</strong> - et ça s'est transformé en un écosystème self-hosted complet d'applications personnalisées remplaçant les outils tiers à ma façon."
+            en: "I wanted tools that fit the way I work. Two examples are a QR generator and an app for tracking items and payments.",
+            pt: "Queria ferramentas adaptadas à minha forma de trabalhar. Dois exemplos são um gerador de códigos QR e uma aplicação para registar artigos e pagamentos.",
+            lu: "Ech wollt Tools, déi zu menger Aarbechtsweis passen. Zwee Beispiller sinn en QR-Code-Generator an eng App fir Artikelen a Bezuelungen ze verfollegen.",
+            de: "Ich wollte Werkzeuge, die zu meiner Arbeitsweise passen. Zwei Beispiele sind ein QR-Code-Generator und eine App für Artikel und Zahlungen.",
+            fr: "Je voulais des outils adaptés à ma façon de travailler. Deux exemples sont un générateur de codes QR et une application de suivi des articles et des paiements."
         },
         "project.homelab.section.why.body3": {
             en: "Working within limits on power, memory, and compute taught me to separate workloads and share sign-in between applications. <strong>I built custom apps and an agent framework</strong> to put those design decisions to work.",
@@ -202,19 +258,19 @@
             de: "DNS-Einträge in Cloudflare zu managen und den Traffic-Flow zu verstehen, ließ alles zusammenpassen.",
             fr: "Gérer les enregistrements dans Cloudflare et comprendre les flux a fait déclic."
         },
-        "project.homelab.section.lessons.iterate.title": {
-            en: "Start small, iterate fast",
-            pt: "Começa pequeno, itera rápido",
-            lu: "Kleng ufänken, séier iteréieren",
-            de: "Klein starten, schnell iterieren",
-            fr: "Commencer petit, itérer vite"
+        "project.homelab.section.lessons.speech.title": {
+            en: "Faster local speech",
+            pt: "Síntese de voz local mais rápida",
+            lu: "Méi séier lokal Sproochsynthes",
+            de: "Schnellere lokale Sprachsynthese",
+            fr: "Synthèse vocale locale plus rapide"
         },
-        "project.homelab.section.lessons.iterate.body": {
-            en: "This setup grew organically. Each problem solved unlocked the next improvement.",
-            pt: "Esta configuração cresceu organicamente. Cada problema resolvido desbloqueou a melhoria seguinte.",
-            lu: "Dës Opstellung ass organesch gewuess. All geléiste Problem huet déi nächst Verbesserung opgemaach.",
-            de: "Dieses Setup ist organisch gewachsen. Jedes gelöste Problem öffnete die nächste Verbesserung.",
-            fr: "Cette configuration a grandi organiquement. Chaque problème résolu a débloqué la suite."
+        "project.homelab.section.lessons.speech.body": {
+            en: "In a July 2026 test, a lighter text-to-speech engine cut response time from about 2.5 seconds to roughly half a second per sentence through the same gateway. The faster voice sounded less natural.",
+            pt: "Num teste em julho de 2026, um motor de síntese de voz mais leve reduziu o tempo de resposta de cerca de 2,5 segundos para cerca de meio segundo por frase, através do mesmo gateway. A voz mais rápida soava menos natural.",
+            lu: "An engem Test am Juli 2026 huet eng méi liicht Sproochsynthes d’Äntwertzäit iwwer dee selwechte Gateway vun ongeféier 2,5 Sekonnen op ronn eng hallef Sekonn pro Saz verkierzt. Déi méi séier Stëmm huet manner natierlech geklongen.",
+            de: "In einem Test im Juli 2026 verkürzte eine schlankere Sprachsynthese die Antwortzeit über dasselbe Gateway von etwa 2,5 Sekunden auf rund eine halbe Sekunde pro Satz. Die schnellere Stimme klang weniger natürlich.",
+            fr: "Lors d’un test en juillet 2026, un moteur de synthèse vocale plus léger a ramené le temps de réponse d’environ 2,5 secondes à près d’une demi-seconde par phrase via la même passerelle. La voix plus rapide sonnait moins naturelle."
         },
         "project.homelab.section.lessons.cost.title": {
             en: "Cost-conscious infrastructure",
@@ -308,11 +364,11 @@
             fr: "Mesurer, puis refroidir"
         },
         "project.homelab.section.lessons.cooling.body": {
-            en: "Drive temperatures averaged 44 to 45 °C. I wrote a fan curve that follows the hottest drive and printed an exhaust shroud. Temperatures settled at 40 to 41 °C.",
-            pt: "A temperatura média dos discos era de 44 a 45 °C. Criei uma curva de ventilação que segue o disco mais quente e imprimi uma conduta de saída de ar. As temperaturas estabilizaram entre 40 e 41 °C.",
-            lu: "D’Placke louchen am Duerchschnëtt bei 44 bis 45 °C. Ech hunn eng Ventilatorkurv no der wäermster Plack geschriwwen an eng Ofloftféierung gedréckt. D’Temperature si bei 40 bis 41 °C stabil ginn.",
-            de: "Die Laufwerke lagen im Schnitt bei 44 bis 45 °C. Ich schrieb eine Lüfterkurve für das heißeste Laufwerk und druckte einen Abluftkanal. Die Temperaturen stabilisierten sich bei 40 bis 41 °C.",
-            fr: "La température moyenne des disques était de 44 à 45 °C. J’ai écrit une courbe de ventilation qui suit le disque le plus chaud et imprimé un conduit d’évacuation. Les températures se sont stabilisées entre 40 et 41 °C."
+            en: "I added fan control based on the warmest drive. The fans switch to full speed if a sensor fails. The readings recorded after the change were lower.",
+            pt: "Adicionei um controlo das ventoinhas com base no disco mais quente. Se um sensor falhar, as ventoinhas passam à velocidade máxima. As temperaturas registadas após a alteração foram mais baixas.",
+            lu: "Ech hunn d’Ventilatore sou agestallt, datt si sech no der wäermster Festplack riichten. Wann e Sensor ausfält, lafe si mat voller Vitess. D’Temperaturen no der Ännerung ware méi niddreg.",
+            de: "Ich habe eine Lüftersteuerung eingerichtet, die sich nach dem wärmsten Laufwerk richtet. Fällt ein Sensor aus, laufen die Lüfter auf voller Drehzahl. Nach der Änderung waren die gemessenen Temperaturen niedriger.",
+            fr: "J’ai ajouté un contrôle des ventilateurs basé sur le disque le plus chaud. Si un capteur tombe en panne, les ventilateurs passent à pleine vitesse. Les températures relevées après la modification étaient plus basses."
         },
         "project.homelab.section.next.title": {
             en: "What's Next",
@@ -350,18 +406,11 @@
             fr: "CLI Python avec Typer"
         },
         "project.homelab.section.what.compose.cli": {
-            en: "<strong>Platform CLI</strong>: I built and packaged a Typer-based Python CLI for tasks, security operations, and health checks.",
-            pt: "<strong>CLI da plataforma</strong>: Criei e empacotei uma CLI em Python com Typer para tarefas, operações de segurança e verificações de estado.",
-            lu: "<strong>Plattform-CLI</strong>: Ech hunn eng Python-CLI mat Typer fir Aufgaben, Sécherheetsoperatiounen an Zoustandskontrolle gebaut a paketéiert.",
-            de: "<strong>Plattform-CLI</strong>: Ich entwickelte und paketierte eine Python-CLI mit Typer für Aufgaben, Sicherheitsvorgänge und Zustandsprüfungen.",
-            fr: "<strong>CLI de la plateforme</strong> : J’ai créé et empaqueté une CLI Python avec Typer pour la gestion des tâches, les opérations de sécurité et les contrôles de fonctionnement."
-        },
-        "project.homelab.image.caption": {
-            en: "My Home Lab rack",
-            pt: "O rack do meu laboratório doméstico",
-            lu: "De Rack vu mengem Home Lab",
-            de: "Das Rack meines Home Labs",
-            fr: "La baie de mon laboratoire à domicile"
+            en: "<strong>Task workflow across CLI and MCP.</strong> I built a Python CLI that lets a coding agent pick up a task and log its progress. The agent can check service health through MCP, then record its result in the shared task log.",
+            pt: "<strong>Fluxo de tarefas com CLI e MCP.</strong> Criei uma CLI em Python que permite a um agente de programação assumir uma tarefa e registar o progresso. O agente pode consultar o estado dos serviços via MCP e guardar o resultado no registo partilhado.",
+            lu: "<strong>Aufgaben iwwer CLI a MCP.</strong> Ech hunn eng Python-CLI gebaut, mat där e Codéierungsagent eng Aufgab iwwerhëlt a säi Fortschrëtt festhält. Iwwer MCP kann hien de Status vu Servicer nokucken an d’Resultat am gemeinsamen Aufgabeprotokoll späicheren.",
+            de: "<strong>Aufgabenablauf über CLI und MCP.</strong> Ich habe eine Python-CLI gebaut, mit der ein Coding-Agent eine Aufgabe übernehmen und den Fortschritt protokollieren kann. Über MCP kann er den Zustand von Diensten prüfen und das Ergebnis im gemeinsamen Aufgabenprotokoll festhalten.",
+            fr: "<strong>Suivi des tâches avec la CLI et MCP.</strong> J’ai créé une CLI en Python qui permet à un agent de code de prendre une tâche et de consigner sa progression. Il peut vérifier l’état des services via MCP, puis inscrire le résultat dans le journal partagé."
         },
         "project.homelab.section.what.core.title": {
             en: "Application Platform",
@@ -392,11 +441,11 @@
             fr: "<strong>Surfaces temps réel et génératives</strong> : des salles voix/vidéo auto-hébergées (LiveKit/WebRTC) et un générateur vidéo par images-clés IA qui transforme une image de début et de fin en un court clip - toutes deux derrière le même SSO et la sécurité d'edge."
         },
         "project.homelab.section.what.core.suite": {
-            en: "<strong>Custom product suite</strong>: Identity portal, app hub, admin console, content digest, vault, term-mastery, task log, career workspace, voice/video rooms, an AI video generator, a mail studio, a music intake app, a knowledge base console, and a QR generator microservice.",
-            pt: "<strong>Suite de produtos própria</strong>: portal de identidade, hub de apps, consola de administração, digest de conteúdos, vault, domínio de termos, registo de tarefas, espaço de carreira, salas de voz/vídeo, um gerador de vídeo com IA, um estúdio de email, uma app de entrada de música, uma consola da base de conhecimento e um microserviço gerador de QR.",
-            lu: "<strong>Eege Produit-Suite</strong>: Identitéitsportal, App-Hub, Admin-Konsol, Content-Digest, Vault, Begrëffer-Training, Task-Log, Karriär-Workspace, Stëmm/Video-Raim, en KI-Video-Generator, e Mail-Studio, eng Musek-Intake-App, eng Konsol fir d'Wëssensbasis an e QR-Generator-Mikroservice.",
-            de: "<strong>Eigene Produktsuite</strong>: Identitätsportal, App-Hub, Admin-Konsole, Content-Digest, Vault, Begriffstraining, Task-Log, Karriere-Workspace, Sprach-/Videoräume, ein KI-Videogenerator, ein Mail-Studio, eine Musik-Intake-App, eine Konsole für die Wissensbasis und ein QR-Generator-Microservice.",
-            fr: "<strong>Suite de produits maison</strong> : portail d'identité, hub d'applis, console d'administration, digest de contenus, vault, maîtrise de termes, journal de tâches, espace carrière, salons voix/vidéo, un générateur de vidéo IA, un studio d'e-mails, une appli d'ajout de musique, une console pour la base de connaissances et un microservice de génération de QR."
+            en: "<strong>Other custom apps.</strong> An app launcher brings together tools for web captures, item and payment tracking, agent activity, music intake, voice and video rooms, and QR codes.",
+            pt: "<strong>Outras aplicações próprias.</strong> Um portal reúne ferramentas para guardar páginas, registar artigos e pagamentos, consultar a atividade dos agentes, importar música, usar salas de voz e vídeo e gerar códigos QR.",
+            lu: "<strong>Aner eegen Apps.</strong> En App-Portal bréngt Tools zesumme fir Websäiten ze späicheren, Artikelen a Bezuelungen ze verfollegen, Agentenaktivitéit ze gesinn, Musek bäizefügen, Stëmm- a Videoraim ze benotzen an QR-Coden ze generéieren.",
+            de: "<strong>Weitere eigene Anwendungen.</strong> Ein Portal bündelt Werkzeuge für Webinhalte, Artikel und Zahlungen, Agentenaktivität, Musikimport, Sprach- und Videoräume sowie QR-Codes.",
+            fr: "<strong>Autres applications maison.</strong> Un portail réunit des outils de capture web, de suivi des articles et paiements, de suivi des agents, d’ajout de musique, de salons audio et vidéo et de génération de codes QR."
         },
         "project.homelab.section.what.core.killswitch": {
             en: "<strong>Central app controls</strong>: A shared application registry lets me disable access to individual apps.",
@@ -539,11 +588,11 @@
             fr: "<strong>Stockage objet compatible S3</strong> : Deux tiers MinIO gardent les objets chauds sur SSD et déplacent les données plus froides vers HDD via des règles de cycle de vie."
         },
         "project.homelab.section.what.media.backup": {
-            en: "<strong>Versioned backups</strong>: A backup runner writes timestamped, checksummed archives, alongside ZFS snapshots.",
-            pt: "<strong>Cópias de segurança versionadas</strong>: Um processo cria arquivos datados com somas de verificação, além dos snapshots ZFS.",
-            lu: "<strong>Versionéiert Backuppen</strong>: E Prozess erstellt Archiver mat Zäitstempel a Prüfsumm, nieft ZFS-Snapshots.",
-            de: "<strong>Versionierte Backups</strong>: Ein Prozess schreibt Archive mit Zeitstempel und Prüfsumme, ergänzt durch ZFS-Snapshots.",
-            fr: "<strong>Sauvegardes versionnées</strong> : Un processus écrit des archives horodatées avec sommes de contrôle, en complément des snapshots ZFS."
+            en: "<strong>Versioned backups.</strong> A nightly job copies core databases and service configuration. It keeps previous versions and records checksums.",
+            pt: "<strong>Cópias de segurança com versões.</strong> Uma tarefa noturna copia as bases de dados principais e a configuração dos serviços. Mantém versões anteriores e regista somas de verificação.",
+            lu: "<strong>Versionéiert Backuppen.</strong> All Nuecht kopéiert eng Aufgab déi wichtegst Datebanken an d’Konfiguratioun vun de Servicer. Si behält al Versiounen a späichert Prüfsummen.",
+            de: "<strong>Versionierte Sicherungen.</strong> Ein nächtlicher Auftrag kopiert die wichtigsten Datenbanken und Dienstkonfigurationen. Er behält frühere Versionen und speichert Prüfsummen.",
+            fr: "<strong>Sauvegardes versionnées.</strong> Une tâche nocturne copie les principales bases de données et les configurations des services. Elle conserve les versions précédentes et enregistre les sommes de contrôle."
         },
         "project.homelab.section.what.media.rack": {
             en: "<strong>Power and cooling</strong>: I monitor power use and use drive temperatures to control airflow.",
@@ -938,11 +987,11 @@
             fr: "Toute une série d'apps web que j'ai construites"
         },
         "project.homelab.does.apps.desc": {
-            en: "Login, an app hub, a vault, a career workspace, voice/video rooms, even an AI video generator - all on one secure backend.",
-            pt: "Login, um hub de apps, um vault, um workspace de carreira, salas de voz/vídeo, até um gerador de vídeo por IA - tudo num backend seguro.",
-            lu: "Login, en App-Hub, e Vault, e Carrière-Workspace, Voice-/Video-Raim, souguer en AI-Videogenerator - alles op engem sécheren Backend.",
-            de: "Login, ein App-Hub, ein Vault, ein Karriere-Workspace, Voice-/Video-Räume, sogar ein KI-Videogenerator - alles auf einem sicheren Backend.",
-            fr: "Connexion, un hub d'apps, un vault, un espace carrière, des salles voix/vidéo, et même un générateur vidéo IA - le tout sur un backend sécurisé."
+            en: "Apps for job applications, vocabulary, video, and knowledge search share one sign-in.",
+            pt: "As aplicações para candidaturas, vocabulário, vídeo e pesquisa de conhecimento partilham a mesma autenticação.",
+            lu: "Apps fir Bewerbungen, Vokabelen, Videoen an d’Sich a menge Notizen deelen ee Login.",
+            de: "Anwendungen für Bewerbungen, Vokabeltraining, Video und Wissenssuche nutzen dieselbe Anmeldung.",
+            fr: "Les applications de candidature, de vocabulaire, de vidéo et de recherche partagent la même connexion."
         },
         "project.homelab.does.agents.title": {
             en: "AI agents that do real work",
@@ -959,11 +1008,11 @@
             fr: "Des assistants pour la recherche, l'étude, la sécurité, l'écriture, le CV et l'infrastructure, qui tournent en sécurité dans des limites strictes et demandent avant d'agir."
         },
         "project.homelab.does.secure.title": {
-            en: "Locked down and passwordless",
-            pt: "Protegido e sem palavra-passe",
-            lu: "Ofgeséchert an ouni Passwuert",
-            de: "Abgesichert und passwortlos",
-            fr: "Verrouillé et sans mot de passe"
+            en: "Shared sign-in with passkeys",
+            pt: "Autenticação partilhada com passkeys",
+            lu: "Gemeinsame Login mat Passkeys",
+            de: "Gemeinsame Anmeldung mit Passkeys",
+            fr: "Connexion commune avec des clés d’accès"
         },
         "project.homelab.does.secure.desc": {
             en: "Sign in with a passkey. A protected gateway handles traffic, and applications share identity and permission checks.",
@@ -973,32 +1022,32 @@
             fr: "La connexion se fait avec une clé d’accès. Une passerelle protégée traite le trafic, et les applications partagent la gestion des identités et des permissions."
         },
         "project.homelab.next.voice": {
-            en: "Build on the existing Hermes voice workflow",
-            pt: "Desenvolver o fluxo de voz já existente no Hermes",
-            lu: "De bestoende Stëmm-Workflow vun Hermes ausbauen",
-            de: "Den bestehenden Hermes-Sprachworkflow ausbauen",
-            fr: "Faire évoluer le workflow vocal existant de Hermes"
+            en: "Improve the voice assistant workflow",
+            pt: "Melhorar o fluxo do assistente de voz",
+            lu: "Den Oflaf mam Stëmmassistent verbesseren",
+            de: "Den Ablauf mit dem Sprachassistenten verbessern",
+            fr: "Améliorer le fonctionnement de l’assistant vocal"
         },
         "project.homelab.next.video": {
-            en: "AI video v2: timeline, captions and storyboards",
-            pt: "Vídeo IA v2: timeline, legendas e storyboards",
-            lu: "KI-Video v2: Timeline, Ënnertitelen a Storyboards",
-            de: "KI-Video v2: Timeline, Untertitel und Storyboards",
-            fr: "Vidéo IA v2 : timeline, sous-titres et storyboards"
+            en: "Explore a node-based editor for video workflows",
+            pt: "Explorar um editor de nós para fluxos de vídeo",
+            lu: "En Editor mat Kniet fir Video-Workflows ausprobéieren",
+            de: "Einen knotenbasierten Editor für Videoabläufe erproben",
+            fr: "Explorer un éditeur à nœuds pour les workflows vidéo"
         },
         "project.homelab.next.career": {
-            en: "Finish the career workspace & mail inbox",
-            pt: "Terminar o workspace de carreira e a caixa de email",
-            lu: "De Carrière-Workspace an d'Mail-Inbox fäerdeg maachen",
-            de: "Karriere-Workspace und Mail-Posteingang fertigstellen",
-            fr: "Finir l'espace carrière et la boîte mail"
+            en: "Keep improving the job application workspace",
+            pt: "Continuar a melhorar a área de candidaturas",
+            lu: "D’Bewerbungsplattform weider verbesseren",
+            de: "Die Bewerbungsplattform weiter verbessern",
+            fr: "Continuer à améliorer l’espace de candidature"
         },
-        "project.homelab.next.agents": {
-            en: "One security agent above both security twins",
-            pt: "Um agente de segurança acima dos dois gémeos de segurança",
-            lu: "Ee Sécherheets-Agent iwwer deenen zwee Sécherheets-Zwillingen",
-            de: "Ein Sicherheitsagent über beiden Sicherheits-Zwillingen",
-            fr: "Un agent de sécurité au-dessus des deux jumeaux de sécurité"
+        "project.homelab.next.restore": {
+            en: "Test a database restore in isolation",
+            pt: "Testar o restauro da base de dados num ambiente isolado",
+            lu: "D’Restauratioun vun enger Datebank isoléiert testen",
+            de: "Eine Datenbankwiederherstellung isoliert testen",
+            fr: "Tester la restauration d’une base de données dans un environnement isolé"
         },
     };
     Object.assign(translations, extra);

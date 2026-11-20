@@ -83,7 +83,7 @@
             </div>
 
             <h1 data-i18n="certifications.heading">Certifications & Training</h1>
-            <p class="subtitle" data-i18n="certifications.subtitle">Industry-recognized certifications and training sessions in cloud computing, infrastructure, and technical skills. Certifications sorted by level (highest first), trainings by date (newest first).</p>
+            <p class="subtitle" data-i18n="certifications.subtitle">Earned credentials, training, and outreach in cloud computing and IT.</p>
 
             <div class="hero-metrics" aria-label="Certification metrics">
                 <div class="hero-metric">
@@ -94,11 +94,6 @@
                 <div class="hero-metric">
                     <span class="hero-metric-value" id="total-training">0</span>
                     <span class="hero-metric-label" data-i18n="certifications.filter.formations">Training</span>
-                </div>
-                <div class="hero-metric-divider" aria-hidden="true"></div>
-                <div class="hero-metric">
-                    <span class="hero-metric-value" id="highest-level">-</span>
-                    <span class="hero-metric-label" data-i18n="certifications.stats.highest">Highest Level</span>
                 </div>
             </div>
         </section>
@@ -401,23 +396,10 @@
             const trainingOnly = formationsOnly.filter(form => getFormationGroup(form) === 'formations');
             const totalCertsEl = document.getElementById('total-certs');
             const totalTrainingEl = document.getElementById('total-training');
-            const highestLevelEl = document.getElementById('highest-level');
             const yearRangeEl = document.getElementById('certification-year-range');
 
-            if (totalCertsEl) totalCertsEl.textContent = certsOnly.length;
+            if (totalCertsEl) totalCertsEl.textContent = certsOnly.filter(cert => cert.status === 'completed').length;
             if (totalTrainingEl) totalTrainingEl.textContent = trainingOnly.length;
-
-            if (highestLevelEl) {
-                if (certsOnly.length > 0) {
-                    const highestCert = certsOnly[0];
-                    const highestLevelNameKey = highestCert.level.nameKey
-                        ? highestCert.level.nameKey
-                        : `certifications.level.${highestCert.level.label.toLowerCase()}`;
-                    highestLevelEl.textContent = t(highestLevelNameKey, highestCert.level.label);
-                } else {
-                    highestLevelEl.textContent = '-';
-                }
-            }
 
             if (yearRangeEl) {
                 const years = [...certsOnly, ...formationsOnly]
@@ -433,9 +415,6 @@
 
         // Render certifications and formations
         function renderCertifications(filter = 'all') {
-            const container = document.getElementById('certifications-container');
-            container.innerHTML = '';
-
             let items = [];
             
             // Apply main filters first; if the value is not a main filter, treat it as a category.
@@ -452,6 +431,14 @@
                 items = [...certs, ...forms];
             }
 
+            renderCertificationItems(items);
+        }
+
+        function renderCertificationItems(items) {
+            const container = document.getElementById('certifications-container');
+            container.replaceChildren();
+            updateCertificationHeroStats();
+
             if (items.length === 0) {
                 const emptyText = t('certifications.empty', 'No items found for this filter.');
                 container.innerHTML = `
@@ -464,21 +451,61 @@
                 return;
             }
 
-            updateCertificationHeroStats();
+            const certifications = items.filter(item => item.type === 'certification');
+            const earned = certifications.filter(cert => cert.status === 'completed');
+            // Lead with the cloud credential, keeping rank order for the remaining earned badges.
+            earned.sort((a, b) => Number(b.id === 'azure-az900') - Number(a.id === 'azure-az900'));
+            const azurePrep = earned.some(cert => cert.id === 'azure-az900')
+                ? getFormationsByCertification('azure-az900')
+                : [];
+            const groupedPrepIds = new Set(azurePrep.map(formation => formation.id));
+            const groups = [
+                [t('certifications.group.earned', 'Earned certifications'), earned],
+                ...getMainFilterOptions().filter(option => option.kind === 'formation-group').map(option => [
+                    t(option.labelKey, option.fallback),
+                    items.filter(item => item.type === 'formation' && getFormationGroup(item) === option.value && !groupedPrepIds.has(item.id))
+                ]),
+                [t('certifications.group.inProgress', 'Certifications in progress'), certifications.filter(cert => cert.status !== 'completed')]
+            ];
 
-            // Render items
-            items.forEach(item => {
-                if (item.type === 'certification') {
-                    const row = createCertificationRow(item);
+            for (const [label, entries] of groups) {
+                if (!entries.length) continue;
+                const heading = document.createElement('h2');
+                heading.className = 'certification-group-title';
+                heading.textContent = label;
+                container.appendChild(heading);
+                for (const item of entries) {
+                    const row = item.type === 'certification' ? createCertificationRow(item) : createFormationRow(item);
                     container.appendChild(row);
-                } else if (item.type === 'formation') {
-                    const row = createFormationRow(item);
-                    container.appendChild(row);
+                    if (item.id === 'azure-az900' && azurePrep.length) {
+                        container.appendChild(createAzurePrepSection(azurePrep));
+                    }
                 }
-            });
+            }
 
-            // Re-initialize Lucide icons
             safeRenderIcons();
+            updateFormationLogos();
+        }
+
+        function createAzurePrepSection(formations) {
+            const section = document.createElement('section');
+            section.className = 'certification-prep';
+            const heading = document.createElement('h3');
+            heading.id = 'azure-prep-title';
+            heading.textContent = t('certifications.prep.azure', 'AZ-900 exam prep');
+            section.setAttribute('aria-labelledby', heading.id);
+
+            const list = document.createElement('ul');
+            for (const formation of formations) {
+                const item = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + formation.id;
+                link.textContent = t('certifications.prep.' + formation.id, t(formation.nameKey, formation.name));
+                item.appendChild(link);
+                list.appendChild(item);
+            }
+            section.append(heading, list);
+            return section;
         }
 
 	        function createCertificationRow(cert) {
@@ -951,9 +978,6 @@
         }
 
         function renderCertificationsByTypeAndCategory(showCerts, formationGroups, categories) {
-            const container = document.getElementById('certifications-container');
-            container.innerHTML = '';
-
             let items = [];
             
             if (showCerts) {
@@ -970,75 +994,18 @@
                 items.push(...forms);
             }
 
-            if (items.length === 0) {
-                const emptyText = t('certifications.empty', 'No items found for this filter.');
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <i data-lucide="award"></i>
-                        <p>${emptyText}</p>
-                    </div>
-                `;
-                safeRenderIcons();
-                return;
-            }
-
-            updateCertificationHeroStats();
-
-            // Render items
-            items.forEach(item => {
-                if (item.type === 'certification') {
-                    const row = createCertificationRow(item);
-                    container.appendChild(row);
-                } else {
-                    const row = createFormationRow(item);
-                    container.appendChild(row);
-                }
-            });
-
-            safeRenderIcons();
-            updateFormationLogos();
+            renderCertificationItems(items);
         }
 
         function renderCertificationsByMultipleCategories(categories) {
-            const container = document.getElementById('certifications-container');
-            container.innerHTML = '';
-
             const certs = getCertificationsSortedByRank()
                 .filter(cert => categories.includes(cert.category))
                 .map(cert => ({ ...cert, type: 'certification' }));
             const forms = getFormationsSortedByDate()
                 .filter(form => categories.includes(form.category))
                 .map(form => ({ ...form, type: 'formation' }));
-            
-            const items = [...certs, ...forms];
 
-            if (items.length === 0) {
-                const emptyText = t('certifications.empty', 'No items found for this filter.');
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <i data-lucide="award"></i>
-                        <p>${emptyText}</p>
-                    </div>
-                `;
-                safeRenderIcons();
-                return;
-            }
-
-            updateCertificationHeroStats();
-
-            // Render items
-            items.forEach(item => {
-                if (item.type === 'certification') {
-                    const row = createCertificationRow(item);
-                    container.appendChild(row);
-                } else {
-                    const row = createFormationRow(item);
-                    container.appendChild(row);
-                }
-            });
-
-            safeRenderIcons();
-            updateFormationLogos();
+            renderCertificationItems([...certs, ...forms]);
         }
 
         // Flag to prevent hashchange from reopening modal when we're closing it

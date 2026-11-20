@@ -27,11 +27,18 @@
             fr: "Systèmes de virtualisation de serveurs"
         },
         "project.vircl-virtualization.subtitle": {
-            en: "A two-person BTS Cloud Computing project about running more services on less hardware and keeping them available when a server needs maintenance or fails. Andrea and I built and compared working VMware and Proxmox setups across four HP servers, including two three-node clusters.",
-            pt: "Um projeto de dupla do BTS em Cloud Computing sobre executar mais serviços com menos hardware e mantê-los disponíveis quando um servidor precisa de manutenção ou falha. A Andrea e eu construímos e comparamos configurações VMware e Proxmox funcionais em quatro servidores HP, incluindo dois clusters de três nós.",
-            lu: "E Projet vun zwee Persounen am BTS Cloud Computing doriwwer, méi Servicer mat manner Hardware ze bedreiwen an se verfügbar ze halen, wann e Server Maintenance brauch oder ausfält. Andrea an ech hunn funktionéierend VMware- a Proxmox-Ëmfeld op véier HP-Serveren gebaut a verglach, dorënner zwee Cluster mat dräi Noden.",
-            de: "Ein Zweier-Projekt im BTS Cloud Computing darüber, mehr Dienste mit weniger Hardware zu betreiben und verfügbar zu halten, wenn ein Server gewartet werden muss oder ausfällt. Andrea und ich haben funktionierende VMware- und Proxmox-Umgebungen auf vier HP-Servern gebaut und verglichen, darunter zwei Cluster mit je drei Knoten.",
-            fr: "Un projet à deux du BTS en Cloud Computing sur la façon d'exécuter davantage de services avec moins de matériel et de les maintenir disponibles lorsqu'un serveur doit être entretenu ou tombe en panne. Andrea et moi avons construit et comparé des environnements VMware et Proxmox fonctionnels sur quatre serveurs HP, dont deux clusters de trois nœuds."
+            en: "Andrea and I built two working three-node clusters across four physical HP servers. We demonstrated that running virtual machines could move between hosts on both VMware and Proxmox.",
+            pt: "O Andrea e eu montámos dois clusters funcionais de três nós em quatro servidores físicos HP. Demonstrámos que era possível migrar máquinas virtuais em execução entre servidores, tanto no VMware como no Proxmox.",
+            lu: "Den Andrea an ech hunn zwee funktionéierend Cluster mat jee dräi Noden op véier physeschen HP-Serveren opgebaut. Mir hu gewisen, datt lafend virtuell Maschinnen tëscht Hosten migréiere kënnen, souwuel op VMware wéi och op Proxmox.",
+            de: "Andrea und ich bauten auf vier physischen HP-Servern zwei funktionsfähige Cluster mit je drei Knoten auf. Wir zeigten, dass sich laufende virtuelle Maschinen sowohl unter VMware als auch unter Proxmox zwischen Hosts verschieben lassen.",
+            fr: "Andrea et moi avons monté deux clusters fonctionnels de trois nœuds sur quatre serveurs physiques HP. Nous avons montré que des machines virtuelles en cours d’exécution pouvaient migrer entre les hôtes, sur VMware comme sur Proxmox."
+        },
+        "project.vircl-virtualization.contribution": {
+            en: "I led the Proxmox VE setup on HP14, which also hosted a VMware ESXi node as a virtual machine. Andrea and I shared the ESXi setup on HP15.",
+            pt: "Fiquei responsável pela configuração do Proxmox VE no HP14, que também alojou um nó VMware ESXi numa máquina virtual. Dividi com o Andrea a configuração do ESXi no HP15.",
+            lu: "Ech war fir d’Installatioun vu Proxmox VE um HP14 zoustänneg. Op deem Host ass och e VMware-ESXi-Node als virtuell Maschinn gelaf. Den ESXi um HP15 hunn den Andrea an ech zesummen ageriicht.",
+            de: "Ich leitete die Einrichtung von Proxmox VE auf HP14, auf dem auch ein VMware-ESXi-Knoten als virtuelle Maschine lief. ESXi auf HP15 richtete ich gemeinsam mit Andrea ein.",
+            fr: "J’étais responsable de la configuration de Proxmox VE sur HP14, qui hébergeait aussi un nœud VMware ESXi dans une machine virtuelle. Andrea et moi avons configuré ensemble ESXi sur HP15."
         },
 
         "project.vircl-virtualization.glance.hypervisors.label": {

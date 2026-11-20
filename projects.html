@@ -90,7 +90,7 @@
                 <button class="filter-btn" id="category-all-btn">
                     <span data-i18n="projects.filter.all">All</span>
                 </button>
-                <button class="filter-btn" id="category-filter-btn">
+                <button class="filter-btn" id="category-filter-btn" aria-haspopup="dialog" aria-controls="category-filter-modal" aria-expanded="false">
                     <i data-lucide="filter" style="width: 16px; height: 16px;"></i>
                     <span data-i18n="projects.filter.label">Filter</span>
                 </button>
@@ -106,27 +106,27 @@
         </section>
 
         <!-- Category Filter Modal -->
-        <div id="category-filter-modal" class="category-filter-modal" onclick="closeCategoryFilterModal(event)">
-            <div class="category-filter-modal-content" onclick="event.stopPropagation()">
+        <dialog id="category-filter-modal" class="category-filter-modal" aria-labelledby="category-filter-title" onclick="closeCategoryFilterModal(event)">
+            <div class="category-filter-modal-content">
                 <div class="filter-modal-head">
-                    <h3>
+                    <h3 id="category-filter-title">
                         <i data-lucide="filter"></i>
                         <span data-i18n="projects.filter.modal.title">Filter Categories</span>
                     </h3>
-                    <button class="modal-close" onclick="closeCategoryFilterModal()" aria-label="Close filter">
+                    <button type="button" class="modal-close" onclick="closeCategoryFilterModal()" aria-label="Close filter" autofocus>
                         <i data-lucide="x"></i>
                     </button>
                 </div>
                 <div class="filter-quick-actions">
                     <button class="filter-link-btn" onclick="clearCategoryFilters()" data-i18n="projects.filter.modal.clear">Clear all</button>
-                    <span class="filter-result-count" id="filter-result-count">0 selected</span>
+                    <span class="filter-result-count" id="filter-result-count" role="status">0 selected</span>
                 </div>
                 <div id="category-filter-options" class="category-filter-options"></div>
                 <div class="filter-modal-footer">
                     <button onclick="applyCategoryFilter()" class="filter-show-btn" data-i18n="projects.filter.modal.showResults">Show results</button>
                 </div>
             </div>
-        </div>
+        </dialog>
 
         <!-- Modal for Project Details -->
         <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-name">
@@ -158,29 +158,12 @@
             // Re-render when language changes
             document.querySelectorAll('.lang-dropdown button[data-lang]').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // Re-render featured + chip row + projects with new language
                     setTimeout(() => {
                         renderCategoryChips();
                         renderFeatured();
+                        updateFilterButtonState();
+                        rerenderCurrentView();
                     }, 50);
-                    // Get filter from URL or default to 'all'
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const categoryParam = urlParams.get('category');
-                    if (categoryParam) {
-                        const categories = getCategories();
-                        const matchingCategory = categories.find(cat => 
-                            cat.toLowerCase().replace(/\s+/g, '') === categoryParam.toLowerCase()
-                        );
-                        if (matchingCategory) {
-                            selectedCategories = [matchingCategory];
-                            updateFilterButtonState();
-                            renderProjects(matchingCategory);
-                        } else {
-                            renderProjects('all');
-                        }
-                    } else {
-                        renderProjects('all');
-                    }
                 });
             });
         });
@@ -574,8 +557,77 @@
         
         // Category filter state
         let selectedCategories = [];
-        let allCategories = [];
         let currentSort = 'default'; // 'default' = curated priority order, 'recent' = newest activity first
+
+        function categorySlug(category) {
+            return category.toLowerCase().replace(/\s+/g, '');
+        }
+
+        function readProjectListState() {
+            const params = new URLSearchParams(location.search);
+            const categories = new Set(params.getAll('category').map(categorySlug));
+            selectedCategories = getCategories().filter(category => categories.has(categorySlug(category)));
+            currentSort = params.get('sort') === 'recent' ? 'recent' : 'default';
+        }
+
+        function writeProjectListState(params) {
+            params.delete('category');
+            selectedCategories.forEach(category => params.append('category', categorySlug(category)));
+            params.delete('sort');
+            if (currentSort === 'recent') params.set('sort', currentSort);
+        }
+
+        function updateProjectList() {
+            const url = new URL(location.href);
+            writeProjectListState(url.searchParams);
+            url.searchParams.delete('project');
+            history.replaceState({ ...history.state, projectListCard: null }, '', url);
+            updateFilterButtonState();
+            rerenderCurrentView();
+        }
+
+        function getCaseStudyUrl(link) {
+            if (!link) return null;
+            const url = new URL(link, location.origin);
+            return url.origin === location.origin && url.pathname.startsWith('/projects/project-') ? url : null;
+        }
+
+        function getProjectLink(project, returnProject = project.id) {
+            const url = getCaseStudyUrl(project.link);
+            if (!url) return project.link;
+            writeProjectListState(url.searchParams);
+            url.searchParams.set('project', returnProject);
+            return url.pathname + url.search + url.hash;
+        }
+
+        document.addEventListener('click', event => {
+            if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+            const link = event.target.closest('a[data-case-study-link]');
+            if (!link) return;
+            const projectId = new URL(link.href).searchParams.get('project');
+            if (!projectId) return;
+            history.replaceState({ ...history.state, projectListCard: projectId }, '');
+            history.scrollRestoration = 'manual';
+        });
+
+        function restoreProjectCard() {
+            const projectId = history.state?.projectListCard || new URLSearchParams(location.search).get('project');
+            if (!projectId) return;
+            const card = document.querySelector(`#projects-container [data-project-id="${CSS.escape(projectId)}"]`);
+            if (!card) return;
+
+            closeProjectModal();
+            requestAnimationFrame(() => {
+                const control = card.querySelector('.project-card-case-link') || card;
+                control.focus({ preventScroll: true });
+                card.scrollIntoView({ block: 'center', behavior: 'instant' });
+                history.scrollRestoration = 'auto';
+            });
+        }
+
+        window.addEventListener('pageshow', event => {
+            if (event.persisted) restoreProjectCard();
+        });
 
         // Most recent activity date for a project (completion if present, else start).
         function projectRecencyDate(p) {
@@ -631,9 +683,7 @@
                 allBtn.onclick = function() {
                     // Clear all filters (empty array = show all)
                     selectedCategories = [];
-                    updateFilterButtonState();
-                    if (typeof updateChipActiveState === 'function') updateChipActiveState();
-                    renderProjects('all');
+                    updateProjectList();
 
                     // Update modal checkboxes if modal is open
                     const checkboxes = document.querySelectorAll('#category-filter-options input[type="checkbox"]');
@@ -647,8 +697,7 @@
             if (sortBtn) {
                 sortBtn.onclick = function() {
                     currentSort = currentSort === 'recent' ? 'default' : 'recent';
-                    updateFilterButtonState();
-                    rerenderCurrentView();
+                    updateProjectList();
                 };
             }
 
@@ -668,12 +717,6 @@
         
         function setupCategoryFilterModal() {
             const categories = getCategories();
-            allCategories = categories;
-            
-            // Initialize: no categories selected (show all by default)
-            if (selectedCategories.length === 0) {
-                selectedCategories = [];
-            }
             
             const modal = document.getElementById('category-filter-modal');
             const optionsContainer = document.getElementById('category-filter-options');
@@ -732,15 +775,16 @@
             });
         }
         
+        const categoryFilterDialog = document.getElementById('category-filter-modal');
+        const categoryFilterTrigger = document.getElementById('category-filter-btn');
+
         function openCategoryFilterModal() {
-            const modal = document.getElementById('category-filter-modal');
-            if (modal) {
-                // Update checkboxes to match current selection
-                setupCategoryFilterModal();
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                updateFilterResultCount();
-            }
+            if (categoryFilterDialog.open) return;
+            setupCategoryFilterModal();
+            updateFilterResultCount();
+            categoryFilterDialog.querySelector('.modal-close').setAttribute('aria-label', t('projects.filter.modal.close', 'Close filter'));
+            categoryFilterDialog.showModal();
+            categoryFilterTrigger.setAttribute('aria-expanded', 'true');
         }
         
         // Instant apply + live counter when toggling filters in the modal
@@ -751,23 +795,31 @@
             }
         });
         
-        // Close filter modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const modal = document.getElementById('category-filter-modal');
-                if (modal && modal.classList.contains('active')) {
-                    closeCategoryFilterModal();
-                }
+        categoryFilterDialog.addEventListener('keydown', event => {
+            // Keep page shortcuts out of the modal and leave Escape to the native dialog.
+            event.stopPropagation();
+            if (event.key !== 'Tab') return;
+
+            const controls = categoryFilterDialog.querySelectorAll('button:not(:disabled), input:not(:disabled)');
+            const first = controls[0];
+            const last = controls[controls.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
             }
+        });
+
+        categoryFilterDialog.addEventListener('close', () => {
+            categoryFilterTrigger.setAttribute('aria-expanded', 'false');
+            categoryFilterTrigger.focus({ preventScroll: true });
         });
         
         function closeCategoryFilterModal(event) {
             if (event && event.target !== event.currentTarget) return;
-            const modal = document.getElementById('category-filter-modal');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+            categoryFilterDialog.close();
         }
         
         function applyCategoryFilter(closeModal = true) {
@@ -781,19 +833,7 @@
                 }
             });
             
-            // Filter and render projects
-            if (selectedCategories.length === 0) {
-                // No filters = show all
-                renderProjects('all');
-            } else if (selectedCategories.length === 1) {
-                renderProjects(selectedCategories[0]);
-            } else {
-                // Multiple categories selected - show projects that match any selected category
-                renderProjectsByMultipleCategories(selectedCategories);
-            }
-            
-            updateFilterButtonState();
-            if (typeof updateChipActiveState === 'function') updateChipActiveState();
+            updateProjectList();
             if (closeModal) closeCategoryFilterModal();
         }
         
@@ -990,8 +1030,10 @@
                 `;
             }
             if (project.link) {
+                const originCard = lastProjectModalTrigger?.closest('[data-project-id]');
+                const link = getProjectLink(project, originCard?.dataset.projectId);
                 linkHTML += `
-                    <a href="${project.link}" class="btn primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <a href="${link}" data-case-study-link class="btn primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
                         <span data-i18n="projects.modal.viewProject">View Project</span>
                         <i data-lucide="external-link"></i>
                     </a>
@@ -1036,7 +1078,7 @@
 
         // Close modal using event delegation
         document.addEventListener('click', (e) => {
-            if (e.target.closest('.modal-close')) {
+            if (e.target.closest('#project-modal .modal-close')) {
                 e.preventDefault();
                 e.stopPropagation();
                 closeProjectModal();
@@ -1119,6 +1161,7 @@
             const projectDesc = project.descriptionKey
                 ? t(project.descriptionKey, project.description)
                 : (project.description || '');
+            const cardDescription = t('projects.card.' + project.id, projectDesc);
 
             const primaryCat = (project.categories && project.categories[0]) || project.category || '';
             const primaryKey = (project.categoryKeys && project.categoryKeys[0]) || project.categoryKey;
@@ -1145,16 +1188,20 @@
 
             const dateLabel = formatDateLabel(project);
 
-            // Cards are informational; their native controls own all navigation and modal behavior.
+            const hasCaseStudy = Boolean(getCaseStudyUrl(project.link));
             const actions = [];
             const detailsText = t('projects.viewDetails', 'View Details');
             const githubText = t('projects.githubRepository', 'GitHub repository');
             const caseStudyText = t('projects.caseStudy', 'Case study');
+            const title = hasCaseStudy
+                ? `<a href="${getProjectLink(project)}" class="project-card-case-link" data-case-study-link aria-label="${caseStudyText}: ${projectName}">${projectName}</a>`
+                : projectName;
             if (project.githubUrl) {
-                actions.push(`<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-action-icon" title="${githubText}" aria-label="${githubText}: ${projectName}"><i data-lucide="github"></i></a>`);
+                actions.push(`<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-action-icon project-github-link" aria-label="${githubText}: ${projectName}"><i data-lucide="github" aria-hidden="true"></i><span>GitHub</span></a>`);
             }
-            if (project.link) {
-                actions.push(`<a href="${project.link}" class="project-action-icon" title="${caseStudyText}" aria-label="${caseStudyText}: ${projectName}"><i data-lucide="external-link"></i></a>`);
+            if (project.link && !hasCaseStudy) {
+                const viewProjectText = t('projects.modal.viewProject', 'View Project');
+                actions.push(`<a href="${project.link}" class="project-action-icon" title="${viewProjectText}" aria-label="${viewProjectText}: ${projectName}"><i data-lucide="external-link"></i></a>`);
             }
             actions.push(`<button type="button" class="project-action-icon project-details-button" title="${detailsText}" aria-label="${detailsText}: ${projectName}"><i data-lucide="info"></i></button>`);
 
@@ -1165,8 +1212,8 @@
                 </div>
                 <div class="featured-card-body">
                     <div class="featured-cat">${catLabel}${dateLabel ? ` · <span class="featured-date">${dateLabel}</span>` : ''}</div>
-                    <h3 class="featured-title">${projectName}</h3>
-                    <p class="featured-desc">${projectDesc}</p>
+                    <h3 class="featured-title">${title}</h3>
+                    <p class="featured-desc">${cardDescription}</p>
                 </div>
                 <div class="featured-card-foot">
                     <div class="featured-tags">${tagHTML}</div>
@@ -1174,25 +1221,20 @@
                 </div>
             `;
 
-            // Keep the card itself a focusable article instead of assigning a
-            // button role around nested links/buttons. Enter and Space provide
-            // the expected keyboard equivalent for the non-action surface.
-            card.tabIndex = 0;
-            card.setAttribute('aria-label', `${projectName} - ${detailsText}`);
-
-            card.addEventListener('click', (event) => {
-                const target = event.target instanceof Element
-                    ? event.target.closest('a, button, [role="button"]')
-                    : null;
-                if (target) return;
-                showProjectModal(project.id, card);
-            });
-            card.addEventListener('keydown', (event) => {
-                if (event.target !== card) return;
-                if (event.key !== 'Enter' && event.key !== ' ') return;
-                event.preventDefault();
-                showProjectModal(project.id, card);
-            });
+            // A case-study card uses its native title link. Cards without one still open Details.
+            if (!hasCaseStudy) {
+                card.tabIndex = 0;
+                card.setAttribute('aria-label', `${projectName} - ${detailsText}`);
+                card.addEventListener('click', (event) => {
+                    if (event.target.closest('a, button')) return;
+                    showProjectModal(project.id, card);
+                });
+                card.addEventListener('keydown', (event) => {
+                    if (event.target !== card || (event.key !== 'Enter' && event.key !== ' ')) return;
+                    event.preventDefault();
+                    showProjectModal(project.id, card);
+                });
+            }
 
             const detailsButton = card.querySelector('.project-details-button');
             if (detailsButton) {
@@ -1310,36 +1352,17 @@
         function renderCategoryChips() {
             // Chip row was removed; the All + Filter modal is the only filter UI.
         }
-        function updateChipActiveState() { /* no-op */ }
 
         // Wait for projects-data.js to load before initial render
         function waitForProjectsData() {
             if (typeof getAllProjects !== 'undefined' && typeof PROJECTS !== 'undefined') {
                 // Data is loaded, setup filters and render projects
+                readProjectListState();
                 setupFilters();
                 renderCategoryChips();
                 renderFeatured();
-                
-                // Check for category parameter in URL
-                const urlParams = new URLSearchParams(window.location.search);
-                const categoryParam = urlParams.get('category');
-                if (categoryParam) {
-                    // Find matching category (case-insensitive)
-                    const categories = getCategories();
-                    const matchingCategory = categories.find(cat => 
-                        cat.toLowerCase().replace(/\s+/g, '') === categoryParam.toLowerCase()
-                    );
-                    if (matchingCategory) {
-                        // Update selected categories to match URL parameter
-                        selectedCategories = [matchingCategory];
-                        updateFilterButtonState();
-                        renderProjects(matchingCategory);
-                    } else {
-                        renderProjects('all');
-                    }
-                } else {
-                    renderProjects('all');
-                }
+                rerenderCurrentView();
+                restoreProjectCard();
                 
                 // Initialize Lucide icons
                 if (typeof renderIcons !== 'undefined') {

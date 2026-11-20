@@ -402,17 +402,18 @@
     <div id="search-container"></div>
     <div id="navbar-container"></div>
 
-    <main class="container" style="padding-top: 100px;">
-        <a href="../projects" class="back-link">
+    <main class="container project-case-study">
+        <a href="../projects" class="back-link" data-project-list-back>
             <i data-lucide="arrow-left"></i>
-            <span data-i18n="project.backToPortfolio">Back to Portfolio</span>
+            <span data-i18n="project.allProjects">All projects</span>
         </a>
 
         <section class="project-hero">
             <div class="project-title-group">
                 <div class="badge" data-i18n="project.assemblash.badge">RELEASED · V1.13.0</div>
                 <h1 class="assemblash-title"><img src="../assets/img/projects/assemblash/assemblash-mark.svg" width="64" height="64" alt="Assemblash logo"> <span>Assemblash</span></h1>
-                <p class="subtitle" data-i18n="project.assemblash.subtitle">A local-first visual document engine where people and AI agents can work on the same editable document.</p>
+                <p class="subtitle" data-i18n="project.assemblash.subtitle">An AI agent can draft a design that you can open and edit locally. Assemblash is available as open-source software for Windows, macOS, and Linux.</p>
+                <p data-i18n="project.assemblash.contribution">I built the Rust engine that powers the editor, command line, and agent tools. They share one edit history, so I can review and undo changes made by an agent.</p>
                 <p style="margin-top: 1rem;">
                     <a class="btn primary assemblash-github" href="https://github.com/VidGuiCode/assemblash" target="_blank" rel="noopener noreferrer">
                         <i data-lucide="github"></i>
@@ -580,8 +581,8 @@
                     </div>
 
                     <figure style="margin: 2rem 0;">
-                        <a class="assemblash-figure-link" href="../assets/img/projects/assemblash/assemblash-reveal.webp" target="_blank" rel="noopener noreferrer" onclick="openImageModal('../assets/img/projects/assemblash/assemblash-reveal.webp', 'Assemblash layered mark surrounded by layer, grid, pen and sparkle icons, composed in Assemblash'); return false;" data-i18n-title="project.assemblash.figure.open" title="Open the Assemblash project graphic" aria-label="Open the Assemblash project graphic">
-                            <img src="../assets/img/projects/assemblash/assemblash-reveal.webp" width="1600" height="900" loading="lazy" alt="Assemblash layered mark surrounded by layer, grid, pen and sparkle icons, composed in Assemblash" style="display: block; width: 100%; height: auto; border: 1px solid var(--border-color);">
+                        <a class="assemblash-figure-link project-image-wrapper" href="../assets/img/projects/assemblash/assemblash-reveal.webp" target="_blank" rel="noopener noreferrer" data-i18n-title="project.assemblash.figure.open" title="Open the Assemblash project graphic" aria-label="Open the Assemblash project graphic">
+                            <img class="project-image" src="../assets/img/projects/assemblash/assemblash-reveal.webp" width="1600" height="900" loading="lazy" alt="Assemblash layered mark surrounded by layer, grid, pen and sparkle icons, composed in Assemblash" style="display: block; width: 100%; height: auto; border: 1px solid var(--border-color);">
                         </a>
                         <figcaption style="margin-top: 0.75rem; color: var(--text-secondary);" data-i18n="project.assemblash.figure.caption">This project graphic was composed in Assemblash. I keep the editable project here as a real example.</figcaption>
                     </figure>
@@ -658,8 +659,8 @@
                         </div>
 
                         <figure style="margin: 2rem 0;">
-                            <a class="assemblash-figure-link" href="../assets/img/projects/assemblash/assemblash-interfaces.webp" target="_blank" rel="noopener noreferrer" onclick="openImageModal('../assets/img/projects/assemblash/assemblash-interfaces.webp', 'Assemblash card listing the editor, CLI, HTTP API, Rust API and MCP interfaces'); return false;" data-i18n-title="project.assemblash.figure.interfaces.open" title="Open the Assemblash interfaces graphic" aria-label="Open the Assemblash interfaces graphic">
-                                <img src="../assets/img/projects/assemblash/assemblash-interfaces.webp" width="1600" height="900" loading="lazy" alt="Assemblash card listing the editor, CLI, HTTP API, Rust API and MCP interfaces" style="display: block; width: 100%; height: auto; border: 1px solid var(--border-color);">
+                            <a class="assemblash-figure-link project-image-wrapper" href="../assets/img/projects/assemblash/assemblash-interfaces.webp" target="_blank" rel="noopener noreferrer" data-i18n-title="project.assemblash.figure.interfaces.open" title="Open the Assemblash interfaces graphic" aria-label="Open the Assemblash interfaces graphic">
+                                <img class="project-image" src="../assets/img/projects/assemblash/assemblash-interfaces.webp" width="1600" height="900" loading="lazy" alt="Assemblash card listing the editor, CLI, HTTP API, Rust API and MCP interfaces" style="display: block; width: 100%; height: auto; border: 1px solid var(--border-color);">
                             </a>
                             <figcaption style="margin-top: 0.75rem; color: var(--text-secondary);" data-i18n="project.assemblash.figure.interfaces.caption">The five interfaces, drawn as an Assemblash document and exported by the deterministic renderer, the same path as any other export.</figcaption>
                         </figure>
@@ -746,12 +747,6 @@
             <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
         </footer>
     </main>
-
-    <!-- Image Modal -->
-    <div id="image-modal" class="image-modal" onclick="closeImageModal()">
-        <button class="image-modal-close" onclick="closeImageModal(event)" aria-label="Close image">&times;</button>
-        <img id="modal-image" class="image-modal-content" src="" alt="">
-    </div>
 
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/project-page-init.js" defer></script>

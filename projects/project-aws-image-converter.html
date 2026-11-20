@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
+            } catch (_) {}
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
+    <title>AWS Image Converter | VidGuiCode</title>
+    <meta name="description" content="An AWS Academy case study on image conversion with Flask on EC2, private S3, AWS Lambda, EventBridge and CloudWatch.">
+    <link rel="canonical" href="https://vidguicode.github.io/projects/project-aws-image-converter">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vidguicode.github.io/projects/project-aws-image-converter">
+    <meta property="og:title" content="AWS Image Converter | VidGuiCode">
+    <meta property="og:description" content="An AWS Academy case study on image conversion with Flask on EC2, private S3, AWS Lambda, EventBridge and CloudWatch.">
+    <meta property="og:image" content="https://vidguicode.github.io/assets/img/projects/aws-image-converter/architecture.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logos/vidguicode-favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/img/logos/apple-touch-icon.png">
+    <link rel="stylesheet" href="../assets/css/flag-icons-minimal.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <script src="../assets/js/icons.js" defer></script>
+    <script src="../assets/js/fuse.min.js"></script>
+    <script src="../assets/js/translations/core.js"></script>
+    <script src="../assets/js/translations/project-aws-image-converter.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/project-view.js" defer></script>
+    <script src="../assets/js/projects-data.js"></script>
+    <script src="../assets/js/certifications-data.js"></script>
+    <script src="../assets/js/certifications-techstack.js"></script>
+    <script src="../assets/js/search.js"></script>
+
+    <style>
+        .aws-case-study .project-glance h2, .aws-section h2 { margin-bottom: 0.75rem; }
+        .aws-section, .aws-sidebar-card { height: auto; }
+        .aws-section + .aws-section, .aws-technical, .aws-technical + .aws-section { margin-top: 1.5rem; }
+        .aws-section p + p, .aws-section .does-grid { margin-top: 1rem; }
+        .aws-section .does-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+        #my-contribution { scroll-margin-top: 105px; }
+        .aws-contribution-link { align-self: flex-start; margin: 1rem 0 0; }
+
+        .aws-flow {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.7rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .aws-flow .arch-unit { position: relative; }
+        .aws-flow .arch-unit + .arch-unit::before {
+            content: "→" / "";
+            position: absolute;
+            right: calc(100% + 0.38rem);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+        .aws-figure { margin: 1.25rem 0 0; }
+        .aws-figure .project-image-wrapper { display: block; }
+        .aws-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+        }
+        .aws-portal { max-width: 560px; }
+        .aws-figure figcaption { margin-top: 0.65rem; color: var(--text-secondary); font-size: 0.875rem; }
+        .aws-result { margin-top: 1.5rem; }
+        .aws-result h3 { margin-bottom: 0.4rem; }
+        .aws-verification-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+            align-items: start;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+        .aws-verification-images .aws-figure { margin: 0; }
+        .aws-sidebar-card > h2:not(:first-child) { margin-top: 1.5rem; }
+        .aws-sidebar-card h2 { font-size: var(--fs-h3); }
+        .aws-sidebar-card .tech-stack-list, .aws-sidebar-card .project-certifications { margin-top: 0.75rem; }
+        .aws-case-study footer { margin-top: 4rem; }
+
+        @media (max-width: 768px) {
+            .aws-flow { grid-template-columns: minmax(0, 1fr); gap: 1.35rem; }
+            .aws-flow .arch-unit + .arch-unit::before {
+                content: "↓" / "";
+                top: auto;
+                right: auto;
+                left: 0.85rem;
+                bottom: calc(100% + 0.05rem);
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body data-view="overview">
+    <div class="grid-background"></div>
+    <div id="search-container"></div>
+    <div id="navbar-container"></div>
+
+    <main class="container project-case-study aws-case-study">
+        <a href="../projects" class="back-link" data-project-list-back>
+            <i data-lucide="arrow-left" aria-hidden="true"></i>
+            <span data-i18n="project.allProjects">All projects</span>
+        </a>
+
+        <header class="project-hero">
+            <div class="project-title-group">
+                <div class="badge">AWS Academy &middot; BTS Cloud Computing</div>
+                <h1 data-i18n="projects.aws-image-converter.title">AWS Image Converter</h1>
+                <p class="subtitle" data-i18n="project.aws-image-converter.subtitle">Our team built a portal that converts and resizes images for the web, previews both versions, and provides a temporary download link. In one lab test, a 113.2 KiB JPEG became a 9.6 KiB WebP.</p>
+                <p data-i18n="project.aws-image-converter.contribution">I built the Flask portal and the Python Lambda worker that validates, resizes, and converts uploads. I connected the S3 trigger and set up temporary-file cleanup and CloudWatch monitoring.</p>
+                <a href="#my-contribution" class="back-link aws-contribution-link">
+                    <i data-lucide="arrow-down" aria-hidden="true"></i>
+                    <span data-i18n="project.aws-image-converter.role.title">My contribution</span>
+                </a>
+            </div>
+        </header>
+
+        <section class="project-glance" aria-labelledby="aws-flow-title">
+            <div class="view-switch-row">
+                <div class="view-toggle" role="group" aria-labelledby="project-view-label">
+                    <button type="button" data-view-btn="overview" data-i18n="project.view.overview" aria-pressed="true">Overview</button>
+                    <button type="button" data-view-btn="technical" data-i18n="project.view.technical" aria-pressed="false">Technical</button>
+                </div>
+                <div id="project-view-label">
+                    <span class="view-hint plain-only" data-i18n="project.view.hint.overview">Plain-English view, built for everyone</span>
+                    <span class="view-hint tech-only" data-i18n="project.view.hint.technical">Full technical detail</span>
+                </div>
+            </div>
+
+            <div class="glance-grid">
+                <div class="glance-stat">
+                    <span class="glance-led" aria-hidden="true"></span>
+                    <div class="glance-num">91.6%</div>
+                    <div class="glance-label" data-i18n="project.aws-image-converter.stats.reduction">smaller in the sample JPEG → WebP conversion</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led" aria-hidden="true"></span>
+                    <div class="glance-num">≈ 5 s</div>
+                    <div class="glance-label" data-i18n="project.aws-image-converter.stats.ready">from upload to status manifest in the first measured job</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led" aria-hidden="true"></span>
+                    <div class="glance-num">53/53</div>
+                    <div class="glance-label" data-i18n="project.aws-image-converter.stats.checks">local checks passed across the converter, portal and cleanup</div>
+                </div>
+                <div class="glance-stat">
+                    <span class="glance-led" aria-hidden="true"></span>
+                    <div class="glance-num">5 min</div>
+                    <div class="glance-label" data-i18n="project.aws-image-converter.stats.link">validity of a signed download link</div>
+                </div>
+            </div>
+
+            <h2 id="aws-flow-title" data-i18n="project.aws-image-converter.flow.title">How an image moves through AWS</h2>
+            <div class="arch-diagram">
+                <div class="arch-strip">
+                    <span class="led led-g" aria-hidden="true"></span>
+                    <span class="led led-a" aria-hidden="true"></span>
+                    <span class="led led-d" aria-hidden="true"></span>
+                    <span class="arch-strip-label" data-i18n="project.aws-image-converter.flow.label">Upload to download</span>
+                </div>
+                <div class="arch-body">
+                    <ol class="aws-flow" role="list">
+                        <li class="arch-unit">
+                            <div class="u-name"><span class="arch-led" aria-hidden="true"></span><span data-i18n="project.aws-image-converter.flow.portal">Flask portal on EC2</span></div>
+                        </li>
+                        <li class="arch-unit">
+                            <div class="u-name"><span class="arch-led" aria-hidden="true"></span><span data-i18n="project.aws-image-converter.flow.input">Private S3 input</span></div>
+                        </li>
+                        <li class="arch-unit">
+                            <div class="u-name"><span class="arch-led" aria-hidden="true"></span><span data-i18n="project.aws-image-converter.flow.converter">Lambda converter</span></div>
+                        </li>
+                        <li class="arch-unit">
+                            <div class="u-name"><span class="arch-led" aria-hidden="true"></span><span data-i18n="project.aws-image-converter.flow.output">Private S3 results</span></div>
+                        </li>
+                    </ol>
+                    <p class="arch-note" data-i18n="project.aws-image-converter.flow.note">S3 starts the converter when the original arrives. The browser downloads the result directly from S3 over HTTPS. EventBridge schedules cleanup, and CloudWatch tracks jobs and failures.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="project-meta-grid">
+            <article>
+                <section class="card aws-section">
+                    <h2 data-i18n="project.aws-image-converter.overview.title">From upload to web-ready image</h2>
+                    <p data-i18n="project.aws-image-converter.overview.body">We built the portal for a fictional school communications team preparing images for its website and newsletter. Staff upload one JPEG or PNG, choose JPEG, PNG or WebP as the output, and can cap the width at 1280 pixels. The portal shows both versions, their dimensions and file sizes before download.</p>
+                    <figure class="aws-figure aws-portal">
+                        <a href="../assets/img/projects/aws-image-converter/portal.webp" class="project-image-wrapper" aria-labelledby="aws-portal-caption">
+                            <img src="../assets/img/projects/aws-image-converter/portal.webp" width="560" height="590" class="project-image" loading="lazy" alt="">
+                        </a>
+                        <figcaption id="aws-portal-caption" data-i18n="project.aws-image-converter.portal.caption">Lab portal showing the original JPEG beside the resized WebP.</figcaption>
+                    </figure>
+                    <div class="aws-result">
+                        <h3 data-i18n="project.aws-image-converter.result.title">One measured conversion</h3>
+                        <p data-i18n="project.aws-image-converter.result.body">In the lab, converting a 2400 × 1600 JPEG to a 1280 × 853 WebP reduced the file from 113.2 KiB to 9.6 KiB, a 91.6% reduction for that sample. The first measured job reported about 1 second of Lambda processing, with the result manifest available about 5 seconds after upload.</p>
+                    </div>
+                </section>
+
+                <section class="card aws-section" id="my-contribution" aria-labelledby="aws-contribution-title">
+                    <h2 id="aws-contribution-title" data-i18n="project.aws-image-converter.role.title">My contribution</h2>
+                    <div class="does-grid">
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="code-2" aria-hidden="true"></i></div>
+                            <h3 data-i18n="project.aws-image-converter.role.app.title">Portal and converter</h3>
+                            <p data-i18n="project.aws-image-converter.role.app.body">I built the Flask upload, preview and download experience and the Python Lambda worker for validation, conversion, resizing and metadata removal.</p>
+                        </div>
+                        <div class="does-card">
+                            <div class="does-icon"><i data-lucide="cloud-cog" aria-hidden="true"></i></div>
+                            <h3 data-i18n="project.aws-image-converter.role.ops.title">AWS integration and verification</h3>
+                            <p data-i18n="project.aws-image-converter.role.ops.body">I wired the S3 trigger, implemented temporary-file cleanup, configured CloudWatch monitoring, and wrote the AWS CLI scripts for deployment, verification and teardown. I also produced the architecture diagrams and technical report.</p>
+                        </div>
+                    </div>
+                    <p data-i18n="project.aws-image-converter.role.team">Marios led the S3 data protection, network security and access tests. We deployed, tested and presented the system together.</p>
+                </section>
+
+                <div class="tech-only aws-technical">
+                    <section class="card aws-section">
+                        <h2 data-i18n="project.aws-image-converter.architecture.title">Event-driven architecture</h2>
+                        <p data-i18n="project.aws-image-converter.architecture.body">The Flask portal on EC2 writes the original to a private S3 input bucket. An ObjectCreated event invokes the Python Lambda worker, which validates the image, applies EXIF orientation, converts it with Pillow, optionally resizes it and strips metadata. A separate private bucket holds the result and status manifest. The portal polls for status and returns a five-minute presigned link for a direct HTTPS download from S3.</p>
+                        <figure class="aws-figure">
+                            <a href="../assets/img/projects/aws-image-converter/architecture.webp" class="project-image-wrapper" aria-labelledby="aws-architecture-caption">
+                                <img src="../assets/img/projects/aws-image-converter/architecture.webp" width="2400" height="1370" class="project-image" loading="lazy" alt="">
+                            </a>
+                            <figcaption id="aws-architecture-caption" data-i18n="project.aws-image-converter.architecture.caption">Deployed lab architecture, including the upload trigger, signed download, scheduled cleanup and monitoring.</figcaption>
+                        </figure>
+                    </section>
+                    <section class="card aws-section">
+                        <h2 data-i18n="project.aws-image-converter.design.title">Why we split the portal and worker</h2>
+                        <p data-i18n="project.aws-image-converter.design.body">EC2 gave the team a web interface and a security-group boundary to test. S3 events moved image processing out of the web request, so Lambda could run per upload while the portal polled a small status file. Separate input and output buckets kept converted files from triggering another job.</p>
+                    </section>
+                    <section class="card aws-section">
+                        <h2 data-i18n="project.aws-image-converter.operations.title">Access, cleanup and monitoring</h2>
+                        <p data-i18n="project.aws-image-converter.operations.body">Both S3 buckets blocked public access, encrypted objects at rest and required HTTPS. CloudWatch recorded structured job logs and had separate alarms for recorded job failures and Lambda errors. A page refresh removed the job files in testing. EventBridge was configured to run cleanup every ten minutes for files older than 30 minutes, with a one-day S3 lifecycle rule as a fallback.</p>
+                        <figure class="aws-figure">
+                            <a href="../assets/img/projects/aws-image-converter/cloudwatch-alarms.webp" class="project-image-wrapper" aria-labelledby="aws-monitoring-caption">
+                                <img src="../assets/img/projects/aws-image-converter/cloudwatch-alarms.webp" width="1160" height="200" class="project-image" loading="lazy" alt="">
+                            </a>
+                            <figcaption id="aws-monitoring-caption" data-i18n="project.aws-image-converter.monitoring.caption">CloudWatch after deployment, showing the configured Lambda error and conversion-failure alarms.</figcaption>
+                        </figure>
+                    </section>
+                    <section class="card aws-section">
+                        <h2 data-i18n="project.aws-image-converter.deployment.title">Deployment and cost</h2>
+                        <p data-i18n="project.aws-image-converter.deployment.body">We created the S3 buckets, notification and portal security group in the AWS console. Bash scripts handled Lambda packaging, monitoring, the scheduled sweep and the EC2 portal. For continuous operation, the report estimated about $12.85 per month at the time of the lab, mostly driven by EC2, its public IPv4 address and its disk.</p>
+                    </section>
+                    <section class="card aws-section">
+                        <h2 data-i18n="project.aws-image-converter.validation.title">What the lab verified</h2>
+                        <p data-i18n="project.aws-image-converter.validation.body">We verified the upload trigger, portal downloads, recovery after invalid input, denial of anonymous S3 requests, and denial of portal access from outside the IP allowlist. All six format combinations were exercised locally. The AWS deployment combined scripts and console setup, and the scheduled deletion was configured but remained unobserved during the lab run.</p>
+                        <p data-i18n="project.aws-image-converter.limits.body">The lab portal used HTTP and the existing Learner Lab roles. We removed the lab resources after the demo.</p>
+                        <div class="aws-verification-images">
+                            <figure class="aws-figure">
+                                <a href="../assets/img/projects/aws-image-converter/s3-job-output.webp" class="project-image-wrapper" aria-labelledby="aws-output-caption">
+                                    <img src="../assets/img/projects/aws-image-converter/s3-job-output.webp" width="1300" height="594" class="project-image" loading="lazy" alt="">
+                                </a>
+                                <figcaption id="aws-output-caption" data-i18n="project.aws-image-converter.validation.output.caption">S3 stored the converted WebP and a separate JSON status file for job 31c6d6fa.</figcaption>
+                            </figure>
+                            <figure class="aws-figure">
+                                <a href="../assets/img/projects/aws-image-converter/cloudwatch-job-log.webp" class="project-image-wrapper" aria-labelledby="aws-job-log-caption">
+                                    <img src="../assets/img/projects/aws-image-converter/cloudwatch-job-log.webp" width="425" height="200" class="project-image" loading="lazy" alt="">
+                                </a>
+                                <figcaption id="aws-job-log-caption" data-i18n="project.aws-image-converter.validation.log.caption">CloudWatch recorded the same job as successful, with 9,788 output bytes and 1,008 ms of processing.</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+                    <section class="card aws-section">
+                        <h2 data-i18n="project.aws-image-converter.lessons.title">What I learned</h2>
+                        <p data-i18n="project.aws-image-converter.lessons.body">When the Learner Lab session expired mid-test, a check reported a missing bucket. AWS calls to unrelated services also failed, which pointed to expired session credentials. Restarting the lab restored access to the existing resources. I would ship and test the first upload-to-download path earlier and surface the original AWS error in the check script.</p>
+                    </section>
+                    <section class="card aws-section">
+                        <h2 data-i18n="project.aws-image-converter.next.title">What I would change for production</h2>
+                        <p data-i18n="project.aws-image-converter.next.body">I would add HTTPS to the portal, give the portal and worker separate least-privilege IAM roles, and use an automated deployment that creates the full stack. I would also run a timed end-to-end cleanup test to verify that job files expire even when the browser cannot request deletion.</p>
+                    </section>
+                </div>
+                <section class="card aws-section" aria-labelledby="aws-downloads-title">
+                    <h2 id="aws-downloads-title" data-i18n="project.aws-image-converter.assets.title">Project downloads</h2>
+                    <div class="asset-card" data-asset-icon="file-text">
+                        <h3>
+                            <span data-i18n="project.aws-image-converter.assets.documentation.title">Technical documentation</span>
+                        </h3>
+                        <p data-i18n="project.aws-image-converter.assets.documentation.desc">Architecture, implementation, and lab verification.</p>
+                        <span>
+                            <span data-i18n="project.aws-image-converter.assets.pending">Coming shortly</span>
+                        </span>
+                    </div>
+                    <div class="asset-card" data-asset-icon="presentation">
+                        <h3>
+                            <span data-i18n="project.aws-image-converter.assets.presentation.title">Presentation (PDF)</span>
+                        </h3>
+                        <p data-i18n="project.aws-image-converter.assets.presentation.desc">Slides from the AWS Learner Lab demonstration.</p>
+                        <span>
+                            <span data-i18n="project.aws-image-converter.assets.pending">Coming shortly</span>
+                        </span>
+                    </div>
+                </section>
+            </article>
+
+            <aside class="project-sidebar">
+                <div class="card aws-sidebar-card">
+                    <div id="category-section" data-project-id="aws-image-converter" style="display: none;">
+                        <h2 data-i18n="project.sidebar.category">Category</h2>
+                        <div class="line"></div>
+                        <div id="project-categories" class="project-certifications"></div>
+                    </div>
+
+                    <h2 data-i18n="project.sidebar.techStack">Tech Stack</h2>
+                    <div class="line"></div>
+                    <ul class="tech-stack-list">
+                        <li><i data-lucide="server" aria-hidden="true"></i><span>Amazon EC2</span></li>
+                        <li><i data-lucide="database" aria-hidden="true"></i><span>Amazon S3</span></li>
+                        <li><i data-lucide="zap" aria-hidden="true"></i><span>AWS Lambda</span></li>
+                        <li><i data-lucide="calendar" aria-hidden="true"></i><span>Amazon EventBridge</span></li>
+                        <li><i data-lucide="activity" aria-hidden="true"></i><span>Amazon CloudWatch</span></li>
+                        <li><i data-lucide="code-2" aria-hidden="true"></i><span>Python · Flask · Pillow</span></li>
+                        <li><i data-lucide="terminal" aria-hidden="true"></i><span>Bash · AWS CLI</span></li>
+                    </ul>
+
+                    <h2 data-i18n="project.sidebar.training">Related Training</h2>
+                    <div class="line"></div>
+                    <div class="project-certifications" data-project-training="aws-image-converter">
+                        <div class="formation-badge-placeholder">aws-architecture-workshop</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer>
+            <p data-i18n="footer.copyright">&copy; 2026 Guilherme Videira Marques.</p>
+        </footer>
+    </main>
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/project-page-init.js" defer></script>
+</body>
+</html>

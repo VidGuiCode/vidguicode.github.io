@@ -38,11 +38,18 @@
             fr: "Plateforme"
         },
         "project.cylro.hero.subtitle": {
-            en: "The website operations platform we're building for teams that create and manage multiple public-facing websites.",
-            pt: "A plataforma de operações de websites que estamos a construir para equipas que criam e gerem vários websites públicos.",
-            lu: "D'Website-Operations-Plattform, déi mir fir Teams bauen, déi méi ëffentlech Websäite maachen a verwalten.",
-            de: "Die Website-Operations-Plattform, die wir für Teams bauen, die mehrere öffentliche Websites erstellen und verwalten.",
-            fr: "La plateforme d'opérations web que nous construisons pour les équipes qui créent et gèrent plusieurs sites publics."
+            en: "We launched cylro.com for early-access requests. The platform for managing and publishing multiple websites from one workspace is in pre-release.",
+            pt: "Lançámos o cylro.com para receber pedidos de acesso antecipado. A plataforma para gerir e publicar vários sites a partir de um único espaço de trabalho está em pré-lançamento.",
+            lu: "Mir hunn cylro.com lancéiert, fir Ufroe fir e fréien Zougang unzehuelen. D’Plattform fir méi Websäiten aus engem Aarbechtsberäich ze verwalten an ze publizéieren ass am Pre-Release.",
+            de: "Wir haben cylro.com gestartet, um Anfragen für den frühzeitigen Zugang anzunehmen. Die Plattform zum Verwalten und Veröffentlichen mehrerer Websites aus einem Arbeitsbereich befindet sich in der Vorabphase.",
+            fr: "Nous avons lancé cylro.com pour recueillir les demandes d’accès anticipé. La plateforme de gestion et de publication de plusieurs sites depuis un même espace de travail est en pré-lancement."
+        },
+        "project.cylro.hero.contribution": {
+            en: "I co-founded Cylro with Jim and lead engineering as CTO. I designed the multi-site architecture and built the Node.js backend for site-level permissions and static publishing.",
+            pt: "Cofundei a Cylro com o Jim e lidero a engenharia como CTO. Concebi a arquitetura para vários sites e desenvolvi o backend em Node.js para gerir permissões por site e publicar sites estáticos.",
+            lu: "Ech hunn Cylro mam Jim matgegrënnt a leeden als CTO d’Entwécklung. Ech hunn d’Architektur fir méi Websäiten entworf an den Node.js-Backend fir Zougrëffsrechter pro Websäit a statescht Publizéiere gebaut.",
+            de: "Ich habe Cylro mit Jim gegründet und leite als CTO die Entwicklung. Ich entwarf die Architektur für mehrere Websites und entwickelte das Node.js-Backend für Berechtigungen je Website und statische Veröffentlichung.",
+            fr: "J’ai cofondé Cylro avec Jim et je dirige l’ingénierie en tant que CTO. J’ai conçu l’architecture multisite et développé le backend Node.js qui gère les permissions par site et la publication statique."
         },
 
         /* ---- Two-lens layout: at-a-glance metric chips ---- */

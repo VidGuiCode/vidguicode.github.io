@@ -346,11 +346,18 @@
             fr: "WhispFlow"
         },
         "project.whispflow.hero.subtitle": {
-            en: "I built WhispFlow as a desktop app that records meetings, turns speech into searchable notes, and creates structured summaries. It runs locally by default, and you can plug in cloud or self-hosted engines for transcription and AI. It was my PROMA2 Talent Exhibition project.",
-            pt: "Construí o WhispFlow como uma aplicação desktop que grava reuniões, transforma fala em notas pesquisáveis e cria resumos estruturados. Por defeito corre localmente, e podes ligar motores na cloud ou self-hosted para a transcrição e a IA. Foi o meu projeto para a Exposição de Talentos PROMA2.",
-            lu: "Ech hunn de WhispFlow als Desktop-App gebaut déi Sëtzungen ophëlt, Sprooch an duerchsichbar Notizen verwandelt a strukturéiert Resuméë mécht. Standardméisseg leeft se lokal, an du kanns Cloud- oder self-hosted Motore fir Transkriptioun an AI uschléissen. Et war mäi Projet fir d'PROMA2 Talent Ausstellung.",
-            de: "Ich habe WhispFlow als Desktop-App gebaut, die Meetings aufnimmt, Sprache in durchsuchbare Notizen verwandelt und strukturierte Zusammenfassungen erstellt. Standardmäßig läuft sie lokal, und du kannst Cloud- oder selbst gehostete Engines für Transkription und KI anbinden. Es war mein Projekt für die PROMA2 Talent-Ausstellung.",
-            fr: "J'ai construit WhispFlow comme une application de bureau qui enregistre les réunions, transforme la parole en notes consultables et crée des résumés structurés. Elle tourne en local par défaut, et vous pouvez brancher des moteurs cloud ou auto-hébergés pour la transcription et l'IA. C'était mon projet pour l'Exposition de Talents PROMA2."
+            en: "WhispFlow, my PROMA2 Talent Exhibition project, turns meeting recordings into searchable transcripts and summaries with decisions and action items. It runs locally by default.",
+            pt: "O WhispFlow, o meu projeto para a Exposição de Talentos PROMA2, transforma gravações de reuniões em transcrições pesquisáveis e resumos com decisões e tarefas a realizar. Por defeito, funciona localmente.",
+            lu: "WhispFlow, mäi Projet fir d’PROMA2-Talentausstellung, mécht aus Sëtzungsopnamen duerchsichbar Transkriptiounen a Resuméë mat Decisiounen an Aufgaben. D’App leeft standardméisseg lokal.",
+            de: "WhispFlow, mein Projekt für die PROMA2-Talentausstellung, macht aus Meetingaufnahmen durchsuchbare Transkripte und Zusammenfassungen mit Entscheidungen und Aufgaben. Die App läuft standardmäßig lokal.",
+            fr: "WhispFlow, mon projet pour l’exposition de talents PROMA2, transforme les enregistrements de réunions en transcriptions consultables et en résumés avec les décisions et les actions à mener. L’application fonctionne en local par défaut."
+        },
+        "project.whispflow.hero.contribution": {
+            en: "I built the Electron recorder and integrated local and API-based transcription with AI summaries. I added version history so a new transcription keeps the earlier versions intact.",
+            pt: "Desenvolvi o gravador em Electron e integrei a transcrição local e por API com resumos gerados por IA. Adicionei um histórico para preservar as versões anteriores a cada nova transcrição.",
+            lu: "Ech hunn den Audio-Recorder an Electron gebaut an déi lokal Transkriptioun an d’Transkriptioun iwwer API mat AI-Resuméë verbonnen. Ech hunn e Versiounsverlaf agebaut, fir déi fréier Versioune bei all neier Transkriptioun ze behalen.",
+            de: "Ich entwickelte die Aufnahmefunktion in Electron und verband lokale und API-basierte Transkription mit KI-Zusammenfassungen. Durch den Versionsverlauf bleiben frühere Transkripte bei einem neuen Durchlauf erhalten.",
+            fr: "J’ai développé l’enregistreur avec Electron et intégré la transcription locale ou via une API aux résumés générés par IA. J’ai ajouté un historique pour conserver les versions précédentes à chaque nouvelle transcription."
         },
         "project.whispflow.problem.title": {
             en: "The Problem",
