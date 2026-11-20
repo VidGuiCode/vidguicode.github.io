@@ -189,11 +189,11 @@
             fr: "Une application de bureau qui enregistre les réunions et crée des transcriptions consultables et des résumés, avec traitement local par défaut."
         },
         "projects.card.az-where": {
-            en: "A command-line tool that checks where Azure resources can deploy using policy, availability, and live quota.",
-            pt: "Uma ferramenta de linha de comandos que verifica onde é possível implementar recursos Azure, consoante políticas, disponibilidade e quotas atuais.",
-            lu: "En Tool fir d’Kommandozeil, dat iwwerpréift, wou Azure-Ressourcen agesat kënne ginn, jee no Reegelen, Disponibilitéit an aktuelle Quoten.",
-            de: "Ein Kommandozeilentool, das anhand von Richtlinien, Verfügbarkeit und aktuellen Kontingenten prüft, wo Azure-Ressourcen bereitgestellt werden können.",
-            fr: "Un outil en ligne de commande qui vérifie où déployer des ressources Azure selon les règles, la disponibilité et les quotas actuels."
+            en: "Checks Azure regions and VM quotas before deployment, including checks for Terraform and Bicep files.",
+            pt: "Verifica regiões e quotas de VMs no Azure antes da implementação, incluindo verificações de ficheiros Terraform e Bicep.",
+            lu: "Préift Azure-Regiounen a VM-Quote virum Deployment, och an Terraform- a Bicep-Dateien.",
+            de: "Prüft Azure-Regionen und VM-Kontingente vor der Bereitstellung, auch anhand von Terraform- und Bicep-Dateien.",
+            fr: "Vérifie les régions Azure et les quotas de VM avant le déploiement, y compris à partir de fichiers Terraform et Bicep."
         },
         "projects.card.aws-image-converter": {
             en: "An AWS lab portal that converts and resizes images, previews the result, and provides a temporary download link.",
